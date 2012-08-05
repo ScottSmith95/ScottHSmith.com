@@ -8,9 +8,10 @@ body {
 }
 
 h1 {
-	margin-top: 25px;
+	margin-top: 20px;
 	text-align: center; 
-	font-size: 48px;
+	font-size: 40px;
+	font-style: normal;
 	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 }
 
@@ -33,7 +34,7 @@ h1 {
 
 .divider {
 	border-bottom: 1px dashed #009BCD;
-	margin: 0px 40% 0px 40%;
+	margin: 0px 40.5%;
 }
 
 p.bio {
@@ -79,6 +80,7 @@ a.SocialLinks {
 	-moz-transition: color 0.5s;
 	-webkit-transition: color 0.5s;
 	-o-transition: color 0.5s;
+	timing-function: ease-in-out;
 	transition: text-shadow 0.5s;
 	-moz-transition: text-shadow 0.5s;
 	-webkit-transition: text-shadow 0.5s;
@@ -90,4 +92,22 @@ a.SocialLinks {
 	a.SocialLinks:hover {
 		text-shadow: 0 0 5px rgba(0,0,0,0.3);
 		color: #8d8d8d;	
+	}
+	
+	#email:hover {
+		text-shadow: 0 0 5px rgba(194,14,14,0.3);
+		color: #c20e0e;
+	}
+	
+	#email:hover:after {
+		content:" - Think Again";
+	}
+	
+	#email:active{
+		text-shadow: 0 0 5px rgba(0.3);
+		color: #8d1010;
+	}
+	
+	#email:active:after {
+		content:" - Seriously";
 	}
