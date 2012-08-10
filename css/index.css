@@ -19,13 +19,12 @@ h1 {
 	width: 300px;
     height: auto;
 	display: block;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 2% auto 0 auto;
 }
 
 
 #navbar {
-	margin: 0px auto 0px auto;
+	margin: 0 auto;
 	clear: both;
 	text-align: center;
 	width: 100%;
@@ -45,19 +44,17 @@ li {
 }
 
 #navlink {
-	transition: color 0.5s ease-out;
-	-webkit-transition: color 0.5s ease-out;
-	-moz-transition: color 0.5s ease-out;
-	-ms-transition: color 0.5s ease-out;
-	-o-transition: color 0.5s ease-out;
-	transition: text-shadow 0.3s ease-out;
-	-webkit-transition: text-shadow 0.5s ease-out;
-	-moz-transition: text-shadow 0.5s ease-out;
+	transition: color 0.5s;
+	-webkit-transition: color 0.5s;
+	-moz-transition: color 0.5s;
+	-ms-transition: color 0.5s;
+	-o-transition: color 0.5s;
+	transition: text-shadow 0.5s ease-in-out;
+	-webkit-transition: text-shadow 0.5s ease-in-out;
+	-moz-transition: text-shadow 0.5s ease-in-out;
 	-ms-transition: text-shadow 0.5s ease-out;
 	-o-transition: text-shadow 0.5s ease-out;
 	margin-top: 2%;
-	text-align: center;
-	text-decoration: none;
 	color: #444444;
 	font-size: 28px;
 }
@@ -84,9 +81,8 @@ a {
 	-ms-transition: text-shadow 0.5s ease-out;
 	-o-transition: text-shadow 0.5s ease-out;
 	margin-top: 2%;
-	text-align: center;
 	text-decoration: none;
-	color: #000000;
+	color: #444444;
 }
 
 	a:hover {
@@ -99,7 +95,7 @@ a {
 		color: #0086b2;
 	}
 	
-#lowdivider {
+#navdivider {
 	border-bottom: 1px solid #009BCD;
 	margin: 0px 35% 0px 35%;
 }
@@ -112,49 +108,16 @@ a {
 
 .divider {
 	border-bottom: 1px dashed #009BCD;
-	margin: 0px 40.5%;
+	margin: 0 40.5%;
 }
 
 .bio {
 	font-size: 22px;
 }
 
-.blog {
-	font-size: 22px;
-}
-
-p.blog {
-	margin: 25px 0px;
-}
-
-a.blog {
-	color: inherit;
-	transition: color 0.5s ease-out;
-	-webkit-transition: color 0.5s ease-out;
-	-moz-transition: color 0.5s ease-out;
-	-ms-transition: color 0.5s ease-out;
-	-o-transition: color 0.5s ease-out;
-	transition: text-shadow 0.5s ease-out;
-	-webkit-transition: text-shadow 0.5s ease-out;
-	-moz-transition: text-shadow 0.5s ease-out;
-	-ms-transition: text-shadow 0.5s ease-out;
-	-o-transition: text-shadow 0.5s ease-out;
-	text-decoration: none;
-}
-
-	a.blog:hover {
-		text-shadow: 0 0 7px rgba(0,0,0,0.3);
-		color: #009BCD;	
-	}
-	
-	a.blog:active {
-		text-shadow: 0 0 20px rgba(0,0,0,0.5);
-		color: #0086b2;	
-	}
-
 ul.SocialLinks {
 	margin-top: 2%;
-	margin-bottom: 2%;
+	margin-bottom: 3%;
 }
 
 li.SocialLinks {
@@ -183,7 +146,7 @@ a.SocialLinks {
 	
 	a.SocialLinks:active {
 		text-shadow: 0 0 20px rgba(0,0,0,0.5);
-		color: #797979
+		color: #606060
 	}
 	
 	#email:hover {
