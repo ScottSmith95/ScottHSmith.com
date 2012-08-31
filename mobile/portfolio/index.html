@@ -2,11 +2,25 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>{Title}</title>
+    <title>Portfolio</title>
     <meta name="viewport" content="width=640"/>
-    <link rel="shortcut icon" href="{Favicon}" />
-    <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}"/>
-    {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+    <link rel="shortcut icon" href="http://24.media.tumblr.com/avatar_af5bccbc5c70_16.png" />
+    <link rel="apple-touch-icon-precomposed" href="http://25.media.tumblr.com/avatar_af5bccbc5c70_128.png"/>
+    <meta name="description" content="&lt; back" />
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33936718-1']);
+  _gaq.push(['_setDomainName', 'scotthsmith.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  	</script>
     <style type="text/css">
         html {
             width: 640px;
@@ -129,11 +143,10 @@
             width: 608px;
             margin: 20px auto 0 auto;
             overflow: hidden;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.55);
-            border: 3px solid #eeeeee;
-            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.45);
+            border-radius: 15px;
             -moz-border-radius: 15px;
-            -webkit-border-radius: 10px;
+            -webkit-border-radius: 15px;
             background: #E3E5E8;
         }
             
@@ -183,7 +196,7 @@
                     }
                     
                     .bubble .content h2 {
-                        color: #535456;
+                        color: #444;
                         font-size: 36px;
                         line-height: 40px;
                         margin: 0;
@@ -323,7 +336,7 @@
                         font-size: 32px;
                         line-height: 36px;
                         font-weight: bold;
-                        color: #009BCD;
+                        color: #444;
                     }
                     
                         .bubble .content .link span {
@@ -700,16 +713,16 @@
             return input.replace(/<a /g, '<u ').replace(/<\/a>/g, '<\/u>');
         }
     </script>
-</head>
+<meta http-equiv="x-dns-prefetch-control" content="off"/></head>
 <body>
  
     <header class="gray_bubble">
-        <a href="/" class="title">{Title}&nbsp;</a>
+        <a href="http://ScottHSmith.com" class="title">Portfolio&nbsp;</a>
         <div class="clear"></div>
-        {block:IndexPage}
+        
             <div class="info" id="info_container">
                 <div class="body" id="body_container">
-                    <a href="http://ScottHSmith.com">{block:Description}<span class="description_words">{PlaintextDescription}</span>{/block:Description}</a>
+                    <a href="http://ScottHSmith.com"><span class="description_words">< back</span></a>
                     <div class="show" id="show_more_info" style="display:none">
                         <a href="#" id="show_more_info_link" onclick="show_more_info(); return false;">
                             Show all
@@ -718,237 +731,100 @@
                     </div>
                 </div>
             </div>
-        {/block:IndexPage}
+        
     </header>
 
     <div id="posts">
         <!-- START POSTS -->
-        {block:Posts}
+        
             <div class="bubble">
                 <div class="top"></div>
                 <div class="content">
 
-                    {block:Text}
-                        <div class="copy text_post">
-                            {block:Title}<h2>{Title}</h2>{/block:Title}
-                            {Body}
-                            {block:More}<p class="read_more_container"><a href="{Permalink}" class="read_more">Read More</a></p>{/block:More}
-                        </div>
-                    {/block:Text}
+                    
 
-                    {block:Photo}
-                        {block:HighRes}<a href="{PhotoURL-HighRes}">{/block:HighRes}<a href="{LinkURL}"><img src="{PhotoURL-500}" alt="{PhotoAlt}" class="photo" /></a>{block:HighRes}</a>{/block:HighRes}
-                        {block:Caption}
+                    
+                        <a href="http://24.media.tumblr.com/tumblr_m8f4ncTPuF1rdrzl3o1_1280.png"><a href="http://TenSentPistol.com"><img src="http://24.media.tumblr.com/tumblr_m8f4ncTPuF1rdrzl3o1_500.png" alt="In my first paid job, I created Ten Sent Pistol&amp;#8217;s website from scratch." class="photo" /></a></a>
+                        
                             <div class="copy">
-                                {Caption}
+                                <p>In my first paid job, I created Ten Sent Pistol&#8217;s website from scratch.</p>
                             </div>
-                        {/block:Caption}
-                    {/block:Photo}
-
-                    {block:Photoset}
-                        <div class="video">
-                            {Photoset-500}
-                        </div>
-                        {block:Caption}
-                            <div class="copy">
-                                {Caption}
-                            </div>
-                        {/block:Caption}
-                    {/block:Photoset}
-
-                    {block:Link}
-                        <a href="{URL}" class="link" {Target}>{Name} <span>&rarr;</span></a>
-                        {block:Description}
-                            <div class="copy">
-                                {Description}
-                            </div>
-                        {/block:Description}
-                    {/block:Link}
-
-                    {block:Quote}
-                        <div class="quote">&#8220;{Quote}&#8221;</div>
-                        {block:Source}
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin:20px 0">
-                                <tr>
-                                    <td valign="top" style="width:2px; padding:0 20px 0 0">
-                                        &mdash;
-                                    </td>
-                                    <td valign="top" class="copy quote_source">
-                                        {Source}
-                                    </td>
-                                </tr>
-                            </table>
-                        {/block:Source}
-                    {/block:Quote}
-
-                    {block:Audio}
-                        <div class="audio_player {block:AlbumArt}with_cover_art{/block:AlbumArt}" id="play_audio_{PostID}"> 
-                            {block:AlbumArt}<img src="{AlbumArtURL}" class="cover"/>{/block:AlbumArt}
-                            <a class="play" onclick="play_audio({PostID}); return false;" id="play_button_{PostID}">
-                                {block:TrackName}<strong>{TrackName}</strong><br/>{/block:TrackName}
-                                {block:Artist}{Artist}{/block:Artist}
-                                <strong class="listen" style="display:none">Listen</strong>
-                            </a>
-                            <audio id="audio_file_{PostID}" src="{RawAudioURL}"></audio>
-                            <div class="clear"></div>
-                        </div>
-                        {block:Caption}
-                            <div class="copy">
-                                {Caption}
-                            </div>
-                        {/block:Caption}
-                    {/block:Audio}
-
-                    {block:Video}
-                        <div class="video"> 
-                            {Video-500}
-                        </div>
-                        {block:Caption}
-                            <div class="copy">
-                                {Caption}
-                            </div>
-                        {/block:Caption}
-                    {/block:Video}
-
-                    {block:Chat}
-                        {block:Title}<h2 style="margin-bottom:26px;">{Title}</h2>{/block:Title}
-                        <table class="chat" border="0" cellpadding="0" cellspacing="0">
-                            {block:Lines}
-                                <tr>
-                                    {block:Label}<td class="username">{Label}</td>{/block:Label}
-                                    <td width="*">{Line}</td>
-                                </tr>
-                            {/block:Lines}
-                        </table>
-                    {/block:Chat}
-
-                    {block:Answer}
-                        <div class="answer_question">{Question}</div>
-                        <div class="answer_asker">
-                            <img src="{AskerPortraitURL-48}" width="48" height="48" />{Asker}
-                        </div>
-                        <div class="copy">
-                            {Answer}
-                        </div>
-                    {/block:Answer}
-
-                    {block:Date}
-                        <a class="date" href="{Permalink}" {Target}>
-                            {TimeAgo}
+                    
+                        <a class="date" href="http://portfolio.scotthsmith.com/post/28959117778/in-my-first-paid-job-i-created-ten-sent-pistols" >
+                            3 weeks ago
                         </a>
-                    {/block:Date}
-                    {block:NoteCount}
-                        <a href="{Permalink}" class="note_count" onclick="show_notes({PostID}, '{PostNotesURL}'); return false;" id="show_notes_{PostID}" {Target} style="padding-left:6px;">
-                            {NoteCountWithLabel}
-                        </a>
-                        <a href="#" class="note_count" onclick="hide_notes({PostID}); return false;" id="hide_notes_{PostID}" style="display: none; padding-left:6px;">
-                             Hide notes
-                        </a>
-                    {/block:NoteCount}
+                    
+                    
 <!--IF DISQUS---
-                    {block:Date}<a href="{Permalink}#disqus_thread" class="note_count" style="padding-left:6px;">Comments</a>{/block:Date}
+                    <a href="http://portfolio.scotthsmith.com/post/28959117778/in-my-first-paid-job-i-created-ten-sent-pistols#disqus_thread" class="note_count" style="padding-left:6px;">Comments</a>
 ----ENDIF DISQUS-->
                     <div class="clear"></div>
                 </div>
                 <div class="bottom"></div>
             </div>
-            {block:IndexPage}
-                <div id="notes_container_{PostID}" class="bubble" style="display:none">
+            
+                <div id="notes_container_28959117778" class="bubble" style="display:none">
                     <div class="top"></div>
-                    <div class="content bleed" id="notes_{PostID}"></div>
+                    <div class="content bleed" id="notes_28959117778"></div>
                     <div class="bottom"></div>
                 </div>
-            {/block:IndexPage}
-            {block:PermalinkPage}
+            
+            
+        
+            <div class="bubble">
+                <div class="top"></div>
+                <div class="content">
+
+                    
+
+                    
+                        <a href="http://25.media.tumblr.com/tumblr_m8jssup2hj1rdrzl3o1_r2_1280.png"><a href="http://BeyondTheCo.de"><img src="http://25.media.tumblr.com/tumblr_m8jssup2hj1rdrzl3o1_r2_500.png" alt="Beyond The Code, my own personal blog, represents a different sort of web development. In this case,&nbsp;I&nbsp;had to read and comprehend another person&rsquo;s HTML and CSS, while also understanding how Tumblr themes work.&nbsp;I&nbsp;tweaked the theme and updated icons for retina displays. Lastly,&nbsp;I&nbsp;also learned how to use Git." class="photo" /></a></a>
+                        
+                            <div class="copy">
+                                <p>Beyond The Code, my own personal blog, represents a different sort of web development. In this case, I had to read and comprehend another person’s HTML and CSS, while also understanding how Tumblr themes work. I tweaked the theme and updated icons for retina displays. Lastly, I also learned how to use Git.</p>
+                            </div>
+                    
+                        <a class="date" href="http://portfolio.scotthsmith.com/post/29130201997/beyond-the-code-my-own-personal-blog-represents" >
+                            1 month ago
+                        </a>
+                    
+                    
 <!--IF DISQUS---
-    {block:Date}
-        <div class="bubble">
-            <div class="top"></div>
-            <style type="text/css">
-                #disqus_thread {
-                    background: url('http://assets.tumblr.com/images/iphone/tumblelog_retina/content_bg.png') -1px 0 repeat-y transparent;
-                    width: 586px;
-                    margin: 0;
-                    padding: 0 11px;
-                }
-                #disqus_thread a {
-                    text-decoration: underline;
-                }
-                #dsq-new-post h3 {
-                    margin-top: 0;
-                }
-                #dsq-content .dsq-item-trackback {
-                    margin-bottom: 0;
-                }
-                #dsq-global-toolbar {
-                    margin-top: 0 !important;
-                }
-            </style>
-            <div id="disqus_thread"></div>
-            <script type="text/javascript">
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://DISQUS_SHORTNAME.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-            </script>
-            <div class="content">
-                <div class="copy">
+                    <a href="http://portfolio.scotthsmith.com/post/29130201997/beyond-the-code-my-own-personal-blog-represents#disqus_thread" class="note_count" style="padding-left:6px;">Comments</a>
+----ENDIF DISQUS-->
+                    <div class="clear"></div>
                 </div>
-                <div class="clear"></div>
+                <div class="bottom"></div>
             </div>
-            <div class="bottom"></div>
-        </div>
-    {/block:Date}
-----ENDIF DISQUS-->
-                {block:PostNotes}
-                    <div class="bubble">
-                        <div class="top"></div>
-                        <div class="content bleed">
-                            {PostNotes}
-                        </div>
-                        <div class="bottom"></div>
-                    </div>
-                {/block:PostNotes}
-                <div style="margin-bottom:30px;"></div>
-            {/block:PermalinkPage}
-        {/block:Posts}
-        <!-- END POSTS -->
-    </div>
-    {block:IndexPage}
-        {block:NextPage}
-            <a href="/page/2" class="load gray_bubble" id="load_more" onclick="load_more_posts(); return false;">
-                Load more posts
-            </a>
-            <div class="load gray_bubble" id="loading_more" onclick="load_more_posts(); return false;" style="display:none">
-                <img src="http://static.tumblr.com/thpaaos/HBrlbfdoy/loading.gif" width="32" height="32" /> Loading more posts...
-            </div>
-        {/block:NextPage}
-    {/block:IndexPage}
-    <div class="links">
-        <a href="http://www.tumblr.com">Powered by Tumblr</a>
-        <a href="/disable_mobile_interface" onclick="if(confirm('Switch from mobile to standard view?')){} else {return false;}">Standard view</a>
-    </div>
+            
+                <div id="notes_container_29130201997" class="bubble" style="display:none">
+                    <div class="top"></div>
+                    <div class="content bleed" id="notes_29130201997"></div>
+                    <div class="bottom"></div>
+                </div>
+            
+            
+        
+            <div class="bubble">
+                <div class="top"></div>
+                <div class="content">
+
+                    
+
+                    
+                        <a href="http://25.media.tumblr.com/tumblr_m8f7zhoXHG1rdrzl3o1_1280.png"><a href="http://OnetoOneHelp.com"><img src="http://25.media.tumblr.com/tumblr_m8f7zhoXHG1rdrzl3o1_500.png" alt="One to One Help was a website&nbsp;I&nbsp;created with Derek Duncan. It highlights my first major foray into web development and design.&nbsp;" class="photo" /></a></a>
+                        
+                            <div class="copy">
+                                <p>One to One Help was a website I created with <a href="http://twitter.com/DerekDuncan96">Derek Duncan</a>. It highlights my first major foray into web development and design. </p>
+                            </div>
+
+                    
+                        <a class="date" href="http://portfolio.scotthsmith.com/post/28963501416/one-to-one-help-was-a-website-i-created-with-derek" >
+                            3 months ago
+                        </a>
+                    
+             </div>
     
-    <script type="text/javascript" charset="utf-8">
-        var info_style = window.getComputedStyle(document.getElementById('body_container'), null);
-
-        if (parseInt(info_style.height) > 70) {
-            $('show_more_info').style.display = 'block'
-        }
-
-        if (navigator.userAgent.match(/Android/i)) {
-            document.body.className = 'android';
-        }
-    </script>
-<!--IF DISQUS---
-<script type="text/javascript">
-var disqus_shortname = 'DISQUS_SHORTNAME';
-(function () {
-  var s = document.createElement('script'); s.async = true;
-  s.src = 'http://disqus.com/forums/' + disqus_shortname + '/count.js';
-  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-}());
-</script>
-----ENDIF DISQUS-->
+     
 </body>
 </html>
