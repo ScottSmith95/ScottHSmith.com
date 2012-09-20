@@ -64,7 +64,7 @@ li {
 	-o-transition: text-shadow 0.5s ease-out;
 	margin-top: 2%;
 	color: #444444;
-	font-size: 24px;
+	font-size: 26px;
 }
 	
 	#navlink:hover {
@@ -115,7 +115,7 @@ a {
 }
 
 .bio {
-	font-size: 18px;
+	font-size: 20px;
 }
 
 ul.SocialLinks {
@@ -140,7 +140,7 @@ a.SocialLinks {
 	-ms-transition: text-shadow 0.5s ease-out;
 	-o-transition: text-shadow 0.5s ease-out;
 	text-decoration: none;
-	font-size: 18px;
+	font-size: 20px;
 }
 	a.SocialLinks:hover {
 		text-shadow: 0 0 7px rgba(0,0,0,0.3);
