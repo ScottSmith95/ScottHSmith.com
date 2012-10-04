@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--Links and MetaData-->
+		<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+		<link rel="shortcut icon" href="./Images/C.png"/>
+		<title>Carbon Web Development</title>
+		<!-- Fall Back for Internet Explorer -->
+		<!--[if (gte IE 6)&(lte IE 8)]>
+		<script type="text/javascript" src="selectivizr.js"></script>
+		<noscript><link rel="stylesheet" href="[fallback css]" /></noscript>
+		<![endif]-->
+		<!-- JQuery -->
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript">
+			(function() {
+
+				// Show window
+				function showContent(elem) {
+					hideContent();
+					elem.find('.content').addClass('expanded');
+					elem.addClass('cover');
+				}
+
+				// Reset all
+				function hideContent() {
+					$('.gallery .content').removeClass('expanded');
+					$('.gallery li').removeClass('cover');
+				}
+
+				// When a li is clicked, show its content window and position it above all
+				$('.gallery li').click(function() {
+					showContent($(this));
+				});
+
+				// When tabbing, show its content window using ENTER key
+				$('.gallery li').keypress(function(e) {
+					if (e.keyCode == 13) {
+						showContent($(this));
+					}
+				});
+
+				// When right upper close element is clicked  - reset all
+				$('.gallery .close').click(function(e) {
+					e.stopPropagation();
+					hideContent();
+				});
+
+				// Also, when ESC key is pressed - reset all
+				$(document).keyup(function(e) {
+					if (e.keyCode == 27) {
+						hideContent();
+					}
+				});
+
+			})();
+
+		</script>
+		<!-- css -->
+		<style type="text/css">
+			body, html {
+				margin: 0 auto; padding: 0;
+				overflow: hidden;
+				height: 100%;
+				width: 100%;
+				font: 15px 'PT Sans';
+				background: /*#BDBDBD;*/url(./Images/grid.png) repeat;
+			}
+			a:active, a:visited {
+				color: inherit;
+			}
+			.main {
+				margin: 0px;
+				padding: 0px;
+			}
+			.container {
+				margin: 0px;
+			}
+			.header {
+				position: relative;
+				background: url(./Images/grid_dark.png);
+				margin: 0px auto; padding: 0px;
+			}
+			.header img {
+				padding: 10px;
+				width: 3%;
+				height: auto;
+			}
+			#border {
+				border-left: 1px solid #4D565C;
+				height: 98%;
+				position: absolute;
+				left: 36%;
+				top: 1%;
+				margin: 0 2%;
+			}
+			#quick_info {
+				color: #4D565C;
+				position: relative;
+				float: left;
+				width: 35%;
+			}
+
+			#quick_info h2 {
+				color: #38617A;
+			}
+			.gallery {
+				float: right;
+				width: 57.5%;
+				margin: 1% 1.1% 0 0;
+				padding: 15px;
+				list-style: none;
+				counter-reset: li;
+				background: rgba(172, 173, 173, .1);
+				box-shadow: 0 1px 2px rgba(0,0,0,.1) inset;
+				border-radius: 10px;
+			}
+			.gallery:before, .gallery:after {
+				content: "";
+				display: table;
+			}
+			.gallery:after {
+				clear: both;
+			}
+
+			.gallery {
+				zoom: 1;
+			}
+			.gallery li {
+				border-radius: 10px;
+				font: 20px 'PT Sans';
+				text-align: center;
+				background: rgba(172, 173, 173, .9);
+				position: relative;
+				float: left;
+				cursor: pointer;
+				height: 165px;
+				width: 243px;
+				margin: 1.3% 0 0 1.3%;
+				color: black;
+				-webkit-transition: all .3s ease-out;
+				-moz-transition: all .3s ease-out;
+				-ms-transition: all .3s ease-out;
+				-o-transition: all .3s ease-out;
+				transition: all .3s ease-out;
+			}
+			.gallery li:hover, .gallery li:focus {
+				box-shadow: 0 0 100px 19px rgba(84, 84, 84, .3) inset;
+				outline: 0;
+			}
+			.gallery .cover {
+				z-index: 2;
+			}
+			.gallery .cover:focus {
+				outline: none;
+			}
+			.gallery li::after {
+				content: screenshots;
+				position: absolute;
+				width: 100px;
+				height: auto;
+				opacity: 0;
+				transition: all .2s ease-out;
+			}
+			.gallery li:hover::after, .gallery li:focus::after {
+				font-size: 100px;
+				opacity: 1;
+			}
+			.gallery li:active {
+				outline: 0;
+			}
+			.gallery .cover::after {
+				z-index: -1;
+			}
+
+			.gallery .content {
+				word-wrap: break-word;
+				border-radius: 10px;
+				background: rgba(172, 173, 173, .9);
+				opacity: 0;
+				display: none\9;
+				overflow: auto;
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				transition: all .3s ease-out;
+				-webkit-transition: all .3s ease-out;
+				-moz-transition: all .3s ease-out;
+				-ms-transition: all .3s ease-out;
+				-o-transition: all .3s ease-out;
+				transition: all .3s ease-out;
+			}
+			/* Popup window */
+			.gallery .expanded {
+				border-radius: 10px;
+				background: rgba(172, 173, 173, .9);
+				opacity: .95;
+				display: block\9;
+				overflow: visible;
+				padding: 40px;
+				height: 435px;
+				width: 670px;
+			}
+			.expanded_screen {
+				border-radius: 10px;
+				height: 87%;
+			}
+
+			.gallery li:nth-child(3n) .content {
+				right: 0;
+			}
+			.gallery li:nth-child(3n-1) .expanded {
+				left: 50%;
+				margin-left: -375px;
+			}
+			.gallery li:nth-child(7) .content, .gallery li:nth-child(8) .content, .gallery li:nth-child(9) .content {
+				bottom: 0;
+			}
+
+			.gallery li:nth-child(4) .expanded, .gallery li:nth-child(5) .expanded, .gallery li:nth-child(6) .expanded {
+				margin-top: -258px;
+				top: 50%;
+			}
+
+			.gallery .title {
+				position: relative;
+				height: 100%;
+				width: 100%;
+				text-align: center;
+				opacity: .8;
+			}
+			.gallery .close {
+				background: rgba(172, 173, 173, 1);
+				display: none;
+				border: 5px solid #fff;
+				color: #fff;
+				cursor: pointer;
+				font: bold 20px/40px arial, helvetica;
+				height: 40px;
+				width: 40px;
+				position: absolute;
+				text-align: center;
+				top: -20px;
+				right: -20px;
+				border-radius: 40px;
+			}
+			.gallery .cover .close {
+				display: block;
+			}
+			.screenshots {
+				opacity: 1;
+				border-radius: 10px;
+				position: absolute;
+				top: 17%;
+				right: 10%;
+				width: auto;
+				height: 110px;
+			}
+			.screenshots:hover {
+				opacity: 0.2;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<div class="container">
+				<div class="header">
+					<img src="./Images/C.png" />
+				</div>
+				<div class="right_toolbar">
+					<ul class="gallery">
+						<li id="1" tabindex="1">
+							<img src="./Images/Carbon.png" class="screenshots"/>
+							<div class="content"><img src="./Images/Carbon.png" class="expanded_screen"/>
+								<span class="title">Carbon</span>
+								<span class="close">x</span>
+							</div>
+						</li>
+						<li id="2" tabindex="1">
+							<img src="./Images/TenSentPistol.png" class="screenshots"/>
+							<div class="content"><img src="./Images/TenSentPistol.png" class="expanded_screen"/>
+								<span class="title">Ten Sent Pistol</span>
+								<span class="close">x</span>
+							</div>
+						</li>
+						<li id="3" tabindex="1">
+							<img src="./Images/OnetoOneHelp.png" class="screenshots"/>
+							<div class="content"><img src="./Images/OnetoOneHelp.png" class="expanded_screen"/>
+								<span class="title">One to One Help</span>
+								<span class="close">x</span>
+							</div>
+						</li>
+						<li id="4" tabindex="1">
+							<img src="./Images/BeyondTheCode.png" class="screenshots"/>
+							<div class="content"><img src="./Images/BeyondTheCode.png" class="expanded_screen"/>
+								<span class="title">Beyond The Code</span>
+								<span class="close">x</span>
+							</div>
+						<li id="5" tabindex="1">
+
+							<div class="content">
+								<span class="title">Coming Soon...</span>
+								<span class="close">x</span>
+							</div>
+
+						</li>
+						<li id="6" tabindex="1">
+
+							<div class="content">
+								<span class="title">Coming Soon...</span>
+								<span class="close">x</span>
+							</div>
+
+						</li>
+						<li id="7" tabindex="1">
+
+							<div class="content">
+								<span class="title">Coming Soon...</span>
+								<span class="close">x</span>
+							</div>
+						</li>
+						<li id="8" tabindex="1">
+
+							<div class="content">
+								<span class="title">Coming Soon...</span>
+								<span class="close">x</span>
+							</div>
+						</li>
+						<li id="9" tabindex="1">
+
+							<div class="content">
+								<span class="title">Coming Soon...</span>
+								<span class="close">x</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="border"></div>
+			<div id="quick_info">
+				<h2>Web development</h2>
+				<p>
+					Carbon a Web Development company started by Derek Duncan and Scott Smith, both avid web developers using the latest in modern web development standards.
+				</p>
+			</div>
+		</div>
+	</body>
+</html>

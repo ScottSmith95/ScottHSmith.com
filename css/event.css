@@ -1,29 +1,3 @@
-<!-- Code by Scott Smith -->
-
-<!DOCTYPE html>
-<html>
-
-<head>
-
-<title>Scott Smith</title>
-
-<link rel="shortcut icon" href="http://www.ScottHSmith.com/images/Slash.png"/>
-
-<link rel="apple-touch-icon-precomposed" href="http://ScottHSmith.com/images/ScottPic.png"/>
-
-<title>Whoops! 404</title>
-
-<meta name="Description" content="Scott Smith is an opinionated technology follower and blogger, and always learning."/>
-
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-
-<meta property="og:title" content="Scott Smith"/>
-
-<meta property="og:url" content="http://ScottHSmith.com" />
-
-<meta property="og:image" content="http://www.ScottHSmith.com/images/ScottPic.png"/>
-
-<style>
 body {
 	background: #E3E5E8;
 }
@@ -39,17 +13,16 @@ h1 {
 	margin-top: 20px;
 	text-align: center; 
 	font-size: 40px;
-	font-style: normal;
+	color: #444;
 	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 	-webkit-margin-after: 0%;
 }
 
 #headerpic {
+	background-image: url("/images/ScottPic_600.jpg");
+	background-size: 300px 300px;
 	width: 300px;
-	margin: 0 auto;
-}
-
-#headerpic img {
+    height: 300px;
 	border-radius: 15px;
 	-moz-border-radius: 15px;
 	-webkit-border-radius: 15px;
@@ -62,11 +35,11 @@ h1 {
 	margin: 2% auto 0 auto;
 }
 
-img:hover {
+#headerpic:hover {
 	box-shadow: inset 0px -7px 15px rgba(0,0,0,0.75);
 }
 
-img:active {
+#headerpic:active {
 	box-shadow: inset 0px -12px 17px rgba(0,0,0,0.75);
 }
 
@@ -133,33 +106,50 @@ a {
 }
 
 	a:hover {
-		text-shadow: 0 0 15px rgba(0,0,0,0.4);
+		text-shadow: 1px 1px 10px rgba(0,0,0,0.77);
 		color: #009BCD;
 	}
 	
 	a:active {
-		text-shadow: 0 0 20px rgba(0,0,0,0.7);
+		text-shadow: 1px 1px 7px rgba(0,0,0,0.77);
 		color: #0086b2;
 	}
-	
+
+.visiblelink {
+	border-bottom: 1px solid #009BCD;
+}
+
 #navdivider {
 	border-bottom: 1px solid #009BCD;
 	margin: 0 37%;
 }
 
 .content {
+	margin-top: 2%;
 	color: #444444;
 	text-align: center;
 	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
+	
+	font-size: 22px;
 }
 
-.bio {
-	font-size: 22px;
+.attendees {
+	text-align: center; 
+	margin: 0px 30%
+}
+
+.attendees img {
+	margin-bottom: 2%;
+	margin-left: 0.3%;
+	margin-right: 0.3%;
+	width: 65px;
+	height: auto;
 }
 
 ul.SocialLinks {
 	margin-top: 2%;
 	margin-bottom: 3%;
+	text-align: center;
 }
 
 li.SocialLinks {
@@ -227,70 +217,40 @@ a.SocialLinks {
 	#email:active:after {
 		content:" - Seriously";
 	}
-
-@media screen and (max-width: 1100px) {
+	
+@media screen and (max-device-width: 1100px) { 
 	h1 {
-	margin-top: 20px;
-	text-align: center; 
 	font-size: 34px;
-	font-style: normal;
-	-webkit-margin-after: 0%;
 }
 
 #headerpic {
-	background-image: url("http://ScottHSmith.com/images/Deal%20With%20It.gif");
 	background-size: 225px 225px;
 	width: 225px;
     height: 225px;
-	border-radius: 15px;
-	-moz-border-radius: 15px;
-	-webkit-border-radius: 15px;
-	display: block;
-	margin: 2% auto 0 auto;
 }
 
-
-#navbar {
-	margin: 0 auto;
-	clear: both;
-	text-align: center;
-	width: 100%;
-}
-
-ul {
-	display: block;
-	list-style-type:none;
-	-webkit-padding-start: 0;
-}
-
-li {
-	display: inline;
-	text-align: center;
-	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
-	margin: 0px 10px;
-}
 
 #navlink {
-	margin-top: 2%;
 	font-size: 26px;
 }
-	
+
 #navdivider {
-	border-bottom: 1px solid #009BCD;
 	margin: 0 37%;
 }
 
-.bio {
+.content {
 	font-size: 20px;
 }
 
-ul.SocialLinks {
-	margin-top: 2%;
-	margin-bottom: 3%;
+.attendees img {
+	width: 50px;
+	height: auto;
 }
 
-li.SocialLinks {
-	display:inline;
+ul.SocialLinks {
+	margin-top: 1.5%;
+	margin-bottom: 2%;
+	text-align: center;
 }
 
 a.SocialLinks {
@@ -299,7 +259,7 @@ a.SocialLinks {
 }
 
 @media screen and (max-device-width: 699px) {
-	body {
+body {
 	background: #E3E5E8;
 }
 
@@ -329,7 +289,7 @@ h1 {
 }
 
 #headerpic {
-	background-image: url("http://ScottHSmith.com/images/Deal%20With%20It.gif");
+	background-image: url("/images/ScottPic_300.jpg");
 	background-size: 325px 325px;
 	width: 325px;
     height: 325px;
@@ -355,11 +315,21 @@ ul {
 li {
 	display: inline;
 	text-align: center;
+	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 	margin: 0px 10px;
 }
 
 #navlink {
 	transition: color 0.5s;
+	-webkit-transition: color 0.5s;
+	-moz-transition: color 0.5s;
+	-ms-transition: color 0.5s;
+	-o-transition: color 0.5s;
+	transition: text-shadow 0.5s ease-in-out;
+	-webkit-transition: text-shadow 0.5s ease-in-out;
+	-moz-transition: text-shadow 0.5s ease-in-out;
+	-ms-transition: text-shadow 0.5s ease-out;
+	-o-transition: text-shadow 0.5s ease-out;
 	margin-top: 2%;
 	color: #444444;
 	font-size: 46px;
@@ -382,13 +352,24 @@ li {
 	margin: 0 29%;
 }
 
+#desktop {
+	display: none;
+}
+
 .content {
 	color: #444444;
 	text-align: center;
+	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
+	font-size: 40px;
 }
 
-.bio {
-	font-size: 38px;
+.attendees {
+	margin: 0 15%;
+}
+
+.attendees img {
+	width: 100px;
+	height: auto;
 }
 
 ul.SocialLinks {
@@ -401,6 +382,16 @@ li.SocialLinks {
 
 a.SocialLinks {
 	color: #009BCD;
+	transition: color 0.5s ease-out;
+	-webkit-transition: color 0.5s ease-out;
+	-moz-transition: color 0.5s ease-out;
+	-ms-transition: color 0.5s ease-out;
+	-o-transition: color 0.5s ease-out;
+	transition: text-shadow 0.5s ease-out;
+	-webkit-transition: text-shadow 0.5s ease-out;
+	-moz-transition: text-shadow 0.5s ease-out;
+	-ms-transition: text-shadow 0.5s ease-out;
+	-o-transition: text-shadow 0.5s ease-out;
 	text-decoration: none;
 	font-size: 38px;
 	border-bottom: none;
@@ -436,45 +427,3 @@ a.SocialLinks {
 		content:"";
 	}
 }
-</style>
-
-</head>
-
-<body>
-
-	<div id="headerpic">
-		<a href="http://ScottHSmith.com/"><img src="http://ScottHSmith.com/images/Deal%20With%20It.gif" width="300"></a>
-	</div>
-
-	<div class="content">
-
-	<h1>Daheq</h1>
-	
-	<div id="navbar">
-		<ul>
-			<li class="nav"><a id="navlink" href="http://ScottHSmith.com/">Home</a></li>
-			<li class="nav"><a id="navlink" href="http://BeyondTheCo.de">Blog</a></li>
-			<li class="nav"><a id="navlink" href="http://ScottHSmith.com/portfolio/">Portfolio</a></li>
-			
-		</ul>
-	</div>
-	<div id="navdivider"></div>
-	
-	<p class="bio">I have no idea what you were looking for, but it isn't here.</p>
-	
-	<div class="divider"></div>
-	
-		<ul class="SocialLinks">
-			<li class="SocialLinks"><a href="http://scotthsmith.com/Twitter.html" class="SocialLinks" id="Twitter">Twitter</a></li>
-			<li class="SocialLinks"><a href="http://scotthsmith.com/Facebook.html" class="SocialLinks" id="Facebook">Facebook</a></li>
-			<li class="SocialLinks"><a href="http://plus.google.com/u/1/106066907456293991070/" class="SocialLinks" id="Google+">Google+</a></li>
-			<li class="SocialLinks"><a href="http://thefancy.com/ScottSmith" class="SocialLinks" id="Google+">Fancy</a></li>
-			<li class="SocialLinks"><a href="http://github.com/ScottSmith95" class="SocialLinks" id="GitHub">GitHub</a></li>
-			<li class="SocialLinks"><a href="mailto:mail@ScottHSmith.com" class="SocialLinks" id="email">Email</a></li>
-		</ul>
-	
-	</div>
-	
-</body>
-
-</html>
