@@ -17,7 +17,7 @@
 
 <meta property="og:title" content="Scott Smith"/>
 
-<meta property="og:url" content="http://ScottHSmith.com" />
+<meta property="og:url" content="http://ScottHSmith.com"/>
 
 <meta property="og:image" content="http://www.ScottHSmith.com/images/ScottPic.png"/>
 
@@ -76,16 +76,11 @@ li {
 }
 
 #navlink {
-	transition: color 0.5s;
-	-webkit-transition: color 0.5s;
-	-moz-transition: color 0.5s;
-	-ms-transition: color 0.5s;
-	-o-transition: color 0.5s;
-	transition: text-shadow 0.5s ease-in-out;
-	-webkit-transition: text-shadow 0.5s ease-in-out;
-	-moz-transition: text-shadow 0.5s ease-in-out;
-	-ms-transition: text-shadow 0.5s ease-out;
-	-o-transition: text-shadow 0.5s ease-out;
+	transition: text-shadow, color 0.5s ease-in-out;
+	-webkit-transition: text-shadow, color 0.5s ease-in-out;
+	-moz-transition: text-shadow, color 0.5s ease-in-out;
+	-ms-transition: text-shadow, color 0.5s ease-out;
+	-o-transition: text-shadow, color 0.5s ease-out;
 	margin-top: 2%;
 	color: #444444;
 	font-size: 28px;
@@ -102,16 +97,11 @@ li {
 	}
 
 a {
-	transition: color 0.5s ease-out;
-	-webkit-transition: color 0.5s ease-out;
-	-moz-transition: color 0.5s ease-out;
-	-ms-transition: color 0.5s ease-out;
-	-o-transition: color 0.5s ease-out;
-	transition: text-shadow 0.5s ease-out;
-	-webkit-transition: text-shadow 0.5s ease-out;
-	-moz-transition: text-shadow 0.5s ease-out;
-	-ms-transition: text-shadow 0.5s ease-out;
-	-o-transition: text-shadow 0.5s ease-out;
+	transition: text-shadow, color 0.5s ease-out;
+	-webkit-transition: text-shadow, color 0.5s ease-out;
+	-moz-transition: text-shadow, color 0.5s ease-out;
+	-ms-transition: text-shadow, color 0.5s ease-out;
+	-o-transition: text-shadow, color 0.5s ease-out;
 	margin-top: 2%;
 	text-decoration: none;
 	color: #444444;
@@ -151,20 +141,28 @@ ul.SocialLinks {
 
 li.SocialLinks {
 	display:inline;
+	line-height: 3.5em;
+}
+
+#TwitterMobile {
+	display: none;
+}
+
+#FacebookMobile {
+	display: none;
+}
+
+#App-NetMobile {
+	display: none;
 }
 
 a.SocialLinks {
 	color: #009BCD;
-	transition: color 0.5s ease-out;
-	-webkit-transition: color 0.5s ease-out;
-	-moz-transition: color 0.5s ease-out;
-	-ms-transition: color 0.5s ease-out;
-	-o-transition: color 0.5s ease-out;
-	transition: text-shadow 0.5s ease-out;
-	-webkit-transition: text-shadow 0.5s ease-out;
-	-moz-transition: text-shadow 0.5s ease-out;
-	-ms-transition: text-shadow 0.5s ease-out;
-	-o-transition: text-shadow 0.5s ease-out;
+	transition: text-shadow, color 0.5s ease-out;
+	-webkit-transition: text-shadow, color 0.5s ease-out;
+	-moz-transition: text-shadow, color 0.5s ease-out;
+	-ms-transition: text-shadow, color 0.5s ease-out;
+	-o-transition: text-shadow, color 0.5s ease-out;
 	text-decoration: none;
 	font-size: 22px;
 }
@@ -185,16 +183,11 @@ a.SocialLinks {
 	
 	#email:after {
 		transition: all 0.5s ease-out;
-		transition: color 0.5s ease-out;
-		-webkit-transition: color 0.5s ease-out;
-		-moz-transition: color 0.5s ease-out;
-		-ms-transition: color 0.5s ease-out;
-		-o-transition: color 0.5s ease-out;
-		transition: text-shadow 0.5s ease-out;
-		-webkit-transition: text-shadow 0.5s ease-out;
-		-moz-transition: text-shadow 0.5s ease-out;
-		-ms-transition: text-shadow 0.5s ease-out;
-		-o-transition: text-shadow 0.5s ease-out;
+		transition: text-shadow, color 0.5s ease-out;
+		-webkit-transition: text-shadow, color 0.5s ease-out;
+		-moz-transition: text-shadow, color 0.5s ease-out;
+		-ms-transition: text-shadow, color 0.5s ease-out;
+		-o-transition: text-shadow, color 0.5s ease-out;
 		position: relative;
 		left: 0;
 		top: 0;
@@ -333,10 +326,6 @@ li {
 .content {
 	color: #444444;
 	text-align: center;
-	
-}
-
-.content {
 	font-size: 38px;
 }
 
@@ -345,6 +334,30 @@ ul.SocialLinks {
 }
 
 li.SocialLinks {
+	display: inline;
+}
+
+#TwitterDesktop {
+	display: none;
+}
+
+#TwitterMobile {
+	display: inline;
+}
+
+#FacebookDesktop {
+	display: none;
+}
+
+#FacebookMobile {
+	display: inline;
+}
+
+#App-NetDesktop {
+	display: none;
+}
+
+#App-NetMobile {
 	display: inline;
 }
 
@@ -357,17 +370,17 @@ a.SocialLinks {
 
 	a.SocialLinks:hover {
 		text-shadow: none;
-		color: inherit;	
+		color: #009BCD;	
 	}
 	
 	a.SocialLinks:active {
 		text-shadow: none;
-		color: inherit;
+		color: #009BCD;
 	}
 	
 	#email:hover {
 		text-shadow: none;
-		color: inherit;
+		color: #009BCD;
 	}
 	
 	#email:hover:after {
@@ -378,7 +391,7 @@ a.SocialLinks {
 	
 	#email:active{
 		text-shadow: none;
-		color: inherit;
+		color: #009BCD;
 	}
 	
 	#email:active:after {
@@ -411,9 +424,12 @@ a.SocialLinks {
 	<div class="divider"></div>
 	
 		<ul class="SocialLinks">
-			<li class="SocialLinks"><a href="http://scotthsmith.com/Twitter.html" class="SocialLinks" id="Twitter">Twitter</a></li>
-			<li class="SocialLinks"><a href="http://scotthsmith.com/Facebook.html" class="SocialLinks" id="Facebook">Facebook</a></li>
-			<li class="SocialLinks"><a href="https://alpha.app.net/scottsmith" class="SocialLinks" id="Facebook">App.net</a></li>
+			<li class="SocialLinks"><a href="http://twitter.com/ScottSmith95" class="SocialLinks" id="TwitterDesktop">Twitter</a></li>
+			<li class="SocialLinks"><a href="http://scotthsmith.com/Twitter" class="SocialLinks" id="TwitterMobile">Twitter</a></li>
+			<li class="SocialLinks"><a href="http://facebook.com/ScottSmith95" class="SocialLinks" id="FacebookDesktop">Facebook</a></li>
+			<li class="SocialLinks"><a href="http://scotthsmith.com/Facebook" class="SocialLinks" id="FacebookMobile">Facebook</a></li>
+			<li class="SocialLinks"><a href="https://alpha.app.net/scottsmith" class="SocialLinks" id="App-NetDesktop">App.net</a></li>
+			<li class="SocialLinks"><a href="http://ScottHSmith.com/App-Net" class="SocialLinks" id="App-NetMobile">App.net</a></li>
 			<li class="SocialLinks"><a href="http://plus.google.com/u/1/106066907456293991070/" class="SocialLinks" id="Google+">Google+</a></li>
 			<li class="SocialLinks"><a href="http://thefancy.com/ScottSmith" class="SocialLinks" id="Google+">Fancy</a></li>
 			<li class="SocialLinks"><a href="http://github.com/ScottSmith95" class="SocialLinks" id="GitHub">GitHub</a></li>
