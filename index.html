@@ -134,29 +134,21 @@ a {
 	font-size: 22px;
 }
 
-ul.SocialLinks {
-	margin: 2% auto 3% auto;
+.AllSocialLinks {
+	margin: 2% auto 2% auto;
 	text-align: center;
 }
 
-li.SocialLinks {
+li.SocialLinksDesktop, li.SocialLinksMobile {
 	display:inline;
 	line-height: 3.5em;
 }
 
-#TwitterMobile {
+.SocialLinksMobile {
 	display: none;
 }
 
-#FacebookMobile {
-	display: none;
-}
-
-#App-NetMobile {
-	display: none;
-}
-
-a.SocialLinks {
+.SocialLinks a {
 	color: #009BCD;
 	transition: text-shadow, color 0.5s ease-out;
 	-webkit-transition: text-shadow, color 0.5s ease-out;
@@ -166,12 +158,12 @@ a.SocialLinks {
 	text-decoration: none;
 	font-size: 22px;
 }
-	a.SocialLinks:hover {
+	.SocialLinks a:hover {
 		text-shadow: 0 0 7px rgba(0,0,0,0.3);
 		color: #8d8d8d;	
 	}
 	
-	a.SocialLinks:active {
+	.SocialLinks a:active {
 		text-shadow: 0 0 20px rgba(0,0,0,0.5);
 		color: #606060;
 	}
@@ -337,28 +329,12 @@ li.SocialLinks {
 	display: inline;
 }
 
-#TwitterDesktop {
-	display: none;
-}
-
-#TwitterMobile {
+.SocialLinksMobile, .SocialMobile {
 	display: inline;
 }
 
-#FacebookDesktop {
+.SocialLinksDesktop, .SocialDesktop {
 	display: none;
-}
-
-#FacebookMobile {
-	display: inline;
-}
-
-#App-NetDesktop {
-	display: none;
-}
-
-#App-NetMobile {
-	display: inline;
 }
 
 a.SocialLinks {
@@ -423,17 +399,17 @@ a.SocialLinks {
 	
 	<div class="divider"></div>
 	
-		<ul class="SocialLinks">
-			<li class="SocialLinks"><a href="http://twitter.com/ScottSmith95" class="SocialLinks" id="TwitterDesktop">Twitter</a></li>
-			<li class="SocialLinks"><a href="http://scotthsmith.com/Twitter" class="SocialLinks" id="TwitterMobile">Twitter</a></li>
-			<li class="SocialLinks"><a href="http://facebook.com/ScottSmith95" class="SocialLinks" id="FacebookDesktop">Facebook</a></li>
-			<li class="SocialLinks"><a href="http://scotthsmith.com/Facebook" class="SocialLinks" id="FacebookMobile">Facebook</a></li>
-			<li class="SocialLinks"><a href="https://alpha.app.net/scottsmith" class="SocialLinks" id="App-NetDesktop">App.net</a></li>
-			<li class="SocialLinks"><a href="http://ScottHSmith.com/App-Net" class="SocialLinks" id="App-NetMobile">App.net</a></li>
-			<li class="SocialLinks"><a href="http://plus.google.com/u/1/106066907456293991070/" class="SocialLinks" id="Google+">Google+</a></li>
-			<li class="SocialLinks"><a href="http://thefancy.com/ScottSmith" class="SocialLinks" id="Google+">Fancy</a></li>
-			<li class="SocialLinks"><a href="http://github.com/ScottSmith95" class="SocialLinks" id="GitHub">GitHub</a></li>
-			<li class="SocialLinks"><a href="mailto:mail@ScottHSmith.com" class="SocialLinks" id="email">Email</a></li>
+		<ul class="AllSocialLinks">
+			<li class="SocialLinksDesktop"><a href="http://twitter.com/ScottSmith95" class="SocialDesktop" id="TwitterDesktop">Twitter</a></li>
+			<li class="SocialLinksMobile"><a href="http://scotthsmith.com/Twitter" class="SocialMobile" id="TwitterMobile">Twitter</a></li>
+			<li class="SocialLinksDesktop"><a href="http://facebook.com/ScottSmith95" class="SocialDesktop" id="FacebookDesktop">Facebook</a></li>
+			<li class="SocialLinksMobile"><a href="http://scotthsmith.com/Facebook" class="SocialMobile" id="FacebookMobile">Facebook</a></li>
+			<li class="SocialLinksDesktop"><a href="https://alpha.app.net/scottsmith" class="SocialDesktop" id="App-NetDesktop">App.net</a></li>
+			<li class="SocialLinksMobile"><a href="http://ScottHSmith.com/App-Net" class="SocialMobile" id="App-NetMobile">App.net</a></li>
+			<li class="SocialLinks"><a href="http://plus.google.com/u/1/106066907456293991070/" class="SocialLink" id="Google+">Google+</a></li>
+			<li class="SocialLinks"><a href="http://thefancy.com/ScottSmith" class="SocialLink" id="Google+">Fancy</a></li>
+			<li class="SocialLinks"><a href="http://github.com/ScottSmith95" class="SocialLink" id="GitHub">GitHub</a></li>
+			<li class="SocialLinks"><a href="mailto:mail@ScottHSmith.com" class="SocialLink" id="email">Email</a></li>
 		</ul>
 	
 </body>
