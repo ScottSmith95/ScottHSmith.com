@@ -46,7 +46,7 @@ h1 {
 
 #headerpic {
 	width: 300px;
-	margin: 0 auto;
+	margin: 2% auto 0 auto;
 }
 
 #headerpic img {
@@ -62,11 +62,11 @@ h1 {
 	margin: 2% auto 0 auto;
 }
 
-img:hover {
+#headerpic img:hover {
 	box-shadow: inset 0px -7px 15px rgba(0,0,0,0.75);
 }
 
-img:active {
+#headerpic img:active {
 	box-shadow: inset 0px -12px 17px rgba(0,0,0,0.75);
 }
 
@@ -91,16 +91,11 @@ li {
 }
 
 #navlink {
-	transition: color 0.5s;
-	-webkit-transition: color 0.5s;
-	-moz-transition: color 0.5s;
-	-ms-transition: color 0.5s;
-	-o-transition: color 0.5s;
-	transition: text-shadow 0.5s ease-in-out;
-	-webkit-transition: text-shadow 0.5s ease-in-out;
-	-moz-transition: text-shadow 0.5s ease-in-out;
-	-ms-transition: text-shadow 0.5s ease-out;
-	-o-transition: text-shadow 0.5s ease-out;
+	transition: text-shadow, color 0.5s, 0.5s ease-out;
+	-webkit-transition: text-shadow, color 0.5s, 0.5s ease-out;
+	-moz-transition: text-shadow, color 0.5s, 0.5s ease-out;
+	-ms-transition: text-shadow, color 0.5s, 0.5s ease-out;
+	-o-transition: text-shadow, color 0.5s, 0.5s ease-out;
 	margin-top: 2%;
 	color: #444444;
 	font-size: 28px;
@@ -117,16 +112,11 @@ li {
 	}
 
 a {
-	transition: color 0.5s ease-out;
-	-webkit-transition: color 0.5s ease-out;
-	-moz-transition: color 0.5s ease-out;
-	-ms-transition: color 0.5s ease-out;
-	-o-transition: color 0.5s ease-out;
-	transition: text-shadow 0.5s ease-out;
-	-webkit-transition: text-shadow 0.5s ease-out;
-	-moz-transition: text-shadow 0.5s ease-out;
-	-ms-transition: text-shadow 0.5s ease-out;
-	-o-transition: text-shadow 0.5s ease-out;
+	transition: text-shadow, color 0.5s, 0.5s ease-out;
+	-webkit-transition: text-shadow, color 0.5s, 0.5s ease-out;
+	-moz-transition: text-shadow, color 0.5s, 0.5s ease-out;
+	-ms-transition: text-shadow, color 0.5s, 0.5s ease-out;
+	-o-transition: text-shadow, color 0.5s, 0.5s ease-out;
 	margin-top: 2%;
 	text-decoration: none;
 	color: #444444;
@@ -157,37 +147,38 @@ a {
 	font-size: 22px;
 }
 
-ul.SocialLinks {
-	margin-top: 2%;
-	margin-bottom: 3%;
+.AllSocialLinks {
+	margin: 2% auto 2% auto;
+	text-align: center;
 }
 
-li.SocialLinks {
-	display:inline;
+li.SocialLinksDesktop, li.SocialLinksMobile {
+	display: inline;
+	line-height: 3.5em;
 }
 
-a.SocialLinks {
+li.SocialLinksMobile {
+	display: none;
+}
+
+.SocialLinks a, .SocialLinksDesktop a, .SocialLinksMobile a {
 	color: #009BCD;
-	transition: color 0.5s ease-out;
-	-webkit-transition: color 0.5s ease-out;
-	-moz-transition: color 0.5s ease-out;
-	-ms-transition: color 0.5s ease-out;
-	-o-transition: color 0.5s ease-out;
-	transition: text-shadow 0.5s ease-out;
-	-webkit-transition: text-shadow 0.5s ease-out;
-	-moz-transition: text-shadow 0.5s ease-out;
-	-ms-transition: text-shadow 0.5s ease-out;
-	-o-transition: text-shadow 0.5s ease-out;
+	transition: text-shadow, color 0.5s, 0.5s ease-out;
+	-webkit-transition: text-shadow, color 0.5s, 0.5s ease-out;
+	-moz-transition: text-shadow, color 0.5s, 0.5s ease-out;
+	-ms-transition: text-shadow, color 0.5s, 0.5s ease-out;
+	-o-transition: text-shadow, color 0.5s, 0.5s ease-out;
+	text-shadow: 0 0 0 rgba(0,0,0,0.0);
 	text-decoration: none;
 	font-size: 22px;
 }
-	a.SocialLinks:hover {
-		text-shadow: 0 0 7px rgba(0,0,0,0.3);
+	.SocialLinks a:hover, .SocialLinksDesktop a:hover, .SocialLinksMobile a:hover {
+		text-shadow: 0 0 10px rgba(0,0,0,0.75);
 		color: #8d8d8d;	
 	}
 	
-	a.SocialLinks:active {
-		text-shadow: 0 0 20px rgba(0,0,0,0.5);
+	.SocialLinks a:active, .SocialLinksDesktop a:active, .SocialLinksMobile a:active {
+		text-shadow: 0 0 7px rgba(0,0,0,0.75);
 		color: #606060;
 	}
 	
@@ -198,16 +189,11 @@ a.SocialLinks {
 	
 	#email:after {
 		transition: all 0.5s ease-out;
-		transition: color 0.5s ease-out;
-		-webkit-transition: color 0.5s ease-out;
-		-moz-transition: color 0.5s ease-out;
-		-ms-transition: color 0.5s ease-out;
-		-o-transition: color 0.5s ease-out;
-		transition: text-shadow 0.5s ease-out;
-		-webkit-transition: text-shadow 0.5s ease-out;
-		-moz-transition: text-shadow 0.5s ease-out;
-		-ms-transition: text-shadow 0.5s ease-out;
-		-o-transition: text-shadow 0.5s ease-out;
+		transition: text-shadow, color 0.5s ease-out;
+		-webkit-transition: text-shadow, color 0.5s ease-out;
+		-moz-transition: text-shadow, color 0.5s ease-out;
+		-ms-transition: text-shadow, color 0.5s ease-out;
+		-o-transition: text-shadow, color 0.5s ease-out;
 		position: relative;
 		left: 0;
 		top: 0;
@@ -391,34 +377,43 @@ li {
 	font-size: 38px;
 }
 
-ul.SocialLinks {
-	margin: 2% 0 3% 0;
+.AllSocialLinks {
+	margin: 5% auto 2% auto;
+	text-align: center;
 }
 
-li.SocialLinks {
+li.SocialLinksDesktop, li.SocialLinksMobile {
+	display: inline;
+	line-height: 3.5em;
+}
+
+li.SocialLinksDesktop {
+	display: none;
+}
+
+li.SocialLinksMobile {
 	display: inline;
 }
 
-a.SocialLinks {
+.SocialLinks a, .SocialLinksDesktop a, .SocialLinksMobile a {
 	color: #009BCD;
+	text-shadow: 0 0 0 rgba(0,0,0,0);
 	text-decoration: none;
-	font-size: 38px;
-	border-bottom: none;
+	font-size: 42px;
 }
-
-	a.SocialLinks:hover {
+	.SocialLinks a:hover, .SocialLinksDesktop a:hover, .SocialLinksMobile a:hover {
 		text-shadow: none;
-		color: inherit;	
+		color: #009BCD;	
 	}
 	
-	a.SocialLinks:active {
+	.SocialLinks a:active, .SocialLinksDesktop a:active, .SocialLinksMobile a:active {
 		text-shadow: none;
-		color: inherit;
+		color: #009BCD;
 	}
 	
 	#email:hover {
 		text-shadow: none;
-		color: inherit;
+		color: #009BCD;
 	}
 	
 	#email:hover:after {
@@ -429,7 +424,7 @@ a.SocialLinks {
 	
 	#email:active{
 		text-shadow: none;
-		color: inherit;
+		color: #009BCD;
 	}
 	
 	#email:active:after {
@@ -448,7 +443,7 @@ a.SocialLinks {
 
 	<div class="content">
 
-	<h1>Daheq</h1>
+	<h1>Daheq&#8253;</h1>
 	
 	<div id="navbar">
 		<ul>
@@ -464,13 +459,17 @@ a.SocialLinks {
 	
 	<div class="divider"></div>
 	
-		<ul class="SocialLinks">
-			<li class="SocialLinks"><a href="http://scotthsmith.com/Twitter.html" class="SocialLinks" id="Twitter">Twitter</a></li>
-			<li class="SocialLinks"><a href="http://scotthsmith.com/Facebook.html" class="SocialLinks" id="Facebook">Facebook</a></li>
-			<li class="SocialLinks"><a href="http://plus.google.com/u/1/106066907456293991070/" class="SocialLinks" id="Google+">Google+</a></li>
-			<li class="SocialLinks"><a href="http://thefancy.com/ScottSmith" class="SocialLinks" id="Google+">Fancy</a></li>
-			<li class="SocialLinks"><a href="http://github.com/ScottSmith95" class="SocialLinks" id="GitHub">GitHub</a></li>
-			<li class="SocialLinks"><a href="mailto:mail@ScottHSmith.com" class="SocialLinks" id="email">Email</a></li>
+		<ul class="AllSocialLinks">
+			<li class="SocialLinksDesktop"><a href="http://twitter.com/ScottSmith95" class="SocialDesktop" id="TwitterDesktop">Twitter</a></li>
+			<li class="SocialLinksMobile"><a href="http://scotthsmith.com/Twitter" class="SocialMobile" id="TwitterMobile">Twitter</a></li>
+			<li class="SocialLinksDesktop"><a href="http://facebook.com/ScottSmith95" class="SocialDesktop" id="FacebookDesktop">Facebook</a></li>
+			<li class="SocialLinksMobile"><a href="http://scotthsmith.com/Facebook" class="SocialMobile" id="FacebookMobile">Facebook</a></li>
+			<li class="SocialLinksDesktop"><a href="https://alpha.app.net/scottsmith" class="SocialDesktop" id="App-NetDesktop">App.net</a></li>
+			<li class="SocialLinksMobile"><a href="http://ScottHSmith.com/App-Net" class="SocialMobile" id="App-NetMobile">App.net</a></li>
+			<li class="SocialLinks"><a href="http://plus.google.com/u/1/106066907456293991070/" class="SocialLink" id="Google+">Google+</a></li>
+			<li class="SocialLinks"><a href="http://thefancy.com/ScottSmith" class="SocialLink" id="Google+">Fancy</a></li>
+			<li class="SocialLinks"><a href="http://github.com/ScottSmith95" class="SocialLink" id="GitHub">GitHub</a></li>
+			<li class="SocialLinks"><a href="mailto:mail@ScottHSmith.com" class="SocialLink" id="email">Email</a></li>
 		</ul>
 	
 	</div>
