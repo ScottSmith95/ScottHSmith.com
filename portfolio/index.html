@@ -103,13 +103,13 @@ padding-top:15px;
 }
 
 .permalink a {
-color: #333;
+color: #444;
 border-bottom: 1px dotted #333;
 font-size: 11px;
 }
 
 .permalink a:hover {
-color: #009bcd;
+color: #009BCD;
 border-bottom: 1px solid #009bcd;
 }
 
@@ -139,18 +139,6 @@ padding: 60px 20px;
 border: 1px solid #222;
 }
 
-.video .caption {
-padding-top: 10px;
-}
-
-.quotetext {
-font-size: 22px;
-font-family: Helvetica, Arial, sans-serif;
-line-height: 22px;
-padding-bottom: 11px;
-color: #009bcd;
-}
-
 .source {
 font-family: Helvetica, Arial, sans-serif;
 font-size: 11px;
@@ -160,16 +148,6 @@ color: #666;
 
 .caption {
 line-height: 18px;
-}
-
-.conversation ul li {
-line-height: 18px;
-border-bottom: 1px dotted #222;
-padding: 3px 0 3px 0px;
-}
-
-.conversation ul li span {
-color: #009bcd;
 }
 
 .even {
@@ -183,30 +161,29 @@ padding: 0 0 5px 0
 }
 
 a {
-transition: color 0.3s ease-out;
--webkit-transition: color 0.3s ease-out;
--moz-transition: color 0.3s ease-out;
--ms-transition: color 0.3s ease-out;
--o-transition: color 0.3s ease-out;
-color: #009bcd;
+-webkit-transition: text-shadow, color 0.5s, 0.5s ease-out;
+-moz-transition: text-shadow, color 0.5s, 0.5s ease-out;
+-ms-transition: text-shadow, color 0.5s, 0.5s ease-out;
+-o-transition: text-shadow, color 0.5s, 0.5s ease-out;
+transition: text-shadow, color 0.5s, 0.5s ease-out;
+color: #444;
+text-shadow: 0 0 0 rgba(0,0,0,0);
 text-decoration: none;
 }
 
 a:hover {
-color: #8d8d8d;
+color: #009BCD;
+text-shadow: 1px 1px 10px rgba(0,0,0,0.75);
+}
+
+a:active {
+text-shadow: 1px 1px 7px rgba(0,0,0,0.75);
+color: #0086B2;
 }
 
 p {
 line-height: 18px;
 margin-bottom: 9px;
-}
-
-.photo strong, .photo b, .video strong, .video b, .audio strong, .audio b{
-font-family: Helvetica, Arial, sans-serif;
-font-weight: normal;
-font-size: 17px;
-line-height: 18px;
-color: #009bcd;
 }
 
 h1 {
@@ -238,11 +215,11 @@ width: 297px;
 }
 
 #header h1 a {
-transition: color 0.5s ease-out;
--webkit-transition: color 0.5s ease-out;
--moz-transition: color 0.5s ease-out;
--ms-transition: color 0.5s ease-out;
--o-transition: color 0.5s ease-out;
+-webkit-transition: text-shadow, color 0.5s, 0.5s ease-out;
+-moz-transition: text-shadow, color 0.5s, 0.5s ease-out;
+-ms-transition: text-shadow, color 0.5s, 0.5s ease-out;
+-o-transition: text-shadow, color 0.5s, 0.5s ease-out;
+transition: text-shadow, color 0.5s, 0.5s ease-out;
 color:#444444;
 font-weight:bold;
 border: 0;
@@ -252,14 +229,19 @@ line-height: 36px;
 }
 
 #header h1 a:hover {
-color: #8D8D8D;
+text-shadow: 0 0 10px rgba(0,0,0,0.75);
 }
 
-#header h2 {transition: color 0.3s ease-out;
-    -webkit-transition: color 0.3s ease-out;
-	-moz-transition: color 0.3s ease-out;
-	-ms-transition: color 0.3s ease-out;
-	-o-transition: color 0.3s ease-out;
+#header h1 a:active {
+text-shadow: 0px -2px 8px rgba(0,0,0,0.75);
+}
+
+#header h2 {
+-webkit-transition: color 0.3s ease-out;
+-moz-transition: color 0.3s ease-out;
+-ms-transition: color 0.3s ease-out;
+-o-transition: color 0.3s ease-out;
+transition: color 0.3s ease-out;
 color:#009BCD;
 font: normal 1.2em/1.8 Helvetica, Arial, sans-serif;
 margin-left:5px;
@@ -504,7 +486,7 @@ color: #009bcd;
         				<div class="photo">
         					<div class="photobox"><a href="http://OnetoOneHelp.com"><img src="http://ScottHSmith.com/portfolio/images/OnetoOneHelp.png" alt="One to One Help was a website&nbsp;I&nbsp;created with Derek Duncan. It highlights my first major foray into web development and design.&nbsp;"/></a></div>    
                             
-        						<div class="caption"><p>One to One Help was a website I created with <a href="http://twitter.com/DerekDuncan96">Derek Duncan</a>. It highlights my first major foray into web development and design. </p></div>
+        						<div class="caption"><p>One to One Help was a website I created with <a href="http://DerekDuncan.me">Derek Duncan</a>. It highlights my first major foray into web development and design. </p></div>
                             
         				</div>
                     
