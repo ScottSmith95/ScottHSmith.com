@@ -25,7 +25,14 @@
 
 <meta property="og:image" content="http://www.ScottHSmith.com/images/ScottPic.png"/>
 
+<script>
+if(window.navigator && window.navigator.loadPurpose === "preview"){
+    window.location.href = "http://scotthsmith.com/Safari-Preview/index.html"
+};
+</script>
+
 <style type="text/css">
+
 body {
 	background: #E3E5E8;
 }
@@ -35,6 +42,67 @@ body {
 	}
 ::-moz-selection {
 	background: #72BDE2;
+}
+
+@-webkit-keyframes fly-in-from-top {
+	0% {top: -1500px; opacity: 0;}
+	30% {top: -275px; opacity: 0;}
+	100%{top: 0px; opacity: 1;}
+}
+			
+@-moz-keyframes fly-in-from-top {
+	0% {top: -1500px; opacity: 0;}
+	30% {top: -275px; opacity: 0;}
+	100%{top: 0px; opacity: 1;}
+}
+
+@-ms-keyframes fly-in-from-top {
+	0% {top: -1500px; opacity: 0;}
+	30% {top: -275px; opacity: 0;}
+	100%{top: 0px; opacity: 1;}
+}
+
+@keyframes fly-in-from-top {
+	0% {top: -1500px; opacity: 0;}
+	30% {top: -275px; opacity: 0;}
+	100%{top: 0px; opacity: 1;}
+}
+
+@-webkit-keyframes fly-in-from-bottom {
+	0% {top: 1500px; opacity: 0;}
+	30% {top: 275px; opacity: 0;}
+	100%{top: 0px; opacity: 1;}
+}
+			
+@-moz-keyframes fly-in-from-bottom {
+	0% {top: 1500px; opacity: 0;}
+	30% {top: 275px; opacity: 0;}
+	100%{top: 0px; opacity: 1;}
+}
+
+@-ms-keyframes fly-in-from-bottom {
+	0% {top: 1500px; opacity: 0;}
+	30% {top: 275px; opacity: 0;}
+	100%{top: 0px; opacity: 1;}
+}
+
+@keyframes fly-in-from-bottom {
+	0% {top: 1500px; opacity: 0;}
+	30% {top: 275px; opacity: 0;}
+	100%{top: 0px; opacity: 1;}
+}
+
+#animated {
+	-webkit-animation: fly-in-from-bottom 1.25s ease-in-out;
+	-moz-animation: fly-in-from-bottom 1.25s ease-in-out;
+	-ms-animation: fly-in-from-bottom 1.25s ease-in-out;
+	animation: fly-in-from-bottom 1.25s ease-in-out;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	opacity: 0;
+	position: relative;
 }
 
 h1 {
@@ -90,6 +158,16 @@ a {
 	border-radius: 15px;
 	display: block;
 	margin: 2% auto 0 auto;
+	-webkit-animation: fly-in-from-top 1.25s ease-in-out;
+	-moz-animation: fly-in-from-top 1.25s ease-in-out;
+	-ms-animation: fly-in-from-top 1.25s ease-in-out;
+	animation: fly-in-from-top 1.25s ease-in-out;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	opacity: 0;
+	position: relative;
 }
 
 #navbar {
@@ -272,7 +350,7 @@ h1 {
     height: 325px;
     border-radius: 35px;
 	display: block;
-	margin: 2% auto 0 auto;
+	margin: 5% auto 0 auto;
 }
 
 
@@ -315,7 +393,7 @@ li {
 
 #navdivider {
 	border-bottom: 2px solid #009BCD;
-	margin: 0 29%;
+	margin: 0 26%;
 }
 
 .content {
@@ -386,7 +464,7 @@ li.SocialLinksMobile {
 
 	<div id="headerpic"> </div>
 
-
+	<div id="animated">
 	<h1>Scott Smith</h1>
 	
 	<div id="navbar">
@@ -415,7 +493,7 @@ li.SocialLinksMobile {
 			<li class="SocialLinks"><a href="http://github.com/ScottSmith95" class="SocialLink" id="GitHub">GitHub</a></li>
 			<li class="SocialLinks"><a href="mailto:mail@ScottHSmith.com" class="SocialLink" id="email">Email</a></li>
 		</ul>
-	
+	</div>
 </body>
 
 </html>
