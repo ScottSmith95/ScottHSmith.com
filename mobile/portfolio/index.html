@@ -2,25 +2,15 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Portfolio</title>
+	<meta name="Description" content="Scott Smith is an opinionated technology follower and blogger, and always learning."/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta property="og:title" content="Scott Smith"/>
+	<meta property="og:url" content="http://ScottHSmith.com" />
+	<meta property="og:image" content="http://www.ScottHSmith.com/images/ScottPic.png"/>
+    <title>Scott Smith | Portfolio</title>        
+    <link rel="shortcut icon" href="http://www.ScottHSmith.com/images/Slash.png"/>
     <meta name="viewport" content="width=640"/>
-    <link rel="shortcut icon" href="http://24.media.tumblr.com/avatar_af5bccbc5c70_16.png" />
-    <link rel="apple-touch-icon-precomposed" href="http://25.media.tumblr.com/avatar_af5bccbc5c70_128.png"/>
     <meta name="description" content="&lt; back" />
-    <script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-33936718-1']);
-  _gaq.push(['_setDomainName', 'scotthsmith.com']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-  	</script>
     <style type="text/css">
         html {
             width: 640px;
@@ -34,16 +24,11 @@
             padding: 0;
             background: #E3E5E8;
             font-family: Helvetica, Arial, sans-serif;
+            
         }
 
         .clear {
             clear: both;
-        }
-
-        iframe#tumblr_controls {
-            position: absolute;
-            top: 51px !important;
-            right: 40px !important;
         }
 
         a {
@@ -51,6 +36,69 @@
             color: inherit;
             word-wrap: break-word;
         }
+
+		@-webkit-keyframes fly-in-from-top {
+			0% {top: -1500px; opacity: 0;}
+			30% {top: -250px; opacity: 0;}
+			100%{top: 0px; opacity: 1;}
+		}
+					
+		@-moz-keyframes fly-in-from-top {
+			0% {top: -1500px; opacity: 0;}
+			30% {top: -250px; opacity: 0;}
+			100%{top: 0px; opacity: 1;}
+		}
+		
+		@-ms-keyframes fly-in-from-top {
+			0% {top: -1500px; opacity: 0;}
+			30% {top: -250px; opacity: 0;}
+			100%{top: 0px; opacity: 1;}
+		}
+		
+		@keyframes fly-in-from-top {
+			0% {top: -1500px; opacity: 0;}
+			30% {top: -250px; opacity: 0;}
+			100%{top: 0px; opacity: 1;}
+		}
+        
+		#first {
+			-webkit-animation: fly-in-from-top 1.25s ease-in-out 1s;
+			-moz-animation: fly-in-from-top 1.25s ease-in-out 1s;
+			-ms-animation: fly-in-from-top 1.25s ease-in-out 1s;
+			animation: fly-in-from-top 1.25s ease-in-out 1s;
+			-webkit-animation-fill-mode: forwards;
+			-moz-animation-fill-mode: forwards;
+			-ms-animation-fill-mode: forwards;
+			animation-fill-mode: forwards;
+			opacity: 0;
+			position: relative;
+		}
+		
+		#second {
+			-webkit-animation: fly-in-from-top 1.25s ease-in-out 1.3s;
+			-moz-animation: fly-in-from-top 1.25s ease-in-out 1.3s;
+			-ms-animation: fly-in-from-top 1.25s ease-in-out 1.3s;
+			animation: fly-in-from-top 1.25s ease-in-out 1.3s;
+			-webkit-animation-fill-mode: forwards;
+			-moz-animation-fill-mode: forwards;
+			-ms-animation-fill-mode: forwards;
+			animation-fill-mode: forwards;
+			opacity: 0;
+			position: relative;
+		}
+		
+		#third {
+			-webkit-animation: fly-in-from-top 1.25s ease-in-out 1.6s;
+			-moz-animation: fly-in-from-top 1.25s ease-in-out 1.6s;
+			-ms-animation: fly-in-from-top 1.25s ease-in-out 1.6s;
+			animation: fly-in-from-top 1.25s ease-in-out 1.6s;
+			-webkit-animation-fill-mode: forwards;
+			-moz-animation-fill-mode: forwards;
+			-ms-animation-fill-mode: forwards;
+			animation-fill-mode: forwards;
+			opacity: 0;
+			position: relative;
+		}
         
         .gray_bubble {
             /* text-shadow: 0px 2px 5px rgba(0,0,0,.3);
@@ -60,6 +108,16 @@
                                 0 2px 0 rgba(255,255,255,0.14); */
             margin: 10px 20px 0px 20px;
             -webkit-font-smoothing: antialiased;
+            -webkit-animation: fly-in-from-top 1.25s ease-in-out;
+			-moz-animation: fly-in-from-top 1.25s ease-in-out;
+			-ms-animation: fly-in-from-top 1.25s ease-in-out;
+			animation: fly-in-from-top 1.25s ease-in-out;
+			-webkit-animation-fill-mode: forwards;
+			-moz-animation-fill-mode: forwards;
+			-ms-animation-fill-mode: forwards;
+			animation-fill-mode: forwards;
+			opacity: 0;
+			position: relative;
         }
         
         header {
@@ -103,40 +161,6 @@
                         margin: 0px;
                     }
             
-                header .info .body .show {
-                    width: 120px;
-                    height: 30px;
-                    text-align: right;
-                    background: #38393b;
-                    padding: 0 0 5px 0;
-                    position: absolute;
-                    right: 0;
-                    bottom: 0;
-                }    
-
-                    header .info.showing .body .show {
-                        width: 24px;
-                        right: -10px;
-                        bottom: -16px;
-                    }
-            
-                    header .info .body .show a {
-                        font-weight: bold;
-                    }
-                    
-                    header .info .body .show .gradient {
-                        width: 100px;
-                        height: 36px;
-                        background: url('http://static.tumblr.com/thpaaos/42wlbflin/gradient.png');
-                        display: block;
-                        position: absolute;
-                        top: 0;
-                        left: -100px;
-                    }
-                    
-                        header .info.showing .body .show .gradient {
-                            display: none;
-                        }
 
         .bubble {
             display: block;
@@ -154,6 +178,10 @@
                 margin-top: 10px;
             }
 
+            #posts {
+	            margin-bottom: 4%;
+            }
+            
             .bubble .top {
            /*     background: url('http://assets.tumblr.com/images/iphone/tumblelog_retina/content_top.png') top left repeat-y transparent; */
                 width: 608px;
@@ -495,49 +523,7 @@
                             font-weight: bold;
                             color: #303132;
                         }
-                        
-                        .bubble .content ol.notes li.like {
-                            background: url('http://assets.tumblr.com/images/iphone/tumblelog_retina/note_like.png') 546px 27px no-repeat;
-                        }
-                    
-                        .bubble .content ol.notes li.reblog {
-                            background: url('http://assets.tumblr.com/images/iphone/tumblelog_retina/note_reblog.png') 546px 24px no-repeat;
-                        }
-                    
-                        .bubble .content ol.notes li.answer {
-                            background: url('http://assets.tumblr.com/images/iphone/tumblelog_retina/note_answer.png') 550px 22px no-repeat;
-                        }
-                    
-                        .bubble .content ol.notes li.facebook_comment {
-                            background: url('http://assets.tumblr.com/images/note_facebook_2.png') 544px 24px no-repeat;
-                        }
-                    
-                        .bubble .content ol.notes li.photo,
-                        .bubble .content ol.notes li.reply {
-                            background: url('http://assets.tumblr.com/images/iphone/tumblelog_retina/note_reply.png') 544px 24px no-repeat;
-                        }
-
-                        .bubble .content ol.notes a.more_notes_link {
-                            font-weight: bold;
-                        }
             
-            .bubble .bottom {
-              /*  background: url('http://assets.tumblr.com/images/iphone/tumblelog_retina/content_bottom.png') -1px 0 repeat-y transparent; */
-                width: 608px;
-                height: 38px;
-                margin: 0 auto;
-            }
-            
-                .bubble.description .bottom {
-                    height: 102px;
-                    background-image: url('http://static.tumblr.com/thpaaos/lXDlb08n9/description_bottom.png');
-                }
-                
-                .bubble.permalink .bottom {
-                    height: 59px;
-                    background-image: url('http://static.tumblr.com/thpaaos/IyXlb0h5q/permalink_bottom.png');
-                }
-
         .load {
             color: #d8d8d8;
             font-size: 42px;
@@ -552,167 +538,7 @@
                 margin-right: 20px;
             }
             
-        .links {
-            margin: 30px;
-            overflow: hidden;
-        }
-        
-            .links a {
-                color: #009BCD;
-                font-size: 26px;
-                text-shadow: 0px 2px 5px rgba(0,0,0,.3);
-                float: right;
-            }
-
-                .links a:first-child {
-                    float: left;
-                }
-
-        body.android .gray_bubble,
-        body.android .audio_player a.play.is_playing,
-        body.android .audio_player img.cover
-         {
-            -webkit-box-shadow: none !important;
-        }
     </style>
-    <script type="text/javascript" charset="utf-8">
-        setTimeout(function() { window.scrollTo(0,1) }, 100);
-                
-        function microAjax(B,A) {
-            this.bindFunction = function(E,D){
-                return function(){
-                    return E.apply(D,[D])
-                }
-            };
-
-            this.stateChange = function(D){
-                if (this.request.readyState == 4) {
-                    this.callbackFunction(this.request.responseText);
-                }
-            };
-
-            this.getRequest = function(){
-                if (window.ActiveXObject) {
-                    return new ActiveXObject("Microsoft.XMLHTTP");
-                } else {
-                    if (window.XMLHttpRequest) {
-                        return new XMLHttpRequest();
-                    }
-                }
-
-                return false;
-            };
-
-            this.postBody = (arguments[2] || '');
-            this.callbackFunction = A;
-            this.url = B;
-            this.request = this.getRequest();
-
-            if (this.request) {
-                var C = this.request;
-                C.onreadystatechange = this.bindFunction(this.stateChange, this);
-
-                if (this.postBody !== '') {
-                    C.open("POST", B, true);
-                    C.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-                    C.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                    C.setRequestHeader("Connection", "close");
-                } else {
-                    C.open("GET", B, true);
-                }
-
-                C.send(this.postBody);
-            }
-        }
-        
-        function $(id) {
-            return document.getElementById(id);
-        }
-        
-        var loading_next_page = false;
-        var next_page = 1;
-        var current_url;
-                
-        function load_more_posts() {
-            if (loading_next_page) return;
-            loading_next_page = true;
-            
-            $('load_more').style.display = 'none';
-            $('loading_more').style.display = 'block';
-            
-            if (! current_url) current_url = document.location.href;
-            if (current_url.charAt(current_url.length - 1) != '/') current_url += '/';
-
-            if (next_page === 1) current_url += 'page/1';
-            
-            current_url = current_url.replace('page/' + next_page, 'page/' + ++next_page);
-            
-            microAjax(current_url, function(res) {
-                $('posts').innerHTML += res.split('<!-- START' + ' POSTS -->')[1].split('<!-- END' + ' POSTS -->')[0];
-                $('loading_more').style.display = 'none';
-                $('load_more').style.display = 'block';
-                loading_next_page = false;
-            });
-        }
-        
-        function show_notes(post_id, notes_url) {
-            if ($('notes_' + post_id).innerHTML == '') {
-                var old_innerHTML =  $('show_notes_' + post_id).innerHTML;
-                $('show_notes_' + post_id).innerHTML = 'Loading notes...';
-                
-                microAjax(notes_url, function(res) {
-                    $('show_notes_' + post_id).innerHTML = old_innerHTML;
-                    
-                    $('notes_' + post_id).innerHTML = res;
-                    $('notes_container_' + post_id).style.display = 'inherit';
-                    
-                    $('show_notes_' + post_id).style.display = 'none';
-                    $('hide_notes_' + post_id).style.display = 'inherit';
-                });
-            } else {
-                $('notes_container_' + post_id).style.display = 'inherit';
-                
-                $('show_notes_' + post_id).style.display = 'none';
-                $('hide_notes_' + post_id).style.display = 'inherit';
-            }
-        }
-        
-        function hide_notes(post_id) {
-            $('show_notes_' + post_id).style.display = 'inherit';
-            $('hide_notes_' + post_id).style.display = 'none';
-            $('notes_container_' + post_id).style.display = 'none';
-        }
-        
-        function play_audio(post_id) {
-            var audio = $('audio_file_' + post_id);
-            
-            if (audio.paused) {
-                audio.play();
-                $('play_button_' + post_id).className = 'play is_playing';
-            } else {
-                audio.pause();
-                $('play_button_' + post_id).className = 'play';
-            }
-        };
-        
-        var showing_info = 0;        
-
-        function show_more_info() {
-            if (showing_info == 0) {
-                $('show_more_info_link').innerHTML = 'X';
-                $('info_container').className = 'info showing';
-                showing_info = 1;
-            } else {
-                $('show_more_info_link').innerHTML = 'Show all';
-                $('info_container').className = 'info';
-                showing_info = 0;
-            }
-        }
-        
-        function strip_anchors(input) {
-            return input.replace(/<a /g, '<u ').replace(/<\/a>/g, '<\/u>');
-        }
-    </script>
 <meta http-equiv="x-dns-prefetch-control" content="off"/></head>
 <body>
  
@@ -737,23 +563,14 @@
     <div id="posts">
         <!-- START POSTS -->
         
-            <div class="bubble">
+            <div class="bubble" id="first">
                 <div class="top"></div>
-                <div class="content">
-
-                    
-
-                    
-                        <a href="http://24.media.tumblr.com/tumblr_m8f4ncTPuF1rdrzl3o1_1280.png"><a href="http://TenSentPistol.com"><img src="http://24.media.tumblr.com/tumblr_m8f4ncTPuF1rdrzl3o1_500.png" alt="In my first paid job, I created Ten Sent Pistol&amp;#8217;s website from scratch." class="photo" /></a></a>
+                	<div class="content">
+	                	<a href="http://TenSentPistol.com"><img src="http://ScottHSmith.com/portfolio/images/TenSentPistol.png" alt="In my first paid job, I created Ten Sent Pistol&amp;#8217;s website from scratch." class="photo" /></a>
                         
                             <div class="copy">
                                 <p>In my first paid job, I created Ten Sent Pistol&#8217;s website from scratch.</p>
                             </div>
-                    
-                        <a class="date" href="http://portfolio.scotthsmith.com/post/28959117778/in-my-first-paid-job-i-created-ten-sent-pistols" >
-                            3 weeks ago
-                        </a>
-                    
                     
 <!--IF DISQUS---
                     <a href="http://portfolio.scotthsmith.com/post/28959117778/in-my-first-paid-job-i-created-ten-sent-pistols#disqus_thread" class="note_count" style="padding-left:6px;">Comments</a>
@@ -771,23 +588,14 @@
             
             
         
-            <div class="bubble">
+            <div class="bubble" id="second">
                 <div class="top"></div>
                 <div class="content">
-
-                    
-
-                    
-                        <a href="http://25.media.tumblr.com/tumblr_m8jssup2hj1rdrzl3o1_r2_1280.png"><a href="http://BeyondTheCo.de"><img src="http://25.media.tumblr.com/tumblr_m8jssup2hj1rdrzl3o1_r2_500.png" alt="Beyond The Code, my own personal blog, represents a different sort of web development. In this case,&nbsp;I&nbsp;had to read and comprehend another person&rsquo;s HTML and CSS, while also understanding how Tumblr themes work.&nbsp;I&nbsp;tweaked the theme and updated icons for retina displays. Lastly,&nbsp;I&nbsp;also learned how to use Git." class="photo" /></a></a>
+                        <a href="http://BeyondTheCo.de"><img src="http://ScottHSmith.com/portfolio/images/BeyondTheCode.png" alt="Beyond The Code, my own personal blog, represents a different sort of web development. In this case,&nbsp;I&nbsp;had to read and comprehend another person&rsquo;s HTML and CSS, while also understanding how Tumblr themes work.&nbsp;I&nbsp;tweaked the theme and updated icons for retina displays. Lastly,&nbsp;I&nbsp;also learned how to use Git." class="photo" /></a>
                         
                             <div class="copy">
                                 <p>Beyond The Code, my own personal blog, represents a different sort of web development. In this case, I had to read and comprehend another person’s HTML and CSS, while also understanding how Tumblr themes work. I tweaked the theme and updated icons for retina displays. Lastly, I also learned how to use Git.</p>
                             </div>
-                    
-                        <a class="date" href="http://portfolio.scotthsmith.com/post/29130201997/beyond-the-code-my-own-personal-blog-represents" >
-                            1 month ago
-                        </a>
-                    
                     
 <!--IF DISQUS---
                     <a href="http://portfolio.scotthsmith.com/post/29130201997/beyond-the-code-my-own-personal-blog-represents#disqus_thread" class="note_count" style="padding-left:6px;">Comments</a>
@@ -805,26 +613,14 @@
             
             
         
-            <div class="bubble">
+            <div class="bubble" id="third">
                 <div class="top"></div>
                 <div class="content">
-
-                    
-
-                    
-                        <a href="http://25.media.tumblr.com/tumblr_m8f7zhoXHG1rdrzl3o1_1280.png"><a href="http://OnetoOneHelp.com"><img src="http://25.media.tumblr.com/tumblr_m8f7zhoXHG1rdrzl3o1_500.png" alt="One to One Help was a website&nbsp;I&nbsp;created with Derek Duncan. It highlights my first major foray into web development and design.&nbsp;" class="photo" /></a></a>
+                        <a href="http://OnetoOneHelp.com"><img src="http://ScottHSmith.com/portfolio/images/OnetoOneHelp.png" alt="One to One Help was a website&nbsp;I&nbsp;created with Derek Duncan. It highlights my first major foray into web development and design.&nbsp;" class="photo" /></a>
                         
                             <div class="copy">
                                 <p>One to One Help was a website I created with <a href="http://twitter.com/DerekDuncan96">Derek Duncan</a>. It highlights my first major foray into web development and design. </p>
                             </div>
-
-                    
-                        <a class="date" href="http://portfolio.scotthsmith.com/post/28963501416/one-to-one-help-was-a-website-i-created-with-derek" >
-                            3 months ago
-                        </a>
-                    
-             </div>
-    
      
 </body>
 </html>

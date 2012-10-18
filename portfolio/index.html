@@ -15,22 +15,8 @@
 
         <!-- iPhone -->
         <meta name="viewport" content="width=860"/>
-        <link rel="apple-touch-icon-precomposed" href="/images/ScottPic.png"/>
+        <link rel="apple-touch-icon-precomposed" href="http://scotthsmith.com/images/ScottPic.png"/>
                
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-33936718-1']);
-  _gaq.push(['_setDomainName', 'scotthsmith.com']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
 	<script type="text/javascript">
 		<!--
 		if (screen.width <= 699) {
@@ -53,6 +39,82 @@ font-family: Helvetica, Arial, sans-serif;
 font-size: 12px;
 color:#555;
 text-align: center;
+}
+
+#header {
+	-webkit-animation: fly-in-from-top 1.25s ease-in-out;
+	-moz-animation: fly-in-from-top 1.25s ease-in-out;
+	-ms-animation: fly-in-from-top 1.25s ease-in-out;
+	animation: fly-in-from-top 1.25s ease-in-out;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	opacity: 0;
+	position: relative;
+}
+
+@-webkit-keyframes fly-in-from-top {
+	0% {top: -1500px; opacity: 0;}
+	30% {top: -250px; opacity: 0;}
+	100%{top: 0px; opacity: 1;}
+}
+			
+@-moz-keyframes fly-in-from-top {
+	0% {top: -1500px; opacity: 0;}
+	30% {top: -250px; opacity: 0;}
+	100%{top: 0px; opacity: 1;}
+}
+
+@-ms-keyframes fly-in-from-top {
+	0% {top: -1500px; opacity: 0;}
+	30% {top: -250px; opacity: 0;}
+	100%{top: 0px; opacity: 1;}
+}
+
+@keyframes fly-in-from-top {
+	0% {top: -1500px; opacity: 0;}
+	30% {top: -250px; opacity: 0;}
+	100%{top: 0px; opacity: 1;}
+}
+
+#first {
+	-webkit-animation: fly-in-from-top 1.25s ease-in-out 1s;
+	-moz-animation: fly-in-from-top 1.25s ease-in-out 1s;
+	-ms-animation: fly-in-from-top 1.25s ease-in-out 1s;
+	animation: fly-in-from-top 1.25s ease-in-out 1s;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	opacity: 0;
+	position: relative;
+}
+
+#second {
+	-webkit-animation: fly-in-from-top 1.25s ease-in-out 1.3s;
+	-moz-animation: fly-in-from-top 1.25s ease-in-out 1.3s;
+	-ms-animation: fly-in-from-top 1.25s ease-in-out 1.3s;
+	animation: fly-in-from-top 1.25s ease-in-out 1.3s;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	opacity: 0;
+	position: relative;
+}
+
+#third {
+	-webkit-animation: fly-in-from-top 1.25s ease-in-out 1.6s;
+	-moz-animation: fly-in-from-top 1.25s ease-in-out 1.6s;
+	-ms-animation: fly-in-from-top 1.25s ease-in-out 1.6s;
+	animation: fly-in-from-top 1.25s ease-in-out 1.6s;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	opacity: 0;
+	position: relative;
 }
 
 #container {
@@ -79,7 +141,6 @@ overflow: hidden;
 border-bottom-width: 1px;
 border-bottom-style: dashed;
 border-bottom-color: #009DCF;
-
 
 }
 
@@ -209,6 +270,8 @@ border-bottom: 1px solid #009DCF;
 margin-bottom:25px;
 
 }
+
+
 
 #header h1 {
 width: 297px;
@@ -396,8 +459,6 @@ color: #009bcd;
 }
 
 .query { font-weight: bold; }
-
-
 </style>
 
     <!--[if IE]>
@@ -436,11 +497,7 @@ color: #009bcd;
 					
 					
             
-        		<div class="post">
-        			
-                
-                    
-        			    <div class="permalink">8.07.12</div>
+        		<div class="post" id="first">
         				<div class="photo">
         					<div class="photobox"><a href="http://TenSentPistol.com"><img src="http://ScottHSmith.com/portfolio/images/TenSentPistol.png" alt="In my first paid job, I created Ten Sent Pistol&amp;#8217;s website from scratch."/></a></div>    
                             
@@ -449,40 +506,18 @@ color: #009bcd;
         				</div>
                 </div>
 		
-        		<div class="meta">
-            		<div class="metabox">
-                		<p><span>posted :</span> Tuesday, August 7th, 2012</p>
-                		<p><span>tags :</span> </p>
-                		
-            		</div>
-        	    </div>
             
-        		<div class="post">
-        			
-                
-                    
-        			    <div class="permalink">7.10.12</div>
+        		<div class="post" id="second">
         				<div class="photo">
         					<div class="photobox"><a href="http://BeyondTheCo.de"><img src="http://ScottHSmith.com/portfolio/images/BeyondTheCode.png" alt="Beyond The Code, my own personal blog, represents a different sort of web development. In this case,&nbsp;I&nbsp;had to read and comprehend another person&rsquo;s HTML and CSS, while also understanding how Tumblr themes work.&nbsp;I&nbsp;tweaked the theme and updated icons for retina displays. Lastly,&nbsp;I&nbsp;also learned how to use Git."/></a></div>
                             
-        						<div class="caption"><p>Beyond The Code, my own personal blog, represents a different sort of web development. In this case, I had to read and comprehend another person’s HTML and CSS, while also understanding how Wordpress themes work. I extensively changed the design of the theme and updated icons for retina displays. Lastly, I also learned how to use Git.</p></div>
+        						<div class="caption"><p>Beyond The Code, my own personal blog, represents a different sort of web development. In this case, I had to read and comprehend another person’s HTML and CSS, while also understanding how Wordpress themes work. I extensively changed the design of the theme and updated icons for retina displays. I also learned Git.</p></div>
                             
         				</div>
                 </div>
 		
-        		<div class="meta">
-            		<div class="metabox">
-                		<p><span>posted :</span> Tuesday, July 10th, 2012</p>
-                		<p><span>tags :</span> </p>
-                		
-            		</div>
-        	    </div>
             
-        		<div class="post">
-        			
-                
-                    
-        			    <div class="permalink">5.24.12</div>
+        		<div class="post" id="third">
         				<div class="photo">
         					<div class="photobox"><a href="http://OnetoOneHelp.com"><img src="http://ScottHSmith.com/portfolio/images/OnetoOneHelp.png" alt="One to One Help was a website&nbsp;I&nbsp;created with Derek Duncan. It highlights my first major foray into web development and design.&nbsp;"/></a></div>    
                             
@@ -492,13 +527,6 @@ color: #009bcd;
                     
                 </div>
 		
-        		<div class="meta">
-            		<div class="metabox">
-                		<p><span>posted :</span> Thursday, May 24th, 2012</p>
-                		<p><span>tags :</span> </p>
-                		
-            		</div>
-        	    </div>
             
         
         	<div id="pages">
