@@ -5,13 +5,11 @@
 
 <head>
 
-<title>Scott Smith</title>
+<title>Whoops! 404</title>
 
 <link rel="shortcut icon" href="http://ScottHSmith.com/images/favicon.ico"/>
 
 <link rel="apple-touch-icon-precomposed" href="http://ScottHSmith.com/images/ScottPic.png"/>
-
-<title>Whoops! 404</title>
 
 <meta name="Description" content="Scott Smith is an opinionated technology follower and blogger, and always learning."/>
 
@@ -115,6 +113,7 @@ h1 {
 	font-style: normal;
 	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 	-webkit-margin-after: 0%;
+	color: #444;
 }
 
 #headerpic {
@@ -123,16 +122,14 @@ h1 {
 }
 
 #headerpic img {
-	border-radius: 15px;
-	-moz-border-radius: 15px;
 	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
 	transition: box-shadow 0.5s ease-in-out;
 	-webkit-transition: box-shadow 0.5s ease-in-out;
 	-moz-transition: box-shadow 0.5s ease-in-out;
 	-ms-transition: box-shadow 0.5s ease-in-out;
 	-o-transition: box-shadow 0.5s ease-in-out;
-	display: block;
-	margin: 2% auto 0 auto;
 	-webkit-animation: fly-in-from-top 1.25s ease-in-out;
 	-moz-animation: fly-in-from-top 1.25s ease-in-out;
 	-ms-animation: fly-in-from-bottom 1.25s ease-in-out;
@@ -141,15 +138,17 @@ h1 {
 	-moz-animation-fill-mode: forwards;
 	-ms-animation-fill-mode: forwards;
 	animation-fill-mode: forwards;
+	display: block;
+	margin: 2% auto 0 auto;
 	opacity: 0;
 	position: relative;
 }
 
-#headerpic img:hover {
-	box-shadow: inset 0px -7px 15px rgba(0,0,0,0.75);
+#headerpic a:hover {
+	box-shadow: inset 0px 1px 7px black;
 }
 
-#headerpic img:active {
+#headerpic a:active {
 	box-shadow: inset 0px -12px 17px rgba(0,0,0,0.75);
 }
 
@@ -224,10 +223,10 @@ a {
 	color: #444444;
 	text-align: center;
 	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
-}
-
-.bio {
 	font-size: 22px;
+	margin: 2% 25%;
+	line-height: 1.2em;
+
 }
 
 .AllSocialLinks {
@@ -298,21 +297,15 @@ li.SocialLinksMobile {
 	}
 
 @media screen and (max-width: 1100px) {
-	h1 {
+h1 {
 	margin-top: 20px;
-	text-align: center; 
 	font-size: 34px;
-	font-style: normal;
-	-webkit-margin-after: 0%;
 }
 
-#headerpic {
+#headerpic img {
 	background-size: 225px 225px;
 	width: 225px;
     height: 225px;
-	border-radius: 15px;
-	-moz-border-radius: 15px;
-	-webkit-border-radius: 15px;
 	display: block;
 	margin: 2% auto 0 auto;
 }
@@ -325,16 +318,7 @@ li.SocialLinksMobile {
 	width: 100%;
 }
 
-ul {
-	display: block;
-	list-style-type:none;
-	-webkit-padding-start: 0;
-}
-
 li {
-	display: inline;
-	text-align: center;
-	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 	margin: 0px 10px;
 }
 
@@ -348,17 +332,9 @@ li {
 	margin: 0 37%;
 }
 
-.bio {
-	font-size: 20px;
-}
-
 ul.SocialLinks {
 	margin-top: 2%;
 	margin-bottom: 3%;
-}
-
-li.SocialLinks {
-	display:inline;
 }
 
 a.SocialLinks {
@@ -367,7 +343,7 @@ a.SocialLinks {
 }
 
 @media screen and (max-device-width: 699px) {
-	body {
+body {
 	background: #E3E5E8;
 }
 
@@ -396,7 +372,7 @@ h1 {
 	-webkit-margin-after: 0%;
 }
 
-#headerpic {
+#headerpic img {
 	background-size: 325px 325px;
 	width: 325px;
     height: 325px;
@@ -408,20 +384,10 @@ h1 {
 
 #navbar {
 	margin: 0 auto;
-	clear: both;
-	text-align: center;
 	width: 100%;
 }
 
-ul {
-	display: block;
-	list-style-type:none;
-	-webkit-padding-start: 0;
-}
-
 li {
-	display: inline;
-	text-align: center;
 	margin: 0px 10px;
 }
 
@@ -442,8 +408,6 @@ li {
 		color: inherit;
 	}
 
-
-
 #navdivider {
 	border-bottom: 2px solid #009BCD;
 	margin: 0 29%;
@@ -452,10 +416,8 @@ li {
 .content {
 	color: #444444;
 	text-align: center;
-}
-
-.bio {
 	font-size: 38px;
+	margin: 5% 15%;
 }
 
 .AllSocialLinks {
@@ -524,8 +486,6 @@ li.SocialLinksMobile {
 
 	<div id="animated">
 	
-	<div class="content">
-
 	<h1>Daheq&#8253;</h1>
 	
 	<div id="navbar">
@@ -538,7 +498,7 @@ li.SocialLinksMobile {
 	</div>
 	<div id="navdivider"></div>
 	
-	<p class="bio">I have no idea what you were looking for, but it isn't here.</p>
+	<p class="content">I have no idea what you were looking for, but it isn't here.<br>Seriously though, if you think this is an error, feel free to contact me trough any of the options below.</p>
 	
 	<div class="divider"></div>
 	
@@ -556,9 +516,7 @@ li.SocialLinksMobile {
 		</ul>
 	
 	</div>
-	
-	</div>
-	
+		
 </body>
 
 </html>
