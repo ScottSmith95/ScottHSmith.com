@@ -43,7 +43,7 @@ ErrorDocument 404 /404.html
 
 
 # ----------------------------------------------------------------------
-# Suppress or force the "www." at the beginning of URLs
+# Suppress the "www." at the beginning of URLs
 # ----------------------------------------------------------------------
 
 # Rewrite "www.example.com -> example.com".
