@@ -9,36 +9,26 @@
         <title>Scott Smith | Portfolio</title>        
         <link rel="shortcut icon" href="http://www.ScottHSmith.com/images/Slash.png"/>
 
-        <!-- DEFAULT COLORS -->
-        <meta name="color:Alternate Text" content="#bfad8a"/>
         <!-- END DEFAULT COLORS --> 
 
         <!-- iPhone -->
         <meta name="viewport" content="width=860"/>
+        
         <link rel="apple-touch-icon-precomposed" href="http://scotthsmith.com/images/ScottPic.png"/>
-               
-	<script type="text/javascript">
-		<!--
-		if (screen.width <= 699) {
-			document.location = "http://m.ScottHSmith.com/portfolio";
-			}
-		//-->
-	</script>
 
 <style type="text/css">
 
 * {
-margin: 0;
-padding: 0;
-list-style-type: none;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
 }
 
 body {
-background-color:#E3E5E8;
-font-family: Helvetica, Arial, sans-serif;
-font-size: 12px;
-color:#555;
-text-align: center;
+	background-color:#E3E5E8;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	text-align: center;
 }
 
 #header {
@@ -50,7 +40,6 @@ text-align: center;
 	-moz-animation-fill-mode: forwards;
 	-ms-animation-fill-mode: forwards;
 	animation-fill-mode: forwards;
-	opacity: 0;
 	position: relative;
 }
 
@@ -118,347 +107,214 @@ text-align: center;
 }
 
 #container {
-width: 840px;
-margin: 0 auto;
-text-align: left;
+	width: 840px;
+	margin: 0 auto;
+	text-align: left;
 }
 
 .regular, .photo, .quote, .link, .conversation, .video, .audio, .metabox {
-padding: 10px;
+	padding: 10px;
 }
 
-.regular img { max-width: 100%; }
+.regular img {
+	max-width: 100%;
+}
 
 .post {
-width: 270px;
-height: 350px;
-background:#eee;
-float: left;
-margin-right: 10px;
-margin-bottom: 10px;
-position: relative;
-overflow: hidden;
-border-bottom-width: 1px;
-border-bottom-style: dashed;
-border-bottom-color: #009DCF;
-
-}
-
-.post:hover {
-background:#eee;
-}
-
-.permalink {
-border-width: 0px;
-width: 250px;
-height: 22px;
-line-height: 11px;
-position: absolute;
-bottom: 0px;
-left: 0px;
-color: #000;
-text-align:left;
-background-color:#eee;
-padding-left:10px;
-padding-top:15px;
-}
-
-.permalink a {
-color: #444;
-border-bottom: 1px dotted #333;
-font-size: 11px;
-}
-
-.permalink a:hover {
-color: #009BCD;
-border-bottom: 1px solid #009bcd;
+	width: 270px;
+	height: 350px;
+	background:#eee;
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	position: relative;
+	overflow: hidden;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #009DCF;
 }
 
 .photobox {
-width: 250px;
-height: 145px;
-overflow: hidden;
-margin-bottom: 10px;
-transition: opacity 0.3s ease-out;
--webkit-transition: opacity 0.3s ease-out;
--moz-transition: opacity 0.3s ease-out;
--ms-transition: opacity 0.3s ease-out;
--o-transition: opacity 0.3s ease-out;
-opacity: 1;
+	width: 250px;
+	height: 145px;
+	overflow: hidden;
+	margin-bottom: 10px;
+	transition: opacity 0.3s ease-out;
+	-webkit-transition: opacity 0.3s ease-out;
+	-moz-transition: opacity 0.3s ease-out;
+	-ms-transition: opacity 0.3s ease-out;
+	-o-transition: opacity 0.3s ease-out;
+	opacity: 1;
 }
 
 .photobox:hover{
-opacity: 0.6;
+	opacity: 0.6;
 }
 
-.audio .photobox {
-background: #111;
-}
-
-.player {
-padding: 60px 20px;
-border: 1px solid #222;
+.photobox img {
+	width: 100%;
+	height: auto;
 }
 
 .source {
-font-family: Helvetica, Arial, sans-serif;
-font-size: 11px;
-text-align: right;
-color: #666;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	text-align: right;
+	color: #666;
 }
 
 .caption {
-line-height: 18px;
-}
-
-.even {
-border-bottom: 1px dotted #222;
+	line-height: 18px;
 }
 
 ol li {
-list-style: decimal outside;
-margin: 0 0 0 20px;
-padding: 0 0 5px 0
+	list-style: decimal outside;
+	margin: 0 0 0 20px;
+	padding: 0 0 5px 0
 }
 
 a {
--webkit-transition: text-shadow, color 0.5s, 0.5s ease-out;
--moz-transition: text-shadow, color 0.5s, 0.5s ease-out;
--ms-transition: text-shadow, color 0.5s, 0.5s ease-out;
--o-transition: text-shadow, color 0.5s, 0.5s ease-out;
-transition: text-shadow, color 0.5s, 0.5s ease-out;
-color: #444;
-text-shadow: 0 0 0 rgba(0,0,0,0);
-text-decoration: none;
+	-webkit-transition: text-shadow, color 0.5s, 0.5s ease-out;
+	-moz-transition: text-shadow, color 0.5s, 0.5s ease-out;
+	-ms-transition: text-shadow, color 0.5s, 0.5s ease-out;
+	-o-transition: text-shadow, color 0.5s, 0.5s ease-out;
+	transition: text-shadow, color 0.5s, 0.5s ease-out;
+	color: #444;
+	text-shadow: 0 0 0 rgba(0,0,0,0);
+	text-decoration: none;
 }
 
-a:hover {
-color: #009BCD;
-text-shadow: 1px 1px 10px rgba(0,0,0,0.75);
-}
-
-a:active {
-text-shadow: 1px 1px 7px rgba(0,0,0,0.75);
-color: #0086B2;
-}
+	a:hover {
+		color: #009BCD;
+		text-shadow: 1px 1px 10px rgba(0,0,0,0.75);
+	}
+	
+	a:active {
+		text-shadow: 1px 1px 7px rgba(0,0,0,0.75);
+		color: #0086B2;
+	}
 
 p {
-line-height: 18px;
-margin-bottom: 9px;
+	line-height: 18px;
+	margin-bottom: 9px;
 }
 
 h1 {
-font-family: Helvetica, Arial, sans-serif;
-font-weight: normal;
-font-size: 17px;
-line-height: 18px;
-padding: 0 0 9px 0;
-}
-
-#feed {
-padding: 0px 0 15px 0;
-position: relative;
-margin-top: 65px;
-right:0px;
-
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	font-size: 17px;
+	line-height: 18px;
+	padding: 0 0 9px 0;
 }
 
 #header {
-padding: 0px 0 40px 0;
-position: relative;
-border-bottom: 1px solid #009DCF;
-margin-bottom:25px;
-
+	position: relative;
+	border-bottom: 1px solid #009DCF;
+	margin-bottom: 25px;
+	padding: 0px 0 15px 0;
+	margin-top: 65px;
 }
 
-
-
 #header h1 {
-width: 297px;
+	width: 297px;
 }
 
 #header h1 a {
--webkit-transition: text-shadow, color 0.5s, 0.5s ease-out;
--moz-transition: text-shadow, color 0.5s, 0.5s ease-out;
--ms-transition: text-shadow, color 0.5s, 0.5s ease-out;
--o-transition: text-shadow, color 0.5s, 0.5s ease-out;
-transition: text-shadow, color 0.5s, 0.5s ease-out;
-color:#444444;
-font-weight:bold;
-border: 0;
-font-size: 65px;
-letter-spacing:-3px;
-line-height: 36px;
+	-webkit-transition: text-shadow, color 0.5s, 0.5s ease-out;
+	-moz-transition: text-shadow, color 0.5s, 0.5s ease-out;
+	-ms-transition: text-shadow, color 0.5s, 0.5s ease-out;
+	-o-transition: text-shadow, color 0.5s, 0.5s ease-out;
+	transition: text-shadow, color 0.5s, 0.5s ease-out;
+	color:#444444;
+	font-weight:bold;
+	border: 0;
+	font-size: 65px;
+	letter-spacing:-3px;
+	line-height: 36px;
 }
 
-#header h1 a:hover {
-text-shadow: 0 0 10px rgba(0,0,0,0.75);
-}
+	#header h1 a:hover {
+		text-shadow: 0 0 10px rgba(0,0,0,0.75);
+	}
 
-#header h1 a:active {
-text-shadow: 0px -2px 8px rgba(0,0,0,0.75);
-}
+	#header h1 a:active {
+		text-shadow: 0px -2px 8px rgba(0,0,0,0.75);
+	}
 
 #header h2 {
--webkit-transition: color 0.3s ease-out;
--moz-transition: color 0.3s ease-out;
--ms-transition: color 0.3s ease-out;
--o-transition: color 0.3s ease-out;
-transition: color 0.3s ease-out;
-color:#009BCD;
-font: normal 1.2em/1.8 Helvetica, Arial, sans-serif;
-margin-left:5px;
+	-webkit-transition: color 0.3s ease-out;
+	-moz-transition: color 0.3s ease-out;
+	-ms-transition: color 0.3s ease-out;
+	-o-transition: color 0.3s ease-out;
+	transition: color 0.3s ease-out;
+	color:#009BCD;
+	font: normal 1.2em/1.8 Helvetica, Arial, sans-serif;
+	margin-left:5px;
 }
 
-#header h2:hover {
-    color: #8D8D8D;
-    }
-
-#header ul {
-position: absolute;
-left: 550px;
-top: 40px;
+#info {
+	background: #d3f4ff;
+	border-radius: 15px;
+	float: right;
+	padding: 20px 10px;
+	bottom: 90px;
+	position: relative;
+	display: none;
 }
 
-#header ul li {
-display: inline;
+@media screen and (max-device-width: 699px) {
+
+html {
+	padding-bottom: 5%;
 }
 
-#header ul li form {
-display: inline;
+#header {
+	margin: 40px 20px 0px 20px;
+    -webkit-font-smoothing: antialiased;
+    font-size: 36px;
+    border-bottom: 2px solid #009DCF;
 }
 
-#header ul li form #searchbox {
-background: #fff;
-border-bottom: 1px dashed #009bcd;
-opacity: 0.7;
-color: #000;
+.post {
+	display: block;
+	width: 95%;
+	margin: 4% 2.5% 0 2.5%;
+	overflow: hidden;
+	box-shadow: 0 0 10px rgba(0,0,0,0.45);
+	border-radius: 15px;
+	background: #E3E5E8;
+	height: auto;
+	border-bottom: none;
 }
 
-#header ul li form #submitsearch {
-display: none;
+.photobox {
+	width: auto;
+	height: auto;
 }
 
-#header ul li a {
-font-family: Helvetica, Arial, sans-serif;
-color: #ddd;
-font-style: bold;
-border-bottom: 1px dashed #999;
-margin-right: 11px;
+.photobox img {
+	display: block;
+    width: 90%;
+    height: auto;
+    overflow: visible;
+    margin: 0 auto;
 }
 
-#header ul li a:hover {
-color: #fff;
-border-bottom: 1px solid #fff;
+.caption {
+	padding: 0 3%;
 }
 
-#navigation, .meta {
-text-align: left;
-height: 270px;
-float: left;
-width: 270px;
-background-color:#0CF;
-border-bottom: 1px dashed #444;
+.caption p, .caption a {
+	font-size: 42px;
+	line-height: 1.2em;
+	color: #444;
 }
 
-#navigation a {
-border: 0;
-padding: 3px 8px;
-background: #222;
+.caption a {
+	color: #009BCD;
 }
 
-#navigation a:hover {
-background: #333;
 }
-
-.pages {
-font-family: Helvetica, Arial, sans-serif;
-font-size: 11px;
-padding-bottom: 48px;
-}
-
-.pages span {
-font-size: 110px;
-}
-
-.total {
-color: #333;
-}
-
-#description{
-clear: both;
-padding: 5px 0;
-text-align: left;
-color:#0CF;
-}
-
-#search{
-clear: both;
-padding: 20px 0;
-text-align: left;
-color:#0CF;
-}
-
-#tags {
-background-color:#eee;
-padding: 40px 0;
-text-align:justify;
-width:828px;
-font-famaly: arial, helvetica, sans serif;
-font-size:8px;
-color:#eee;
-border-bottom: 1px dashed;
-border-bottom-color:#666;
-}
-
-#pages{
-clear: both;
-padding: 40px 0;
-text-align: left;
-}
-
-body#perm #navigation {
-display: none;
-}
-
-body#perm .post {
-width: 550px;
-}
-
-body#perm .photobox, body#perm .videobox {
-float: right;
-margin-left: 10px;
-}
-
-.meta {
-display: none;
-}
-
-body#perm .meta {
-display: block;
-text-align: left;
-}
-
-body#perm .permalink {
-display: none;
-z-index: 100;
-}
-
-.meta span, h3 {
-text-transform: uppercase;
-font-size: 10px;
-color: #009bcd;
-display: block;
-line-height: 18px;
-}
-
-#searchresultcount {
-text-align: left;
-margin-bottom: 20px;
-color: #009bcd;
-}
-
-.query { font-weight: bold; }
 </style>
 
     <!--[if IE]>
@@ -468,74 +324,51 @@ color: #009bcd;
             </style>
         <![endif]-->
 
-<!-- BEGIN TUMBLR FACEBOOK OPENGRAPH TAGS -->
-<!-- If you'd like to specify your own Open Graph tags, define the og:url and og:title tags in your theme's HTML. -->
-<!-- Read more: http://ogp.me/ -->
-<meta property="fb:app_id" content="48119224995" />
+<!-- BEGIN  FACEBOOK OPENGRAPH TAGS -->
 <meta property="og:title" content="Portfolio" />
 <meta property="og:url" content="http://portfolio.scotthsmith.com/" />
-<meta property="og:description" content="&lt; back" />
-<meta property="og:type" content="tumblr-feed:tumblelog" />
-<meta property="og:image" content="http://25.media.tumblr.com/avatar_af5bccbc5c70_128.png" />
+<meta property="og:description" content="Scott Smith is a talented web designer." />
+<meta property="og:image" content="http://scotthsmith.com/images/ScottPic.png" />
 <!-- END TUMBLR FACEBOOK OPENGRAPH TAGS -->
 
 
 <!-- TWITTER TAGS -->
 <meta charset="utf-8">
-<meta name="twitter:site" content="tumblr" />
-
 
 <meta http-equiv="x-dns-prefetch-control" content="off"/></head>
     <body >				
         <div id="container">     
-        	<div id="header"><div id="feed">
+        	<div id="header">
                 <h1><a href="/">Portfolio</a></h1>
-							<h2><a href="http://ScottHSmith.com">< back</a></h2>
-        		
-        	</div></div>
-        
-					
-					
-            
+				<h2><a href="http://ScottHSmith.com">< back</a></h2>
+				<div id="info">
+					<p>Scott is available for hire. To contact him, send him an <a href="mailto:mail@ScottHSmith.com">email</a>.</p>
+				</div>
+			</div>
+
+                    
         		<div class="post" id="first">
         				<div class="photo">
-        					<div class="photobox"><a href="http://TenSentPistol.com"><img src="http://ScottHSmith.com/portfolio/images/TenSentPistol.png" alt="In my first paid job, I created Ten Sent Pistol&amp;#8217;s website from scratch."/></a></div>    
-                            
-        						<div class="caption"><p>In my first paid job, I created Ten Sent Pistol&#8217;s website from scratch.</p></div>
-                            
+        				<div class="photobox"><a href="http://TenSentPistol.com"><img src="http://ScottHSmith.com/portfolio/images/TenSentPistol.png"/></a></div>    
+        				<div class="caption"><p>In my first paid job, I created Ten Sent Pistol&#8217;s website from scratch.</p></div>
         				</div>
                 </div>
 		
             
         		<div class="post" id="second">
         				<div class="photo">
-        					<div class="photobox"><a href="http://BeyondTheCo.de"><img src="http://ScottHSmith.com/portfolio/images/BeyondTheCode.png" alt="Beyond The Code, my own personal blog, represents a different sort of web development. In this case,&nbsp;I&nbsp;had to read and comprehend another person&rsquo;s HTML and CSS, while also understanding how Tumblr themes work.&nbsp;I&nbsp;tweaked the theme and updated icons for retina displays. Lastly,&nbsp;I&nbsp;also learned how to use Git."/></a></div>
-                            
-        						<div class="caption"><p>Beyond The Code, my own personal blog, represents a different sort of web development. In this case, I had to read and comprehend another person’s HTML and CSS, while also understanding how Wordpress themes work. I extensively changed the design of the theme and updated icons for retina displays. I also learned Git.</p></div>
-                            
+        				<div class="photobox"><a href="http://BeyondTheCo.de"><img src="http://ScottHSmith.com/portfolio/images/BeyondTheCode.png"/></a></div>
+        				<div class="caption"><p>Beyond The Code, my own personal blog, represents a different sort of web development. In this case, I had to read and comprehend another person’s HTML and CSS, while also understanding how Wordpress themes work. I extensively changed the design of the theme and updated icons for retina displays. I also learned Git.</p></div>
         				</div>
                 </div>
 		
             
         		<div class="post" id="third">
         				<div class="photo">
-        					<div class="photobox"><a href="http://OnetoOneHelp.com"><img src="http://ScottHSmith.com/portfolio/images/OnetoOneHelp.png" alt="One to One Help was a website&nbsp;I&nbsp;created with Derek Duncan. It highlights my first major foray into web development and design.&nbsp;"/></a></div>    
-                            
-        						<div class="caption"><p>One to One Help was a website I created with <a href="http://DerekDuncan.me">Derek Duncan</a>. It highlights my first major foray into web development and design. </p></div>
-                            
+        				<div class="photobox"><a href="http://OnetoOneHelp.com"><img src="http://ScottHSmith.com/portfolio/images/OnetoOneHelp.png"/></a></div>    
+        				<div class="caption"><p>One to One Help was a website I created with <a href="http://DerekDuncan.me">Derek Duncan</a>. It highlights my first major foray into web development and design.</p></div>
         				</div>
-                    
-                </div>
-		
-            
-        
-        	<div id="pages">
-        		
-    
-    			
-        	</div>
-
-                        
+        		</div>
         </div>
 </body>
 </html>
