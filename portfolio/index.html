@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 		<meta name="Description" content="Scott Smith is an opinionated technology follower and blogger, and always learning."/>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -9,11 +8,8 @@
         <title>Scott Smith | Portfolio</title>        
         <link rel="shortcut icon" href="http://www.ScottHSmith.com/images/Slash.png"/>
 
-        <!-- END DEFAULT COLORS --> 
-
-        <!-- iPhone -->
+        <!-- iOS Devices -->
         <meta name="viewport" content="width=860"/>
-        
         <link rel="apple-touch-icon-precomposed" href="http://scotthsmith.com/images/ScottPic.png"/>
 
 <style type="text/css">
@@ -112,29 +108,44 @@ body {
 	text-align: left;
 }
 
-.regular, .photo, .quote, .link, .conversation, .video, .audio, .metabox {
-	padding: 10px;
-}
-
-.regular img {
-	max-width: 100%;
-}
-
-.post {
+.item {
 	width: 270px;
 	height: 350px;
-	background:#eee;
+	background: #EEE;
 	float: left;
 	margin-right: 10px;
 	margin-bottom: 10px;
 	position: relative;
 	overflow: hidden;
-	border-bottom-width: 1px;
-	border-bottom-style: dashed;
-	border-bottom-color: #009DCF;
+	-webkit-transition: -webkit-transform, box-shadow, font-size 0.3s, 0.3s linear;
+	-moz-transition: -moz-transform, box-shadow 0.3s, 0.3s linear;
+	-o-transition: -o-transform, box-shadow 0.3s, 0.3s linear;
+	transition: transform, box-shadow 0.3s, 0.3s linear;
+	box-shadow: 0 0 15px rgba(0,0,0,0.15);
+	-webkit-transform: scale(1);   
+	-moz-transform: scale(1);  
+	-ms-transform: scale(1);  
+	-o-transform: scale(1);  
+	transform: scale(1);
+	color: #222222;
+	border-radius: 5px;
 }
 
-.photobox {
+	.item:hover {
+		-webkit-transform: scale(1.07);   
+		-moz-transform: scale(1.07);  
+		-ms-transform: scale(1.07);  
+		-o-transform: scale(1.07);  
+		transform: scale(1.07);
+		box-shadow: 0 0 15px rgba(0,0,0,0.45);
+		z-index: 3;
+	}
+	
+.iteminside {
+	padding: 10px;
+}
+
+.photo {
 	width: 250px;
 	height: 145px;
 	overflow: hidden;
@@ -147,24 +158,18 @@ body {
 	opacity: 1;
 }
 
-.photobox:hover{
-	opacity: 0.6;
-}
+	.photo:hover {
+		opacity: 0.6;
+	}
 
-.photobox img {
+.photo img {
 	width: 100%;
 	height: auto;
 }
 
-.source {
-	font-family: Helvetica, Arial, sans-serif;
-	font-size: 11px;
-	text-align: right;
-	color: #666;
-}
-
-.caption {
+.comment {
 	line-height: 18px;
+	font-size: 12;
 }
 
 ol li {
@@ -275,7 +280,7 @@ html {
     border-bottom: 2px solid #009DCF;
 }
 
-.post {
+.item {
 	display: block;
 	width: 95%;
 	margin: 4% 2.5% 0 2.5%;
@@ -287,12 +292,12 @@ html {
 	border-bottom: none;
 }
 
-.photobox {
+.photo {
 	width: auto;
 	height: auto;
 }
 
-.photobox img {
+.photo img {
 	display: block;
     width: 90%;
     height: auto;
@@ -300,17 +305,17 @@ html {
     margin: 0 auto;
 }
 
-.caption {
+.comment {
 	padding: 0 3%;
 }
 
-.caption p, .caption a {
+.comment p, .comment a {
 	font-size: 42px;
 	line-height: 1.2em;
 	color: #444;
 }
 
-.caption a {
+.comment a {
 	color: #009BCD;
 }
 
@@ -319,7 +324,7 @@ html {
 
     <!--[if IE]>
             <style type="text/css">
-                .post, #navigation, .meta { background:#010101; }
+                .item, #navigation, .meta { background:#010101; }
 								#header ul li form #searchbox { filter: alpha(opacity=70); }
             </style>
         <![endif]-->
@@ -347,26 +352,26 @@ html {
 			</div>
 
                     
-        		<div class="post" id="first">
-        				<div class="photo">
-        				<div class="photobox"><a href="http://TenSentPistol.com"><img src="http://ScottHSmith.com/portfolio/images/TenSentPistol.png"/></a></div>    
-        				<div class="caption"><p>In my first paid job, I created Ten Sent Pistol&#8217;s website from scratch.</p></div>
+        		<div class="item" id="first">
+        				<div class="iteminside">
+        				<div class="photo"><a href="http://TenSentPistol.com"><img src="http://ScottHSmith.com/portfolio/images/TenSentPistol.png"/></a></div>    
+        				<div class="comment"><p>Ten Sent Pistol wanted a site that fit the feel of their band, and I delivered. Ten Sent Pistol evokes the feel of the band's music, but is also modern in its own way.</p></div>
         				</div>
                 </div>
 		
             
-        		<div class="post" id="second">
-        				<div class="photo">
-        				<div class="photobox"><a href="http://BeyondTheCo.de"><img src="http://ScottHSmith.com/portfolio/images/BeyondTheCode.png"/></a></div>
-        				<div class="caption"><p>Beyond The Code, my own personal blog, represents a different sort of web development. In this case, I had to read and comprehend another person’s HTML and CSS, while also understanding how Wordpress themes work. I extensively changed the design of the theme and updated icons for retina displays. I also learned Git.</p></div>
+        		<div class="item" id="second">
+        				<div class="iteminside">
+        				<div class="photo"><a href="http://BeyondTheCo.de"><img src="http://ScottHSmith.com/portfolio/images/BeyondTheCode.png"/></a></div>
+        				<div class="comment"><p>Beyond The Code, my own personal blog, represents a different sort of web development. In this case, I worked extensively with WordPress, tailoring it to my needs. I extensively changed the design of the theme and updated icons for retina displays. I also learned to use Git.</p></div>
         				</div>
                 </div>
 		
             
-        		<div class="post" id="third">
-        				<div class="photo">
-        				<div class="photobox"><a href="http://OnetoOneHelp.com"><img src="http://ScottHSmith.com/portfolio/images/OnetoOneHelp.png"/></a></div>    
-        				<div class="caption"><p>One to One Help was a website I created with <a href="http://DerekDuncan.me">Derek Duncan</a>. It highlights my first major foray into web development and design.</p></div>
+        		<div class="item" id="third">
+        				<div class="iteminside">
+        				<div class="photo"><a href="http://OnetoOneHelp.com"><img src="http://ScottHSmith.com/portfolio/images/OnetoOneHelp.png"/></a></div>    
+        				<div class="comment"><p>One to One Help was a website I created with <a href="http://DerekDuncan.me">Derek Duncan</a>. It highlights my first major foray into web development and design.</p></div>
         				</div>
         		</div>
         </div>
