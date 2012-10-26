@@ -1,27 +1,50 @@
+<!-- Code by Scott Smith
+
+  _____
+ / ___ \
+/ /   \_\
+| |                                     _         _
+\ \____       _____        _____       | |       | |
+ \____ \     / ___ \      / ___ \    __| |__   __| |__
+ 	  \ \   / /   \_\    / /   \ \  |__   __| |__   __|
+      | |  | |          | |     | |    | |       | |
+__    / /  | |     __   | |     | |    | |       | |
+\ \__/ /    \ \___/ /    \ \___/ /     | |       | |
+ \____/      \_____/      \_____/      |_|       |_|
+
+-->
 <!DOCTYPE html>
 <head>
-		<meta name="Description" content="Scott Smith is an opinionated technology follower and blogger, and always learning."/>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-		<meta property="og:title" content="Scott Smith"/>
-		<meta property="og:url" content="http://ScottHSmith.com" />
-		<meta property="og:image" content="http://www.ScottHSmith.com/images/ScottPic.png"/>
         <title>Scott Smith | Portfolio</title>        
-        <link rel="shortcut icon" href="http://www.ScottHSmith.com/images/Slash.png"/>
+
+        <link rel="shortcut icon" type = "image/x-icon" href="http://ScottHSmith.com/images/favicon.ico?v1.1"/>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+        <meta name="Description" content="Scott Smith is an opinionated technology follower and blogger, and always learning."/>
+
+        <meta property="og:title" content="Scott Smith"/>
+
+        <meta property="og:url" content="http://ScottHSmith.com"/>
+
+        <meta property="og:image" content="http://ScottHSmith.com/images/ScottPic.png"/>
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+        <link rel="apple-touch-icon-precomposed" href="http://scotthsmith.com/images/ScottPic.png"/>
+
 
         <!-- iOS Devices -->
         <meta name="viewport" content="width=860"/>
+        
         <link rel="apple-touch-icon-precomposed" href="http://scotthsmith.com/images/ScottPic.png"/>
 
 <style type="text/css">
 
-* {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-}
-
 body {
-	background-color:#E3E5E8;
+	background-color: #E3E5E8;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 12px;
 	text-align: center;
@@ -117,28 +140,29 @@ body {
 	margin-bottom: 10px;
 	position: relative;
 	overflow: hidden;
-	-webkit-transition: -webkit-transform, box-shadow, font-size 0.3s, 0.3s linear;
-	-moz-transition: -moz-transform, box-shadow 0.3s, 0.3s linear;
-	-o-transition: -o-transform, box-shadow 0.3s, 0.3s linear;
-	transition: transform, box-shadow 0.3s, 0.3s linear;
+	-webkit-transition: -webkit-transform, box-shadow 0.2s, 0.2s linear;
+	-moz-transition: -moz-transform, box-shadow 0.2s, 0.2s linear;
+	-o-transition: -o-transform, box-shadow 0.2s, 0.2s linear;
+	transition: transform, box-shadow 0.2s, 0.2s linear;
 	box-shadow: 0 0 15px rgba(0,0,0,0.15);
-	-webkit-transform: scale(1);   
-	-moz-transform: scale(1);  
-	-ms-transform: scale(1);  
-	-o-transform: scale(1);  
-	transform: scale(1);
+	-webkit-transform: scale(1, 1);   
+	-moz-transform: scale(1, 1);  
+	-ms-transform: scale(1, 1);  
+	-o-transform: scale(1, 1);  
+	transform: scale(1, 1);
 	color: #222222;
 	border-radius: 5px;
+	z-index: 1;
 }
 
 	.item:hover {
-		-webkit-transform: scale(1.07);   
-		-moz-transform: scale(1.07);  
-		-ms-transform: scale(1.07);  
-		-o-transform: scale(1.07);  
-		transform: scale(1.07);
+		-webkit-transform: scale(1.025, 1.025);   
+		-moz-transform: scale(1.075, 1.075);  
+		-ms-transform: scale(1.075, 1.075);  
+		-o-transform: scale(1.075, 1.075);  
+		transform: scale(1.075, 1.075);
 		box-shadow: 0 0 15px rgba(0,0,0,0.45);
-		z-index: 3;
+		z-index: 2;
 	}
 	
 .iteminside {
@@ -341,7 +365,7 @@ html {
 <meta charset="utf-8">
 
 <meta http-equiv="x-dns-prefetch-control" content="off"/></head>
-    <body >				
+    <body>				
         <div id="container">     
         	<div id="header">
                 <h1><a href="/">Portfolio</a></h1>
@@ -351,7 +375,7 @@ html {
 				</div>
 			</div>
 
-                    
+
         		<div class="item" id="first">
         				<div class="iteminside">
         				<div class="photo"><a href="http://TenSentPistol.com"><img src="http://ScottHSmith.com/portfolio/images/TenSentPistol.png"/></a></div>    
@@ -373,7 +397,7 @@ html {
         				<div class="photo"><a href="http://OnetoOneHelp.com"><img src="http://ScottHSmith.com/portfolio/images/OnetoOneHelp.png"/></a></div>    
         				<div class="comment"><p>One to One Help was a website I created with <a href="http://DerekDuncan.me">Derek Duncan</a>. It highlights my first major foray into web development and design.</p></div>
         				</div>
-        		</div>
+				</div>
         </div>
 </body>
 </html>
