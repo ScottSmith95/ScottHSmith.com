@@ -45,6 +45,7 @@ __    / /  | |     __   | |     | |    | |       | |
 <style>
 body {
 	background: #E3E5E8;
+	font: 1em 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 }
 	
 ::selection {
@@ -68,13 +69,6 @@ body {
 	100%{top: 0px; opacity: 1;}
 }
 	
-@-ms-keyframes fly-in-from-top {
-	0% {top: -1500px; opacity: 0;}
-	30% {opacity: 0.3;}
-	70% {top: 600px; opacity: 1;}
-	100%{top: 0px; opacity: 1;}
-}
-		
 @keyframes fly-in-from-top {
 	0% {top: -1500px; opacity: 0;}
 	30% {opacity: 0.3;}
@@ -98,14 +92,6 @@ body {
 	100%{top: 0px; opacity: 1;}
 }
 
-@-ms-keyframes fly-in-from-bottom {
-	0% {top: 1500px; opacity: 0;}
-	30% {top: 275px; opacity: 0.3;}
-	50% {top: 0;}
-	80% {top: -250px;}
-	100%{top: 0px; opacity: 1;}
-}
-			
 @keyframes fly-in-from-bottom {
 	0% {top: 1500px; opacity: 0;}
 	30% {top: 275px; opacity: 0;}
@@ -115,24 +101,17 @@ body {
 }
 
 #animated {
-	-webkit-animation: fly-in-from-bottom 1.25s ease-in-out;
-	-moz-animation: fly-in-from-bottom 1.25s ease-in-out;
-	-ms-animation: fly-in-from-bottom 1.25s ease-in-out;
-	animation: fly-in-from-bottom 1.25s ease-in-out;
-	-webkit-animation-fill-mode: forwards;
-	-moz-animation-fill-mode: forwards;
-	-ms-animation-fill-mode: forwards;
-	animation-fill-mode: forwards;
+	-webkit-animation: fly-in-from-bottom 1.25s ease-in-out forwards;
+	-moz-animation: fly-in-from-bottom 1.25s ease-in-out forwards;
+	animation: fly-in-from-bottom 1.25s ease-in-out forwards;
 	opacity: 0;
 	position: relative;
 }
 
-h1 {
+#name {
 	margin-top: 20px;
 	text-align: center; 
-	font-size: 40px;
-	font-style: normal;
-	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
+	font-size: 2.4em;
 	-webkit-margin-after: 0%;
 	color: #444;
 }
@@ -149,16 +128,10 @@ h1 {
 	transition: box-shadow 0.5s ease-in-out;
 	-webkit-transition: box-shadow 0.5s ease-in-out;
 	-moz-transition: box-shadow 0.5s ease-in-out;
-	-ms-transition: box-shadow 0.5s ease-in-out;
 	-o-transition: box-shadow 0.5s ease-in-out;
-	-webkit-animation: fly-in-from-top 1.25s ease-in-out;
-	-moz-animation: fly-in-from-top 1.25s ease-in-out;
-	-ms-animation: fly-in-from-bottom 1.25s ease-in-out;
-	animation: fly-in-from-top 1.25s ease-in-out;
-	-webkit-animation-fill-mode: forwards;
-	-moz-animation-fill-mode: forwards;
-	-ms-animation-fill-mode: forwards;
-	animation-fill-mode: forwards;
+	-webkit-animation: fly-in-from-top 1.25s ease-in-out forwards;
+	-moz-animation: fly-in-from-top 1.25s ease-in-out forwards;
+	animation: fly-in-from-top 1.25s ease-in-out forwards;
 	display: block;
 	margin: 2% auto 0 auto;
 	opacity: 0;
@@ -196,7 +169,7 @@ li {
 #navlink {
 	margin-top: 2%;
 	color: #444444;
-	font-size: 28px;
+	font-size: 1.6em;
 }
 	
 	#navlink:hover {
@@ -213,7 +186,6 @@ a {
 	transition: text-shadow, color 0.5s, 0.5s ease-out;
 	-webkit-transition: text-shadow, color 0.5s, 0.5s ease-out;
 	-moz-transition: text-shadow, color 0.5s, 0.5s ease-out;
-	-ms-transition: text-shadow, color 0.5s, 0.5s ease-out;
 	-o-transition: text-shadow, color 0.5s, 0.5s ease-out;
 	margin-top: 2%;
 	text-decoration: none;
@@ -232,14 +204,14 @@ a {
 	
 #navdivider {
 	border-bottom: 1px solid #009BCD;
-	margin: 0 37%;
+	margin: 0 30%;
 }
 
 .MainText {
 	color: #444444;
 	text-align: center;
 	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
-	font-size: 22px;
+	font-size: 1.35em;
 	margin: 2% 25%;
 	line-height: 1.2em;
 
@@ -260,15 +232,14 @@ li.SocialLinksMobile {
 }
 
 .SocialLinks a, .SocialLinksDesktop a, .SocialLinksMobile a {
-	color: #009BCD;
 	transition: text-shadow, color 0.5s, 0.5s ease-out;
 	-webkit-transition: text-shadow, color 0.5s, 0.5s ease-out;
 	-moz-transition: text-shadow, color 0.5s, 0.5s ease-out;
-	-ms-transition: text-shadow, color 0.5s, 0.5s ease-out;
 	-o-transition: text-shadow, color 0.5s, 0.5s ease-out;
-	text-shadow: 0 0 0 rgba(0,0,0,0.0);
 	text-decoration: none;
-	font-size: 22px;
+	color: #009BCD;
+	font-size: 1.35em;
+	text-shadow: 0 0 0 rgba(0,0,0,0.0);
 }
 	.SocialLinks a:hover, .SocialLinksDesktop a:hover, .SocialLinksMobile a:hover {
 		text-shadow: 0 0 10px rgba(0,0,0,0.75);
@@ -290,7 +261,6 @@ li.SocialLinksMobile {
 		transition: text-shadow, color 0.5s ease-out;
 		-webkit-transition: text-shadow, color 0.5s ease-out;
 		-moz-transition: text-shadow, color 0.5s ease-out;
-		-ms-transition: text-shadow, color 0.5s ease-out;
 		-o-transition: text-shadow, color 0.5s ease-out;
 		position: relative;
 		left: 0;
@@ -313,10 +283,6 @@ li.SocialLinksMobile {
 	}
 
 @media screen and (max-width: 1100px) {
-h1 {
-	margin-top: 20px;
-	font-size: 34px;
-}
 
 #headerpic img {
 	background-size: 225px 225px;
@@ -340,7 +306,6 @@ li {
 
 #navlink {
 	margin-top: 2%;
-	font-size: 26px;
 }
 	
 #navdivider {
@@ -352,15 +317,12 @@ ul.SocialLinks {
 	margin-top: 2%;
 	margin-bottom: 3%;
 }
-
-a.SocialLinks {
-	font-size: 20px;
-}
 }
 
 @media screen and (max-device-width: 699px) {
 body {
 	background: #E3E5E8;
+	font-size: 2em;
 }
 
 a {
@@ -382,7 +344,6 @@ a {
 h1 {
 	margin-top: 20px;
 	text-align: center; 
-	font-size: 50px;
 	font-style: normal;
 	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 	-webkit-margin-after: 0%;
@@ -411,7 +372,6 @@ li {
 	transition: color 0.5s;
 	margin-top: 2%;
 	color: #444444;
-	font-size: 46px;
 }
 	
 	#navlink:hover {
@@ -432,8 +392,7 @@ li {
 .MainText {
 	color: #444444;
 	text-align: center;
-	font-size: 38px;
-	margin: 5% 15%;
+	margin: 5% 5%;
 }
 
 .AllSocialLinks {
@@ -502,12 +461,13 @@ li.SocialLinksMobile {
 
 	<div id="animated">
 	
-	<h1>Daheq&#8253;</h1>
+	<h1 id="name">Daheq&#8253;</h1>
 	
 	<div id="navbar">
 		<ul>
 			<li class="nav"><a id="navlink" href="http://ScottHSmith.com/">Home</a></li>
 			<li class="nav"><a id="navlink" href="http://BeyondTheCo.de">Blog</a></li>
+			<li class="nav"><a id="navlink" href="http://podcast.BeyondTheCo.de">Podcast</a></li>
 			<li class="nav"><a id="navlink" href="http://ScottHSmith.com/portfolio/">Portfolio</a></li>
 			
 		</ul>
