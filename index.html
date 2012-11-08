@@ -52,6 +52,7 @@ if(window.navigator && window.navigator.loadPurpose === "preview"){
 
 body {
 	background: #E3E5E8;
+	font: 1em 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 }
 	
 ::selection {
@@ -68,12 +69,6 @@ body {
 }
 			
 @-moz-keyframes fly-in-from-top {
-	0% {top: -1500px; opacity: 0;}
-	30% {top: -275px; opacity: 0;}
-	100%{top: 0px; opacity: 1;}
-}
-
-@-ms-keyframes fly-in-from-top {
 	0% {top: -1500px; opacity: 0;}
 	30% {top: -275px; opacity: 0;}
 	100%{top: 0px; opacity: 1;}
@@ -97,12 +92,6 @@ body {
 	100%{top: 0px; opacity: 1;}
 }
 
-@-ms-keyframes fly-in-from-bottom {
-	0% {top: 1500px; opacity: 0;}
-	30% {top: 275px; opacity: 0;}
-	100%{top: 0px; opacity: 1;}
-}
-
 @keyframes fly-in-from-bottom {
 	0% {top: 1500px; opacity: 0;}
 	30% {top: 275px; opacity: 0;}
@@ -110,23 +99,17 @@ body {
 }
 
 #animated {
-	-webkit-animation: fly-in-from-bottom 1.25s ease-in-out;
-	-moz-animation: fly-in-from-bottom 1.25s ease-in-out;
-	-ms-animation: fly-in-from-bottom 1.25s ease-in-out;
-	animation: fly-in-from-bottom 1.25s ease-in-out;
-	-webkit-animation-fill-mode: forwards;
-	-moz-animation-fill-mode: forwards;
-	-ms-animation-fill-mode: forwards;
-	animation-fill-mode: forwards;
+	-webkit-animation: fly-in-from-bottom 1.25s ease-in-out forwards;
+	-moz-animation: fly-in-from-bottom 1.25s ease-in-out forwards;
+	animation: fly-in-from-bottom 1.25s ease-in-out forwards;
 	position: relative;
 }
 
-h1 {
+#name {
 	margin-top: 20px;
 	text-align: center; 
-	font-size: 40px;
+	font-size: 2.4em;
 	color: #444;
-	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 	-webkit-margin-after: 0%;
 }
 
@@ -140,7 +123,6 @@ ul {
 li {
 	display: inline;
 	text-align: center;
-	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 	margin: 0px 10px;
 }
 
@@ -148,7 +130,6 @@ li {
 a {
 	-webkit-transition: text-shadow, color 0.5s, 0.5s ease-out;
 	-moz-transition: text-shadow, color 0.5s, 0.5s ease-out;
-	-ms-transition: text-shadow, color 0.5s, 0.5s ease-out;
 	-o-transition: text-shadow, color 0.5s, 0.5s ease-out;
 	transition: text-shadow, color 0.5s, 0.5s ease-out;
 	margin-top: 2%;
@@ -174,14 +155,9 @@ a {
 	border-radius: 15px;
 	display: block;
 	margin: 2% auto 0 auto;
-	-webkit-animation: fly-in-from-top 1.25s ease-in-out;
-	-moz-animation: fly-in-from-top 1.25s ease-in-out;
-	-ms-animation: fly-in-from-top 1.25s ease-in-out;
-	animation: fly-in-from-top 1.25s ease-in-out;
-	-webkit-animation-fill-mode: forwards;
-	-moz-animation-fill-mode: forwards;
-	-ms-animation-fill-mode: forwards;
-	animation-fill-mode: forwards;
+	-webkit-animation: fly-in-from-top 1.25s ease-in-out forwards;
+	-moz-animation: fly-in-from-top 1.25s ease-in-out forwards;
+	animation: fly-in-from-top 1.25s ease-in-out forwards;
 	position: relative;
 }
 
@@ -194,21 +170,20 @@ a {
 
 #navlink {
 	margin-top: 2%;
-	font-size: 28px;
+	font-size: 1.6em;
 }
 	
 #navdivider {
 	border-bottom: 1px solid #009BCD;
-	margin: 0 37%;
+	margin: 0 39%;
 }
 
 .MainText {
 	color: #444444;
 	text-align: center;
-	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
-	font-size: 22px;
-	line-height: 1.5em;
-	margin: 1.5% 26% 1.5% 26%;
+	font-size: 1.35em;
+	line-height: 1.2em;
+	margin: 1.5% 26%;
 }
 
 .AllSocialLinks {
@@ -226,15 +201,14 @@ li.SocialLinksMobile {
 }
 
 .SocialLinks a, .SocialLinksDesktop a, .SocialLinksMobile a {
-	color: #009BCD;
 	-webkit-transition: text-shadow, color 0.5s, 0.5s ease-out;
 	-moz-transition: text-shadow, color 0.5s, 0.5s ease-out;
-	-ms-transition: text-shadow, color 0.5s, 0.5s ease-out;
 	-o-transition: text-shadow, color 0.5s, 0.5s ease-out;
 	transition: text-shadow, color 0.5s, 0.5s ease-out;
-	text-shadow: 0 0 0 rgba(0,0,0,0.0);
 	text-decoration: none;
-	font-size: 22px;
+	color: #009BCD;
+	text-shadow: 0 0 0 rgba(0,0,0,0.0);
+	font-size: 1.35em;
 }
 	.SocialLinks a:hover, .SocialLinksDesktop a:hover, .SocialLinksMobile a:hover {
 		text-shadow: 0 0 10px rgba(0,0,0,0.75);
@@ -256,7 +230,6 @@ li.SocialLinksMobile {
 		transition: text-shadow, color 0.5s ease-out;
 		-webkit-transition: text-shadow, color 0.5s ease-out;
 		-moz-transition: text-shadow, color 0.5s ease-out;
-		-ms-transition: text-shadow, color 0.5s ease-out;
 		-o-transition: text-shadow, color 0.5s ease-out;
 		position: relative;
 		left: 0;
@@ -279,9 +252,6 @@ li.SocialLinksMobile {
 	}
 	
 @media screen and (max-width: 1100px) {
-h1 {
-	font-size: 34px;
-}
 
 #headerpic {
 	background-size: 225px 225px;
@@ -289,27 +259,19 @@ h1 {
     height: 225px;
 }
 
-
-#navlink {
-	font-size: 26px;
-}
-
 #navdivider {
 	margin: 0 37%;
 }
 
-.bio {
-	font-size: 20px;
-}
-
-a.SocialLinks {
-	font-size: 20px;
+.MainText {
+	margin: 1.5% 15% 1.5% 15%;
 }
 }
 
 @media screen and (max-device-width: 699px) {
 body {
 	background: #E3E5E8;
+	font-size: 2em;
 }
 
 a {
@@ -331,7 +293,6 @@ a {
 h1 {
 	margin-top: 20px;
 	text-align: center; 
-	font-size: 58px;
 	font-style: normal;
 	-webkit-margin-after: 0%;
 }
@@ -370,7 +331,6 @@ li {
 #navlink {
 	margin-top: 2%;
 	color: #444444;
-	font-size: 50px;
 }
 	
 	#navlink:hover {
@@ -383,8 +343,6 @@ li {
 		color: inherit;
 	}
 
-
-
 #navdivider {
 	border-bottom: 2px solid #009BCD;
 	margin: 0 26%;
@@ -393,7 +351,6 @@ li {
 .MainText {
 	color: #444444;
 	text-align: center;
-	font-size: 44px;
 	margin: 2% 2%;
 }
 
@@ -419,7 +376,6 @@ li.SocialLinksMobile {
 	color: #009BCD;
 	text-shadow: 0 0 0 rgba(0,0,0,0);
 	text-decoration: none;
-	font-size: 42px;
 }
 	.SocialLinks a:hover, .SocialLinksDesktop a:hover, .SocialLinksMobile a:hover {
 		text-shadow: none;
@@ -460,12 +416,14 @@ li.SocialLinksMobile {
 	<div id="headerpic"> </div>
 
 	<div id="animated">
-	<h1>Scott Smith</h1>
+	
+	<h1 id="name">Scott Smith</h1>
 	
 	<div id="navbar">
 		<ul>
 			<li class="nav"><a id="navlink" href="/">Home</a></li>
 			<li class="nav"><a id="navlink" href="http://BeyondTheCo.de">Blog</a></li>
+			<!-- <li class="nav"><a id="navlink" href="http://podcast.BeyondTheCo.de">Podcast</a></li> -->
 			<li class="nav"><a id="navlink" href="http://ScottHSmith.com/portfolio/">Portfolio</a></li>
 			
 		</ul>
@@ -488,7 +446,9 @@ li.SocialLinksMobile {
 			<li class="SocialLinks"><a href="http://thefancy.com/ScottSmith" class="SocialLink" id="Google+">Fancy</a></li>
 			<li class="SocialLinks"><a href="mailto:mail@ScottHSmith.com" class="SocialLink" id="email">Email</a></li>
 		</ul>
+		
 	</div>
+	
 </body>
 
 </html>
