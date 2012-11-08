@@ -27,19 +27,13 @@ if(window.navigator && window.navigator.loadPurpose != "preview"){
 
 body {
 	background: #E3E5E8;
-}
-	
-::selection {
-    background: #72BDE2;
-	}
-::-moz-selection {
-	background: #72BDE2;
+	font: 1em 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 }
 
-h1 {
+#name {
 	margin-top: 20px;
 	text-align: center; 
-	font-size: 40px;
+	font-size: 2.4em;
 	color: #444;
 	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 	-webkit-margin-after: 0%;
@@ -133,15 +127,11 @@ a {
 	margin: 0 37%;
 }
 
-.content {
+.MainText {
 	color: #444444;
 	text-align: center;
 	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
-	font-size: 22px;
-}
-
-.bio {
-	font-size: 22px;
+	font-size: 1.6em;
 }
 
 .AllSocialLinks {
@@ -159,15 +149,15 @@ li.SocialLinksMobile {
 }
 
 .SocialLinks a, .SocialLinksDesktop a, .SocialLinksMobile a {
-	color: #009BCD;
 	-webkit-transition: text-shadow, color 0.5s, 0.5s ease-out;
 	-moz-transition: text-shadow, color 0.5s, 0.5s ease-out;
 	-ms-transition: text-shadow, color 0.5s, 0.5s ease-out;
 	-o-transition: text-shadow, color 0.5s, 0.5s ease-out;
 	transition: text-shadow, color 0.5s, 0.5s ease-out;
-	text-shadow: 0 0 0 rgba(0,0,0,0.0);
 	text-decoration: none;
-	font-size: 22px;
+	color: #009BCD;
+	text-shadow: 0 0 0 rgba(0,0,0,0.0);
+	font-size: 1.35em;
 }
 	.SocialLinks a:hover, .SocialLinksDesktop a:hover, .SocialLinksMobile a:hover {
 		text-shadow: 0 0 10px rgba(0,0,0,0.75);
@@ -212,9 +202,6 @@ li.SocialLinksMobile {
 	}
 	
 @media screen and (max-width: 1100px) {
-h1 {
-	font-size: 34px;
-}
 
 #headerpic {
 	background-size: 225px 225px;
@@ -222,170 +209,15 @@ h1 {
     height: 225px;
 }
 
-
-#navlink {
-	font-size: 26px;
-}
-
 #navdivider {
 	margin: 0 37%;
-}
-
-.bio {
-	font-size: 20px;
 }
 
 li.SocialLinks {
 	display:inline;
 }
-
-a.SocialLinks {
-	font-size: 20px;
-}
 }
 
-@media screen and (max-device-width: 699px) {
-body {
-	background: #E3E5E8;
-}
-
-a {
-	margin-top: 2%;
-	text-decoration: none;
-	color: #444444;
-}
-
-	a:hover {
-		text-shadow: none;
-		color: inherit;
-	}
-	
-	a:active {
-		text-shadow: none;
-		color: inherit;
-	}
-	
-h1 {
-	margin-top: 20px;
-	text-align: center; 
-	font-size: 50px;
-	font-style: normal;
-	-webkit-margin-after: 0%;
-}
-
-#headerpic {
-	background-image: url("/images/ScottPic_600.jpg");
-	background-size: 325px 325px;
-	width: 325px;
-    height: 325px;
-    border-radius: 35px;
-	display: block;
-	margin: 5% auto 0 auto;
-}
-
-
-#navbar {
-	margin: 0 auto;
-	clear: both;
-	text-align: center;
-	width: 100%;
-}
-
-ul {
-	display: block;
-	list-style-type:none;
-	-webkit-padding-start: 0;
-}
-
-li {
-	display: inline;
-	text-align: center;
-	margin: 0px 10px;
-}
-
-#navlink {
-	margin-top: 2%;
-	color: #444444;
-	font-size: 46px;
-}
-	
-	#navlink:hover {
-		text-shadow: none;
-		color: inherit;
-	}
-	
-	#navlink:active {
-		text-shadow: none;
-		color: inherit;
-	}
-
-
-
-#navdivider {
-	border-bottom: 2px solid #009BCD;
-	margin: 0 26%;
-}
-
-.content {
-	color: #444444;
-	text-align: center;
-	font-size: 38px;
-}
-
-.AllSocialLinks {
-	margin: 5% auto 2% auto;
-	text-align: center;
-}
-
-li.SocialLinksDesktop, li.SocialLinksMobile {
-	display: inline;
-	line-height: 3.5em;
-}
-
-li.SocialLinksDesktop {
-	display: none;
-}
-
-li.SocialLinksMobile {
-	display: inline;
-}
-
-.SocialLinks a, .SocialLinksDesktop a, .SocialLinksMobile a {
-	color: #009BCD;
-	text-shadow: 0 0 0 rgba(0,0,0,0);
-	text-decoration: none;
-	font-size: 42px;
-}
-	.SocialLinks a:hover, .SocialLinksDesktop a:hover, .SocialLinksMobile a:hover {
-		text-shadow: none;
-		color: #009BCD;	
-	}
-	
-	.SocialLinks a:active, .SocialLinksDesktop a:active, .SocialLinksMobile a:active {
-		text-shadow: none;
-		color: #009BCD;
-	}
-	
-	#email:hover {
-		text-shadow: none;
-		color: #009BCD;
-	}
-	
-	#email:hover:after {
-		content:"";
-		position: relative;
-		top: auto;
-	}
-	
-	#email:active{
-		text-shadow: none;
-		color: #009BCD;
-	}
-	
-	#email:active:after {
-		content:"";
-	}
-}
 </style>
 
 </head>
@@ -395,7 +227,7 @@ li.SocialLinksMobile {
 	<div id="headerpic"> </div>
 
 	<div id="animated">
-	<h1>Scott Smith</h1>
+	<h1 id="name">Scott Smith</h1>
 	
 	<div id="navbar">
 		<ul>
@@ -407,7 +239,7 @@ li.SocialLinksMobile {
 	</div>
 	<div id="navdivider"></div>
 	
-	<p class="content">Opinionated technology follower and blogger.<br>Lover of excellent web design.<br>Always learning.<br><br>I have a blog, <a class="blog" href="http://BeyondTheCo.de">Beyond The Code</a>.</p>
+	<p class="MainText">Opinionated technology follower and blogger.<br>Lover of excellent web design.<br>Always learning.<br><br>I have a blog, <a class="blog" href="http://BeyondTheCo.de">Beyond The Code</a>.</p>
 	
 	<div class="divider"></div>
 	
