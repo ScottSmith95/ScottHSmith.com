@@ -157,6 +157,9 @@ a {
 	-webkit-animation: fly-in-from-top 1.25s ease-in-out forwards;
 	-moz-animation: fly-in-from-top 1.25s ease-in-out forwards;
 	animation: fly-in-from-top 1.25s ease-in-out forwards;
+	-webkit-transition: width, height 0.5s, 0.5s ease-out;
+	-moz-transition: width, height 0.5s, 0.5s ease-out;
+	transition: width, height 0.5s, 0.5s ease-out;
 	position: relative;
 }
 
@@ -256,11 +259,18 @@ li.SocialLinksMobile {
 }
 
 #navdivider {
-	margin: 0 37%;
+	margin: 0 34%;
 }
 
 .MainText {
 	margin: 1.5% 15% 1.5% 15%;
+}
+}
+
+@media screen and (max-width: 699px) {
+
+body {
+	font-size: 0.8em;
 }
 }
 
