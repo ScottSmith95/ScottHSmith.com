@@ -35,7 +35,6 @@ body {
 	text-align: center; 
 	font-size: 2.4em;
 	color: #444;
-	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 	-webkit-margin-after: 0%;
 }
 
@@ -49,31 +48,15 @@ ul {
 li {
 	display: inline;
 	text-align: center;
-	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 	margin: 0px 10px;
 }
 
 
 a {
-	-webkit-transition: text-shadow, color 0.5s, 0.5s ease-out;
-	-moz-transition: text-shadow, color 0.5s, 0.5s ease-out;
-	-ms-transition: text-shadow, color 0.5s, 0.5s ease-out;
-	-o-transition: text-shadow, color 0.5s, 0.5s ease-out;
-	transition: text-shadow, color 0.5s, 0.5s ease-out;
 	margin-top: 2%;
 	text-decoration: none;
 	color: #444444;
 }
-
-	a:hover {
-		text-shadow: 1px 1px 10px rgba(0,0,0,0.75);
-		color: #009BCD;
-	}
-	
-	a:active {
-		text-shadow: 1px 1px 7px rgba(0,0,0,0.75);
-		color: #0086B2;
-	}
 
 #headerpic {
 	background-image: url("http://scotthsmith.com/images/ScottPic_600.jpg");
@@ -83,14 +66,6 @@ a {
 	border-radius: 15px;
 	display: block;
 	margin: 2% auto 0 auto;
-	-webkit-animation: fly-in-from-top 1.25s ease-in-out;
-	-moz-animation: fly-in-from-top 1.25s ease-in-out;
-	-ms-animation: fly-in-from-top 1.25s ease-in-out;
-	animation: fly-in-from-top 1.25s ease-in-out;
-	-webkit-animation-fill-mode: forwards;
-	-moz-animation-fill-mode: forwards;
-	-ms-animation-fill-mode: forwards;
-	animation-fill-mode: forwards;
 	position: relative;
 }
 
@@ -102,25 +77,10 @@ a {
 }
 
 #navlink {
-	-webkit-transition: text-shadow, color 0.5s, 0.5s ease-in-out;
-	-moz-transition: text-shadow, color 0.5s, 0.5s ease-in-out;
-	-ms-transition: text-shadow, color 0.5s, 0.5s ease-out;
-	-o-transition: text-shadow, color 0.5s, 0.5s ease-out;
-	transition: text-shadow, color 0.5s, 0.5s ease-in-out;
 	margin-top: 2%;
 	color: #444444;
 	font-size: 28px;
 }
-	
-	#navlink:hover {
-		text-shadow: 1px 1px 10px rgba(0,0,0,0.75);
-		color: #009BCD;
-	}
-	
-	#navlink:active {
-		text-shadow: 1px 1px 7px rgba(0,0,0,0.75);
-		color: #0086b2;
-	}
 	
 #navdivider {
 	border-bottom: 1px solid #009BCD;
@@ -130,7 +90,6 @@ a {
 .MainText {
 	color: #444444;
 	text-align: center;
-	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 	font-size: 1.6em;
 }
 
@@ -149,57 +108,11 @@ li.SocialLinksMobile {
 }
 
 .SocialLinks a, .SocialLinksDesktop a, .SocialLinksMobile a {
-	-webkit-transition: text-shadow, color 0.5s, 0.5s ease-out;
-	-moz-transition: text-shadow, color 0.5s, 0.5s ease-out;
-	-ms-transition: text-shadow, color 0.5s, 0.5s ease-out;
-	-o-transition: text-shadow, color 0.5s, 0.5s ease-out;
-	transition: text-shadow, color 0.5s, 0.5s ease-out;
 	text-decoration: none;
 	color: #009BCD;
 	text-shadow: 0 0 0 rgba(0,0,0,0.0);
 	font-size: 1.35em;
 }
-	.SocialLinks a:hover, .SocialLinksDesktop a:hover, .SocialLinksMobile a:hover {
-		text-shadow: 0 0 10px rgba(0,0,0,0.75);
-		color: #8d8d8d;	
-	}
-	
-	.SocialLinks a:active, .SocialLinksDesktop a:active, .SocialLinksMobile a:active {
-		text-shadow: 0 0 7px rgba(0,0,0,0.75);
-		color: #606060;
-	}
-	
-	#email:hover {
-		text-shadow: 0 0 7px rgba(194,14,14,0.3);
-		color: #c20e0e;
-	}
-	
-	#email:after {
-		transition: all 0.5s ease-out;
-		transition: text-shadow, color 0.5s ease-out;
-		-webkit-transition: text-shadow, color 0.5s ease-out;
-		-moz-transition: text-shadow, color 0.5s ease-out;
-		-ms-transition: text-shadow, color 0.5s ease-out;
-		-o-transition: text-shadow, color 0.5s ease-out;
-		position: relative;
-		left: 0;
-		top: 0;
-	}
-	
-	#email:hover:after {
-		content:" - Think Again";
-		position: relative;
-		top: auto;
-	}
-	
-	#email:active{
-		text-shadow: 0 0 15px rgba(0,0,0,0.5);
-		color: #8d1010;
-	}
-	
-	#email:active:after {
-		content:" - Seriously";
-	}
 	
 @media screen and (max-width: 1100px) {
 
