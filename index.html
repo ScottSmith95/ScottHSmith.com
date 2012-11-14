@@ -117,7 +117,7 @@ body {
 ul {
 	display: block;
 	list-style-type:none;
-	-webkit-padding-start: 0;
+	padding: 0;
 }
 
 li {
@@ -128,9 +128,9 @@ li {
 
 
 a {
-	-webkit-transition: text-shadow, color 0.5s, 0.5s ease-out;
-	-moz-transition: text-shadow, color 0.5s, 0.5s ease-out;
-	transition: text-shadow, color 0.5s, 0.5s ease-out;
+	-webkit-transition: text-shadow 0.5s ease-out, color 0.5s ease-out;
+	-moz-transition: text-shadow 0.5s ease-out, color 0.5s ease-out;
+	transition: text-shadow 0.5s ease-out, color 0.5s ease-out;
 	margin-top: 2%;
 	text-decoration: none;
 	color: #444444;
@@ -150,11 +150,12 @@ a {
 	-webkit-animation: fly-in-from-top 1.25s ease-in-out forwards;
 	-moz-animation: fly-in-from-top 1.25s ease-in-out forwards;
 	animation: fly-in-from-top 1.25s ease-in-out forwards;
-	-webkit-transition: width, height 0.5s, 0.5s ease-out;
-	-moz-transition: width, height 0.5s, 0.5s ease-out;
-	transition: width, height 0.5s, 0.5s ease-out;
+	-webkit-transition: width 0.5s ease-out, height 0.5s ease-out, background-size 0.5s ease-out;
+	-moz-transition: width 0.5s ease-out, height 0.5s ease-out, background-size 0.5s ease-out;
+	transition: width 0.5s ease-out, height 0.5s ease-out, background-size 0.5s ease-out;
 	background-image: url("images/ScottPic_600.jpg");
 	background-size: 300px 300px;
+	background-repeat: no-repeat;
 	width: 300px;
     height: 300px;
 	border-radius: 15px;
@@ -203,9 +204,6 @@ li.SocialLinksMobile {
 }
 
 .SocialLinks a, .SocialLinksDesktop a, .SocialLinksMobile a {
-	-webkit-transition: text-shadow, color 0.5s, 0.5s ease-out;
-	-moz-transition: text-shadow, color 0.5s, 0.5s ease-out;
-	transition: text-shadow, color 0.5s, 0.5s ease-out;
 	text-decoration: none;
 	color: #009BCD;
 	text-shadow: 0 0 0 rgba(0,0,0,0.0);
@@ -227,9 +225,9 @@ li.SocialLinksMobile {
 	}
 	
 	#email:after {
-		-webkit-transition: text-shadow, color 0.5s ease-out;
-		-moz-transition: text-shadow, color 0.5s ease-out;
-		transition: text-shadow, color 0.5s ease-out;
+		-webkit-transition: text-shadow 0.5s ease-out, color 0.5s ease-out;
+		-moz-transition: text-shadow 0.5s ease-out, color 0.5s ease-out;
+		transition: text-shadow 0.5s ease-out, color 0.5s ease-out;
 		position: relative;
 		left: 0;
 		top: 0;
