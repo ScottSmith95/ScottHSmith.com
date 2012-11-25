@@ -29,36 +29,33 @@ __    / /  | |     __   | |     | |    | |       | |
 
         <meta property="og:image" content="http://ScottHSmith.com/images/ScottPic.png"/>
 
-        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
 
-        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-
-        <link rel="apple-touch-icon-precomposed" href="http://scotthsmith.com/images/ScottPic.png"/>
-
+        <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+        
+        <meta name="viewport" content="user-scalable = no" />
 
         <!-- iOS Devices -->
-        <meta name="viewport" content="width=860"/>
+        <link rel="apple-touch-icon-precomposed" href="http://scotthsmith.com/images/ScottPic.png"/>
         
         <link rel="apple-touch-icon-precomposed" href="http://scotthsmith.com/images/ScottPic.png"/>
+                
+        <!-- Typekit -->
+        <script type="text/javascript" src="//use.typekit.net/hjf6cdg.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 <style type="text/css">
 
 body {
 	background-color: #E3E5E8;
-	font-family: Helvetica, Arial, sans-serif;
-	font-size: 12px;
+	font: normal 300 1em "museo-sans-1", "museo-sans-2", sans-serif;
 	text-align: center;
 }
 
 #header {
-	-webkit-animation: fly-in-from-top 1.25s ease-in-out;
-	-moz-animation: fly-in-from-top 1.25s ease-in-out;
-	-ms-animation: fly-in-from-top 1.25s ease-in-out;
-	animation: fly-in-from-top 1.25s ease-in-out;
-	-webkit-animation-fill-mode: forwards;
-	-moz-animation-fill-mode: forwards;
-	-ms-animation-fill-mode: forwards;
-	animation-fill-mode: forwards;
+	-webkit-animation: fly-in-from-top 1.25s ease-in-out forwards;
+	-moz-animation: fly-in-from-top 1.25s ease-in-out forwards;
+	animation: fly-in-from-top 1.25s ease-in-out forwards;
 	position: relative;
 }
 
@@ -87,40 +84,25 @@ body {
 }
 
 #first {
-	-webkit-animation: fly-in-from-top 1.25s ease-in-out 1s;
-	-moz-animation: fly-in-from-top 1.25s ease-in-out 1s;
-	-ms-animation: fly-in-from-top 1.25s ease-in-out 1s;
-	animation: fly-in-from-top 1.25s ease-in-out 1s;
-	-webkit-animation-fill-mode: forwards;
-	-moz-animation-fill-mode: forwards;
-	-ms-animation-fill-mode: forwards;
-	animation-fill-mode: forwards;
+	-webkit-animation: fly-in-from-top 1.25s ease-in-out 1s forwards;
+	-moz-animation: fly-in-from-top 1.25s ease-in-out 1s forwards;
+	animation: fly-in-from-top 1.25s ease-in-out 1s forwards;
 	opacity: 0;
 	position: relative;
 }
 
 #second {
-	-webkit-animation: fly-in-from-top 1.25s ease-in-out 1.3s;
-	-moz-animation: fly-in-from-top 1.25s ease-in-out 1.3s;
-	-ms-animation: fly-in-from-top 1.25s ease-in-out 1.3s;
-	animation: fly-in-from-top 1.25s ease-in-out 1.3s;
-	-webkit-animation-fill-mode: forwards;
-	-moz-animation-fill-mode: forwards;
-	-ms-animation-fill-mode: forwards;
-	animation-fill-mode: forwards;
+	-webkit-animation: fly-in-from-top 1.25s ease-in-out 1.3s forwards;
+	-moz-animation: fly-in-from-top 1.25s ease-in-out 1.3s forwards;
+	animation: fly-in-from-top 1.25s ease-in-out 1.3s forwards;
 	opacity: 0;
 	position: relative;
 }
 
 #third {
-	-webkit-animation: fly-in-from-top 1.25s ease-in-out 1.6s;
-	-moz-animation: fly-in-from-top 1.25s ease-in-out 1.6s;
-	-ms-animation: fly-in-from-top 1.25s ease-in-out 1.6s;
-	animation: fly-in-from-top 1.25s ease-in-out 1.6s;
-	-webkit-animation-fill-mode: forwards;
-	-moz-animation-fill-mode: forwards;
-	-ms-animation-fill-mode: forwards;
-	animation-fill-mode: forwards;
+	-webkit-animation: fly-in-from-top 1.25s ease-in-out 1.6s forwards;
+	-moz-animation: fly-in-from-top 1.25s ease-in-out 1.6s forwards;
+	animation: fly-in-from-top 1.25s ease-in-out 1.6s forwards;
 	opacity: 0;
 	position: relative;
 }
@@ -140,15 +122,12 @@ body {
 	margin-bottom: 10px;
 	position: relative;
 	overflow: hidden;
-	-webkit-transition: -webkit-transform, box-shadow 0.2s, 0.2s linear;
-	-moz-transition: -moz-transform, box-shadow 0.2s, 0.2s linear;
-	-o-transition: -o-transform, box-shadow 0.2s, 0.2s linear;
-	transition: transform, box-shadow 0.2s, 0.2s linear;
+	-webkit-transition: -webkit-transform 0.2s linear, box-shadow 0.2s linear;
+	-moz-transition: -moz-transform 0.2s linear, box-shadow 0.2s linear;
+	transition: transform 0.2s linear, box-shadow 0.2s linear;
 	box-shadow: 0 0 15px rgba(0,0,0,0.15);
 	-webkit-transform: scale(1, 1);   
 	-moz-transform: scale(1, 1);  
-	-ms-transform: scale(1, 1);  
-	-o-transform: scale(1, 1);  
 	transform: scale(1, 1);
 	color: #222222;
 	border-radius: 5px;
@@ -158,8 +137,6 @@ body {
 	.item:hover {
 		-webkit-transform: scale(1.025, 1.025);   
 		-moz-transform: scale(1.075, 1.075);  
-		-ms-transform: scale(1.075, 1.075);  
-		-o-transform: scale(1.075, 1.075);  
 		transform: scale(1.075, 1.075);
 		box-shadow: 0 0 15px rgba(0,0,0,0.45);
 		z-index: 2;
@@ -174,11 +151,9 @@ body {
 	height: 145px;
 	overflow: hidden;
 	margin-bottom: 10px;
-	transition: opacity 0.3s ease-out;
 	-webkit-transition: opacity 0.3s ease-out;
 	-moz-transition: opacity 0.3s ease-out;
-	-ms-transition: opacity 0.3s ease-out;
-	-o-transition: opacity 0.3s ease-out;
+	transition: opacity 0.3s ease-out;
 	opacity: 1;
 }
 
@@ -192,8 +167,7 @@ body {
 }
 
 .comment {
-	line-height: 18px;
-	font-size: 12;
+	font-size: 0.9em;
 }
 
 ol li {
@@ -203,11 +177,9 @@ ol li {
 }
 
 a {
-	-webkit-transition: text-shadow, color 0.5s, 0.5s ease-out;
-	-moz-transition: text-shadow, color 0.5s, 0.5s ease-out;
-	-ms-transition: text-shadow, color 0.5s, 0.5s ease-out;
-	-o-transition: text-shadow, color 0.5s, 0.5s ease-out;
-	transition: text-shadow, color 0.5s, 0.5s ease-out;
+	-webkit-transition: text-shadow 0.5s ease-out, color 0.5s ease-out;
+	-moz-transition: text-shadow 0.5s ease-out, color 0.5s ease-out;
+	transition: text-shadow 0.5s ease-out, color 0.5s ease-out;
 	color: #444;
 	text-shadow: 0 0 0 rgba(0,0,0,0);
 	text-decoration: none;
@@ -215,11 +187,11 @@ a {
 
 	a:hover {
 		color: #009BCD;
-		text-shadow: 1px 1px 10px rgba(0,0,0,0.75);
+		text-shadow: 1px 1px 10px rgba(0,0,0,0.5);
 	}
 	
 	a:active {
-		text-shadow: 1px 1px 7px rgba(0,0,0,0.75);
+		text-shadow: 1px 1px 7px rgba(0,0,0,0.5);
 		color: #0086B2;
 	}
 
@@ -229,9 +201,7 @@ p {
 }
 
 h1 {
-	font-family: Helvetica, Arial, sans-serif;
-	font-weight: normal;
-	font-size: 17px;
+	font-size: 1.3em;
 	line-height: 18px;
 	padding: 0 0 9px 0;
 }
@@ -249,35 +219,31 @@ h1 {
 }
 
 #header h1 a {
-	-webkit-transition: text-shadow, color 0.5s, 0.5s ease-out;
-	-moz-transition: text-shadow, color 0.5s, 0.5s ease-out;
-	-ms-transition: text-shadow, color 0.5s, 0.5s ease-out;
-	-o-transition: text-shadow, color 0.5s, 0.5s ease-out;
-	transition: text-shadow, color 0.5s, 0.5s ease-out;
-	color:#444444;
-	font-weight:bold;
+	-webkit-transition: text-shadow 0.3s ease-out, color 0.3s ease-out;
+	-moz-transition: text-shadow 0.3s ease-out, color 0.3s ease-out;
+	transition: text-shadow 0.3s ease-out, color 0.3s ease-out;
+	color: #444444;
+	font-weight: bold;
 	border: 0;
-	font-size: 65px;
-	letter-spacing:-3px;
+	font-size: 2.5em;
 	line-height: 36px;
+	letter-spacing: -3px;
 }
 
 	#header h1 a:hover {
-		text-shadow: 0 0 10px rgba(0,0,0,0.75);
+		text-shadow: 0 0 10px rgba(0,0,0,0.5);
 	}
 
 	#header h1 a:active {
-		text-shadow: 0px -2px 8px rgba(0,0,0,0.75);
+		text-shadow: 0px -2px 8px rgba(0,0,0,0.5);
 	}
 
 #header h2 {
 	-webkit-transition: color 0.3s ease-out;
 	-moz-transition: color 0.3s ease-out;
-	-ms-transition: color 0.3s ease-out;
-	-o-transition: color 0.3s ease-out;
 	transition: color 0.3s ease-out;
 	color: #009BCD;
-	font: normal 1.4em/1.6 Helvetica, Arial, sans-serif;
+	font-size: 1em;
 	margin-left: 5px;
 }
 
@@ -308,7 +274,6 @@ a:active {
 #header {
 	margin: 40px 20px 0px 20px;
     -webkit-font-smoothing: antialiased;
-    font-size: 36px;
     border-bottom: 2px solid #009DCF;
 }
 
@@ -337,6 +302,8 @@ a:active {
 	margin: 4% 2.5% 0 2.5%;
 	overflow: hidden;
 	box-shadow: 0 0 10px rgba(0,0,0,0.45);
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
 	border-radius: 15px;
 	background: #E3E5E8;
 	height: auto;

@@ -1,106 +1,86 @@
 <html>
 <head>
 <title>Scott Smith | Twitter</title>
-<meta name="viewport" content="width=device-width, initial-scale=0.3 user-scalable=0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=0">
 <style>
 body {
-	background: #E3E5E8;
+	background: rgba(36,36,36,1);
 	width: 100%;
 	margin: 0;
+	padding: 0;
+	font: 1em 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 }
 
+p, li, a {
+	color: #FFF;
+	text-align: center;
+	text-decoration: none;
+}
 
-h1, h2, p, li, a {
-	font-size: 64px;
-	line-height: 2em;
+h1 {
+	font-size: 1.6em;
 	color: #444;
 	text-align: center;
-	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
-}
-
-ul {
-	margin-top: 70px;
-	-webkit-margin-before: 0em;
-	list-style: none;
-	padding: 0;
-}
-
-p {
-	font-size: 52px;
-	text-align: center;
-	line-height: 0em;
-	padding: 0;
-}
-
-a {
-	text-decoration: none;
-	color: #009BCD;
-}
-
-#content {
-	margin-top: 2%;
+	margin: 0;
+	padding-top: 4% 0 1.5% 0;
+	background: #E3E5E8;
 }
 
 #divider {
-	border-bottom: 4px solid #009BCD;
+	border-bottom: 2px ridge #2E2E2E;
 	margin: 0;
 }
 
 #sheet {
 	opacity: 0.8;
-	background: -webkit-linear-gradient(rgba(115,115,115,1) 0%, rgba(51,51,51,1) 15%);
-	padding-bottom: 420px;
-	border-top: 4px ridge #2E2E2E;
-	padding-top: 70px;
+	background: -webkit-linear-gradient(rgba(115,115,115,1) 0%, rgba(36,36,36,1) 15%);
+	border-top: 2px ridge #b5b5b5;
+	padding-top: 3%;
+	width: 100%;
+	position: relative;
 }
 
-#sheet a {
-	color: #FFF;
+ul {
+	list-style: none;
+	padding: 0 5%;
+	margin: 0;
+	margin: inherit auto;
 }
 
 li {
-	font-size: 50px;
-	line-height: 1.4em;
-	margin: 30px 30px 0px 30px;
 	display: inline-block;
-	position: relative;
-	color: #FFF;
-}
-
-#appicon {
-	height: 215px;
-}
-
-#1 {
-	margin: 0 42px 70px 62px;
-}
-
-#2 {
-	margin: 0 42px 70px 62px;
-}
-
-#3 {
-	margin: 0 42px 70px 62px;
-}
-
-#4 {
-	margin: 70px 42px 70px 62px;
-}
-
-#cancel {
-	background: -webkit-linear-gradient(#656565 0%, #090a0d 100%);
-	border-radius: 36px;
-	border: 12px solid #242424;
-	font-size: 70px;
-	padding: 40px 30%;
-	height: 178px;
-	margin-top: 50%;
-	margin-left: 5%;
 	text-align: center;
-	vertical-align: middle;
-	position: absolute;
-	top: 28%;
-	display: block;
+	margin: 4.5%;
+}
+
+li p {
+	margin-top: 5px;
+}
+
+li img {
+	border-radius: 10px;
+}
+
+.appicon {
+	height: 60px;
+	width: auto;
+}
+
+#cancel h2 {
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	border-radius: 15px;
+	background: -webkit-linear-gradient(#6c6c6c 0%, #272727 100%);
+	font-size: 1.1em;
+	margin: 15px 7% 0 7%;
+	line-height: 2.25em;
+	border: 2px inset #646464;
+}
+
+#bottom {
+	background: rgba(36,36,36,1);
+	opacity: 0.8;
+	height: 5%;
 }
 </style>
 </head>
@@ -111,14 +91,16 @@ li {
 	<div id="divider"></div>
 	<div id="sheet">
 		<ul>
-			<a href="http://twitter.com/ScottSmith95"><li id="1"><img id="appicon" src="http://ScottHSmith.com/images/App%20Icons/Safari.png"><br><b>Right here</b></li></a>
-			<a href="twitter://user?screen_name=ScottSmith95"><li id="2"><img id="appicon" src="http://ScottHSmith.com/images/App%20Icons/Twitter%20App.png"><br><b>Twitter</b></li></a>
-			<a href="tweetbot:///user_profile/ScottSmith95"><li id="3"><img id="appicon" src="http://ScottHSmith.com/images/App%20Icons/Tweetbot.png"><br><b>Tweetbot</b></li></a>
-			<a href="googlechrome://twitter.com/ScottSmith95"><li id="4"><img id="appicon" src="http://ScottHSmith.com/images/App%20Icons/Chrome.png"><br><b>Chrome</b></li></a>
-		<ul>
-		<a id="cancel" href="/"><b>Cancel</b></a>
+			<li id="1"><a href="http://twitter.com/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Safari.png"><p>Right here</p></a></li>
+			<li id="2"><a href="twitter://user?screen_name=ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Twitter%20App.png"><p>Twitter</p></a></li>
+			<li id="3"><a href="tweetbot:///user_profile/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Tweetbot.png"><p>Tweetbot</p></a></li>
+			<li id="4"><a href="googlechrome://twitter.com/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Chrome.png"><p>Chrome</p></a></li>
+			<li id="5"></li>
+			<li id="6"></li>
+		</ul>
+		<a id="cancel" href="/"><h2>Cancel</h2></a>
+		<div id="bottom"></div>
 	</div>
 </div>
-
 </body>
 </html>

@@ -42,6 +42,10 @@ __    / /  | |     __   | |     | |    | |       | |
 
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
+<!-- Typekit -->
+<script type="text/javascript" src="//use.typekit.net/hjf6cdg.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
 <script>
 if(window.navigator && window.navigator.loadPurpose === "preview"){
     window.location.href = "http://scotthsmith.com/Preview/index.html"
@@ -52,7 +56,7 @@ if(window.navigator && window.navigator.loadPurpose === "preview"){
 
 body {
 	background: #E3E5E8;
-	font: 1em 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
+	font: normal 300 1em "museo-sans-1", "museo-sans-2", sans-serif;
 }
 	
 ::selection {
@@ -107,6 +111,7 @@ body {
 
 #name {
 	margin-top: 2%;
+	font-weight: 500;
 	text-align: center; 
 	font-size: 2.3em;
 	color: #444;
@@ -116,7 +121,7 @@ body {
 
 ul {
 	display: block;
-	list-style-type:none;
+	list-style-type: none;
 	padding: 0;
 }
 
@@ -137,12 +142,12 @@ a {
 }
 
 	a:hover {
-		text-shadow: 0 0 10px rgba(0,0,0,0.75);
+		text-shadow: 0 0 10px rgba(0,0,0,0.5);
 		color: #009BCD;
 	}
 	
 	a:active {
-		text-shadow: 0px -2px 7px rgba(0,0,0,0.75);
+		text-shadow: 0px -2px 7px rgba(0,0,0,0.5);
 		color: #0086B2;
 	}
 
@@ -158,6 +163,8 @@ a {
 	background-repeat: no-repeat;
 	width: 300px;
     height: 300px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
 	border-radius: 15px;
 	display: block;
 	margin: 2% auto 0 auto;
@@ -210,12 +217,12 @@ li.SocialLinksMobile {
 	font-size: 1.35em;
 }
 	.SocialLinks a:hover, .SocialLinksDesktop a:hover, .SocialLinksMobile a:hover {
-		text-shadow: 0 0 10px rgba(0,0,0,0.75);
+		text-shadow: 0 0 10px rgba(0,0,0,0.5);
 		color: #8d8d8d;	
 	}
 	
 	.SocialLinks a:active, .SocialLinksDesktop a:active, .SocialLinksMobile a:active {
-		text-shadow: 0 0 7px rgba(0,0,0,0.75);
+		text-shadow: 0 0 7px rgba(0,0,0,0.5);
 		color: #606060;
 	}
 	
@@ -247,7 +254,19 @@ li.SocialLinksMobile {
 	#email:active:after {
 		content:" - Seriously";
 	}
-	
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (-moz-min-device-pixel-ratio: 2),
+  only screen and (-o-min-device-pixel-ratio: 2/1),
+  only screen and (min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 2dppx) {
+
+body {
+	font-weight: 300;
+}
+
+  }
+
 @media screen and (max-width: 1100px) {
 
 #headerpic {
@@ -419,11 +438,11 @@ body {
 		<ul class="AllSocialLinks">
 			<li class="SocialLinksDesktop"><a href="http://twitter.com/ScottSmith95" class="SocialDesktop" id="TwitterDesktop">Twitter</a></li>
 			<li class="SocialLinksMobile"><a href="http://scotthsmith.com/Twitter" class="SocialMobile" id="TwitterMobile">Twitter</a></li>
-			<li class="SocialLinksDesktop"><a href="http://facebook.com/ScottSmith95" class="SocialDesktop" id="FacebookDesktop">Facebook</a></li>
-			<li class="SocialLinksMobile"><a href="http://scotthsmith.com/Facebook" class="SocialMobile" id="FacebookMobile">Facebook</a></li>
 			<li class="SocialLinksDesktop"><a href="https://alpha.app.net/scottsmith" class="SocialDesktop" id="App-NetDesktop">App.net</a></li>
 			<li class="SocialLinksMobile"><a href="http://ScottHSmith.com/App-Net" class="SocialMobile" id="App-NetMobile">App.net</a></li>
 			<li class="SocialLinks"><a href="http://github.com/ScottSmith95" class="SocialLink" id="GitHub">GitHub</a></li>
+			<li class="SocialLinksDesktop"><a href="http://facebook.com/ScottSmith95" class="SocialDesktop" id="FacebookDesktop">Facebook</a></li>
+			<li class="SocialLinksMobile"><a href="http://scotthsmith.com/Facebook" class="SocialMobile" id="FacebookMobile">Facebook</a></li>
 			<li class="SocialLinks"><a href="http://plus.google.com/u/1/106066907456293991070/" class="SocialLink" id="Google+">Google+</a></li>
 			<li class="SocialLinks"><a href="http://thefancy.com/ScottSmith" class="SocialLink" id="Google+">Fancy</a></li>
 			<li class="SocialLinks"><a href="mailto:mail@ScottHSmith.com" class="SocialLink" id="email">Email</a></li>
