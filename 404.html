@@ -210,6 +210,7 @@ a {
 .AllSocialLinks {
 	margin: 1.5% auto 1.5% auto;
 	text-align: center;
+	height: 150px;
 }
 
 li.SocialLinksDesktop, li.SocialLinksMobile {
@@ -219,6 +220,23 @@ li.SocialLinksDesktop, li.SocialLinksMobile {
 
 li.SocialLinksMobile {
 	display: none;
+}
+
+.SocialIcon {
+	-webkit-transition: opacity 0.25s ease-out;
+	-moz-transition: opacity 0.25s ease-out;
+	transition: opacity 0.25s ease-out;
+	height: 35%;
+	width: auto;
+	vertical-align: middle;
+}
+
+.SocialIcon:hover {
+	opacity: 0.75;
+}
+
+.SocialIcon:active {
+	opacity: 0.5;
 }
 
 .SocialLinks a, .SocialLinksDesktop a, .SocialLinksMobile a {
@@ -282,6 +300,13 @@ li.SocialLinksMobile {
 
 .MainText {
 	margin: 1.5% 15%;
+}
+
+.SocialIcon {
+	-webkit-transition: opacity 0.25s ease-out;
+	-moz-transition: opacity 0.25s ease-out;
+	transition: opacity 0.25s ease-out;
+	height: 30%;
 }
 }
 
@@ -371,11 +396,10 @@ li {
 
 .AllSocialLinks {
 	margin: 5% auto 2% auto;
-	text-align: center;
+	height: 100px;
 }
 
 li.SocialLinksDesktop, li.SocialLinksMobile {
-	display: inline;
 	line-height: 3.5em;
 }
 
@@ -385,6 +409,15 @@ li.SocialLinksDesktop {
 
 li.SocialLinksMobile {
 	display: inline;
+}
+
+.SocialIcon {
+	-webkit-transition: opacity 0.25s ease-out;
+	-moz-transition: opacity 0.25s ease-out;
+	transition: opacity 0.25s ease-out;
+	height: 32.5%;
+	width: auto;
+	vertical-align: middle
 }
 
 .SocialLinks a, .SocialLinksDesktop a, .SocialLinksMobile a {
@@ -401,26 +434,6 @@ li.SocialLinksMobile {
 	.SocialLinks a:active, .SocialLinksDesktop a:active, .SocialLinksMobile a:active {
 		text-shadow: none;
 		color: #009BCD;
-	}
-	
-	#email:hover {
-		text-shadow: none;
-		color: #009BCD;
-	}
-	
-	#email:hover:after {
-		content:"";
-		position: relative;
-		top: auto;
-	}
-	
-	#email:active{
-		text-shadow: none;
-		color: #009BCD;
-	}
-	
-	#email:active:after {
-		content:"";
 	}
 }
 </style>
@@ -453,16 +466,56 @@ li.SocialLinksMobile {
 	<div class="divider"></div>
 	
 		<ul class="AllSocialLinks">
-			<li class="SocialLinksDesktop"><a href="http://twitter.com/ScottSmith95" class="SocialDesktop" id="TwitterDesktop">Twitter</a></li>
-			<li class="SocialLinksMobile"><a href="http://scotthsmith.com/Twitter" class="SocialMobile" id="TwitterMobile">Twitter</a></li>
-			<li class="SocialLinksDesktop"><a href="https://alpha.app.net/scottsmith" class="SocialDesktop" id="App-NetDesktop">App.net</a></li>
-			<li class="SocialLinksMobile"><a href="http://ScottHSmith.com/App-Net" class="SocialMobile" id="App-NetMobile">App.net</a></li>
-			<li class="SocialLinks"><a href="http://github.com/ScottSmith95" class="SocialLink" id="GitHub">GitHub</a></li>
-			<li class="SocialLinksDesktop"><a href="http://facebook.com/ScottSmith95" class="SocialDesktop" id="FacebookDesktop">Facebook</a></li>
-			<li class="SocialLinksMobile"><a href="http://scotthsmith.com/Facebook" class="SocialMobile" id="FacebookMobile">Facebook</a></li>
-			<li class="SocialLinks"><a href="http://plus.google.com/u/1/106066907456293991070/" class="SocialLink" id="Google+">Google+</a></li>
-			<li class="SocialLinks"><a href="http://thefancy.com/ScottSmith" class="SocialLink" id="Google+">Fancy</a></li>
-			<li class="SocialLinks"><a href="mailto:mail@ScottHSmith.com" class="SocialLink" id="email">Email</a></li>
+			<li class="SocialLinksDesktop">
+				<a href="http://twitter.com/ScottSmith95" class="SocialDesktop" id="TwitterDesktop">
+					<img class="SocialIcon" src="images/Twitter.svg">
+				</a>
+			</li>
+			<li class="SocialLinksMobile">
+				<a href="http://scotthsmith.com/Twitter" class="SocialMobile" id="TwitterMobile">
+					<img class="SocialIcon" src="images/Twitter.svg">
+				</a>
+			</li>
+			<li class="SocialLinksDesktop">
+				<a href="https://alpha.app.net/scottsmith" class="SocialDesktop" id="App-NetDesktop">
+					<img class="SocialIcon" src="images/AppNet.svg">
+				</a>
+			</li>
+			<li class="SocialLinksMobile">
+				<a href="http://ScottHSmith.com/ADN" class="SocialMobile" id="App-NetMobile">
+					<img class="SocialIcon" src="images/AppNet.svg">
+				</a>
+			</li>
+			<li class="SocialLinksDesktop">
+				<a href="http://facebook.com/ScottSmith95" class="SocialDesktop" id="FacebookDesktop">
+					<img class="SocialIcon" src="images/Facebook.svg">
+				</a>
+			</li>
+			<li class="SocialLinksMobile">
+				<a href="http://scotthsmith.com/Facebook" class="SocialMobile" id="FacebookMobile">
+					<img class="SocialIcon" src="images/Facebook.svg">
+				</a>
+			</li>
+			<li class="SocialLinks">
+				<a href="http://github.com/ScottSmith95" class="SocialLink" id="GitHub">
+					<img class="SocialIcon" src="images/GitHub.svg?v1">
+				</a>
+			</li>
+			<li class="SocialLinks">
+				<a href="http://plus.google.com/u/1/106066907456293991070/" class="SocialLink" id="Google+">
+					<img class="SocialIcon" src="images/GooglePlus.svg">
+				</a>
+			</li>
+			<li class="SocialLinks">
+				<a href="http://thefancy.com/ScottSmith" class="SocialLink" id="Fancy">
+					<img class="SocialIcon" src="images/Fancy.svg">
+				</a>
+			</li>
+			<li class="SocialLinks">
+				<a href="mailto:mail@ScottHSmith.com" class="SocialLink" id="Email">
+					<img class="SocialIcon" src="images/Email.svg?v1">
+				</a>
+			</li>
 		</ul>
 	
 	</div>
