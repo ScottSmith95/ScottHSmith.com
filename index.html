@@ -203,9 +203,9 @@ a {
 }
 
 .AllSocialLinks {
-	margin: 1.5% auto 1.5% auto;
+	margin: 1.5% auto 5% auto;
 	text-align: center;
-	height: 150px;
+	height: 1em;
 }
 
 li.SocialLinksDesktop, li.SocialLinksMobile {
@@ -221,35 +221,18 @@ li.SocialLinksMobile {
 	-webkit-transition: opacity 0.25s ease-out;
 	-moz-transition: opacity 0.25s ease-out;
 	transition: opacity 0.25s ease-out;
-	height: 35%;
+	height: 50px;
 	width: auto;
 	vertical-align: middle;
 }
 
 .SocialIcon:hover {
 	opacity: 0.75;
-	
 }
 
 .SocialIcon:active {
 	opacity: 0.5;
 }
-
-.SocialLinks a, .SocialLinksDesktop a, .SocialLinksMobile a {
-	text-decoration: none;
-	color: #009BCD;
-	text-shadow: 0 0 0 rgba(0,0,0,0.0);
-	font-size: 1.35em;
-}
-	.SocialLinks a:hover, .SocialLinksDesktop a:hover, .SocialLinksMobile a:hover {
-		text-shadow: 0 0 10px rgba(0,0,0,0.5);
-		color: #8d8d8d;	
-	}
-	
-	.SocialLinks a:active, .SocialLinksDesktop a:active, .SocialLinksMobile a:active {
-		text-shadow: 0 0 7px rgba(0,0,0,0.5);
-		color: #606060;
-	}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
   only screen and (-moz-min-device-pixel-ratio: 2),
@@ -283,8 +266,9 @@ body {
 	-webkit-transition: opacity 0.25s ease-out;
 	-moz-transition: opacity 0.25s ease-out;
 	transition: opacity 0.25s ease-out;
-	height: 30%;
-
+	height: 45px;
+	width: auto;
+}
 }
 
 @media screen and (max-width: 699px) {
@@ -305,6 +289,11 @@ body {
 
 .MainText {
 	margin: 2% 1%;
+}
+
+.SocialIcon {
+	margin: 0;
+	height: 35px;
 }
 }
 
@@ -357,8 +346,7 @@ li {
 }
 
 .AllSocialLinks {
-	margin: 5% auto 2% auto;
-	height: 100px;
+	margin: 2.5% auto 2.5% auto;
 }
 
 li.SocialLinksDesktop, li.SocialLinksMobile {
@@ -372,25 +360,6 @@ li.SocialLinksDesktop {
 li.SocialLinksMobile {
 	display: inline;
 }
-
-.SocialIcon {
-	height: 32.5%;
-}
-
-.SocialLinks a, .SocialLinksDesktop a, .SocialLinksMobile a {
-	color: #009BCD;
-	text-shadow: 0 0 0 rgba(0,0,0,0);
-	text-decoration: none;
-}
-	.SocialLinks a:hover, .SocialLinksDesktop a:hover, .SocialLinksMobile a:hover {
-		text-shadow: none;
-		color: #009BCD;	
-	}
-	
-	.SocialLinks a:active, .SocialLinksDesktop a:active, .SocialLinksMobile a:active {
-		text-shadow: none;
-		color: #009BCD;
-	}
 }
 
 @media screen and (max-device-width: 240px) {

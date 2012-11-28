@@ -195,7 +195,7 @@ a {
 	
 #navdivider {
 	border-bottom: 1px solid #009BCD;
-	margin: 0 30%;
+	margin: 0 35%;
 }
 
 .MainText {
@@ -208,9 +208,9 @@ a {
 }
 
 .AllSocialLinks {
-	margin: 1.5% auto 1.5% auto;
+	margin: 1.5% auto 5% auto;
 	text-align: center;
-	height: 150px;
+	height: 1em;
 }
 
 li.SocialLinksDesktop, li.SocialLinksMobile {
@@ -226,7 +226,7 @@ li.SocialLinksMobile {
 	-webkit-transition: opacity 0.25s ease-out;
 	-moz-transition: opacity 0.25s ease-out;
 	transition: opacity 0.25s ease-out;
-	height: 35%;
+	height: 50px;
 	width: auto;
 	vertical-align: middle;
 }
@@ -239,54 +239,6 @@ li.SocialLinksMobile {
 	opacity: 0.5;
 }
 
-.SocialLinks a, .SocialLinksDesktop a, .SocialLinksMobile a {
-	transition: text-shadow, color 0.5s, 0.5s ease-out;
-	-webkit-transition: text-shadow, color 0.5s, 0.5s ease-out;
-	-moz-transition: text-shadow, color 0.5s, 0.5s ease-out;
-	text-decoration: none;
-	color: #009BCD;
-	font-size: 1.35em;
-	text-shadow: 0 0 0 rgba(0,0,0,0.0);
-}
-	.SocialLinks a:hover, .SocialLinksDesktop a:hover, .SocialLinksMobile a:hover {
-		text-shadow: 0 0 10px rgba(0,0,0,0.75);
-		color: #8d8d8d;	
-	}
-	
-	.SocialLinks a:active, .SocialLinksDesktop a:active, .SocialLinksMobile a:active {
-		text-shadow: 0 0 7px rgba(0,0,0,0.75);
-		color: #606060;
-	}
-	
-	#email:hover {
-		text-shadow: 0 0 7px rgba(194,14,14,0.3);
-		color: #c20e0e;
-	}
-	
-	#email:after {
-		-webkit-transition: text-shadow 0.5s ease-out, color 0.5s ease-out;
-		-moz-transition: text-shadow 0.5s ease-out, color 0.5s ease-out;
-		transition: text-shadow 0.5s ease-out, color 0.5s ease-out;
-		position: relative;
-		left: 0;
-		top: 0;
-	}
-	
-	#email:hover:after {
-		content:" - Think Again";
-		position: relative;
-		top: auto;
-	}
-	
-	#email:active{
-		text-shadow: 0 0 15px rgba(0,0,0,0.5);
-		color: #8d1010;
-	}
-	
-	#email:active:after {
-		content:" - Seriously";
-	}
-
 @media screen and (max-width: 1100px) {
 
 #headerpic img {
@@ -295,7 +247,7 @@ li.SocialLinksMobile {
 }
 
 #navdivider {
-	margin: 0 34%;
+	margin: 0 29%;
 }
 
 .MainText {
@@ -306,7 +258,7 @@ li.SocialLinksMobile {
 	-webkit-transition: opacity 0.25s ease-out;
 	-moz-transition: opacity 0.25s ease-out;
 	transition: opacity 0.25s ease-out;
-	height: 30%;
+	height: 45px;
 }
 }
 
@@ -322,6 +274,10 @@ body {
 
 .MainText {
 	margin: 2% 1%;
+}
+
+.SocialIcon {
+	height: 35px;
 }
 }
 
@@ -385,7 +341,6 @@ li {
 
 #navdivider {
 	border-bottom: 2px solid #009BCD;
-	margin: 0 29%;
 }
 
 .MainText {
@@ -395,8 +350,7 @@ li {
 }
 
 .AllSocialLinks {
-	margin: 5% auto 2% auto;
-	height: 100px;
+	margin: 2.5% auto 2.5% auto;
 }
 
 li.SocialLinksDesktop, li.SocialLinksMobile {
@@ -410,31 +364,6 @@ li.SocialLinksDesktop {
 li.SocialLinksMobile {
 	display: inline;
 }
-
-.SocialIcon {
-	-webkit-transition: opacity 0.25s ease-out;
-	-moz-transition: opacity 0.25s ease-out;
-	transition: opacity 0.25s ease-out;
-	height: 32.5%;
-	width: auto;
-	vertical-align: middle
-}
-
-.SocialLinks a, .SocialLinksDesktop a, .SocialLinksMobile a {
-	color: #009BCD;
-	text-shadow: 0 0 0 rgba(0,0,0,0);
-	text-decoration: none;
-	font-size: 42px;
-}
-	.SocialLinks a:hover, .SocialLinksDesktop a:hover, .SocialLinksMobile a:hover {
-		text-shadow: none;
-		color: #009BCD;	
-	}
-	
-	.SocialLinks a:active, .SocialLinksDesktop a:active, .SocialLinksMobile a:active {
-		text-shadow: none;
-		color: #009BCD;
-	}
 }
 </style>
 
