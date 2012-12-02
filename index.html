@@ -67,9 +67,9 @@ body {
 }
 
 a {
-	-webkit-transition: text-shadow 0.375s ease-out, color 0.375s ease-out;
-	-moz-transition: text-shadow 0.375s ease-out, color 0.375s ease-out;
-	transition: text-shadow 0.375s ease-out, color 0.375s ease-out;
+	-webkit-transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
+	-moz-transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
+	transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
 	margin-top: 2%;
 	text-decoration: none;
 	color: #444444;
@@ -84,6 +84,10 @@ a {
 		text-shadow: 0px -2px 7px rgba(0,0,0,0.5);
 		color: #0086B2;
 	}
+
+ul {
+	-webkit-padding-start: 0;
+}
 
 @-webkit-keyframes fly-in-from-top {
 	0% {top: -1500px; opacity: 0;}
@@ -121,37 +125,6 @@ a {
 	100%{top: 0px; opacity: 1;}
 }
 
-#animated {
-	-webkit-animation: fly-in-from-bottom 1.25s ease-in-out forwards;
-	-moz-animation: fly-in-from-bottom 1.25s ease-in-out forwards;
-	animation: fly-in-from-bottom 1.25s ease-in-out forwards;
-	position: relative;
-	-webkit-transform: translateZ(0);
-	-moz-transform: translateZ(0);
-	transform: translateZ(0);
-}
-
-#name {
-	margin-top: 2%;
-	font-weight: 500;
-	text-align: center; 
-	font-size: 2.3em;
-	color: #444;
-	-webkit-margin-after: 0%;
-}
-
-ul {
-	display: block;
-	list-style-type: none;
-	padding: 0;
-}
-
-.nav {
-	display: inline;
-	text-align: center;
-	margin: 0px 1%;
-}
-
 #headerpic {
 	-webkit-animation: fly-in-from-top 1.25s ease-in-out forwards;
 	-moz-animation: fly-in-from-top 1.25s ease-in-out forwards;
@@ -175,18 +148,37 @@ ul {
 	transform: translateZ(0);
 }
 
-#navbar {
-	margin: 0 auto;
-	clear: both;
-	text-align: center;
-	width: 100%;
+#animated {
+	-webkit-animation: fly-in-from-bottom 1.25s ease-in-out forwards;
+	-moz-animation: fly-in-from-bottom 1.25s ease-in-out forwards;
+	animation: fly-in-from-bottom 1.25s ease-in-out forwards;
+	position: relative;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	transform: translateZ(0);
 }
 
-#navlink {
-	margin-top: 2%;
+#name {
+	margin: 1.5% auto;
+	font-weight: 500;
+	text-align: center; 
+	font-size: 2.3em;
+	color: #444;
+}
+
+nav {
+	clear: both;
+	text-align: center;
+	margin: 1% auto;
+}
+
+nav a {
+	display: inline;
+	text-align: center;
+	margin: 0 1%;
 	font-size: 1.6em;
 }
-	
+
 #navdivider {
 	border-bottom: 1px solid #009BCD;
 	margin: 0 35%;
@@ -210,7 +202,7 @@ li.SocialLinksDesktop, li.SocialLinksMobile, li.SocialLinks {
 	display: inline;
 	text-align: center;
 	line-height: 3.5em;
-	margin: 0px 0.75%;
+	margin: 0px 0.25%;
 }
 
 li.SocialLinksMobile {
@@ -218,17 +210,22 @@ li.SocialLinksMobile {
 }
 
 .SocialIcon {
-	-webkit-transition: opacity 0.375s ease-out;
-	-moz-transition: opacity 0.375s ease-out;
-	transition: opacity 0.375s ease-out;
-	height: 3em;
+	-webkit-transition: opacity 0.25s ease-out, height 0.5s ease-out, width 0.5s ease-out, -webkit-transform 0.25s ease-out;
+	-moz-transition: opacity 0.25s ease-out, height 0.5s ease-out, width 0.5s ease-out, -moz-transform 0.25s ease-out;
+	transition: opacity 0.25s ease-out, height 0.5s ease-out, width 0.5s ease-out, transform 0.25s ease-out;
+	-webkit-transform: scale(0.8, 0.8);   
+	-moz-transform: scale(0.8, 0.8);  
+	transform: scale(0.8, 0.8);
 	width: auto;
 	vertical-align: middle;
+	height: 3.75em;
 	margin-bottom: 2.5%;
 }
 
 	.SocialIcon:hover {
-		opacity: 0.75;
+		-webkit-transform: scale(1, 1);   
+		-moz-transform: scale(1, 1);  
+		transform: scale(1, 1);
 	}
 	
 	.SocialIcon:active {
@@ -245,8 +242,7 @@ li.SocialLinksMobile {
 body {
 	font-weight: 300;
 }
-
-  }
+}
 
 @media screen and (max-width: 1100px) {
 
@@ -265,10 +261,7 @@ body {
 }
 
 .SocialIcon {
-	-webkit-transition: opacity 0.25s ease-out;
-	-moz-transition: opacity 0.25s ease-out;
-	transition: opacity 0.25s ease-out;
-	height: 2.75em;
+	height: 3.25em;
 	width: auto;
 }
 }
@@ -283,10 +276,6 @@ body {
 	background-size: 140px 140px;
 	width: 140px;
     height: 140px;
-}
-
-.nav {
-	margin: 0px 1.5%;
 }
 
 #navdivider {
@@ -328,20 +317,14 @@ a {
 	margin-top: 2%;
 }
 
-#navlink {
+nav {
+	marigin: 2.5% auto;
+}
+
+nav a {
 	margin-top: 1%;
 	color: #444444;
 }
-	
-	#navlink:hover {
-		text-shadow: none;
-		color: inherit;
-	}
-	
-	#navlink:active {
-		text-shadow: none;
-		color: inherit;
-	}
 
 .MainText {
 	margin: 2% 2.5%;
@@ -353,6 +336,8 @@ a {
 
 li.SocialLinksDesktop, li.SocialLinksMobile, li.SocialLinks {
 	line-height: 3.5em;
+	margin: 0 0.75%;
+	padding-bottom: 2%;
 }
 
 li.SocialLinksDesktop {
@@ -363,7 +348,16 @@ li.SocialLinksMobile {
 	display: inline;
 }
 
+.SocialIcon {
+	-webkit-transform: scale(1, 1);   
+	-moz-transform: scale(1, 1);  
+	transform: scale(1, 1);
+}
+
 	.SocialIcon:hover {
+		-webkit-transform: scale(1, 1);   
+		-moz-transform: scale(1, 1);  
+		transform: scale(1, 1);
 		opacity: 1;
 	}
 	
@@ -389,15 +383,13 @@ body {
 	
 	<h1 id="name">Scott Smith</h1>
 	
-	<div id="navbar">
-		<ul>
-			<li class="nav"><a id="navlink" href="/">Home</a></li>
-			<li class="nav"><a id="navlink" href="http://BeyondTheCo.de">Blog</a></li>
-			<!-- <li class="nav"><a id="navlink" href="http://podcast.BeyondTheCo.de">Podcast</a></li> -->
-			<li class="nav"><a id="navlink" href="http://ScottHSmith.com/portfolio/">Portfolio</a></li>
-			
-		</ul>
-	</div>
+	<nav>
+		<a href="/">Home</a>
+		<a href="http://BeyondTheCo.de">Blog</a>
+		<!-- <a href="http://podcast.BeyondTheCo.de">Podcast</a> -->
+		<a href="http://ScottHSmith.com/portfolio/">Portfolio</a>
+	</nav>
+	
 	<div id="navdivider"></div>
 	
 	<p class="MainText">Opinionated technology follower and blogger.<br>Lover of excellent web design.<br>Always learning.<br><br>I have a blog, <a class="blog" href="http://BeyondTheCo.de">Beyond The Code</a>.</p>

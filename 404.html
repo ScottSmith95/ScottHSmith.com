@@ -42,6 +42,7 @@ __    / /  | |     __   | |     | |    | |       | |
 
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
+<!-- Typekit -->
 <script type="text/javascript" src="//use.typekit.net/hjf6cdg.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
@@ -59,9 +60,9 @@ body {
 }
 
 a {
-	-webkit-transition: text-shadow 0.375s ease-out, color 0.375s ease-out;
-	-moz-transition: text-shadow 0.375s ease-out, color 0.375s ease-out;
-	transition: text-shadow 0.375s ease-out, color 0.375s ease-out;
+	-webkit-transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
+	-moz-transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
+	transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
 	margin-top: 2%;
 	text-decoration: none;
 	color: #444444;
@@ -130,15 +131,6 @@ a {
 	position: relative;
 }
 
-#name {
-	margin-top: 20px;
-	font-weight: 500;
-	text-align: center; 
-	font-size: 2.4em;
-	-webkit-margin-after: 0%;
-	color: #444;
-}
-
 #headerpic img {
 	-webkit-animation: fly-in-from-top 1.25s ease-in-out forwards;
 	-moz-animation: fly-in-from-top 1.25s ease-in-out forwards;
@@ -159,40 +151,26 @@ a {
 	z-index: 2;
 }
 
-#navbar {
-	margin: 0 auto;
+#name {
+	margin: 1.5% auto;
+	font-weight: 500;
+	text-align: center; 
+	font-size: 2.3em;
+	color: #444;
+}
+
+nav {
 	clear: both;
 	text-align: center;
-	width: 100%;
+	margin: 1% auto;
 }
 
-ul {
-	display: block;
-	list-style-type:none;
-	-webkit-padding-start: 0;
-}
-
-li {
+nav a {
 	display: inline;
 	text-align: center;
-	margin: 0px 10px;
-}
-
-#navlink {
-	margin-top: 2%;
-	color: #444444;
+	margin: 0 1%;
 	font-size: 1.6em;
 }
-	
-	#navlink:hover {
-		text-shadow: 1px 1px 10px rgba(0,0,0,0.77);
-		color: #009BCD;
-	}
-	
-	#navlink:active {
-		text-shadow: 1px 1px 7px rgba(0,0,0,0.77);
-		color: #0086b2;
-	}
 
 #navdivider {
 	border-bottom: 1px solid #009BCD;
@@ -214,9 +192,11 @@ li {
 	height: 1em;
 }
 
-li.SocialLinksDesktop, li.SocialLinksMobile {
+li.SocialLinksDesktop, li.SocialLinksMobile, li.SocialLinks {
 	display: inline;
+	text-align: center;
 	line-height: 3.5em;
+	margin: 0px 0.25%;
 }
 
 li.SocialLinksMobile {
@@ -224,21 +204,27 @@ li.SocialLinksMobile {
 }
 
 .SocialIcon {
-	-webkit-transition: opacity 0.25s ease-out;
-	-moz-transition: opacity 0.25s ease-out;
-	transition: opacity 0.25s ease-out;
-	height: 3.5em;
+	-webkit-transition: opacity 0.25s ease-out, height 0.5s ease-out, width 0.5s ease-out, -webkit-transform 0.25s ease-out;
+	-moz-transition: opacity 0.25s ease-out, height 0.5s ease-out, width 0.5s ease-out, -moz-transform 0.25s ease-out;
+	transition: opacity 0.25s ease-out, height 0.5s ease-out, width 0.5s ease-out, transform 0.25s ease-out;
+	-webkit-transform: scale(0.8, 0.8);   
+	-moz-transform: scale(0.8, 0.8);  
+	transform: scale(0.8, 0.8);
 	width: auto;
 	vertical-align: middle;
+	height: 3.75em;
+	margin-bottom: 2.5%;
 }
 
-.SocialIcon:hover {
-	opacity: 0.75;
-}
-
-.SocialIcon:active {
-	opacity: 0.5;
-}
+	.SocialIcon:hover {
+		-webkit-transform: scale(1, 1);   
+		-moz-transform: scale(1, 1);  
+		transform: scale(1, 1);
+	}
+	
+	.SocialIcon:active {
+		opacity: 0.5;
+	}
 }
 
 @media screen and (max-width: 1100px) {
@@ -257,10 +243,8 @@ li.SocialLinksMobile {
 }
 
 .SocialIcon {
-	-webkit-transition: opacity 0.375s ease-out;
-	-moz-transition: opacity 0.375s ease-out;
-	transition: opacity 0.375s ease-out;
-	height: 3em;
+	height: 3.25em;
+	width: auto;
 }
 }
 
@@ -302,7 +286,7 @@ a {
 		color: inherit;
 	}
 	
-h1 {
+#name {
 	margin-top: 20px;
 	font-style: normal;
 	-webkit-margin-after: 0%;
@@ -316,30 +300,14 @@ h1 {
 	margin: 2% auto 0 auto;
 }
 
-#navbar {
-	margin: 0 auto;
-	width: 100%;
+nav {
+	marigin: 2.5% auto;
 }
 
-li {
-	margin: 0px 10px;
-}
-
-#navlink {
-	transition: color 0.5s;
-	margin-top: 2%;
+nav a {
+	margin-top: 1%;
 	color: #444444;
 }
-	
-	#navlink:hover {
-		text-shadow: none;
-		color: inherit;
-	}
-	
-	#navlink:active {
-		text-shadow: none;
-		color: inherit;
-	}
 
 #navdivider {
 	border-bottom: 2px solid #009BCD;
@@ -367,11 +335,23 @@ li.SocialLinksMobile {
 	display: inline;
 }
 
+
 .SocialIcon {
-	-webkit-transition: opacity 0.375s ease-out;
-	-moz-transition: opacity 0.375s ease-out;
-	transition: opacity 0.375s ease-out;
+	-webkit-transform: scale(1, 1);   
+	-moz-transform: scale(1, 1);  
+	transform: scale(1, 1);
 }
+
+	.SocialIcon:hover {
+		-webkit-transform: scale(1, 1);   
+		-moz-transform: scale(1, 1);  
+		transform: scale(1, 1);
+		opacity: 1;
+	}
+	
+	.SocialIcon:active {
+		opacity: 1;
+	}
 }
 </style>
 
@@ -387,15 +367,13 @@ li.SocialLinksMobile {
 	
 	<h1 id="name">Daheq&#8253;</h1>
 	
-	<div id="navbar">
-		<ul>
-			<li class="nav"><a id="navlink" href="http://ScottHSmith.com/">Home</a></li>
-			<li class="nav"><a id="navlink" href="http://BeyondTheCo.de">Blog</a></li>
-			<!-- <li class="nav"><a id="navlink" href="http://podcast.BeyondTheCo.de">Podcast</a></li> -->
-			<li class="nav"><a id="navlink" href="http://ScottHSmith.com/portfolio/">Portfolio</a></li>
-			
-		</ul>
-	</div>
+	<nav>
+		<a href="http://ScottHSmith.com/">Home</a>
+		<a href="http://BeyondTheCo.de">Blog</a>
+		<!-- <a href="http://podcast.BeyondTheCo.de">Podcast</a> -->
+		<a href="http://ScottHSmith.com/portfolio/">Portfolio</a>
+	</nav>
+	
 	<div id="navdivider"></div>
 	
 	<p class="MainText">I have no idea what you were looking for, but it isn't here.<br>Seriously though, if you think this is an error, feel free to contact me trough any of the options below.</p>
