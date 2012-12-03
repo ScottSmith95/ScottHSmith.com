@@ -44,8 +44,6 @@ body {
 
 
 ul {
-	display: block;
-	list-style-type: none;
 	padding: 0;
 }
 
@@ -73,28 +71,28 @@ a {
 	position: relative;
 }
 
-#navbar {
-	margin: 0 auto;
+nav {
 	clear: both;
 	text-align: center;
-	width: 100%;
+	margin: 1% auto;
 }
 
-#navlink {
-	margin-top: 2%;
-	color: #444444;
-	font-size: 28px;
+nav a {
+	display: inline;
+	text-align: center;
+	margin: 0 1%;
+	font-size: 1.6em;
 }
 	
 #navdivider {
-	border-bottom: 1px solid #009BCD;
+	border-bottom: 2px solid #009BCD;
 	margin: 0 37%;
 }
 
 .MainText {
 	color: #444444;
 	text-align: center;
-	font-size: 1.35em;
+	font-size: 1.15em;
 	line-height: 1.2em;
 	margin: 1.5% 26%;
 }
@@ -115,7 +113,7 @@ li.SocialLinksMobile {
 }
 
 .SocialIcon {
-	height: 3em;
+	height: 2.25em;
 	width: auto;
 	vertical-align: middle;
 	margin-bottom: 2.5%;
@@ -165,14 +163,13 @@ li.SocialLinks {
 	<div id="animated">
 	<h1 id="name">Scott Smith</h1>
 	
-	<div id="navbar">
-		<ul>
-			<li class="nav"><a id="navlink" href="/">Home</a></li>
-			<li class="nav"><a id="navlink" href="http://BeyondTheCo.de">Blog</a></li>
-			<li class="nav"><a id="navlink" href="http://ScottHSmith.com/portfolio/">Portfolio</a></li>
-			
-		</ul>
-	</div>
+	<nav>
+		<a href="/">Home</a>
+		<a href="http://BeyondTheCo.de">Blog</a>
+		<!-- <a href="http://podcast.BeyondTheCo.de">Podcast</a> -->
+		<a href="http://ScottHSmith.com/portfolio/">Portfolio</a>
+	</nav>
+	
 	<div id="navdivider"></div>
 	
 	<p class="MainText">Opinionated technology follower and blogger.<br>Lover of excellent web design.<br>Always learning.<br><br>I have a blog, <a class="blog" href="http://BeyondTheCo.de">Beyond The Code</a>.</p>
