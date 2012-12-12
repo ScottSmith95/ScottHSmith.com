@@ -1,0 +1,199 @@
+<html>
+<head>
+
+<title>App.Net Tea | #adntea</title>
+
+<meta name="viewport" content="user-scalable=0">
+
+<!-- Typekit -->
+<script type="text/javascript" src="//use.typekit.net/hjf6cdg.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+<script type="text/javascript" language="JavaScript">
+
+NumberOfImagesToRotate = 7;
+
+FirstPart = '<img src="images/image';
+LastPart = '.jpg">';
+
+function printImage() {
+var r = Math.ceil(Math.random() * NumberOfImagesToRotate);
+document.write(FirstPart + r + LastPart);
+}
+</script>
+
+<style>
+body {
+	background: #E3E5E8;
+	font: normal 300 2em "museo-sans-1", "museo-sans-2", sans-serif;
+	margin: 0;
+}
+
+h1, h2, p, a {
+	line-height: 2em;
+	color: #444;
+}
+
+h1 {
+	font-size: 1.5em;
+	text-align: center;
+}
+
+a {
+	-webkit-transition: color 0.4s;
+	-moz-transition: color 0.4s;
+	transition: color 0.4s;
+	color: #737373;
+	text-decoration: none;
+}
+
+	a:hover {
+		color: #C5705E;
+	}
+	
+	a:active {
+		color: #975143;
+	}
+
+#content {
+	margin: 0 15%;
+}
+
+#intro, #start {
+	float: right;
+	clear: right;
+	text-align: left;
+	font-size: 0.7em;
+	width: 50%;
+}
+
+#slideshow {
+	float: left;
+	clear: left;
+	width: 50%;
+	margin: 3.5% 0 3.5% 0;
+}
+
+#slideshow img {
+	-webkit-animation: fade-in 0.95s ease-out 0.4s forwards;
+	-moz-animation: fade-in 0.95s ease-in-out 0.4s forwards;
+	animation: fade-in 0.95s ease-in-out 0.4s forwards;
+	opacity: 0;
+	width: 350px;
+	box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
+	-webkit-transform: rotate(4deg);
+	-moz-transform: rotate(4deg);
+	transform: rotate(4deg);
+}
+
+@-webkit-keyframes fade-in {
+	0% {opacity: 0; -webkit-transform: scale(0.65, 0.65);}
+	15% {-webkit-transform: scale(0.725, 0.725) rotate(0deg);}
+	100%{opacity: 1; -webkit-transform: scale(1, 1) rotate(4deg);}
+}
+			
+@-moz-keyframes fade-in {
+	0% {opacity: 0; -moz-transform: scale(0.65, 0.65);}
+	15% {-moz-transform: scale(0.725, 0.725) rotate(0deg);}
+	100%{opacity: 1; -moz-transform: scale(1, 1) rotate(4deg);}
+}
+
+@keyframes fade-in {
+	0% {opacity: 0; transform: scale(0.65, 0.65);}
+	15% {transform: scale(0.725, 0.725) rotate(0deg);}
+	100%{opacity: 1; transform: scale(1, 1) rotate(4deg);}
+}
+
+@media screen and (max-width: 1100px) {
+	body {
+		font-size: 1.8em;
+	}
+
+	#content {
+		margin: 0 10%;
+	}
+	
+	#slideshow img {
+		width: 300px;
+	}
+}
+
+@media screen and (max-device-width: 699px) {
+	body {
+		font-size: 4em;
+	}
+	
+	h1 {
+		font-size: 1.7em;
+		margin-bottom: 0;
+	}
+	
+	a {
+		-webkit-transition: none;
+		-moz-transition: none;
+		transition: none;
+		color: #C5705E;
+		text-decoration: none;
+	}
+	
+		a:hover {
+			color: #C5705E;
+		}
+		
+		a:active {
+			color: #C5705E;
+		}
+	
+	h1, h2, p, a {
+		line-height: 1.7em;
+	}
+	
+	#content {
+		margin: 0 7.5%;
+	}
+	
+	#intro, #start {
+		float: none;
+		clear: both;
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	#slideshow {
+		float: none;
+		clear: both;
+		text-align: center;
+		width: 100%;
+		height: auto;
+		margin: 0 auto;
+	}
+	
+	#slideshow img {
+		-webkit-animation-delay: 0.5s;
+		-moz-animation-delay: 0.5s;
+		animation-delay: 0.5s;
+		width: 450px;
+		box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.85);
+	}
+}
+</style>
+</head>
+
+<body>
+<div id="content">
+<h1>ADN Tea</h1>
+<div id="slideshow">
+	<script type="text/javascript" language="JavaScript"><!--
+printImage();
+//-->
+</script>
+</div>
+<div id="intro">
+	<p>ADN Tea is an event that occurs on Tuesdays exclusively on <a href="http://join.app.net">App.Net</a>.<br>It was begun by <a href="http://scotthsmith.com/ADN">Scott Smith</a> and <a href="http://alpha.app.net/nickrosencrans">Nick Rosencrans</a>.</p>
+</div>
+<div id="start">
+<p>To get started, pick up some of your favorite tea, or try something new. Snap a photo and post it with the hashtag <a href="https://alpha.app.net/hashtags/adntea">#adntea</a> with your comments.<br><a href="https://alpha.app.net/hashtags/adntea">See what people are saying.</a></p>
+</div>
+</div>
+</body>
+</html>

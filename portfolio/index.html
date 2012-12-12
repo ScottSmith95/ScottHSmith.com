@@ -28,12 +28,16 @@ __    / /  | |     __   | |     | |    | |       | |
         <meta property="og:url" content="http://ScottHSmith.com"/>
 
         <meta property="og:image" content="http://ScottHSmith.com/images/ScottPic.png"/>
+        
+        <meta property="og:description" content="Scott Smith is a talented web designer." />
 
         <meta name="apple-mobile-web-app-capable" content="yes"/>
 
         <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
         
         <meta name="viewport" content="user-scalable = no" />
+        
+        <meta charset="utf-8">
 
         <!-- iOS Devices -->
         <link rel="apple-touch-icon-precomposed" href="http://scotthsmith.com/images/ScottPic.png"/>
@@ -108,37 +112,40 @@ body {
 }
 
 #container {
-	width: 840px;
+	width: 70%;
+	height: auto;
 	margin: 0 auto;
 	text-align: left;
 }
 
+#items {
+	margin: 0 auto;
+}
+
 .item {
-	width: 270px;
-	height: 350px;
-	background: #EEE;
-	float: left;
-	margin-right: 10px;
-	margin-bottom: 10px;
-	position: relative;
-	overflow: hidden;
 	-webkit-transition: -webkit-transform 0.2s linear, box-shadow 0.2s linear;
 	-moz-transition: -moz-transform 0.2s linear, box-shadow 0.2s linear;
 	transition: transform 0.2s linear, box-shadow 0.2s linear;
 	box-shadow: 0 0 15px rgba(0,0,0,0.15);
-	-webkit-transform: scale(1, 1);   
-	-moz-transform: scale(1, 1);  
-	transform: scale(1, 1);
+	-webkit-transform: scale(0.925, 0.925);   
+	-moz-transform: scale(0.925, 0.925);  
+	transform: scale(0.925, 0.925);
+	width: 30%;
+	height: 350px;
+	background: #EEE;
+	float: left;
+	position: relative;
+	overflow: hidden;
 	color: #222222;
 	border-radius: 5px;
 	z-index: 1;
 }
 
 	.item:hover {
-		-webkit-transform: scale(1.025, 1.025);   
-		-moz-transform: scale(1.075, 1.075);  
-		transform: scale(1.075, 1.075);
-		box-shadow: 0 0 15px rgba(0,0,0,0.45);
+		-webkit-transform: scale(1, 1);   
+		-moz-transform: scale(1, 1);  
+		transform: scale(1, 1);
+		box-shadow: 0 0 15px rgba(0,0,0,0.35);
 		z-index: 2;
 	}
 	
@@ -150,7 +157,8 @@ body {
 	width: 250px;
 	height: 145px;
 	overflow: hidden;
-	margin-bottom: 10px;
+	text-align: center;
+	margin:0 auto 2.5% auto;
 	-webkit-transition: opacity 0.3s ease-out;
 	-moz-transition: opacity 0.3s ease-out;
 	transition: opacity 0.3s ease-out;
@@ -158,11 +166,11 @@ body {
 }
 
 	.photo:hover {
-		opacity: 0.6;
+		opacity: 0.75;
 	}
 
 .photo img {
-	width: auto;
+	width: 100%;
 	height: 100%;
 }
 
@@ -177,21 +185,21 @@ ol li {
 }
 
 a {
-	-webkit-transition: text-shadow 0.5s ease-out, color 0.5s ease-out;
-	-moz-transition: text-shadow 0.5s ease-out, color 0.5s ease-out;
-	transition: text-shadow 0.5s ease-out, color 0.5s ease-out;
-	color: #444;
-	text-shadow: 0 0 0 rgba(0,0,0,0);
+	-webkit-transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
+	-moz-transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
+	transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
+	margin-top: 2%;
 	text-decoration: none;
+	color: #444444;
 }
 
 	a:hover {
+		text-shadow: 0 0 10px rgba(0,0,0,0.5);
 		color: #009BCD;
-		text-shadow: 1px 1px 10px rgba(0,0,0,0.5);
 	}
 	
 	a:active {
-		text-shadow: 1px 1px 7px rgba(0,0,0,0.5);
+		text-shadow: 0px -2px 7px rgba(0,0,0,0.5);
 		color: #0086B2;
 	}
 
@@ -208,7 +216,7 @@ h1 {
 
 #header {
 	position: relative;
-	border-bottom: 1px solid #009DCF;
+	border-bottom: 1px solid #009BCD;
 	margin-bottom: 25px;
 	padding: 0px 0 15px 0;
 	margin-top: 65px;
@@ -245,16 +253,6 @@ h1 {
 	color: #009BCD;
 	font-size: 1em;
 	margin-left: 5px;
-}
-
-#info {
-	background: #d3f4ff;
-	border-radius: 15px;
-	float: right;
-	padding: 20px 10px;
-	bottom: 90px;
-	position: relative;
-	display: none;
 }
 
 @media screen and (max-device-width: 699px) {
@@ -347,29 +345,17 @@ a:active {
             </style>
         <![endif]-->
 
-<!-- BEGIN  FACEBOOK OPENGRAPH TAGS -->
-<meta property="og:title" content="Portfolio" />
-<meta property="og:url" content="http://portfolio.scotthsmith.com/" />
-<meta property="og:description" content="Scott Smith is a talented web designer." />
-<meta property="og:image" content="http://scotthsmith.com/images/ScottPic.png" />
-<!-- END TUMBLR FACEBOOK OPENGRAPH TAGS -->
-
-
-<!-- TWITTER TAGS -->
-<meta charset="utf-8">
-
-<meta http-equiv="x-dns-prefetch-control" content="off"/></head>
     <body>				
         <div id="container">     
         	<div id="header">
                 <h1><a href="/">Portfolio</a></h1>
 				<h2><a href="http://ScottHSmith.com">< back</a></h2>
-				<div id="info">
+				<!-- <div id="info">
 					<p>Scott is available for hire. To contact him, send him an <a href="mailto:mail@ScottHSmith.com">email</a>.</p>
-				</div>
+				</div> -->
 			</div>
 
-
+			<div id="items">
         		<div class="item" id="first">
         				<div class="iteminside">
         				<div class="photo"><a href="http://TenSentPistol.com"><img src="http://ScottHSmith.com/portfolio/images/TenSentPistol.png"/></a></div>    
@@ -381,7 +367,7 @@ a:active {
         		<div class="item" id="second">
         				<div class="iteminside">
         				<div class="photo"><a href="http://BeyondTheCo.de"><img src="http://ScottHSmith.com/portfolio/images/BeyondTheCode.png"/></a></div>
-        				<div class="comment"><p>Beyond The Code, my own personal blog, represents a different sort of web development. In this case, I worked extensively with WordPress, tailoring it to my needs. I extensively changed the design of the theme and updated icons for retina displays. I also learned to use Git.</p></div>
+        				<div class="comment"><p>Beyond The Code, my own personal blog, represents a different sort of web development. In this case, I worked extensively with WordPress, tailoring it to my needs. I extensively changed the design of the theme–it uses no raster graphics–and added features.</p></div>
         				</div>
                 </div>
 		
@@ -392,6 +378,7 @@ a:active {
         				<div class="comment"><p>One to One Help was a website I created with <a href="http://DerekDuncan.me">Derek Duncan</a>. It highlights my first major foray into web development and design.</p></div>
         				</div>
 				</div>
+			</div>
         </div>
 </body>
 </html>
