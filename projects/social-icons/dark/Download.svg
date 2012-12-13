@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1000"
+   height="1000"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.2 r9819"
+   sodipodi:docname="Downloadblue.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="406.56727"
+     inkscape:cy="627.35312"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="864"
+     inkscape:window-height="572"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid3009"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-52.362183)">
+    <path
+       style="fill:#444444;fill-opacity:1;stroke:none"
+       d="M 500 0 C 223.85763 1.5158245e-13 0 223.85763 0 500 C 7.5791225e-14 776.14237 223.85763 1000 500 1000 C 776.14237 1000 1000 776.14237 1000 500 C 1000 223.85763 776.14237 -5.6843419e-14 500 0 z M 428.125 130 L 573.03125 130 C 592.297 130 607.8125 145.5155 607.8125 164.78125 L 607.8125 593.4375 L 772.65625 593.4375 C 777.80661 597.85358 770.76355 607.7677 765.34375 613.1875 L 518.40625 860.125 C 508.5289 870.00233 492.5961 870.00233 482.71875 860.125 L 235.78125 613.1875 C 230.36144 607.7677 224.6078 598.51394 228.4375 593.4375 L 393.34375 593.4375 L 393.34375 164.78125 C 393.34375 145.5155 408.85925 130 428.125 130 z "
+       id="path2985"
+       transform="translate(0,52.362183)" />
+  </g>
+</svg>
