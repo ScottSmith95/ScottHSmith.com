@@ -1,0 +1,286 @@
+<!-- Code by Scott Smith
+
+  _____
+ / ___ \
+/ /   \_\                               _         _
+| |                                    | |       | |
+\ \____       _____        _____     __| |__   __| |__
+ \____ \     / ___ \      / ___ \   |__   __| |__   __|
+  	  \ \   / /   \_\    / /   \ \     | |       | |
+      | |  | |          | |     | |    | |       | |
+__    / /  | |     __   | |     | |    | |       | |
+\ \__/ /    \ \___/ /    \ \___/ /     | |       | |
+ \____/      \_____/      \_____/      |_|       |_|
+
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Scott Smith</title>
+
+<link rel="shortcut icon" type = "image/x-icon" href="http://ScottHSmith.com/images/favicon.ico?v1.1"/>
+
+<link rel="apple-touch-icon-precomposed" href="/images/ScottPic.jpg"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<meta name="Description" content="Scott Smith is an opinionated technology follower, blogger, and web designer."/>
+
+<meta property="og:title" content="Scott Smith"/>
+
+<meta property="og:url" content="http://ScottHSmith.com"/>
+
+<meta property="og:image" content="http://ScottHSmith.com/images/ScottPic.jpg"/>
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+<meta name="viewport" content="initial-scale = 1.0, user-scalable = no" />
+
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+<!-- Typekit -->
+<script type="text/javascript" src="//use.typekit.net/hjf6cdg.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+<style type="text/css">
+
+body {
+	background: #E3E5E8;
+	font: normal 300 1em "museo-sans-1", "museo-sans-2", sans-serif;
+}
+	
+::selection {
+    background: #72BDE2;
+	}
+::-moz-selection {
+	background: #72BDE2;
+}
+
+a {
+	-webkit-transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
+	-moz-transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
+	transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
+	margin-top: 2%;
+	text-decoration: none;
+	color: #444444;
+}
+
+	a:hover {
+		text-shadow: 0 0 10px rgba(0,0,0,0.5);
+		color: #009BCD;
+	}
+	
+	a:active {
+		text-shadow: 0px -2px 7px rgba(0,0,0,0.5);
+		color: #0086B2;
+	}
+
+h1, p {
+	-webkit-animation: fade-in 1.5s ease-out 0.5s forwards;
+	-moz-animation: fade-in 1.5s ease-out 0.5s forwards;
+	animation: fade-in 1.5s ease-out 0.5s forwards;
+	color: #444444;
+	opacity: 0;
+}
+
+h1 {
+	text-align: center;
+}
+
+#desc {
+	text-align: center;
+	margin: 0 auto;
+	width: 65%;
+	line-height: 2.4em;
+}
+
+.icon {
+	vertical-align: middle;
+	height: 4em;
+	margin: 0 0.85%;
+}
+
+	icon:hover {
+		opacity: 0.65;
+	}
+
+.iconset {
+	text-align: center;
+	margin: 3% 0;
+}
+
+#download {
+	-webkit-transition: opacity 0.35s ease-out, top 0.25s ease;
+	-moz-transition: opacity 0.35s ease-out, top 0.25s ease;
+	transition: opacity 0.35s ease-out, top 0.25s ease;
+	position: relative;
+	border-radius: 999px;
+	top: 0px;
+}
+
+	#download:hover {
+		top: -10px;
+	}
+	
+	#download:active {
+		opacity: 0.65;
+		top: 0px;
+	}
+
+#blueicons {
+	-webkit-animation: fade-in 1.5s ease-out 1s forwards;
+	-moz-animation: fade-in 1.5s ease-out 1s forwards;
+	animation: fade-in 1.5s ease-out 1s forwards;
+	opacity: 0;
+}
+
+#blueicons a #download {
+	-webkit-animation: blue-gradient 1.5s ease-out infinite alternate;
+	-moz-animation: blue-gradient 1.5s ease infinite alternate; 
+	animation: blue-gradient 1.5s ease infinite alternate;
+}
+
+#darkicons {
+	-webkit-animation: fade-in 1.5s ease-out 1.5s forwards;
+	-moz-animation: fade-in 1.5s ease-out 1.5s forwards;
+	animation: fade-in 1.5s ease-out 1.5s forwards;
+	opacity: 0;
+}
+
+#darkicons a #download {
+	-webkit-animation: dark-gradient 1.5s ease infinite alternate;
+	-moz-animation: dark-gradient 1.5s ease infinite alternate;
+	animation: dark-gradient 1.5s ease infinite alternate;
+}
+
+#lighticons {
+	-webkit-animation: fade-in 1.5s ease-out 2s forwards;
+	-moz-animation: fade-in 1.5s ease-out 2s forwards;
+	animation: fade-in 1.5s ease-out 2s forwards;
+	opacity: 0;
+}
+
+#lighticons a #download {
+	-webkit-animation: light-gradient 1.5s ease infinite alternate;
+	-moz-animation: light-gradient 1.5s ease infinite alternate;
+	animation: light-gradient 1.5s ease infinite alternate;
+}
+
+@-webkit-keyframes fade-in {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+			
+@-moz-keyframes fade-in {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+@keyframes fade-in {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+
+@-webkit-keyframes blue-gradient {
+	0% {box-shadow: 0px 0px 0px rgba(0,155,205,0.5); background: rgba(0,155,205,0);}
+	100% {box-shadow: 0px 0px 15px #009BCD; background: rgba(0,155,205,0.2);}
+}
+			
+@-moz-keyframes blue-gradient {
+	0% {box-shadow: 0px 0px 0px rgba(0,155,205,0.5); background: rgba(0,155,205,0);}
+	100% {box-shadow: 0px 0px 15px #009BCD; background: rgba(0,155,205,0.2);}
+}
+
+@keyframes blue-gradient {
+	0% {box-shadow: 0px 0px 0px rgba(0,155,205,0.5); background: rgba(0,155,205,0);}
+	100% {box-shadow: 0px 0px 15px #009BCD; background: rgba(0,155,205,0.2);}
+}
+
+
+@-webkit-keyframes dark-gradient {
+	0% {box-shadow: 0px 0px 15px rgba(68,68,68,0.5); background: rgba(68,68,68,0);}
+	100% {box-shadow: 0px 0px 15px #444444; background: rgba(68,68,68,0.2);}
+}
+			
+@-moz-keyframes dark-gradient {
+	0% {box-shadow: 0px 0px 15px rgba(68,68,68,0.5); background: rgba(68,68,68,0);}
+	100% {box-shadow: 0px 0px 15px #444444; background: rgba(68,68,68,0.2);}
+}
+
+@keyframes dark-gradient {
+	0% {box-shadow: 0px 0px 15px rgba(68,68,68,0.5); background: rgba(68,68,68,0);}
+	100% {box-shadow: 0px 0px 15px #444444; background: rgba(68,68,68,0.2);}
+}
+
+
+@-webkit-keyframes light-gradient {
+	0% {box-shadow: 0px 0px 15px rgba(128,128,128,0.5); background: rgba(128,128,128,0);}
+	100% {box-shadow: 0px 0px 15px #808080; background: rgba(128,128,128,0.2);}
+}
+			
+@-moz-keyframes light-gradient {
+	0% {box-shadow: 0px 0px 15px rgba(128,128,128,0.5); background: rgba(128,128,128,0);}
+	100% {box-shadow: 0px 0px 15px #808080; background: rgba(128,128,128,0.2);}
+}
+
+@keyframes light-gradient {
+	0% {box-shadow: 0px 0px 15px rgba(128,128,128,0.5); background: rgba(128,128,128,0);}
+	100% {box-shadow: 0px 0px 15px #808080; background: rgba(128,128,128,0.2);}
+}
+</style>
+
+</head>
+
+<body>
+
+	<h1>Social Icons</h1>
+	
+	<div id="desc"><p>I have created icons for (more or less) social networking websites that I link to in a vector format.<br>The icons come in dark (#444444), light (#808080), and blue (#009BCD). This collection currently has icons for Twitter, App.net, Facebook, Google+, iTunes, YouTube, GitHub, Fancy, emails, and downloads.</p></div>
+	
+	<div id="blueicons" class="iconset">
+		<img class="icon" src="blue/Twitter.svg">
+		<img class="icon" src="blue/AppNet.svg">
+		<img class="icon" src="blue/Facebook.svg">
+		<img class="icon" src="blue/GooglePlus.svg">
+		<img class="icon" src="blue/iTunes.svg">
+		<img class="icon" src="blue/YouTube.svg">
+		<img class="icon" src="blue/GitHub.svg">
+		<img class="icon" src="blue/Fancy.svg">
+		<img class="icon" src="blue/Email.svg">
+		<a href="blue/Blue%20Icons.zip?v1" download="Blue Icons"><img class="icon" id="download" src="blue/Download.svg"></a>
+	</div>
+	
+	<div id="darkicons" class="iconset">
+		<img class="icon" src="dark/Twitter.svg">
+		<img class="icon" src="dark/AppNet.svg">
+		<img class="icon" src="dark/Facebook.svg">
+		<img class="icon" src="dark/GooglePlus.svg">
+		<img class="icon" src="dark/iTunes.svg">
+		<img class="icon" src="dark/YouTube.svg">
+		<img class="icon" src="dark/GitHub.svg">
+		<img class="icon" src="dark/Fancy.svg">
+		<img class="icon" src="dark/Email.svg">
+		<a href="dark/Dark%20Icons.zip?v1" download="Dark Icons"><img class="icon" id="download" src="dark/Download.svg"></a>
+	</div>
+	
+	<div id="lighticons" class="iconset">
+		<img class="icon" src="light/Twitter.svg">
+		<img class="icon" src="light/AppNet.svg">
+		<img class="icon" src="light/Facebook.svg">
+		<img class="icon" src="light/GooglePlus.svg">
+		<img class="icon" src="light/iTunes.svg">
+		<img class="icon" src="light/YouTube.svg">
+		<img class="icon" src="light/GitHub.svg">
+		<img class="icon" src="light/Fancy.svg">
+		<img class="icon" src="light/Email.svg">
+		<a href="light/Light%20Icons.zip?v1" download="Light Icons"><img class="icon" id="download" src="light/Download.svg"></a>
+	</div>
+	
+</body>
+
+</html>
