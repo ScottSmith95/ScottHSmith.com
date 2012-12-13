@@ -18,19 +18,19 @@ __    / /  | |     __   | |     | |    | |       | |
 
 <head>
 
-<title>Scott Smith</title>
+<title>Scott Smith | Social Icon Project</title>
 
 <link rel="shortcut icon" type = "image/x-icon" href="http://ScottHSmith.com/images/favicon.ico?v1.1"/>
 
-<link rel="apple-touch-icon-precomposed" href="/images/ScottPic.jpg"/>
+<link rel="apple-touch-icon-precomposed" href="http://ScottHSmith.com/images/ScottPic.jpg"/>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
 <meta name="Description" content="Scott Smith is an opinionated technology follower, blogger, and web designer."/>
 
-<meta property="og:title" content="Scott Smith"/>
+<meta property="og:title" content="Scott Smith | Social Icon Project"/>
 
-<meta property="og:url" content="http://ScottHSmith.com"/>
+<meta property="og:url" content="http://ScottHSmith.com/projects/social-icons"/>
 
 <meta property="og:image" content="http://ScottHSmith.com/images/ScottPic.jpg"/>
 
@@ -54,47 +54,22 @@ body {
 }
 	
 ::selection {
-    background: #72BDE2;
+    background: rgba(0,155,205,0.25);
 	}
 ::-moz-selection {
-	background: #72BDE2;
+	background: rgba(0,155,205,0.25);
 }
 
-a {
-	-webkit-transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
-	-moz-transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
-	transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
-	margin-top: 2%;
-	text-decoration: none;
-	color: #444444;
-}
-
-	a:hover {
-		text-shadow: 0 0 10px rgba(0,0,0,0.5);
-		color: #009BCD;
-	}
-	
-	a:active {
-		text-shadow: 0px -2px 7px rgba(0,0,0,0.5);
-		color: #0086B2;
-	}
-
-h1, p {
+#header {
 	-webkit-animation: fade-in 1.5s ease-out 0.5s forwards;
 	-moz-animation: fade-in 1.5s ease-out 0.5s forwards;
 	animation: fade-in 1.5s ease-out 0.5s forwards;
 	color: #444444;
 	opacity: 0;
-}
-
-h1 {
 	text-align: center;
-}
-
-#desc {
-	text-align: center;
-	margin: 0 auto;
+	margin: 2% auto 0;
 	width: 65%;
+	font-size: 1.25em;
 	line-height: 2.4em;
 }
 
@@ -132,42 +107,60 @@ h1 {
 	}
 
 #blueicons {
-	-webkit-animation: fade-in 1.5s ease-out 1s forwards;
-	-moz-animation: fade-in 1.5s ease-out 1s forwards;
-	animation: fade-in 1.5s ease-out 1s forwards;
+	-webkit-animation: fade-in 1.5s ease-out 1.25s forwards;
+	-moz-animation: fade-in 1.5s ease-out 1.25s forwards;
+	animation: fade-in 1.5s ease-out 1.25s forwards;
 	opacity: 0;
 }
 
 #blueicons a #download {
-	-webkit-animation: blue-gradient 1.5s ease-out infinite alternate;
-	-moz-animation: blue-gradient 1.5s ease infinite alternate; 
-	animation: blue-gradient 1.5s ease infinite alternate;
+	-webkit-animation: blue-gradient 1.25s ease-out infinite alternate;
+	-moz-animation: blue-gradient 1.25s ease-out infinite alternate; 
+	animation: blue-gradient 1.25s ease-out infinite alternate;
+}
+
+#blueicons a #download:hover {
+	-webkit-animation: light-gradient 0.5s ease-out infinite alternate;
+	-moz-animation: light-gradient 0.5s ease-out infinite alternate;
+	animation: light-gradient 0.5s ease-out infinite alternate;
 }
 
 #darkicons {
-	-webkit-animation: fade-in 1.5s ease-out 1.5s forwards;
-	-moz-animation: fade-in 1.5s ease-out 1.5s forwards;
-	animation: fade-in 1.5s ease-out 1.5s forwards;
-	opacity: 0;
-}
-
-#darkicons a #download {
-	-webkit-animation: dark-gradient 1.5s ease infinite alternate;
-	-moz-animation: dark-gradient 1.5s ease infinite alternate;
-	animation: dark-gradient 1.5s ease infinite alternate;
-}
-
-#lighticons {
 	-webkit-animation: fade-in 1.5s ease-out 2s forwards;
 	-moz-animation: fade-in 1.5s ease-out 2s forwards;
 	animation: fade-in 1.5s ease-out 2s forwards;
 	opacity: 0;
 }
 
+#darkicons a #download {
+	-webkit-animation: dark-gradient 1.25s ease-out infinite alternate;
+	-moz-animation: dark-gradient 1.25s ease-out infinite alternate;
+	animation: dark-gradient 1.25s ease-out infinite alternate;
+}
+
+#darkicons a #download:hover {
+	-webkit-animation: light-gradient 0.5s ease-out infinite alternate;
+	-moz-animation: light-gradient 0.5s ease-out infinite alternate;
+	animation: light-gradient 0.5s ease-out infinite alternate;
+}
+
+#lighticons {
+	-webkit-animation: fade-in 1.5s ease-out 2.75s forwards;
+	-moz-animation: fade-in 1.5s ease-out 2.75s forwards;
+	animation: fade-in 1.5s ease-out 2.75s forwards;
+	opacity: 0;
+}
+
 #lighticons a #download {
-	-webkit-animation: light-gradient 1.5s ease infinite alternate;
-	-moz-animation: light-gradient 1.5s ease infinite alternate;
-	animation: light-gradient 1.5s ease infinite alternate;
+	-webkit-animation: light-gradient 1.25s ease-out infinite alternate;
+	-moz-animation: light-gradient 1.25s ease-out infinite alternate;
+	animation: light-gradient 1.25s ease-out infinite alternate;
+}
+
+#lighticons a #download:hover {
+	-webkit-animation: light-gradient 0.5s ease-out infinite alternate;
+	-moz-animation: light-gradient 0.5s ease-out infinite alternate;
+	animation: light-gradient 0.5s ease-out infinite alternate;
 }
 
 @-webkit-keyframes fade-in {
@@ -188,59 +181,79 @@ h1 {
 
 @-webkit-keyframes blue-gradient {
 	0% {box-shadow: 0px 0px 0px rgba(0,155,205,0.5); background: rgba(0,155,205,0);}
-	100% {box-shadow: 0px 0px 15px #009BCD; background: rgba(0,155,205,0.2);}
+	100% {box-shadow: 0px 0px 15px 2px #009BCD; background: rgba(0,155,205,0.25);}
 }
 			
 @-moz-keyframes blue-gradient {
 	0% {box-shadow: 0px 0px 0px rgba(0,155,205,0.5); background: rgba(0,155,205,0);}
-	100% {box-shadow: 0px 0px 15px #009BCD; background: rgba(0,155,205,0.2);}
+	100% {box-shadow: 0px 0px 15px 2px #009BCD; background: rgba(0,155,205,0.25);}
 }
 
 @keyframes blue-gradient {
 	0% {box-shadow: 0px 0px 0px rgba(0,155,205,0.5); background: rgba(0,155,205,0);}
-	100% {box-shadow: 0px 0px 15px #009BCD; background: rgba(0,155,205,0.2);}
+	100% {box-shadow: 0px 0px 15px 2px #009BCD; background: rgba(0,155,205,0.25);}
 }
 
 
 @-webkit-keyframes dark-gradient {
 	0% {box-shadow: 0px 0px 15px rgba(68,68,68,0.5); background: rgba(68,68,68,0);}
-	100% {box-shadow: 0px 0px 15px #444444; background: rgba(68,68,68,0.2);}
+	100% {box-shadow: 0px 0px 15px 2px #444444; background: rgba(68,68,68,0.25);}
 }
 			
 @-moz-keyframes dark-gradient {
 	0% {box-shadow: 0px 0px 15px rgba(68,68,68,0.5); background: rgba(68,68,68,0);}
-	100% {box-shadow: 0px 0px 15px #444444; background: rgba(68,68,68,0.2);}
+	100% {box-shadow: 0px 0px 15px 2px #444444; background: rgba(68,68,68,0.25);}
 }
 
 @keyframes dark-gradient {
 	0% {box-shadow: 0px 0px 15px rgba(68,68,68,0.5); background: rgba(68,68,68,0);}
-	100% {box-shadow: 0px 0px 15px #444444; background: rgba(68,68,68,0.2);}
+	100% {box-shadow: 0px 0px 15px 2px #444444; background: rgba(68,68,68,0.25);}
 }
 
 
 @-webkit-keyframes light-gradient {
 	0% {box-shadow: 0px 0px 15px rgba(128,128,128,0.5); background: rgba(128,128,128,0);}
-	100% {box-shadow: 0px 0px 15px #808080; background: rgba(128,128,128,0.2);}
+	100% {box-shadow: 0px 0px 15px 2px #808080; background: rgba(128,128,128,0.25);}
 }
 			
 @-moz-keyframes light-gradient {
 	0% {box-shadow: 0px 0px 15px rgba(128,128,128,0.5); background: rgba(128,128,128,0);}
-	100% {box-shadow: 0px 0px 15px #808080; background: rgba(128,128,128,0.2);}
+	100% {box-shadow: 0px 0px 15px 2px #808080; background: rgba(128,128,128,0.25);}
 }
 
 @keyframes light-gradient {
 	0% {box-shadow: 0px 0px 15px rgba(128,128,128,0.5); background: rgba(128,128,128,0);}
-	100% {box-shadow: 0px 0px 15px #808080; background: rgba(128,128,128,0.2);}
+	100% {box-shadow: 0px 0px 15px 2px #808080; background: rgba(128,128,128,0.25);}
+}
+
+@media screen and (max-device-width: 699px) {
+	#header {
+		margin: 0 auto 0;
+		width: 97.5%;
+		line-height: 1.8em;
+	}
+	
+	.icon {
+		height: 2.5em;
+		margin: 1% 0.85%;
+	}
+	
+	.iconset {
+		width: 100%;
+	}
 }
 </style>
 
 </head>
 
 <body>
-
+	<div id="header">
+	
 	<h1>Social Icons</h1>
 	
 	<div id="desc"><p>I have created icons for (more or less) social networking websites that I link to in a vector format.<br>The icons come in dark (#444444), light (#808080), and blue (#009BCD). This collection currently has icons for Twitter, App.net, Facebook, Google+, iTunes, YouTube, GitHub, Fancy, emails, and downloads.</p></div>
+	
+	</div>
 	
 	<div id="blueicons" class="iconset">
 		<img class="icon" src="blue/Twitter.svg">
