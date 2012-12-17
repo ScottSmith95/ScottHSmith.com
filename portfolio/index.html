@@ -95,35 +95,27 @@ body {
 }
 
 #first {
-	-webkit-animation: fly-in-from-top 1.25s ease-in-out 1s forwards;
-	-moz-animation: fly-in-from-top 1.25s ease-in-out 1s forwards;
-	animation: fly-in-from-top 1.25s ease-in-out 1s forwards;
-	opacity: 0;
-	position: relative;
+	-webkit-animation-delay: 1s;
+	-moz-animation-delay: 1s;
+	animation-delay: 1s;
 }
 
 #second {
-	-webkit-animation: fly-in-from-top 1.25s ease-in-out 1.3s forwards;
-	-moz-animation: fly-in-from-top 1.25s ease-in-out 1.3s forwards;
-	animation: fly-in-from-top 1.25s ease-in-out 1.3s forwards;
-	opacity: 0;
-	position: relative;
+	-webkit-animation-delay: 1.3s;
+	-moz-animation-delay: 1.3s;
+	animation-delay: 1.3s;
 }
 
 #third {
-	-webkit-animation: fly-in-from-top 1.25s ease-in-out 1.6s forwards;
-	-moz-animation: fly-in-from-top 1.25s ease-in-out 1.6s forwards;
-	animation: fly-in-from-top 1.25s ease-in-out 1.6s forwards;
-	opacity: 0;
-	position: relative;
+	-webkit-animation-delay: 1.6s;
+	-moz-animation-delay: 1.6s;
+	animation-delay: 1.6s;
 }
 
 #fourth {
-	-webkit-animation: fly-in-from-top 1.25s ease-in-out 1.9s forwards;
-	-moz-animation: fly-in-from-top 1.25s ease-in-out 1.9s forwards;
-	animation: fly-in-from-top 1.25s ease-in-out 1.9s forwards;
-	opacity: 0;
-	position: relative;
+	-webkit-animation-delay: 1.9s;
+	-moz-animation-delay: 1.9s;
+	animation-delay: 1.9s;
 }
 
 #container {
@@ -138,6 +130,9 @@ body {
 }
 
 .item {
+	-webkit-animation: fly-in-from-top 1.25s ease-in-out forwards;
+	-moz-animation: fly-in-from-top 1.25s ease-in-out forwards;
+	animation: fly-in-from-top 1.25s ease-in-out forwards;
 	-webkit-transition: -webkit-transform 0.25s ease-out, box-shadow 0.4s ease-out;
 	-moz-transition: -moz-transform 0.25s ease-out, box-shadow 0.4s ease-out;
 	transition: transform 0.25s ease-out, box-shadow 0.4s ease-out;
@@ -154,6 +149,8 @@ body {
 	color: #222222;
 	border-radius: 5px;
 	z-index: 1;
+	opacity: 0;
+	position: relative;
 }
 
 	.item:hover {
