@@ -35,7 +35,7 @@ __    / /  | |     __   | |     | |    | |       | |
 
         <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
         
-        <meta name="viewport" content="user-scalable = no" />
+        <meta name="viewport" content="initial-scale = 0.75, user-scalable = no" />
         
         <meta charset="utf-8">
 
@@ -54,6 +54,7 @@ body {
 	background-color: #E3E5E8;
 	font: normal 300 1em "museo-sans-1", "museo-sans-2", sans-serif;
 	text-align: center;
+	min-height: 100%;
 }
 
 ::selection {
@@ -63,35 +64,83 @@ body {
 	background: rgba(0,155,205,0.25);
 }
 
+a {
+	-webkit-transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
+	-moz-transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
+	transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
+	margin-top: 2%;
+	text-decoration: none;
+	color: #444444;
+}
+
+	a:hover {
+		text-shadow: 0 0 10px rgba(0,0,0,0.5);
+		color: #009BCD;
+	}
+	
+	a:active {
+		text-shadow: 0px -2px 7px rgba(0,0,0,0.5);
+		color: #0086B2;
+	}
+
 #header {
 	-webkit-animation: fly-in-from-top 1.25s ease-in-out forwards;
 	-moz-animation: fly-in-from-top 1.25s ease-in-out forwards;
 	animation: fly-in-from-top 1.25s ease-in-out forwards;
-	position: relative;
+	color: #444444;
+	font-size: 1.4em;
+	border-bottom: 1px solid #009BCD;
+	margin-bottom: 0.75%;
 }
 
+#header h1 {
+	margin: 2.5% 0 3.5%;
+}
+
+#header span {
+	letter-spacing: -1px;
+}
+
+#header a {
+	-webkit-transition: color 0.35s ease-out;
+	-moz-transition: color 0.35s ease-out;
+	transition: color 0.35s ease-out;
+	text-decoration: underline;
+}
+
+	#header a:hover {
+		text-shadow: none;
+		color: #009BCD;
+	}
+	
+	#header a:active {
+		text-shadow: none;
+		color: #0086B2;
+	}
+
 @-webkit-keyframes fly-in-from-top {
-	0% {top: -1500px; opacity: 0;}
-	30% {top: -250px; opacity: 0;}
-	100%{top: 0px; opacity: 1;}
+	0% {-webkit-transform: translateY(-1500px); opacity: 0;}
+	30% {-webkit-transform: translateY(-275px) scale(0.5); opacity: 0;}
+	100%{-webkit-transform: translateY(0px) scale(1); opacity: 1;}
 }
 			
 @-moz-keyframes fly-in-from-top {
-	0% {top: -1500px; opacity: 0;}
-	30% {top: -250px; opacity: 0;}
-	100%{top: 0px; opacity: 1;}
-}
-
-@-ms-keyframes fly-in-from-top {
-	0% {top: -1500px; opacity: 0;}
-	30% {top: -250px; opacity: 0;}
-	100%{top: 0px; opacity: 1;}
+	0% {-moz-transform: translateY(-1500px); opacity: 0;}
+	30% {-moz-transform: translateY(-275px) scale(0.5); opacity: 0;}
+	100%{-moz-transform: translateY(0px) scale(1); opacity: 1;}
 }
 
 @keyframes fly-in-from-top {
-	0% {top: -1500px; opacity: 0;}
-	30% {top: -250px; opacity: 0;}
-	100%{top: 0px; opacity: 1;}
+	0% {transform: translateY(-1500px); opacity: 0;}
+	30% {transform: translateY(-275px) scale(0.5); opacity: 0;}
+	100%{transform: translateY(0px) scale(1); opacity: 1;}
+}
+
+#first, #second, #third, #fourth {
+	-webkit-animation: fly-in-from-top 1.15s ease-in-out forwards;
+	-moz-animation: fly-in-from-top 1.15s ease-in-out forwards;
+	animation: fly-in-from-top 1.15s ease-in-out forwards;
+	opacity: 0;
 }
 
 #first {
@@ -119,7 +168,7 @@ body {
 }
 
 #container {
-	width: 70%;
+	width: 65%;
 	height: auto;
 	margin: 0 auto;
 	text-align: left;
@@ -127,36 +176,33 @@ body {
 
 #items {
 	margin: 0 auto;
+	float: none;
 }
 
 .item {
-	-webkit-animation: fly-in-from-top 1.15s ease-in-out forwards;
-	-moz-animation: fly-in-from-top 1.15s ease-in-out forwards;
-	animation: fly-in-from-top 1.15s ease-in-out forwards;
 	-webkit-transition: -webkit-transform 0.25s ease-out, box-shadow 0.4s ease-out;
 	-moz-transition: -moz-transform 0.25s ease-out, box-shadow 0.4s ease-out;
 	transition: transform 0.25s ease-out, box-shadow 0.4s ease-out;
 	box-shadow: 0 0 15px rgba(0,0,0,0.15);
-	-webkit-transform: scale(0.925, 0.925);   
-	-moz-transform: scale(0.925, 0.925);  
-	transform: scale(0.925, 0.925);
-	width: 30%;
-	height: 350px;
-	background: #EEE;
+	-webkit-transform: scale(0.925);   
+	-moz-transform: scale(0.925);  
+	transform: scale(0.925);
 	float: left;
 	position: relative;
 	overflow: hidden;
+	background: #EEE;
 	color: #222222;
-	border-radius: 5px;
+	border-radius: 10px;
+	width: 33.33%;
+	height: 325px;
 	z-index: 1;
-	opacity: 0;
 	position: relative;
 }
 
 	.item:hover {
-		-webkit-transform: scale(1, 1);   
-		-moz-transform: scale(1, 1);  
-		transform: scale(1, 1);
+		-webkit-transform: scale(1);   
+		-moz-transform: scale(1);  
+		transform: scale(1);
 		box-shadow: 0 0 15px rgba(0,0,0,0.35);
 		z-index: 2;
 	}
@@ -166,15 +212,15 @@ body {
 }
 
 .photo {
-	width: 250px;
-	height: 145px;
-	overflow: hidden;
-	text-align: center;
-	margin:0 auto 2.5% auto;
 	-webkit-transition: opacity 0.3s ease-out;
 	-moz-transition: opacity 0.3s ease-out;
 	transition: opacity 0.3s ease-out;
 	opacity: 1;
+	width: 250px;
+	height: 145px;
+	overflow: hidden;
+	text-align: center;
+	margin: 0 auto 2.5% auto;
 }
 
 	.photo:hover {
@@ -195,123 +241,70 @@ body {
 	font-size: 0.9em;
 }
 
+/* Needed?
+
 ol li {
 	list-style: decimal outside;
 	margin: 0 0 0 20px;
 	padding: 0 0 5px 0
 }
 
-a {
-	-webkit-transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
-	-moz-transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
-	transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
-	margin-top: 2%;
-	text-decoration: none;
-	color: #444444;
-}
+*/
 
-	a:hover {
-		text-shadow: 0 0 10px rgba(0,0,0,0.5);
-		color: #009BCD;
-	}
-	
-	a:active {
-		text-shadow: 0px -2px 7px rgba(0,0,0,0.5);
-		color: #0086B2;
-	}
-
-p {
-	line-height: 18px;
-	margin-bottom: 9px;
-}
-
-h1 {
-	font-size: 1.3em;
-	line-height: 18px;
-	padding: 0 0 9px 0;
-}
-
-#header {
-	position: relative;
-	border-bottom: 1px solid #009BCD;
-	margin-bottom: 25px;
-	padding: 0px 0 15px 0;
-	margin-top: 65px;
-}
-
-#header h1 {
-	width: 297px;
-}
-
-#header h1 a {
-	-webkit-transition: text-shadow 0.3s ease-out, color 0.3s ease-out;
-	-moz-transition: text-shadow 0.3s ease-out, color 0.3s ease-out;
-	transition: text-shadow 0.3s ease-out, color 0.3s ease-out;
-	color: #444444;
-	font-weight: bold;
-	border: 0;
-	font-size: 2.5em;
-	line-height: 36px;
-	letter-spacing: -3px;
-}
-
-	#header h1 a:hover {
-		text-shadow: 0 0 10px rgba(0,0,0,0.5);
-	}
-
-	#header h1 a:active {
-		text-shadow: 0px -2px 8px rgba(0,0,0,0.5);
-	}
-
-#header h2 {
-	-webkit-transition: color 0.3s ease-out;
-	-moz-transition: color 0.3s ease-out;
-	transition: color 0.3s ease-out;
-	color: #009BCD;
-	font-size: 1em;
-	margin-left: 5px;
-}
 
 @media screen and (max-device-width: 699px) {
 
 html {
-	padding-bottom: 5%;
+	padding-bottom: 3.5%;
 }
 
-a:hover {
-		text-shadow: none;
-	}
+body {
+	margin: 0;
+}
 
-a:active {
-		text-shadow: none;
-	}
+	a:hover {
+			text-shadow: none;
+		}
+	
+	a:active {
+			text-shadow: none;
+		}
 
 #header {
-	margin: 40px 20px 0px 20px;
+	margin: 0;
     -webkit-font-smoothing: antialiased;
-    border-bottom: 2px solid #009DCF;
+    border-bottom: 2px solid #009BCD;
+	font-size: 1.35em;
+	letter-spacing: -3px;
+	line-height: 1.75em;
+	text-align: center;
 }
 
-#header h1 a {
-	font-size: 78px;
-	letter-spacing:-3px;
-	line-height: 36px;
+#header h1, #header a {
+	width: 100%;
 }
 
-	#header h1 a:hover {
+#header a {
+	text-decoration: none;
+	border-bottom: 1px solid #444;
+}
+
+	#header a:hover {
 		text-shadow: none;
 	}
 
-	#header h1 a:active {
+	#header a:active {
 		text-shadow: none;
 	}
-	
-#header h2 {
-	font-size: 42px;
-	line-height: 15px;
+
+#container {
+	width: 100%;
 }
 
 .item {
+	-webkit-transform: scale(1);   
+	-moz-transform: scale(1);  
+	transform: scale(1);
 	display: block;
 	width: 95%;
 	margin: 4% 2.5% 0 2.5%;
@@ -321,6 +314,7 @@ a:active {
 	-moz-border-radius: 15px;
 	border-radius: 15px;
 	background: #E3E5E8;
+	color: #444;
 	height: auto;
 	border-bottom: none;
 }
@@ -332,7 +326,7 @@ a:active {
 
 .photo img {
 	display: block;
-    width: 90%;
+    width: 95%;
     height: auto;
     overflow: visible;
     margin: 0 auto;
@@ -340,18 +334,13 @@ a:active {
 
 .caption {
 	padding: 0 3%;
-}
-
-.caption p, .caption a {
-	font-size: 42px;
-	line-height: 1.2em;
-	color: #444;
+	font-size: 1.5em;
+	line-height: 1.25em;
 }
 
 .caption a {
 	color: #009BCD;
 }
-
 }
 </style>
 
@@ -365,43 +354,40 @@ a:active {
     <body>				
         <div id="container">     
         	<div id="header">
-                <h1><a href="/">Portfolio</a></h1>
-				<h2><a href="http://ScottHSmith.com">< back</a></h2>
+                <h1><a href="/">Scott</a><span> &ndash; </span>Portfolio</h1>
 				<!-- <div id="info">
 					<p>Scott is available for hire. To contact him, send him an <a href="mailto:mail@ScottHSmith.com">email</a>.</p>
 				</div> -->
 			</div>
 
 			<div id="items">
-        		<div class="item" id="first">
-        				<div class="iteminside">
-        				<div class="photo"><a href="http://TenSentPistol.com"><img src="http://ScottHSmith.com/portfolio/images/TenSentPistol.png"/></a></div>    
-        				<div class="caption"><p>Ten Sent Pistol wanted a site that fit the feel of their band, and I delivered. Ten Sent Pistol evokes the feel of the band's music, but is also modern in its own way.</p></div>
-        				</div>
-                </div>
-		
-            
-        		<div class="item" id="second">
-        				<div class="iteminside">
-        				<div class="photo"><a href="http://BeyondTheCo.de"><img src="http://ScottHSmith.com/portfolio/images/BeyondTheCode.png"/></a></div>
-        				<div class="caption"><p>Beyond The Code, my own personal blog, represents a different sort of web development. In this case, I worked extensively with WordPress, tailoring it to my needs. I extensively changed the design of the theme–it uses no raster graphics–and added features.</p></div>
-        				</div>
-                </div>
-		
-            
-        		<div class="item" id="third">
+        		<div id="first"><div class="item">
         				<div class="iteminside">
         				<div class="photo"><a href="http://OnetoOneHelp.com"><img src="http://ScottHSmith.com/portfolio/images/OnetoOneHelp.png"/></a></div>    
         				<div class="caption"><p>One to One Help was a website I created with <a href="http://DerekDuncan.me">Derek Duncan</a>. It highlights my first major foray into web development and design.</p></div>
         				</div>
-				</div>
+				</div></div>
+            
+        		<div id="second"><div class="item">
+        				<div class="iteminside">
+        				<div class="photo"><a href="http://BeyondTheCo.de"><img src="http://ScottHSmith.com/portfolio/images/BeyondTheCode.png"/></a></div>
+        				<div class="caption"><p>Beyond The Code, my own personal blog, represents a different sort of web development. In this case, I worked extensively with WordPress, tailoring it to my needs. I extensively changed the design of the theme–it uses no raster graphics–and added features.</p></div>
+        				</div>
+                </div></div>
+		
+        		<div id="third"><div class="item">
+        				<div class="iteminside">
+        				<div class="photo"><a href="http://TenSentPistol.com"><img src="http://ScottHSmith.com/portfolio/images/TenSentPistol.png"/></a></div>    
+        				<div class="caption"><p>Ten Sent Pistol wanted a site that fit the feel of their band, and I delivered. Ten Sent Pistol evokes the feel of the band's music, but is also modern in its own way.</p></div>
+        				</div>
+                </div></div>
 				
-				<div class="item" id="fourth">
+				<div id="fourth"><div class="item">
         				<div class="iteminside">
         				<div class="photo"><a href="http://ScottHSmith.com/projects/social-icons"><img src="http://ScottHSmith.com/portfolio/images/Projects.svg"/></a></div>    
         				<div class="caption"><p>I like to work on small little projects from time to time. See some projects that I have worked on. </p></div>
         				</div>
-				</div>
+				</div></div>
 			</div>
         </div>
 </body>
