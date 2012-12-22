@@ -89,39 +89,39 @@ ul {
 }
 
 @-webkit-keyframes fly-in-from-top {
-	0% {top: -1500px; opacity: 0;}
-	30% {top: -275px; opacity: 0;}
-	100%{top: 0px; opacity: 1;}
+	0% {-webkit-transform: translateY(-1500px); opacity: 0;}
+	30% {-webkit-transform: translateY(-275px) scale(0.5); opacity: 0;}
+	100%{-webkit-transform: translateY(0) scale(1); opacity: 1;}
 }
 			
 @-moz-keyframes fly-in-from-top {
-	0% {top: -1500px; opacity: 0;}
-	30% {top: -275px; opacity: 0;}
-	100%{top: 0px; opacity: 1;}
+	0% {-moz-transform: translateY(-1500px); opacity: 0;}
+	30% {-moz-transform: translateY(-275px) scale(0.5); opacity: 0;}
+	100%{-moz-transform: translateY(0) scale(1); opacity: 1;}
 }
 
 @keyframes fly-in-from-top {
-	0% {top: -1500px; opacity: 0;}
-	30% {top: -275px; opacity: 0;}
-	100%{top: 0px; opacity: 1;}
+	0% {transform: translateY(-1500px); opacity: 0;}
+	30% {transform: translateY(-275px) scale(0.5); opacity: 0;}
+	100%{transform: translateY(0) scale(1); opacity: 1;}
 }
 
 @-webkit-keyframes fly-in-from-bottom {
-	0% {top: 1500px; opacity: 0;}
-	30% {top: 275px; opacity: 0;}
-	100%{top: 0px; opacity: 1;}
+	0% {-webkit-transform: translateY(1500px); opacity: 0;}
+	30% {-webkit-transform: translateY(275px) scale(0.5); opacity: 0;}
+	100%{-webkit-transform: translateY(0) scale(1); opacity: 1;}
 }
 			
 @-moz-keyframes fly-in-from-bottom {
-	0% {top: 1500px; opacity: 0;}
-	30% {top: 275px; opacity: 0;}
-	100%{top: 0px; opacity: 1;}
+	0% {-moz-transform: translateY(1500px); opacity: 0;}
+	30% {-moz-transform: translateY(275px) scale(0.5); opacity: 0;}
+	100%{-moz-transform: translateY(0) scale(1); opacity: 1;}
 }
 
 @keyframes fly-in-from-bottom {
-	0% {top: 1500px; opacity: 0;}
-	30% {top: 275px; opacity: 0;}
-	100%{top: 0px; opacity: 1;}
+	0% {transform: translateY(1500px); opacity: 0;}
+	30% {transform: translateY(275px) scale(0.5); opacity: 0;}
+	100%{transform: translateY(0) scale(1); opacity: 1;}
 }
 
 #headerpic {
@@ -141,20 +141,12 @@ ul {
 	border-radius: 15px;
 	display: block;
 	margin: 2% auto 0 auto;
-	position: relative;
-	-webkit-transform: translateZ(0);
-	-moz-transform: translateZ(0);
-	transform: translateZ(0);
 }
 
 #animated {
 	-webkit-animation: fly-in-from-bottom 1.25s ease-in-out forwards;
 	-moz-animation: fly-in-from-bottom 1.25s ease-in-out forwards;
 	animation: fly-in-from-bottom 1.25s ease-in-out forwards;
-	position: relative;
-	-webkit-transform: translateZ(0);
-	-moz-transform: translateZ(0);
-	transform: translateZ(0);
 }
 
 #name {
@@ -299,6 +291,10 @@ body {
 
 @media screen and (max-device-width: 699px) {
 
+body {
+	padding-bottom: 3.5%;
+}
+
 a {
 	margin-top: 2%;
 }
@@ -431,14 +427,24 @@ body {
 					<img class="SocialIcon" src="images/Social%20Icons/Facebook.svg" height="1" width="1">
 				</a>
 			</li>
-			<li class="SocialLinks">
-				<a href="http://github.com/ScottSmith95" class="SocialLink" id="GitHub">
-					<img class="SocialIcon" src="images/Social%20Icons/GitHub.svg?v1" height="1" width="1">
+			<li class="SocialLinksDesktop">
+				<a href="http://instagram.com/ScottSmith95" class="SocialDesktop" id="InstagramDesktop">
+					<img class="SocialIcon" src="images/Social%20Icons/Instagram.svg" height="1" width="1">
+				</a>
+			</li>
+			<li class="SocialLinksMobile">
+				<a href="instagram://user?username=ScottSmith95" class="SocialMobile" id="InstagramMobile">
+					<img class="SocialIcon" src="images/Social%20Icons/Instagram.svg" height="1" width="1">
 				</a>
 			</li>
 			<li class="SocialLinks">
 				<a href="http://plus.google.com/u/1/106066907456293991070/" class="SocialLink" id="Google+">
 					<img class="SocialIcon" src="images/Social%20Icons/GooglePlus.svg" height="1" width="1">
+				</a>
+			</li>
+			<li class="SocialLinksDesktop">
+				<a href="http://github.com/ScottSmith95" class="SocialLinkDesktop" id="GitHub">
+					<img class="SocialIcon" src="images/Social%20Icons/GitHub.svg?v1" height="1" width="1">
 				</a>
 			</li>
 			<li class="SocialLinks">
