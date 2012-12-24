@@ -60,7 +60,7 @@ body {
 	background: rgba(0,155,205,0.25);
 }
 
-#header {
+header {
 	-webkit-animation: fade-in 1.5s ease-out 0.5s forwards;
 	-moz-animation: fade-in 1.5s ease-out 0.5s forwards;
 	animation: fade-in 1.5s ease-out 0.5s forwards;
@@ -73,11 +73,11 @@ body {
 	line-height: 2em;
 }
 
-#header span {
+header span {
 	letter-spacing: -1px;
 }
 
-#header a {
+header a {
 	-webkit-transition: color 0.35s ease-out;
 	-moz-transition: color 0.35s ease-out;
 	transition: color 0.35s ease-out;
@@ -85,7 +85,7 @@ body {
 	text-decoration: underline;
 }
 
-	#header a:hover {
+	header a:hover {
 		color: #009BCD;
 	}
 
@@ -241,16 +241,26 @@ body {
 @media screen and (max-width: 699px) {
 	body {
 		font-size: 0.9em;
+		margin: 0;
 	}
 
-	#header {
+	header {
 		margin: 0 auto 0;
-		width: 97.5%;
+		width: 100%;
 		line-height: 1.8em;
+		font-size: 1.1em;
+		text-align: center;
 	}
-		
+	
+	header h1 {
+		line-height: 1.1em;
+		font-size: 1.5em;
+		padding-bottom: 3.5%;
+		border-bottom: 1px solid #009BCD;
+	}
+	
 	.icon {
-		height: 2.65em;
+		height: 2.5em;
 		margin: 1% 0.85%;
 	}
 	
@@ -263,13 +273,11 @@ body {
 </head>
 
 <body>
-	<div id="header">
-	
-	<h1><a href="/portfolio">Projects</a><span> &ndash; </span>Social Icons</h1>
-	
-	<div id="desc"><p>I have created icons for (more or less) social networking websites that I link to in a vector format.<br>The icons come in dark grey (#444444), light grey (<span id="lightcolor">#808080</span>), and blue (<span id="bluecolor">#009BCD</span>). This collection currently has icons for Twitter, App.net, Facebook, Google+, Dribbble, Instagram, 500px, Flickr, YouTube, iTunes, GitHub, Fancy, emails, and downloads.</p></div>
-	
-	</div>
+
+	<header>
+		<h1><a href="/portfolio">Portfolio</a><span> &ndash; </span>Social Icons</h1>
+		<div id="desc"><p>I have created icons for (more or less) social networking websites that I link to in a vector format.<br>The icons come in dark grey (#444444), light grey (<span id="lightcolor">#808080</span>), and blue (<span id="bluecolor">#009BCD</span>). This collection currently has icons for Twitter, App.net, Facebook, Google+, Dribbble, Instagram, 500px, Flickr, YouTube, iTunes, GitHub, Fancy, emails, and downloads.</p></div>
+	</header>
 	
 	<div id="blueicons" class="iconset">
 		<img class="icon" src="blue/Twitter.svg">
