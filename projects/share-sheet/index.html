@@ -5,7 +5,7 @@
 | |                                    | |       | |
 \ \____       _____        _____     __| |__   __| |__
  \____ \     / ___ \      / ___ \   |__   __| |__   __|
-  	  \ \   / /   \_\    / /   \ \     | |       | |
+      \ \   / /   \_\    / /   \ \     | |       | |
       | |  | |          | |     | |    | |       | |
 __    / /  | |     __   | |     | |    | |       | |
 \ \__/ /    \ \___/ /    \ \___/ /     | |       | |
@@ -17,7 +17,7 @@ __    / /  | |     __   | |     | |    | |       | |
 
 <head>
 
-<title>Whoops! 404</title>
+<title>Scott Smith</title>
 
 <link rel="shortcut icon" type="image/x-icon" href="http://ScottHSmith.com/images/favicon.ico?v1.1"/>
 
@@ -46,28 +46,28 @@ __    / /  | |     __   | |     | |    | |       | |
 <script type="text/javascript">
 	$(document).ready(function(){
 	
-		var $sheets = $('#Twitter, #Facebook, #ADN');
+		var $sheets = $('#Twitter, #ADN, #Facebook');
 		
-		var $triggers = $('#TwitterMobile, #FacebookMobile, #App-NetMobile');
+		var $triggers = $('#TwitterIcon, #App-NetIcon, #FacebookIcon');
 		
 		// Shows sheets after they have loaded
 		($sheets).delay(300).addClass('loaded');
 		
 		// Handles opening the Twitter sheet
-		$('#TwitterMobile').click(function() {
+		$('#TwitterIcon').click(function() {
         	$('#Twitter').toggleClass('selected').toggleClass('unselected');
         });
         
-        // Handles opening the App-Net sheet
-        $('#App-NetMobile').click(function() {
+         // Handles opening the App-Net sheet
+        $('#App-NetIcon').click(function() {
         	$('#ADN').toggleClass('selected').toggleClass('unselected');
         });
         
         // Handles opening the Facebook sheet
-        $('#FacebookMobile').click(function() {
+        $('#FacebookIcon').click(function() {
         	$('#Facebook').toggleClass('selected').toggleClass('unselected');
         });
-        
+                
         // Handles darkening rest of page
         ($triggers).click(function() {
 	        $('#darklayer').toggleClass('on').toggleClass('off');
@@ -86,11 +86,13 @@ __    / /  | |     __   | |     | |    | |       | |
 	});
 </script>
 
+
 <!-- Typekit -->
 <script type="text/javascript" src="//use.typekit.net/hjf6cdg.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 <style type="text/css">
+
 body {
 	background: #E3E5E8;
 	margin: 0;
@@ -98,157 +100,83 @@ body {
 }
 	
 ::selection {
-    background: #72BDE2;
+    background: rgba(0,155,205,0.25);
 	}
 ::-moz-selection {
-	background: #72BDE2;
+	background: rgba(0,155,205,0.25);
 }
-
-a {
-	-webkit-transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
-	-moz-transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
-	transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
-	margin-top: 2%;
-	text-decoration: none;
-	color: #444444;
-}
-
-	a:hover {
-		text-shadow: 0 0 10px rgba(0,0,0,0.5);
-		color: #009BCD;
-	}
-	
-	a:active {
-		text-shadow: 0px -2px 7px rgba(0,0,0,0.5);
-		color: #0086B2;
-	}
 
 ul {
 	padding: 0;
 }
 
-@-webkit-keyframes fly-in-from-top {
-	0% {-webkit-transform: translateY(-1500px); opacity: 0;}
-	30% {-webkit-transform: translateY(-275px) scale(0.25); opacity: 0;}
-	100%{-webkit-transform: translateY(0) scale(1); opacity: 1;}
+@-webkit-keyframes intro {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
 }
 			
-@-moz-keyframes fly-in-from-top {
-	0% {-moz-transform: translateY(-1500px); opacity: 0;}
-	30% {-webkit-transform: translateY(-275px) scale(0.25); opacity: 0;}
-	100%{-webkit-transform: translateY(0) scale(1); opacity: 1;}
+@-moz-keyframes intro {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
 }
 
-@keyframes fly-in-from-top {
-	0% {transform: translateY(-1500px); opacity: 0;}
-	30% {-webkit-transform: translateY(-275px) scale(0.25); opacity: 0;}
-	100%{-webkit-transform: translateY(0) scale(1); opacity: 1;}
+@keyframes intro {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
 }
 
-@-webkit-keyframes fly-in-from-bottom {
-	0% {-webkit-transform: translateY(1500px); opacity: 0;}
-	30% {-webkit-transform: translateY(275px) scale(0.25); opacity: 0;}
-	100%{-webkit-transform: translateY(0) scale(1); opacity: 1;}
-}
-			
-@-moz-keyframes fly-in-from-bottom {
-	0% {-moz-transform: translateY(1500px); opacity: 0;}
-	30% {-webkit-transform: translateY(275px) scale(0.25); opacity: 0;}
-	100%{-webkit-transform: translateY(0) scale(1); opacity: 1;}
-}
-
-@keyframes fly-in-from-bottom {
-	0% {transform: translateY(1500px); opacity: 0;}
-	30% {-webkit-transform: translateY(275px) scale(0.25); opacity: 0;}
-	100%{-webkit-transform: translateY(0) scale(1); opacity: 1;}
-}
-
-#bottomanimated {
-	-webkit-animation: fly-in-from-bottom 1.25s ease-in-out forwards;
-	-moz-animation: fly-in-from-bottom 1.25s ease-in-out forwards;
-	animation: fly-in-from-bottom 1.25s ease-in-out forwards;
-	opacity: 0;
-	position: relative;
-}
-
-#headerpic img {
-	-webkit-animation: fly-in-from-top 1.25s ease-in-out forwards;
-	-moz-animation: fly-in-from-top 1.25s ease-in-out forwards;
-	animation: fly-in-from-top 1.25s ease-in-out forwards;
-	-webkit-transition: width 0.5s ease-out, height 0.5s ease-out, background-size 0.5s ease-out;
-	-moz-transition: width 0.5s ease-out, height 0.5s ease-out, background-size 0.5s ease-out;
-	transition: width 0.5s ease-out, height 0.5s ease-out, background-size 0.5s ease-out;
-	-webkit-border-radius: 15px;
-	-moz-border-radius: 15px;
-	border-radius: 15px;
-	width: 275px;
-	height: auto;
-	margin: 4% auto 0;
-	text-align: center;
-	display: block;
-	opacity: 0;
-	position: relative;
-	z-index: 2;
-}
-
-#name {
-	margin: 1.5% auto;
-	font-weight: 500;
-	text-align: center; 
-	font-size: 2.3em;
-	color: #444;
-}
-
-nav {
-	clear: both;
-	text-align: center;
-	margin: 1% auto;
-}
-
-nav a {
-	display: inline;
-	text-align: center;
-	margin: 0 1%;
-	font-size: 1.6em;
-}
-
-#navdivider {
-	border-bottom: 1px solid #009BCD;
-	margin: 0 35%;
-}
-
-.MainText {
+header {
+	-webkit-animation: intro 1.5s ease-out 0.3s forwards;
+	-moz-animation: intro 1.5s ease-out 0.3s forwards;
+	animation: intro 1.5s ease-out 0.3s forwards;
 	color: #444444;
-	text-align: center;
-	font-size: 1.35em;
-	margin: 2% 25%;
-	line-height: 1.2em;
-
+	opacity: 0;
+	text-align: justify;
+	margin: 2% auto 0;
+	width: 65%;
+	font-size: 1.2em;
+	line-height: 2em;
 }
 
-.AllSocialLinks {
+header span {
+	letter-spacing: -1px;
+}
+
+header a {
+	-webkit-transition: color 0.35s ease-out;
+	-moz-transition: color 0.35s ease-out;
+	transition: color 0.35s ease-out;
+	color: #444444;
+	text-decoration: underline;
+}
+
+	header a:hover {
+		color: #009BCD;
+	}
+
+.AllLinks {
+	-webkit-animation: intro 1.5s ease-out 1s forwards;
+	-moz-animation: intro 1.5s ease-out 1s forwards;
+	animation: intro 1.5s ease-out 1s forwards;
 	margin: 1.5% auto 5% auto;
 	text-align: center;
 	height: 1em;
+	opacity: 0;
 }
 
-li.SocialLinksDesktop, li.SocialLinksMobile, li.SocialLinks {
+li.Link {
 	display: inline;
 	text-align: center;
 	line-height: 3.5em;
-	margin: 0px 0.25%;
-}
-
-li.SocialLinksMobile {
-	display: none;
+	margin: 0px 0.2%;
 }
 
 .SocialIcon {
 	-webkit-transition: opacity 0.25s ease-out, height 0.5s ease-out, width 0.5s ease-out, -webkit-transform 0.25s ease-out;
 	-moz-transition: opacity 0.25s ease-out, height 0.5s ease-out, width 0.5s ease-out, -moz-transform 0.25s ease-out;
 	transition: opacity 0.25s ease-out, height 0.5s ease-out, width 0.5s ease-out, transform 0.25s ease-out;
-	-webkit-transform: scale(0.8, 0.8);   
-	-moz-transform: scale(0.8, 0.8);  
+	-webkit-transform: scale(0.8, 0.8);
+	-moz-transform: scale(0.8, 0.8);
 	transform: scale(0.8, 0.8);
 	width: auto;
 	vertical-align: middle;
@@ -265,7 +193,6 @@ li.SocialLinksMobile {
 	.SocialIcon:active {
 		opacity: 0.5;
 	}
-}
 
 /* Share Sheet */
 @-webkit-keyframes slide-in {
@@ -285,17 +212,17 @@ li.SocialLinksMobile {
 
 @-webkit-keyframes slide-out {
 	0% {-webkit-transform: translateY(0px);}
-	100% {-webkit-transform: translateY(400px); visibility: hidden;}
+	100% {-webkit-transform: translateY(500px); visibility: hidden;}
 }
 
 @-moz-keyframes slide-out {
 	0% {-webkit-transform: translateY(0px);}
-	100% {-webkit-transform: translateY(400px); visibility: hidden;}
+	100% {-webkit-transform: translateY(500px); visibility: hidden;}
 }
 
 @keyframes slide-out {
 	0% {-webkit-transform: translateY(0px);}
-	100% {-webkit-transform: translateY(400px); visibility: hidden;}
+	100% {-webkit-transform: translateY(500px); visibility: hidden;}
 }
 
 @-webkit-keyframes fade-in {
@@ -337,7 +264,6 @@ li.SocialLinksMobile {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	z-index: 3;
 	background: rgba(0,0,0,0.5);
 }
 
@@ -383,16 +309,16 @@ li.SocialLinksMobile {
 
 .SheetContent {
 	background: rgba(0,0,0,0.95);
-	background: -webkit-linear-gradient(rgba(124,124,124,0.75) 0%, rgba(20,20,20,0.75) 15%);
-	background: linear-gradient(to bottom, rgba(124,124,124,0.75) 0%, rgba(20,20,20,0.75) 15%);
+	background: -webkit-linear-gradient(rgba(124,124,124,0.95) 0%, rgba(20,20,20,0.85) 15%);
+	background: linear-gradient(to bottom, rgba(124,124,124,0.95) 0%, rgba(20,20,20,0.85) 15%);
 	padding: 3% 0;
-	text-align: center;
 }
 
 .SheetContent ul {
 	list-style: none;
 	padding: 0;
 	margin: 5% 2% 0;
+	text-align: left;
 }
 
 .SheetContent li {
@@ -441,20 +367,29 @@ li.SocialLinksMobile {
 	color: #FFF;
 }
 
-.cancel.touched {
+.cancel.touched, .cancel:active {
 	background: -webkit-linear-gradient(rgba(85,85,85,0.85) 0%, rgba(0,0,0,0.85) 100%);
 	background: linear-gradient(to bottom, rgba(85,85,85,0.85) 0%, rgba(0,0,0,0.85) 100%);
 }
 
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (-moz-min-device-pixel-ratio: 2),
+  only screen and (-o-min-device-pixel-ratio: 2/1),
+  only screen and (min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 2dppx) {
+
+}
+
 @media screen and (max-width: 1100px) {
 
-#headerpic img {
+#headerpic {
+	background-size: 225px 225px;
 	width: 225px;
     height: 225px;
 }
 
 #navdivider {
-	margin: 0 29%;
+	margin: 0 30%;
 }
 
 .MainText {
@@ -473,13 +408,14 @@ body {
 	font-size: 0.75em;
 }
 
-#headerpic img {
-	height: 140px;
+#headerpic {
+	background-size: 140px 140px;
 	width: 140px;
+    height: 140px;
 }
 
-#navdivider {
-	margin: 0 15%;
+#divider {
+	margin: 0 10%;
 }
 
 .MainText {
@@ -511,16 +447,14 @@ a {
 		text-shadow: none;
 		color: inherit;
 	}
-	
-#name {
-	margin-top: 20px;
-	font-style: normal;
-	-webkit-margin-after: 0%;
+
+#headerpic {
+	background-image: url("/images/ScottPic_600.jpg");
+	margin: 5% auto 0 auto;
 }
 
-#headerpic img {
-	display: block;
-	margin: 2% auto 0 auto;
+#name {
+	margin-top: 2%;
 }
 
 nav {
@@ -532,31 +466,17 @@ nav a {
 	color: #444444;
 }
 
-#navdivider {
-	border-bottom: 1px solid #009BCD;
-}
-
 .MainText {
-	color: #444444;
-	text-align: center;
-	margin: 5% 5%;
+	margin: 2% 2.5%;
 }
 
 .AllSocialLinks {
 	margin: 2.5% auto;
 }
 
-li.SocialLinksDesktop, li.SocialLinksMobile, li.SocialLinks {
+li.Link {
 	line-height: 3.5em;
 	margin: 0 0.75%;
-}
-
-li.SocialLinksDesktop {
-	display: none;
-}
-
-li.SocialLinksMobile {
-	display: inline;
 }
 
 .SocialIcon {
@@ -576,100 +496,52 @@ li.SocialLinksMobile {
 		opacity: 1;
 	}
 }
+
+@media screen and (max-device-width: 240px) {
+body {
+	font-size: 0.5em;
+}
+}
 </style>
 
 </head>
 
 <body>
 
-	<div id="headerpic">
-		<a href="http://ScottHSmith.com/"><img src="http://ScottHSmith.com/images/Deal%20With%20It.gif?v2"</a>
-	</div>
+	<a href="https://plus.google.com/u/1/111019875270643537691?rel=author" style="display: none;">Google</a>
+	
+	<div id="wrapper">
+	
+	<header>
+		<h1><a href="/projects">Projects</a><span> &ndash; </span>Share Sheets</h1>
+		<div id="desc"><p>I recreated iOS's "Share Sheets" using CSS and jQuery. Each Sheet is composed of an ordered list and is able to animate in and out of the page. Options are given for opening a profile in several different social apps. This looks best using and is intended for use on mobile devices.</p></div>
+	</header>
+	
+	<div id="divider"></div>
+		
+		<ul class="AllLinks">
+			<li class="Link">
+				<a id="TwitterIcon">
+					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/Twitter.svg" height="1" width="1">
+				</a>
+			</li>
+			<li class="Link">
+				<a id="App-NetIcon">
+					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/AppNet.svg" height="1" width="1">
+				</a>
+			</li>
+			<li class="Link">
+				<a id="FacebookIcon">
+					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/Facebook.svg" height="1" width="1">
+				</a>
+			</li>
 
-	<div id="bottomanimated">
-	
-	<h1 id="name">Daheq&#8253;</h1>
-	
-	<nav>
-		<a href="http://ScottHSmith.com/">Home</a>
-		<a href="http://BeyondTheCo.de">Blog</a>
-		<!-- <a href="http://podcast.BeyondTheCo.de">Podcast</a> -->
-		<a href="http://ScottHSmith.com/portfolio/">Portfolio</a>
-	</nav>
-	
-	<div id="navdivider"></div>
-	
-	<p class="MainText">I have no idea what you were looking for, but it isn't here.<br>Seriously though, if you think this is an error, feel free to contact me trough any of the options below.</p>
-	
-	<div class="divider"></div>
-	
-		<ul class="AllSocialLinks">
-			<li class="SocialLinksDesktop">
-				<a href="http://twitter.com/ScottSmith95" class="SocialDesktop" id="TwitterDesktop">
-					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/Twitter.svg" height="1" width="1">
-				</a>
-			</li>
-			<li class="SocialLinksMobile">
-				<a class="SocialMobile" id="TwitterMobile">
-					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/Twitter.svg" height="1" width="1">
-				</a>
-			</li>
-			<li class="SocialLinksDesktop">
-				<a href="https://alpha.app.net/scottsmith" class="SocialDesktop" id="App-NetDesktop">
-					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/AppNet.svg" height="1" width="1">
-				</a>
-			</li>
-			<li class="SocialLinksMobile">
-				<a class="SocialMobile" id="App-NetMobile">
-					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/AppNet.svg" height="1" width="1">
-				</a>
-			</li>
-			<li class="SocialLinksDesktop">
-				<a href="http://facebook.com/ScottSmith95" class="SocialDesktop" id="FacebookDesktop">
-					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/Facebook.svg" height="1" width="1">
-				</a>
-			</li>
-			<li class="SocialLinksMobile">
-				<a class="SocialMobile" id="FacebookMobile">
-					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/Facebook.svg" height="1" width="1">
-				</a>
-			</li>
-			<li class="SocialLinksDesktop">
-				<a href="http://instagram.com/ScottSmith95" class="SocialDesktop" id="InstagramDesktop">
-					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/Instagram.svg" height="1" width="1">
-				</a>
-			</li>
-			<li class="SocialLinksMobile">
-				<a href="instagram://user?username=ScottSmith95" class="SocialMobile" id="InstagramMobile">
-					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/Instagram.svg" height="1" width="1">
-				</a>
-			</li>
-			<li class="SocialLinks">
-				<a href="http://plus.google.com/u/1/106066907456293991070/" class="SocialLink" id="Google+">
-					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/GooglePlus.svg" height="1" width="1">
-				</a>
-			</li>
-			<li class="SocialLinksDesktop">
-				<a href="http://github.com/ScottSmith95" class="SocialLinkDesktop" id="GitHub">
-					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/GitHub.svg?v1" height="1" width="1">
-				</a>
-			</li>
-			<li class="SocialLinks">
-				<a href="http://thefancy.com/ScottSmith" class="SocialLink" id="Fancy">
-					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/Fancy.svg" height="1" width="1">
-				</a>
-			</li>
-			<li class="SocialLinks">
-				<a href="mailto:mail@ScottHSmith.com" class="SocialLink" id="Email">
-					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/Email.svg?v1" height="1" width="1">
-				</a>
-			</li>
 		</ul>
 	</div>
 	
 	</div>
 
-<!-- Twitter Share Sheet -->
+<!-- Sheet -->
 <div class="Sheet unselected" id="Twitter">
 	<div class="SheetDivider"></div>
 	<div class="SheetContent">
@@ -717,7 +589,7 @@ li.SocialLinksMobile {
 </div>
 
 <div id="darklayer" class="off"></div>
-		
+	
 </body>
 
 </html>
