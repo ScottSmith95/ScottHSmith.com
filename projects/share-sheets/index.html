@@ -13,7 +13,7 @@ __    / /  | |     __   | |     | |    | |       | |
 
 -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
@@ -52,6 +52,7 @@ __    / /  | |     __   | |     | |    | |       | |
 		
 		// Shows sheets after they have loaded
 		($sheets).delay(300).addClass('loaded');
+		$('#darklayer').delay(300).addClass('loaded');
 		
 		// Handles opening the Twitter sheet
 		$('#TwitterIcon').click(function() {
@@ -172,7 +173,7 @@ li.Link {
 	display: inline;
 	text-align: center;
 	line-height: 3.5em;
-	margin: 0px 0.2%;
+	margin: 0px 0.4%;
 }
 
 .SocialIcon {
@@ -184,7 +185,7 @@ li.Link {
 	transform: scale(0.8, 0.8);
 	width: auto;
 	vertical-align: middle;
-	height: 3.75em;
+	height: 4.25em;
 	margin-bottom: 2.5%;
 }
 
@@ -216,17 +217,17 @@ li.Link {
 
 @-webkit-keyframes slide-out {
 	0% {-webkit-transform: translateY(0px);}
-	100% {-webkit-transform: translateY(500px); visibility: hidden;}
+	100% {-webkit-transform: translateY(300px); visibility: hidden;}
 }
 
 @-moz-keyframes slide-out {
-	0% {-webkit-transform: translateY(0px);}
-	100% {-webkit-transform: translateY(500px); visibility: hidden;}
+	0% {-moz-transform: translateY(0px);}
+	100% {-moz-transform: translateY(300px); visibility: hidden;}
 }
 
 @keyframes slide-out {
-	0% {-webkit-transform: translateY(0px);}
-	100% {-webkit-transform: translateY(500px); visibility: hidden;}
+	0% {transform: translateY(0px);}
+	100% {transform: translateY(300px); visibility: hidden;}
 }
 
 @-webkit-keyframes fade-in {
@@ -260,29 +261,32 @@ li.Link {
 }
 
 #darklayer {
-	-webkit-animation-timing-function: ease-out;
-	-webkit-animation-duration: 0.3s;
-	-webkit-animation-fill-mode: forwards;
 	position: fixed;
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	background: rgba(0,0,0,0.5);
+	visibility: hidden;
+}
+
+#darklayer.loaded {
+	visibility: visible;
 }
 
 #darklayer.on {
-	-webkit-animation-name: fade-in;
+	-webkit-animation: fade-in 0.3s ease-out forwards;
+	-moz-animation: fade-in 0.3s ease-out forwards;
+	animation: fade-in 0.3s ease-out forwards;
 }
 
 #darklayer.off {
-	-webkit-animation-name: fade-out;
+	-webkit-animation: fade-out 0.3s ease-out forwards;
+	-moz-animation: fade-out 0.3s ease-out forwards;
+	animation: fade-out 0.3s ease-out forwards;
 }
 
 .Sheet {
-	-webkit-animation-timing-function: ease-out;
-	-webkit-animation-duration: 0.3s;
-	-webkit-animation-fill-mode: forwards;
 	width: 100%;
 	margin: 0;
 	padding: 0;
@@ -293,16 +297,20 @@ li.Link {
 	visibility: hidden;
 }
 
-.loaded {
+.Sheet.loaded {
 	visibility: visible;
 }
 
 .Sheet.unselected {
-	-webkit-animation-name: slide-out;
+	-webkit-animation: slide-out 0.3s ease-out forwards;
+	-moz-animation: slide-out 0.3s ease-out forwards;
+	animation: slide-out 0.3s ease-out forwards;
 }
 
 .Sheet.selected {
-	-webkit-animation-name: slide-in;
+	-webkit-animation: slide-in 0.3s ease-out forwards;
+	-moz-animation: slide-in 0.3s ease-out forwards;
+	animation: slide-in 0.3s ease-out forwards;
 }
 
 .SheetDivider {
@@ -313,39 +321,31 @@ li.Link {
 
 .SheetContent {
 	background: rgba(0,0,0,0.95);
-	background: -webkit-linear-gradient(rgba(124,124,124,0.95) 0%, rgba(20,20,20,0.85) 15%);
-	background: linear-gradient(to bottom, rgba(124,124,124,0.95) 0%, rgba(20,20,20,0.85) 15%);
+	background: -webkit-linear-gradient(rgba(85,85,85,0.75) 0%, rgba(20,20,20,0.75) 15%);
+	background: linear-gradient(to bottom, rgba(85,85,85,0.75) 0%, rgba(20,20,20,0.75) 15%);
 	padding: 3% 0;
 }
 
 .SheetContent ul {
 	list-style: none;
 	padding: 0;
-	margin: 5% 2% 0;
-	text-align: left;
+	margin: 5% 5.5% 0;
 }
 
 .SheetContent li {
 	display: inline-table;
 	text-align: center;
-	margin: 2% 4%;
+	margin: 2% 4% 5%;
 	width: 70px;
 	vertical-align: top;
-}
-
-.SheetContent li img {
-	border-radius: 10px;
-}
-
-.SheetContent li p {
-	margin-top: 0px;
-	font-size: 0.9em;
+	line-height: 1.5em;
+	font-size: 0.8em;
 	font-weight: bold;
 	color: #FFF;
 }
 
-.SheetContent li a {
-	text-decoration: none;
+.SheetContent li img {
+	border-radius: 10px;
 }
 
 .appicon {
@@ -360,10 +360,10 @@ li.Link {
 	background: #656565;
 	background: -webkit-linear-gradient(rgba(102,102,102,0.75) 0%, rgba(10,10,10,0.75) 100%);
 	background: linear-gradient(to bottom, rgba(102,102,102,0.75) 0%, rgba(10,10,10,0.75) 100%);
-	font-size: 1.6em;
+	font-size: 1.2em;
 	opacity: 1;
-	margin: 0 7%;
-	padding: 0.2% 0;
+	margin: 2.5% 7% 0;
+	padding: 0.5% 0;
 	line-height: 2em;
 	border: 1px inset #535353;
 	text-align: center;
@@ -432,49 +432,28 @@ body {
 }
 }
 
-@media screen and (max-device-width: 699px) {
-
+@media screen and (max-width: 699px) {
 body {
+	font-size: 0.9em;
+	margin: 0;
+}
+
+header {
+	margin: 0 auto 0;
+	width: 100%;
+	line-height: 1.8em;
+	font-size: 1.1em;
+	text-align: center;
+}
+
+header h1 {
+	line-height: 1.1em;
+	font-size: 1.5em;
 	padding-bottom: 3.5%;
+	border-bottom: 1px solid #009BCD;
 }
 
-a {
-	margin-top: 2%;
-}
-
-	a:hover {
-		text-shadow: none;
-		color: inherit;
-	}
-	
-	a:active {
-		text-shadow: none;
-		color: inherit;
-	}
-
-#headerpic {
-	background-image: url("/images/ScottPic_600.jpg");
-	margin: 5% auto 0 auto;
-}
-
-#name {
-	margin-top: 2%;
-}
-
-nav {
-	marigin: 2.5% auto;
-}
-
-nav a {
-	margin-top: 1%;
-	color: #444444;
-}
-
-.MainText {
-	margin: 2% 2.5%;
-}
-
-.AllSocialLinks {
+.AllLinks {
 	margin: 2.5% auto;
 }
 
@@ -550,12 +529,12 @@ body {
 	<div class="SheetDivider"></div>
 	<div class="SheetContent">
 		<ul>
-			<li id="1"><a href="http://twitter.com/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Safari.png"><p>Right here</p></a></li>
-			<li id="2"><a href="twitter://user?screen_name=ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Twitter.png"><p>Twitter</p></a></li>
-			<li id="3"><a href="tweetbot:///user_profile/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Tweetbot.png"><p>Tweetbot</p></a></li>
-			<li id="4"><a href="twitterrific:///profile?screen_name=ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Twitterrific.png"><p>Twitterrific</p></a></li>
-			<li id="5"><a href="neue:///user?screen_name=ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Twittelator.png"><p>Twittelator Neue</p></a></li>
-			<li id="6"><a href="googlechrome://twitter.com/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Chrome.png"><p>Chrome</p></a></li>
+			<li id="1"><a href="http://twitter.com/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Safari.png"></a>Right here</li>
+			<li id="2"><a href="twitter://user?screen_name=ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Twitter.png"></a>Twitter</li>
+			<li id="3"><a href="tweetbot:///user_profile/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Tweetbot.png"></a>Tweetbot</li>
+			<li id="4"><a href="twitterrific:///profile?screen_name=ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Twitterrific.png"></a>Twitterrific</li>
+			<li id="5"><a href="neue:///user?screen_name=ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Twittelator.png"></a>Twittelator Neue</li>
+			<li id="6"><a href="googlechrome://twitter.com/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Chrome.png"></a>Chrome</li>
 		</ul>
 		<h2 class="cancel">Cancel</h2>
 	</div>
@@ -566,12 +545,12 @@ body {
 	<div class="SheetDivider"></div>
 	<div class="SheetContent">
 		<ul>
-			<li id="1"><a href="http://alpha.app.net/ScottSmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Safari.png"><p>Right here</p></a></li>
-			<li id="2"><a href="felix://user/@ScottSmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Felix.png"><p>Felix</p></a></li>
-			<li id="3"><a href="netbot:///user_profile/ScottSmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Netbot.png"><p>Netbot</p></a></li>
-			<li id="4"><a href="rivr://showuser/19801"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Rivr.png"><p>Rivr</p></a></li>
-			<li id="5"><a href="adian://user?username=scottsmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Adian.png"><p>Adian</p></a></li>
-			<li id=""><a href="googlechrome://facebook.com/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Chrome.png"><p>Chrome</p></a></li>
+			<li id="1"><a href="http://alpha.app.net/ScottSmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Safari.png"></a>Right here</li>
+			<li id="2"><a href="felix://user/@ScottSmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Felix.png"></a>Felix</li>
+			<li id="3"><a href="netbot:///user_profile/ScottSmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Netbot.png"></a>Netbot</li>
+			<li id="4"><a href="rivr://showuser/19801"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Rivr.png"></a>Rivr</li>
+			<li id="5"><a href="adian://user?username=scottsmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Adian.png"></a>Adian</li>
+			<li id=""><a href="googlechrome://alpha.app.net/scottsmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Chrome.png"></a>Chrome</li>
 
 		</ul>
 		<h2 class="cancel">Cancel</h2>
@@ -583,9 +562,9 @@ body {
 	<div class="SheetDivider"></div>
 	<div class="SheetContent">
 		<ul>
-			<li id="1"><a href="http://facebook.com/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Safari.png"><p>Right here</p></a></li>
-			<li id="2"><a href="fb://profile/1618900176"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Facebook.png"><p>Facebook</p></a></li>
-			<li id="3"><a href="googlechrome://facebook.com/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Chrome.png"><p>Chrome</p></a></li>
+			<li id="1"><a href="http://facebook.com/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Safari.png"></a>Right here</li>
+			<li id="2"><a href="fb://profile/1618900176"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Facebook.png"></a>Facebook</li>
+			<li id="3"><a href="googlechrome://facebook.com/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Chrome.png"></a>Chrome</li>
 
 		</ul>
 		<h2 class="cancel">Cancel</h2>

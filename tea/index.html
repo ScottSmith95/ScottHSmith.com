@@ -19,7 +19,7 @@ __    / /  | |     __   | |     | |    | |       | |
 
 <title>App.Net Tea | #adntea</title>
 
-<meta name="viewport" content="user-scalable=0">
+<meta name="viewport" content="initial-scale=1.0 user-scalable=0">
 
 <!-- Typekit -->
 <script type="text/javascript" src="//use.typekit.net/hjf6cdg.js"></script>
@@ -36,6 +36,47 @@ function printImage() {
 var r = Math.ceil(Math.random() * NumberOfImagesToRotate);
 document.write(FirstPart + r + LastPart);
 }
+</script>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+	
+		var $sheets = $('#ScottADN, #NickADN');
+		
+		var $triggers = $('#ScottADNLink, #NickADNLink');
+		
+		// Shows sheets after they have loaded
+		($sheets).delay(300).addClass('loaded');
+		$('#darklayer').delay(300).addClass('loaded');
+		
+		// Handles opening the Twitter sheet
+		$('#ScottADNLink').click(function() {
+        	$('#ScottADN').toggleClass('selected').toggleClass('unselected');
+        });
+        
+        // Handles opening the App-Net sheet
+        $('#NickADNLink').click(function() {
+        	$('#NickADN').toggleClass('selected').toggleClass('unselected');
+        });
+        
+        // Handles darkening rest of page
+        ($triggers).click(function() {
+	        $('#darklayer').toggleClass('on').toggleClass('off');
+        });
+        
+        // Adds "touched" class when element is touched and removes it when it is not
+        $('.cancel').bind('touchstart touchend', function(e) {
+        	$(this).toggleClass('touched');
+        });
+        
+        // Triggers un-darkening rest of page and deselecting sheets
+        $('.cancel').click(function() {
+	        $(this).closest('div.Sheet').toggleClass('selected').toggleClass('unselected');
+        	$('#darklayer').toggleClass('on').toggleClass('off');
+        });
+	});
 </script>
 
 <style>
@@ -77,6 +118,10 @@ a {
 	a:active {
 		color: #975143;
 	}
+	
+.MobileLink {
+	display: none;
+}
 
 #content {
 	margin: 0 15%;
@@ -98,9 +143,9 @@ a {
 }
 
 #slideshow img {
-	-webkit-animation: fade-in 0.95s ease-out 0.4s forwards;
-	-moz-animation: fade-in 0.95s ease-in-out 0.4s forwards;
-	animation: fade-in 0.95s ease-in-out 0.4s forwards;
+	-webkit-animation: intro 0.95s ease-out 0.4s forwards;
+	-moz-animation: intro 0.95s ease-in-out 0.4s forwards;
+	animation: intro 0.95s ease-in-out 0.4s forwards;
 	opacity: 0;
 	width: 350px;
 	box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
@@ -109,22 +154,203 @@ a {
 	transform: rotate(4deg);
 }
 
-@-webkit-keyframes fade-in {
+@-webkit-keyframes intro {
 	0% {opacity: 0; -webkit-transform: scale(0.65, 0.65);}
 	15% {-webkit-transform: scale(0.725, 0.725) rotate(0deg);}
 	100% {opacity: 1; -webkit-transform: scale(1, 1) rotate(4deg);}
 }
 			
-@-moz-keyframes fade-in {
+@-moz-keyframes intro {
 	0% {opacity: 0; -moz-transform: scale(0.65, 0.65);}
 	15% {-moz-transform: scale(0.725, 0.725) rotate(0deg);}
 	100% {opacity: 1; -moz-transform: scale(1, 1) rotate(4deg);}
 }
 
-@keyframes fade-in {
+@keyframes intro {
 	0% {opacity: 0; transform: scale(0.65, 0.65);}
 	15% {transform: scale(0.725, 0.725) rotate(0deg);}
 	100% {opacity: 1; transform: scale(1, 1) rotate(4deg);}
+}
+
+/* Share Sheet */
+.MobileLink {
+	display: none;
+}
+
+@-webkit-keyframes slide-in {
+	0% {-webkit-transform: translateY(400px); visibility: visible;}
+	100% {-webkit-transform: translateY(0);}
+}
+
+@-moz-keyframes slide-in {
+	0% {-moz-transform: translateY(400px); visibility: visible;}
+	100% {-moz-transform: translateY(0);}
+}
+
+@keyframes slide-in {
+	0% {transform: translateY(400px); visibility: visible;}
+	100% {transform: translateY(0);}
+}
+
+@-webkit-keyframes slide-out {
+	0% {-webkit-transform: translateY(0px);}
+	100% {-webkit-transform: translateY(300px); visibility: hidden;}
+}
+
+@-moz-keyframes slide-out {
+	0% {-moz-transform: translateY(0px);}
+	100% {-moz-transform: translateY(300px); visibility: hidden;}
+}
+
+@keyframes slide-out {
+	0% {transform: translateY(0px);}
+	100% {transform: translateY(300px); visibility: hidden;}
+}
+
+@-webkit-keyframes fade-in {
+	0% {opacity: 0; visibility: visible;}
+	100% {opacity: 1;}
+}
+
+@-moz-keyframes fade-in {
+	0% {opacity: 0; visibility: visible;}
+	100% {opacity: 1;}
+}
+
+@keyframes fade-in {
+	0% {opacity: 0; visibility: visible;}
+	100% {opacity: 1;}
+}
+
+@-webkit-keyframes fade-out {
+	0% {opacity: 1;}
+	100% {opacity: 0; visibility: hidden;}
+}
+
+@-moz-keyframes fade-out {
+	0% {opacity: 1;}
+	100% {opacity: 0; visibility: hidden;}
+}
+
+@keyframes fade-out {
+	0% {opacity: 1;}
+	100% {opacity: 0; visibility: hidden;}
+}
+
+#darklayer {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0,0,0,0.5);
+	visibility: hidden;
+}
+
+#darklayer.loaded {
+	visibility: visible;
+}
+
+#darklayer.on {
+	-webkit-animation: fade-in 0.3s ease-out forwards;
+	-moz-animation: fade-in 0.3s ease-out forwards;
+	animation: fade-in 0.3s ease-out forwards;
+}
+
+#darklayer.off {
+	-webkit-animation: fade-out 0.3s ease-out forwards;
+	-moz-animation: fade-out 0.3s ease-out forwards;
+	animation: fade-out 0.3s ease-out forwards;
+}
+
+.Sheet {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	bottom: 0;
+	z-index: 10;
+	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
+	visibility: hidden;
+}
+
+.Sheet.loaded {
+	visibility: visible;
+}
+
+.Sheet.unselected {
+	-webkit-animation: slide-out 0.3s ease-out forwards;
+	-moz-animation: slide-out 0.3s ease-out forwards;
+	animation: slide-out 0.3s ease-out forwards;
+}
+
+.Sheet.selected {
+	-webkit-animation: slide-in 0.3s ease-out forwards;
+	-moz-animation: slide-in 0.3s ease-out forwards;
+	animation: slide-in 0.3s ease-out forwards;
+}
+
+.SheetDivider {
+	border-top: 1px solid #2E2E2E;
+	border-bottom: 1px solid #b5b5b5;
+	margin: 0;
+}
+
+.SheetContent {
+	background: rgba(0,0,0,0.95);
+	background: -webkit-linear-gradient(rgba(85,85,85,0.75) 0%, rgba(20,20,20,0.75) 15%);
+	background: linear-gradient(to bottom, rgba(85,85,85,0.75) 0%, rgba(20,20,20,0.75) 15%);
+	padding: 3% 0;
+}
+
+.SheetContent ul {
+	list-style: none;
+	padding: 0;
+	margin: 5% 5.5% 0;
+}
+
+.SheetContent li {
+	display: inline-table;
+	text-align: center;
+	margin: 2% 4% 5%;
+	width: 70px;
+	vertical-align: top;
+	line-height: 1.5em;
+	font-size: 0.8em;
+	font-weight: bold;
+	color: #FFF;
+}
+
+.SheetContent li img {
+	border-radius: 10px;
+}
+
+.appicon {
+	height: 58px;
+	width: auto;
+}
+
+.cancel {
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	border-radius: 10px;
+	background: #656565;
+	background: -webkit-linear-gradient(rgba(102,102,102,0.75) 0%, rgba(10,10,10,0.75) 100%);
+	background: linear-gradient(to bottom, rgba(102,102,102,0.75) 0%, rgba(10,10,10,0.75) 100%);
+	font-size: 1.2em;
+	opacity: 1;
+	margin: 2.5% 7% 0;
+	padding: 0.5% 0;
+	line-height: 2em;
+	border: 1px inset #535353;
+	text-align: center;
+	text-decoration: none;
+	color: #FFF;
+}
+
+.cancel.touched, .cancel:active {
+	background: -webkit-linear-gradient(rgba(85,85,85,0.85) 0%, rgba(0,0,0,0.85) 100%);
+	background: linear-gradient(to bottom, rgba(85,85,85,0.85) 0%, rgba(0,0,0,0.85) 100%);
 }
 
 @media screen and (max-width: 1100px) {
@@ -142,62 +368,72 @@ a {
 }
 
 @media screen and (max-device-width: 699px) {
-	body {
-		font-size: 4em;
-	}
-	
-	h1 {
-		font-size: 1.7em;
-		margin-bottom: 0;
-	}
-	
-	a {
-		-webkit-transition: none;
-		-moz-transition: none;
-		transition: none;
-		color: #C5705E;
-		text-decoration: none;
-	}
-	
-		a:hover {
-			color: #C5705E;
-		}
-		
-		a:active {
-			color: #C5705E;
-		}
-	
-	h1, h2, p, a {
-		line-height: 1.7em;
-	}
-	
-	#content {
-		margin: 0 7.5%;
-	}
-	
-	#intro, #start {
-		float: none;
-		clear: both;
-		width: 100%;
-		margin: 0 auto;
-	}
+body {
+	font-size: 1em;
+}
 
-	#slideshow {
-		float: none;
-		clear: both;
-		text-align: center;
-		width: 100%;
-		height: auto;
-		margin: 0 auto;
+h1, h2, p, a {
+	line-height: 1.5em;
+}
+h1 {
+	margin: 3.5% auto 5%;
+}
+
+a {
+	-webkit-transition: none;
+	-moz-transition: none;
+	transition: none;
+	color: #C5705E;
+	text-decoration: none;
+}
+
+	a:hover {
+		color: #C5705E;
 	}
 	
-	#slideshow img {
-		-webkit-animation-delay: 0.5s;
-		-moz-animation-delay: 0.5s;
-		animation-delay: 0.5s;
-		width: 450px;
-		box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.85);
+	a:active {
+		color: #C5705E;
 	}
+	
+.MobileLink {
+	display: inline;
+}
+	
+.DesktopLink {
+	display: none;
+}
+
+#content {
+	margin: 0 5%;
+}
+
+#content p {
+	font-size: 1.5em;
+}
+
+#intro, #start {
+	float: none;
+	clear: both;
+	width: 100%;
+	margin: 0 auto;
+}
+
+#slideshow {
+	float: none;
+	clear: both;
+	text-align: center;
+	width: 100%;
+	height: auto;
+	margin: 2% auto;
+}
+
+#slideshow img {
+	-webkit-animation-delay: 0.5s;
+	-moz-animation-delay: 0.5s;
+	animation-delay: 0.5s;
+	width: 125px;
+	box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.85);
+}
 }
 </style>
 </head>
@@ -212,11 +448,48 @@ printImage();
 </script>
 </div>
 <div id="intro">
-	<p>ADN Tea is an event that occurs on Tuesdays exclusively on <a href="http://join.app.net">App.Net</a>.<br>It was begun by <a href="http://scotthsmith.com/ADN">Scott Smith</a> and <a href="http://alpha.app.net/nickrosencrans">Nick Rosencrans</a>.</p>
+	<p>ADN Tea is an event that occurs on Tuesdays exclusively on <a href="http://join.app.net">App.Net</a>.<br>It was begun by <a class="MobileLink" id="ScottADNLink">Scott Smith</a><a class="DesktopLink" href="http://alpha.app.net/sottsmith">Scott Smith</a> and <a class="MobileLink" id="NickADNLink">Nick Rosencrans</a><a class="DesktopLink" href="http://alpha.app.net/nickrosencrans">Nick Rosencrans</a>.</p>
 </div>
 <div id="start">
 <p>To get started, pick up some of your favorite tea, or try something new. Snap a photo and post it with the hashtag <a href="https://alpha.app.net/hashtags/adntea">#adntea</a> with your comments.<br><a href="https://alpha.app.net/hashtags/adntea">See what people are saying.</a></p>
 </div>
 </div>
+
+<!-- ScottADN Share Sheet -->
+<div class="Sheet unselected" id="ScottADN">
+	<div class="SheetDivider"></div>
+	<div class="SheetContent">
+		<ul>
+			<li id="1"><a href="http://alpha.app.net/ScottSmith"><img class="appicon" src="../images/App%20Icons/Safari.png"></a>Right here</li>
+			<li id="2"><a href="felix://user/@ScottSmith"><img class="appicon" src="../images/App%20Icons/Felix.png"></a>Felix</li>
+			<li id="3"><a href="netbot:///user_profile/ScottSmith"><img class="appicon" src="../images/App%20Icons/Netbot.png"></a>Netbot</li>
+			<li id="4"><a href="rivr://showuser/19801"><img class="appicon" src="../images/App%20Icons/Rivr.png"></a>Rivr</li>
+			<li id="5"><a href="adian://user?username=scottsmith"><img class="appicon" src="../images/App%20Icons/Adian.png"></a>Adian</li>
+			<li id=""><a href="googlechrome://alpha.app.net/scottsmith"><img class="appicon" src="../images/App%20Icons/Chrome.png"></a>Chrome</li>
+
+		</ul>
+		<h2 class="cancel">Cancel</h2>
+	</div>
+</div>
+
+<!-- NickADN Share Sheet -->
+<div class="Sheet unselected" id="NickADN">
+	<div class="SheetDivider"></div>
+	<div class="SheetContent">
+		<ul>
+			<li id="1"><a href="http://alpha.app.net/nickrosencrans"><img class="appicon" src="../images/App%20Icons/Safari.png"></a>Right here</li>
+			<li id="2"><a href="felix://user/@nickrosencrans"><img class="appicon" src="../images/App%20Icons/Felix.png"></a>Felix</li>
+			<li id="3"><a href="netbot:///user_profile/nickrosencrans"><img class="appicon" src="../images/App%20Icons/Netbot.png"></a>Netbot</li>
+			<li id="4"><a href="rivr://showuser/10618"><img class="appicon" src="../images/App%20Icons/Rivr.png"></a>Rivr</li>
+			<li id="5"><a href="adian://user?username=nickrosencrans"><img class="appicon" src="../images/App%20Icons/Adian.png"></a>Adian</li>
+			<li id=""><a href="googlechrome://alpha.app.net/nickrosencrans"><img class="appicon" src="../images/App%20Icons/Chrome.png"></a>Chrome</li>
+
+		</ul>
+		<h2 class="cancel">Cancel</h2>
+	</div>
+</div>
+
+<div id="darklayer" class="off"></div>
+
 </body>
 </html>
