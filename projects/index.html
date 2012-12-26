@@ -60,6 +60,10 @@ body {
 	background: rgba(0,155,205,0.25);
 }
 
+ul {
+	padding: 0;
+}
+
 @-webkit-keyframes fade-in {
 	0% {opacity: 0;}
 	100% {opacity: 1;}
@@ -134,6 +138,28 @@ header a {
 	#content a:active {
 		color: #0086B2;
 	}
+	
+@media screen and (max-width: 699px) {
+	body {
+		font-size: 0.9em;
+		margin: 0;
+	}
+
+	header {
+		margin: 0 auto 0;
+		width: 100%;
+		line-height: 1.8em;
+		font-size: 1.1em;
+		text-align: center;
+	}
+	
+	header h1 {
+		line-height: 1.1em;
+		font-size: 1.5em;
+		padding-bottom: 3.5%;
+		border-bottom: 1px solid #009BCD;
+	}
+}
 </style>
 
 </head>
