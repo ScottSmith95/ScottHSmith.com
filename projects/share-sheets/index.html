@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <!-- Code by Scott Smith
   _____
  / ___ \
@@ -12,7 +13,6 @@ __    / /  | |     __   | |     | |    | |       | |
  \____/      \_____/      \_____/      |_|       |_|
 
 -->
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -293,6 +293,10 @@ li.Link {
 	position: fixed;
 	bottom: 0;
 	z-index: 10;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 	visibility: hidden;
 }
@@ -315,7 +319,7 @@ li.Link {
 
 .SheetDivider {
 	border-top: 1px solid #2E2E2E;
-	border-bottom: 1px solid #b5b5b5;
+	border-bottom: 1px solid #7D7D7D;
 	margin: 0;
 }
 
@@ -324,18 +328,18 @@ li.Link {
 	background: -webkit-linear-gradient(rgba(85,85,85,0.75) 0%, rgba(20,20,20,0.75) 15%);
 	background: linear-gradient(to bottom, rgba(85,85,85,0.75) 0%, rgba(20,20,20,0.75) 15%);
 	padding: 3% 0;
+	text-align: center;
 }
 
 .SheetContent ul {
 	list-style: none;
 	padding: 0;
-	margin: 5% 5.5% 0;
+	margin: 5% auto 0;
 }
 
 .SheetContent li {
 	display: inline-table;
-	text-align: center;
-	margin: 2% 4% 5%;
+	margin: 2% 3.75% 5%;
 	width: 70px;
 	vertical-align: top;
 	line-height: 1.5em;
@@ -529,12 +533,12 @@ body {
 	<div class="SheetDivider"></div>
 	<div class="SheetContent">
 		<ul>
-			<li id="1"><a href="http://twitter.com/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Safari.png"></a>Right here</li>
-			<li id="2"><a href="twitter://user?screen_name=ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Twitter.png"></a>Twitter</li>
-			<li id="3"><a href="tweetbot:///user_profile/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Tweetbot.png"></a>Tweetbot</li>
-			<li id="4"><a href="twitterrific:///profile?screen_name=ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Twitterrific.png"></a>Twitterrific</li>
-			<li id="5"><a href="neue:///user?screen_name=ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Twittelator.png"></a>Twittelator Neue</li>
-			<li id="6"><a href="googlechrome://twitter.com/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Chrome.png"></a>Chrome</li>
+			<li><a href="http://twitter.com/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Safari.png"></a>Right here</li>
+			<li><a href="twitter://user?screen_name=ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Twitter.png"></a>Twitter</li>
+			<li><a href="tweetbot:///user_profile/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Tweetbot.png"></a>Tweetbot</li>
+			<li><a href="twitterrific:///profile?screen_name=ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Twitterrific.png"></a>Twitterrific</li>
+			<li><a href="neue:///user?screen_name=ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Twittelator.png"></a>Twittelator Neue</li>
+			<li><a href="googlechrome://twitter.com/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Chrome.png"></a>Chrome</li>
 		</ul>
 		<h2 class="cancel">Cancel</h2>
 	</div>
@@ -545,12 +549,12 @@ body {
 	<div class="SheetDivider"></div>
 	<div class="SheetContent">
 		<ul>
-			<li id="1"><a href="http://alpha.app.net/ScottSmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Safari.png"></a>Right here</li>
-			<li id="2"><a href="felix://user/@ScottSmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Felix.png"></a>Felix</li>
-			<li id="3"><a href="netbot:///user_profile/ScottSmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Netbot.png"></a>Netbot</li>
-			<li id="4"><a href="rivr://showuser/19801"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Rivr.png"></a>Rivr</li>
-			<li id="5"><a href="adian://user?username=scottsmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Adian.png"></a>Adian</li>
-			<li id=""><a href="googlechrome://alpha.app.net/scottsmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Chrome.png"></a>Chrome</li>
+			<li><a href="http://alpha.app.net/ScottSmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Safari.png"></a>Right here</li>
+			<li><a href="felix://user/@ScottSmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Felix.png"></a>Felix</li>
+			<li><a href="netbot:///user_profile/ScottSmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Netbot.png"></a>Netbot</li>
+			<li><a href="rivr://showuser/19801"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Rivr.png"></a>Rivr</li>
+			<li><a href="adian://user?username=scottsmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Adian.png"></a>Adian</li>
+			<li><a href="googlechrome://alpha.app.net/scottsmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Chrome.png"></a>Chrome</li>
 
 		</ul>
 		<h2 class="cancel">Cancel</h2>
@@ -562,9 +566,9 @@ body {
 	<div class="SheetDivider"></div>
 	<div class="SheetContent">
 		<ul>
-			<li id="1"><a href="http://facebook.com/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Safari.png"></a>Right here</li>
-			<li id="2"><a href="fb://profile/1618900176"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Facebook.png"></a>Facebook</li>
-			<li id="3"><a href="googlechrome://facebook.com/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Chrome.png"></a>Chrome</li>
+			<li><a href="http://facebook.com/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Safari.png"></a>Right here</li>
+			<li><a href="fb://profile/1618900176"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Facebook.png"></a>Facebook</li>
+			<li><a href="googlechrome://facebook.com/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Chrome.png"></a>Chrome</li>
 
 		</ul>
 		<h2 class="cancel">Cancel</h2>
