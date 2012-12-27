@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <!-- Code by Scott Smith
 
   _____
@@ -13,7 +14,6 @@ __    / /  | |     __   | |     | |    | |       | |
  \____/      \_____/      \_____/      |_|       |_|
 
 -->
-<!DOCTYPE html>
 <html>
 <head>
 
@@ -270,6 +270,10 @@ a {
 	position: fixed;
 	bottom: 0;
 	z-index: 10;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 	visibility: hidden;
 }
@@ -292,7 +296,7 @@ a {
 
 .SheetDivider {
 	border-top: 1px solid #2E2E2E;
-	border-bottom: 1px solid #b5b5b5;
+	border-bottom: 1px solid #7D7D7D;
 	margin: 0;
 }
 
@@ -301,18 +305,18 @@ a {
 	background: -webkit-linear-gradient(rgba(85,85,85,0.75) 0%, rgba(20,20,20,0.75) 15%);
 	background: linear-gradient(to bottom, rgba(85,85,85,0.75) 0%, rgba(20,20,20,0.75) 15%);
 	padding: 3% 0;
+	text-align: center;
 }
 
 .SheetContent ul {
 	list-style: none;
 	padding: 0;
-	margin: 5% 5.5% 0;
+	margin: 5% auto 0;
 }
 
 .SheetContent li {
 	display: inline-table;
-	text-align: center;
-	margin: 2% 4% 5%;
+	margin: 2% 3.75% 5%;
 	width: 70px;
 	vertical-align: top;
 	line-height: 1.5em;
@@ -460,12 +464,12 @@ printImage();
 	<div class="SheetDivider"></div>
 	<div class="SheetContent">
 		<ul>
-			<li id="1"><a href="http://alpha.app.net/ScottSmith"><img class="appicon" src="../images/App%20Icons/Safari.png"></a>Right here</li>
-			<li id="2"><a href="felix://user/@ScottSmith"><img class="appicon" src="../images/App%20Icons/Felix.png"></a>Felix</li>
-			<li id="3"><a href="netbot:///user_profile/ScottSmith"><img class="appicon" src="../images/App%20Icons/Netbot.png"></a>Netbot</li>
-			<li id="4"><a href="rivr://showuser/19801"><img class="appicon" src="../images/App%20Icons/Rivr.png"></a>Rivr</li>
-			<li id="5"><a href="adian://user?username=scottsmith"><img class="appicon" src="../images/App%20Icons/Adian.png"></a>Adian</li>
-			<li id=""><a href="googlechrome://alpha.app.net/scottsmith"><img class="appicon" src="../images/App%20Icons/Chrome.png"></a>Chrome</li>
+			<li><a href="http://alpha.app.net/ScottSmith"><img class="appicon" src="../images/App%20Icons/Safari.png"></a>Right here</li>
+			<li><a href="felix://user/@ScottSmith"><img class="appicon" src="../images/App%20Icons/Felix.png"></a>Felix</li>
+			<li><a href="netbot:///user_profile/ScottSmith"><img class="appicon" src="../images/App%20Icons/Netbot.png"></a>Netbot</li>
+			<li><a href="rivr://showuser/19801"><img class="appicon" src="../images/App%20Icons/Rivr.png"></a>Rivr</li>
+			<li><a href="adian://user?username=scottsmith"><img class="appicon" src="../images/App%20Icons/Adian.png"></a>Adian</li>
+			<li><a href="googlechrome://alpha.app.net/scottsmith"><img class="appicon" src="../images/App%20Icons/Chrome.png"></a>Chrome</li>
 
 		</ul>
 		<h2 class="cancel">Cancel</h2>
@@ -477,12 +481,12 @@ printImage();
 	<div class="SheetDivider"></div>
 	<div class="SheetContent">
 		<ul>
-			<li id="1"><a href="http://alpha.app.net/nickrosencrans"><img class="appicon" src="../images/App%20Icons/Safari.png"></a>Right here</li>
-			<li id="2"><a href="felix://user/@nickrosencrans"><img class="appicon" src="../images/App%20Icons/Felix.png"></a>Felix</li>
-			<li id="3"><a href="netbot:///user_profile/nickrosencrans"><img class="appicon" src="../images/App%20Icons/Netbot.png"></a>Netbot</li>
-			<li id="4"><a href="rivr://showuser/10618"><img class="appicon" src="../images/App%20Icons/Rivr.png"></a>Rivr</li>
-			<li id="5"><a href="adian://user?username=nickrosencrans"><img class="appicon" src="../images/App%20Icons/Adian.png"></a>Adian</li>
-			<li id=""><a href="googlechrome://alpha.app.net/nickrosencrans"><img class="appicon" src="../images/App%20Icons/Chrome.png"></a>Chrome</li>
+			<li><a href="http://alpha.app.net/nickrosencrans"><img class="appicon" src="../images/App%20Icons/Safari.png"></a>Right here</li>
+			<li><a href="felix://user/@nickrosencrans"><img class="appicon" src="../images/App%20Icons/Felix.png"></a>Felix</li>
+			<li><a href="netbot:///user_profile/nickrosencrans"><img class="appicon" src="../images/App%20Icons/Netbot.png"></a>Netbot</li>
+			<li><a href="rivr://showuser/10618"><img class="appicon" src="../images/App%20Icons/Rivr.png"></a>Rivr</li>
+			<li><a href="adian://user?username=nickrosencrans"><img class="appicon" src="../images/App%20Icons/Adian.png"></a>Adian</li>
+			<li><a href="googlechrome://alpha.app.net/nickrosencrans"><img class="appicon" src="../images/App%20Icons/Chrome.png"></a>Chrome</li>
 
 		</ul>
 		<h2 class="cancel">Cancel</h2>
