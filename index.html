@@ -143,44 +143,46 @@ ul {
 
 @-webkit-keyframes fly-in-from-top {
 	0% {-webkit-transform: translateY(-1500px); opacity: 0;}
-	30% {-webkit-transform: translateY(-200px) scale(0.25); opacity: 0;}
-	100% {-webkit-transform: translateY(0) scale(1); opacity: 1;}
+	30% {-webkit-transform: translateY(-200px) scale(0.5) rotateX(-60deg); opacity: 0;}
+	100% {-webkit-transform: translateY(0) scale(1) rotateX(0deg); opacity: 1;}
 }
 			
 @-moz-keyframes fly-in-from-top {
 	0% {-moz-transform: translateY(-1500px); opacity: 0;}
-	30% {-moz-transform: translateY(-200px) scale(0.25); opacity: 0;}
-	100% {-moz-transform: translateY(0) scale(1); opacity: 1;}
+	30% {-moz-transform: translateY(-200px) scale(0.5) rotateX(-60deg); opacity: 0;}
+	100% {-moz-transform: translateY(0) scale(1) rotateX(0deg); opacity: 1;}
 }
 
 @keyframes fly-in-from-top {
 	0% {transform: translateY(-1500px); opacity: 0;}
-	30% {transform: translateY(-200px) scale(0.25); opacity: 0;}
-	100% {transform: translateY(0) scale(1); opacity: 1;}
+	30% {transform: translateY(-200px) scale(0.5) rotateX(-60deg); opacity: 0;}
+	100% {transform: translateY(0) scale(1) rotateX(0deg); opacity: 1;}
 }
 
 @-webkit-keyframes fly-in-from-bottom {
 	0% {-webkit-transform: translateY(1500px); opacity: 0;}
-	30% {-webkit-transform: translateY(200px) scale(0.25); opacity: 0;}
-	100% {-webkit-transform: translateY(0) scale(1); opacity: 1;}
+	30% {-webkit-transform: translateY(200px) scale(0.5) rotateX(60deg); opacity: 0;}
+	100% {-webkit-transform: translateY(0) scale(1) rotateX(0deg); opacity: 1;}
 }
 			
 @-moz-keyframes fly-in-from-bottom {
 	0% {-moz-transform: translateY(1500px); opacity: 0;}
-	30% {-moz-transform: translateY(200px) scale(0.25); opacity: 0;}
-	100% {-moz-transform: translateY(0) scale(1); opacity: 1;}
+	30% {-moz-transform: translateY(200px) scale(0.5) rotateX(60deg); opacity: 0;}
+	100% {-moz-transform: translateY(0) scale(1) rotateX(0deg); opacity: 1;}
 }
 
 @keyframes fly-in-from-bottom {
 	0% {transform: translateY(1500px); opacity: 0;}
-	30% {transform: translateY(200px) scale(0.25); opacity: 0;}
-	100% {transform: translateY(0) scale(1); opacity: 1;}
+	30% {transform: translateY(200px) scale(0.5) rotateX(60deg); opacity: 0;}
+	100% {transform: translateY(0) scale(1) rotateX(0deg); opacity: 1;}
 }
 
 #headerpic {
 	-webkit-animation: fly-in-from-top 1.25s ease-in-out forwards;
 	-moz-animation: fly-in-from-top 1.25s ease-in-out forwards;
 	animation: fly-in-from-top 1.25s ease-in-out forwards;
+	-webkit-perspective: 500;
+	transform-style: preserve-3d;
 	-webkit-transition: width 0.5s ease-out, height 0.5s ease-out, background-size 0.5s ease-out;
 	-moz-transition: width 0.5s ease-out, height 0.5s ease-out, background-size 0.5s ease-out;
 	transition: width 0.5s ease-out, height 0.5s ease-out, background-size 0.5s ease-out;
