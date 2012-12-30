@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <!-- Code by Scott Smith
-
   _____
  / ___ \
-/ /   \_\
-| |                                     _         _
-\ \____       _____        _____       | |       | |
- \____ \     / ___ \      / ___ \    __| |__   __| |__
- 	  \ \   / /   \_\    / /   \ \  |__   __| |__   __|
+/ /   \_\                               _         _
+| |                                    | |       | |
+\ \____       _____        _____     __| |__   __| |__
+ \____ \     / ___ \      / ___ \   |__   __| |__   __|
+      \ \   / /   \_\    / /   \ \     | |       | |
       | |  | |          | |     | |    | |       | |
 __    / /  | |     __   | |     | |    | |       | |
 \ \__/ /    \ \___/ /    \ \___/ /     | |       | |
  \____/      \_____/      \_____/      |_|       |_|
 
 -->
+<html>
 <head>
         <title>Scott Smith | Portfolio</title>        
 
@@ -38,6 +38,17 @@ __    / /  | |     __   | |     | |    | |       | |
         <meta name="viewport" content="initial-scale = 0.75, user-scalable = no" />
         
         <meta charset="utf-8">
+        
+        <script>
+			// When ready...
+			window.addEventListener("load",function() {
+			  // Set a timeout...
+			  setTimeout(function(){
+			    // Hide the address bar!
+			    window.scrollTo(0, 1);
+			  }, 0);
+			});
+		</script>
 
         <!-- iOS Devices -->
         <link rel="apple-touch-icon-precomposed" href="http://scotthsmith.com/images/ScottPic.png"/>
@@ -170,6 +181,7 @@ header a {
 	width: 65%;
 	margin: 0 auto;
 	text-align: left;
+	overflow: auto;
 }
 
 #items {
@@ -354,6 +366,7 @@ header a {
 }
 }
 </style>
+</head>
 
     <body>				
         <div id="container">     
