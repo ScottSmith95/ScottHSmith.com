@@ -108,6 +108,10 @@ header a {
 	header a:hover {
 		color: #009BCD;
 	}
+	
+	header a:active {
+		color: #0086B2;
+	}
 
 #content {
 	-webkit-animation: fade-in 1.5s ease-out 1s forwards;
@@ -141,25 +145,35 @@ header a {
 	}
 	
 @media screen and (max-width: 699px) {
-	body {
-		font-size: 0.9em;
-		margin: 0;
-	}
+body {
+	font-size: 0.9em;
+	margin: 0;
+}
 
-	header {
-		margin: 0 auto 0;
-		width: 100%;
-		line-height: 1.8em;
-		font-size: 1.1em;
-		text-align: center;
+	a:hover {
+		text-shadow: none;
+		color: inherit;
 	}
 	
-	header h1 {
-		line-height: 1.1em;
-		font-size: 1.5em;
-		padding-bottom: 3.5%;
-		border-bottom: 1px solid #009BCD;
+	a:active {
+		text-shadow: none;
+		color: inherit;
 	}
+
+header {
+	margin: 0 auto 0;
+	width: 100%;
+	line-height: 1.8em;
+	font-size: 1.1em;
+	text-align: center;
+}
+
+header h1 {
+	line-height: 1.1em;
+	font-size: 1.5em;
+	padding-bottom: 3.5%;
+	border-bottom: 1px solid #009BCD;
+}
 }
 </style>
 
