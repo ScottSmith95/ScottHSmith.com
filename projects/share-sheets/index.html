@@ -217,17 +217,17 @@ li.Link {
 
 @-webkit-keyframes slide-out {
 	0% {-webkit-transform: translateY(0px);}
-	100% {-webkit-transform: translateY(300px); visibility: hidden;}
+	100% {-webkit-transform: translateY(400px); visibility: hidden;}
 }
 
 @-moz-keyframes slide-out {
 	0% {-moz-transform: translateY(0px);}
-	100% {-moz-transform: translateY(300px); visibility: hidden;}
+	100% {-moz-transform: translateY(400px); visibility: hidden;}
 }
 
 @keyframes slide-out {
 	0% {transform: translateY(0px);}
-	100% {transform: translateY(300px); visibility: hidden;}
+	100% {transform: translateY(400px); visibility: hidden;}
 }
 
 @-webkit-keyframes fade-in {
@@ -306,9 +306,9 @@ li.Link {
 }
 
 .Sheet.unselected {
-	-webkit-animation: slide-out 0.3s ease-out forwards;
-	-moz-animation: slide-out 0.3s ease-out forwards;
-	animation: slide-out 0.3s ease-out forwards;
+	-webkit-animation: slide-out 0.3s ease-in forwards;
+	-moz-animation: slide-out 0.3s ease-in forwards;
+	animation: slide-out 0.3s ease-in forwards;
 }
 
 .Sheet.selected {
@@ -362,12 +362,12 @@ li.Link {
 	-webkit-margin-after: 0;
 	border-radius: 10px;
 	background: #656565;
-	background: -webkit-linear-gradient(rgba(102,102,102,0.75) 0%, rgba(10,10,10,0.75) 100%);
-	background: linear-gradient(to bottom, rgba(102,102,102,0.75) 0%, rgba(10,10,10,0.75) 100%);
+	background: -webkit-linear-gradient(rgba(130,130,130,0.75) 0%, rgba(10,10,10,0.75) 75%);
+	background: linear-gradient(to bottom, rgba(130,130,130,0.75) 0%, rgba(10,10,10,0.75) 75%);
 	font-size: 19px;
 	opacity: 1;
 	margin: 2.5% 7% 0;
-	padding: 0.5% 0;
+	padding: 0;
 	line-height: 2em;
 	border: 1px inset #535353;
 	text-align: center;
@@ -441,6 +441,16 @@ body {
 	font-size: 0.9em;
 	margin: 0;
 }
+
+	a:hover {
+		text-shadow: none;
+		color: inherit;
+	}
+	
+	a:active {
+		text-shadow: none;
+		color: inherit;
+	}
 
 header {
 	margin: 0 auto 0;
