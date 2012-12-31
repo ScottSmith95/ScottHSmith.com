@@ -117,7 +117,7 @@ header a.nav {
 	-webkit-animation: intro 1.5s ease-out 1s forwards;
 	-moz-animation: intro 1.5s ease-out 1s forwards;
 	animation: intro 1.5s ease-out 1s forwards;
-	margin: 1.5% auto 5% auto;
+	margin: 1.5% auto 5%;
 	text-align: center;
 	height: 1em;
 	opacity: 0;
@@ -368,14 +368,6 @@ header a.nav {
 	background: linear-gradient(to bottom, rgba(85,85,85,0.85) 0%, rgba(0,0,0,0.85) 100%);
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (-moz-min-device-pixel-ratio: 2),
-  only screen and (-o-min-device-pixel-ratio: 2/1),
-  only screen and (min-device-pixel-ratio: 2),
-  only screen and (min-resolution: 2dppx) {
-
-}
-
 @media screen and (max-width: 1224px) {
 
 .SocialIcon {
@@ -390,20 +382,6 @@ body {
 	font-size: 0.75em;
 }
 
-#headerpic {
-	background-size: 140px 140px;
-	width: 140px;
-    height: 140px;
-}
-
-#divider {
-	margin: 0 10%;
-}
-
-.MainText {
-	margin: 2% 1%;
-}
-
 .SocialIcon {
 	margin: 0;
 	height: 3em;
@@ -414,6 +392,7 @@ body {
 body {
 	font-size: 0.9em;
 	margin: 0;
+	padding-bottom: 12.5%;
 }
 
 	a:hover {
@@ -439,6 +418,15 @@ header h1 {
 	font-size: 1.5em;
 	padding-bottom: 3.5%;
 	border-bottom: 1px solid #009BCD;
+}
+
+header p {
+	margin: 0 2.5%;
+	text-align: left;
+}
+
+#license {
+	display: none;
 }
 
 .AllLinks {
