@@ -76,9 +76,9 @@ ul {
 }
 
 header {
-	-webkit-animation: intro 1.5s ease-out 0.3s forwards;
-	-moz-animation: intro 1.5s ease-out 0.3s forwards;
-	animation: intro 1.5s ease-out 0.3s forwards;
+	-webkit-animation: intro 1.25s ease-out 0.15s forwards;
+	-moz-animation: intro 1.25s ease-out 0.15s forwards;
+	animation: intro 1.25s ease-out 0.15s forwards;
 	color: #444444;
 	opacity: 0;
 	text-align: justify;
@@ -113,10 +113,18 @@ header a.nav {
 	text-decoration: underline;
 }
 
+	header a.nav:hover {
+		color: #009BCD;
+	}
+	
+	header a.nav:active {
+		color: #0086B2;
+	}
+
 .AllLinks {
-	-webkit-animation: intro 1.5s ease-out 1s forwards;
-	-moz-animation: intro 1.5s ease-out 1s forwards;
-	animation: intro 1.5s ease-out 1s forwards;
+	-webkit-animation: intro 1.25s ease-out 0.75s forwards;
+	-moz-animation: intro 1.25s ease-out 0.75s forwards;
+	animation: intro 1.25s ease-out 0.75s forwards;
 	margin: 1.5% auto 5%;
 	text-align: center;
 	height: 1em;
@@ -171,13 +179,13 @@ header a.nav {
 	color: #444;
 }
 
-#license a:hover {
-	color: #009BCD;
-}
-
-#license a:active {
-	color: #0086B2;
-}
+	#license a:hover {
+		color: #009BCD;
+	}
+	
+	#license a:active {
+		color: #0086B2;
+	}
 
 /* Share Sheet */
 @-webkit-keyframes slide-in {
@@ -488,14 +496,10 @@ body {
 
 	<a href="https://plus.google.com/u/1/111019875270643537691?rel=author" style="display: none;">Google</a>
 	
-	<div id="wrapper">
-	
 	<header>
 		<h1><a class="nav" href="/projects">Projects</a><span> &ndash; </span>Share Sheets</h1>
 		<div id="desc"><p>I recreated iOS's "Share Sheets" using CSS and jQuery. Each Sheet is composed of an ordered list and is able to animate in and out of the page. Options are given for opening a profile in several different social apps. This looks best using and is intended for use on mobile devices. Feel free to copy any of the code I've written for personal use, but please let me know so I can check out your work too! I have provided a <a href="https://gist.github.com/4417738">Gist</a> with everything you need to get started.</p></div>
 	</header>
-	
-	<div id="divider"></div>
 		
 		<ul class="AllLinks">
 			<li class="Link">
@@ -518,7 +522,6 @@ body {
 	
 	<div id="license">
 		<a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.
-	</div>
 	</div>
 
 <!-- Sheet -->

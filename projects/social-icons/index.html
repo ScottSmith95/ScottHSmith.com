@@ -72,9 +72,9 @@ body {
 }
 
 header {
-	-webkit-animation: fade-in 1.5s ease-out 0.5s forwards;
-	-moz-animation: fade-in 1.5s ease-out 0.5s forwards;
-	animation: fade-in 1.5s ease-out 0.5s forwards;
+	-webkit-animation: intro 1.25s ease-out 0.15s forwards;
+	-moz-animation: intro 1.25s ease-out 0.15s forwards;
+	animation: intro 1.25s ease-out 0.15s forwards;
 	color: #444444;
 	opacity: 0;
 	text-align: justify;
@@ -92,15 +92,28 @@ header a {
 	-webkit-transition: color 0.35s ease-out;
 	-moz-transition: color 0.35s ease-out;
 	transition: color 0.35s ease-out;
+	color: #009BCD;
+	text-decoration: none;
+}
+
+	header a:hover {
+		color: #0086B2;
+	}
+	
+	header a:active {
+		color: #444444;
+	}
+	
+header a.nav {
 	color: #444444;
 	text-decoration: underline;
 }
 
-	header a:hover {
+	header a.nav:hover {
 		color: #009BCD;
 	}
 	
-	header a:active {
+	header a.nav:active {
 		color: #0086B2;
 	}
 
@@ -113,9 +126,13 @@ header a {
 }
 
 .iconset {
+	-webkit-animation: intro 1.5s ease-out forwards;
+	-moz-animation: intro 1.5s ease-out forwards;
+	animation: intro 1.5s ease-out forwards;
 	text-align: center;
 	margin: 2.5% auto;
 	width: 65%;
+	opacity: 0;
 }
 
 .icon {
@@ -128,7 +145,10 @@ header a {
 		opacity: 0.65;
 	}
 
-#download {
+.download {
+	-webkit-animation: 1.25s ease-out infinite alternate;
+	-moz-animation: 1.25s ease-out infinite alternate; 
+	animation: 1.25s ease-out infinite alternate;
 	-webkit-transition: opacity 0.35s ease-out, -webkit-transform 0.25s ease;
 	-moz-transition: opacity 0.35s ease-out, -moz-transform 0.25s ease;
 	transition: opacity 0.35s ease-out, transform 0.25s ease;
@@ -137,13 +157,13 @@ header a {
 	top: 0px;
 }
 
-	#download:hover {
+	.download:hover {
 		-webkit-transform: translateY(-8px);
 		-moz-transform: translateY(-8px);
 		transform: translateY(-8px);
 	}
 	
-	#download:active {
+	.download:active {
 		-webkit-transform: translateY(0);
 		-moz-transform: translateY(0);
 		transform: translateY(0);
@@ -151,50 +171,47 @@ header a {
 	}
 
 #blueicons {
-	-webkit-animation: fade-in 1.5s ease-out 1.25s forwards;
-	-moz-animation: fade-in 1.5s ease-out 1.25s forwards;
-	animation: fade-in 1.5s ease-out 1.25s forwards;
-	opacity: 0;
+	-webkit-animation-delay: 0.75s;
+	-moz-animation-delay: 0.75s;
+	animation-delay: 0.75s;
 }
 
-#blueicons a #download {
-	-webkit-animation: blue-gradient 1.25s ease-out infinite alternate;
-	-moz-animation: blue-gradient 1.25s ease-out infinite alternate; 
-	animation: blue-gradient 1.25s ease-out infinite alternate;
+#blueicons .download {
+	-webkit-animation-name: blue-gradient;
+	-moz-animation-name: blue-gradient;
+	animation-name: blue-gradient;
 }
 
 
 #darkicons {
-	-webkit-animation: fade-in 1.5s ease-out 2s forwards;
-	-moz-animation: fade-in 1.5s ease-out 2s forwards;
-	animation: fade-in 1.5s ease-out 2s forwards;
-	opacity: 0;
+	-webkit-animation-delay: 1.5s;
+	-moz-animation-delay: 1.5s;
+	animation-delay: 1.5s;
 }
 
-#darkicons a #download {
-	-webkit-animation: dark-gradient 1.25s ease-out infinite alternate;
-	-moz-animation: dark-gradient 1.25s ease-out infinite alternate;
-	animation: dark-gradient 1.25s ease-out infinite alternate;
+#darkicons .download {
+	-webkit-animation-name: dark-gradient;
+	-moz-animation-name: dark-gradient;
+	animation-name: dark-gradient;
 }
 
 
 #lighticons {
-	-webkit-animation: fade-in 1.5s ease-out 2.75s forwards;
-	-moz-animation: fade-in 1.5s ease-out 2.75s forwards;
-	animation: fade-in 1.5s ease-out 2.75s forwards;
-	opacity: 0;
+	-webkit-animation-delay: 2.25s;
+	-moz-animation-delay: 2.25;
+	animation-delay: 2.25s;
 }
 
-#lighticons a #download {
-	-webkit-animation: light-gradient 1.25s ease-out infinite alternate;
-	-moz-animation: light-gradient 1.25s ease-out infinite alternate;
-	animation: light-gradient 1.25s ease-out infinite alternate;
+#lighticons .download {
+	-webkit-animation-name: light-gradient;
+	-moz-animation-name: light-gradient;
+	animation-name: light-gradient;
 }
 
 #license {
-	-webkit-animation: fade-in 1.5s ease-out 5s forwards;
-	-moz-animation: fade-in 1.5s ease-out 5s forwards;
-	animation: fade-in 1.5s ease-out 5s forwards;
+	-webkit-animation: intro 1.5s ease-out 5s forwards;
+	-moz-animation: intro 1.5s ease-out 5s forwards;
+	animation: intro 1.5s ease-out 5s forwards;
 	opacity: 0;
 	margin: 0 0 2.5% 2.5%;
 	width: 20%;
@@ -209,25 +226,25 @@ header a {
 	color: #444;
 }
 
-#license a:hover {
-	color: #009BCD;
-}
+	#license a:hover {
+		color: #009BCD;
+	}
+	
+	#license a:active {
+		color: #0086B2;
+	}
 
-#license a:active {
-	color: #0086B2;
-}
-
-@-webkit-keyframes fade-in {
+@-webkit-keyframes intro {
 	0% {opacity: 0;}
 	100% {opacity: 1;}
 }
 			
-@-moz-keyframes fade-in {
+@-moz-keyframes intro {
 	0% {opacity: 0;}
 	100% {opacity: 1;}
 }
 
-@keyframes fade-in {
+@keyframes intro {
 	0% {opacity: 0;}
 	100% {opacity: 1;}
 }
@@ -384,7 +401,7 @@ header p {
 <body>
 
 	<header>
-		<h1><a href="/projects">Projects</a><span> &ndash; </span>Social Icons</h1>
+		<h1><a class="nav" href="/projects">Projects</a><span> &ndash; </span>Social Icons</h1>
 		<div id="desc"><p>I have created icons for (more or less) social networking websites that I link to in a vector format.<br>The icons come in dark grey (#444444), light grey (<span id="lightcolor">#808080</span>), and blue (<span id="bluecolor">#009BCD</span>). This collection currently has icons for Twitter, App.net, Facebook, Google+, Dribbble, Instagram, 500px, Flickr, YouTube, iTunes, GitHub, Fancy, emails, and downloads.</p></div>
 	</header>
 	
@@ -405,7 +422,7 @@ header p {
 		<img class="icon" src="blue/GitHub.svg">
 		<img class="icon" src="blue/Fancy.svg">
 		<img class="icon" src="blue/Email.svg">
-		<a href="blue/Blue%20Icons.zip?v1.2" download="Blue Icons"><img class="icon" id="download" src="blue/Download.svg"></a>
+		<a href="blue/Blue%20Icons.zip?v1.2" download="Blue Icons"><img class="icon download" src="blue/Download.svg"></a>
 	</div>
 	
 	<div id="darkicons" class="iconset">
@@ -425,7 +442,7 @@ header p {
 		<img class="icon" src="dark/GitHub.svg">
 		<img class="icon" src="dark/Fancy.svg">
 		<img class="icon" src="dark/Email.svg">
-		<a href="dark/Dark%20Icons.zip?v1.2" download="Dark Icons"><img class="icon" id="download" src="dark/Download.svg"></a>
+		<a href="dark/Dark%20Icons.zip?v1.2" download="Dark Icons"><img class="icon download" src="dark/Download.svg"></a>
 	</div>
 	
 	<div id="lighticons" class="iconset">
@@ -445,7 +462,7 @@ header p {
 		<img class="icon" src="light/GitHub.svg">
 		<img class="icon" src="light/Fancy.svg">
 		<img class="icon" src="light/Email.svg">
-		<a href="light/Light%20Icons.zip?v1.2" download="Light Icons"><img class="icon" id="download" src="light/Download.svg"></a>
+		<a href="light/Light%20Icons.zip?v1.2" download="Light Icons"><img class="icon download" src="light/Download.svg"></a>
 	</div>
 	
 	<div id="license">
