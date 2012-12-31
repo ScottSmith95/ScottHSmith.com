@@ -65,25 +65,25 @@ ul {
 	padding: 0;
 }
 
-@-webkit-keyframes fade-in {
+@-webkit-keyframes intro {
 	0% {opacity: 0;}
 	100% {opacity: 1;}
 }
 			
-@-moz-keyframes fade-in {
+@-moz-keyframes intro {
 	0% {opacity: 0;}
 	100% {opacity: 1;}
 }
 
-@keyframes fade-in {
+@keyframes intro {
 	0% {opacity: 0;}
 	100% {opacity: 1;}
 }
 
 header {
-	-webkit-animation: fade-in 1.5s ease-out 0.25s forwards;
-	-moz-animation: fade-in 1.5s ease-out 0.25s forwards;
-	animation: fade-in 1.5s ease-out 0.25s forwards;
+	-webkit-animation: intro 1.25s ease-out 0.15s forwards;
+	-moz-animation: intro 1.25s ease-out 0.15s forwards;
+	animation: intro 1.25s ease-out 0.15s forwards;
 	color: #444444;
 	opacity: 0;
 	text-align: justify;
@@ -101,22 +101,35 @@ header a {
 	-webkit-transition: color 0.35s ease-out;
 	-moz-transition: color 0.35s ease-out;
 	transition: color 0.35s ease-out;
+	color: #009BCD;
+	text-decoration: none;
+}
+
+	header a:hover, header a.nav:hover {
+		color: #0086B2;
+	}
+	
+	header a:active {
+		color: #444444;
+	}
+	
+header a.nav {
 	color: #444444;
 	text-decoration: underline;
 }
 
-	header a:hover {
+	header a.nav:hover {
 		color: #009BCD;
 	}
 	
-	header a:active {
+	header a.nav:active {
 		color: #0086B2;
 	}
 
 #content {
-	-webkit-animation: fade-in 1.5s ease-out 1s forwards;
-	-moz-animation: fade-in 1.5s ease-out 1s forwards;
-	animation: fade-in 1.5s ease-out 1s forwards;
+	-webkit-animation: intro 1.25s ease-out 0.75s forwards;
+	-moz-animation: intro 1.25s ease-out 0.75s forwards;
+	animation: intro 1.25s ease-out 0.75s forwards;
 	text-align: center;
 	margin: 2% auto;
 	opacity: 0;
@@ -187,7 +200,7 @@ header p {
 <body>
 
 	<header>
-		<h1><a href="/">Scott</a><span> &ndash; </span>Projects</h1>
+		<h1><a class="nav" href="/">Scott</a><span> &ndash; </span>Projects</h1>
 		<div id="desc"><p>These projects are little things that I like to work on. I usually create them for fun and you are certainly free to use any part of them that you wish any way you want to, though I would appreciate to letting me know so I can see what you make!</p></div>
 	</header>
 	
