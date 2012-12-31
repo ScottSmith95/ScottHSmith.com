@@ -41,57 +41,6 @@ __    / /  | |     __   | |     | |    | |       | |
 
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-
-<script type="text/javascript">
-	$(document).ready(function(){
-	
-		var $sheets = $('#Twitter, #ADN, #Facebook');
-		
-		var $triggers = $('#TwitterIcon, #App-NetIcon, #FacebookIcon');
-		
-		// Shows sheets after they have loaded
-		($sheets).delay(300).addClass('loaded');
-		$('#darklayer').delay(300).addClass('loaded');
-		
-		// Handles opening the Twitter sheet
-		$('#TwitterIcon').click(function() {
-        	$('#Twitter').toggleClass('selected').toggleClass('unselected');
-        });
-        
-         // Handles opening the App-Net sheet
-        $('#App-NetIcon').click(function() {
-        	$('#ADN').toggleClass('selected').toggleClass('unselected');
-        });
-        
-        // Handles opening the Facebook sheet
-        $('#FacebookIcon').click(function() {
-        	$('#Facebook').toggleClass('selected').toggleClass('unselected');
-        });
-                
-        // Handles darkening rest of page
-        ($triggers).click(function() {
-	        $('#darklayer').toggleClass('on').toggleClass('off');
-        });
-        
-        // Adds "touched" class when element is touched and removes it when it is not
-        $('.cancel').bind('touchstart touchend', function(e) {
-        	$(this).toggleClass('touched');
-        });
-        
-        // Triggers un-darkening rest of page and deselecting sheets
-        $('.cancel').click(function() {
-	        $(this).closest('div.Sheet').toggleClass('selected').toggleClass('unselected');
-        	$('#darklayer').toggleClass('on').toggleClass('off');
-        });
-	});
-</script>
-
-
-<!-- Typekit -->
-<script type="text/javascript" src="//use.typekit.net/hjf6cdg.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-
 <style type="text/css">
 
 body {
@@ -275,15 +224,15 @@ li.Link {
 }
 
 #darklayer.on {
-	-webkit-animation: fade-in 0.3s ease-out forwards;
-	-moz-animation: fade-in 0.3s ease-out forwards;
-	animation: fade-in 0.3s ease-out forwards;
+	-webkit-animation: fade-in 0.25s ease-out forwards;
+	-moz-animation: fade-in 0.25s ease-out forwards;
+	animation: fade-in 0.25s ease-out forwards;
 }
 
 #darklayer.off {
-	-webkit-animation: fade-out 0.3s ease-out forwards;
-	-moz-animation: fade-out 0.3s ease-out forwards;
-	animation: fade-out 0.3s ease-out forwards;
+	-webkit-animation: fade-out 0.25s ease-out forwards;
+	-moz-animation: fade-out 0.25s ease-out forwards;
+	animation: fade-out 0.25s ease-out forwards;
 }
 
 .Sheet {
@@ -306,15 +255,15 @@ li.Link {
 }
 
 .Sheet.unselected {
-	-webkit-animation: slide-out 0.3s ease-in forwards;
-	-moz-animation: slide-out 0.3s ease-in forwards;
-	animation: slide-out 0.3s ease-in forwards;
+	-webkit-animation: slide-out 0.25s ease-in forwards;
+	-moz-animation: slide-out 0.25s ease-in forwards;
+	animation: slide-out 0.25s ease-in forwards;
 }
 
 .Sheet.selected {
-	-webkit-animation: slide-in 0.3s ease-out forwards;
-	-moz-animation: slide-in 0.3s ease-out forwards;
-	animation: slide-in 0.3s ease-out forwards;
+	-webkit-animation: slide-in 0.25s ease-out forwards;
+	-moz-animation: slide-in 0.25s ease-out forwards;
+	animation: slide-in 0.25s ease-out forwards;
 }
 
 .SheetDivider {
@@ -324,28 +273,37 @@ li.Link {
 }
 
 .SheetContent {
-	background: rgba(0,0,0,0.95);
-	background: -webkit-linear-gradient(rgba(85,85,85,0.75) 0%, rgba(20,20,20,0.75) 15%);
-	background: linear-gradient(to bottom, rgba(85,85,85,0.75) 0%, rgba(20,20,20,0.75) 15%);
-	padding: 3% 0;
+	background: rgba(0,0,0,0.75);
+	background: -webkit-linear-gradient(rgba(85,85,85,0.85) 0%, rgba(20,20,20,0.85) 15%);
+	background: linear-gradient(to bottom, rgba(85,85,85,0.85) 0%, rgba(20,20,20,0.85) 15%);
+	padding: 5% 0;
+	margin: 0 auto;
 	text-align: center;
 }
 
-.SheetContent ul {
-	list-style: none;
-	padding: 0;
-	margin: 5% auto 0;
+.SheetContent .itemset {
+	margin: 5% 3%;
+	text-align: left;
 }
 
-.SheetContent li {
-	display: inline-table;
-	margin: 2% 3.75% 5%;
+.SheetContent .itemset .itemcontainer {
+	width: 32.5%;
+	display: inline-block;
+	text-align: center;
+	margin: 0 auto 5%;
+}
+
+.SheetContent .itemset li {
+	display: inline-block;
+	margin: 0 auto;
 	width: 70px;
-	vertical-align: top;
-	line-height: 1.5em;
+	height: 88px;
+	line-height: 1.4em;
 	font-size: 12px;
 	font-weight: bold;
 	color: #FFF;
+	text-align: center;
+	vertical-align: top;
 }
 
 .SheetContent li img {
@@ -358,18 +316,17 @@ li.Link {
 }
 
 .cancel {
-	-webkit-margin-before: 0;
-	-webkit-margin-after: 0;
 	border-radius: 10px;
 	background: #656565;
 	background: -webkit-linear-gradient(rgba(130,130,130,0.75) 0%, rgba(10,10,10,0.75) 75%);
 	background: linear-gradient(to bottom, rgba(130,130,130,0.75) 0%, rgba(10,10,10,0.75) 75%);
-	font-size: 19px;
 	opacity: 1;
-	margin: 2.5% 7% 0;
 	padding: 0;
 	line-height: 2em;
-	border: 1px inset #535353;
+	font-size: 19px;
+	margin: -2.5% auto 0;
+	width: 272px;
+	border: 2px inset #535353;
 	text-align: center;
 	text-decoration: none;
 	color: #FFF;
@@ -494,6 +451,25 @@ li.Link {
 	}
 }
 
+@media screen and (max-device-width: 699px) and (orientation:landscape) {
+
+.SheetContent {
+	padding: 5% 0 1%;
+}
+
+.SheetContent .itemset {
+	margin: 0 3%;
+}
+
+.SheetContent .itemset .itemcontainer {
+	width: 24.5%;
+}
+
+.cancel {
+	width: 225px;
+}
+}
+
 @media screen and (max-device-width: 240px) {
 body {
 	font-size: 0.5em;
@@ -542,13 +518,25 @@ body {
 <div class="Sheet unselected" id="Twitter">
 	<div class="SheetDivider"></div>
 	<div class="SheetContent">
-		<ul>
-			<li><a href="http://twitter.com/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Safari.png"></a>Right here</li>
-			<li><a href="twitter://user?screen_name=ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Twitter.png"></a>Twitter</li>
-			<li><a href="tweetbot:///user_profile/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Tweetbot.png"></a>Tweetbot</li>
-			<li><a href="twitterrific:///profile?screen_name=ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Twitterrific.png"></a>Twitterrific</li>
-			<li><a href="neue:///user?screen_name=ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Twittelator.png"></a>Twittelator Neue</li>
-			<li><a href="googlechrome://twitter.com/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Chrome.png"></a>Chrome</li>
+		<ul class="itemset">
+			<div class="itemcontainer">
+				<li><a href="http://twitter.com/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Safari.png"></a>Right here</li>
+			</div>
+			<div class="itemcontainer">
+				<li><a href="twitter://user?screen_name=ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Twitter.png"></a>Twitter</li>
+			</div>
+			<div class="itemcontainer">
+				<li><a href="tweetbot:///user_profile/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Tweetbot.png"></a>Tweetbot</li>
+			</div>
+			<div class="itemcontainer">
+				<li><a href="twitterrific:///profile?screen_name=ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Twitterrific.png"></a>Twitterrific</li>
+			</div>
+			<div class="itemcontainer">
+				<li><a href="neue:///user?screen_name=ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Twittelator.png"></a>Twittelator Neue</li>
+			</div>
+			<div class="itemcontainer">
+				<li><a href="googlechrome://twitter.com/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Chrome.png"></a>Chrome</li>
+			</div>
 		</ul>
 		<h2 class="cancel">Cancel</h2>
 	</div>
@@ -558,14 +546,25 @@ body {
 <div class="Sheet unselected" id="ADN">
 	<div class="SheetDivider"></div>
 	<div class="SheetContent">
-		<ul>
-			<li><a href="http://alpha.app.net/ScottSmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Safari.png"></a>Right here</li>
-			<li><a href="felix://user/@ScottSmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Felix.png"></a>Felix</li>
-			<li><a href="netbot:///user_profile/ScottSmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Netbot.png"></a>Netbot</li>
-			<li><a href="rivr://showuser/19801"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Rivr.png"></a>Rivr</li>
-			<li><a href="adian://user?username=scottsmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Adian.png"></a>Adian</li>
-			<li><a href="googlechrome://alpha.app.net/scottsmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Chrome.png"></a>Chrome</li>
-
+		<ul class="itemset">
+			<div class="itemcontainer">
+				<li><a href="http://alpha.app.net/ScottSmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Safari.png"></a>Right here</li>
+			</div>
+			<div class="itemcontainer">
+				<li><a href="felix://user/@ScottSmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Felix.png"></a>Felix</li>
+			</div>
+			<div class="itemcontainer">
+				<li><a href="netbot:///user_profile/ScottSmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Netbot.png"></a>Netbot</li>
+			</div>
+			<div class="itemcontainer">
+				<li><a href="rivr://showuser/19801"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Rivr.png"></a>Rivr</li>
+			</div>
+			<div class="itemcontainer">
+				<li><a href="adian://user?username=scottsmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Adian.png"></a>Adian</li>
+			</div>
+			<div class="itemcontainer">
+				<li><a href="googlechrome://alpha.app.net/scottsmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Chrome.png"></a>Chrome</li>
+			</div>
 		</ul>
 		<h2 class="cancel">Cancel</h2>
 	</div>
@@ -575,17 +574,73 @@ body {
 <div class="Sheet unselected" id="Facebook">
 	<div class="SheetDivider"></div>
 	<div class="SheetContent">
-		<ul>
-			<li><a href="http://facebook.com/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Safari.png"></a>Right here</li>
-			<li><a href="fb://profile/1618900176"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Facebook.png"></a>Facebook</li>
-			<li><a href="googlechrome://facebook.com/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Chrome.png"></a>Chrome</li>
-
+		<ul class="itemset">
+			<div class="itemcontainer">
+				<li><a href="http://facebook.com/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Safari.png"></a>Right here</li>
+			</div>
+			<div class="itemcontainer">
+				<li><a href="fb://profile/1618900176"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Facebook.png"></a>Facebook</li>
+			</div>
+			<div class="itemcontainer">
+				<li><a href="googlechrome://facebook.com/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Chrome.png"></a>Chrome</li>
+			</div>
 		</ul>
 		<h2 class="cancel">Cancel</h2>
 	</div>
 </div>
 
 <div id="darklayer" class="off"></div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+	
+		var $sheets = $('#Twitter, #ADN, #Facebook');
+		
+		var $triggers = $('#TwitterIcon, #App-NetIcon, #FacebookIcon');
+		
+		// Shows sheets after they have loaded
+		($sheets).delay(300).addClass('loaded');
+		$('#darklayer').delay(300).addClass('loaded');
+		
+		// Handles opening the Twitter sheet
+		$('#TwitterIcon').click(function() {
+        	$('#Twitter').toggleClass('selected').toggleClass('unselected');
+        });
+        
+         // Handles opening the App-Net sheet
+        $('#App-NetIcon').click(function() {
+        	$('#ADN').toggleClass('selected').toggleClass('unselected');
+        });
+        
+        // Handles opening the Facebook sheet
+        $('#FacebookIcon').click(function() {
+        	$('#Facebook').toggleClass('selected').toggleClass('unselected');
+        });
+                
+        // Handles darkening rest of page
+        ($triggers).click(function() {
+	        $('#darklayer').toggleClass('on').toggleClass('off');
+        });
+        
+        // Adds "touched" class when element is touched and removes it when it is not
+        $('.cancel').bind('touchstart touchend', function(e) {
+        	$(this).toggleClass('touched');
+        });
+        
+        // Triggers un-darkening rest of page and deselecting sheets
+        $('.cancel').click(function() {
+	        $(this).closest('div.Sheet').toggleClass('selected').toggleClass('unselected');
+        	$('#darklayer').toggleClass('on').toggleClass('off');
+        });
+	});
+</script>
+
+
+<!-- Typekit -->
+<script type="text/javascript" src="//use.typekit.net/hjf6cdg.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	
 </body>
 

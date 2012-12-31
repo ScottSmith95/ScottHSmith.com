@@ -21,64 +21,6 @@ __    / /  | |     __   | |     | |    | |       | |
 
 <meta name="viewport" content="initial-scale=1.0 user-scalable=0">
 
-<!-- Typekit -->
-<script type="text/javascript" src="//use.typekit.net/hjf6cdg.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-
-<script type="text/javascript" language="JavaScript">
-
-NumberOfImagesToRotate = 9;
-
-FirstPart = '<img src="images/image';
-LastPart = '.jpg">';
-
-function printImage() {
-var r = Math.ceil(Math.random() * NumberOfImagesToRotate);
-document.write(FirstPart + r + LastPart);
-}
-</script>
-
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-
-<script type="text/javascript">
-	$(document).ready(function(){
-	
-		var $sheets = $('#ScottADN, #NickADN');
-		
-		var $triggers = $('#ScottADNLink, #NickADNLink');
-		
-		// Shows sheets after they have loaded
-		($sheets).delay(300).addClass('loaded');
-		$('#darklayer').delay(300).addClass('loaded');
-		
-		// Handles opening the Twitter sheet
-		$('#ScottADNLink').click(function() {
-        	$('#ScottADN').toggleClass('selected').toggleClass('unselected');
-        });
-        
-        // Handles opening the App-Net sheet
-        $('#NickADNLink').click(function() {
-        	$('#NickADN').toggleClass('selected').toggleClass('unselected');
-        });
-        
-        // Handles darkening rest of page
-        ($triggers).click(function() {
-	        $('#darklayer').toggleClass('on').toggleClass('off');
-        });
-        
-        // Adds "touched" class when element is touched and removes it when it is not
-        $('.cancel').bind('touchstart touchend', function(e) {
-        	$(this).toggleClass('touched');
-        });
-        
-        // Triggers un-darkening rest of page and deselecting sheets
-        $('.cancel').click(function() {
-	        $(this).closest('div.Sheet').toggleClass('selected').toggleClass('unselected');
-        	$('#darklayer').toggleClass('on').toggleClass('off');
-        });
-	});
-</script>
-
 <style>
 body {
 	background: #E3E5E8;
@@ -91,6 +33,10 @@ body {
 	}
 ::-moz-selection {
 	background: rgba(197,112,95,0.25);
+}
+
+ul {
+	padding: 0;
 }
 
 h1, h2, p, a {
@@ -260,15 +206,15 @@ a {
 }
 
 #darklayer.on {
-	-webkit-animation: fade-in 0.3s ease-out forwards;
-	-moz-animation: fade-in 0.3s ease-out forwards;
-	animation: fade-in 0.3s ease-out forwards;
+	-webkit-animation: fade-in 0.25s ease-out forwards;
+	-moz-animation: fade-in 0.25s ease-out forwards;
+	animation: fade-in 0.25s ease-out forwards;
 }
 
 #darklayer.off {
-	-webkit-animation: fade-out 0.3s ease-out forwards;
-	-moz-animation: fade-out 0.3s ease-out forwards;
-	animation: fade-out 0.3s ease-out forwards;
+	-webkit-animation: fade-out 0.25s ease-out forwards;
+	-moz-animation: fade-out 0.25s ease-out forwards;
+	animation: fade-out 0.25s ease-out forwards;
 }
 
 .Sheet {
@@ -291,15 +237,15 @@ a {
 }
 
 .Sheet.unselected {
-	-webkit-animation: slide-out 0.3s ease-out forwards;
-	-moz-animation: slide-out 0.3s ease-out forwards;
-	animation: slide-out 0.3s ease-out forwards;
+	-webkit-animation: slide-out 0.25s ease-in forwards;
+	-moz-animation: slide-out 0.25s ease-in forwards;
+	animation: slide-out 0.25s ease-in forwards;
 }
 
 .Sheet.selected {
-	-webkit-animation: slide-in 0.3s ease-out forwards;
-	-moz-animation: slide-in 0.3s ease-out forwards;
-	animation: slide-in 0.3s ease-out forwards;
+	-webkit-animation: slide-in 0.25s ease-out forwards;
+	-moz-animation: slide-in 0.25s ease-out forwards;
+	animation: slide-in 0.25s ease-out forwards;
 }
 
 .SheetDivider {
@@ -309,28 +255,37 @@ a {
 }
 
 .SheetContent {
-	background: rgba(0,0,0,0.95);
-	background: -webkit-linear-gradient(rgba(85,85,85,0.75) 0%, rgba(20,20,20,0.75) 15%);
-	background: linear-gradient(to bottom, rgba(85,85,85,0.75) 0%, rgba(20,20,20,0.75) 15%);
-	padding: 3% 0;
+	background: rgba(0,0,0,0.75);
+	background: -webkit-linear-gradient(rgba(85,85,85,0.85) 0%, rgba(20,20,20,0.85) 15%);
+	background: linear-gradient(to bottom, rgba(85,85,85,0.85) 0%, rgba(20,20,20,0.85) 15%);
+	padding: 5% 0;
+	margin: 0 auto;
 	text-align: center;
 }
 
-.SheetContent ul {
-	list-style: none;
-	padding: 0;
-	margin: 5% auto 0;
+.SheetContent .itemset {
+	margin: 5% 3%;
+	text-align: left;
 }
 
-.SheetContent li {
-	display: inline-table;
-	margin: 2% 3.75% 5%;
+.SheetContent .itemset .itemcontainer {
+	width: 32.45%;
+	display: inline-block;
+	text-align: center;
+	margin: 0 auto 5%;
+}
+
+.SheetContent .itemset li {
+	display: inline-block;
+	margin: 0 auto;
 	width: 70px;
-	vertical-align: top;
-	line-height: 1.5em;
+	height: 88px;
+	line-height: 1.4em;
 	font-size: 12px;
 	font-weight: bold;
 	color: #FFF;
+	text-align: center;
+	vertical-align: top;
 }
 
 .SheetContent li img {
@@ -343,18 +298,17 @@ a {
 }
 
 .cancel {
-	-webkit-margin-before: 0;
-	-webkit-margin-after: 0;
 	border-radius: 10px;
 	background: #656565;
 	background: -webkit-linear-gradient(rgba(130,130,130,0.75) 0%, rgba(10,10,10,0.75) 75%);
 	background: linear-gradient(to bottom, rgba(130,130,130,0.75) 0%, rgba(10,10,10,0.75) 75%);
-	font-size: 19px;
 	opacity: 1;
-	margin: 2.5% 7% 0;
 	padding: 0;
 	line-height: 2em;
-	border: 1px inset #535353;
+	font-size: 19px;
+	margin: -2.5% auto 0;
+	width: 272px;
+	border: 2px inset #535353;
 	text-align: center;
 	text-decoration: none;
 	color: #FFF;
@@ -447,6 +401,25 @@ a {
 	box-shadow: 0 0 7px 0 rgba(0,0,0,0.75);
 }
 }
+
+@media screen and (max-device-width: 699px) and (orientation:landscape) {
+
+.SheetContent {
+	padding: 5% 0 1%;
+}
+
+.SheetContent .itemset {
+	margin: 0 3%;
+}
+
+.SheetContent .itemset .itemcontainer {
+	width: 24.5%;
+}
+
+.cancel {
+	width: 225px;
+}
+}
 </style>
 </head>
 
@@ -471,14 +444,25 @@ printImage();
 <div class="Sheet unselected" id="ScottADN">
 	<div class="SheetDivider"></div>
 	<div class="SheetContent">
-		<ul>
-			<li><a href="http://alpha.app.net/ScottSmith"><img class="appicon" src="../images/App%20Icons/Safari.png"></a>Right here</li>
-			<li><a href="felix://user/@ScottSmith"><img class="appicon" src="../images/App%20Icons/Felix.png"></a>Felix</li>
-			<li><a href="netbot:///user_profile/ScottSmith"><img class="appicon" src="../images/App%20Icons/Netbot.png"></a>Netbot</li>
-			<li><a href="rivr://showuser/19801"><img class="appicon" src="../images/App%20Icons/Rivr.png"></a>Rivr</li>
-			<li><a href="adian://user?username=scottsmith"><img class="appicon" src="../images/App%20Icons/Adian.png"></a>Adian</li>
-			<li><a href="googlechrome://alpha.app.net/scottsmith"><img class="appicon" src="../images/App%20Icons/Chrome.png"></a>Chrome</li>
-
+		<ul class="itemset">
+			<div class="itemcontainer">
+				<li><a href="http://alpha.app.net/ScottSmith"><img class="appicon" src="../images/App%20Icons/Safari.png"></a>Right here</li>
+			</div>
+			<div class="itemcontainer">
+				<li><a href="felix://user/@ScottSmith"><img class="appicon" src="../images/App%20Icons/Felix.png"></a>Felix</li>
+			</div>
+			<div class="itemcontainer">
+				<li><a href="netbot:///user_profile/ScottSmith"><img class="appicon" src="../images/App%20Icons/Netbot.png"></a>Netbot</li>
+			</div>
+			<div class="itemcontainer">
+				<li><a href="rivr://showuser/19801"><img class="appicon" src="../images/App%20Icons/Rivr.png"></a>Rivr</li>
+			</div>
+			<div class="itemcontainer">
+				<li><a href="adian://user?username=scottsmith"><img class="appicon" src="../images/App%20Icons/Adian.png"></a>Adian</li>
+			</div>
+			<div class="itemcontainer">
+				<li><a href="googlechrome://alpha.app.net/scottsmith"><img class="appicon" src="../images/App%20Icons/Chrome.png"></a>Chrome</li>
+			</div>
 		</ul>
 		<h2 class="cancel">Cancel</h2>
 	</div>
@@ -488,20 +472,89 @@ printImage();
 <div class="Sheet unselected" id="NickADN">
 	<div class="SheetDivider"></div>
 	<div class="SheetContent">
-		<ul>
-			<li><a href="http://alpha.app.net/nickrosencrans"><img class="appicon" src="../images/App%20Icons/Safari.png"></a>Right here</li>
-			<li><a href="felix://user/@nickrosencrans"><img class="appicon" src="../images/App%20Icons/Felix.png"></a>Felix</li>
-			<li><a href="netbot:///user_profile/nickrosencrans"><img class="appicon" src="../images/App%20Icons/Netbot.png"></a>Netbot</li>
-			<li><a href="rivr://showuser/10618"><img class="appicon" src="../images/App%20Icons/Rivr.png"></a>Rivr</li>
-			<li><a href="adian://user?username=nickrosencrans"><img class="appicon" src="../images/App%20Icons/Adian.png"></a>Adian</li>
-			<li><a href="googlechrome://alpha.app.net/nickrosencrans"><img class="appicon" src="../images/App%20Icons/Chrome.png"></a>Chrome</li>
-
+		<ul class="itemset">
+			<div class="itemcontainer">
+				<li><a href="http://alpha.app.net/nickrosencrans"><img class="appicon" src="../images/App%20Icons/Safari.png"></a>Right here</li>
+			</div>
+			<div class="itemcontainer">
+				<li><a href="felix://user/@nickrosencrans"><img class="appicon" src="../images/App%20Icons/Felix.png"></a>Felix</li>
+			</div>
+			<div class="itemcontainer">
+				<li><a href="netbot:///user_profile/nickrosencrans"><img class="appicon" src="../images/App%20Icons/Netbot.png"></a>Netbot</li>
+			</div>
+			<div class="itemcontainer">
+				<li><a href="rivr://showuser/10618"><img class="appicon" src="../images/App%20Icons/Rivr.png"></a>Rivr</li>
+			</div>
+			<div class="itemcontainer">
+				<li><a href="adian://user?username=nickrosencrans"><img class="appicon" src="../images/App%20Icons/Adian.png"></a>Adian</li>
+			</div>
+			<div class="itemcontainer">
+				<li><a href="googlechrome://alpha.app.net/nickrosencrans"><img class="appicon" src="../images/App%20Icons/Chrome.png"></a>Chrome</li>
+			</div>
 		</ul>
 		<h2 class="cancel">Cancel</h2>
 	</div>
 </div>
 
 <div id="darklayer" class="off"></div>
+
+<!-- Typekit -->
+<script type="text/javascript" src="//use.typekit.net/hjf6cdg.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+<script type="text/javascript" language="JavaScript">
+
+NumberOfImagesToRotate = 9;
+
+FirstPart = '<img src="images/image';
+LastPart = '.jpg">';
+
+function printImage() {
+var r = Math.ceil(Math.random() * NumberOfImagesToRotate);
+document.write(FirstPart + r + LastPart);
+}
+</script>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+	
+		var $sheets = $('#ScottADN, #NickADN');
+		
+		var $triggers = $('#ScottADNLink, #NickADNLink');
+		
+		// Shows sheets after they have loaded
+		($sheets).delay(300).addClass('loaded');
+		$('#darklayer').delay(300).addClass('loaded');
+		
+		// Handles opening the Twitter sheet
+		$('#ScottADNLink').click(function() {
+        	$('#ScottADN').toggleClass('selected').toggleClass('unselected');
+        });
+        
+        // Handles opening the App-Net sheet
+        $('#NickADNLink').click(function() {
+        	$('#NickADN').toggleClass('selected').toggleClass('unselected');
+        });
+        
+        // Handles darkening rest of page
+        ($triggers).click(function() {
+	        $('#darklayer').toggleClass('on').toggleClass('off');
+        });
+        
+        // Adds "touched" class when element is touched and removes it when it is not
+        $('.cancel').bind('touchstart touchend', function(e) {
+        	$(this).toggleClass('touched');
+        });
+        
+        // Triggers un-darkening rest of page and deselecting sheets
+        $('.cancel').click(function() {
+	        $(this).closest('div.Sheet').toggleClass('selected').toggleClass('unselected');
+        	$('#darklayer').toggleClass('on').toggleClass('off');
+        });
+	});
+</script>
 
 </body>
 </html>
