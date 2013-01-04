@@ -674,7 +674,7 @@ body {
 				</a>
 			</li>
 			<li class="SocialLinks">
-				<a id="Google+" href="http://plus.google.com/u/1/106066907456293991070/">
+				<a id="Google+" href="http://plus.google.com/u/0/111019875270643537691/">
 					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/GooglePlus.svg">
 				</a>
 			</li>
@@ -830,7 +830,7 @@ body {
         
         // Handles darkening rest of page
         ($triggers).click(function() {
-	        $('#darklayer').toggleClass('on').toggleClass('off');
+	        $('#darklayer').addClass('on').removeClass('off');
         });
         
         // Adds "touched" class when element is touched and removes it when it is not
@@ -841,7 +841,7 @@ body {
         // Triggers un-darkening rest of page and deselecting sheets
         $('.cancel').click(function() {
 	        $(this).closest('div.Sheet').toggleClass('selected').toggleClass('unselected');
-        	$('#darklayer').toggleClass('on').toggleClass('off');
+        	$('#darklayer').removeClass('on').addClass('off');
         });
 	});
 </script>
@@ -852,7 +852,7 @@ body {
 
 <script>
 if(window.navigator && window.navigator.loadPurpose === "preview"){
-    window.location.href = "http://scotthsmith.com/Preview/index.html"
+    window.location.href = "http://scotthsmith.com/preview/index.html"
 };
 </script>
 
