@@ -42,7 +42,6 @@ __    / /  | |     __   | |     | |    | |       | |
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
 <style type="text/css">
-
 body {
 	background: #E3E5E8;
 	margin: 0;
@@ -601,6 +600,7 @@ body {
 
 <div id="darklayer" class="off"></div>
 
+
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
 <script type="text/javascript">
@@ -647,10 +647,21 @@ body {
 	});
 </script>
 
-
 <!-- Typekit -->
 <script type="text/javascript" src="//use.typekit.net/hjf6cdg.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+<!-- Hides Address Bar in Mobile Safari -->
+<script>
+	// When ready...
+	window.addEventListener("load",function() {
+	  // Set a timeout...
+	  setTimeout(function(){
+	    // Hide the address bar!
+	    window.scrollTo(0, 1);
+	  }, 0);
+	});
+</script>
 	
 </body>
 

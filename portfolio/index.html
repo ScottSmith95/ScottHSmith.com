@@ -38,29 +38,13 @@ __    / /  | |     __   | |     | |    | |       | |
         <meta name="viewport" content="initial-scale = 0.75, user-scalable = no" />
         
         <meta charset="utf-8">
-        
-        <script>
-			// When ready...
-			window.addEventListener("load",function() {
-			  // Set a timeout...
-			  setTimeout(function(){
-			    // Hide the address bar!
-			    window.scrollTo(0, 1);
-			  }, 0);
-			});
-		</script>
 
         <!-- iOS Devices -->
         <link rel="apple-touch-icon-precomposed" href="http://scotthsmith.com/images/ScottPic.png"/>
         
         <link rel="apple-touch-icon-precomposed" href="http://scotthsmith.com/images/ScottPic.png"/>
-                
-        <!-- Typekit -->
-        <script type="text/javascript" src="//use.typekit.net/hjf6cdg.js"></script>
-        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 <style type="text/css">
-
 body {
 	background-color: #E3E5E8;
 	font: normal 300 1em "museo-sans-1", "museo-sans-2", sans-serif;
@@ -403,5 +387,23 @@ header a {
 				</div></div>
 			</div>
         </div>
+        
+                
+<!-- Typekit -->
+<script type="text/javascript" src="//use.typekit.net/hjf6cdg.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+<!-- Hides Address Bar in Mobile Safari -->
+<script>
+	// When ready...
+	window.addEventListener("load",function() {
+	  // Set a timeout...
+	  setTimeout(function(){
+	    // Hide the address bar!
+	    window.scrollTo(0, 1);
+	  }, 0);
+	});
+</script>
+
 </body>
 </html>
