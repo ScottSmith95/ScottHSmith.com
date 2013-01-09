@@ -132,25 +132,23 @@ header a.nav {
 }
 
 .iconset {
-	-webkit-animation: intro 1.5s ease-out forwards;
-	-moz-animation: intro 1.5s ease-out forwards;
-	animation: intro 1.5s ease-out forwards;
+	-webkit-animation: intro 1.5s ease-out 0.65s forwards;
+	-moz-animation: intro 1.5s ease-out 0.65s forwards;
+	animation: intro 1.5s ease-out 0.65s forwards;
 	margin: 2.5% auto;
 	opacity: 0;
-	display: inline-block;
 }
 
 .grid {
-	-webkit-transition: opacity 0.5s ease-out, width 0.35s ease-out;
-	-moz-transition: opacity 0.5s ease-out, width 0.35s ease-out;
-	transition: opacity 0.5s ease-out, width 0.35s ease-out;
+	-webkit-transition: opacity 0.6s ease-out, width 0.4s ease-out;
+	-moz-transition: opacity 0.6s ease-out, width 0.4s ease-out;
+	transition: opacity 0.6s ease-out, width 0.4s ease-out;
 	vertical-align: middle;
 	height: 225px;
 	position: relative;
 }
 
 .grid.selected {
-	height: 225px;
 	width: 559px;
 	opacity: 1;
 }
@@ -354,13 +352,31 @@ header p {
 	text-align: left;
 }
 
-#license {
-	display: none;
+.iconset-wrapper {
+	width: 100%;
+}
+
+.grid {
+	height: auto;
+}
+
+.grid.selected {
+	width: 90%;
 }
 
 .download {
-	height: 3.25em;
-	margin: 1% 0.85%;
+	height: 2.75em;
+	margin: 3.5% 1%;
+}
+
+	.download:hover {
+		-webkit-transform: translateY(0);
+		-moz-transform: translateY(0);
+		transform: translateY(0);
+	}
+
+#license {
+	display: none;
 }
 
 @-webkit-keyframes blue-gradient {
@@ -421,7 +437,7 @@ header p {
 		<div id="desc"><p>I have created icons for social networking websites (more or less) in a vector format.<br>The icons come in dark grey (#444444), light grey (<span id="lightcolor">#808080</span>), and blue (<span id="bluecolor">#009BCD</span>). This collection currently has icons for Twitter, App.net, Facebook, Google+, Dribbble, Instagram, 500px, Flickr, YouTube, iTunes, GitHub, Fancy, emails, a cross, and downloads.</p></div>
 	</header>
 	
-	<div id="blueicons" class="iconset-wrapper">
+	<div class="iconset-wrapper">
 		<div class="iconset">
 			<img src="blue/BlueGrid.png" class="blue grid selected">
 			<img src="dark/DarkGrid.png" class="dark grid unselected">
