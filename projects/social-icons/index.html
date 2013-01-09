@@ -42,23 +42,7 @@ __    / /  | |     __   | |     | |    | |       | |
 
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
-<script>
-	// When ready...
-	window.addEventListener("load",function() {
-	  // Set a timeout...
-	  setTimeout(function(){
-	    // Hide the address bar!
-	    window.scrollTo(0, 1);
-	  }, 0);
-	});
-</script>
-
-<!-- Typekit -->
-<script type="text/javascript" src="//use.typekit.net/hjf6cdg.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-
 <style type="text/css">
-
 body {
 	background: #E3E5E8;
 	font: normal 300 1em "museo-sans-1", "museo-sans-2", sans-serif;
@@ -428,6 +412,14 @@ header p {
 }
 </style>
 
+<!--[if lt IE 10]>
+<style>
+	header, .iconset, #license {
+		opacity: 1;
+	}
+</style>
+<![endif]-->
+
 </head>
 
 <body>
@@ -452,6 +444,23 @@ header p {
 	<div id="license">
 		<a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" src="http://i.creativecommons.org/l/by/3.0/88x31.png"/></a><br>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.<p>The logos of these companies (or likenesses thereof) are the property of their respective owners.</p>
 	</div>
+
+
+<!-- Typekit -->
+<script type="text/javascript" src="//use.typekit.net/hjf6cdg.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+<!-- Hides Address Bar in Mobile Safari -->
+<script>
+	// When ready...
+	window.addEventListener("load",function() {
+	  // Set a timeout...
+	  setTimeout(function(){
+	    // Hide the address bar!
+	    window.scrollTo(0, 1);
+	  }, 0);
+	});
+</script>
 	
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
