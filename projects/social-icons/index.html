@@ -141,21 +141,22 @@ header a.nav {
 }
 
 .grid {
-	-webkit-transition: opacity 0.5s ease-out;
-	-moz-transition: opacity 0.5s ease-out;
-	transition: opacity 0.5s ease-out;
+	-webkit-transition: opacity 0.5s ease-out, width 0.35s ease-out;
+	-moz-transition: opacity 0.5s ease-out, width 0.35s ease-out;
+	transition: opacity 0.5s ease-out, width 0.35s ease-out;
 	vertical-align: middle;
 	height: 225px;
 	position: relative;
 }
 
 .grid.selected {
-	display: block;
+	height: 225px;
+	width: 559px;
 	opacity: 1;
 }
 
 .grid.unselected {
-	display: none;
+	width: 0;
 	opacity: 0;
 }
 
@@ -446,17 +447,17 @@ header p {
 		var $downloads = $('.blue .download .dark .download, .light .download');
 	
 		$('.blue .download').mouseover(function() {
-			$images.removeClass('selected').addClass('unselected');
+			$('.selected').removeClass('selected').addClass('unselected');
         	$('.blue.grid').removeClass('unselected').addClass('selected');
         });
         
         $('.dark .download').mouseover(function() {
-        	$images.removeClass('selected').addClass('unselected');
+        	$('.selected').removeClass('selected').addClass('unselected');
         	$('.dark.grid').removeClass('unselected').addClass('selected');
         });
         
         $('.light .download').mouseover(function() {
-        	$images.removeClass('selected').addClass('unselected');
+        	$('.selected').removeClass('selected').addClass('unselected');
         	$('.light.grid').removeClass('unselected').addClass('selected');
         });
 	});
