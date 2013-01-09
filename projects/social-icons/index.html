@@ -101,21 +101,21 @@ header a.nav {
 		color: #0086B2;
 	}
 
-#lightcolor {
+.lightcolor {
 	color: #808080;
 }
 
-#bluecolor {
+.bluecolor {
 	color: #009BCD
 }
 
-.iconset-wrapper {
+.content-wrapper {
 	margin: 0 auto;
 	width: 65%;
 	text-align: center;
 }
 
-.iconset {
+.content {
 	-webkit-animation: intro 1.5s ease-out 0.65s forwards;
 	-moz-animation: intro 1.5s ease-out 0.65s forwards;
 	animation: intro 1.5s ease-out 0.65s forwards;
@@ -124,9 +124,9 @@ header a.nav {
 }
 
 .grid {
-	-webkit-transition: opacity 0.6s ease-out, width 0.4s ease-out;
-	-moz-transition: opacity 0.6s ease-out, width 0.4s ease-out;
-	transition: opacity 0.6s ease-out, width 0.4s ease-out;
+	-webkit-transition: opacity 0.5s ease-out, width 0.4s ease-out;
+	-moz-transition: opacity 0.5s ease-out, width 0.4s ease-out;
+	transition: opacity 0.5s ease-out, width 0.4s ease-out;
 	vertical-align: middle;
 	height: 225px;
 	position: relative;
@@ -143,10 +143,7 @@ header a.nav {
 }
 
 .download {
-	-webkit-animation: 1.25s ease-out infinite alternate;
-	-moz-animation: 1.25s ease-out infinite alternate; 
-	animation: 1.25s ease-out infinite alternate;
-	-webkit-transition: opacity 0.35s ease-out, -webkit-transform 0.25s ease;
+	-webkit-transition: opacity 0.35s ease-out, -webkit-transform 0.3s ease;
 	-moz-transition: opacity 0.35s ease-out, -moz-transform 0.25s ease;
 	transition: opacity 0.35s ease-out, transform 0.25s ease;
 	position: relative;
@@ -154,7 +151,6 @@ header a.nav {
 	height: 4.75em;
 	margin: 3.5% 2.5% 2.5%;
 	width: auto;
-	border-radius: 999px;
 }
 
 	.download:hover {
@@ -170,45 +166,7 @@ header a.nav {
 		opacity: 0.65;
 	}
 
-#blueicons {
-	-webkit-animation-delay: 0.75s;
-	-moz-animation-delay: 0.75s;
-	animation-delay: 0.75s;
-}
-
-.blue .download {
-	-webkit-animation-name: blue-gradient;
-	-moz-animation-name: blue-gradient;
-	animation-name: blue-gradient;
-}
-
-
-#darkicons {
-	-webkit-animation-delay: 1.5s;
-	-moz-animation-delay: 1.5s;
-	animation-delay: 1.5s;
-}
-
-.dark .download {
-	-webkit-animation-name: dark-gradient;
-	-moz-animation-name: dark-gradient;
-	animation-name: dark-gradient;
-}
-
-
-#lighticons {
-	-webkit-animation-delay: 2.25s;
-	-moz-animation-delay: 2.25;
-	animation-delay: 2.25s;
-}
-
-.light .download {
-	-webkit-animation-name: light-gradient;
-	-moz-animation-name: light-gradient;
-	animation-name: light-gradient;
-}
-
-#license {
+.license {
 	-webkit-animation: intro 1.5s ease-out 5s forwards;
 	-moz-animation: intro 1.5s ease-out 5s forwards;
 	animation: intro 1.5s ease-out 5s forwards;
@@ -219,22 +177,22 @@ header a.nav {
 	float: left;
 }
 
-#license p {
+.license p {
 	font-size: 0.75em;
 }
 
-#license a {
+.license a {
 	-webkit-transition: color 0.3s ease-out;
 	-moz-transition: color 0.3s ease-out;
 	transition: color 0.3s ease-out;
 	color: #444;
 }
 
-	#license a:hover {
+	.license a:hover {
 		color: #009BCD;
 	}
 	
-	#license a:active {
+	.license a:active {
 		color: #0086B2;
 	}
 
@@ -251,53 +209,6 @@ header a.nav {
 @keyframes intro {
 	0% {opacity: 0;}
 	100% {opacity: 1;}
-}
-
-@-webkit-keyframes blue-gradient {
-	0% {box-shadow: 0px 0px 0px rgba(0,155,205,0.5); background: rgba(0,155,205,0);}
-	100% {box-shadow: 0px 0px 15px 2px #009BCD; background: rgba(0,155,205,0.25);}
-}
-
-@-moz-keyframes blue-gradient {
-	0% {box-shadow: 0px 0px 0px rgba(0,155,205,0.5); background: rgba(0,155,205,0);}
-	100% {box-shadow: 0px 0px 15px 2px #009BCD; background: rgba(0,155,205,0.25);}
-}
-
-@keyframes blue-gradient {
-	0% {box-shadow: 0px 0px 0px rgba(0,155,205,0.5); background: rgba(0,155,205,0);}
-	100% {box-shadow: 0px 0px 15px 2px #009BCD; background: rgba(0,155,205,0.25);}
-}
-
-
-@-webkit-keyframes dark-gradient {
-	0% {box-shadow: 0px 0px 15px rgba(68,68,68,0.5); background: rgba(68,68,68,0);}
-	100% {box-shadow: 0px 0px 15px 2px #444444; background: rgba(68,68,68,0.25);}
-}
-
-@-moz-keyframes dark-gradient {
-	0% {box-shadow: 0px 0px 15px rgba(68,68,68,0.5); background: rgba(68,68,68,0);}
-	100% {box-shadow: 0px 0px 15px 2px #444444; background: rgba(68,68,68,0.25);}
-}
-
-@keyframes dark-gradient {
-	0% {box-shadow: 0px 0px 15px rgba(68,68,68,0.5); background: rgba(68,68,68,0);}
-	100% {box-shadow: 0px 0px 15px 2px #444444; background: rgba(68,68,68,0.25);}
-}
-
-
-@-webkit-keyframes light-gradient {
-	0% {box-shadow: 0px 0px 15px rgba(128,128,128,0.5); background: rgba(128,128,128,0);}
-	100% {box-shadow: 0px 0px 15px 2px #808080; background: rgba(128,128,128,0.25);}
-}
-
-@-moz-keyframes light-gradient {
-	0% {box-shadow: 0px 0px 15px rgba(128,128,128,0.5); background: rgba(128,128,128,0);}
-	100% {box-shadow: 0px 0px 15px 2px #808080; background: rgba(128,128,128,0.25);}
-}
-
-@keyframes light-gradient {
-	0% {box-shadow: 0px 0px 15px rgba(128,128,128,0.5); background: rgba(128,128,128,0);}
-	100% {box-shadow: 0px 0px 15px 2px #808080; background: rgba(128,128,128,0.25);}
 }
 
 @media screen and (max-width: 699px) {
@@ -359,62 +270,15 @@ header p {
 		transform: translateY(0);
 	}
 
-#license {
+.license {
 	display: none;
-}
-
-@-webkit-keyframes blue-gradient {
-	0% {box-shadow: 0px 0px 5px rgba(0,155,205,0.5); background: rgba(0,155,205,0);}
-	100% {box-shadow: 0px 0px 5px 2px #009BCD; background: rgba(0,155,205,0.25);}
-}
-
-@-moz-keyframes blue-gradient {
-	0% {box-shadow: 0px 0px 5px rgba(0,155,205,0.5); background: rgba(0,155,205,0);}
-	100% {box-shadow: 0px 0px 5px #009BCD; background: rgba(0,155,205,0.25);}
-}
-
-@keyframes blue-gradient {
-	0% {box-shadow: 0px 0px 5px rgba(0,155,205,0.5); background: rgba(0,155,205,0);}
-	100% {box-shadow: 0px 0px 5px  #009BCD; background: rgba(0,155,205,0.25);}
-}
-
-
-@-webkit-keyframes dark-gradient {
-	0% {box-shadow: 0px 0px 5px rgba(68,68,68,0.5); background: rgba(68,68,68,0);}
-	100% {box-shadow: 0px 0px 5px #444444; background: rgba(68,68,68,0.25);}
-}
-
-@-moz-keyframes dark-gradient {
-	0% {box-shadow: 0px 0px 5px rgba(68,68,68,0.5); background: rgba(68,68,68,0);}
-	100% {box-shadow: 0px 0px 5px #444444; background: rgba(68,68,68,0.25);}
-}
-
-@keyframes dark-gradient {
-	0% {box-shadow: 0px 0px 5px rgba(68,68,68,0.5); background: rgba(68,68,68,0);}
-	100% {box-shadow: 0px 0px 5px #444444; background: rgba(68,68,68,0.25);}
-}
-
-
-@-webkit-keyframes light-gradient {
-	0% {box-shadow: 0px 0px 5px rgba(128,128,128,0.5); background: rgba(128,128,128,0);}
-	100% {box-shadow: 0px 0px 5px #808080; background: rgba(128,128,128,0.25);}
-}
-
-@-moz-keyframes light-gradient {
-	0% {box-shadow: 0px 0px 5px rgba(128,128,128,0.5); background: rgba(128,128,128,0);}
-	100% {box-shadow: 0px 0px 5px #808080; background: rgba(128,128,128,0.25);}
-}
-
-@keyframes light-gradient {
-	0% {box-shadow: 0px 0px 5px rgba(128,128,128,0.5); background: rgba(128,128,128,0);}
-	100% {box-shadow: 0px 0px 5px #808080; background: rgba(128,128,128,0.25);}
 }
 }
 </style>
 
 <!--[if lt IE 10]>
 <style>
-	header, .iconset, #license {
+	header, .iconset, .license {
 		opacity: 1;
 	}
 </style>
@@ -426,11 +290,11 @@ header p {
 
 	<header>
 		<h1><a class="nav" href="/projects">Projects</a><span> &ndash; </span>Social Icons</h1>
-		<div id="desc"><p>I have created icons for social networking websites (more or less) in a vector format.<br>The icons come in dark grey (#444444), light grey (<span id="lightcolor">#808080</span>), and blue (<span id="bluecolor">#009BCD</span>). This collection currently has icons for Twitter, App.net, Facebook, Google+, Dribbble, Instagram, 500px, Flickr, YouTube, iTunes, GitHub, Fancy, emails, a cross, and downloads.</p></div>
+		<div class="desc"><p>I have created icons for social networking websites (more or less) in a vector format.<br>The icons come in dark grey (#444444), light grey (<span class="lightcolor">#808080</span>), and blue (<span class="bluecolor">#009BCD</span>). This collection currently has icons for Twitter, App.net, Facebook, Google+, Dribbble, Instagram, 500px, Flickr, YouTube, iTunes, GitHub, Fancy, emails, a cross, and downloads.</p></div>
 	</header>
 	
-	<div class="iconset-wrapper">
-		<div class="iconset">
+	<div class="content-wrapper">
+		<div class="content">
 			<img src="blue/BlueGrid.png" class="blue grid selected">
 			<img src="dark/DarkGrid.png" class="dark grid unselected">
 			<img src="light/LightGrid.png" class="light grid unselected">
@@ -441,7 +305,7 @@ header p {
 		</div>
 	</div>
 	
-	<div id="license">
+	<div class="license">
 		<a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" src="http://i.creativecommons.org/l/by/3.0/88x31.png"/></a><br>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.<p>The logos of these companies (or likenesses thereof) are the property of their respective owners.</p>
 	</div>
 
