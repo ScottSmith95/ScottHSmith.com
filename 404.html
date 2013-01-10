@@ -115,23 +115,25 @@ ul {
 	animation: fly-in-from-bottom 1.25s ease-in-out forwards;
 }
 
-#headerpic img {
+#headerpic {
 	-webkit-animation: fly-in-from-top 1.25s ease-in-out forwards;
 	-moz-animation: fly-in-from-top 1.25s ease-in-out forwards;
 	animation: fly-in-from-top 1.25s ease-in-out forwards;
+	text-align: center;
+	opacity: 0;
+}
+
+#headerpic img {
 	-webkit-transition: width 0.5s ease-out, height 0.5s ease-out, background-size 0.5s ease-out;
 	-moz-transition: width 0.5s ease-out, height 0.5s ease-out, background-size 0.5s ease-out;
 	transition: width 0.5s ease-out, height 0.5s ease-out, background-size 0.5s ease-out;
 	-webkit-border-radius: 15px;
 	-moz-border-radius: 15px;
 	border-radius: 15px;
+	margin: 2% auto 0;
+	text-align: center;
 	width: 275px;
 	height: auto;
-	margin: 4% auto 0;
-	text-align: center;
-	display: block;
-	opacity: 0;
-	position: relative;
 	z-index: 2;
 }
 
@@ -144,30 +146,27 @@ ul {
 }
 
 nav {
-	clear: both;
 	text-align: center;
 	margin: 1% auto;
+	padding-bottom: 1%;
+	width: 30%;
+	border-bottom: 1px solid #009BCD;
 }
 
 nav a {
 	display: inline;
 	text-align: center;
-	margin: 0 1%;
+	margin: 0 1.5%;
 	font-size: 1.6em;
-}
-
-#navdivider {
-	border-bottom: 1px solid #009BCD;
-	margin: 0 35%;
 }
 
 .MainText {
 	color: #444444;
 	text-align: center;
 	font-size: 1.35em;
-	margin: 2% 25%;
 	line-height: 1.3em;
-
+	margin: 1.5% auto;
+	width: 50%;
 }
 
 .AllSocialLinks {
@@ -176,14 +175,14 @@ nav a {
 	height: 1em;
 }
 
-.SocialLinksDesktop, .SocialLinksMobile, .SocialLinks {
+.SocialLink {
 	display: inline;
 	text-align: center;
 	line-height: 3.5em;
-	margin: 0px 0.25%;
+	margin: 0px 0.2%;
 }
 
-.SocialLinksMobile {
+.SocialLink.Mobile {
 	display: none;
 }
 
@@ -407,12 +406,13 @@ nav a {
     height: 225px;
 }
 
-#navdivider {
-	margin: 0 29%;
+nav {
+	width: 52.5%;
 }
 
 .MainText {
-	margin: 1.5% 15%;
+	margin: 0.5% auto;
+	width: 70%;
 }
 
 .SocialIcon {
@@ -433,16 +433,17 @@ body {
 	width: 140px;
 }
 
-nav a {
-	margin: 0 2%;
+nav {
+	width: 75%;
 }
 
-#navdivider {
-	margin: 0 15%;
+nav a {
+	margin: 0 1.25%;
 }
 
 .MainText {
-	margin: 2% 1%;
+	margin: 2% auto;
+	width: 95%;
 }
 
 .SocialIcon {
@@ -523,30 +524,20 @@ nav a {
 	color: #444444;
 }
 
-#navdivider {
-	border-bottom: 1px solid #009BCD;
-}
-
-.MainText {
-	color: #444444;
-	text-align: center;
-	margin: 5% 5%;
-}
-
 .AllSocialLinks {
 	margin: 2.5% auto;
 }
 
-.SocialLinksDesktop, .SocialLinksMobile, .SocialLinks {
+.SocialLink {
 	line-height: 3.5em;
 	margin: 0 0.75%;
 }
 
-.SocialLinksDesktop {
+.SocialLink.Desktop {
 	display: none;
 }
 
-.SocialLinksMobile {
+.SocialLink.Mobile {
 	display: inline;
 }
 
@@ -603,8 +594,6 @@ nav a {
 
 <body>
 	
-	<div id="wrapper">
-
 	<div id="headerpic">
 		<a href="http://ScottHSmith.com/"><img src="http://ScottHSmith.com/images/Deal%20With%20It.gif?v2"></a>
 	</div>
@@ -619,84 +608,78 @@ nav a {
 		<a href="/portfolio/">Portfolio</a>
 		<a href="/projects/">Projects</a>
 	</nav>
-	
-	<div id="navdivider"></div>
-	
+		
 	<p class="MainText">I have no idea what you were looking for, but it isn't here.<br>Seriously though, if you think this is an error, feel free to contact me trough any of the options below.</p>
-	
-	<div class="divider"></div>
-	
+		
 		<ul class="AllSocialLinks">
-			<li class="SocialLinksDesktop">
-				<a id="TwitterDesktop" href="http://twitter.com/ScottSmith95">
+			<li class="Twitter Desktop SocialLink">
+				<a href="http://twitter.com/ScottSmith95">
 					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/Twitter.svg">
 				</a>
 			</li>
-			<li class="SocialLinksMobile">
-				<a id="TwitterMobile">
+			<li class="Twitter Mobile SocialLink">
+				<a>
 					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/Twitter.svg">
 				</a>
 			</li>
-			<li class="SocialLinksDesktop">
-				<a id="App-NetDesktop" href="https://alpha.app.net/scottsmith">
+			<li class="App-Net Desktop SocialLink">
+				<a href="https://alpha.app.net/scottsmith">
 					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/AppNet.svg">
 				</a>
 			</li>
-			<li class="SocialLinksMobile">
-				<a id="App-NetMobile">
+			<li class="App-Net Mobile SocialLink">
+				<a>
 					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/AppNet.svg">
 				</a>
 			</li>
-			<li class="SocialLinksDesktop">
+			<li class="Desktop SocialLink">
 				<a id="FacebookDesktop" href="http://facebook.com/ScottSmith95">
 					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/Facebook.svg">
 				</a>
 			</li>
-			<li class="SocialLinksMobile">
-				<a id="FacebookMobile">
+			<li class="Facebook Mobile SocialLink">
+				<a>
 					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/Facebook.svg">
 				</a>
 			</li>
-			<li class="SocialLinksDesktop">
-				<a id="InstagramDesktop" href="http://instagram.com/ScottSmith95">
+			<li class="Instagram Desktop SocialLink">
+				<a href="http://instagram.com/ScottSmith95">
 					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/Instagram.svg">
 				</a>
 			</li>
-			<li class="SocialLinksMobile">
-				<a id="InstagramMobile">
+			<li class="Instagram Mobile SocialLink">
+				<a>
 					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/Instagram.svg">
 				</a>
 			</li>
-			<li class="SocialLinks">
-				<a id="Google+" href="http://plus.google.com/u/1/106066907456293991070/">
+			<li class="Google+ SocialLink">
+				<a href="http://plus.google.com/u/0/111019875270643537691/">
 					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/GooglePlus.svg">
 				</a>
 			</li>
-			<li class="SocialLinksDesktop">
-				<a id="GitHub" href="http://github.com/ScottSmith95">
+			<li class="Github Desktop SocialLink">
+				<a href="http://github.com/ScottSmith95">
 					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/GitHub.svg">
 				</a>
 			</li>
-			<li class="SocialLinksDesktop">
-				<a id="Fancy" href="http://thefancy.com/ScottSmith">
+			<li class="Fancy Desktop SocialLink">
+				<a href="http://thefancy.com/ScottSmith">
 					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/Fancy.svg">
 				</a>
 			</li>
-			<li class="SocialLinksMobile">
-				<a id="Phone" href="http://wax.io/ScottSmith">
+			<li class="Phone Mobile SocialLink">
+				<a href="http://wax.io/ScottSmith">
 					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/Phone.svg">
 				</a>
 			</li>
-			<li class="SocialLinks">
-				<a id="Email" href="mailto:mail@ScottHSmith.com">
+			<li class="Email SocialLink">
+				<a href="mailto:mail@ScottHSmith.com">
 					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/Email.svg">
 				</a>
 			</li>
 		</ul>
 	</div>
 	
-	</div>
-
 <!-- Twitter Share Sheet -->
 <div class="Sheet unselected" id="Twitter">
 	<div class="SheetDivider"></div>
@@ -805,29 +788,29 @@ nav a {
 	
 		var $sheets = $('#Twitter, #ADN, #Facebook, #Instagram');
 		
-		var $triggers = $('#TwitterMobile, #App-NetMobile, #FacebookMobile, #InstagramMobile');
+		var $triggers = $('.Twitter.Mobile, .App-Net.Mobile, .Facebook.Mobile, .Instagram.Mobile');
 		
 		// Shows sheets after they have loaded
 		($sheets).delay(300).addClass('loaded');
 		$('#darklayer').delay(300).addClass('loaded');
 		
 		// Handles opening the Twitter sheet
-		$('#TwitterMobile').click(function() {
+		$('.Twitter.Mobile').click(function() {
         	$('#Twitter').toggleClass('selected').toggleClass('unselected');
         });
         
         // Handles opening the App-Net sheet
-        $('#App-NetMobile').click(function() {
+        $('.App-Net.Mobile').click(function() {
         	$('#ADN').toggleClass('selected').toggleClass('unselected');
         });
         
         // Handles opening the Facebook sheet
-        $('#FacebookMobile').click(function() {
+        $('.Facebook.Mobile').click(function() {
         	$('#Facebook').toggleClass('selected').toggleClass('unselected');
         });
         
         // Handles opening the Instagram sheet
-        $('#InstagramMobile').click(function() {
+        $('.Instagram.Mobile').click(function() {
         	$('#Instagram').toggleClass('selected').toggleClass('unselected');
         });
         
