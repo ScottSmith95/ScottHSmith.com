@@ -67,12 +67,10 @@ a {
 }
 
 	a:hover {
-		text-shadow: 0 0 10px rgba(0,0,0,0.5);
 		color: #009BCD;
 	}
 	
 	a:active {
-		text-shadow: 0px -2px 7px rgba(0,0,0,0.5);
 		color: #0086B2;
 	}
 
@@ -83,14 +81,13 @@ header {
 	color: #444444;
 	font-size: 1.4em;
 	text-align: justify;
-	border-bottom: 1px solid #009BCD;
 	margin-bottom: 0.75%;
-	-webkit-font-smoothing: 
+	border-bottom: 1px solid #009BCD;
 }
 
 header .nav {
 	color: rgba(68,68,68,0.5);
-	text-decoration: none;
+	font-weight: 300;
 }
 
 	header .nav:hover {
@@ -239,6 +236,14 @@ header a {
 	font-size: 0.9em;
 }
 
+	.caption a:hover {
+		text-shadow: 0 0 10px rgba(0,0,0,0.5);
+	}
+	
+	.caption a:active {
+		text-shadow: 0px -2px 7px rgba(0,0,0,0.5);
+	}
+
 @media screen and (max-width: 1100px) {
 .photo {
 	width: 200px;
@@ -351,7 +356,7 @@ header {
     <body>				
         <div id="container">     
         	<header>
-	        	<h1><a class="nav" href="/">Scott &#124;</a> Projects</h1>
+	        	<h1><a class="nav" href="/">Scott &#124;</a> Portfolio</h1>
 			</header>
 
 			<div id="items">
