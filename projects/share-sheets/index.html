@@ -372,15 +372,29 @@ header a {
 }
 
 @media screen and (max-width: 1224px) {
-
 .SocialIcon {
 	height: 3.25em;
 	width: auto;
 }
 }
 
-@media screen and (max-width: 699px) {
+/* iPad */
+@media all and (device-width: 768px) and (device-height: 1024px) {
+header, .content-wrapper {
+	width: 80%;
+}
 
+.SheetContent .itemset .itemcontainer {
+	width: 24.5%;
+}
+
+.appicon {
+	height: 74px;
+	width: auto;
+}
+}
+
+@media screen and (max-width: 699px) {
 body {
 	font-size: 0.75em;
 }
@@ -460,7 +474,6 @@ header p {
 }
 
 @media screen and (max-device-width: 699px) and (orientation:landscape) {
-
 .SheetContent {
 	padding: 3.5% 0 3.5%;
 }
