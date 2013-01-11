@@ -333,17 +333,24 @@ a {
 }
 
 @media screen and (max-width: 1100px) {
-	body {
-		font-size: 1.8em;
-	}
+body {
+	font-size: 1.8em;
+}
 
-	#content {
-		margin: 0 10%;
-	}
-	
-	#slideshow img {
-		width: 300px;
-	}
+#content {
+	margin: 0 10%;
+}
+
+#slideshow img {
+	width: 300px;
+}
+}
+
+/* iPad */
+@media all and (device-width: 768px) and (device-height: 1024px) {
+header, .content-wrapper {
+	width: 80%;
+}
 }
 
 @media screen and (max-device-width: 699px) {
@@ -416,7 +423,6 @@ a {
 }
 
 @media screen and (max-device-width: 699px) and (orientation:landscape) {
-
 .SheetContent {
 	padding: 3.5% 0 3.5%;
 }
