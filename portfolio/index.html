@@ -184,13 +184,13 @@ header a {
 	-webkit-transform: scale(0.925);   
 	-moz-transform: scale(0.925);  
 	transform: scale(0.925);
-	float: left;
+	float: right;
 	overflow: hidden;
 	background: #EEE;
 	color: #222222;
 	border-radius: 10px;
 	width: 33.33%;
-	height: 325px;
+	min-height: auto;
 	z-index: 1;
 }
 
@@ -244,11 +244,30 @@ header a {
 		text-shadow: 0px -2px 7px rgba(0,0,0,0.5);
 	}
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1224px) {
 .photo {
 	width: 200px;
 	height: 116px;
+}
+}
 
+@media all and (device-width: 768px) and (device-height: 1024px) {
+
+#container {
+	width: 95%;
+}
+
+.item {
+	min-height: auto;
+}
+
+.photo {
+	width: 300px;
+	height: 174px;
+}
+
+.caption {
+	font-size: 1.2em;
 }
 }
 
