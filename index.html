@@ -41,6 +41,8 @@ __    / /  | |     __   | |     | |    | |       | |
 
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
+<script type="text/javascript" src="scripts/modernizr.js"></script>
+
 <style type="text/css">
 body {
 	background: #E3E5E7;
@@ -693,7 +695,7 @@ body {
 			</li>
 			<li class="Instagram Desktop SocialLink">
 				<a href="http://instagram.com/ScottSmith95">
-					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/Instagram.svg">
+					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/Instagram.svg?v1.2">
 				</a>
 			</li>
 			<li class="Instagram Mobile SocialLink">
@@ -826,6 +828,17 @@ body {
 <div id="darklayer" class="off"></div>
 
 
+<!-- Typekit -->
+<script type="text/javascript" src="//use.typekit.net/hjf6cdg.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+<!-- Redirect to different page in Safari Top Sites -->
+<script>
+if(window.navigator && window.navigator.loadPurpose === "preview"){
+    window.location.href = "http://scotthsmith.com/preview/index.html"
+};
+</script>
+
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
 <script type="text/javascript">
@@ -875,17 +888,6 @@ body {
         	$('#darklayer').removeClass('on').addClass('off');
         });
 	});
-</script>
-
-<!-- Typekit -->
-<script type="text/javascript" src="//use.typekit.net/hjf6cdg.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-
-<!-- Redirect to different page in Safari Top Sites -->
-<script>
-if(window.navigator && window.navigator.loadPurpose === "preview"){
-    window.location.href = "http://scotthsmith.com/preview/index.html"
-};
 </script>
 
 </body>
