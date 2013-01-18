@@ -19,10 +19,6 @@ __    / /  | |     __   | |     | |    | |       | |
 
 <title>Scott Smith</title>
 
-<link rel="shortcut icon" type="image/x-icon" href="http://ScottHSmith.com/images/favicon.ico?v1.2"/>
-
-<link rel="apple-touch-icon-precomposed" href="/images/ScottPic.jpg"/>
-
 <meta charset="UTF-8">
 
 <meta name="Description" content="Scott Smith is an opinionated technology follower, blogger, and web designer."/>
@@ -41,598 +37,13 @@ __    / /  | |     __   | |     | |    | |       | |
 
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
+<link rel="shortcut icon" type="image/x-icon" href="http://ScottHSmith.com/images/favicon.ico?v1.2"/>
+
+<link rel="apple-touch-icon-precomposed" href="/images/ScottPic.jpg"/>
+
+<link rel="stylesheet" href="css/home.css"/>
+
 <script type="text/javascript" src="scripts/modernizr.js"></script>
-
-<style type="text/css">
-body {
-	background: #E3E5E7;
-	margin: 0;
-	font: normal 300 100% "museo-sans-1", "museo-sans-2", sans-serif;
-}
-
-::selection {
-    background: rgba(0,155,205,0.25);
-	}
-::-moz-selection {
-	background: rgba(0,155,205,0.25);
-}
-
-a {
-	-webkit-transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
-	-moz-transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
-	transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
-	text-decoration: none;
-	color: #444444;
-}
-
-	a:hover {
-		text-shadow: 0 0 10px rgba(0,0,0,0.35);
-		color: #009BCD;
-	}
-	
-	a:active {
-		text-shadow: 0px -2px 7px rgba(0,0,0,0.5);
-		color: #007EA6;
-	}
-
-ul {
-	padding: 0;
-}
-
-@-webkit-keyframes fly-in-from-top {
-	0% {-webkit-transform: translateY(-175px) scale(0.5) rotateX(85deg); opacity: 0.25;}
-	100% {-webkit-transform: translateY(0) scale(1) rotateX(0deg); opacity: 1;}
-}
-			
-@-moz-keyframes fly-in-from-top {
-	0% {-moz-transform: translateY(-175px) scale(0.5) rotateX(85deg); opacity: 0.25;}
-	100% {-moz-transform: translateY(0) scale(1) rotateX(0deg); opacity: 1;}
-}
-
-@keyframes fly-in-from-top {
-	0% {transform: translateY(-175px) scale(0.5) rotateX(85deg); opacity: 0.25;}
-	100% {transform: translateY(0) scale(1) rotateX(0deg); opacity: 1;}
-}
-
-@-webkit-keyframes fly-in-from-bottom {
-	0% {-webkit-transform: translateY(175px) scale(0.5) rotateX(85deg); opacity: 0.25;}
-	100% {-webkit-transform: translateY(0) scale(1) rotateX(0deg); opacity: 1;}
-}
-			
-@-moz-keyframes fly-in-from-bottom {
-	0% {-moz-transform: translateY(175px) scale(0.5) rotateX(85deg); opacity: 0.25;}
-	100% {-moz-transform: translateY(0) scale(1) rotateX(0deg); opacity: 1;}
-}
-
-@keyframes fly-in-from-bottom {
-	0% {transform: translateY(175px) scale(0.5) rotateX(85deg); opacity: 0.25;}
-	100% {transform: translateY(0) scale(1) rotateX(0deg); opacity: 1;}
-}
-
-#headerpic {
-	-webkit-animation: fly-in-from-top 1.25s ease-in-out forwards;
-	-moz-animation: fly-in-from-top 1.25s ease-in-out forwards;
-	animation: fly-in-from-top 1.25s ease-in-out forwards;
-	-webkit-transition: width 0.5s ease-out, height 0.5s ease-out, background-size 0.5s ease-out;
-	-moz-transition: width 0.5s ease-out, height 0.5s ease-out, background-size 0.5s ease-out;
-	transition: width 0.5s ease-out, height 0.5s ease-out, background-size 0.5s ease-out;
-	background: url("http://scotthsmith.com/images/ScottPic_600.jpg") no-repeat center;
-	background-size: cover;
-	width: 275px;
-    height: 275px;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-	border-radius: 15px;
-	display: block;
-	margin: 2% auto 0;
-}
-
-#bottomanimated {
-	margin: 0;
-	padding: 0;
-	-webkit-animation: fly-in-from-bottom 1.25s ease-in-out forwards;
-	-moz-animation: fly-in-from-bottom 1.25s ease-in-out forwards;
-	animation: fly-in-from-bottom 1.25s ease-in-out forwards;
-}
-
-#name {
-	margin: 1.5% auto;
-	font-weight: 500;
-	text-align: center; 
-	font-size: 2.3em;
-	color: #444;
-}
-
-nav {
-	text-align: center;
-	margin: 1% auto;
-	padding-bottom: 1%;
-	width: 30%;
-	border-bottom: 1px solid #009BCD;
-}
-
-nav a {
-	display: inline;
-	text-align: center;
-	margin: 0 1.75%;
-	font-size: 1.6em;
-}
-
-.MainText {
-	color: #444444;
-	text-align: center;
-	font-size: 1.35em;
-	line-height: 1.3em;
-	margin: 1.5% auto;
-	width: 48%;
-}
-
-	a[href="/tea"]:hover {
-		color: #C5705E;
-	}
-
-	a[href="/tea"]:active {
-		color: #975143;
-	}
-
-
-.AllSocialLinks {
-	margin: 1.5% auto 5% auto;
-	text-align: center;
-	height: 1em;
-}
-
-.SocialLink {
-	display: inline;
-	text-align: center;
-	line-height: 3.5em;
-	margin: 0px 0.2%;
-}
-
-.SocialLink.Mobile {
-	display: none;
-}
-
-.SocialIcon {
-	-webkit-transition: opacity 0.25s ease-out, height 0.5s ease-out, width 0.5s ease-out, -webkit-transform 0.25s ease-out;
-	-moz-transition: opacity 0.25s ease-out, height 0.5s ease-out, width 0.5s ease-out, -moz-transform 0.25s ease-out;
-	transition: opacity 0.25s ease-out, height 0.5s ease-out, width 0.5s ease-out, transform 0.25s ease-out;
-	-webkit-transform: scale(0.8, 0.8);
-	-moz-transform: scale(0.8, 0.8);
-	transform: scale(0.8, 0.8);
-	width: auto;
-	vertical-align: middle;
-	height: 3.75em;
-	margin-bottom: 2.5%;
-}
-
-	.SocialIcon:hover {
-		-webkit-transform: scale(1, 1);   
-		-moz-transform: scale(1, 1);  
-		transform: scale(1, 1);
-	}
-	
-	.SocialIcon:active {
-		opacity: 0.5;
-	}
-
-/* Share Sheet */
-@-webkit-keyframes slide-in {
-	0% {-webkit-transform: translateY(100%); visibility: visible;}
-	100% {-webkit-transform: translateY(0);}
-}
-
-@-moz-keyframes slide-in {
-	0% {-moz-transform: translateY(100%); visibility: visible;}
-	100% {-moz-transform: translateY(0);}
-}
-
-@keyframes slide-in {
-	0% {transform: translateY(100%); visibility: visible;}
-	100% {transform: translateY(0);}
-}
-
-@-webkit-keyframes slide-out {
-	0% {-webkit-transform: translateY(0px);}
-	100% {-webkit-transform: translateY(100%); visibility: hidden;}
-}
-
-@-moz-keyframes slide-out {
-	0% {-moz-transform: translateY(0px);}
-	100% {-moz-transform: translateY(100%); visibility: hidden;}
-}
-
-@keyframes slide-out {
-	0% {transform: translateY(0px);}
-	100% {transform: translateY(100%); visibility: hidden;}
-}
-
-@-webkit-keyframes fade-in {
-	0% {opacity: 0; visibility: visible;}
-	100% {opacity: 1;}
-}
-
-@-moz-keyframes fade-in {
-	0% {opacity: 0; visibility: visible;}
-	100% {opacity: 1;}
-}
-
-@keyframes fade-in {
-	0% {opacity: 0; visibility: visible;}
-	100% {opacity: 1;}
-}
-
-@-webkit-keyframes fade-out {
-	0% {opacity: 1;}
-	100% {opacity: 0; visibility: hidden;}
-}
-
-@-moz-keyframes fade-out {
-	0% {opacity: 1;}
-	100% {opacity: 0; visibility: hidden;}
-}
-
-@keyframes fade-out {
-	0% {opacity: 1;}
-	100% {opacity: 0; visibility: hidden;}
-}
-
-#darklayer {
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background: rgba(0,0,0,0.5);
-	visibility: hidden;
-}
-
-#darklayer.loaded {
-	visibility: visible;
-}
-
-#darklayer.on {
-	-webkit-animation: fade-in 0.25s ease-out forwards;
-	-moz-animation: fade-in 0.25s ease-out forwards;
-	animation: fade-in 0.25s ease-out forwards;
-}
-
-#darklayer.off {
-	-webkit-animation: fade-out 0.25s ease-out forwards;
-	-moz-animation: fade-out 0.25s ease-out forwards;
-	animation: fade-out 0.25s ease-out forwards;
-}
-
-.Sheet {
-	width: 100%;
-	margin: 0;
-	padding: 0;
-	position: fixed;
-	bottom: 0;
-	z-index: 10;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
-	visibility: hidden;
-}
-
-.Sheet.loaded {
-	visibility: visible;
-}
-
-.Sheet.unselected {
-	-webkit-animation: slide-out 0.25s ease-in forwards;
-	-moz-animation: slide-out 0.25s ease-in forwards;
-	animation: slide-out 0.25s ease-in forwards;
-}
-
-.Sheet.selected {
-	-webkit-animation: slide-in 0.25s ease-out forwards;
-	-moz-animation: slide-in 0.25s ease-out forwards;
-	animation: slide-in 0.25s ease-out forwards;
-}
-
-.SheetDivider {
-	border-top: 1px solid #2E2E2E;
-	border-bottom: 1px solid #7D7D7D;
-	margin: 0;
-}
-
-.SheetContent {
-	background: rgba(0,0,0,0.75);
-	background: -webkit-linear-gradient(rgba(85,85,85,0.85) 0%, rgba(20,20,20,0.85) 15%);
-	background: linear-gradient(to bottom, rgba(85,85,85,0.85) 0%, rgba(20,20,20,0.85) 15%);
-	padding: 5% 0;
-	margin: 0 auto;
-	text-align: center;
-}
-
-.SheetContent .itemset {
-	margin: 5% 3%;
-	text-align: left;
-}
-
-.SheetContent .itemset .itemcontainer {
-	width: 32.75%;
-	display: inline-block;
-	text-align: center;
-	margin: 0 auto 5%;
-}
-
-.SheetContent .itemset li {
-	display: inline-block;
-	margin: 0 auto;
-	width: 70px;
-	height: 88px;
-	line-height: 1.3em;
-	font-size: 12px;
-	font-weight: bold;
-	color: #FFF;
-	text-align: center;
-	vertical-align: top;
-}
-
-.SheetContent li img {
-	border-radius: 10px;
-}
-
-.appicon {
-	height: 58px;
-	width: auto;
-}
-
-.cancel {
-	border-radius: 10px;
-	background: #656565;
-	background: -webkit-linear-gradient(rgba(130,130,130,0.75) 0%, rgba(10,10,10,0.75) 75%);
-	background: linear-gradient(to bottom, rgba(130,130,130,0.75) 0%, rgba(10,10,10,0.75) 75%);
-	opacity: 1;
-	padding: 0;
-	line-height: 2em;
-	font-size: 19px;
-	margin: -2.5% auto 0;
-	width: 272px;
-	border: 2px inset #535353;
-	text-align: center;
-	text-decoration: none;
-	color: #FFF;
-}
-
-.cancel.touched, .cancel:active {
-	background: -webkit-linear-gradient(rgba(85,85,85,0.85) 0%, rgba(0,0,0,0.85) 100%);
-	background: linear-gradient(to bottom, rgba(85,85,85,0.85) 0%, rgba(0,0,0,0.85) 100%);
-}
-
-@media (-webkit-min-device-pixel-ratio: 2), 
-(min-resolution: 192dpi) {
-	
-}
-
-@media screen and (max-width: 1224px) {
-#headerpic {
-	background-size: cover;
-	width: 225px;
-    height: 225px;
-    margin-top: 1.5%;
-}
-
-#name {
-	margin: 1% auto;
-}
-
-nav {
-	width: 40%;
-}
-
-.MainText {
-	margin: 0.5% auto;
-	width: 70%;
-}
-
-.AllSocialLinks {
-	margin-top: 0.5%;
-}
-
-.SocialIcon {
-	height: 3.25em;
-	width: auto;
-}
-}
-
-/* iPad */
-@media all and (device-width: 768px) and (device-height: 1024px) {
-
-#headerpic {
-	margin-top: 2.5%;
-}
-
-.SocialLink.Desktop {
-	display: none;
-}
-
-.SocialLink.Mobile, .SocialLink.Github {
-	display: inline;
-}
-
-.SheetContent .itemset .itemcontainer {
-	width: 24.5%;
-}
-
-.appicon {
-	height: 74px;
-	width: auto;
-}
-}
-
-@media screen and (max-width: 699px) {
-body {
-	font-size: 0.75em;
-	padding-bottom: 3.5%;
-}
-
-#headerpic {
-	background-size: cover;
-	width: 140px;
-    height: 140px;
-}
-
-nav {
-	width: 75%;
-}
-
-nav a {
-	margin: 0 1.25%;
-}
-
-.MainText {
-	margin: 2% auto;
-	width: 95%;
-}
-
-.SocialIcon {
-	margin: 0;
-	height: 3em;
-}
-}
-
-@media screen and (max-device-width: 699px) {
-@-webkit-keyframes fly-in-from-top {
-	0% {-webkit-transform: translateY(-1500px); opacity: 0;}
-	30% {-webkit-transform: translateY(-150px); opacity: 0;}
-	100% {-webkit-transform: translateY(0); opacity: 1;}
-}
-			
-@-moz-keyframes fly-in-from-top {
-	0% {-moz-transform: translateY(-1500px); opacity: 0;}
-	30% {-moz-transform: translateY(-150px); opacity: 0;}
-	100% {-moz-transform: translateY(0); opacity: 1;}
-}
-
-@keyframes fly-in-from-top {
-	0% {transform: translateY(-1500px); opacity: 0;}
-	30% {transform: translateY(-150px); opacity: 0;}
-	100% {transform: translateY(0); opacity: 1;}
-}
-
-@-webkit-keyframes fly-in-from-bottom {
-	0% {-webkit-transform: translateY(1500px); opacity: 0;}
-	30% {-webkit-transform: translateY(100px) rotateX(-75deg); opacity: 0;}
-	100% {-webkit-transform: translateY(0) rotateX(0deg); opacity: 1;}
-}
-			
-@-moz-keyframes fly-in-from-bottom {
-	0% {-moz-transform: translateY(1500px); opacity: 0;}
-	30% {-moz-transform: translateY(100px) rotateX(-75deg); opacity: 0;}
-	100% {-webkit-transform: translateY(0) rotateX(0deg); opacity: 1;}
-}
-
-@keyframes fly-in-from-bottom {
-	0% {transform: translateY(1500px); opacity: 0;}
-	30% {transform: translateY(100px) rotateX(-75deg); opacity: 0;}
-	100% {transform: translateY(0) rotateX(0deg); opacity: 1;}
-}
-
-#headerpic {
-	-webkit-animation-duration: 1.5s;
-}
-
-#bottomanimated {
-	-webkit-animation-duration: 1.5s;
-}
-
-a {
-	margin-top: 2%;
-}
-
-	a:hover {
-		text-shadow: none;
-		color: inherit;
-	}
-	
-	a:active {
-		text-shadow: none;
-		color: inherit;
-	}
-
-#headerpic {
-	background-image: url("/images/ScottPic_600.jpg");
-	margin: 5% auto 0 auto;
-}
-
-#name {
-	margin-top: 2%;
-}
-
-nav {
-	marigin: 2.5% auto;
-}
-
-nav a {
-	margin-top: 1%;
-	color: #444444;
-}
-
-.AllSocialLinks {
-	margin: 2.5% auto;
-}
-
-.SocialLink {
-	line-height: 3.5em;
-	margin: 0 0.75%;
-}
-
-.SocialLink.Desktop {
-	display: none;
-}
-
-.SocialLink.Mobile {
-	display: inline;
-}
-
-.SocialIcon {
-	-webkit-transform: scale(1, 1);   
-	-moz-transform: scale(1, 1);  
-	transform: scale(1, 1);
-}
-
-	.SocialIcon:hover {
-		-webkit-transform: scale(1, 1);   
-		-moz-transform: scale(1, 1);  
-		transform: scale(1, 1);
-		opacity: 1;
-	}
-	
-	.SocialIcon:active {
-		opacity: 1;
-	}
-}
-
-@media screen and (max-device-width: 699px) and (orientation:landscape) {
-.SheetContent {
-	padding: 3.5% 0 3.5%;
-}
-
-.SheetContent .itemset {
-	margin: 0 3%;
-}
-
-.SheetContent .itemset .itemcontainer {
-	width: 24.5%;
-}
-
-.cancel {
-	width: 225px;
-}
-}
-
-@media screen and (max-device-width: 240px) {
-body {
-	font-size: 0.5em;
-}
-}
-</style>
 
 <!--[if lt IE 10]>
 <style>
@@ -648,11 +59,11 @@ body {
 
 	<a href="https://plus.google.com/u/1/111019875270643537691?rel=author" style="display: none;">Google</a>
 		
-	<div id="headerpic"></div>
+	<div class="headerpic"></div>
 
-	<div id="bottomanimated">
+	<div class="bottomanimated">
 	
-	<h1 id="name">Scott Smith</h1>
+	<h1 class="name">Scott Smith</h1>
 	
 	<nav>
 		<a href="http://BeyondTheCo.de">Blog</a>
@@ -665,67 +76,67 @@ body {
 		<ul class="AllSocialLinks">
 			<li class="Twitter Desktop SocialLink">
 				<a href="http://twitter.com/ScottSmith95">
-					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/Twitter.svg">
+					<img class="SocialIcon" src="images/Social%20Icons/Twitter.svg">
 				</a>
 			</li>
 			<li class="Twitter Mobile SocialLink">
 				<a>
-					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/Twitter.svg">
+					<img class="SocialIcon" src="images/Social%20Icons/Twitter.svg">
 				</a>
 			</li>
 			<li class="App-Net Desktop SocialLink">
 				<a href="https://alpha.app.net/scottsmith">
-					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/AppNet.svg">
+					<img class="SocialIcon" src="images/Social%20Icons/AppNet.svg">
 				</a>
 			</li>
 			<li class="App-Net Mobile SocialLink">
 				<a>
-					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/AppNet.svg">
+					<img class="SocialIcon" src="images/Social%20Icons/AppNet.svg">
 				</a>
 			</li>
 			<li class="Desktop SocialLink">
 				<a id="FacebookDesktop" href="http://facebook.com/ScottSmith95">
-					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/Facebook.svg">
+					<img class="SocialIcon" src="images/Social%20Icons/Facebook.svg">
 				</a>
 			</li>
 			<li class="Facebook Mobile SocialLink">
 				<a>
-					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/Facebook.svg">
+					<img class="SocialIcon" src="images/Social%20Icons/Facebook.svg">
 				</a>
 			</li>
 			<li class="Instagram Desktop SocialLink">
 				<a href="http://instagram.com/ScottSmith95">
-					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/Instagram.svg?v1.1">
+					<img class="SocialIcon" src="images/Social%20Icons/Instagram.svg?v1.1">
 				</a>
 			</li>
 			<li class="Instagram Mobile SocialLink">
 				<a>
-					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/Instagram.svg">
+					<img class="SocialIcon" src="images/Social%20Icons/Instagram.svg">
 				</a>
 			</li>
 			<li class="Google+ SocialLink">
 				<a href="http://plus.google.com/u/0/111019875270643537691/">
-					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/GooglePlus.svg">
+					<img class="SocialIcon" src="images/Social%20Icons/GooglePlus.svg">
 				</a>
 			</li>
 			<li class="Github Desktop SocialLink">
 				<a href="http://github.com/ScottSmith95">
-					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/GitHub.svg">
+					<img class="SocialIcon" src="images/Social%20Icons/GitHub.svg">
 				</a>
 			</li>
 			<li class="Fancy Desktop SocialLink">
 				<a href="http://thefancy.com/ScottSmith">
-					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/Fancy.svg">
+					<img class="SocialIcon" src="images/Social%20Icons/Fancy.svg">
 				</a>
 			</li>
 			<li class="Phone Mobile SocialLink">
 				<a href="http://wax.io/ScottSmith">
-					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/Phone.svg">
+					<img class="SocialIcon" src="images/Social%20Icons/Phone.svg">
 				</a>
 			</li>
 			<li class="Email SocialLink">
 				<a href="mailto:mail@ScottHSmith.com">
-					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/Email.svg">
+					<img class="SocialIcon" src="images/Social%20Icons/Email.svg">
 				</a>
 			</li>
 		</ul>
@@ -737,22 +148,22 @@ body {
 	<div class="SheetContent">
 		<ul class="itemset">
 			<div class="itemcontainer">
-				<li><a href="http://twitter.com/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Safari.png"></a>Right here</li>
+				<li><a href="http://twitter.com/ScottSmith95"><img class="appicon" src="images/App%20Icons/Safari.png"></a>Right here</li>
 			</div>
 			<div class="itemcontainer">
-				<li><a href="twitter://user?screen_name=ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Twitter.png"></a>Twitter</li>
+				<li><a href="twitter://user?screen_name=ScottSmith95"><img class="appicon" src="images/App%20Icons/Twitter.png"></a>Twitter</li>
 			</div>
 			<div class="itemcontainer">
-				<li><a href="tweetbot:///user_profile/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Tweetbot.png"></a>Tweetbot</li>
+				<li><a href="tweetbot:///user_profile/ScottSmith95"><img class="appicon" src="images/App%20Icons/Tweetbot.png"></a>Tweetbot</li>
 			</div>
 			<div class="itemcontainer">
-				<li><a href="twitterrific:///profile?screen_name=ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Twitterrific.png"></a>Twitterrific</li>
+				<li><a href="twitterrific:///profile?screen_name=ScottSmith95"><img class="appicon" src="images/App%20Icons/Twitterrific.png"></a>Twitterrific</li>
 			</div>
 			<div class="itemcontainer">
-				<li><a href="neue:///user?screen_name=ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Twittelator.png"></a>Twittelator Neue</li>
+				<li><a href="neue:///user?screen_name=ScottSmith95"><img class="appicon" src="images/App%20Icons/Twittelator.png"></a>Twittelator Neue</li>
 			</div>
 			<div class="itemcontainer">
-				<li><a href="googlechrome://twitter.com/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Chrome.png"></a>Chrome</li>
+				<li><a href="googlechrome://twitter.com/ScottSmith95"><img class="appicon" src="images/App%20Icons/Chrome.png"></a>Chrome</li>
 			</div>
 		</ul>
 		<h2 class="cancel">Cancel</h2>
@@ -765,22 +176,22 @@ body {
 	<div class="SheetContent">
 		<ul class="itemset">
 			<div class="itemcontainer">
-				<li><a href="http://alpha.app.net/ScottSmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Safari.png"></a>Right here</li>
+				<li><a href="http://alpha.app.net/ScottSmith"><img class="appicon" src="images/App%20Icons/Safari.png"></a>Right here</li>
 			</div>
 			<div class="itemcontainer">
-				<li><a href="felix://user/@ScottSmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Felix.png"></a>Felix</li>
+				<li><a href="felix://user/@ScottSmith"><img class="appicon" src="images/App%20Icons/Felix.png"></a>Felix</li>
 			</div>
 			<div class="itemcontainer">
-				<li><a href="netbot:///user_profile/ScottSmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Netbot.png"></a>Netbot</li>
+				<li><a href="netbot:///user_profile/ScottSmith"><img class="appicon" src="images/App%20Icons/Netbot.png"></a>Netbot</li>
 			</div>
 			<div class="itemcontainer">
-				<li><a href="rivr://showuser/19801"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Rivr.png"></a>Rivr</li>
+				<li><a href="rivr://showuser/19801"><img class="appicon" src="images/App%20Icons/Rivr.png"></a>Rivr</li>
 			</div>
 			<div class="itemcontainer">
-				<li><a href="adian://user?username=scottsmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Adian.png"></a>Adian</li>
+				<li><a href="adian://user?username=scottsmith"><img class="appicon" src="images/App%20Icons/Adian.png"></a>Adian</li>
 			</div>
 			<div class="itemcontainer">
-				<li><a href="googlechrome://alpha.app.net/scottsmith"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Chrome.png"></a>Chrome</li>
+				<li><a href="googlechrome://alpha.app.net/scottsmith"><img class="appicon" src="images/App%20Icons/Chrome.png"></a>Chrome</li>
 			</div>
 		</ul>
 		<h2 class="cancel">Cancel</h2>
@@ -793,13 +204,13 @@ body {
 	<div class="SheetContent">
 		<ul class="itemset">
 			<div class="itemcontainer">
-				<li><a href="http://facebook.com/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Safari.png"></a>Right here</li>
+				<li><a href="http://facebook.com/ScottSmith95"><img class="appicon" src="images/App%20Icons/Safari.png"></a>Right here</li>
 			</div>
 			<div class="itemcontainer">
-				<li><a href="fb://profile/1618900176"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Facebook.png"></a>Facebook</li>
+				<li><a href="fb://profile/1618900176"><img class="appicon" src="images/App%20Icons/Facebook.png"></a>Facebook</li>
 			</div>
 			<div class="itemcontainer">
-				<li><a href="googlechrome://facebook.com/ScottSmith95"><img class="appicon" src="http://ScottHSmith.com/images/App%20Icons/Chrome.png"></a>Chrome</li>
+				<li><a href="googlechrome://facebook.com/ScottSmith95"><img class="appicon" src="images/App%20Icons/Chrome.png"></a>Chrome</li>
 			</div>
 		</ul>
 		<h2 class="cancel">Cancel</h2>
