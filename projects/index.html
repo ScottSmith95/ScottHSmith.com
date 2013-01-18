@@ -46,7 +46,8 @@ __    / /  | |     __   | |     | |    | |       | |
 <style type="text/css">
 body {
 	background: #E3E5E7;
-	font: normal 300 1em "museo-sans-1", "museo-sans-2", sans-serif;
+	font: normal 300 100% "museo-sans-1", "museo-sans-2", sans-serif;
+	margin: 0;
 }
 	
 ::selection {
@@ -81,11 +82,11 @@ header {
 	animation: intro 1.25s ease-out 0.15s forwards;
 	color: #444444;
 	opacity: 0;
-	text-align: justify;
-	margin: 2% auto 0;
-	width: 65%;
-	font-size: 1.2em;
-	line-height: 2em;
+	margin: 0 auto;
+	width: 100%;
+	line-height: 1.8em;
+	font-size: 1.1em;
+	text-align: center;
 }
 
 header .nav, header .divider {
@@ -93,13 +94,12 @@ header .nav, header .divider {
 	font-weight: 300;
 }
 
-	header .nav:hover {
-		color: #009BCD;
-	}
-	
-	header .nav:active {
-		color: #007EA6;
-	}
+header h1 {
+	line-height: 1.1em;
+	font-size: 1.5em;
+	padding-bottom: 3.5%;
+	border-bottom: 1px solid #009BCD;
+}
 
 header a {
 	-webkit-transition: color 0.35s ease-out;
@@ -109,13 +109,10 @@ header a {
 	text-decoration: none;
 }
 
-	header a:hover {
-		color: #007EA6;
-	}
-	
-	header a:active {
-		color: #444444;
-	}
+header p {
+	margin: 0 2.5%;
+	text-align: left;
+}
 	
 .content {
 	-webkit-animation: intro 1.25s ease-out 0.75s forwards;
@@ -128,7 +125,7 @@ header a {
 
 .content li {
 	list-style: none;
-	font-size: 1.8em;
+	font-size: 1.6em;
 	line-height: 2em;
 }
 
@@ -155,40 +152,44 @@ header, .content-wrapper {
 }
 }
 
-@media screen and (max-width: 699px) {
-body {
-	font-size: 0.9em;
-	margin: 0;
-}
-
-	a:hover {
-		text-shadow: none;
-		color: inherit;
+@media screen and (min-width: 699px) {
+	header .nav:hover {
+		color: #009BCD;
 	}
 	
-	a:active {
-		text-shadow: none;
-		color: inherit;
+	header .nav:active {
+		color: #007EA6;
 	}
 
 header {
-	margin: 0 auto 0;
-	width: 100%;
-	line-height: 1.8em;
-	font-size: 1.1em;
-	text-align: center;
+	margin: 2% auto 0;
+	width: 65%;
+	font-size: 1.2em;
+	line-height: 2em;
+	text-align: justify;
 }
+
+	header a:hover {
+		color: #007EA6;
+	}
+	
+	header a:active {
+		color: #444444;
+	}
 
 header h1 {
 	line-height: 1.1em;
-	font-size: 1.5em;
-	padding-bottom: 3.5%;
-	border-bottom: 1px solid #009BCD;
+	font-size: 2em;
+	padding-bottom: 0;
+	border-bottom: none;
 }
 
 header p {
-	margin: 0 2.5%;
-	text-align: left;
+	margin: 0;
+}
+
+.content li {
+	font-size: 1.8em;
 }
 }
 </style>
