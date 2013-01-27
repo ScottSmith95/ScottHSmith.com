@@ -76,13 +76,13 @@ ul {
 	transition: width 0.5s ease-out, height 0.5s ease-out, background-size 0.5s ease-out;
 	background: url("http://scotthsmith.com/images/ScottPic_600.jpg") no-repeat center;
 	background-size: cover;
-	width: 275px;
-    height: 275px;
+	width: 16.5em;
+    height: 16.5em;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
 	border-radius: 15px;
 	display: block;
-	margin: 2% auto 0;
+	margin: 1.75% auto 0;
 }
 
 .bottomanimated {
@@ -94,6 +94,9 @@ ul {
 }
 
 .name {
+	-webkit-transition: font-size 0.5s ease-out;
+	-moz-transition: font-size 0.5s ease-out;
+	transition: font-size 0.5s ease-out;
 	margin: 1.5% auto;
 	font-weight: 500;
 	text-align: center; 
@@ -102,9 +105,9 @@ ul {
 }
 
 nav {
-	-webkit-transition: width 0.5s ease-out;
-	-moz-transition: width 0.5s ease-out;
-	transition: width 0.5s ease-out;
+	-webkit-transition: width 0.5s ease-out, font-size 0.5s ease-out;
+	-moz-transition: width 0.5s ease-out, font-size 0.5s ease-out;
+	transition: width 0.5s ease-out, font-size 0.5s ease-out;
 	text-align: center;
 	margin: 1% auto;
 	padding-bottom: 1%;
@@ -120,6 +123,9 @@ nav a {
 }
 
 .MainText {
+	-webkit-transition: font-size 0.5s ease-out;
+	-moz-transition: font-size 0.5s ease-out;
+	transition: font-size 0.5s ease-out;
 	color: $text-color;
 	text-align: center;
 	font-size: 1.35em;
@@ -138,7 +144,7 @@ nav a {
 
 
 .AllSocialLinks {
-	margin: 1.5% auto 5% auto;
+	margin: 1.5% auto 2.5% auto;
 	text-align: center;
 	height: 1em;
 }
@@ -172,7 +178,7 @@ nav a {
 		-moz-transform: scale(1);
 		transform: scale(1);
 	}
-	
+
 	.SocialIcon:active {
 		opacity: 0.5;
 	}
@@ -180,7 +186,7 @@ nav a {
 	.SocialIcon.touched {
 		opacity: 0.5;
 	}
-	
+
 @import "ShareSheet";
 
 @media (-webkit-min-device-pixel-ratio: 2), 
@@ -191,8 +197,8 @@ nav a {
 @media screen and (max-width: 1224px) {
 .headerpic, .headerpic img {
 	background-size: cover;
-	width: 225px;
-    height: 225px;
+	width: 14em;
+    height: 14em;
     margin-top: 1.5%;
 }
 
@@ -248,12 +254,12 @@ body {
 
 .headerpic, .headerpic img {
 	background-size: cover;
-	width: 140px;
-    height: 140px;
+	width: 12em;
+    height: 12em;
 }
 
 nav {
-	width: 75%;
+	width: 70%;
 }
 
 nav a {
