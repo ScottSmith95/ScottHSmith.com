@@ -33,7 +33,7 @@ __    / /  | |     __   | |     | |    | |       | |
 
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
-<meta name="viewport" content="initial-scale = 1.0, user-scalable = no" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
@@ -288,7 +288,7 @@ __    / /  | |     __   | |     | |    | |       | |
         
         // Handles darkening rest of page
         ($triggers).click(function() {
-	        $('#darklayer').toggleClass('on').toggleClass('off');
+	        $('#darklayer').addClass('on').removeClass('off');
         });
         
         // Adds "touched" class when element is touched and removes it when it is not
@@ -299,7 +299,7 @@ __    / /  | |     __   | |     | |    | |       | |
         // Triggers un-darkening rest of page and deselecting sheets
         $('.cancel').click(function() {
 	        $(this).closest('div.Sheet').toggleClass('selected').toggleClass('unselected');
-        	$('#darklayer').toggleClass('on').toggleClass('off');
+        	$('#darklayer').removeClass('on').addClass('off');
         });
 	});
 </script>

@@ -8,11 +8,11 @@ body {
 }
 
 ::selection {
-    background: rgba(0,155,205,0.25);
+    background: $highlight-color;
 	}
 
 ::-moz-selection {
-	background: rgba(0,155,205,0.25);
+	background: $highlight-color;
 }
 
 a {
@@ -168,12 +168,16 @@ nav a {
 }
 
 	.SocialIcon:hover {
-		-webkit-transform: scale(1);   
-		-moz-transform: scale(1);  
+		-webkit-transform: scale(1); 
+		-moz-transform: scale(1);
 		transform: scale(1);
 	}
 	
 	.SocialIcon:active {
+		opacity: 0.5;
+	}
+
+	.SocialIcon.touched {
 		opacity: 0.5;
 	}
 	
@@ -336,7 +340,7 @@ a {
 }
 
 nav {
-	marigin: 2.5% auto;
+	margin: 2.5% auto;
 }
 
 nav a {
