@@ -106,9 +106,9 @@ section {
 
 @-webkit-keyframes slide {
 	0% {-webkit-transform: translateX(-100px); opacity: 0;}
-	10% {opacity: 0;}
+	10% {-webkit-transform: translateX(-100px); opacity: 0;}
 	32.5%, 67.5% {-webkit-transform: translateX(0); opacity: 1;}
-	90% {opacity: 0;}
+	90% {-webkit-transform: translateX(100px); opacity: 0;}
 	100% {-webkit-transform: translateX(100px); opacity: 0;}
 }
 
