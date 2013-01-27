@@ -116,20 +116,6 @@ header p {
 
 @import "ShareSheet";
 
-@media screen and (max-width: 1224px) {
-.SocialIcon {
-	height: 3.25em;
-	width: auto;
-}
-}
-
-/* iPad */
-@media all and (device-width: 768px) and (device-height: 1024px) {
-header, .content-wrapper {
-	width: 80%;
-}
-}
-
 /* Desktop */
 @media screen and (min-width: 699px) {
 	header .nav:hover {
@@ -219,8 +205,16 @@ header p {
 	}
 }
 
-@media screen and (max-device-width: 240px) {
-body {
-	font-size: 0.5em;
+@media screen and (max-width: 1224px) {
+.SocialIcon {
+	height: 3.25em;
+	width: auto;
+}
+}
+
+/* iPad */
+@media all and (device-width: 768px) and (device-height: 1024px) {
+header, .content-wrapper {
+	width: 80%;
 }
 }
