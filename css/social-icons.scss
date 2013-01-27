@@ -1,0 +1,242 @@
+@import "constants";
+
+body {
+	background: $bg-color;
+	font: normal 300 100% $font-fam;
+	margin: 0;
+}
+	
+::selection {
+    background: $highlight-color;
+	}
+::-moz-selection {
+	background: $highlight-color;
+}
+
+header {
+	-webkit-animation: intro 1.25s ease-out 0.15s forwards;
+	-moz-animation: intro 1.25s ease-out 0.15s forwards;
+	animation: intro 1.25s ease-out 0.15s forwards;
+	color: $text-color;
+	opacity: 0;
+	text-align: justify;
+	margin: 2% auto 0;
+	width: 65%;
+	font-size: 1.2em;
+	line-height: 2em;
+}
+
+header .nav, header .divider {
+	color: rgba(68,68,68,0.5);
+	font-weight: 300;
+}
+
+	header .nav:hover {
+		color: $blue;
+	}
+	
+	header .nav:active {
+		color: $darkblue;
+	}
+
+header a {
+	-webkit-transition: color 0.35s ease-out;
+	-moz-transition: color 0.35s ease-out;
+	transition: color 0.35s ease-out;
+	color: $blue;
+	text-decoration: none;
+}
+
+	header a:hover {
+		color: $darkblue;
+	}
+	
+	header a:active {
+		color: $darkgrey;
+	}
+
+.lightcolor {
+	color: $lightgrey;
+}
+
+.bluecolor {
+	color: $blue
+}
+
+.content-wrapper {
+	margin: 0 auto;
+	width: 65%;
+	text-align: center;
+}
+
+.content {
+	-webkit-animation: intro 1.5s ease-out 0.65s forwards;
+	-moz-animation: intro 1.5s ease-out 0.65s forwards;
+	animation: intro 1.5s ease-out 0.65s forwards;
+	margin: 2.5% auto;
+	opacity: 0;
+}
+
+.grid {
+	-webkit-transition: opacity 0.5s ease-out, width 0.4s ease-out;
+	-moz-transition: opacity 0.5s ease-out, width 0.4s ease-out;
+	transition: opacity 0.5s ease-out, width 0.4s ease-out;
+	vertical-align: middle;
+	height: 225px;
+}
+
+.grid.selected {
+	width: 559px;
+	opacity: 1;
+}
+
+.grid.unselected {
+	width: 0;
+	opacity: 0;
+}
+
+.download {
+	-webkit-transition: opacity 0.35s ease-out, -webkit-transform 0.3s ease;
+	-moz-transition: opacity 0.35s ease-out, -moz-transform 0.25s ease;
+	transition: opacity 0.35s ease-out, transform 0.25s ease;
+	position: relative;
+	vertical-align: middle;
+	height: 4.75em;
+	margin: 3.5% 2.5% 2.5%;
+	width: auto;
+}
+
+	.download:hover {
+		-webkit-transform: translateY(-8px);
+		-moz-transform: translateY(-8px);
+		transform: translateY(-8px);
+	}
+	
+	.download:active {
+		-webkit-transform: translateY(0);
+		-moz-transform: translateY(0);
+		transform: translateY(0);
+		opacity: 0.65;
+	}
+
+.license {
+	-webkit-animation: intro 1.5s ease-out 5s forwards;
+	-moz-animation: intro 1.5s ease-out 5s forwards;
+	animation: intro 1.5s ease-out 5s forwards;
+	opacity: 0;
+	margin: 0 0 2.5% 2.5%;
+	width: 22.5%;
+	color: $darkgrey;
+	float: left;
+}
+
+.license p {
+	font-size: 0.75em;
+}
+
+.license a {
+	-webkit-transition: color 0.3s ease-out;
+	-moz-transition: color 0.3s ease-out;
+	transition: color 0.3s ease-out;
+	color: $darkgrey;
+}
+
+	.license a:hover {
+		color: $blue;
+	}
+	
+	.license a:active {
+		color: $darkblue;
+	}
+
+@-webkit-keyframes intro {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+			
+@-moz-keyframes intro {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+@keyframes intro {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+/* iPad */
+@media all and (device-width: 768px) and (device-height: 1024px) {
+header, .content-wrapper {
+	width: 80%;
+}
+
+	 .download:hover {
+		-webkit-transform: translateY(0);
+		-moz-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
+
+@media screen and (max-width: 699px) {
+body {
+	font-size: 0.9em;
+	margin: 0;
+}
+
+	a:hover {
+		text-shadow: none;
+		color: inherit;
+	}
+	
+	a:active {
+		text-shadow: none;
+		color: inherit;
+	}
+
+header {
+	margin: 0 auto 0;
+	width: 100%;
+	line-height: 1.8em;
+	font-size: 1.1em;
+	text-align: center;
+}
+
+header h1 {
+	line-height: 1.1em;
+	font-size: 1.5em;
+	padding-bottom: 3.5%;
+	border-bottom: 1px solid $blue;
+}
+
+header p {
+	margin: 0 2.5%;
+	text-align: left;
+}
+
+.iconset-wrapper {
+	width: 100%;
+}
+
+.grid {
+	height: auto;
+}
+
+.grid.selected {
+	width: 90%;
+}
+
+.download {
+	height: 2.75em;
+	margin: 3.5% 1%;
+}
+
+	.download:hover {
+		-webkit-transform: translateY(0);
+		-moz-transform: translateY(0);
+		transform: translateY(0);
+	}
+
+.license {
+	display: none;
+}
+}

@@ -33,7 +33,7 @@ __    / /  | |     __   | |     | |    | |       | |
 
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
-<meta name="viewport" content="initial-scale = 1.0, user-scalable = no" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
@@ -296,7 +296,7 @@ if(window.navigator && window.navigator.loadPurpose === "preview"){
         });
         
         // Adds "touched" class when element is touched and removes it when it is not
-        $('.cancel').bind('touchstart touchend', function(e) {
+        $('.cancel', $triggers).bind('touchstart touchend', function(e) {
         	$(this).toggleClass('touched');
         });
         

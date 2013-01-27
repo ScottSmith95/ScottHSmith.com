@@ -137,7 +137,7 @@
 }
 
 .SheetContent .itemset .itemcontainer {
-	width: 32.75%;
+	width: 32.45%;
 	display: inline-block;
 	text-align: center;
 	margin: 0 auto 5%;
@@ -210,5 +210,10 @@
 @media all and (device-width: 768px) and (device-height: 1024px) {
 .SheetContent .itemset .itemcontainer {
 	width: 24.5%;
+}
+
+.appicon {
+	height: 72px;
+	width: auto;
 }
 }
