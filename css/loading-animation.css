@@ -51,8 +51,6 @@ section { text-align: center; width: 65%; margin: 5% auto 0; text-align: center;
   90% { opacity: 0; }
   100% { -webkit-transform: translateX(100px); opacity: 0; } }
 
-/* iPad */
-@media all and (device-width: 768px) and (device-height: 1024px) { header { width: 80%; } }
 /* Desktop */
 @media screen and (min-width: 699px) { header .nav:hover { color: #009bcd; }
   header .nav:active { color: #007ea6; }
@@ -61,3 +59,5 @@ section { text-align: center; width: 65%; margin: 5% auto 0; text-align: center;
   header a:active { color: #444444; }
   header h1 { line-height: 1.1em; font-size: 2em; padding-bottom: 0; border-bottom: none; }
   header p { margin: 0; } }
+/* iPad */
+@media all and (device-width: 768px) and (device-height: 1024px) { header { width: 80%; } }

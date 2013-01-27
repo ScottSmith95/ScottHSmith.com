@@ -118,9 +118,6 @@ header p { margin: 0 2.5%; text-align: left; }
 /* Desktop */
 /* Note: Sharing Sheets are not intended for use on desktop screen sizes */
 @media screen and (min-width: 699px) { .appicon { height: 72px; width: auto; } }
-@media screen and (max-width: 1224px) { .SocialIcon { height: 3.25em; width: auto; } }
-/* iPad */
-@media all and (device-width: 768px) and (device-height: 1024px) { header, .content-wrapper { width: 80%; } }
 /* Desktop */
 @media screen and (min-width: 699px) { header .nav:hover { color: #009bcd; }
   header .nav:active { color: #007ea6; }
@@ -138,4 +135,6 @@ header p { margin: 0 2.5%; text-align: left; }
   .license a { -webkit-transition: color 0.3s ease-out; -moz-transition: color 0.3s ease-out; transition: color 0.3s ease-out; color: #444444; }
   .license a:hover { color: #009bcd; }
   .license a:active { color: #007ea6; } }
-@media screen and (max-device-width: 240px) { body { font-size: 0.5em; } }
+@media screen and (max-width: 1224px) { .SocialIcon { height: 3.25em; width: auto; } }
+/* iPad */
+@media all and (device-width: 768px) and (device-height: 1024px) { header, .content-wrapper { width: 80%; } }

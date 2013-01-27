@@ -128,13 +128,6 @@ section {
 	100% {-webkit-transform: translateX(100px); opacity: 0;}
 }
 
-/* iPad */
-@media all and (device-width: 768px) and (device-height: 1024px) {
-header {
-	width: 80%;
-}
-}
-
 /* Desktop */
 @media screen and (min-width: 699px) {
 	header .nav:hover {
@@ -170,5 +163,12 @@ header h1 {
 
 header p {
 	margin: 0;
+}
+}
+
+/* iPad */
+@media all and (device-width: 768px) and (device-height: 1024px) {
+header {
+	width: 80%;
 }
 }

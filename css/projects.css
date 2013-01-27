@@ -35,8 +35,6 @@ header p { margin: 0 2.5%; text-align: left; }
 
 .content a:active { color: #007ea6; }
 
-/* iPad */
-@media all and (device-width: 768px) and (device-height: 1024px) { header, .content-wrapper { width: 80%; } }
 /* Desktop */
 @media screen and (min-width: 699px) { header .nav:hover { color: #009bcd; }
   header .nav:active { color: #007ea6; }
@@ -46,3 +44,5 @@ header p { margin: 0 2.5%; text-align: left; }
   header h1 { line-height: 1.1em; font-size: 2em; padding-bottom: 0; border-bottom: none; }
   header p { margin: 0; }
   .content li { font-size: 1.8em; } }
+/* iPad */
+@media all and (device-width: 768px) and (device-height: 1024px) { header, .content-wrapper { width: 80%; } }

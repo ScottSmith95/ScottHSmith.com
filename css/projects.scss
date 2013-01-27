@@ -101,13 +101,6 @@ header p {
 		color: $darkblue;
 	}
 
-/* iPad */
-@media all and (device-width: 768px) and (device-height: 1024px) {
-header, .content-wrapper {
-	width: 80%;
-}
-}
-
 /* Desktop */
 @media screen and (min-width: 699px) {
 	header .nav:hover {
@@ -147,5 +140,12 @@ header p {
 
 .content li {
 	font-size: 1.8em;
+}
+}
+
+/* iPad */
+@media all and (device-width: 768px) and (device-height: 1024px) {
+header, .content-wrapper {
+	width: 80%;
 }
 }
