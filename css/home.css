@@ -58,7 +58,7 @@ a[href="/tea"]:active { color: #975143; }
 
 .SocialIcon:active { opacity: 0.5; }
 
-.SocialIcon.touched { opacity: 0.5; }
+.SocialLink.touched .SocialIcon { opacity: 0.5; }
 
 /* Share Sheet */
 @-webkit-keyframes slide-in { 0% { -webkit-transform: translateY(100%); visibility: visible; }
@@ -136,11 +136,11 @@ a[href="/tea"]:active { color: #975143; }
   .SheetContent .itemset { margin: 0 3%; }
   .SheetContent .itemset .itemcontainer { width: 24.5%; }
   .cancel { width: 225px; } }
-/* iPad */
-@media screen and (device-width: 768px) and (device-height: 1024px) { .SheetContent .itemset .itemcontainer { width: 24.5%; } }
 /* Desktop */
 /* Note: Sharing Sheets are not intended for use on desktop screen sizes */
 @media screen and (min-width: 699px) { .appicon { height: 72px; width: auto; } }
+/* iPad */
+@media screen and (device-width: 768px) and (device-height: 1024px) { .SheetContent .itemset .itemcontainer { width: 24.5%; } }
 @media screen and (max-width: 1224px) { .headerpic, .headerpic img { background-size: cover; width: 14em; height: 14em; margin-top: 1.5%; }
   .name { margin: 1% auto; }
   nav { width: 40%; }
