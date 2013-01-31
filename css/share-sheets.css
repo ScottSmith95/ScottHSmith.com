@@ -113,11 +113,11 @@ header p { margin: 0 2.5%; text-align: left; }
   .SheetContent .itemset { margin: 0 3%; }
   .SheetContent .itemset .itemcontainer { width: 24.5%; }
   .cancel { width: 225px; } }
-/* iPad */
-@media screen and (device-width: 768px) and (device-height: 1024px) { .SheetContent .itemset .itemcontainer { width: 24.5%; } }
 /* Desktop */
 /* Note: Sharing Sheets are not intended for use on desktop screen sizes */
 @media screen and (min-width: 699px) { .appicon { height: 72px; width: auto; } }
+/* iPad */
+@media screen and (device-width: 768px) and (device-height: 1024px) { .SheetContent .itemset .itemcontainer { width: 24.5%; } }
 /* Desktop */
 @media screen and (min-width: 699px) { header .nav:hover { color: #009bcd; }
   header .nav:active { color: #007ea6; }
