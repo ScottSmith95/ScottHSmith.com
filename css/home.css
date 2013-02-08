@@ -10,6 +10,8 @@ a:hover { text-shadow: 0 0 10px rgba(0, 0, 0, 0.35); color: #009bcd; }
 
 a:active { text-shadow: 0px -2px 7px rgba(0, 0, 0, 0.5); color: #007ea6; }
 
+img { border: none; }
+
 ul { padding: 0; }
 
 @-webkit-keyframes fly-in-from-top { 0% { -webkit-transform: translateY(-175px) scale(0.5) rotateX(85deg); opacity: 0.25; }
@@ -31,6 +33,8 @@ ul { padding: 0; }
   100% { transform: translateY(0) scale(1) rotateX(0deg); opacity: 1; } }
 
 .headerpic, .headerpic img { -webkit-animation: fly-in-from-top 1.25s ease-in-out forwards; -moz-animation: fly-in-from-top 1.25s ease-in-out forwards; animation: fly-in-from-top 1.25s ease-in-out forwards; -webkit-transition: width 0.5s ease-out, height 0.5s ease-out, background-size 0.5s ease-out; -moz-transition: width 0.5s ease-out, height 0.5s ease-out, background-size 0.5s ease-out; transition: width 0.5s ease-out, height 0.5s ease-out, background-size 0.5s ease-out; background: url("http://scotthsmith.com/images/ScottPic_600.jpg") no-repeat center; background-size: cover; width: 16.5em; height: 16.5em; -webkit-border-radius: 15px; -moz-border-radius: 15px; border-radius: 15px; display: block; margin: 1.75% auto 0; }
+
+.headerpic.fourohfour, .headerpic.fourohfour img { background: none; }
 
 .bottomanimated { margin: 0; padding: 0; -webkit-animation: fly-in-from-bottom 1.25s ease-in-out forwards; -moz-animation: fly-in-from-bottom 1.25s ease-in-out forwards; animation: fly-in-from-bottom 1.25s ease-in-out forwards; }
 
@@ -103,7 +107,11 @@ a[href="/tea"]:active { color: #975143; }
 
 #darklayer.on { -webkit-animation: fade-in 0.25s ease-out forwards; -moz-animation: fade-in 0.25s ease-out forwards; animation: fade-in 0.25s ease-out forwards; }
 
+.no-cssanimations #darklayer.on { display: block; }
+
 #darklayer.off { -webkit-animation: fade-out 0.25s ease-out forwards; -moz-animation: fade-out 0.25s ease-out forwards; animation: fade-out 0.25s ease-out forwards; }
+
+.no-cssanimations #darklayer.off { display: none; }
 
 .Sheet { width: 100%; margin: 0; padding: 0; position: fixed; bottom: 0; z-index: 10; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; font-family: "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif; visibility: hidden; }
 
@@ -111,7 +119,11 @@ a[href="/tea"]:active { color: #975143; }
 
 .Sheet.unselected { -webkit-animation: slide-out 0.25s ease-in forwards; -moz-animation: slide-out 0.25s ease-in forwards; animation: slide-out 0.25s ease-in forwards; }
 
+.no-cssanimations .Sheet.unselected { display: none; }
+
 .Sheet.selected { -webkit-animation: slide-in 0.25s ease-out forwards; -moz-animation: slide-in 0.25s ease-out forwards; animation: slide-in 0.25s ease-out forwards; }
+
+.no-cssanimations .Sheet.selected { display: block; }
 
 .SheetDivider { border-top: 1px solid #2e2e2e; border-bottom: 1px solid #7d7d7d; margin: 0; }
 

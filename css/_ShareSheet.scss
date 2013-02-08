@@ -79,10 +79,18 @@
 	animation: fade-in 0.25s ease-out forwards;
 }
 
+.no-cssanimations #darklayer.on {
+	display: block;
+}
+
 #darklayer.off {
 	-webkit-animation: fade-out 0.25s ease-out forwards;
 	-moz-animation: fade-out 0.25s ease-out forwards;
 	animation: fade-out 0.25s ease-out forwards;
+}
+
+.no-cssanimations #darklayer.off {
+	display: none;
 }
 
 .Sheet {
@@ -110,10 +118,18 @@
 	animation: slide-out 0.25s ease-in forwards;
 }
 
+.no-cssanimations .Sheet.unselected {
+	display: none;
+}
+
 .Sheet.selected {
 	-webkit-animation: slide-in 0.25s ease-out forwards;
 	-moz-animation: slide-in 0.25s ease-out forwards;
 	animation: slide-in 0.25s ease-out forwards;
+}
+
+.no-cssanimations .Sheet.selected {
+	display: block;
 }
 
 .SheetDivider {
