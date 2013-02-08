@@ -4,6 +4,8 @@ body { background: #e3e5e7; font: normal 300 100% "museo-sans-1", "museo-sans-2"
 
 ::-moz-selection { background: rgba(0, 155, 205, 0.25); }
 
+img { border: none; }
+
 ul { padding: 0; }
 
 @-webkit-keyframes intro { 0% { opacity: 0; }
@@ -17,6 +19,8 @@ ul { padding: 0; }
 
 header { -webkit-animation: intro 1.25s ease-out 0.15s forwards; -moz-animation: intro 1.25s ease-out 0.15s forwards; animation: intro 1.25s ease-out 0.15s forwards; color: #444444; opacity: 0; margin: 0 auto; width: 100%; line-height: 1.8em; font-size: 1.1em; text-align: center; }
 
+.no-cssanimations header { opacity: 1; }
+
 header .nav, header .divider { color: rgba(68, 68, 68, 0.5); font-weight: 300; }
 
 header h1 { line-height: 1.1em; font-size: 1.5em; padding-bottom: 3.5%; border-bottom: 1px solid #009bcd; }
@@ -26,6 +30,8 @@ header a { -webkit-transition: color 0.35s ease-out; -moz-transition: color 0.35
 header p { margin: 0 2.5%; text-align: left; }
 
 .content { -webkit-animation: intro 1.25s ease-out 0.75s forwards; -moz-animation: intro 1.25s ease-out 0.75s forwards; animation: intro 1.25s ease-out 0.75s forwards; text-align: center; margin: 2% auto; opacity: 0; }
+
+.no-cssanimations .content { opacity: 1; }
 
 .content li { list-style: none; font-size: 1.6em; line-height: 2em; }
 

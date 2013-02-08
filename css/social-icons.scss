@@ -13,6 +13,10 @@ body {
 	background: $highlight-color;
 }
 
+img {
+	border: none;
+}
+
 @-webkit-keyframes intro {
 	0% {opacity: 0;}
 	100% {opacity: 1;}
@@ -39,6 +43,10 @@ header {
 	line-height: 1.8em;
 	font-size: 1.1em;
 	text-align: center;
+}
+
+.no-cssanimations header {
+	opacity: 1;
 }
 
 header .nav, header .divider {
@@ -87,6 +95,10 @@ header p {
 	animation: intro 1.5s ease-out 0.65s forwards;
 	margin: 2.5% auto;
 	opacity: 0;
+}
+
+.no-cssanimations .content {
+	opacity: 1;
 }
 
 .grid {

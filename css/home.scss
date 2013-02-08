@@ -32,6 +32,10 @@ a {
 		text-shadow: 0px -2px 7px rgba(0,0,0,0.5);
 		color: $darkblue;
 	}
+	
+img {
+	border: none;
+}
 
 ul {
 	padding: 0;
@@ -83,6 +87,10 @@ ul {
 	border-radius: 15px;
 	display: block;
 	margin: 1.75% auto 0;
+}
+
+.headerpic.fourohfour, .headerpic.fourohfour img {
+	background: none;
 }
 
 .bottomanimated {

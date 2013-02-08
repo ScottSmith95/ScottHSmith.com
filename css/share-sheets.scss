@@ -13,6 +13,10 @@ body {
 	background: $highlight-color;
 }
 
+img {
+	border: none;
+}
+
 ul {
 	padding: 0;
 }
@@ -43,6 +47,10 @@ header {
 	line-height: 1.8em;
 	font-size: 1.1em;
 	text-align: center;
+}
+
+.no-cssanimations header {
+	opacity: 1;
 }
 
 header .nav, header .divider {
@@ -78,6 +86,10 @@ header p {
 	text-align: center;
 	height: 1em;
 	opacity: 0;
+}
+
+.no-cssanimations .AllLinks {
+	opacity: 1;
 }
 
 .Link {
@@ -187,6 +199,10 @@ header p {
 	width: 20%;
 	color: $text-color;
 	float: left;
+}
+
+.no-cssanimations .license {
+	opacity: 1;
 }
 
 .license a {
