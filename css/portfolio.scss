@@ -194,6 +194,12 @@ header .hire {
 		z-index: 2;
 	}
 	
+	.no-csscolumns .item {
+		float: right;
+		overflow: hidden;
+		width: 33.33%;
+	}
+	
 .no-cssanimations .item {
 	opacity: 1;
 }
