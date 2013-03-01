@@ -34,6 +34,8 @@ ul { padding: 0; }
 
 .headerpic, .headerpic img { -webkit-animation: fly-in-from-top 1.25s ease-in-out forwards; -moz-animation: fly-in-from-top 1.25s ease-in-out forwards; animation: fly-in-from-top 1.25s ease-in-out forwards; -webkit-transition: width 0.5s ease-out, height 0.5s ease-out, background-size 0.5s ease-out; -moz-transition: width 0.5s ease-out, height 0.5s ease-out, background-size 0.5s ease-out; transition: width 0.5s ease-out, height 0.5s ease-out, background-size 0.5s ease-out; background: url("http://scotthsmith.com/images/ScottPic_600.jpg") no-repeat center; background-size: cover; width: 16.5em; height: 16.5em; -webkit-border-radius: 15px; -moz-border-radius: 15px; border-radius: 15px; display: block; margin: 1.75% auto 0; }
 
+.no-bgsizecover .headerpic, .no-bgsizecover .headerpic img { background-size: 100%; }
+
 .headerpic.fourohfour, .headerpic.fourohfour img { background: none; }
 
 .bottomanimated { margin: 0; padding: 0; -webkit-animation: fly-in-from-bottom 1.25s ease-in-out forwards; -moz-animation: fly-in-from-bottom 1.25s ease-in-out forwards; animation: fly-in-from-bottom 1.25s ease-in-out forwards; }
