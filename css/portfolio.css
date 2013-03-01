@@ -68,7 +68,7 @@ header .hire { font-size: 0.875em; }
 
 .item { -webkit-animation: fly-in-from-top-item 1.15s ease-in-out forwards; -moz-animation: fly-in-from-top-item 1.15s ease-in-out forwards; animation: fly-in-from-top-item 1.15s ease-in-out forwards; -webkit-transition: -webkit-transform 0.25s ease-out, box-shadow 0.4s ease-out; -moz-transition: -moz-transform 0.25s ease-out, box-shadow 0.4s ease-out; transition: transform 0.25s ease-out, box-shadow 0.4s ease-out; box-shadow: 0 0 15px rgba(0, 0, 0, 0.15); -webkit-transform: scale(0.925); -moz-transform: scale(0.925); transform: scale(0.925); background: #EEE; color: #444444; opacity: 0; border-radius: 0.85em; z-index: 1; display: inline-block; -webkit-column-break-inside: avoid; }
 
-.item:hover { -webkit-transform: scale(1); -moz-transform: scale(1); transform: scale(1); box-shadow: 0 0 15px rgba(0, 0, 0, 0.35); z-index: 2; }
+.item:hover { -webkit-transform: scale(1); -moz-transform: scale(1); transform: scale(1); box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.3); z-index: 2; }
 
 .no-csscolumns .item { float: right; overflow: hidden; width: 33.33%; }
 

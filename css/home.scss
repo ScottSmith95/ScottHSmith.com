@@ -89,6 +89,10 @@ ul {
 	margin: 1.75% auto 0;
 }
 
+.no-bgsizecover .headerpic, .no-bgsizecover .headerpic img {
+	background-size: 100%;
+}
+
 .headerpic.fourohfour, .headerpic.fourohfour img {
 	background: none;
 }
