@@ -74,8 +74,8 @@ __    / /  | |     __   | |     | |    | |       | |
 				</a>
 			</li>
 			<li class="Link">
-				<a id="App-NetIcon">
-					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/AppNet.svg" height="1" width="1">
+				<a id="ADNIcon">
+					<img class="SocialIcon" src="http://scotthsmith.com/images/Social%20Icons/ADN.svg" height="1" width="1">
 				</a>
 			</li>
 			<li class="Link">
@@ -175,7 +175,7 @@ __    / /  | |     __   | |     | |    | |       | |
 	
 		var $sheets = $('#Twitter, #ADN, #Facebook');
 		
-		var $triggers = $('#TwitterIcon, #App-NetIcon, #FacebookIcon');
+		var $triggers = $('#TwitterIcon, #ADNIcon, #FacebookIcon');
 		
 		// Shows sheets after they have loaded
 		($sheets).delay(300).addClass('loaded');
@@ -186,8 +186,8 @@ __    / /  | |     __   | |     | |    | |       | |
         	$('#Twitter').toggleClass('selected').toggleClass('unselected');
         });
         
-         // Handles opening the App-Net sheet
-        $('#App-NetIcon').click(function() {
+         // Handles opening the ADN sheet
+        $('#ADNIcon').click(function() {
         	$('#ADN').toggleClass('selected').toggleClass('unselected');
         });
         
