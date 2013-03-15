@@ -173,8 +173,8 @@ header .hire {
 	-moz-transition: -moz-transform 0.25s ease-out, box-shadow 0.4s ease-out;
 	transition: transform 0.25s ease-out, box-shadow 0.4s ease-out;
 	box-shadow: 0 0 15px rgba(0,0,0,0.15);
-	-webkit-transform: scale(0.925);   
-	-moz-transform: scale(0.925);  
+	-webkit-transform: scale(0.925);
+	-moz-transform: scale(0.925);
 	transform: scale(0.925);
 	background: #EEE;
 	color: $text-color;
@@ -183,12 +183,14 @@ header .hire {
 	z-index: 1;
 	display: inline-block;
 	-webkit-column-break-inside: avoid;
+	-moz-column-break-inside: avoid;
+	column-break-inside: avoid;
 	
 }
 
 	.item:hover {
-		-webkit-transform: scale(1);   
-		-moz-transform: scale(1);  
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
 		transform: scale(1);
 		box-shadow: 0 0 15px 1px rgba(0,0,0,0.3);
 		z-index: 2;
@@ -272,7 +274,7 @@ header .hire {
 
 @media screen and (max-width: 699px) {
 html {
-	padding: 0 0 3.5%;	
+	padding-bottom: 3.5%;	
 }
 
 	a:hover {
