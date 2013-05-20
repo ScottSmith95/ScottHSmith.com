@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="1001px" height="1002px" viewBox="0 0 1001 1002" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
     <title>Cross</title>
     <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
     <defs></defs>
-    <g id="Page 1" fill="#D8D8D8" fill-rule="evenodd">
-        <path d="M500,0.5 C223.85762,0.5 0,224.35762 0,500.5 C0,776.64238 223.85762,1000.5 500,1000.5 C776.14238,1000.5 1000,776.64238 1000,500.5 C1000,224.35762 776.14238,0.5 500,0.5 L500,0.5 L500,0.5 Z M420,198.5 L580,198.5 L580,419.9375 L801.4375,419.9375 L801.4375,579.9375 L580,579.9375 L580,801.34375 L420,801.34375 L420,579.9375 L198.5625,579.9375 L198.5625,419.9375 L420,419.9375 L420,198.5 L420,198.5 Z M420,198.5" id="Cross" fill="#444444"></path>
+    <g id="Page 1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M100,0 C44.771524,3.03201907e-14 0,44.771524 0,100 C0,155.228476 44.771524,200 100,200 C155.228476,200 200,155.228476 200,100 C200,44.771524 155.228476,-3.41060513e-14 100,0 L100,0 L100,0 Z M84,39.6 L116,39.6 L116,83.8875 L160.2875,83.8875 L160.2875,115.8875 L116,115.8875 L116,160.16875 L84,160.16875 L84,115.8875 L39.7125,115.8875 L39.7125,83.8875 L84,83.8875 L84,39.6 L84,39.6 Z M84,39.6" id="Cross" fill="#444444"></path>
     </g>
 </svg>
