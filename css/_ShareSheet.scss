@@ -15,17 +15,17 @@
 }
 
 @-webkit-keyframes slide-out {
-	0% {-webkit-transform: translateY(0px);}
+	0% {-webkit-transform: translateY(0);}
 	100% {-webkit-transform: translateY(100%); visibility: hidden;}
 }
 
 @-moz-keyframes slide-out {
-	0% {-moz-transform: translateY(0px);}
+	0% {-moz-transform: translateY(0);}
 	100% {-moz-transform: translateY(100%); visibility: hidden;}
 }
 
 @keyframes slide-out {
-	0% {transform: translateY(0px);}
+	0% {transform: translateY(0);}
 	100% {transform: translateY(100%); visibility: hidden;}
 }
 
@@ -196,6 +196,7 @@
 	text-align: center;
 	text-decoration: none;
 	color: #FFF;
+	cursor: pointer;
 }
 
 .cancel.touched, .cancel:active {
