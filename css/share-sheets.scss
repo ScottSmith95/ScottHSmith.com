@@ -1,82 +1,4 @@
-@import "constants";
-
-body {
-	background: $bg-color;
-	font: normal 300 100% $font-fam;
-	margin: 0;
-}
-	
-::selection {
-    background: $highlight-color;
-	}
-::-moz-selection {
-	background: $highlight-color;
-}
-
-img {
-	border: none;
-}
-
-ul {
-	padding: 0;
-}
-
-@-webkit-keyframes intro {
-	0% {opacity: 0;}
-	100% {opacity: 1;}
-}
-			
-@-moz-keyframes intro {
-	0% {opacity: 0;}
-	100% {opacity: 1;}
-}
-
-@keyframes intro {
-	0% {opacity: 0;}
-	100% {opacity: 1;}
-}
-
-header {
-	-webkit-animation: intro 1.25s ease-out 0.15s forwards;
-	-moz-animation: intro 1.25s ease-out 0.15s forwards;
-	animation: intro 1.25s ease-out 0.15s forwards;
-	color: $text-color;
-	opacity: 0;
-	margin: 0 auto;
-	width: 100%;
-	line-height: 1.8em;
-	font-size: 1.1em;
-	text-align: center;
-}
-
-.no-cssanimations header {
-	opacity: 1;
-}
-
-header .nav, header .divider {
-	color: rgba(68,68,68,0.5);
-	font-weight: 300;
-}
-
-header h1 {
-	line-height: 1.1em;
-	font-size: 1.5em;
-	padding-bottom: 3.5%;
-	border-bottom: 1px solid $blue;
-}
-
-header a {
-	-webkit-transition: color 0.35s ease-out;
-	-moz-transition: color 0.35s ease-out;
-	transition: color 0.35s ease-out;
-	color: $blue;
-	text-decoration: none;
-}
-
-header p {
-	margin: 0 2.5%;
-	text-align: left;
-}
+@import "project";
 
 .AllLinks {
 	-webkit-animation: intro 1.25s ease-out 0.75s forwards;
@@ -131,41 +53,6 @@ header p {
 
 /* Desktop */
 @media screen and (min-width: 699px) {
-	header .nav:hover {
-		color: $blue;
-	}
-	
-	header .nav:active {
-		color: $darkblue;
-	}
-
-header {
-	margin: 2% auto 0;
-	width: 65%;
-	font-size: 1.2em;
-	line-height: 2em;
-	text-align: justify;
-}
-
-	header a:hover {
-		color: $darkblue;
-	}
-	
-	header a:active {
-		color: $darkgrey;
-	}
-
-header h1 {
-	line-height: 1.1em;
-	font-size: 2em;
-	padding-bottom: 0;
-	border-bottom: none;
-}
-
-header p {
-	margin: 0;
-}
-
 .AllLinks {
 	margin: 2.5% auto;
 }
@@ -231,7 +118,7 @@ header p {
 
 /* iPad */
 @media all and (device-width: 768px) and (device-height: 1024px) {
-header, .content-wrapper {
+.content-wrapper {
 	width: 80%;
 }
 }

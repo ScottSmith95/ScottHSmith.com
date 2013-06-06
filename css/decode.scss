@@ -1,74 +1,4 @@
-@import "constants";
-
-body {
-	background: $bg-color;
-	font: normal 300 100% $font-fam;
-	margin: 0;
-}
-	
-::selection {
-    background: $highlight-color;
-	}
-::-moz-selection {
-	background: $highlight-color;
-}
-
-img {
-	border: none;
-}
-
-@-webkit-keyframes intro {
-	0% {opacity: 0;}
-	100% {opacity: 1;}
-}
-			
-@-moz-keyframes intro {
-	0% {opacity: 0;}
-	100% {opacity: 1;}
-}
-
-@keyframes intro {
-	0% {opacity: 0;}
-	100% {opacity: 1;}
-}
-
-header {
-	-webkit-animation: intro 1.25s ease-out 0.15s forwards;
-	-moz-animation: intro 1.25s ease-out 0.15s forwards;
-	animation: intro 1.25s ease-out 0.15s forwards;
-	color: $text-color;
-	opacity: 0;
-	margin: 0 auto;
-	width: 100%;
-	line-height: 1.8em;
-	font-size: 1.1em;
-	text-align: center;
-}
-
-header .nav, header .divider {
-	color: rgba(68,68,68,0.5);
-	font-weight: 300;
-}
-
-header h1 {
-	line-height: 1.1em;
-	font-size: 1.25em;
-	padding-bottom: 3.5%;
-	border-bottom: 1px solid $blue;
-}
-
-header a {
-	-webkit-transition: color 0.35s ease-out;
-	-moz-transition: color 0.35s ease-out;
-	transition: color 0.35s ease-out;
-	color: $blue;
-	text-decoration: none;
-}
-
-header p {
-	margin: 0 2.5%;
-	text-align: left;
-}
+@import "project";
 
 section {
 	-webkit-animation: intro 1.25s ease-out 0.75s forwards;
@@ -76,9 +6,13 @@ section {
 	animation: intro 1.25s ease-out 0.75s forwards;
 	opacity: 0;
 	text-align: center;
-	width: 95%;
+	width: 65%;
 	margin: 5% auto 0;
 	text-align: center;
+}
+
+.no-cssanimations section {
+	opacity: 1;
 }
 
 .themeimage {
@@ -87,54 +21,11 @@ section {
 
 /* Desktop */
 @media screen and (min-width: 699px) {
-	header .nav:hover {
-		color: $blue;
-	}
-	
-	header .nav:active {
-		color: $darkblue;
-	}
-
-header {
-	margin: 2% auto 0;
-	width: 65%;
-	font-size: 1.2em;
-	line-height: 2em;
-	text-align: justify;
-}
-
-	header a:hover {
-		color: $darkblue;
-	}
-	
-	header a:active {
-		color: $darkgrey;
-	}
-
-header h1 {
-	line-height: 1.1em;
-	font-size: 2em;
-	padding-bottom: 0;
-	border-bottom: none;
-}
-
-header p {
-	margin: 0;
-}
-
 section {
 	margin-top: 2.5%;
-	width: 65%;
 }
 
 .themeimage {
-	width: 80%;
-}
-}
-
-/* iPad */
-@media all and (device-width: 768px) and (device-height: 1024px) {
-header {
 	width: 80%;
 }
 }
