@@ -12,6 +12,9 @@ body {
 img {
   border: none; }
 
+ul {
+  padding: 0; }
+
 @-webkit-keyframes intro {
   0% {
     opacity: 0; }
@@ -45,6 +48,9 @@ header {
   font-size: 1.1em;
   text-align: center; }
 
+.no-cssanimations header {
+  opacity: 1; }
+
 header .nav, header .divider {
   color: rgba(68, 68, 68, 0.5);
   font-weight: 300; }
@@ -65,19 +71,6 @@ header a {
 header p {
   margin: 0 2.5%;
   text-align: left; }
-
-section {
-  -webkit-animation: intro 1.25s ease-out 0.75s forwards;
-  -moz-animation: intro 1.25s ease-out 0.75s forwards;
-  animation: intro 1.25s ease-out 0.75s forwards;
-  opacity: 0;
-  text-align: center;
-  width: 95%;
-  margin: 5% auto 0;
-  text-align: center; }
-
-.themeimage {
-  width: 90%; }
 
 /* Desktop */
 @media screen and (min-width: 699px) {
@@ -107,15 +100,31 @@ section {
     border-bottom: none; }
 
   header p {
-    margin: 0; }
-
-  section {
-    margin-top: 2.5%;
-    width: 65%; }
-
-  .themeimage {
-    width: 80%; } }
+    margin: 0; } }
 /* iPad */
 @media all and (device-width: 768px) and (device-height: 1024px) {
   header {
+    width: 80%; } }
+section {
+  -webkit-animation: intro 1.25s ease-out 0.75s forwards;
+  -moz-animation: intro 1.25s ease-out 0.75s forwards;
+  animation: intro 1.25s ease-out 0.75s forwards;
+  opacity: 0;
+  text-align: center;
+  width: 65%;
+  margin: 5% auto 0;
+  text-align: center; }
+
+.no-cssanimations section {
+  opacity: 1; }
+
+.themeimage {
+  width: 90%; }
+
+/* Desktop */
+@media screen and (min-width: 699px) {
+  section {
+    margin-top: 2.5%; }
+
+  .themeimage {
     width: 80%; } }

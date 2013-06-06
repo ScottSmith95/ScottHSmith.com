@@ -12,6 +12,9 @@ body {
 img {
   border: none; }
 
+ul {
+  padding: 0; }
+
 @-webkit-keyframes intro {
   0% {
     opacity: 0; }
@@ -54,7 +57,7 @@ header .nav, header .divider {
 
 header h1 {
   line-height: 1.1em;
-  font-size: 1.5em;
+  font-size: 1.25em;
   padding-bottom: 3.5%;
   border-bottom: 1px solid #009bcd; }
 
@@ -69,6 +72,39 @@ header p {
   margin: 0 2.5%;
   text-align: left; }
 
+/* Desktop */
+@media screen and (min-width: 699px) {
+  header .nav:hover {
+    color: #009bcd; }
+
+  header .nav:active {
+    color: #007ea6; }
+
+  header {
+    margin: 2% auto 0;
+    width: 65%;
+    font-size: 1.2em;
+    line-height: 2em;
+    text-align: justify; }
+
+  header a:hover {
+    color: #007ea6; }
+
+  header a:active {
+    color: #444444; }
+
+  header h1 {
+    line-height: 1.1em;
+    font-size: 2em;
+    padding-bottom: 0;
+    border-bottom: none; }
+
+  header p {
+    margin: 0; } }
+/* iPad */
+@media all and (device-width: 768px) and (device-height: 1024px) {
+  header {
+    width: 80%; } }
 .lightcolor {
   color: gray; }
 
@@ -118,34 +154,6 @@ header p {
 
 /* Desktop */
 @media screen and (min-width: 699px) {
-  header .nav:hover {
-    color: #009bcd; }
-
-  header .nav:active {
-    color: #007ea6; }
-
-  header {
-    margin: 2% auto 0;
-    width: 65%;
-    font-size: 1.2em;
-    line-height: 2em;
-    text-align: justify; }
-
-  header a:hover {
-    color: #007ea6; }
-
-  header a:active {
-    color: #444444; }
-
-  header h1 {
-    line-height: 1.1em;
-    font-size: 2em;
-    padding-bottom: 0;
-    border-bottom: none; }
-
-  header p {
-    margin: 0; }
-
   .grid {
     height: 310px; }
 
@@ -197,7 +205,7 @@ header p {
     color: #007ea6; } }
 /* iPad */
 @media all and (device-width: 768px) and (device-height: 1024px) {
-  header, .content-wrapper {
+  .content-wrapper {
     width: 80%; }
 
   .download:hover {
