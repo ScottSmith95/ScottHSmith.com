@@ -19,6 +19,7 @@ img {
 
 ul {
 	padding: 0;
+	margin: 0;
 }
 
 @-webkit-keyframes intro {
@@ -56,6 +57,7 @@ header {
 header .nav, header .divider {
 	color: rgba(68,68,68,0.5);
 	font-weight: 300;
+	vertical-align: top;
 }
 
 header h1 {
@@ -76,6 +78,37 @@ header a {
 header p {
 	margin: 0 2.5%;
 	text-align: left;
+}
+
+header h1 ul {
+	list-style: none;
+	display: inline-block;
+}
+
+#current_page {
+	cursor: pointer;
+}
+
+.PageMenu {
+	-webkit-transition: border-bottom 0.3s ease-out;
+	-moz-transition: border-bottom 0.3s ease-out;
+	transition: border-bottom 0.3s ease-out;
+	display: none;
+	position: absolute;
+	background: rgba(228,230,232,0.75);
+	border-bottom: 0 solid $blue;
+}
+
+.PageMenu.shown {
+	border-bottom: 2px solid $blue;
+}
+
+.PageMenu a {
+	color: rgba(68,68,68,0.5);
+}
+
+.PageMenu a:hover {
+	color: rgba(68,68,68,0.85);
 }
 
 /* Desktop */
