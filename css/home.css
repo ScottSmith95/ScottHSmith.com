@@ -15,6 +15,7 @@ a {
   -moz-transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
   transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
   text-decoration: none;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
   color: #444444; }
 
 a:hover {
@@ -113,7 +114,8 @@ ul {
   padding: 0;
   -webkit-animation: fly-in-from-bottom 1.25s ease-in-out forwards;
   -moz-animation: fly-in-from-bottom 1.25s ease-in-out forwards;
-  animation: fly-in-from-bottom 1.25s ease-in-out forwards; }
+  animation: fly-in-from-bottom 1.25s ease-in-out forwards;
+  text-align: center; }
 
 .name {
   -webkit-transition: font-size 0.5s ease-out;
@@ -126,20 +128,33 @@ ul {
   color: #444444; }
 
 nav {
-  -webkit-transition: width 0.5s ease-out, font-size 0.5s ease-out;
-  -moz-transition: width 0.5s ease-out, font-size 0.5s ease-out;
-  transition: width 0.5s ease-out, font-size 0.5s ease-out;
-  text-align: center;
+  -webkit-transition: font-size 0.5s ease-out;
+  -moz-transition: font-size 0.5s ease-out;
+  transition: font-size 0.5s ease-out;
   margin: 1% auto;
-  padding-bottom: 1%;
-  width: 30%;
-  border-bottom: 1px solid #009bcd; }
+  padding: 0 1% 1%;
+  border-bottom: 1px solid #009bcd;
+  display: inline-block; }
 
 nav a {
   display: inline;
   text-align: center;
-  margin: 0 1.75%;
-  font-size: 1.6em; }
+  font-size: 1.6em;
+  margin: 0 0.25em; }
+
+nav a.hire {
+  -webkit-transition: background 0.35s ease-out;
+  -moz-transition: background 0.35s ease-out;
+  transition: background 0.35s ease-out;
+  color: #E3E5E7;
+  font-weight: 500;
+  background: #009BCD;
+  border-radius: 7px;
+  padding: 0.04em 0.35em; }
+
+nav a.hire:hover {
+  background: rgba(0, 153, 204, 0.75);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.15); }
 
 .MainText {
   -webkit-transition: font-size 0.5s ease-out;
@@ -450,9 +465,6 @@ a[href="/tea"]:active {
   .name {
     margin: 1% auto; }
 
-  nav {
-    width: 40%; }
-
   .MainText {
     margin: 0.5% auto;
     width: 70%; }
@@ -486,9 +498,6 @@ a[href="/tea"]:active {
     background-size: cover;
     width: 12em;
     height: 12em; }
-
-  nav {
-    width: 70%; }
 
   nav a {
     margin: 0 1.25%; }
