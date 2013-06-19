@@ -15,7 +15,6 @@ a {
   -moz-transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
   transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
   text-decoration: none;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
   color: #444444; }
 
 a:hover {
@@ -132,7 +131,7 @@ nav {
   -moz-transition: font-size 0.5s ease-out;
   transition: font-size 0.5s ease-out;
   margin: 1% auto;
-  padding: 0 1% 1%;
+  padding: 0 1.5% 1%;
   border-bottom: 1px solid #009bcd;
   display: inline-block; }
 
@@ -499,8 +498,8 @@ a[href="/tea"]:active {
     width: 12em;
     height: 12em; }
 
-  nav a {
-    margin: 0 1.25%; }
+  nav {
+    font-size: 1.15em; }
 
   .MainText {
     margin: 2% auto;
