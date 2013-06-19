@@ -76,7 +76,8 @@ header p {
 
 header h1 ul {
   list-style: none;
-  display: inline-block; }
+  display: inline-block;
+  line-height: 1.3em; }
 
 #current_page {
   cursor: pointer; }
