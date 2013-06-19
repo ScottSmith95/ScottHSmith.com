@@ -247,10 +247,15 @@ __    / /  | |     __   | |     | |    | |       | |
 <div id="darklayer" class="off"></div>
 
 
-<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="//code.jquery.com/jquery-2.0.1.min.js"></script>
+
+<script type="application/javascript" src="scripts/fastclick.js"></script>
 
 <script type="text/javascript">
 	$(document).ready(function(){
+		$(function() {
+			FastClick.attach(document.body);
+		});
 	
 		var $sheets = $('#Twitter, #ADN, #Facebook, #Instagram');
 		
