@@ -64,7 +64,14 @@ __    / /  | |     __   | |     | |    | |       | |
 <body>
 
 	<header>
-		<h1><a class="nav" href="/projects">Projects</a><span class="divider"> &#124; </span>Social Icons</h1>
+			<h1><a class="nav" href="/projects">Projects</a><span class="divider"> &#124; </span><ul>
+			<li><span id="current_page">Social Icons</span></li>
+			<span class="PageMenu">
+			<li><a href="../share-sheets">Share Sheets</a></li>
+			<li><a href="../decode">Decode</a></li>
+			</span>
+		</ul></h1>
+	
 		<div class="desc"><p>I have created icons for social networking websites (more or less) in a vector format.<br>The icons come in dark grey (#444444), light grey (<span class="lightcolor">#808080</span>), and blue (<span class="bluecolor">#009BCD</span>). This collection currently has icons for Twitter, App.net, Facebook, Dribbble, Instagram, and more.</p></div>
 	</header>
 	
@@ -97,11 +104,17 @@ __    / /  | |     __   | |     | |    | |       | |
 	});
 </script>
 	
-<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="//code.jquery.com/jquery-2.0.1.min.js"></script>
 
 <script type="text/javascript">
 	$(document).ready(function(){
-	
+		
+		// For Nav menu
+		$('#current_page').click(function() {
+			$('.PageMenu').toggleClass('shown');
+			$('.PageMenu').slideToggle('300');
+		});
+		
 		var $images = $('.blue.grid, .dark.grid, .light.grid');
 		
 		var $downloads = $('.blue .download .dark .download, .light .download');

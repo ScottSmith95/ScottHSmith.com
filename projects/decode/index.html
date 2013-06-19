@@ -56,12 +56,21 @@ __    / /  | |     __   | |     | |    | |       | |
 
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
+<!-- Modernizr -->
+<script async type="text/javascript" src="scripts/modernizr.js"></script>
+
 </head>
 
 <body>
 
 <header>
-	<h1><a class="nav" href="/projects">Projects</a><span class="divider"> &#124; </span>Decode</h1>
+	<h1><a class="nav" href="/projects">Projects</a><span class="divider"> &#124; </span><ul>
+		<li><span id="current_page">Decode</span></li>
+		<span class="PageMenu">
+		<li><a href="../share-sheets">Share Sheets</a></li>
+		<li><a href="../social-icons">Social Icons</a></li>
+		</span>
+	</ul></h1>
 
 	<div class="desc"><p>Decode is a modern, minimal WordPress theme built off a fork of <a href="http://underscores.me">Underscores</a>. It is a mobile first, adaptive theme, built with HTML 5 specifications. It can be downloaded <a href="http://github.com/ScottSmith95/Decode">on GitHub</a> and it will be in the <a href="http://wordpress.org/themes/">Theme Directory</a> soon. Be sure to check the <a href="https://github.com/ScottSmith95/Decode/blob/master/README.md">README</a> for full details.</p></div>
 </header>
@@ -70,6 +79,16 @@ __    / /  | |     __   | |     | |    | |       | |
 	<a href="https://github.com/ScottSmith95/Decode/archive/master.zip"><img src="Decode.png" class="themeimage"></a>
 </section>
 
+<script src="//code.jquery.com/jquery-2.0.1.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#current_page').click(function() {
+			$('.PageMenu').toggleClass('shown');
+			$('.PageMenu').slideToggle('300');
+		});
+	});
+</script>
 </body>
 
 </html>
