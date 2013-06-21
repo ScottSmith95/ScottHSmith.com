@@ -152,11 +152,12 @@ header .hire {
   -webkit-transition: box-shadow 0.4s ease-out;
   -moz-transition: box-shadow 0.4s ease-out;
   transition: box-shadow 0.4s ease-out;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
-  background: #EEE;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  background: #e3e5e7;
   color: #444444;
   opacity: 0;
-  border-radius: 0.85em;
+  -webkit-border-radius: 0.35em;
+  border-radius: 0.35em;
   z-index: 1;
   display: inline-block;
   -webkit-column-break-inside: avoid;
@@ -164,7 +165,7 @@ header .hire {
   column-break-inside: avoid; }
 
 .item:hover {
-  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
   z-index: 2; }
 
 .no-csscolumns .item {
@@ -308,10 +309,7 @@ header .hire {
     width: 95%;
     margin: 4% 2.5% 0 2.5%;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.45);
-    -webkit-border-radius: 1em;
-    -moz-border-radius: 1em;
-    border-radius: 1em;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
     background: #e3e5e7; }
 
   .item-expand-area {
