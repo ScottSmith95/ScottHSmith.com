@@ -29,6 +29,7 @@ img {
   border: none; }
 
 ul {
+  margin: 0;
   padding: 0; }
 
 @-webkit-keyframes fly-in-from-top {
@@ -183,7 +184,13 @@ a[href="/tea"]:active {
   line-height: 3.5em;
   margin: 0px 0.2%; }
 
-.SocialLink.Mobile {
+.SocialLink.ShareSheet, .SocialLink.Mobile {
+  display: none; }
+
+.iOS .SocialLink.ShareSheet {
+  display: inline; }
+
+.iOS .SocialLink.notShareSheet {
   display: none; }
 
 .SocialIcon {
@@ -479,12 +486,6 @@ a[href="/tea"]:active {
   .headerpic, .headerpic img {
     margin-top: 2.5%; }
 
-  .SocialLink.Desktop {
-    display: none; }
-
-  .SocialLink.Mobile, .SocialLink.Github {
-    display: inline; }
-
   .appicon {
     height: 74px;
     width: auto; } }
@@ -508,7 +509,7 @@ a[href="/tea"]:active {
   .SocialIcon {
     margin: 0;
     height: 3em; } }
-@media screen and (max-device-width: 699px) {
+@media screen and (max-width: 699px) {
   @-webkit-keyframes fly-in-from-top {
     0% {
       -webkit-transform: translateY(-1500px);
@@ -625,11 +626,11 @@ a[href="/tea"]:active {
     line-height: 3.5em;
     margin: 0 0.75%; }
 
-  .SocialLink.Desktop {
-    display: none; }
-
   .SocialLink.Mobile {
     display: inline; }
+
+  .SocialLink.Desktop {
+    display: none; }
 
   .SocialIcon {
     -webkit-transform: scale(1);

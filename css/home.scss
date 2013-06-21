@@ -38,6 +38,7 @@ img {
 }
 
 ul {
+	margin: 0;
 	padding: 0;
 }
 
@@ -184,7 +185,15 @@ nav a.hire:hover {
 	margin: 0px 0.2%;
 }
 
-.SocialLink.Mobile {
+.SocialLink.ShareSheet, .SocialLink.Mobile {
+	display: none;
+}
+
+.iOS .SocialLink.ShareSheet {
+	display: inline;
+}
+
+.iOS .SocialLink.notShareSheet {
 	display: none;
 }
 
@@ -252,14 +261,6 @@ nav a.hire:hover {
 	margin-top: 2.5%;
 }
 
-.SocialLink.Desktop {
-	display: none;
-}
-
-.SocialLink.Mobile, .SocialLink.Github {
-	display: inline;
-}
-
 .appicon {
 	height: 74px;
 	width: auto;
@@ -293,7 +294,7 @@ nav {
 }
 }
 
-@media screen and (max-device-width: 699px) {
+@media screen and (max-width: 699px) {
 @-webkit-keyframes fly-in-from-top {
 	0% {-webkit-transform: translateY(-1500px); opacity: 0;}
 	30% {-webkit-transform: translateY(-150px); opacity: 0;}
@@ -379,12 +380,12 @@ nav a {
 	margin: 0 0.75%;
 }
 
-.SocialLink.Desktop {
-	display: none;
-}
-
 .SocialLink.Mobile {
 	display: inline;
+}
+
+.SocialLink.Desktop {
+	display: none;
 }
 
 .SocialIcon {
