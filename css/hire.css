@@ -1,0 +1,33 @@
+body {
+  background: #e3e5e7;
+  margin: 0;
+  font: normal 300 100% "museo-sans-1", "museo-sans-2", sans-serif;
+  -webkit-font-smoothing: antialiased; }
+
+::selection {
+  background: rgba(0, 155, 205, 0.25); }
+
+::-moz-selection {
+  background: rgba(0, 155, 205, 0.25); }
+
+a {
+  -webkit-transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
+  -moz-transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
+  transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
+  text-decoration: none;
+  color: #444444; }
+
+a:hover {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+  color: #009bcd; }
+
+a:active {
+  text-shadow: 0px -2px 7px rgba(0, 0, 0, 0.5);
+  color: #007ea6; }
+
+img {
+  border: none; }
+
+ul {
+  margin: 0;
+  padding: 0; }
