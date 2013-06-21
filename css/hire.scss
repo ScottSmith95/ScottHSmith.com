@@ -1,0 +1,43 @@
+@import "constants";
+
+body {
+	background: $bg-color;
+	margin: 0;
+	font: normal 300 100% $font-fam;
+	-webkit-font-smoothing: antialiased;
+}
+
+::selection {
+    background: $highlight-color;
+	}
+
+::-moz-selection {
+	background: $highlight-color;
+}
+
+a {
+	-webkit-transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
+	-moz-transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
+	transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
+	text-decoration: none;
+	color: $text-color;
+}
+
+	a:hover {
+		text-shadow: 0 0 10px rgba(0,0,0,0.35);
+		color: $blue;
+	}
+	
+	a:active {
+		text-shadow: 0px -2px 7px rgba(0,0,0,0.5);
+		color: $darkblue;
+	}
+	
+img {
+	border: none;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
