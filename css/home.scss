@@ -280,7 +280,7 @@ body {
 }
 
 nav {
-	font-size: 1.15em;
+	font-size: 1.05em;
 }
 
 .MainText {
@@ -294,7 +294,7 @@ nav {
 }
 }
 
-@media screen and (max-width: 699px) {
+@media screen and (max-device-width: 699px) {
 @-webkit-keyframes fly-in-from-top {
 	0% {-webkit-transform: translateY(-1500px); opacity: 0;}
 	30% {-webkit-transform: translateY(-150px); opacity: 0;}
