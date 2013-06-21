@@ -152,7 +152,7 @@ header .hire {
   -webkit-transition: box-shadow 0.4s ease-out;
   -moz-transition: box-shadow 0.4s ease-out;
   transition: box-shadow 0.4s ease-out;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
   background: #EEEEEE;
   color: #444444;
   opacity: 0;
@@ -162,11 +162,13 @@ header .hire {
   display: inline-block;
   -webkit-column-break-inside: avoid;
   -moz-column-break-inside: avoid;
-  column-break-inside: avoid; }
+  column-break-inside: avoid;
+  overflow: hidden; }
 
 .item:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-  z-index: 2; }
+  z-index: 2;
+  overflow: hidden; }
 
 .no-csscolumns .item {
   float: right;
@@ -189,36 +191,38 @@ header .hire {
   -moz-transform: scale(1);
   transform: scale(1); }
 
-.iteminside {
-  padding: 3.5%; }
-
 .photo {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  text-align: center;
+  margin: 0 auto;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3); }
+
+.photo img {
   -webkit-transition: opacity 0.3s ease-out;
   -moz-transition: opacity 0.3s ease-out;
   transition: opacity 0.3s ease-out;
   opacity: 1;
   width: 100%;
   height: auto;
-  overflow: hidden;
-  text-align: center;
-  margin: 0 auto 2% auto; }
+  border-radius: 0.35em 0.35em 0px 0px;
+  display: block; }
 
-.photo:hover {
-  opacity: 0.75; }
-
-.photo img {
-  width: 100%;
-  height: auto; }
+.photo img:hover {
+  opacity: 0.85; }
 
 .projects .photo {
   width: 145px;
-  height: 145px; }
+  height: 145px;
+  box-shadow: none;
+  margin-top: 5%; }
 
 .caption {
   font-size: 0.9em; }
 
 .caption p {
-  margin: 2% 2.5%; }
+  margin: 3% 3.5%; }
 
 .caption a:hover {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.35); }
