@@ -81,32 +81,32 @@ __    / /  | |     __   | |     | |    | |       | |
 	<p class="MainText">I'm a young designer from Oklahoma,<br>a forward-thinking designer and programmer.<br>I'm always learning.<br><br>I write on my blog, <a class="blog" href="http://BeyondTheCo.de">Beyond The Code</a>.</p>
 	
 		<ul class="AllSocialLinks">
-			<li class="Twitter Desktop SocialLink">
+			<li class="Twitter notShareSheet SocialLink">
 				<a href="http://twitter.com/ScottSmith95">
 					<img class="SocialIcon" src="images/Social%20Icons/Twitter.svg">
 				</a>
 			</li>
-			<li class="Twitter Mobile SocialLink">
+			<li class="Twitter ShareSheet SocialLink">
 				<a>
 					<img class="SocialIcon" src="images/Social%20Icons/Twitter.svg">
 				</a>
 			</li>
-			<li class="ADN Desktop SocialLink">
+			<li class="ADN notShareSheet SocialLink">
 				<a href="https://alpha.app.net/scottsmith" rel="me">
 					<img class="SocialIcon" src="images/Social%20Icons/ADN.svg">
 				</a>
 			</li>
-			<li class="ADN Mobile SocialLink">
+			<li class="ADN ShareSheet SocialLink">
 				<a>
 					<img class="SocialIcon" src="images/Social%20Icons/ADN.svg">
 				</a>
 			</li>
-			<li class="Desktop SocialLink">
-				<a id="FacebookDesktop" href="http://facebook.com/ScottSmith95">
+			<li class="Facebook notShareSheet SocialLink">
+				<a href="http://facebook.com/ScottSmith95">
 					<img class="SocialIcon" src="images/Social%20Icons/Facebook.svg">
 				</a>
 			</li>
-			<li class="Facebook Mobile SocialLink">
+			<li class="Facebook ShareSheet SocialLink">
 				<a>
 					<img class="SocialIcon" src="images/Social%20Icons/Facebook.svg">
 				</a>
@@ -121,12 +121,12 @@ __    / /  | |     __   | |     | |    | |       | |
 					<img class="SocialIcon" src="images/Social%20Icons/GitHub.svg">
 				</a>
 			</li>
-			<li class="Instagram Desktop SocialLink">
+			<li class="Instagram notShareSheet SocialLink">
 				<a href="http://instagram.com/ScottSmith95">
 					<img class="SocialIcon" src="images/Social%20Icons/Instagram.svg?v1.1">
 				</a>
 			</li>
-			<li class="Instagram Mobile SocialLink">
+			<li class="Instagram ShareSheet SocialLink">
 				<a>
 					<img class="SocialIcon" src="images/Social%20Icons/Instagram.svg">
 				</a>
@@ -260,35 +260,43 @@ if(window.navigator && window.navigator.loadPurpose === "preview"){
 <script type="text/javascript">
 
 	$(document).ready(function(){
+		//Runs FastClick.js on page
 		$(function() {
 			FastClick.attach(document.body);
 		});
 		
+		//Adds "iOS" class to body if running iOS
+		var device = navigator.userAgent.toLowerCase();
+		var ios = device.match(/(iphone|ipod|ipad)/);
+			if (ios) {
+				$('body').addClass('iOS');
+			}
+		
 		var $sheets = $('#Twitter, #ADN, #Facebook, #Instagram');
 		
-		var $triggers = $('.Twitter.Mobile, .ADN.Mobile, .Facebook.Mobile, .Instagram.Mobile');
+		var $triggers = $('.Twitter.ShareSheet, .ADN.ShareSheet, .Facebook.ShareSheet, .Instagram.ShareSheet');
 		
 		// Shows sheets after they have loaded
 		($sheets).delay(300).addClass('loaded');
 		$('#darklayer').delay(300).addClass('loaded');
 		
 		// Handles opening the Twitter sheet
-		$('.Twitter.Mobile').click(function() {
+		$('.Twitter.ShareSheet').click(function() {
         	$('#Twitter').toggleClass('selected').toggleClass('unselected');
         });
         
         // Handles opening the App-Net sheet
-        $('.ADN.Mobile').click(function() {
+        $('.ADN.ShareSheet').click(function() {
         	$('#ADN').toggleClass('selected').toggleClass('unselected');
         });
         
         // Handles opening the Facebook sheet
-        $('.Facebook.Mobile').click(function() {
+        $('.Facebook.ShareSheet').click(function() {
         	$('#Facebook').toggleClass('selected').toggleClass('unselected');
         });
         
         // Handles opening the Instagram sheet
-        $('.Instagram.Mobile').click(function() {
+        $('.Instagram.ShareSheet').click(function() {
         	$('#Instagram').toggleClass('selected').toggleClass('unselected');
         });
         
