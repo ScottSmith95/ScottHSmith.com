@@ -56,7 +56,7 @@ printImage();
 </script>
 </div>
 <div id="intro">
-	<p>ADN Tea is an event that occurs on Tuesdays exclusively on <a href="http://join.app.net">App.Net</a>.<br>It was begun by <a class="MobileLink" id="ScottADNLink">Scott Smith</a><a class="DesktopLink" href="http://alpha.app.net/sottsmith">Scott Smith</a> and <a class="MobileLink" id="NickADNLink">Nick Rosencrans</a><a class="DesktopLink" href="http://alpha.app.net/nickrosencrans">Nick Rosencrans</a>.</p>
+	<p>ADN Tea is an event that occurs on Tuesdays exclusively on <a href="http://join.app.net">App.Net</a>.<br>It was begun by <a class="MobileLink" id="ScottADNLink">Scott Smith</a><a class="DesktopLink" href="http://alpha.app.net/scottsmith">Scott Smith</a> and <a class="MobileLink" id="NickADNLink">Nick Rosencrans</a><a class="DesktopLink" href="http://alpha.app.net/nickrosencrans">Nick Rosencrans</a>.</p>
 </div>
 <div id="start">
 <p>To get started, pick up some of your favorite tea, or try something new. Snap a photo and post it with the hashtag <a href="https://alpha.app.net/hashtags/adntea">#adntea</a> with your comments.<br><a href="https://alpha.app.net/hashtags/adntea">See what people are saying.</a></p>
@@ -126,6 +126,12 @@ printImage();
 
 <script type="text/javascript">
 	$(document).ready(function(){
+		//Adds "iOS" class to body if running iOS
+		var device = navigator.userAgent.toLowerCase();
+		var ios = device.match(/(iphone|ipod|ipad)/);
+			if (ios) {
+				$('body').addClass('iOS');
+			}
 	
 		var $sheets = $('#ScottADN, #NickADN');
 		

@@ -43,6 +43,12 @@ a:active {
 .MobileLink {
   display: none; }
 
+.iOS .MobileLink {
+  display: inline; }
+
+.iOS .DesktopLink {
+  display: none; }
+
 #content {
   margin: 0 15%; }
 
@@ -373,6 +379,27 @@ a:active {
 @media all and (device-width: 768px) and (device-height: 1024px) {
   header, .content-wrapper {
     width: 80%; } }
+@media screen and (max-width: 699px) {
+  #intro, #start {
+    float: none;
+    clear: both;
+    width: 100%;
+    margin: 0 auto; }
+
+  #slideshow {
+    float: none;
+    clear: both;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    margin: 2% auto; }
+
+  #slideshow img {
+    -webkit-animation-delay: 0.5s;
+    -moz-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+    width: 125px;
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.75); } }
 @media screen and (max-device-width: 699px) {
   body {
     font-size: 1em; }
@@ -396,35 +423,8 @@ a:active {
   a:active {
     color: #C5705E; }
 
-  .MobileLink {
-    display: inline; }
-
-  .DesktopLink {
-    display: none; }
-
   #content {
     margin: 0 5%; }
 
   #content p {
-    font-size: 1.5em; }
-
-  #intro, #start {
-    float: none;
-    clear: both;
-    width: 100%;
-    margin: 0 auto; }
-
-  #slideshow {
-    float: none;
-    clear: both;
-    text-align: center;
-    width: 100%;
-    height: auto;
-    margin: 2% auto; }
-
-  #slideshow img {
-    -webkit-animation-delay: 0.5s;
-    -moz-animation-delay: 0.5s;
-    animation-delay: 0.5s;
-    width: 125px;
-    box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.75); } }
+    font-size: 1.5em; } }
