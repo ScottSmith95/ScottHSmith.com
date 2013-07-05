@@ -3,3 +3,7 @@
 sftp-config.json
 
 *.iconsproj
+
+css/chet-loesing.*
+
+projects/chet-loesing/
