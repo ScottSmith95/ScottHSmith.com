@@ -79,15 +79,16 @@ ul {
 	-webkit-transition: width 0.5s ease-out, height 0.5s ease-out, background-size 0.5s ease-out;
 	-moz-transition: width 0.5s ease-out, height 0.5s ease-out, background-size 0.5s ease-out;
 	transition: width 0.5s ease-out, height 0.5s ease-out, background-size 0.5s ease-out;
-	background: url("http://scotthsmith.com/images/ScottPic_600.jpg") no-repeat center;
+	background: url("../images/ScottPic_600.png") no-repeat center;
 	background-size: cover;
 	width: 16.5em;
     height: 16.5em;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-	border-radius: 100%;
 	display: block;
 	margin: 1.75% auto 0;
+}
+
+.headerpic img {
+	border-radius: 50%;
 }
 
 .no-bgsizecover .headerpic, .no-bgsizecover .headerpic img {
@@ -354,7 +355,6 @@ a {
 	}
 
 .headerpic {
-	background-image: url("/images/ScottPic_600.jpg");
 	margin: 5% auto 0 auto;
 }
 
