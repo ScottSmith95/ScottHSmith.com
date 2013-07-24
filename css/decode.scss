@@ -11,12 +11,21 @@ section {
 	text-align: center;
 }
 
-.no-cssanimations section {
+.no-cssanimations section, .no-cssanimations .button {
 	opacity: 1;
 }
 
 .themeimage {
 	width: 90%;
+}
+
+.button {
+	-webkit-animation: intro 1.25s ease-out 0.75s forwards;
+	-moz-animation: intro 1.25s ease-out 0.75s forwards;
+	animation: intro 1.25s ease-out 0.75s forwards;
+	margin-top: 2.5%;
+	text-align: center;
+	opacity: 0;
 }
 
 /* Desktop */
