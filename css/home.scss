@@ -3,7 +3,7 @@
 body {
 	background: $bg-color;
 	margin: 0;
-	font: normal 300 100% $font-fam;
+	font: normal 300 100%/1.5 $font-fam;
 	-webkit-font-smoothing: antialiased;
 }
 
@@ -23,12 +23,12 @@ a {
 	color: $text-color;
 }
 
-	a:hover {
+	.no-touch a:hover {
 		text-shadow: 0 0 10px rgba(0,0,0,0.35);
 		color: $blue;
 	}
 	
-	a:active {
+	.no-touch a:active {
 		text-shadow: 0px -2px 7px rgba(0,0,0,0.5);
 		color: $darkblue;
 	}
@@ -113,8 +113,9 @@ ul {
 	-moz-transition: font-size 0.5s ease-out;
 	transition: font-size 0.5s ease-out;
 	margin: 1.5% auto;
-	font-weight: 500;
 	text-align: center; 
+	line-height: 1;
+	font-weight: 500;
 	font-size: 2.3em;
 	color: $text-color;
 }
@@ -180,10 +181,14 @@ nav a.hire:hover {
 }
 
 .SocialLink {
-	display: inline;
+	display: inline-block;
 	text-align: center;
 	line-height: 3.5em;
 	margin: 0px 0.2%;
+}
+
+.SocialLink a {
+	display: inline-block;
 }
 
 .SocialLink.ShareSheet, .SocialLink.Mobile {
@@ -202,9 +207,9 @@ nav a.hire:hover {
 	-webkit-transition: opacity 0.25s ease-out, height 0.5s ease-out, width 0.5s ease-out, -webkit-transform 0.25s ease-out;
 	-moz-transition: opacity 0.25s ease-out, height 0.5s ease-out, width 0.5s ease-out, -moz-transform 0.25s ease-out;
 	transition: opacity 0.25s ease-out, height 0.5s ease-out, width 0.5s ease-out, transform 0.25s ease-out;
-	-webkit-transform: scale(0.8);
-	-moz-transform: scale(0.8);
-	transform: scale(0.8);
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	transform: scale(1);
 	width: auto;
 	vertical-align: middle;
 	height: 3.75em;
@@ -212,13 +217,19 @@ nav a.hire:hover {
 	cursor: pointer;
 }
 
-	.SocialIcon:hover {
+.no-touch .SocialIcon {
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+}
+
+	.no-touch .SocialIcon:hover {
 		-webkit-transform: scale(1); 
 		-moz-transform: scale(1);
 		transform: scale(1);
 	}
 
-	.SocialIcon:active {
+	.no-touch .SocialIcon:active {
 		opacity: 0.5;
 	}
 
@@ -340,20 +351,6 @@ nav {
 	-webkit-animation-duration: 1.5s;
 }
 
-a {
-	margin-top: 2%;
-}
-
-	a:hover {
-		text-shadow: none;
-		color: inherit;
-	}
-	
-	a:active {
-		text-shadow: none;
-		color: inherit;
-	}
-
 .headerpic {
 	margin: 5% auto 0 auto;
 }
@@ -387,23 +384,6 @@ nav a {
 .SocialLink.Desktop {
 	display: none;
 }
-
-.SocialIcon {
-	-webkit-transform: scale(1);   
-	-moz-transform: scale(1);  
-	transform: scale(1);
-}
-
-	.SocialIcon:hover {
-		-webkit-transform: scale(1);   
-		-moz-transform: scale(1);  
-		transform: scale(1);
-		opacity: 1;
-	}
-	
-	.SocialIcon:active {
-		opacity: 1;
-	}
 }
 
 @media screen and (max-device-width: 240px) {
