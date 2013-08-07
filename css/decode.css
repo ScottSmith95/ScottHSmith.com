@@ -146,6 +146,9 @@ section {
 .no-cssanimations section, .no-cssanimations .button {
   opacity: 1; }
 
+.themeimage {
+  max-width: 100%; }
+
 .button {
   -webkit-animation: intro 1.25s ease-out 0.75s forwards;
   -moz-animation: intro 1.25s ease-out 0.75s forwards;
