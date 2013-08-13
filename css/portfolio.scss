@@ -222,9 +222,13 @@ html {
 	column-gap: 0;
 	column-fill: auto;
 	width: 100%;
+	display: -webkit-box;
+	display: -moz-box;  
 	display: -ms-flexbox;
 	display: -webkit-flex;
 	display: flex;
+	-webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
 	-webkit-flex-flow: column nowrap;
 	-moz-flex-flow: column nowrap;
 	-ms-flex-flow: column nowrap;
