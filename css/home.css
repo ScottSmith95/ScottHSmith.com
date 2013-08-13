@@ -210,7 +210,7 @@ a[href="/tea"]:active {
   margin-bottom: 2.5%;
   cursor: pointer; }
 
-.no-touch .SocialIcon {
+.no-touch .SocialIcon, .no-js .SocialIcon {
   -webkit-transform: scale(0.8);
   -moz-transform: scale(0.8);
   transform: scale(0.8); }
