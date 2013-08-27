@@ -93,10 +93,11 @@ ul {
   -webkit-transition: width 0.5s ease-out, height 0.5s ease-out, background-size 0.5s ease-out;
   -moz-transition: width 0.5s ease-out, height 0.5s ease-out, background-size 0.5s ease-out;
   transition: width 0.5s ease-out, height 0.5s ease-out, background-size 0.5s ease-out;
-  background: url("../images/ScottPic_600.png") no-repeat center;
+  background: url("../images/ScottPic_600.jpg") no-repeat center;
   background-size: cover;
   width: 16.5em;
   height: 16.5em;
+  border-radius: 50%;
   display: block;
   margin: 1.75% auto 0; }
 
@@ -104,7 +105,8 @@ ul {
   background-size: 16.5em; }
 
 .headerpic.fourohfour {
-  background: none; }
+  background: none;
+  border-radius: none; }
 
 .bottomanimated {
   margin: 0;
