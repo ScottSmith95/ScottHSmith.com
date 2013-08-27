@@ -100,13 +100,10 @@ ul {
   display: block;
   margin: 1.75% auto 0; }
 
-.headerpic img {
-  border-radius: 50%; }
-
 .no-bgsizecover .headerpic, .no-bgsizecover .headerpic img {
-  background-size: 100%; }
+  background-size: 16.5em; }
 
-.headerpic.fourohfour, .headerpic.fourohfour img {
+.headerpic.fourohfour {
   background: none; }
 
 .bottomanimated {
