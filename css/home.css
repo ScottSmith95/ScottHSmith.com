@@ -176,13 +176,13 @@ a[href="/tea"]:active {
   height: 1em; }
 
 .SocialLink {
-  display: inline-block;
+  display: inline;
   text-align: center;
   line-height: 3.5em;
   margin: 0px 0.2%; }
 
 .SocialLink a {
-  display: inline-block; }
+  display: inline; }
 
 .SocialLink.ShareSheet, .SocialLink.Mobile {
   display: none; }
@@ -359,7 +359,9 @@ a[href="/tea"]:active {
   -ms-user-select: none;
   user-select: none;
   font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
-  visibility: hidden; }
+  font-weight: 300;
+  visibility: hidden;
+  background: rgba(255, 255, 255, 0.8); }
 
 .Sheet.loaded {
   visibility: visible; }
@@ -380,42 +382,38 @@ a[href="/tea"]:active {
 .no-cssanimations .Sheet.selected {
   display: block; }
 
-.SheetDivider {
-  border-top: 1px solid #2E2E2E;
-  border-bottom: 1px solid #7D7D7D;
-  margin: 0; }
-
-.SheetContent {
-  background: rgba(0, 0, 0, 0.75);
-  background: -webkit-linear-gradient(rgba(85, 85, 85, 0.85) 0%, rgba(20, 20, 20, 0.85) 15%);
-  background: linear-gradient(to bottom, rgba(85, 85, 85, 0.85) 0%, rgba(20, 20, 20, 0.85) 15%);
-  padding: 5% 0;
-  margin: 0 auto;
-  text-align: center; }
-
-.SheetContent .itemset {
-  margin: 5% 3%;
+.itemset {
+  padding: 2em 0;
   text-align: left; }
 
-.SheetContent .itemset .itemcontainer {
+.itemset section {
+  overflow: scroll; }
+
+.itemset .clients {
+  padding-bottom: 1em; }
+
+.itemset .browsers {
+  padding-top: 1em;
+  border-top: 1px solid #969DA2; }
+
+.itemset .itemcontainer {
   width: 32.45%;
   display: inline-block;
   text-align: center;
-  margin: 0 auto 5%; }
+  margin: 0 auto; }
 
-.SheetContent .itemset li {
+.itemset li {
   display: inline-block;
   margin: 0 auto;
   width: 70px;
-  height: 88px;
+  height: 100%;
   line-height: 1.3em;
   font-size: 12px;
-  font-weight: bold;
-  color: #FFF;
+  color: #000000;
   text-align: center;
   vertical-align: top; }
 
-.SheetContent li img {
+.itemset li img {
   border-radius: 10px; }
 
 .appicon {
@@ -423,39 +421,28 @@ a[href="/tea"]:active {
   width: auto; }
 
 .cancel {
-  border-radius: 10px;
-  background: #656565;
-  background: -webkit-linear-gradient(rgba(130, 130, 130, 0.75) 0%, rgba(10, 10, 10, 0.75) 75%);
-  background: linear-gradient(to bottom, rgba(130, 130, 130, 0.75) 0%, rgba(10, 10, 10, 0.75) 75%);
-  opacity: 1;
-  padding: 0;
+  background: #ffffff;
+  padding: 10px 0;
+  margin: 0;
   line-height: 2em;
-  font-size: 19px;
-  margin: -2.5% auto 0;
-  width: 272px;
-  border: 2px inset #535353;
+  font-size: 22px;
+  font-weight: 400;
+  width: 100%;
   text-align: center;
   text-decoration: none;
-  color: #FFF;
+  color: #0076FF;
   cursor: pointer; }
 
 .cancel.touched, .cancel:active {
-  background: -webkit-linear-gradient(rgba(85, 85, 85, 0.85) 0%, rgba(0, 0, 0, 0.85) 100%);
-  background: linear-gradient(to bottom, rgba(85, 85, 85, 0.85) 0%, rgba(0, 0, 0, 0.85) 100%); }
+  background: #D9D9D9; }
 
 /* Landscape */
 @media screen and (orientation: landscape) {
-  .SheetContent {
-    padding: 3.5% 0 3.5%; }
+  .itemset {
+    margin: 0; }
 
-  .SheetContent .itemset {
-    margin: 0 3%; }
-
-  .SheetContent .itemset .itemcontainer {
-    width: 24.5%; }
-
-  .cancel {
-    width: 225px; } }
+  .itemset .itemcontainer {
+    width: 24.5%; } }
 /* Desktop */
 /* Note: Sharing Sheets are not intended for use on desktop screen sizes */
 @media screen and (min-width: 699px) {
@@ -464,7 +451,7 @@ a[href="/tea"]:active {
     width: auto; } }
 /* iPad */
 @media screen and (device-width: 768px) and (device-height: 1024px) {
-  .SheetContent .itemset .itemcontainer {
+  .itemset .itemcontainer {
     width: 24.5%; } }
 @media screen and (max-width: 1224px) {
   .headerpic, .headerpic img {
