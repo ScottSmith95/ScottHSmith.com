@@ -261,7 +261,7 @@ a:active {
   font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
   font-weight: 300;
   visibility: hidden;
-  background: rgba(255, 255, 255, 0.8); }
+  background: #F8F8F8; }
 
 .Sheet.loaded {
   visibility: visible; }
@@ -287,7 +287,8 @@ a:active {
   text-align: left; }
 
 .itemset section {
-  overflow: scroll; }
+  overflow: scroll;
+  height: 100%; }
 
 .itemset .clients {
   padding-bottom: 1em; }
@@ -298,9 +299,9 @@ a:active {
 
 .itemset .itemcontainer {
   width: 32.45%;
-  display: inline-block;
+  display: inline;
   text-align: center;
-  margin: 0 auto; }
+  margin: 0 3.5%; }
 
 .itemset li {
   display: inline-block;
@@ -317,12 +318,11 @@ a:active {
   border-radius: 10px; }
 
 .appicon {
-  height: 58px;
+  height: 62px;
   width: auto; }
 
 .cancel {
-  background: #ffffff;
-  padding: 10px 0;
+  padding: 5px 0;
   margin: 0;
   line-height: 2em;
   font-size: 22px;
