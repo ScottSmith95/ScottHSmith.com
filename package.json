@@ -1,0 +1,15 @@
+{
+  "name": "Scott-Smith",
+  "version": "1.0.0",
+  "author": "Scott Smith <mail@ScottHSmith.com> (http://ScottHSmith.com)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ScottSmith95/Decode.git"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-autoprefixer": "~0.6.5",
+    "grunt-contrib-cssmin": "~0.7.0",
+    "grunt-contrib-watch": "~0.5.3"
+  }
+}
