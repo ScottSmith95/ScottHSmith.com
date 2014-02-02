@@ -1,8 +1,24 @@
 module.exports = function(grunt) {
 
-    // Configuration
-    grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
+	// Configuration
+	grunt.initConfig({
+		pkg: grunt.file.readJSON('package.json'),
+		
+		sass: {
+			make: {
+				options: {
+					style: 'compressed'
+				},
+				files: [{
+					expand: true,
+					flatten: true,
+					cwd: 'css/',
+					src: ['*.scss'],
+					dest: 'css/build/',
+					ext: '.css'
+				}]
+			}
+		},
         
 		autoprefixer: {
             options: {
@@ -12,7 +28,7 @@ module.exports = function(grunt) {
 			prefix: {
 				expand: true,
 				flatten: true,
-				cwd: 'css/',
+				cwd: 'css/build/',
 				src: ['*.css'],
 				dest: 'css/build/',
 				ext: '.prefixed.css'
@@ -22,7 +38,7 @@ module.exports = function(grunt) {
         watch: {
 			css: {
 				files: ['css/*.css'],
-				tasks: ['autoprefixer'],
+				tasks: ['autoprefixer', 'sass'],
 				options: {
 					spawn: false
 				}
@@ -35,13 +51,14 @@ module.exports = function(grunt) {
     });
     
     // Plugin List
+    grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
 	// Workflows
 	// $ grunt: Concencates, prefixes, minifies JS and CSS files. The works.
-	grunt.registerTask('default', ['autoprefixer']);
+	grunt.registerTask('default', ['sass', 'autoprefixer']);
 		
 	// $ grunt dev: Watches for changes while developing
 	grunt.registerTask('dev', ['watch']);
