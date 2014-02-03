@@ -21,7 +21,7 @@
 	box-shadow: 0px 0px 5px rgba(0,0,0,0.75);
 	top: 1em;
 	opacity: 0;
-	animation: pop-closed 0.75s linear 0.75s;
+	animation: pop-closed 0.75s linear 0.75s forwards;
 }
 
 .no-touch .screenshot-box a img {
