@@ -3,6 +3,7 @@
 body {
 	background: $bg-color;
 	font: normal 300 100%/1.5 $font-fam;
+	color: $text-color;
 	margin: 0;
 }
 	
@@ -11,6 +12,14 @@ body {
 	}
 ::-moz-selection {
 	background: $highlight-color;
+}
+
+a {
+	-webkit-transition: color 0.35s ease-out;
+	-moz-transition: color 0.35s ease-out;
+	transition: color 0.35s ease-out;
+	color: $blue;
+	text-decoration: none;
 }
 
 img {
@@ -41,7 +50,6 @@ header {
 	-webkit-animation: intro 1.25s ease-out 0.15s forwards;
 	-moz-animation: intro 1.25s ease-out 0.15s forwards;
 	animation: intro 1.25s ease-out 0.15s forwards;
-	color: $text-color;
 	opacity: 0;
 	margin: 0 auto;
 	width: 100%;
@@ -65,14 +73,7 @@ header h1 {
 	font-size: 1.5em;
 	padding-bottom: 3.5%;
 	border-bottom: 1px solid $blue;
-}
-
-header a {
-	-webkit-transition: color 0.35s ease-out;
-	-moz-transition: color 0.35s ease-out;
-	transition: color 0.35s ease-out;
-	color: $blue;
-	text-decoration: none;
+	margin: 0.65em 0;
 }
 
 header p {

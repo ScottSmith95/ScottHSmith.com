@@ -15,7 +15,7 @@ module.exports = function(grunt) {
 					cwd: 'css/',
 					src: ['*.scss'],
 					dest: 'css/build/',
-					ext: '.css'
+					ext: '.sassed.css'
 				}]
 			}
 		},
@@ -31,21 +31,21 @@ module.exports = function(grunt) {
 				cwd: 'css/build/',
 				src: ['*.css'],
 				dest: 'css/build/',
-				ext: '.prefixed.css'
+				ext: '.css'
 			}
 		},
 
         watch: {
 			css: {
 				files: ['css/*.scss', 'css/build/*.css'],
-				tasks: ['autoprefixer', 'sass'],
+				tasks: ['sass', 'autoprefixer'],
 				options: {
 					spawn: false
 				}
 			},
 			livereload: {
 				options: { livereload: true },
-				files: ['index.html', 'css/**'],
+				files: ['*.html', 'css/*.css'],
 			}
 		},
     });
