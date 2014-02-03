@@ -7,7 +7,8 @@ module.exports = function(grunt) {
 		sass: {
 			make: {
 				options: {
-					style: 'compressed'
+					style: 'compressed',
+					sourcemap: true
 				},
 				files: [{
 					expand: true,
@@ -37,7 +38,7 @@ module.exports = function(grunt) {
 
         watch: {
 			css: {
-				files: ['css/*.scss', 'css/build/*.css'],
+				files: ['css/*.scss'],
 				tasks: ['sass', 'autoprefixer'],
 				options: {
 					spawn: false
