@@ -29,7 +29,7 @@ module.exports = function(grunt) {
 				expand: true,
 				flatten: true,
 				cwd: 'css/build/',
-				src: ['*.css'],
+				src: ['*.sassed.css'],
 				dest: 'css/build/',
 				ext: '.css'
 			}
