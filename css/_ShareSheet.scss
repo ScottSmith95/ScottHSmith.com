@@ -1,57 +1,7 @@
 /* Share Sheet */
-@-webkit-keyframes slide-in {
-	0% {-webkit-transform: translateY(100%); visibility: visible;}
-	100% {-webkit-transform: translateY(0);}
-}
-
-@-moz-keyframes slide-in {
-	0% {-moz-transform: translateY(100%); visibility: visible;}
-	100% {-moz-transform: translateY(0);}
-}
-
-@keyframes slide-in {
-	0% {transform: translateY(100%); visibility: visible;}
-	100% {transform: translateY(0);}
-}
-
-@-webkit-keyframes slide-out {
-	0% {-webkit-transform: translateY(0);}
-	100% {-webkit-transform: translateY(100%); visibility: hidden;}
-}
-
-@-moz-keyframes slide-out {
-	0% {-moz-transform: translateY(0);}
-	100% {-moz-transform: translateY(100%); visibility: hidden;}
-}
-
-@keyframes slide-out {
-	0% {transform: translateY(0);}
-	100% {transform: translateY(100%); visibility: hidden;}
-}
-
-@-webkit-keyframes fade-in {
-	0% {opacity: 0; visibility: visible;}
-	100% {opacity: 1;}
-}
-
-@-moz-keyframes fade-in {
-	0% {opacity: 0; visibility: visible;}
-	100% {opacity: 1;}
-}
-
 @keyframes fade-in {
 	0% {opacity: 0; visibility: visible;}
 	100% {opacity: 1;}
-}
-
-@-webkit-keyframes fade-out {
-	0% {opacity: 1;}
-	100% {opacity: 0; visibility: hidden;}
-}
-
-@-moz-keyframes fade-out {
-	0% {opacity: 1;}
-	100% {opacity: 0; visibility: hidden;}
 }
 
 @keyframes fade-out {
@@ -74,8 +24,6 @@
 }
 
 #darklayer.on {
-	-webkit-animation: fade-in 0.25s ease-out forwards;
-	-moz-animation: fade-in 0.25s ease-out forwards;
 	animation: fade-in 0.25s ease-out forwards;
 }
 
@@ -84,8 +32,6 @@
 }
 
 #darklayer.off {
-	-webkit-animation: fade-out 0.25s ease-out forwards;
-	-moz-animation: fade-out 0.25s ease-out forwards;
 	animation: fade-out 0.25s ease-out forwards;
 }
 
@@ -94,20 +40,18 @@
 }
 
 .Sheet {
+	transition: transform 0.25s ease-out;
 	width: 100%;
 	margin: 0;
 	padding: 0;
 	position: fixed;
 	bottom: 0;
 	z-index: 10;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
 	user-select: none;
 	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 	font-weight: 300;
 	visibility: hidden;
-	background: #F8F8F8;
+	background: rgba(248,248,248,0.95);
 }
 
 .Sheet.loaded {
@@ -115,49 +59,44 @@
 }
 
 .Sheet.unselected {
-	-webkit-animation: slide-out 0.25s ease-in forwards;
-	-moz-animation: slide-out 0.25s ease-in forwards;
-	animation: slide-out 0.25s ease-in forwards;
-}
-
-.no-cssanimations .Sheet.unselected {
-	display: none;
+	transform: translateY(100%);
 }
 
 .Sheet.selected {
-	-webkit-animation: slide-in 0.25s ease-out forwards;
-	-moz-animation: slide-in 0.25s ease-out forwards;
-	animation: slide-in 0.25s ease-out forwards;
-}
-
-.no-cssanimations .Sheet.selected {
-	display: block;
+	transform: translateY(0%);
 }
 
 .itemset {
-	padding: 2em 0;
+	padding: 20px 0 5px;
 	text-align: left;
 }
 
 .itemset section {
-	overflow: scroll;
-	height: 100%;
+	white-space: nowrap;
+	overflow-x: scroll;
+	-webkit-overflow-scrolling: touch;
+	padding: 20px 1.5%;
 }
-
-.itemset .clients {
-	padding-bottom: 1em;
-}
-
-.itemset .browsers {
-	padding-top: 1em;
-	border-top: 1px solid #969DA2;
-}
+	
+	.itemset section:first-of-type {
+		padding-top: 0;
+	}
+	
+	.itemset section:last-of-type {
+		padding-bottom: 0;
+		border-top: 1px solid #969DA2;
+	}
+	
+	.itemset section:only-child {
+		padding-top: 0;
+		padding-bottom: 0;
+		border-top: none;
+	}
 
 .itemset .itemcontainer {
-	width: 32.45%;
 	display: inline;
 	text-align: center;
-	margin: 0 3.5%;
+	margin: 0;
 }
 
 .itemset li {
@@ -170,6 +109,7 @@
 	color: #000000;
 	text-align: center;
 	vertical-align: top;
+	white-space: normal;
 }
 
 .itemset li img {
@@ -177,7 +117,7 @@
 }
 
 .appicon {
-	height: 62px;
+	height: 60px;
 	width: auto;
 }
 
@@ -202,26 +142,55 @@
 @media screen and (orientation:landscape) {
 
 .itemset {
-	margin: 0;
+	padding-top: 10px;
+}
+
+.itemset .itemcontainer {
+	margin: 0 7px;
+}
+
+	.itemset .itemcontainer:first-child {
+		margin-left: 0;
+	}
+	
+	.itemset .itemcontainer:last-child {
+		margin-right: 0;
+	}
+}
+
+/* Tablet */
+@media only screen and (min-width: 35em) {
+.itemset section {
+	padding-left: 2.5%;
+	padding-right: 2.5%;
 }
 
 .itemset .itemcontainer {
 	width: 24.5%;
+}
+
+.itemset .itemcontainer {
+	margin: 0 5%;
+}
+
+	.itemset .itemcontainer:first-child {
+		margin-left: 0;
+	}
+	
+	.itemset .itemcontainer:last-child {
+		margin-right: 0;
+	}
+	
+.appicon {
+	height: 75px;
+	width: auto;
 }
 }
 
 /* Desktop */
 /* Note: Sharing Sheets are not intended for use on desktop screen sizes */
-@media screen and (min-width: 699px) {
-.appicon {
-	height: 72px;
-	width: auto;
-}
-}
-
-/* iPad */
-@media screen and (device-width: 768px) and (device-height: 1024px) {
-.itemset .itemcontainer {
-	width: 24.5%;
+@media only screen and (min-width: 50em) {
+.itemset {
+	padding-top: 2em;
 }
 }
