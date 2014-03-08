@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>Delicious</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M100,0 C44.771526,1.51545443e-14 0,44.771526 0,100 C-7.5791226e-15,155.228474 44.771526,200 100,200 C155.228474,200 200,155.228474 200,100 C200,44.771526 155.228474,-2.27373675e-14 100,0 L100,0 L100,0 Z M100,190 C149.705627,190 190,149.705627 190,100 L100,100 L100,10 C50.2943734,10 10,50.2943734 10,100 L100,100 L100,190 Z" id="Delicious" fill="#808080" sketch:type="MSShapeGroup"></path>
+    </g>
+</svg>
