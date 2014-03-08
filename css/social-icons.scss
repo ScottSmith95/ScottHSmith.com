@@ -25,27 +25,26 @@
 }
 
 .grid {
-	transition: opacity 0.5s ease-out, width 0.4s ease-out;
+	transition: opacity 0.5s ease-out, max-width 0.4s ease-out;
 	vertical-align: middle;
-	height: 25em;
+	max-height: 25em;
 	width: auto;
 }
 
 .grid.selected {
-	width: 95%;
+	max-width: 95%;
 	opacity: 1;
 }
 
 .grid.unselected {
-	width: 0;
+	max-width: 0;
 	opacity: 0;
 }
 
 .download {
 	transition: opacity 0.35s ease-out, transform 0.3s ease;
-	position: relative;
 	vertical-align: middle;	
-	margin: 3.5% 1%;
+	margin: 7.5% 1% 0;
 	height: 2.75em;
 	width: auto;
 }
@@ -59,35 +58,8 @@
 		opacity: 0.65;
 	}
 
-.license {
-	animation: intro 1.5s ease-out 5s forwards;
-	opacity: 0;
-	margin: 0 0 2.5% 2.5%;
-	width: 22.5%;
-	color: $darkgrey;
-	float: left;
-	display: block;
-}
 
-.license p {
-	font-size: 0.75em;
-}
-
-.license a {
-	transition: color 0.3s ease-out;
-	color: $darkgrey;
-}
-
-	.no-touch .license a:hover {
-		color: $blue;
-	}
-	
-	.no-touch .license a:active {
-		color: $darkblue;
-	}
-
-
-/* iPad */
+/* Tablet */
 @media screen and (min-width: 35em) {
 .content-wrapper {
 	width: 80%;

@@ -8,11 +8,11 @@ a {
 	color: $blue;
 }
 
-	a:hover {
+	.no-touch a:hover {
 		color: $darkblue;
 	}
 	
-	a:active {
+	.no-touch a:active {
 		color: $text-color;
 	}
 
@@ -69,7 +69,7 @@ a {
 	overflow: hidden;
 }
 
-	.item:hover {
+	.no-touch .item:hover {
 		box-shadow: 0 0 10px rgba(0,0,0,0.25);
 		z-index: 2;
 		overflow: hidden;
@@ -85,12 +85,12 @@ a {
 	opacity: 1;
 }
 
-.item-expand-area {
+.no-touch .item-expand-area {
 	transition: transform 0.25s ease-out;
 	transform: scale(0.925);
 }
 
-	.item-expand-area:hover {
+	.no-touch .item-expand-area:hover {
 		transform: scale(1);
 	}
 
@@ -136,16 +136,16 @@ a {
 	margin: 4%;
 }
 
-	.caption a:hover {
+	.no-touch .caption a:hover {
 		text-shadow: 0 0 10px rgba(0,0,0,0.35);
 	}
 	
-	.caption a:active {
+	.no-touch .caption a:active {
 		text-shadow: 0px -2px 7px rgba(0,0,0,0.5);
 	}
 
-/* iPad */
-@media all and (device-width: 768px) and (device-height: 1024px) {
+/* Tablet */
+@media screen and (min-width: 35em) {
 .items {
 	width: 95%;
 }
@@ -159,7 +159,9 @@ a {
 }
 }
 
-@media screen and (max-width: 699px) {
+
+/* Desktop */
+@media screen and (min-width: 50em) {
 html {
 	padding-bottom: 3.5%;	
 }
@@ -169,17 +171,11 @@ html {
 	column-gap: 0;
 	column-fill: auto;
 	width: 100%;
-	display: -webkit-box;
-	display: -moz-box;  
 	display: flex;
-	-webkit-box-orient: vertical;
-    -moz-box-orient: vertical;
 	flex-flow: column nowrap;
 }
 
 .first.item-expand-area {
-	-webkit-box-ordinal-group: 1;
-	-moz-box-ordinal-group: 1;
 	order: 1;
 }
 
@@ -188,8 +184,6 @@ html {
 }
 
 .second.item-expand-area {
-	-webkit-box-ordinal-group: 2;
-	-moz-box-ordinal-group: 2;
 	order: 2;
 }
 
@@ -198,8 +192,6 @@ html {
 }
 
 .third.item-expand-area {
-	-webkit-box-ordinal-group: 3;
-	-moz-box-ordinal-group: 3;
 	order: 3;
 }
 
@@ -214,20 +206,14 @@ html {
 }
 
 .fourth.item-expand-area {
-	-webkit-box-ordinal-group: 4;
-	-moz-box-ordinal-group: 4;
 	order: 4;
 }
 
 .fifth.item-expand-area {
-	-webkit-box-ordinal-group: 5;
-	-moz-box-ordinal-group: 5;
 	order: 5;
 }
 
 .sixth.item-expand-area {
-	-webkit-box-ordinal-group: 6;
-	-moz-box-ordinal-group: 6;
 	order: 6;
 }
 

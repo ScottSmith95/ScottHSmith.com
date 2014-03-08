@@ -1,17 +1,17 @@
 @import "project";
 
-.AllLinks {
-	-webkit-animation: intro 1.25s ease-out 0.75s forwards;
-	-moz-animation: intro 1.25s ease-out 0.75s forwards;
+.content {
 	animation: intro 1.25s ease-out 0.75s forwards;
-	margin: 5% auto;
-	text-align: center;
-	height: 1em;
 	opacity: 0;
+	margin: 5% auto;
 }
 
-.no-cssanimations .AllLinks {
+.no-cssanimations .content {
 	opacity: 1;
+}
+
+.AllLinks {
+	text-align: center;
 }
 
 .Link {
@@ -22,11 +22,7 @@
 }
 
 .SocialIcon {
-	-webkit-transition: opacity 0.25s ease-out, height 0.5s ease-out, width 0.5s ease-out, -webkit-transform 0.25s ease-out;
-	-moz-transition: opacity 0.25s ease-out, height 0.5s ease-out, width 0.5s ease-out, -moz-transform 0.25s ease-out;
 	transition: opacity 0.25s ease-out, height 0.5s ease-out, width 0.5s ease-out, transform 0.25s ease-out;
-	-webkit-transform: scale(0.8);
-	-moz-transform: scale(0.8);
 	transform: scale(0.8);
 	width: auto;
 	vertical-align: middle;
@@ -35,25 +31,30 @@
 	cursor: pointer;
 }
 
-	.SocialIcon:hover {
+	.no-touch .SocialIcon:hover {
 		-webkit-transform: scale(1);   
 		-moz-transform: scale(1);  
 		transform: scale(1);
 	}
 	
-	.SocialIcon:active {
+	.no-touch .SocialIcon:active {
 		opacity: 0.5;
 	}
 
-.license {
-	display: none;
+@import "ShareSheet";
+
+
+/* Tablet */
+@media screen and (min-width: 35em) {
+.content-wrapper {
+	width: 80%;
+}
 }
 
-@import "ShareSheet";
 
 /* Desktop */
 @media screen and (min-width: 699px) {
-.AllLinks {
+.content {
 	margin: 2.5% auto;
 }
 
@@ -63,62 +64,14 @@
 }
 
 .SocialIcon {
-	-webkit-transform: scale(1);   
-	-moz-transform: scale(1);  
-	transform: scale(1);
 	margin: 0;
 	height: 3em;
 }
-
-	.SocialIcon:hover {
-		opacity: 1;
-	}
-	
-	.SocialIcon:active {
-		opacity: 1;
-	}
-	
-.license {
-	-webkit-animation: fade-in 1.5s ease-out 5s forwards;
-	-moz-animation: fade-in 1.5s ease-out 5s forwards;
-	animation: fade-in 1.5s ease-out 5s forwards;
-	opacity: 0;
-	margin: 0 0 2.5% 2.5%;
-	width: 20%;
-	color: $text-color;
-	float: left;
 }
 
-.no-cssanimations .license {
-	opacity: 1;
-}
-
-.license a {
-	-webkit-transition: color 0.3s ease-out;
-	-moz-transition: color 0.3s ease-out;
-	transition: color 0.3s ease-out;
-	color: $text-color;
-}
-
-	.license a:hover {
-		color: $blue;
-	}
-	
-	.license a:active {
-		color: $darkblue;
-	}
-}
-
-@media screen and (max-width: 1224px) {
+/* Large Screens */
+@media screen and (min-width: 68.5em) {
 .SocialIcon {
-	height: 3.25em;
-	width: auto;
-}
-}
-
-/* iPad */
-@media all and (device-width: 768px) and (device-height: 1024px) {
-.content-wrapper {
-	width: 80%;
+	height: 4.25em;
 }
 }
