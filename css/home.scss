@@ -1,5 +1,11 @@
 @import "constants";
 
+*,
+*::before,
+*::after { /* apply a natural box layout model to all elements; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+        box-sizing: border-box;
+}
+
 body {
 	background: $bg-color;
 	margin: 0;
@@ -16,7 +22,7 @@ body {
 }
 
 a {
-	transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
+	transition: text-shadow 0.35s ease, color 0.35s ease;
 	text-decoration: none;
 	color: $text-color;
 }
@@ -75,7 +81,7 @@ ul {
 }
 
 .name {
-	transition: font-size 0.5s ease-out;
+	transition: font-size 0.5s ease;
 	margin: 1.5% auto;
 	text-align: center; 
 	line-height: 1;
@@ -85,7 +91,7 @@ ul {
 }
 
 nav {
-	transition: font-size 0.5s ease-out;
+	transition: font-size 0.5s ease;
 	font-size: 1.25em;
 	display: inline-block;
 	padding: 0 1.5% 1%;
@@ -100,7 +106,7 @@ nav a {
 }
 
 .MainText {
-	transition: font-size 0.5s ease-out;
+	transition: font-size 0.5s ease;
 	text-align: center;
 	font-size: 1em;
 	line-height: 1.3em;
@@ -120,11 +126,23 @@ nav a {
 
 
 .AllSocialLinks {
-	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-content: space-around;
+	flex-wrap: wrap;
+	list-style: none;
 	margin: 2.5% auto;
 }
 
+.no-flexbox .AllSocialLinks {
+	text-align: center;
+}
+
 .SocialLink {
+	flex: 0 auto;
+}
+
+.no-flexbox .SocialLink {
 	text-align: center;
 	display: inline;
 	margin: 0 0.75%;
@@ -147,21 +165,13 @@ nav a {
 }
 
 .SocialIcon {
-	transition: opacity 0.25s ease-out, height 0.5s ease-out, width 0.5s ease-out, transform 0.25s ease-out;
+	transition: opacity 0.25s ease-out, height 0.5s ease, width 0.5s ease, transform 0.25s ease-out;
 	transform: scale(1);
 	vertical-align: middle;
 	cursor: pointer;
 	width: auto;
 	height: 2.25em;
 }
-
-.no-touch .SocialIcon, .no-js .SocialIcon {
-	transform: scale(0.8);
-}
-
-	.no-touch .SocialIcon:hover {
-		transform: scale(1);
-	}
 
 	.no-touch .SocialIcon:active {
 		opacity: 0.5;
@@ -191,8 +201,17 @@ nav a {
 }
 
 .SocialIcon {
-	height: 3.25em;
+	height: 3em;
 }
+
+.no-touch .SocialIcon {
+	transform: scale(0.8);
+}
+
+	.no-touch .SocialIcon:hover {
+		transform: scale(1);
+	}
+
 }
 
 
@@ -219,8 +238,15 @@ nav a {
 }
 
 .headerpic, .headerpic img {
-	width: 16.5em;
-    height: 16.5em;
+	margin: 1.5% auto;
+}
+
+.info {
+	font-size: 1.25em;
+}
+
+.name {
+	margin: 1.5% auto 0;
 }
 
 .MainText {
@@ -236,7 +262,7 @@ nav a {
 }
 
 .SocialIcon {
-	height: 3.75em;
+	height: 3.5em;
 }
 }
 
@@ -245,6 +271,10 @@ nav a {
 @media screen and (min-width: 68.5em) {
 .headerpic, .headerpic img {
 	margin: 1.5% auto;
+}
+
+.info {
+	font-size: 1.35em;
 }
 
 .MainText {
