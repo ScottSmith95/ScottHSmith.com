@@ -91,9 +91,7 @@ __    / /  | |     __   | |     | |    | |       | |
 				</a>
 			</li>
 			<li class="Twitter ShareSheet SocialLink">
-				<a>
-					<img class="SocialIcon" src="images/Social%20Icons/Twitter.svg" alt="Twitter profile">
-				</a>
+				<img class="SocialIcon" src="images/Social%20Icons/Twitter.svg" alt="Twitter profile">
 			</li>
 			<li class="ADN notShareSheet SocialLink">
 				<a href="https://alpha.app.net/scottsmith" rel="me">
@@ -101,9 +99,7 @@ __    / /  | |     __   | |     | |    | |       | |
 				</a>
 			</li>
 			<li class="ADN ShareSheet SocialLink">
-				<a>
-					<img class="SocialIcon" src="images/Social%20Icons/ADN.svg" alt="App dot net profile">
-				</a>
+				<img class="SocialIcon" src="images/Social%20Icons/ADN.svg" alt="App dot net profile">
 			</li>
 			<li class="Facebook notShareSheet SocialLink">
 				<a href="http://facebook.com/ScottSmith95" rel="me">
@@ -111,9 +107,7 @@ __    / /  | |     __   | |     | |    | |       | |
 				</a>
 			</li>
 			<li class="Facebook ShareSheet SocialLink">
-				<a>
-					<img class="SocialIcon" src="images/Social%20Icons/Facebook.svg" alt="Facebook profile">
-				</a>
+				<img class="SocialIcon" src="images/Social%20Icons/Facebook.svg" alt="Facebook profile">
 			</li>
 			<li class="Dribbble SocialLink">
 				<a href="http://dribbble.com/ScottSmith95" rel="me">
@@ -131,14 +125,15 @@ __    / /  | |     __   | |     | |    | |       | |
 				</a>
 			</li>
 			<li class="Instagram ShareSheet SocialLink">
-				<a>
-					<img class="SocialIcon" src="images/Social%20Icons/Instagram.svg" alt="Instagram profile">
-				</a>
+				<img class="SocialIcon" src="images/Social%20Icons/Instagram.svg" alt="Instagram profile">
 			</li>
-			<li class="Rdio ShareSheet SocialLink">
+			<li class="Rdio notShareSheet SocialLink">
 				<a href="http://rdio.com/people/ScottSmith95/" rel="me">
 					<img class="SocialIcon" src="images/Social%20Icons/Rdio.svg" alt="Rdio profile">
 				</a>
+			</li>
+			<li class="Rdio ShareSheet SocialLink">
+				<img class="SocialIcon" src="images/Social%20Icons/Rdio.svg" alt="Rdio profile">
 			</li>
 			<li class="Email SocialLink">
 				<a href="mailto:mail@ScottHSmith.com">
@@ -324,6 +319,11 @@ if(window.navigator && window.navigator.loadPurpose === "preview"){
         // Handles opening the Instagram sheet
         $('.Instagram.ShareSheet').click(function() {
         	$('#Instagram').toggleClass('selected').toggleClass('unselected');
+        });
+        
+        // Handles opening the Rdio sheet
+        $('.Rdio.ShareSheet').click(function() {
+        	$('#Rdio').toggleClass('selected').toggleClass('unselected');
         });
         
         // Handles darkening rest of page
