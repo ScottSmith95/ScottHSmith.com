@@ -1,8 +1,6 @@
 @import "project";
 
 section {
-	-webkit-animation: intro 1.25s ease-out 0.75s forwards;
-	-moz-animation: intro 1.25s ease-out 0.75s forwards;
 	animation: intro 1.25s ease-out 0.75s forwards;
 	opacity: 0;
 	text-align: center;
@@ -16,8 +14,6 @@ section {
 }
 
 .dot {
-	-webkit-animation: slide 2s ease-out infinite;
-	-moz-animation: slide 2s ease-out infinite;
 	animation: slide 2s ease-out infinite;
 	background: $blue;
 	border-radius: 999em;
@@ -29,43 +25,21 @@ section {
 }
 
 .first {
-	-webkit-animation-delay: 0.5s;
-	-moz-animation-delay: 0.5s;
 	animation-delay: 0.5s;
 }
 
 .second {
-	-webkit-animation-delay: 0.25s;
-	-moz-animation-delay: 0.5s;
 	animation-delay: 0.5s;
 }
 
 .third {
-	-webkit-animation-delay: 0s;
-	-moz-animation-delay: 0.5s;
 	animation-delay: 0.5s;
 }
 
-@-webkit-keyframes slide {
-	0% {-webkit-transform: translateX(-100px); opacity: 0;}
-	10% {-webkit-transform: translateX(-100px); opacity: 0;}
-	32.5%, 67.5% {-webkit-transform: translateX(0); opacity: 1;}
-	90% {-webkit-transform: translateX(100px); opacity: 0;}
-	100% {-webkit-transform: translateX(100px); opacity: 0;}
-}
-
-@-moz-keyframes slide {
-	0% {-webkit-transform: translateX(-100px); opacity: 0;}
-	10% {opacity: 0;}
-	32.5%, 67.5% {-webkit-transform: translateX(0); opacity: 1;}
-	90% {opacity: 0;}
-	100% {-webkit-transform: translateX(100px); opacity: 0;}
-}
-
 @keyframes slide {
-	0% {-webkit-transform: translateX(-100px); opacity: 0;}
+	0% {transform: translateX(-100px); opacity: 0;}
 	10% {opacity: 0;}
-	32.5%, 67.5% {-webkit-transform: translateX(0); opacity: 1;}
+	32.5%, 67.5% {transform: translateX(0); opacity: 1;}
 	90% {opacity: 0;}
-	100% {-webkit-transform: translateX(100px); opacity: 0;}
+	100% {transform: translateX(100px); opacity: 0;}
 }

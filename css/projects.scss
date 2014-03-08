@@ -1,8 +1,6 @@
 @import "project";
 
 .content {
-	-webkit-animation: intro 1.25s ease-out 0.75s forwards;
-	-moz-animation: intro 1.25s ease-out 0.75s forwards;
 	animation: intro 1.25s ease-out 0.75s forwards;
 	opacity: 0;
 	text-align: center;
@@ -20,8 +18,6 @@
 }
 
 .content a {
-	-webkit-transition: color 0.35s ease-out;
-	-moz-transition: color 0.35s ease-out;
 	transition: color 0.35s ease-out;
 	color: $text-color;
 	text-decoration: none;

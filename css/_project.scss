@@ -9,7 +9,8 @@ body {
 	
 ::selection {
     background: $highlight-color;
-	}
+}
+
 ::-moz-selection {
 	background: $highlight-color;
 }
@@ -42,6 +43,8 @@ header {
 	line-height: 1.8em;
 	font-size: 1.1em;
 	text-align: center;
+	position: relative; /* Create stacking context and set z-index */
+	z-index: 3;
 }
 
 .no-cssanimations header {
@@ -113,11 +116,42 @@ header h1 ul {
 	color: rgba(68,68,68,0.85);
 }
 
+.license {
+	color: $darkgrey;
+	display: block;
+	width: 80%;
+	margin: 2.5% auto;
+}
 
-/* Tablets */
+.license p {
+	font-size: 0.9em;
+}
+
+.license a {
+	transition: color 0.3s ease-out;
+	color: $darkgrey;
+}
+
+	.no-touch .license a:hover {
+		color: $blue;
+	}
+	
+	.no-touch .license a:active {
+		color: $darkblue;
+	}
+
+
+
+/* Tablet */
 @media screen and (min-width: 35em) {
 header {
 	width: 80%;
+}
+
+.license {
+	float: left;
+	width: 22.5%;
+	margin: 0 0 2.5% 2.5%;
 }
 }
 
