@@ -15,8 +15,6 @@
 }
 
 .content {
-	-webkit-animation: intro 1.5s ease-out 0.65s forwards;
-	-moz-animation: intro 1.5s ease-out 0.65s forwards;
 	animation: intro 1.5s ease-out 0.65s forwards;
 	margin: 2.5% auto;
 	opacity: 0;
@@ -27,12 +25,10 @@
 }
 
 .grid {
-	-webkit-transition: opacity 0.5s ease-out, width 0.4s ease-out;
-	-moz-transition: opacity 0.5s ease-out, width 0.4s ease-out;
 	transition: opacity 0.5s ease-out, width 0.4s ease-out;
 	vertical-align: middle;
-	height: auto;
-	width: 100%;
+	height: 25em;
+	width: auto;
 }
 
 .grid.selected {
@@ -46,6 +42,7 @@
 }
 
 .download {
+	transition: opacity 0.35s ease-out, transform 0.3s ease;
 	position: relative;
 	vertical-align: middle;	
 	margin: 3.5% 1%;
@@ -53,45 +50,16 @@
 	width: auto;
 }
 
-.license {
-	display: none;
-}
-
-/* Desktop */
-@media screen and (min-width: 699px) {
-.grid {
-	height: 477px;
-}
-
-.grid.selected {
-	width: 559px;
-}
-
-.download {
-	-webkit-transition: opacity 0.35s ease-out, -webkit-transform 0.3s ease;
-	-moz-transition: opacity 0.35s ease-out, -moz-transform 0.3s ease;
-	transition: opacity 0.35s ease-out, transform 0.3s ease;
-	height: 4.75em;
-	margin: 3.5% 2.5% 2.5%;
-}
-
-	.download:hover {
-		-webkit-transform: translateY(-8px);
-		-moz-transform: translateY(-8px);
+	.no-touch .download:hover {
 		transform: translateY(-8px);
 	}
 	
-	.download:active {
-		-webkit-transform: translateY(0);
-		-moz-transform: translateY(0);
+	.no-touch .download:active {
 		transform: translateY(0);
 		opacity: 0.65;
 	}
 
-
 .license {
-	-webkit-animation: intro 1.5s ease-out 5s forwards;
-	-moz-animation: intro 1.5s ease-out 5s forwards;
 	animation: intro 1.5s ease-out 5s forwards;
 	opacity: 0;
 	margin: 0 0 2.5% 2.5%;
@@ -106,30 +74,31 @@
 }
 
 .license a {
-	-webkit-transition: color 0.3s ease-out;
-	-moz-transition: color 0.3s ease-out;
 	transition: color 0.3s ease-out;
 	color: $darkgrey;
 }
 
-	.license a:hover {
+	.no-touch .license a:hover {
 		color: $blue;
 	}
 	
-	.license a:active {
+	.no-touch .license a:active {
 		color: $darkblue;
 	}
-}
+
 
 /* iPad */
-@media all and (device-width: 768px) and (device-height: 1024px) {
+@media screen and (min-width: 35em) {
 .content-wrapper {
 	width: 80%;
 }
+}
 
-	 .download:hover {
-		-webkit-transform: translateY(0);
-		-moz-transform: translateY(0);
-		transform: translateY(0);
-	}
+
+/* Desktop */
+@media screen and (min-width: 50em) {
+.download {
+	height: 4.75em;
+	margin: 3.5% 2.5% 2.5%;
+}
 }

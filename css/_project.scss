@@ -15,8 +15,6 @@ body {
 }
 
 a {
-	-webkit-transition: color 0.35s ease-out;
-	-moz-transition: color 0.35s ease-out;
 	transition: color 0.35s ease-out;
 	color: $blue;
 	text-decoration: none;
@@ -31,24 +29,12 @@ ul {
 	margin: 0;
 }
 
-@-webkit-keyframes intro {
-	0% {opacity: 0;}
-	100% {opacity: 1;}
-}
-			
-@-moz-keyframes intro {
-	0% {opacity: 0;}
-	100% {opacity: 1;}
-}
-
 @keyframes intro {
 	0% {opacity: 0;}
 	100% {opacity: 1;}
 }
 
 header {
-	-webkit-animation: intro 1.25s ease-out 0.15s forwards;
-	-moz-animation: intro 1.25s ease-out 0.15s forwards;
 	animation: intro 1.25s ease-out 0.15s forwards;
 	opacity: 0;
 	margin: 0 auto;
@@ -67,6 +53,22 @@ header .nav, header .divider {
 	font-weight: 300;
 	vertical-align: top;
 }
+
+	.no-touch header .nav:hover {
+		color: $blue;
+	}
+	
+	.no-touch header .nav:active {
+		color: $darkblue;
+	}
+	
+	.no-touch header a:hover {
+		color: $darkblue;
+	}
+	
+	.no-touch header a:active {
+		color: $darkgrey;
+	}
 
 header h1 {
 	line-height: 1em;
@@ -92,8 +94,6 @@ header h1 ul {
 }
 
 .PageMenu {
-	-webkit-transition: border-bottom 0.3s ease-out;
-	-moz-transition: border-bottom 0.3s ease-out;
 	transition: border-bottom 0.3s ease-out;
 	display: none;
 	position: absolute;
@@ -109,20 +109,21 @@ header h1 ul {
 	color: rgba(68,68,68,0.5);
 }
 
-.PageMenu a:hover {
+.no-touch .PageMenu a:hover {
 	color: rgba(68,68,68,0.85);
 }
 
-/* Desktop */
-@media screen and (min-width: 699px) {
-	header .nav:hover {
-		color: $blue;
-	}
-	
-	header .nav:active {
-		color: $darkblue;
-	}
 
+/* Tablets */
+@media screen and (min-width: 35em) {
+header {
+	width: 80%;
+}
+}
+
+
+/* Desktop */
+@media screen and (min-width: 50em) {
 header {
 	margin: 2% auto 0;
 	width: 65%;
@@ -130,14 +131,6 @@ header {
 	line-height: 2em;
 	text-align: justify;
 }
-
-	header a:hover {
-		color: $darkblue;
-	}
-	
-	header a:active {
-		color: $darkgrey;
-	}
 
 header h1 {
 	line-height: 1.1em;
@@ -148,12 +141,5 @@ header h1 {
 
 header p {
 	margin: 0;
-}
-}
-
-/* iPad */
-@media all and (device-width: 768px) and (device-height: 1024px) {
-header {
-	width: 80%;
 }
 }
