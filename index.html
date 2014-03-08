@@ -135,9 +135,9 @@ __    / /  | |     __   | |     | |    | |       | |
 					<img class="SocialIcon" src="images/Social%20Icons/Instagram.svg" alt="Instagram profile">
 				</a>
 			</li>
-			<li class="Google+ SocialLink">
-				<a href="https://plus.google.com/u/0/111019875270643537691/" rel="me">
-					<img class="SocialIcon" src="images/Social%20Icons/GooglePlus.svg" alt="Google Plus profile">
+			<li class="Rdio ShareSheet SocialLink">
+				<a href="http://rdio.com/people/ScottSmith95/" rel="me">
+					<img class="SocialIcon" src="images/Social%20Icons/Rdio.svg" alt="Rdio profile">
 				</a>
 			</li>
 			<li class="Email SocialLink">
@@ -249,6 +249,26 @@ __    / /  | |     __   | |     | |    | |       | |
 	</div>
 </div>
 
+<!-- Rdio Share Sheet -->
+<div class="Sheet unselected" id="Rdio">
+	<div class="SheetContent">
+		<ul class="itemset">
+			<section>
+			<div class="itemcontainer">
+				<li><a href="instagram://user?username=ScottSmith95"><img class="appicon" src="images/App%20Icons/Rdio.png" alt="Open profile in the Instagram app"></a>Rdio</li>
+			</div>
+			<div class="itemcontainer">
+				<li><a href="http://http://instagram.com/ScottSmith95"><img class="appicon" src="images/App%20Icons/Safari.png" alt="Open profile where you are"></a>Right here</li>
+			</div>
+			<div class="itemcontainer">
+				<li><a href="googlechrome://http://instagram.com/ScottSmith95"><img class="appicon" src="images/App%20Icons/Chrome.png" alt="Open profile in Chrome"></a>Chrome</li>
+			</div>
+			</section>
+		</ul>
+		<h2 class="cancel">Cancel</h2>
+	</div>
+</div>
+
 <div id="darklayer" class="off"></div>
 
 
@@ -278,9 +298,9 @@ if(window.navigator && window.navigator.loadPurpose === "preview"){
 				$('body').addClass('iOS');
 			}
 		
-		var $sheets = $('#Twitter, #ADN, #Facebook, #Instagram');
+		var $sheets = $('#Twitter, #ADN, #Facebook, #Instagram, #Rdio');
 		
-		var $triggers = $('.Twitter.ShareSheet, .ADN.ShareSheet, .Facebook.ShareSheet, .Instagram.ShareSheet');
+		var $triggers = $('.Twitter.ShareSheet, .ADN.ShareSheet, .Facebook.ShareSheet, .Instagram.ShareSheet, .Rdio.ShareSheet');
 		
 		// Shows sheets after they have loaded
 		($sheets).delay(300).addClass('loaded');
