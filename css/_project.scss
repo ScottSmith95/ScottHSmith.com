@@ -16,7 +16,7 @@ body {
 }
 
 a {
-	transition: color 0.35s ease-out;
+	transition: color 0.35s ease;
 	color: $blue;
 	text-decoration: none;
 }
@@ -38,13 +38,14 @@ ul {
 header {
 	animation: intro 1.25s ease-out 0.15s forwards;
 	opacity: 0;
-	margin: 0 auto;
-	width: 100%;
-	line-height: 1.8em;
-	font-size: 1.1em;
 	text-align: center;
+	font-size: 1.1em;
+	line-height: 1.8em;
 	position: relative; /* Create stacking context and set z-index */
 	z-index: 3;
+	width: 100%;
+	max-width: 40em;
+	margin: 0 auto;
 }
 
 .no-cssanimations header {
@@ -97,7 +98,7 @@ header h1 ul {
 }
 
 .PageMenu {
-	transition: border-bottom 0.3s ease-out;
+	transition: border-bottom 0.3s ease;
 	display: none;
 	position: absolute;
 	background: rgba(228,230,232,0.75);
@@ -128,7 +129,7 @@ header h1 ul {
 }
 
 .license a {
-	transition: color 0.3s ease-out;
+	transition: color 0.3s ease;
 	color: $darkgrey;
 }
 
@@ -141,26 +142,11 @@ header h1 ul {
 	}
 
 
-
 /* Tablet */
 @media screen and (min-width: 35em) {
 header {
-	width: 80%;
-}
-
-.license {
-	float: left;
-	width: 22.5%;
-	margin: 0 0 2.5% 2.5%;
-}
-}
-
-
-/* Desktop */
-@media screen and (min-width: 50em) {
-header {
 	margin: 2% auto 0;
-	width: 65%;
+	width: 80%;
 	font-size: 1.2em;
 	line-height: 2em;
 	text-align: justify;
@@ -175,5 +161,19 @@ header h1 {
 
 header p {
 	margin: 0;
+}
+
+.license {
+	float: left;
+	width: 22.5%;
+	margin: 0 0 2.5% 2.5%;
+}
+}
+
+
+/* Desktop */
+@media screen and (min-width: 50em) {
+header {
+	width: 65%;
 }
 }
