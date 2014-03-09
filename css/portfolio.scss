@@ -40,25 +40,20 @@ a {
 	column-break-inside: avoid;
 	overflow: hidden;
 	border-radius: 0.35em;
-	margin: 2.5%;
 }
 
-	
+	.no-cssanimations .item {
+		opacity: 1;
+	}
+
+	.touch .item {
+		margin: 2.5%;
+	}
 
 	.no-touch .item:hover {
 		box-shadow: 0 0 10px rgba(0,0,0,0.25);
 		z-index: 2;
 		overflow: hidden;
-	}
-	
-	.no-csscolumns .item {
-		float: right;
-		overflow: hidden;
-		width: 48%;
-	}
-	
-	.no-cssanimations .item {
-		opacity: 1;
 	}
 	
 	.no-touch .item-expand-area {
@@ -173,6 +168,12 @@ a {
 	display: block;
 	width: 95%;
 	margin: 2.5% auto 0;
+}
+
+.no-csscolumns .item {
+	float: right;
+	overflow: hidden;
+	width: 48%;
 }
 
 .item-expand-area:nth-child(1) .item {
