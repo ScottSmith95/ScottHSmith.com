@@ -35,6 +35,43 @@ module.exports = function(grunt) {
 				ext: '.css'
 			}
 		},
+		
+		modernizr: {
+			makefile: {
+				"devFile": "scripts/src/modernizr-dev.js",
+				"outputFile": "scripts/src/modernizr.js",
+				"extra": {
+					"shiv": true,
+					"printshiv": false,
+					"load": false,
+					"mq": false,
+					"cssclasses": true
+				},
+				"extensibility": {
+					"addtest": false,
+					"prefixed": false,
+					"teststyles": true,
+					"testprops": true,
+					"testallprops": true,
+					"hasevents": false,
+					"prefixes": true,
+					"domprefixes": true
+				},
+				"uglify": false,
+				"tests": ['flexbox', 'cssanimations', 'csscolumns', 'svg', 'touch'],
+				"parseFiles": false,
+				"matchCommunityTests": false,
+			}
+		},
+		
+		'jsmin-sourcemap': {
+			minify: {
+				src: ['scripts/src/fastclick.js', 'scripts/src/modernizr.js', 'scripts/src/main.js'],
+				srcRoot: '/',
+				dest: 'scripts/main.js',
+				destMap: 'scripts/srcmap/main.js.map'
+			}
+		},
 
         watch: {
 			css: {
@@ -55,11 +92,13 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks("grunt-modernizr");
+    grunt.loadNpmTasks('grunt-jsmin-sourcemap');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
 	// Workflows
 	// $ grunt: Concencates, prefixes, minifies JS and CSS files. The works.
-	grunt.registerTask('default', ['sass', 'autoprefixer']);
+	grunt.registerTask('default', ['sass', 'autoprefixer', 'modernizr', 'jsmin-sourcemap']);
 		
 	// $ grunt dev: Watches for changes while developing
 	grunt.registerTask('dev', ['watch']);
