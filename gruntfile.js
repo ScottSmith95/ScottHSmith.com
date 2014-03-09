@@ -46,7 +46,7 @@ module.exports = function(grunt) {
 			},
 			livereload: {
 				options: { livereload: true },
-				files: ['*.html', 'css/*.css'],
+				files: ['**.html', 'css/*.scss'],
 			}
 		},
     });
