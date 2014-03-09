@@ -246,7 +246,7 @@ nav a {
 }
 
 .name {
-	margin: 1.5% auto 0;
+	margin-bottom: 0;
 }
 
 .MainText {
@@ -269,10 +269,6 @@ nav a {
 
 /* Large Screen */
 @media screen and (min-width: 68.5em) {
-.headerpic, .headerpic img {
-	margin: 1.5% auto;
-}
-
 .info {
 	font-size: 1.35em;
 }
