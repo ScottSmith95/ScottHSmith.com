@@ -27,6 +27,7 @@ a {
 	display: flex;
 	flex-flow: column nowrap;
 }
+
 .item {
 	animation: fly-in-from-top 1.15s ease-in-out forwards;
 	transition: box-shadow 0.4s ease-out;
@@ -34,12 +35,15 @@ a {
 	background: #EEEEEE;
 	color: $darkgrey;
 	opacity: 0;
-	border-radius: 0.35em;
 	z-index: 1;
 	display: inline-block;
 	column-break-inside: avoid;
 	overflow: hidden;
+	border-radius: 0.35em;
+	margin: 2.5%;
 }
+
+	
 
 	.no-touch .item:hover {
 		box-shadow: 0 0 10px rgba(0,0,0,0.25);
@@ -50,7 +54,7 @@ a {
 	.no-csscolumns .item {
 		float: right;
 		overflow: hidden;
-		width: 33.33%;
+		width: 48%;
 	}
 	
 	.no-cssanimations .item {
