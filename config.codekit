@@ -57,7 +57,7 @@
 		"inputAbbreviatedPath": "\/css\/decode.scss",
 		"outputAbbreviatedPath": "\/css\/build\/decode.css",
 		"outputPathIsSetByUser": 1,
-		"outputStyle": 0,
+		"outputStyle": 3,
 		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 0,
 		"useLibsass": 1
@@ -72,7 +72,7 @@
 		"inputAbbreviatedPath": "\/css\/home.scss",
 		"outputAbbreviatedPath": "\/css\/build\/home.css",
 		"outputPathIsSetByUser": 1,
-		"outputStyle": 0,
+		"outputStyle": 3,
 		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 0,
 		"useLibsass": 1
@@ -87,7 +87,7 @@
 		"inputAbbreviatedPath": "\/css\/loading-animation.scss",
 		"outputAbbreviatedPath": "\/css\/build\/loading-animation.css",
 		"outputPathIsSetByUser": 1,
-		"outputStyle": 0,
+		"outputStyle": 3,
 		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 0,
 		"useLibsass": 1
@@ -102,7 +102,7 @@
 		"inputAbbreviatedPath": "\/css\/portfolio.scss",
 		"outputAbbreviatedPath": "\/css\/build\/portfolio.css",
 		"outputPathIsSetByUser": 1,
-		"outputStyle": 0,
+		"outputStyle": 3,
 		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 0,
 		"useLibsass": 1
@@ -117,7 +117,7 @@
 		"inputAbbreviatedPath": "\/css\/projects.scss",
 		"outputAbbreviatedPath": "\/css\/build\/projects.css",
 		"outputPathIsSetByUser": 1,
-		"outputStyle": 0,
+		"outputStyle": 3,
 		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 0,
 		"useLibsass": 1
@@ -132,7 +132,7 @@
 		"inputAbbreviatedPath": "\/css\/share-sheets.scss",
 		"outputAbbreviatedPath": "\/css\/build\/share-sheets.css",
 		"outputPathIsSetByUser": 1,
-		"outputStyle": 0,
+		"outputStyle": 3,
 		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 0,
 		"useLibsass": 1
@@ -147,7 +147,7 @@
 		"inputAbbreviatedPath": "\/css\/social-icons.scss",
 		"outputAbbreviatedPath": "\/css\/build\/social-icons.css",
 		"outputPathIsSetByUser": 1,
-		"outputStyle": 0,
+		"outputStyle": 3,
 		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 0,
 		"useLibsass": 1
