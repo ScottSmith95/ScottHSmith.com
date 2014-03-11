@@ -99,9 +99,10 @@ header h1 ul {
 
 .PageMenu {
 	transition: border-bottom 0.3s ease;
-	display: none;
-	position: absolute;
 	background: rgba(228,230,232,0.75);
+	text-align: left;
+	position: absolute;
+	display: none;
 	border-bottom: 0 solid $blue;
 }
 
