@@ -11,7 +11,8 @@
 	$commands = array(
 		'echo $PWD',
 		'whoami',
-		'git pull',
+		'git fetch --all',
+		"git checkout --force',
 		'git status',
 	);
 
