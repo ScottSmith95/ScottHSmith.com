@@ -34,5 +34,3 @@ class GitHub_Deploy extends Deploy {
 }
 // Starts the deploy attempt.
 new GitHub_Deploy( $_POST['payload'] );
-
-echo 'Deployed successfully!';
