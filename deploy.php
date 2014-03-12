@@ -30,7 +30,7 @@
 
 	// Make it pretty for manual user access (and why not?)
 ?>
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
