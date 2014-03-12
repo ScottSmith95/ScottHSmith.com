@@ -183,7 +183,7 @@ abstract class Deploy {
 			exec( 'git pull ' . $this->_remote . ' ' . $this->_branch, $output );
 
 			// Secure the .git directory
-			echo exec( 'chmod -R og-rx .git' );
+			echo exec( 'chmod -R g-rx .git' );
 
 			if ( is_callable( $this->_post_deploy ) )
 				call_user_func( $this->_post_deploy );
