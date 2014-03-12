@@ -1,7 +1,7 @@
 <?php
 // Causes the script to die if we are not using an actual enpoint to access it.
 if( ! defined( 'ACTIVE_DEPLOY_ENDPOINT' ) || true !== ACTIVE_DEPLOY_ENDPOINT )
-	die( '<h1>No Access</h1><p>An enpoint needs to be defined to use this file.</p>' );
+	die( 'No Access. An endpoint needs to be defined to use this file.' );
 /**
  * The main Deploy class. This is set up for GIT repos.
  *
