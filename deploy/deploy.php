@@ -1,7 +1,7 @@
 <?php
 // Make sure we have a payload, stop if we do not.
 if( ! isset( $_POST['payload'] ) )
-	die( '<h1>No payload present</h1><p>A GitHub POST payload is required to deploy from this script.</p>' );
+	die( 'No payload present. A GitHub POST payload is required to deploy from this script.' );
 
 /**
  * Tell the script this is an active end point.
