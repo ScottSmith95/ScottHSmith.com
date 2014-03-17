@@ -48,7 +48,7 @@
 	background: $bg-color;
 	position: relative;
 	z-index: 2;
-	box-shadow: 0px -0.5em 2em rgba(0,0,0,0.5);
+	box-shadow: 0px 0.5em 2em rgba(0,0,0,0.5);
 }
 
 .content {
@@ -89,7 +89,7 @@
 	.no-flexbox .section-head {
 		float: left;
 	}
-
+	
 .desc {
 	font-size: 1em;
 	line-height: 1.5;
