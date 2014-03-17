@@ -14,23 +14,29 @@
 }
 
 .screenshot-box img {
+	animation: pop-closed 0.75s linear 0.75s forwards;
+	position: relative;
+	top: 1em;
 	width: 75%;
 	display: block;
-	margin: 0 auto;
-	position: relative;
 	box-shadow: 0px 0px 5px rgba(0,0,0,0.75);
-	top: 1em;
-	animation: pop-closed 0.75s linear 0.75s forwards;
+	margin: 0 auto;
 }
 
 .no-touch .screenshot-box a img {
-	transition: opacity 0.25s ease-out;
+	transition: opacity 0.25s ease-out, transform 0.4s ease;
+	transform: translateY(0%);
 	opacity: 1;
 }
 
-.no-touch .screenshot-box a:hover img {
-	opacity: 0.75;
-}
+	.no-touch .screenshot-box a:hover img {
+		transform: translateY(-5%);
+	}
+	
+	.no-touch .screenshot-box a:active img {
+		transform: translateY(0%);
+		opacity: 0.75;
+	}
 
 @keyframes pop-closed {
 	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
