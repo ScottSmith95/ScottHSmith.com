@@ -11,15 +11,19 @@ body {
     background: $highlight-color;
 }
 
-::-moz-selection {
-	background: $highlight-color;
-}
-
 a {
 	transition: color 0.35s ease;
 	color: $blue;
 	text-decoration: none;
 }
+
+	a:hover {
+		color: $darkblue;
+	}
+	
+	a:active {
+		color: $darkgrey;
+	}
 
 img {
 	border: none;
@@ -147,7 +151,7 @@ header h1 ul {
 @media screen and (min-width: 35em) {
 header {
 	margin: 2% auto 0;
-	width: 80%;
+	width: 85%;
 	font-size: 1.2em;
 	line-height: 2em;
 	text-align: justify;
