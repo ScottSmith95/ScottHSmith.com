@@ -55,7 +55,7 @@
 }
 
 .content section {
-	text-align: justify;
+	text-align: left;
 	padding: 0 0 5%;
 	display: flex;
 	align-items: flex-start;
@@ -81,7 +81,7 @@
 
 .desc {
 	font-size: 1em;
-	line-height: 2em;
+	line-height: 1.5;
 	margin: 0 auto;
 	flex: 4 3 75%;
 }
@@ -105,28 +105,22 @@
 section.donate {
 	padding-bottom: 5%;
 	margin-bottom: 0;
-	text-align: center;
-}
-
-.donate .button {
-	text-decoration: none;
-	padding: 1.5% 3.5%;
 }
 
 .button {
 	transition: background 0.25s ease-out;
-	display: inline;
-	margin: 2.5% auto 1.25%;
-	text-align: center;
 	-webkit-appearance: none;
-	cursor: pointer;
-	background: $blue;
-	border-radius: 0.35em;
-	border: none;
-	font-size: 1.1em;
+	padding: 0.25em 0.5em;
+	display: inline;
+	font-size: 1em;
 	font-weight: bold;
-	padding: 1% 2%;
 	color: #FFF;
+	background: $blue;
+	text-align: center;
+	cursor: pointer;
+	border: none;
+	border-radius: 0.35em;
+	margin: 2.5% auto 1.25%;
 }
 
 	.button:hover {
@@ -137,6 +131,11 @@ section.donate {
 		outline: none;
 		background: #00A23A;
 	}
+
+.donate .button {
+	font-size: 1.1em;
+	margin: 2.5% auto 1.25% 0.5em;
+}
 
 /* Tablet */
 @media screen and (min-width: 35em) {
@@ -164,6 +163,10 @@ section.donate {
 .desc {
 	font-size: 1.2em;
 }
+
+.donate .button {
+	font-size: 1.25em;
+}
 }
 
 /* Desktop */
@@ -178,5 +181,9 @@ section.donate {
 
 .section-head {
 	width: 15em;
+}
+
+.desc {
+	line-height: 2;
 }
 }
