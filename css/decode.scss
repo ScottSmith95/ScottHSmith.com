@@ -24,7 +24,7 @@
 }
 
 .no-touch .screenshot-box a img {
-	transition: opacity 0.25s ease-out, transform 0.4s ease;
+	transition: opacity 0.25s ease-out, transform 0.25s ease;
 	transform: translateY(0%);
 	opacity: 1;
 }
@@ -60,8 +60,13 @@
 	margin: 0 auto;
 }
 
+	.no-cssanimations .content {
+		opacity: 1;
+	}
+
 .content section {
 	text-align: left;
+	max-width: 50em;
 	padding: 0 0 5%;
 	display: flex;
 	align-items: flex-start;
@@ -78,7 +83,7 @@
 	height: auto;
 	max-height: 200px;
 	flex: 0 1 auto;
-	margin-top: 0.75em; /* Aligns section head with top of paragraph */
+	margin-top: 1em; /* Aligns section head with top of paragraph */
 }
 
 	.no-flexbox .section-head {
@@ -95,18 +100,54 @@
 	.no-flexbox .desc {
 		overflow: hidden;
 	}
-	
-	.desc a:hover {
-		color: $darkblue;
-	}
-	
-	.desc a:active {
-		color: $darkgrey;
-	}
 
-.no-cssanimations section, .no-cssanimations .button {
-	opacity: 1;
+.desc p {
+	margin: 0.5em 0;
 }
+
+.options .button {
+	margin-right: 0.5em;
+}
+
+	.options .button:last-child {
+		margin-right: 0;
+	}
+	
+	.options .button.demo {
+		background: #E57429;
+	}
+	
+	.options .button.demo:hover {
+		background: #CC6725;
+	}
+	
+	.options .button.download {
+		background: #2AE56F;
+	}
+	
+	.options .button.download:hover {
+		background: #25CC63;
+	}
+	
+	.options .button.release-notes {
+		background: #29C2E5;
+	}
+	
+	.options .button.release-notes:hover {
+		background: #25ADCC;
+	}
+	
+	.options .button.docs {
+		background: #E6512A;
+	}
+	
+	.options .button.docs:hover {
+		background: #CC4825;
+	}
+	
+	.options .button.demo:active, .options .button.download:active, .options .button.release-notes:active, .options .button.docs:active {
+		background: #35495D;
+	}
 
 section.donate {
 	padding-bottom: 5%;
@@ -117,7 +158,8 @@ section.donate {
 	transition: background 0.25s ease-out;
 	-webkit-appearance: none;
 	padding: 0.25em 0.5em;
-	display: inline;
+	box-sizing: border-box;
+	display: inline-block;
 	font-size: 1em;
 	font-weight: bold;
 	color: #FFF;
@@ -129,12 +171,20 @@ section.donate {
 	margin: 2.5% auto 1.25%;
 }
 
-	.button:hover {
+	.button:hover, .button:active, .button:focus {
+		color: #FFF;
+		outline: none;
+	}
+
+.donate .button {
+	background: $blue;
+}
+
+	.donate .button:hover {
 		background: #00CC48;
 	}
 	
-	.button:active, .button:focus {
-		outline: none;
+	.donate .button:active, .donate .button:focus {
 		background: #00A23A;
 	}
 
@@ -156,7 +206,6 @@ section.donate {
 
 .content section {
 	text-align: left;
-	width: 65%;
 	padding: 2.5% 0;
 	align-items: center;
 }
@@ -168,6 +217,10 @@ section.donate {
 
 .desc {
 	font-size: 1.2em;
+}
+
+.desc p {
+	margin: 1em 0;
 }
 
 .donate .button {
