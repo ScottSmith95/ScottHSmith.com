@@ -46,24 +46,50 @@
 }
 
 .content {
-	-webkit-animation: intro 1.25s ease-out 0.75s forwards;
-	-moz-animation: intro 1.25s ease-out 0.75s forwards;
 	animation: intro 1.25s ease-out 0.75s forwards;
 	opacity: 0;
 	text-align: center;
 	width: 92.5%;
 	padding-top: 5%;
 	margin: 0 auto;
-	text-align: center;
 }
+
+.content section {
+	text-align: justify;
+	padding: 0 0 5%;
+	display: flex;
+	align-items: flex-start;
+	margin: 0 auto;
+}
+
+	.no-flexbox .content section {
+		clear: both;
+	}
+	
+.section-head {
+	width: 4em;
+	max-width: 200px;
+	height: auto;
+	max-height: 200px;
+	flex: 0 1 auto;
+	margin-top: 0.75em; /* Aligns section head with top of paragraph */
+}
+
+	.no-flexbox .section-head {
+		float: left;
+	}
 
 .desc {
-	margin: 2% auto 0;
 	font-size: 1em;
 	line-height: 2em;
-	text-align: left;
+	margin: 0 auto;
+	flex: 4 3 75%;
 }
 
+	.no-flexbox .desc {
+		overflow: hidden;
+	}
+	
 	.desc a:hover {
 		color: $darkblue;
 	}
@@ -76,12 +102,10 @@
 	opacity: 1;
 }
 
-.themeimage {
-	max-width: 100%;
-}
-
-.donate {
-	margin: 0 auto 5%;
+section.donate {
+	padding-bottom: 5%;
+	margin-bottom: 0;
+	text-align: center;
 }
 
 .donate .button {
@@ -92,7 +116,7 @@
 .button {
 	transition: background 0.25s ease-out;
 	display: inline;
-	margin: 2.5% 1.25%;
+	margin: 2.5% auto 1.25%;
 	text-align: center;
 	-webkit-appearance: none;
 	cursor: pointer;
@@ -103,7 +127,6 @@
 	font-weight: bold;
 	padding: 1% 2%;
 	color: #FFF;
-	width: 20%;
 }
 
 	.button:hover {
@@ -126,13 +149,20 @@
 	top: 2em;
 }
 
-.content {
+.content section {
+	text-align: left;
 	width: 65%;
+	padding: 2.5% 0;
+	align-items: center;
+}
+
+.section-head {
+	width: 8em;
+	margin-top: 0;
 }
 
 .desc {
 	font-size: 1.2em;
-	text-align: justify;
 }
 }
 
@@ -146,6 +176,7 @@
 	padding-top: 2.5%;
 }
 
-.themeimage {
+.section-head {
+	width: 15em;
 }
 }
