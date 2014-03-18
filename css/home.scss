@@ -59,8 +59,10 @@ ul {
 .headerpic, .headerpic img {
 	animation: fly-in-from-top 1.25s ease-in-out forwards;
 	transition: width 0.5s ease-out, height 0.5s ease-out, background-size 0.5s ease-out;
-	background: url("../../images/ScottPic_600.jpg?03-2014") no-repeat center;
-	background-size: cover;
+	background-image: url("/images/ScottPic_600.jpg?03-2014");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100%;
 	width: 10em;
     height: 10em;
     border-radius: 50%;
@@ -68,10 +70,13 @@ ul {
 	margin: 3.5% auto;
 }
 
-.headerpic.fourohfour, .headerpic.fourohfour img {
-	background: none;
-	border-radius: none;
-}
+	.fourohfour .headerpic, .fourohfour .headerpic img {
+		background: none;
+	}
+	
+	.sexy .headerpic {
+		background-image: url("/images/SexyScott.jpg?03-2014");
+	}
 
 .bottomanimated {
 	animation: fly-in-from-bottom 1.25s ease-in-out forwards;
