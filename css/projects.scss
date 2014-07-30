@@ -1,10 +1,10 @@
-@import "project";
+@import 'project';
 
 .content {
 	animation: intro 1.25s ease-out 0.75s forwards;
+	margin: 2% auto;
 	opacity: 0;
 	text-align: center;
-	margin: 2% auto;
 }
 
 .no-cssanimations .content {
@@ -12,9 +12,9 @@
 }
 
 .content li {
-	list-style: none;
 	font-size: 1.6em;
 	line-height: 2em;
+	list-style: none;
 }
 
 .content a {
@@ -23,17 +23,17 @@
 	text-decoration: none;
 }
 
-	.content a:hover {
-		color: $blue;
-	}
-	
-	.content a:active {
-		color: $darkblue;
-	}
+.content a:hover {
+	color: $blue;
+}
+
+.content a:active {
+	color: $darkblue;
+}
 
 /* Desktop */
 @media screen and (min-width: 35em) {
-.content li {
-	font-size: 1.8em;
-}
+	.content li {
+		font-size: 1.8em;
+	}
 }

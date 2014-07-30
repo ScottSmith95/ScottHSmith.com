@@ -1,11 +1,11 @@
-@import "project";
+@import 'project';
 
 section {
 	animation: intro 1.25s ease-out 0.75s forwards;
-	opacity: 0;
-	text-align: center;
 	width: 65%;
 	margin: 5% auto 0;
+	opacity: 0;
+	text-align: center;
 	text-align: center;
 }
 
@@ -15,13 +15,13 @@ section {
 
 .dot {
 	animation: slide 2s ease-out infinite;
-	background: $blue;
-	border-radius: 999em;
-	height: 1em;
-	width: 1em;
 	display: inline-block;
-	opacity: 0;
+	width: 1em;
+	height: 1em;
+	border-radius: 999em;
 	margin: 0 0.5%;
+	opacity: 0;
+	background: $blue;
 }
 
 .first {
@@ -37,9 +37,22 @@ section {
 }
 
 @keyframes slide {
-	0% {transform: translateX(-100px); opacity: 0;}
-	10% {opacity: 0;}
-	32.5%, 67.5% {transform: translateX(0); opacity: 1;}
-	90% {opacity: 0;}
-	100% {transform: translateX(100px); opacity: 0;}
+	0% {
+		transform: translateX(-100px);
+		opacity: 0;
+	}
+	10% {
+		opacity: 0;
+	}
+	32.5%, 67.5% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+	90% {
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(100px);
+		opacity: 0;
+	}
 }

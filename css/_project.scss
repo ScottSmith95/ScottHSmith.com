@@ -1,14 +1,14 @@
-@import "constants";
+@import 'constants';
 
 body {
+	margin: 0;
+	color: $text-color;
 	background: $bg-color;
 	font: normal 300 100%/1.5 $font-fam;
-	color: $text-color;
-	margin: 0;
 }
-	
+
 ::selection {
-    background: $highlight-color;
+	background: $highlight-color;
 }
 
 a {
@@ -17,13 +17,13 @@ a {
 	text-decoration: none;
 }
 
-	a:hover {
-		color: $darkblue;
-	}
-	
-	a:active {
-		color: $darkgrey;
-	}
+a:hover {
+	color: $darkblue;
+}
+
+a:active {
+	color: $darkgrey;
+}
 
 img {
 	border: none;
@@ -35,21 +35,25 @@ ul {
 }
 
 @keyframes intro {
-	0% {opacity: 0;}
-	100% {opacity: 1;}
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
 header {
 	animation: intro 1.25s ease-out 0.15s forwards;
-	opacity: 0;
-	text-align: center;
-	font-size: 1.1em;
-	line-height: 1.8em;
 	position: relative; /* Create stacking context and set z-index */
 	z-index: 3;
 	width: 100%;
 	max-width: 40em;
 	margin: 0 auto;
+	opacity: 0;
+	font-size: 1.1em;
+	line-height: 1.8em;
+	text-align: center;
 }
 
 .no-cssanimations header {
@@ -62,28 +66,28 @@ header .nav, header .divider {
 	vertical-align: top;
 }
 
-	.no-touch header .nav:hover {
-		color: $blue;
-	}
-	
-	.no-touch header .nav:active {
-		color: $darkblue;
-	}
-	
-	.no-touch header a:hover {
-		color: $darkblue;
-	}
-	
-	.no-touch header a:active {
-		color: $darkgrey;
-	}
+.no-touch header .nav:hover {
+	color: $blue;
+}
+
+.no-touch header .nav:active {
+	color: $darkblue;
+}
+
+.no-touch header a:hover {
+	color: $darkblue;
+}
+
+.no-touch header a:active {
+	color: $darkgrey;
+}
 
 header h1 {
-	line-height: 1em;
-	font-size: 1.5em;
 	padding-bottom: 3.5%;
 	border-bottom: 1px solid $blue;
 	margin: 0.65em 0;
+	font-size: 1.5em;
+	line-height: 1em;
 }
 
 header p {
@@ -92,9 +96,9 @@ header p {
 }
 
 header h1 ul {
-	list-style: none;
 	display: inline-block;
 	line-height: 1.3em;
+	list-style: none;
 }
 
 #current_page {
@@ -103,11 +107,11 @@ header h1 ul {
 
 .PageMenu {
 	transition: border-bottom 0.3s ease;
+	display: none;
+	position: absolute;
+	border-bottom: 0 solid $blue;
 	background: rgba(228,230,232,0.75);
 	text-align: left;
-	position: absolute;
-	display: none;
-	border-bottom: 0 solid $blue;
 }
 
 .PageMenu.shown {
@@ -123,10 +127,10 @@ header h1 ul {
 }
 
 .license {
-	color: $darkgrey;
 	display: block;
 	width: 80%;
 	margin: 2.5% auto;
+	color: $darkgrey;
 }
 
 .license p {
@@ -138,47 +142,47 @@ header h1 ul {
 	color: $darkgrey;
 }
 
-	.no-touch .license a:hover {
-		color: $blue;
-	}
-	
-	.no-touch .license a:active {
-		color: $darkblue;
-	}
+.no-touch .license a:hover {
+	color: $blue;
+}
+
+.no-touch .license a:active {
+	color: $darkblue;
+}
 
 
 /* Tablet */
 @media screen and (min-width: 35em) {
-header {
-	margin: 2% auto 0;
-	width: 85%;
-	font-size: 1.2em;
-	line-height: 2em;
-	text-align: justify;
-}
+	header {
+		width: 85%;
+		margin: 2% auto 0;
+		font-size: 1.2em;
+		line-height: 2em;
+		text-align: justify;
+	}
 
-header h1 {
-	line-height: 1.1em;
-	font-size: 2em;
-	padding-bottom: 0;
-	border-bottom: none;
-}
+	header h1 {
+		padding-bottom: 0;
+		border-bottom: none;
+		font-size: 2em;
+		line-height: 1.1em;
+	}
 
-header p {
-	margin: 0;
-}
+	header p {
+		margin: 0;
+	}
 
-.license {
-	float: left;
-	width: 22.5%;
-	margin: 0 0 2.5% 2.5%;
-}
+	.license {
+		float: left;
+		width: 22.5%;
+		margin: 0 0 2.5% 2.5%;
+	}
 }
 
 
 /* Desktop */
 @media screen and (min-width: 50em) {
-header {
-	width: 65%;
-}
+	header {
+		width: 65%;
+	}
 }

@@ -1,16 +1,16 @@
-@import "project";
+@import 'project';
 
 .lightcolor {
 	color: $lightgrey;
 }
 
 .bluecolor {
-	color: $blue
+	color: $blue;
 }
 
 .content-wrapper {
-	margin: 0 auto;
 	width: 65%;
+	margin: 0 auto;
 	text-align: center;
 }
 
@@ -26,9 +26,9 @@
 
 .grid {
 	transition: opacity 0.5s ease-out, max-width 0.4s ease-out;
-	vertical-align: middle;
-	max-height: 25em;
 	width: auto;
+	max-height: 25em;
+	vertical-align: middle;
 }
 
 .grid.selected {
@@ -43,34 +43,34 @@
 
 .download {
 	transition: opacity 0.35s ease-out, transform 0.3s ease;
-	vertical-align: middle;	
-	margin: 7.5% 1% 0;
-	height: 2.75em;
 	width: auto;
+	height: 2.75em;
+	margin: 7.5% 1% 0;
+	vertical-align: middle;
 }
 
-	.no-touch .download:hover {
-		transform: translateY(-8px);
-	}
-	
-	.no-touch .download:active {
-		transform: translateY(0);
-		opacity: 0.65;
-	}
+.no-touch .download:hover {
+	transform: translateY(-8px);
+}
+
+.no-touch .download:active {
+	transform: translateY(0);
+	opacity: 0.65;
+}
 
 
 /* Tablet */
 @media screen and (min-width: 35em) {
-.content-wrapper {
-	width: 80%;
-}
+	.content-wrapper {
+		width: 80%;
+	}
 }
 
 
 /* Desktop */
 @media screen and (min-width: 50em) {
-.download {
-	height: 4.75em;
-	margin: 3.5% 2.5% 2.5%;
-}
+	.download {
+		height: 4.75em;
+		margin: 3.5% 2.5% 2.5%;
+	}
 }

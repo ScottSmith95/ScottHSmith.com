@@ -7,7 +7,7 @@
 
 window.Modernizr = (function( window, document, undefined ) {
 
-    var version = '2.7.1',
+    var version = '2.8.3',
 
     Modernizr = {},
 

@@ -4,11 +4,26 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		
-		sass: {
-			make: {
+		csscomb: {
+			comb: {
 				options: {
-					style: 'compressed',
-					sourcemap: true
+					config: 'csscomb.json'
+				},
+				build: [{
+					expand: true,
+					flatten: true,
+					cwd: 'css/',
+					src: ['*.scss'],
+					dest: 'css/',
+				}]
+			}
+		},
+		
+		sass: {
+			build: {
+				options: {
+					outputStyle: 'nested',
+					sourceMap: true
 				},
 				files: [{
 					expand: true,
@@ -16,7 +31,7 @@ module.exports = function(grunt) {
 					cwd: 'css/',
 					src: ['*.scss'],
 					dest: 'css/build/',
-					ext: '.sassed.css'
+					ext: '.css'
 				}]
 			}
 		},
@@ -26,20 +41,29 @@ module.exports = function(grunt) {
 				browsers: ['> 1%', 'last 2 versions', 'ie 9', 'ie 8', 'firefox 24', 'opera 12.1'],
 				map: true
 			},
-			prefix: {
+			files: {
 				expand: true,
 				flatten: true,
 				cwd: 'css/build/',
-				src: ['*.sassed.css'],
+				src: ['*.css'],
 				dest: 'css/build/',
-				ext: '.css'
+			}
+		},
+		
+		cssmin: {
+			minify: {
+				expand: true,
+				flatten: true,
+				cwd: 'css/build/',
+				src: ['*.css'],
+				dest: 'css/build/',
 			}
 		},
 		
 		modernizr: {
 			makefile: {
-				"devFile": "scripts/src/modernizr-dev.js",
-				"outputFile": "scripts/src/modernizr.js",
+				"devFile": "remote", // Skip check for dev file
+				"outputFile": "scripts/modernizr.js",
 				"extra": {
 					"shiv": true,
 					"printshiv": false,
@@ -64,41 +88,71 @@ module.exports = function(grunt) {
 			}
 		},
 		
-		'jsmin-sourcemap': {
-			minify: {
-				src: ['scripts/src/fastclick.js', 'scripts/src/modernizr.js', 'scripts/src/main.js'],
-				srcRoot: '/',
-				dest: 'scripts/main.js',
-				destMap: 'scripts/srcmap/main.js.map'
+		uglify: {
+			options: {
+				sourceMap: true
+			},
+			build_main: {
+				files: {
+					'scripts/build/main.js': ['scripts/modernizr.js', 'bower_components/fastclick/lib/fastclick.js', 'scripts/main.js'],
+				}
+			}
+		},
+		
+		imageoptim: {
+			optimize: {
+				src: ['images/**/*.jpg', 'images/**/*.png'],
+				options: {
+					jpegMini: false,
+					imageAlpha: true,
+					quitAfter: true
+				}
 			}
 		},
 
         watch: {
-			css: {
+			styles: {
 				files: ['css/*.scss'],
-				tasks: ['sass', 'autoprefixer'],
+				tasks: ['csscomb, sass', 'autoprefixer'],
+				options: {
+					spawn: false
+				}
+			},
+			scripts: {
+				files: ['scripts/*.js'],
+				tasks: ['uglify'],
+				options: {
+					spawn: false
+				}
+			},
+			images: {
+				files: ['images/**/*.jpg', 'images/**/*.png'],
+				tasks: ['newer:imageoptim'],
 				options: {
 					spawn: false
 				}
 			},
 			livereload: {
 				options: { livereload: true },
-				files: ['**.html', 'css/*.scss'],
+				files: ['**/*.html', 'css/*.scss', 'scripts/*.js', 'images/**/*.jpg', 'images/**/*.png'],
 			}
 		},
     });
     
     // Plugin List
-    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-csscomb');
+    grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks("grunt-modernizr");
-    grunt.loadNpmTasks('grunt-jsmin-sourcemap');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-newer');
+	grunt.loadNpmTasks('grunt-imageoptim');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
 	// Workflows
 	// $ grunt: Concencates, prefixes, minifies JS and CSS files. The works.
-	grunt.registerTask('default', ['sass', 'autoprefixer', 'modernizr', 'jsmin-sourcemap']);
+	grunt.registerTask('default', ['csscomb', 'sass', 'autoprefixer', 'cssmin' , 'modernizr', 'uglify', 'newer:imageoptim']);
 		
 	// $ grunt dev: Watches for changes while developing
 	grunt.registerTask('dev', ['watch']);

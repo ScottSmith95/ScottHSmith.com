@@ -1,9 +1,9 @@
-@import "project";
+@import 'project';
 
 .content {
 	animation: intro 1.25s ease-out 0.75s forwards;
-	opacity: 0;
 	margin: 5% auto;
+	opacity: 0;
 }
 
 .no-cssanimations .content {
@@ -16,62 +16,62 @@
 
 .Link {
 	display: inline;
-	text-align: center;
+	margin: 0 0.4%;
 	line-height: 3.5em;
-	margin: 0px 0.4%;
+	text-align: center;
 }
 
 .SocialIcon {
 	transition: opacity 0.25s ease-out, height 0.5s ease-out, width 0.5s ease-out, transform 0.25s ease-out;
 	transform: scale(0.8);
 	width: auto;
-	vertical-align: middle;
 	height: 4.5em;
 	margin-bottom: 2.5%;
+	vertical-align: middle;
 	cursor: pointer;
 }
 
-	.no-touch .SocialIcon:hover {
-		-webkit-transform: scale(1);   
-		-moz-transform: scale(1);  
-		transform: scale(1);
-	}
-	
-	.no-touch .SocialIcon:active {
-		opacity: 0.5;
-	}
+.no-touch .SocialIcon:hover {
+	-webkit-transform: scale(1);
+	   -moz-transform: scale(1);
+	        transform: scale(1);
+}
 
-@import "ShareSheet";
+.no-touch .SocialIcon:active {
+	opacity: 0.5;
+}
+
+@import 'ShareSheet';
 
 
 /* Tablet */
 @media screen and (min-width: 35em) {
-.content-wrapper {
-	width: 80%;
-}
+	.content-wrapper {
+		width: 80%;
+	}
 }
 
 
 /* Desktop */
 @media screen and (min-width: 699px) {
-.content {
-	margin: 2.5% auto;
-}
+	.content {
+		margin: 2.5% auto;
+	}
 
-.Link {
-	line-height: 3.5em;
-	margin: 0 0.75%;
-}
+	.Link {
+		margin: 0 0.75%;
+		line-height: 3.5em;
+	}
 
-.SocialIcon {
-	margin: 0;
-	height: 3em;
-}
+	.SocialIcon {
+		height: 3em;
+		margin: 0;
+	}
 }
 
 /* Large Screens */
 @media screen and (min-width: 68.5em) {
-.SocialIcon {
-	height: 4.25em;
-}
+	.SocialIcon {
+		height: 4.25em;
+	}
 }
