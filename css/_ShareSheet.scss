@@ -1,23 +1,33 @@
 /* Share Sheet */
 @keyframes fade-in {
-	0% {opacity: 0; visibility: visible;}
-	100% {opacity: 1;}
+	0% {
+		visibility: visible;
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
 @keyframes fade-out {
-	0% {opacity: 1;}
-	100% {opacity: 0; visibility: hidden;}
+	0% {
+		opacity: 1;
+	}
+	100% {
+		visibility: hidden;
+		opacity: 0;
+	}
 }
 
 #darklayer {
+	visibility: hidden;
 	position: fixed;
+	z-index: 9;
 	top: 0;
+	right: 0;
 	bottom: 0;
 	left: 0;
-	right: 0;
-	z-index: 9;
 	background: rgba(0,0,0,0.5);
-	visibility: hidden;
 }
 
 #darklayer.loaded {
@@ -42,17 +52,17 @@
 
 .Sheet {
 	transition: transform 0.25s ease-out;
-	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
-	font-weight: 300;
-	background: rgba(248,248,248,0.95);
-	position: fixed;
-	bottom: 0;
-	z-index: 10;
-	user-select: none;
 	visibility: hidden;
+	position: fixed;
+	z-index: 10;
+	bottom: 0;
 	width: 100%;
 	padding: 0;
 	margin: 0;
+	background: rgba(248,248,248,0.95);
+	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	user-select: none;
 }
 
 .Sheet.loaded {
@@ -73,44 +83,44 @@
 }
 
 .itemset section {
-	white-space: nowrap;
 	overflow-x: scroll;
 	-webkit-overflow-scrolling: touch;
 	padding: 20px 1.5%;
+	white-space: nowrap;
 }
-	
-	.itemset section:first-of-type {
-		padding-top: 0;
-	}
-	
-	.itemset section:last-of-type {
-		padding-bottom: 0;
-		border-top: 1px solid #969DA2;
-	}
-	
-	.itemset section:only-child {
-		padding-top: 0;
-		padding-bottom: 0;
-		border-top: none;
-	}
+
+.itemset section:first-of-type {
+	padding-top: 0;
+}
+
+.itemset section:last-of-type {
+	padding-bottom: 0;
+	border-top: 1px solid #969DA2;
+}
+
+.itemset section:only-child {
+	padding-top: 0;
+	padding-bottom: 0;
+	border-top: none;
+}
 
 .itemset .itemcontainer {
-	text-align: center;
 	display: inline;
 	margin: 0;
+	text-align: center;
 }
 
 .itemset li {
-	color: #000000;
-	text-align: center;
-	vertical-align: top;
-	white-space: normal;
-	font-size: 12px;
-	line-height: 1.3em;
 	display: inline-block;
 	width: 70px;
 	height: 100%;
 	margin: 0 auto;
+	color: #000000;
+	font-size: 12px;
+	line-height: 1.3em;
+	text-align: center;
+	vertical-align: top;
+	white-space: normal;
 }
 
 .itemset li img {
@@ -118,22 +128,22 @@
 }
 
 .appicon {
-	height: 60px;
 	width: auto;
+	height: 60px;
 }
 
 .cancel {
-	color: #0076FF;
-	text-align: center;
-	text-decoration: none;
-	font-size: 22px;
-	font-weight: 400;
-	line-height: 2em;
-	background: rgba(248,248,248,0.5);
-	cursor: pointer;
 	width: 100%;
 	padding: 5px 0;
 	margin: 0;
+	color: #0076FF;
+	background: rgba(248,248,248,0.5);
+	font-size: 22px;
+	font-weight: 400;
+	line-height: 2em;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
 }
 
 .cancel.touched, .cancel:active {
@@ -142,19 +152,18 @@
 
 /* Landscape */
 @media screen and (orientation:landscape) {
+	.itemset {
+		padding-top: 10px;
+	}
 
-.itemset {
-	padding-top: 10px;
-}
-
-.itemset .itemcontainer {
-	margin: 0 7px;
-}
+	.itemset .itemcontainer {
+		margin: 0 7px;
+	}
 
 	.itemset .itemcontainer:first-child {
 		margin-left: 0;
 	}
-	
+
 	.itemset .itemcontainer:last-child {
 		margin-right: 0;
 	}
@@ -162,37 +171,37 @@
 
 /* Tablet */
 @media only screen and (min-width: 35em) {
-.itemset section {
-	padding-left: 2.5%;
-	padding-right: 2.5%;
-}
+	.itemset section {
+		padding-right: 2.5%;
+		padding-left: 2.5%;
+	}
 
-.itemset .itemcontainer {
-	width: 24.5%;
-}
+	.itemset .itemcontainer {
+		width: 24.5%;
+	}
 
-.itemset .itemcontainer {
-	margin: 0 5%;
-}
+	.itemset .itemcontainer {
+		margin: 0 5%;
+	}
 
 	.itemset .itemcontainer:first-child {
 		margin-left: 0;
 	}
-	
+
 	.itemset .itemcontainer:last-child {
 		margin-right: 0;
 	}
-	
-.appicon {
-	height: 75px;
-	width: auto;
-}
+
+	.appicon {
+		width: auto;
+		height: 75px;
+	}
 }
 
 /* Desktop */
 /* Note: Sharing Sheets are not intended for use on desktop screen sizes */
 @media only screen and (min-width: 50em) {
-.itemset {
-	padding-top: 2em;
-}
+	.itemset {
+		padding-top: 2em;
+	}
 }
