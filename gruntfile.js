@@ -5,10 +5,10 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		
 		csscomb: {
-			comb: {
-				options: {
-					config: 'csscomb.json'
-				},
+			options: {
+				config: 'csscomb.json'
+			},
+			comb_main: {
 				build: [{
 					expand: true,
 					flatten: true,
@@ -16,21 +16,40 @@ module.exports = function(grunt) {
 					src: ['*.scss'],
 					dest: 'css/',
 				}]
-			}
+			},
+			comb_tea: {
+				build: [{
+					expand: true,
+					flatten: true,
+					cwd: 'tea/',
+					src: ['*.scss'],
+					dest: 'tea/',
+				}]
+			},
 		},
 		
 		sass: {
-			build: {
-				options: {
-					outputStyle: 'nested',
-					sourceMap: true
-				},
+			options: {
+				outputStyle: 'nested',
+				sourceMap: true
+			},
+			build_main: {
 				files: [{
 					expand: true,
 					flatten: true,
 					cwd: 'css/',
 					src: ['*.scss'],
 					dest: 'css/build/',
+					ext: '.css'
+				}]
+			},
+			build_tea: {
+				files: [{
+					expand: true,
+					flatten: true,
+					cwd: 'tea/',
+					src: ['*.scss'],
+					dest: 'tea/',
 					ext: '.css'
 				}]
 			}
@@ -41,22 +60,36 @@ module.exports = function(grunt) {
 				browsers: ['> 1%', 'last 2 versions', 'ie 9', 'ie 8', 'firefox 24', 'opera 12.1'],
 				map: true
 			},
-			files: {
+			prefix_main: {
 				expand: true,
 				flatten: true,
 				cwd: 'css/build/',
 				src: ['*.css'],
 				dest: 'css/build/',
+			},
+			prefix_tea: {
+				expand: true,
+				flatten: true,
+				cwd: 'tea/',
+				src: ['*.css'],
+				dest: 'tea/',
 			}
 		},
 		
 		cssmin: {
-			minify: {
+			minify_main: {
 				expand: true,
 				flatten: true,
 				cwd: 'css/build/',
 				src: ['*.css'],
 				dest: 'css/build/',
+			},
+			minify_tea: {
+				expand: true,
+				flatten: true,
+				cwd: 'tea/',
+				src: ['*.css'],
+				dest: 'tea/',
 			}
 		},
 		
