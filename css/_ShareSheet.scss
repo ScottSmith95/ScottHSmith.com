@@ -147,6 +147,7 @@
 	text-align: center;
 	text-decoration: none;
 	cursor: pointer;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 .cancel.touched, .cancel:active {
