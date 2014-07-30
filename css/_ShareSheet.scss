@@ -75,7 +75,7 @@
 }
 
 .itemset {
-	padding: 2em 0;
+	padding: 1.5em 0 1em;
 	margin: 0.6rem 0.6rem 0.5rem;
 	text-align: left;
 	border-radius: 3px;
@@ -87,23 +87,24 @@
 	-webkit-overflow-scrolling: touch;
 	padding: 20px 1.5%;
 	white-space: nowrap;
-}
-
-.itemset section:first-of-type {
-	padding-top: 0;
-}
-
-.itemset section:last-of-type {
-	padding-bottom: 0;
 	border-width: 1px;
 	border-style: solid; 
 	border-image: linear-gradient(to right, #C2C2C6 0%, #D6D6DA 5%, #D6D6DA 95%, #C2C2C6 100%) 100% 0 0 0;
 }
 
+.itemset section:first-of-type {
+	padding-top: 0;
+	border: none;
+}
+
+.itemset section:last-of-type {
+	padding-bottom: 0;
+}
+
 .itemset section:only-child {
 	padding-top: 0;
 	padding-bottom: 0;
-	border-top: none;
+	border: none;
 }
 
 .itemset .itemcontainer {
@@ -114,7 +115,7 @@
 
 .itemset li {
 	display: inline-block;
-	width: 70px;
+	width: 67px;
 	height: 100%;
 	margin: 0 auto;
 	color: #000000;
@@ -135,10 +136,11 @@
 }
 
 .cancel {
+	padding: 0.15em 0;
 	margin: 0.5rem 0.6rem 0.6rem;
 	border-radius: 3px;
 	color: #0076FF;
-	background: rgba(248,248,248,0.95);
+	background: rgba(248,248,248,1);
 	font-size: 20px;
 	font-weight: 400;
 	line-height: 2em;
@@ -148,7 +150,7 @@
 }
 
 .cancel.touched, .cancel:active {
-	background: #D9D9D9;
+	background: rgba(248,248,248,0.95);
 }
 
 /* Landscape */
@@ -187,6 +189,10 @@
 
 	.itemset .itemcontainer:last-child {
 		margin-right: 0;
+	}
+	
+	.itemset li {
+		width: 80px;
 	}
 
 	.appicon {
