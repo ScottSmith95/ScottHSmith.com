@@ -185,7 +185,7 @@ module.exports = function(grunt) {
 
 	// Workflows
 	// $ grunt: Concencates, prefixes, minifies JS and CSS files. The works.
-	grunt.registerTask('default', ['csscomb', 'sass', 'autoprefixer', 'cssmin' , 'modernizr', 'uglify', 'newer:imageoptim']);
+	grunt.registerTask('default', ['csscomb', 'sass', 'autoprefixer', 'cssmin' , 'modernizr', 'uglify', 'newer:imageoptim', 'watch']);
 		
 	// $ grunt dev: Watches for changes while developing
 	grunt.registerTask('dev', ['watch']);
