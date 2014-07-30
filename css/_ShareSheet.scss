@@ -57,9 +57,6 @@
 	z-index: 10;
 	bottom: 0;
 	width: 100%;
-	padding: 0;
-	margin: 0;
-	background: rgba(248,248,248,0.95);
 	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 	font-weight: 300;
 	user-select: none;
@@ -78,8 +75,11 @@
 }
 
 .itemset {
-	padding: 20px 0 5px;
+	padding: 2em 0;
+	margin: 0.6rem 0.6rem 0.5rem;
 	text-align: left;
+	border-radius: 3px;
+	background: rgba(248,248,248,0.95);
 }
 
 .itemset section {
@@ -95,7 +95,9 @@
 
 .itemset section:last-of-type {
 	padding-bottom: 0;
-	border-top: 1px solid #969DA2;
+	border-width: 1px;
+	border-style: solid; 
+	border-image: linear-gradient(to right, #C2C2C6 0%, #D6D6DA 5%, #D6D6DA 95%, #C2C2C6 100%) 100% 0 0 0;
 }
 
 .itemset section:only-child {
@@ -133,12 +135,11 @@
 }
 
 .cancel {
-	width: 100%;
-	padding: 5px 0;
-	margin: 0;
+	margin: 0.5rem 0.6rem 0.6rem;
+	border-radius: 3px;
 	color: #0076FF;
-	background: rgba(248,248,248,0.5);
-	font-size: 22px;
+	background: rgba(248,248,248,0.95);
+	font-size: 20px;
 	font-weight: 400;
 	line-height: 2em;
 	text-align: center;
@@ -152,10 +153,6 @@
 
 /* Landscape */
 @media screen and (orientation:landscape) {
-	.itemset {
-		padding-top: 10px;
-	}
-
 	.itemset .itemcontainer {
 		margin: 0 7px;
 	}
@@ -195,13 +192,5 @@
 	.appicon {
 		width: auto;
 		height: 75px;
-	}
-}
-
-/* Desktop */
-/* Note: Sharing Sheets are not intended for use on desktop screen sizes */
-@media only screen and (min-width: 50em) {
-	.itemset {
-		padding-top: 2em;
 	}
 }
