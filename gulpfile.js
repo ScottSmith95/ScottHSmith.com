@@ -51,5 +51,8 @@ gulp.task('watch', function() {
 });
 
 // Workflows
-// $ gulp: Builds, prefixes, and minifies CSS files; concencates, minifies JS files. The works.
+// $ gulp: Builds, prefixes, and minifies CSS files; concencates and minifies JS files; watches for changes. The works.
 gulp.task('default', ['styles', 'scripts', 'teastyles', 'watch']);
+
+// $ gulp build: Builds, prefixes, and minifies CSS files; concencates and minifies JS files. For deployments.
+gulp.task('default', ['styles', 'scripts', 'teastyles']);
