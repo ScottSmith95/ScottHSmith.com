@@ -105,7 +105,7 @@ module.exports = function(grunt) {
 			},
 			build_main: {
 				files: {
-					'scripts/build/main.js': ['scripts/modernizr.js', 'bower_components/fastclick/lib/fastclick.js', 'scripts/main.js'],
+					'scripts/build/main.js': ['scripts/modernizr.js', 'bower_components/fastclick/lib/fastclick.js', 'scripts/main.js']
 				}
 			}
 		},
@@ -154,9 +154,20 @@ module.exports = function(grunt) {
 
 	// Workflows
 	// $ grunt: Concencates, prefixes, minifies JS and CSS files. The works.
-	grunt.registerTask('default', ['csscomb', 'sass', 'autoprefixer', 'cssmin' , 'modernizr', 'uglify', 'newer:imageoptim', 'watch']);
+	grunt.registerTask('default', [
+		'csscomb',
+		'sass',
+		'autoprefixer',
+		'cssmin',
+		'modernizr',
+		'uglify',
+		'newer:imageoptim',
+		'watch'
+	]);
 		
 	// $ grunt dev: Watches for changes while developing
-	grunt.registerTask('dev', ['watch']);
+	grunt.registerTask('dev', [
+		'watch'
+	]);
 
 };
