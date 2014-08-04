@@ -23,6 +23,7 @@
     "gulp-csscomb": "^3.0.2",
     "gulp-minify-css": "^0.3.7",
     "gulp-sass": "^0.7.2",
+    "gulp-sourcemaps": "^1.1.0",
     "gulp-uglify": "^0.3.1"
   }
 }
