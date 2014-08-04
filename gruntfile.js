@@ -11,19 +11,13 @@ module.exports = function(grunt) {
 			comb_main: {
 				build: [{
 					expand: true,
-					flatten: true,
-					cwd: 'css/',
-					src: ['*.scss'],
-					dest: 'css/',
+					src: ['css/*.scss']
 				}]
 			},
 			comb_tea: {
 				build: [{
 					expand: true,
-					flatten: true,
-					cwd: 'tea/',
-					src: ['*.scss'],
-					dest: 'tea/',
+					src: ['tea/*.scss']
 				}]
 			},
 		},
@@ -36,7 +30,6 @@ module.exports = function(grunt) {
 			build_main: {
 				files: [{
 					expand: true,
-					flatten: true,
 					cwd: 'css/',
 					src: ['*.scss'],
 					dest: 'css/build/',
@@ -46,10 +39,7 @@ module.exports = function(grunt) {
 			build_tea: {
 				files: [{
 					expand: true,
-					flatten: true,
-					cwd: 'tea/',
-					src: ['*.scss'],
-					dest: 'tea/',
+					src: ['tea/*.scss'],
 					ext: '.css'
 				}]
 			}
@@ -62,34 +52,22 @@ module.exports = function(grunt) {
 			},
 			prefix_main: {
 				expand: true,
-				flatten: true,
-				cwd: 'css/build/',
-				src: ['*.css'],
-				dest: 'css/build/',
+				src: ['css/build/*.css']
 			},
 			prefix_tea: {
 				expand: true,
-				flatten: true,
-				cwd: 'tea/',
-				src: ['*.css'],
-				dest: 'tea/',
+				src: ['tea/*.css']
 			}
 		},
 		
 		cssmin: {
 			minify_main: {
 				expand: true,
-				flatten: true,
-				cwd: 'css/build/',
-				src: ['*.css'],
-				dest: 'css/build/',
+				src: ['css/build/*.css']
 			},
 			minify_tea: {
 				expand: true,
-				flatten: true,
-				cwd: 'tea/',
-				src: ['*.css'],
-				dest: 'tea/',
+				src: ['tea/*.css']
 			}
 		},
 		
@@ -117,7 +95,7 @@ module.exports = function(grunt) {
 				"uglify": false,
 				"tests": ['flexbox', 'cssanimations', 'csscolumns', 'svg', 'touch'],
 				"parseFiles": false,
-				"matchCommunityTests": false,
+				"matchCommunityTests": false
 			}
 		},
 		
@@ -146,28 +124,19 @@ module.exports = function(grunt) {
         watch: {
 			styles: {
 				files: ['css/*.scss'],
-				tasks: ['csscomb', 'sass', 'autoprefixer', 'cssmin'],
-				options: {
-					spawn: false
-				}
+				tasks: ['csscomb', 'sass', 'autoprefixer', 'cssmin']
 			},
 			scripts: {
 				files: ['scripts/*.js'],
-				tasks: ['uglify'],
-				options: {
-					spawn: false
-				}
+				tasks: ['uglify']
 			},
 			images: {
 				files: ['images/**/*.jpg', 'images/**/*.png'],
-				tasks: ['newer:imageoptim'],
-				options: {
-					spawn: false
-				}
+				tasks: ['newer:imageoptim']
 			},
 			livereload: {
 				options: { livereload: true },
-				files: ['**/*.html', 'css/*.scss', 'scripts/*.js', 'images/**/*.jpg', 'images/**/*.png'],
+				files: ['**/*.html', 'css/*.scss', 'scripts/*.js', 'images/**/*.jpg', 'images/**/*.png']
 			}
 		},
     });
