@@ -47,7 +47,7 @@ module.exports = function(grunt) {
         
 		autoprefixer: {
             options: {
-				browsers: ['> 1%', 'last 2 versions', 'ie 9', 'ie 8', 'firefox 24', 'opera 12.1'],
+				browsers: ['> 1%', 'last 2 versions', 'ie 9', 'ie 8', 'Firefox ESR', 'Opera 12.1'],
 				map: true
 			},
 			prefix_main: {
