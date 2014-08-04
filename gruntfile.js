@@ -5,9 +5,6 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		
 		csscomb: {
-			options: {
-				config: 'csscomb.json'
-			},
 			comb_main: {
 				build: [{
 					expand: true,
