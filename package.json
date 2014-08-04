@@ -16,6 +16,13 @@
     "grunt-imageoptim": "^1.4.1",
     "grunt-modernizr": "^0.5.2",
     "grunt-newer": "^0.7.0",
-    "grunt-sass": "^0.14.0"
+    "grunt-sass": "^0.14.0",
+    "gulp": "^3.8.7",
+    "gulp-autoprefixer": "0.0.8",
+    "gulp-concat": "^2.3.4",
+    "gulp-csscomb": "^3.0.2",
+    "gulp-minify-css": "^0.3.7",
+    "gulp-sass": "^0.7.2",
+    "gulp-uglify": "^0.3.1"
   }
 }
