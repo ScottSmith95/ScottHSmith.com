@@ -1,0 +1,77 @@
+==================================================================
+https://keybase.io/scottsmith
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://scotthsmith.com
+  * I am scottsmith (https://keybase.io/scottsmith) on keybase.
+  * I have a public key with fingerprint 6D0E B01E A1E7 EE3C 8F08  F470 D589 9DEB 2F7E 8D8E
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "client": {
+            "name": "keybase.io node.js client",
+            "version": "0.4.14"
+        },
+        "key": {
+            "fingerprint": "6d0eb01ea1e7ee3c8f08f470d5899deb2f7e8d8e",
+            "host": "keybase.io",
+            "key_id": "D5899DEB2F7E8D8E",
+            "uid": "fa233c4214748e3fa0897d0924a71300",
+            "username": "scottsmith"
+        },
+        "merkle_root": {
+            "ctime": 1407281843,
+            "hash": "e65782b6acfedcf6ec989bc34b5c37ac62cf385533640ad25bccef37b06847a2dcb7cc5b73947a9cced60f7ab1d948a7ded38811e2ba7d8b220f5710c3808800",
+            "seqno": 33699
+        },
+        "service": {
+            "hostname": "scotthsmith.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1407281898,
+    "expire_in": 157680000,
+    "prev": "8559b2313216a9feb5d9f86ff7c91645bb8dd955fc338e4ea962e4fb3e144194",
+    "seqno": 6,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG/MacGPG2 v2.0.22 (Darwin)
+Comment: GPGTools - https://gpgtools.org
+
+owFdkmtoXEUUx3dbbepqwdYIIlLiVQjKuty5M/fOzCpiSmJpDVaa1he2y52ZM9m7
+yd67uXsTE8oW8UFbtBo0itH0S/rBFJoPiZLW94uCVkUEF2tUjIiCEaJSFBV8zF0i
+Vr/NmfM75/z/Z2Z8w9pMLtt7YHrTbVuiX7PvfScyfV9VlvdZIlJjVnGfJQcDCJP0
+FPpVsIrWAIwJvw6FIOoIIwWFSr1jlclbIxDXgyg0lF0gBUSsRj7l02odhP0Q1+Ig
+bWZ5ygZhI/ARUAAsmbaZJtRWLuNcgXA0BaYYmJ7lqJ78Z6zV6lkKlLntTvnuni3O
+zbSHdbMekxtuJbTvYCyJgwglDLD2bcapsrlDfIqwbadgHeJVT3UZJUm9GiTlVHEV
+4oFBKMVR1PItkyCFELGpwxAj2Gjy62VTBp5LmSM8X2pQUnsgOeNCYiJciakvPUdq
+zFwXY4/YvnJcISVoTIXtMUJ9R0lBpXQFxdyE3CSVZ2vqC6Q4YT5VoDBjCIEjTMCE
+49japciWmNmMtUzUYSiMrKKZwHkjDeORQEIqO93bufbKLX8FGVVNWS2OkkhGgyZZ
+TpJaMbWdjNUMPG/dC6K02qckglCZhzv3aZFB/7cSzvIWjNaCGEpBSrjUM+psO50D
+I2aG2QEXDkbYQZ7PNQhXcc08rankyCOuEEwp7rpaYsyAgM89B4gWGBAhiJN/jXpG
+p9+fegr6Qz8ZjsFqHMpecV4mm8usO39N+nczuQsu/udDd/W3/XH52jtOX3PXEwNz
+L7fdffzTpxcf75zf/f76jtdnVmaa3y993bx+af2ts0vOIflLZucDcw//Fi2c3Lb/
+MHph69nn/zp9lb9w3YsTb9DxbfuHty980bfrxGczlR2Pzf3w0Pi70RQafefU7Loz
+7W8dOXPnwbYefDi3q+++nybzufCDfO+Fb2+6v9Rbqzw6+HPv5OyRyivTixM3tDc/
+Xr5p54cT4fTeqe3XZvlJd6G6+dTVN+bwyvzU0cuGPjkwdzaz59XOcMezjW+C29dc
++eXnK4/s2fzSR7e8CWHjuR/3lsaP1b7tGjqGJv+8p3Nl4+7R9tee2tgoznTxiy7B
+cOmJJ4fnm80H9YDzzMENy1t/X8wf/xs=
+=1gTO
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/scottsmith
+
+==================================================================
