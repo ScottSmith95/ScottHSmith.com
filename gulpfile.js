@@ -55,4 +55,4 @@ gulp.task('watch', function() {
 gulp.task('default', ['styles', 'scripts', 'teastyles', 'watch']);
 
 // $ gulp build: Builds, prefixes, and minifies CSS files; concencates and minifies JS files. For deployments.
-gulp.task('default', ['styles', 'scripts', 'teastyles']);
+gulp.task('build', ['styles', 'scripts', 'teastyles']);

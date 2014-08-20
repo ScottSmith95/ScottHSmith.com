@@ -121,7 +121,7 @@ module.exports = function(grunt) {
         watch: {
 			styles: {
 				files: ['css/*.scss'],
-				tasks: ['csscomb', 'sass', 'autoprefixer', 'cssmin']
+				tasks: ['csscomb:comb_main', 'sass:build_main', 'autoprefixer:prefix_main', 'cssmin:minify_main']
 			},
 			scripts: {
 				files: ['scripts/*.js'],
