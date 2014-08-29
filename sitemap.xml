@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+  <loc>http://scotthsmith.com/</loc>
+  <lastmod>2014-08-10T23:30:02.000Z</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>1</priority>
+</url>
+<url>
+  <loc>http://scotthsmith.com/portfolio/</loc>
+  <lastmod>2014-08-29T00:16:35.000Z</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.5</priority>
+</url>
+<url>
+  <loc>http://scotthsmith.com/projects/decode/</loc>
+  <lastmod>2014-08-29T01:02:48.000Z</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.75</priority>
+</url>
+<url>
+  <loc>http://scotthsmith.com/projects/</loc>
+  <lastmod>2014-08-28T21:57:10.000Z</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.5</priority>
+</url>
+<url>
+  <loc>http://scotthsmith.com/projects/loading-animation/</loc>
+  <lastmod>2014-08-06T05:29:56.000Z</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.5</priority>
+</url>
+<url>
+  <loc>http://scotthsmith.com/projects/share-sheets/</loc>
+  <lastmod>2014-08-28T21:56:58.000Z</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.5</priority>
+</url>
+<url>
+  <loc>http://scotthsmith.com/projects/social-icons/</loc>
+  <lastmod>2014-08-28T21:56:53.000Z</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.5</priority>
+</url>
+<url>
+  <loc>http://scotthsmith.com/tea/</loc>
+  <lastmod>2014-08-06T05:31:50.000Z</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.5</priority>
+</url>
+</urlset>

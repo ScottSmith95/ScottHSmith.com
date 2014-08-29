@@ -122,6 +122,13 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		
+		sitemap: {
+			map: {
+				siteRoot: './',
+				homepage: 'http://scotthsmith.com/',
+			}
+		},
 
         watch: {
 			styles: {
@@ -152,6 +159,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-newer');
 	grunt.loadNpmTasks('grunt-imageoptim');
+	grunt.loadNpmTasks('grunt-sitemap');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
 	// Workflows
@@ -164,6 +172,7 @@ module.exports = function(grunt) {
 		'modernizr',
 		'uglify',
 		'newer:imageoptim',
+		'sitemap',
 		'watch'
 	]);
 		
