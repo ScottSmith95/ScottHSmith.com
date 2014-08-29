@@ -7,35 +7,54 @@
 	width: 100%;
 	height: 10em;
 	background: $darkgrey;
-}
-
-.screenshot-box a {
-	display: block;
-}
-
-.screenshot-box img {
-	animation: pop-closed 0.75s linear 0.75s;
-	display: block;
-	position: relative;
-	top: 1em;
-	width: 75%;
-	margin: 0 auto;
-	box-shadow: 0 0 5px rgba(0,0,0,0.75);
-}
-
-.no-touch .screenshot-box a img {
-	transition: opacity 0.25s ease-out, transform 0.25s ease;
-	transform: translateY(0%);
-	opacity: 1;
-}
-
-.no-touch .screenshot-box a:hover img {
-	transform: translateY(-5%);
-}
-
-.no-touch .screenshot-box a:active img {
-	transform: translateY(0%);
-	opacity: 0.75;
+	
+	.bubble {
+		color: #FFF;
+		border-radius: 0.5em;
+		background: rgba(127, 127, 127, 0.9);
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+		padding: 0.1em 0;
+		text-align: center;
+		font-size: 1.25em;
+		margin: 0 auto;
+		position: absolute;
+		bottom: 5%;
+		left: 0;
+		right: 0;
+		z-index: 3;
+		max-width: 40%;
+		display: inline-block;
+		pointer-events: none;
+	}
+	
+	a {
+		display: block;
+	}
+	
+	img {
+		animation: pop-closed 0.75s linear 0.75s;
+		display: block;
+		position: relative;
+		top: 1em;
+		width: 75%;
+		margin: 0 auto;
+		box-shadow: 0 0 5px rgba(0,0,0,0.75);
+	}
+	
+	.no-touch & a img {
+		transition: opacity 0.25s ease-out, transform 0.25s ease;
+		transform: translateY(0%);
+		opacity: 1;
+	}
+	
+	.no-touch & a:hover img {
+		transform: translateY(-5%);
+	}
+	
+	.no-touch & a:active img {
+		transform: translateY(0%);
+		opacity: 0.75;
+	}
 }
 
 @keyframes pop-closed {
@@ -116,46 +135,61 @@
 
 .options .button {
 	margin-right: 0.5em;
-}
-
-.options .button:last-child {
-	margin-right: 0;
-}
-
-.options .button.demo {
-	background: #E62A8B;
-}
-
-.options .button.demo:hover {
-	background: #CC257B;
-}
-
-.options .button.download {
-	background: #29E677;
-}
-
-.options .button.download:hover {
-	background: #24CC6A;
-}
-
-.options .button.release-notes {
-	background: #29C2E5;
-}
-
-.options .button.release-notes:hover {
-	background: #25ADCC;
-}
-
-.options .button.docs {
-	background: #E6512A;
-}
-
-.options .button.docs:hover {
-	background: #CC4825;
-}
-
-.options .button.demo:active, .options .button.download:active, .options .button.release-notes:active, .options .button.docs:active {
-	background: #35495D;
+	
+	$active-button: #35495D;
+	
+	&:last-child {
+		margin-right: 0;
+	}
+	
+	&.demo {
+		background: #E62A8B;
+		
+		&:hover {
+			background: #CC257B;
+		}
+		
+		&:active {
+			background: $active-button;
+		}
+	}
+	
+	&.download,
+	&.buy {
+		background: #29E677;
+		
+		&:hover {
+			background: #24CC6A;
+		}
+		
+		&:active {
+			background: $active-button;
+		}
+	}
+	
+	&.release-notes {
+		background: #29C2E5;
+		
+		&:hover {
+			background: #25ADCC;
+		}
+		
+		&:active {
+			background: $active-button;
+		}
+	}
+	
+	&.docs {
+		background: #E6512A;
+		
+		&:hover {
+			background: #CC4825;
+		}
+		
+		&:active {
+			background: $active-button;
+		}
+	}
 }
 
 section.donate {
@@ -207,6 +241,10 @@ section.donate {
 @media screen and (min-width: 35em) {
 	.screenshot-box {
 		height: 15em;
+		
+		.bubble {
+			max-width: 25%;
+		}
 	}
 
 	.screenshot-box img {
@@ -241,8 +279,14 @@ section.donate {
 
 /* Desktop */
 @media screen and (min-width: 50em) {
-	.screenshot-box img {
-		width: 40%;
+	.screenshot-box {
+		.bubble {
+			max-width: 15%;
+		}
+		
+		img {
+			width: 40%;
+		}		
 	}
 
 	.content {
