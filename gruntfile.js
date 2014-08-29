@@ -104,6 +104,11 @@ module.exports = function(grunt) {
 				files: {
 					'scripts/build/main.js': ['scripts/modernizr.js', 'bower_components/fastclick/lib/fastclick.js', 'scripts/main.js']
 				}
+			},
+			build_portfolio: {
+				files: {
+					'scripts/build/portfolio.js': ['bower_components/imagesloaded/imagesloaded.pkgd.min.js', 'bower_components/masonry/dist/masonry.pkgd.min.js', 'scripts/portfolio.js']
+				}
 			}
 		},
 		
