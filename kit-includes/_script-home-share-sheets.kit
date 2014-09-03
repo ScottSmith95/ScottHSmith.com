@@ -10,9 +10,9 @@
 			$('body').addClass('sexy');
 		}
 		
-		var $sheets = $('#Twitter, #ADN, #Facebook, #Instagram, #Rdio');
+		var $sheets = $('#Twitter, #Facebook, #Instagram, #Rdio');
 		
-		var $triggers = $('.Twitter.ShareSheet, .ADN.ShareSheet, .Facebook.ShareSheet, .Instagram.ShareSheet, .Rdio.ShareSheet');
+		var $triggers = $('.Twitter.ShareSheet, .Facebook.ShareSheet, .Instagram.ShareSheet, .Rdio.ShareSheet');
 		
 		// Shows sheets after they have loaded
 		($sheets).delay(300).addClass('loaded');
@@ -22,12 +22,7 @@
 		$('.Twitter.ShareSheet').click(function() {
         	$('#Twitter').toggleClass('selected').toggleClass('unselected');
         });
-        
-        // Handles opening the App-Net sheet
-        $('.ADN.ShareSheet').click(function() {
-        	$('#ADN').toggleClass('selected').toggleClass('unselected');
-        });
-        
+                
         // Handles opening the Facebook sheet
         $('.Facebook.ShareSheet').click(function() {
         	$('#Facebook').toggleClass('selected').toggleClass('unselected');
