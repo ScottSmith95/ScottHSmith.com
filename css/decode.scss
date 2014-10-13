@@ -10,7 +10,7 @@
 	
 	.bubble {
 		color: #FFF;
-		border-radius: 0.5em;
+		border-radius: 0.35em;
 		background: rgba(127, 127, 127, 0.9);
 		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
 		padding: 0.1em 0;
@@ -188,6 +188,51 @@
 		
 		&:active {
 			background: $active-button;
+		}
+	}
+}
+
+.email-bg {
+	background: #444;
+	color: #FFF;
+	position: relative;
+	width: 100vw;
+	left: calc(-50vw + 50%);
+}
+
+section.email {
+	font-size: 1.25em;
+	
+	h2 {
+		margin-top: 0;
+	}
+	
+	input[type="email"] {
+		transition: border-color 0.25s ease;
+		color: #444;
+		font-size: 1em;
+		padding: 0.25em 0.5em;
+		border: 2px solid #009BCD;
+		border-radius: 0.35em;
+		outline: none;
+		
+		&:hover,
+		&:focus  {
+			border-color: #00CC48;
+		}
+	}
+	
+	input[type="submit"] {
+		font-size: 1em;
+		padding: 0.3em 0.5em;
+	
+		&:hover {
+			background: #00CC48;
+		}
+		
+		&:active,
+		&:focus {
+			background: #00A23A;
 		}
 	}
 }
