@@ -30,48 +30,17 @@ module.exports = function(grunt) {
 				"parseFiles": false,
 				"matchCommunityTests": false
 			}
-		},
-		
-		imageoptim: {
-			optimize: {
-				src: ['images/**/*.jpg', 'images/**/*.png'],
-				options: {
-					jpegMini: false,
-					imageAlpha: true,
-					quitAfter: true
-				}
-			}
-		},
-		
-        watch: {
-			images: {
-				files: ['images/**/*.jpg', 'images/**/*.png'],
-				tasks: ['newer:imageoptim']
-			},
-			livereload: {
-				options: { livereload: true },
-				files: ['**/*.html', 'css/*.scss', 'scripts/*.js', 'images/**/*.jpg', 'images/**/*.png']
-			}
-		},
+		}
     });
     
     // Plugin List
     grunt.loadNpmTasks("grunt-modernizr");
-    grunt.loadNpmTasks('grunt-newer');
-	grunt.loadNpmTasks('grunt-imageoptim');
-    grunt.loadNpmTasks('grunt-contrib-watch');
 
 	// Workflows
 	// $ grunt: Concencates, prefixes, minifies JS and CSS files. The works.
 	grunt.registerTask('default', [
 		'modernizr',
-		'newer:imageoptim',
 		'watch'
 	]);
-		
-	// $ grunt dev: Watches for changes while developing
-	grunt.registerTask('dev', [
-		'watch'
-	]);
-
+	
 };
