@@ -43,13 +43,6 @@ module.exports = function(grunt) {
 			}
 		},
 		
-		sitemap: {
-			map: {
-				siteRoot: './',
-				homepage: 'http://scotthsmith.com/',
-			}
-		},
-
         watch: {
 			images: {
 				files: ['images/**/*.jpg', 'images/**/*.png'],
@@ -66,7 +59,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-modernizr");
     grunt.loadNpmTasks('grunt-newer');
 	grunt.loadNpmTasks('grunt-imageoptim');
-	grunt.loadNpmTasks('grunt-sitemap');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
 	// Workflows
@@ -74,7 +66,6 @@ module.exports = function(grunt) {
 	grunt.registerTask('default', [
 		'modernizr',
 		'newer:imageoptim',
-		'sitemap',
 		'watch'
 	]);
 		
