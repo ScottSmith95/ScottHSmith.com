@@ -19,7 +19,7 @@
 	}
 }
 
-#darklayer {
+.darklayer {
 	visibility: hidden;
 	position: fixed;
 	z-index: 9;
@@ -30,23 +30,23 @@
 	background: rgba(0,0,0,0.5);
 }
 
-#darklayer.loaded {
+.darklayer.loaded {
 	visibility: visible;
 }
 
-#darklayer.on {
+.darklayer.on {
 	animation: fade-in 0.25s ease-out forwards;
 }
 
-.no-cssanimations #darklayer.on {
+.no-cssanimations .darklayer.on {
 	display: block;
 }
 
-#darklayer.off {
+.darklayer.off {
 	animation: fade-out 0.25s ease-out forwards;
 }
 
-.no-cssanimations #darklayer.off {
+.no-cssanimations .darklayer.off {
 	display: none;
 }
 
