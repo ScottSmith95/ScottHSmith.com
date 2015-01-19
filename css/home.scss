@@ -50,7 +50,7 @@ ul {
 
 /* Center content on page. */
 .container {
-	height: 100vh;
+	min-height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -91,7 +91,7 @@ ul {
 	width: 10em;
 	height: 10em;
 	border-radius: 50%;
-	margin: 0 auto 3.5%;
+	margin: 1.5% auto 3.5%;
 	background-image: url('/images/ScottPic_600.jpg?03-2014');
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -146,7 +146,7 @@ nav a {
 .AllSocialLinks {
 	display: flex;
 	justify-content: space-around;
-	margin: 2.5% auto 0;
+	margin: 2.5% auto 1.5%;
 	list-style: none;
 
 	align-content: space-around;
