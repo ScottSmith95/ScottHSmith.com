@@ -11,7 +11,7 @@ body {
 	margin: 0;
 	background: $bg-color;
 	font: 300 100%/1.5 $font-fam;
-
+	
 	-webkit-font-smoothing: antialiased;
 }
 
@@ -57,9 +57,20 @@ ul {
 		transform: translateY(0) scale(1) rotateX(0deg);
 		opacity: 1;
 	}
+/* Center content on page. */
+.container {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 @keyframes fly-in-from-bottom {
+/* Keep content from getting horizonatlly squished. */
+.inner-container {
+	width: 100%;
+}
+
 	0% {
 		transform: translateY(175px) scale(0.5) rotateX(85deg);
 		opacity: 0.25;
@@ -70,14 +81,15 @@ ul {
 	}
 }
 
-.headerpic, .headerpic img {
 	animation: fly-in-from-top 1.25s ease-in-out forwards;
+.headerpic,
+.headerpic img {
 	transition: width 0.5s ease-out, height 0.5s ease-out, background-size 0.5s ease-out;
 	display: block;
 	width: 10em;
 	height: 10em;
 	border-radius: 50%;
-	margin: 3.5% auto;
+	margin: 0 auto 3.5%;
 	background-image: url('/images/ScottPic_600.jpg?03-2014');
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -147,7 +159,7 @@ nav a {
 .AllSocialLinks {
 	display: flex;
 	justify-content: space-around;
-	margin: 2.5% auto;
+	margin: 2.5% auto 0;
 	list-style: none;
 
 	align-content: space-around;
@@ -205,7 +217,7 @@ nav a {
 	.headerpic, .headerpic img {
 		width: 14em;
 		height: 14em;
-		margin: 2.5% auto;
+		margin: 0 auto 2.5%;
 	}
 
 	.info {
@@ -275,7 +287,7 @@ nav a {
 	}
 
 	.headerpic, .headerpic img {
-		margin: 1.5% auto;
+		margin: 0 auto 1.5%;
 	}
 
 	.info {
