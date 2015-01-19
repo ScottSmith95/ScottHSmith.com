@@ -67,10 +67,11 @@ __    / /  | |     __   | |     | |    | |       | |
 <body>
 
 	<a href="https://plus.google.com/1/111019875270643537691?rel=author" style="display: none;">Google</a>
-		
+	
+	<div class="container">
+	<div class="inner-container">
+	
 	<div class="headerpic"></div>
-
-	<div class="bottomanimated">
 	
 	<div class="info">
 	
@@ -146,6 +147,7 @@ __    / /  | |     __   | |     | |    | |       | |
 		</li>
 	</ul>
 	
+	</div>
 	</div>
 	
 <!-- Twitter Share Sheet -->
@@ -252,15 +254,7 @@ __    / /  | |     __   | |     | |    | |       | |
 	</div>
 </div>
 
-<div id="darklayer" class="off"></div>
-
-
-<!-- Redirect to different page in Safari Top Sites -->
-<script>
-if(window.navigator && window.navigator.loadPurpose === "preview"){
-    window.location.href = "http://scotthsmith.com/preview/index.html"
-};
-</script>
+<div class="darklayer off"></div>
 
 <!-- Main.js -->
 <script async type="text/javascript" src="/scripts/build/main.js"></script>
@@ -279,24 +273,19 @@ if(window.navigator && window.navigator.loadPurpose === "preview"){
 			$('body').addClass('sexy');
 		}
 		
-		var $sheets = $('#Twitter, #ADN, #Facebook, #Instagram, #Rdio');
+		var $sheets = $('#Twitter, #Facebook, #Instagram, #Rdio');
 		
-		var $triggers = $('.Twitter.ShareSheet, .ADN.ShareSheet, .Facebook.ShareSheet, .Instagram.ShareSheet, .Rdio.ShareSheet');
+		var $triggers = $('.Twitter.ShareSheet, .Facebook.ShareSheet, .Instagram.ShareSheet, .Rdio.ShareSheet');
 		
 		// Shows sheets after they have loaded
 		($sheets).delay(300).addClass('loaded');
-		$('#darklayer').delay(300).addClass('loaded');
+		$('.darklayer').delay(300).addClass('loaded');
 		
 		// Handles opening the Twitter sheet
 		$('.Twitter.ShareSheet').click(function() {
         	$('#Twitter').toggleClass('selected').toggleClass('unselected');
         });
-        
-        // Handles opening the App-Net sheet
-        $('.ADN.ShareSheet').click(function() {
-        	$('#ADN').toggleClass('selected').toggleClass('unselected');
-        });
-        
+                
         // Handles opening the Facebook sheet
         $('.Facebook.ShareSheet').click(function() {
         	$('#Facebook').toggleClass('selected').toggleClass('unselected');
@@ -314,7 +303,7 @@ if(window.navigator && window.navigator.loadPurpose === "preview"){
         
         // Handles darkening rest of page
         ($triggers).click(function() {
-	        $('#darklayer').addClass('on').removeClass('off');
+	        $('.darklayer').addClass('on').removeClass('off');
         });
         
         // Adds "touched" class when element is touched and removes it when it is not
@@ -325,7 +314,7 @@ if(window.navigator && window.navigator.loadPurpose === "preview"){
         // Triggers un-darkening rest of page and deselecting sheets
         $('.cancel').click(function() {
 	        $(this).closest('div.Sheet').toggleClass('selected').toggleClass('unselected');
-        	$('#darklayer').removeClass('on').addClass('off');
+        	$('.darklayer').removeClass('on').addClass('off');
         });
 	});
 </script>
