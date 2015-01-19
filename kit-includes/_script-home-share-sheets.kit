@@ -16,7 +16,7 @@
 		
 		// Shows sheets after they have loaded
 		($sheets).delay(300).addClass('loaded');
-		$('#darklayer').delay(300).addClass('loaded');
+		$('.darklayer').delay(300).addClass('loaded');
 		
 		// Handles opening the Twitter sheet
 		$('.Twitter.ShareSheet').click(function() {
@@ -40,7 +40,7 @@
         
         // Handles darkening rest of page
         ($triggers).click(function() {
-	        $('#darklayer').addClass('on').removeClass('off');
+	        $('.darklayer').addClass('on').removeClass('off');
         });
         
         // Adds "touched" class when element is touched and removes it when it is not
@@ -51,7 +51,7 @@
         // Triggers un-darkening rest of page and deselecting sheets
         $('.cancel').click(function() {
 	        $(this).closest('div.Sheet').toggleClass('selected').toggleClass('unselected');
-        	$('#darklayer').removeClass('on').addClass('off');
+        	$('.darklayer').removeClass('on').addClass('off');
         });
 	});
 </script>
