@@ -85,11 +85,6 @@ __    / /  | |     __   | |     | |    | |       | |
 			</li>
 			<li class="Link">
 				<a>
-					<img class="SocialIcon ADN" src="/images/Social%20Icons/ADN.svg" height="1" width="1">
-				</a>
-			</li>
-			<li class="Link">
-				<a>
 					<img class="SocialIcon Facebook" src="/images/Social%20Icons/Facebook.svg" height="1" width="1">
 				</a>
 			</li>
@@ -139,47 +134,6 @@ __    / /  | |     __   | |     | |    | |       | |
 	</div>
 </div>
 
-<!-- ADN Share Sheet -->
-<div class="Sheet unselected" id="ADN">
-	<div class="SheetContent">
-		<ul class="itemset">
-			<section class="clients">
-			<div class="itemcontainer">
-				<li><a href="riposte://x-callback-url/showUserProfile?profileID=19801"><img class="appicon" src="/images/App%20Icons/Riposte.png"></a>Riposte</li>
-			</div>
-			<div class="itemcontainer">
-				<li><a href="felix://user/@ScottSmith"><img class="appicon" src="/images/App%20Icons/Felix.png"></a>Felix</li>
-			</div>
-			<div class="itemcontainer">
-				<li><a href="netbot:///user_profile/ScottSmith"><img class="appicon" src="/images/App%20Icons/Netbot.png"></a>Netbot</li>
-			</div>
-			<div class="itemcontainer">
-				<li><a><img class="appicon" src="/images/App%20Icons/Placeholder-Icon.png"></a>Placeholder</li>
-			</div>
-			<div class="itemcontainer">
-				<li><a><img class="appicon" src="/images/App%20Icons/Placeholder-Icon.png"></a>Placeholder</li>
-			</div>
-			<div class="itemcontainer">
-				<li><a><img class="appicon" src="/images/App%20Icons/Placeholder-Icon.png"></a>Placeholder</li>
-			</div>
-			</section>
-			
-			<section class="browsers">
-			<div class="itemcontainer">
-				<li><a href="https://alpha.app.net/ScottSmith"><img class="appicon" src="/images/App%20Icons/Safari.png"></a>Right here</li>
-			</div>
-			<div class="itemcontainer">
-				<li><a href="googlechrome://alpha.app.net/scottsmith"><img class="appicon" src="/images/App%20Icons/Chrome.png"></a>Chrome</li>
-			</div>
-			<div class="itemcontainer">
-				<li><a href="ophttp://alpha.app.net/scottsmith"><img class="appicon" src="/images/App%20Icons/1Password.png" alt="Open profile in 1Password"></a>1Password</li>
-			</div>
-			</section>
-		</ul>
-		<h2 class="cancel">Cancel</h2>
-	</div>
-</div>
-
 <!-- Facebook Share Sheet -->
 <div class="Sheet unselected" id="Facebook">
 	<div class="SheetContent">
@@ -210,7 +164,7 @@ __    / /  | |     __   | |     | |    | |       | |
 <script async type="text/javascript" src="/scripts/build/main.js"></script>
 
 <!-- jQuery -->
-<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#current_page').click(function() {
@@ -221,24 +175,19 @@ __    / /  | |     __   | |     | |    | |       | |
 </script>
 <script type="text/javascript">
 	$(document).ready(function(){		
-		var $sheets = $('#Twitter, #ADN, #Facebook');
+		var $sheets = $('#Twitter, #Facebook');
 		
-		var $triggers = $('.Twitter, .ADN, .Facebook');
+		var $triggers = $('.Twitter, .Facebook');
 		
 		// Shows sheets after they have loaded
 		($sheets).delay(300).addClass('loaded');
-		$('#darklayer').delay(300).addClass('loaded');
+		$('.darklayer').delay(300).addClass('loaded');
 		
 		// Handles opening the Twitter sheet
 		$('.Twitter').click(function() {
         	$('#Twitter').toggleClass('selected').toggleClass('unselected');
         });
-        
-         // Handles opening the ADN sheet
-        $('.ADN').click(function() {
-        	$('#ADN').toggleClass('selected').toggleClass('unselected');
-        });
-        
+                
         // Handles opening the Facebook sheet
         $('.Facebook').click(function() {
         	$('#Facebook').toggleClass('selected').toggleClass('unselected');
@@ -246,7 +195,7 @@ __    / /  | |     __   | |     | |    | |       | |
                 
         // Handles darkening rest of page
         ($triggers).click(function() {
-	        $('#darklayer').addClass('on').removeClass('off');
+	        $('.darklayer').addClass('on').removeClass('off');
         });
         
         // Adds "touched" class when element is touched and removes it when it is not
@@ -257,7 +206,7 @@ __    / /  | |     __   | |     | |    | |       | |
         // Triggers un-darkening rest of page and deselecting sheets
         $('.cancel').click(function() {
 	        $(this).closest('div.Sheet').toggleClass('selected').toggleClass('unselected');
-        	$('#darklayer').removeClass('on').addClass('off');
+        	$('.darklayer').removeClass('on').addClass('off');
         });
 	});
 </script>
