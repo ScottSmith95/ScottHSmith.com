@@ -193,7 +193,7 @@
 }
 
 .email-bg {
-	background: #444;
+	background: $darkgrey;
 	color: #FFF;
 	position: relative;
 	width: 100vw;
@@ -211,10 +211,10 @@ section.email {
 	
 	input[type="email"] {
 		transition: border-color 0.25s ease;
-		color: #444;
+		color: $text-color;
 		font-size: 1em;
 		padding: 0.25em 0.5em;
-		border: 2px solid #009BCD;
+		border: 2px solid $blue;
 		border-radius: 0.35em;
 		outline: none;
 		margin: 0;
