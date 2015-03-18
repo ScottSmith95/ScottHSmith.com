@@ -19,8 +19,7 @@
 	}
 }
 
-.darklayer {
-	visibility: hidden;
+.js .darklayer {
 	position: fixed;
 	z-index: 9;
 	top: 0;
@@ -30,23 +29,23 @@
 	background: rgba(0,0,0,0.5);
 }
 
-.darklayer.loaded {
-	visibility: visible;
+.js .darklayer.loaded {
+	display: none;
 }
 
-.darklayer.on {
+.js .darklayer.on {
 	animation: fade-in 0.25s ease-out forwards;
 }
 
-.no-cssanimations .darklayer.on {
+.js.no-cssanimations .darklayer.on {
 	display: block;
 }
 
-.darklayer.off {
+.js .darklayer.off {
 	animation: fade-out 0.25s ease-out forwards;
 }
 
-.no-cssanimations .darklayer.off {
+.js.no-cssanimations .darklayer.off {
 	display: none;
 }
 
