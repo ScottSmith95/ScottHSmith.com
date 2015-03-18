@@ -106,7 +106,7 @@
 	</div>
 </div>
 
-<div id="darklayer" class="off"></div>
+<div class="darklayer off"></div>
 
 
 <!-- Main.js -->
@@ -139,7 +139,7 @@
                 
         // Handles darkening rest of page
         ($triggers).click(function() {
-	        $('.darklayer').addClass('on').removeClass('off');
+	        $('.darklayer').addClass('on').removeClass('off').removeClass('loaded');
         });
         
         // Adds "touched" class when element is touched and removes it when it is not
