@@ -145,12 +145,15 @@ nav a {
 
 .AllSocialLinks {
 	display: flex;
-	justify-content: space-around;
 	margin: 2.5% auto 1.5%;
 	list-style: none;
-
-	align-content: space-around;
 	flex-wrap: wrap;
+}
+
+@media screen and (max-width: 35em) {
+	.AllSocialLinks {
+		justify-content: space-around; // Prevents Chrome bug from incorrectly caluculating justify-content: center
+	}
 }
 
 .no-flexbox .AllSocialLinks {
