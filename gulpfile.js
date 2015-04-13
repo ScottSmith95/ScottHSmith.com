@@ -1,11 +1,10 @@
-var gulp       = require('gulp'),
-	csscomb    = require('gulp-csscomb'),
-	sass       = require('gulp-sass'),
-	prefix     = require('gulp-autoprefixer'),
-	minify     = require('gulp-minify-css'),
-	concat     = require('gulp-concat'),
-	uglify     = require('gulp-uglify'),
-	sourcemaps = require('gulp-sourcemaps');
+var gulp         = require('gulp'),
+	csscomb      = require('gulp-csscomb'),
+	sass         = require('gulp-sass'),
+	postcss      = require('gulp-postcss'),
+	concat       = require('gulp-concat'),
+	uglify       = require('gulp-uglify'),
+	sourcemaps   = require('gulp-sourcemaps');
 
 var paths = {
 	styles:     'css/*.scss',
@@ -14,23 +13,31 @@ var paths = {
 };
 
 gulp.task('styles', function() {
+	var processors = [
+		require('autoprefixer-core')('last 2 versions', '> 1%', 'ie 9', 'ie 8', 'Firefox ESR'),
+		require('css-mqpacker'),
+		require('csswring')
+    ];
 	return gulp.src(paths.styles)
 		.pipe(sourcemaps.init())
 			.pipe(csscomb())
 			.pipe(sass())
-			.pipe(prefix('last 2 versions', '> 1%', 'ie 9', 'ie 8', 'Firefox ESR', 'Opera 12.1'))
-			.pipe(minify({cache: true}))
+			.pipe(postcss(processors))
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest('css/build/'));
 });
 
 gulp.task('teastyles', function() {
+	var processors = [
+		require('autoprefixer-core')('last 2 versions', '> 1%', 'ie 9', 'ie 8', 'Firefox ESR'),
+		require('css-mqpacker'),
+		require('csswring')
+    ];
 	return gulp.src(paths.teastyles)
 		.pipe(sourcemaps.init())
 			.pipe(csscomb())
 			.pipe(sass())
-			.pipe(prefix('last 2 versions', '> 1%', 'ie 9', 'ie 8', 'Firefox ESR', 'Opera 12.1'))
-			.pipe(minify({cache: true}))
+			.pipe(postcss(processors))
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest('tea/'));
 });
