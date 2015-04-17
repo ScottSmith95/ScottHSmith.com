@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <title>Flickr</title>
-    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <path d="M100,0 C44.771526,3.03201907e-14 0,44.771526 0,100 C1.5158245e-14,155.228474 44.771526,200 100,200 C155.228474,200 200,155.228474 200,100 C200,44.771526 155.228474,-3.03201909e-14 100,0 Z M59.2,64.4 C78.851056,64.4 94.78125,80.330194 94.78125,99.98125 C94.78125,119.632306 78.851056,135.5625 59.2,135.5625 C39.548944,135.5625 23.61875,119.632306 23.61875,99.98125 C23.61875,80.330194 39.548944,64.4 59.2,64.4 Z M141.0375,64.4 C160.688556,64.4 176.61875,80.330194 176.61875,99.98125 C176.61875,119.632306 160.688556,135.5625 141.0375,135.5625 C121.386444,135.5625 105.45625,119.632306 105.45625,99.98125 C105.45625,80.330194 121.386444,64.4 141.0375,64.4 Z" id="Flickr" fill="#808080" sketch:type="MSShapeGroup"></path>
-    </g>
-</svg>
