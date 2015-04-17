@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <title>Cross</title>
-    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <path d="M100,0 C44.771524,3.03201907e-14 0,44.771524 0,100 C0,155.228476 44.771524,200 100,200 C155.228476,200 200,155.228476 200,100 C200,44.771524 155.228476,-3.41060513e-14 100,0 Z M84.0763011,40 L115.923699,40 L115.923699,84.1405714 L160,84.1405714 L160,116.034408 L115.923699,116.034408 L115.923699,160.16875 L84.0763011,160.16875 L84.0763011,116.034408 L40,116.034408 L40,84.1405714 L84.0763011,84.1405714 L84.0763011,40 Z" id="Cross" fill="#808080" sketch:type="MSShapeGroup"></path>
-    </g>
-</svg>
