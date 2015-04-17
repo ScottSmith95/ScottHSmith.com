@@ -1,4 +1,5 @@
 var gulp         = require('gulp'),
+	kit          = require('gulp-kit'),
 	csscomb      = require('gulp-csscomb'),
 	sass         = require('gulp-sass'),
 	postcss      = require('gulp-postcss'),
@@ -7,10 +8,17 @@ var gulp         = require('gulp'),
 	sourcemaps   = require('gulp-sourcemaps');
 
 var paths = {
-	styles:     'css/*.scss',
-	scripts:    ['scripts/modernizr.js', 'bower_components/fastclick/lib/fastclick.js', 'scripts/main.js'],
+	kit:      ['**/*.kit', '!kit-includes/**', '!node_modules/', '!bower_components/'],
+	styles:    'css/*.scss',
+	scripts:   ['scripts/modernizr.js', 'bower_components/fastclick/lib/fastclick.js', 'scripts/main.js'],
 	teastyles: 'tea/*.scss'
 };
+
+gulp.task('kit', function(){
+	return gulp.src(paths.kit)
+		.pipe(kit())
+		.pipe(gulp.dest('./'));
+});
 
 gulp.task('styles', function() {
 	var processors = [
@@ -59,7 +67,7 @@ gulp.task('watch', function() {
 
 // Workflows
 // $ gulp: Builds, prefixes, and minifies CSS files; concencates and minifies JS files; watches for changes. The works.
-gulp.task('default', ['styles', 'scripts', 'teastyles', 'watch']);
+gulp.task('default', ['kit', 'styles', 'scripts', 'teastyles', 'watch']);
 
 // $ gulp build: Builds, prefixes, and minifies CSS files; concencates and minifies JS files. For deployments.
-gulp.task('build', ['styles', 'scripts', 'teastyles']);
+gulp.task('build', ['kit', 'styles', 'scripts', 'teastyles']);
