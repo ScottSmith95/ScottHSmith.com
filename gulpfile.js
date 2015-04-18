@@ -60,6 +60,7 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('watch', function() {
+	gulp.watch(paths.kit, ['kit']);
 	gulp.watch(paths.styles, ['styles']);
 	gulp.watch(paths.scripts, ['scripts']);
 	gulp.watch(paths.teastyles, ['teastyles']);
