@@ -7,3 +7,4 @@ css/build/
 scripts/build/
 tea/tea.css
 tea/tea.css.map
+**/*.html
