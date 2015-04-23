@@ -9,10 +9,11 @@ var gulp       = require('gulp'),
 	sourcemaps = require('gulp-sourcemaps');
 
 var paths = {
-	html:      ['**/*.kit', '!kit-includes/**', '!node_modules/', '!bower_components/'],
+	html:      ['**/*.kit', '!kit-includes/**', '!bower_components/**/*', '!node_modules/**/*'],
 	styles:    'css/*.scss',
 	scripts:   ['scripts/modernizr.js', 'bower_components/fastclick/lib/fastclick.js', 'scripts/main.js'],
-	teastyles: 'tea/*.scss'
+	teastyles: 'tea/*.scss',
+	sitemap:   ['**/*.html', '!error/*.html', '!bower_components/**/*', '!node_modules/**/*']
 };
 
 gulp.task('html', function(){
@@ -61,7 +62,7 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('sitemap', ['html'], function () {
-	return gulp.src(['**/*.html', '!error/*.html', '!bower_components/**/*.html', '!node_modules/**/*.html'])
+	return gulp.src(paths.sitemap)
 		.pipe(sitemap({
 			siteUrl: 'https://scotthsmith.com'
 		}))
