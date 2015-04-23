@@ -1,21 +1,22 @@
-var gulp         = require('gulp'),
-	kit          = require('gulp-kit'),
-	csscomb      = require('gulp-csscomb'),
-	sass         = require('gulp-sass'),
-	postcss      = require('gulp-postcss'),
-	concat       = require('gulp-concat'),
-	uglify       = require('gulp-uglify'),
-	sourcemaps   = require('gulp-sourcemaps');
+var gulp       = require('gulp'),
+	kit        = require('gulp-kit'),
+	csscomb    = require('gulp-csscomb'),
+	sass       = require('gulp-sass'),
+	postcss    = require('gulp-postcss'),
+	concat     = require('gulp-concat'),
+	uglify     = require('gulp-uglify'),
+	sitemap    = require('gulp-sitemap'),
+	sourcemaps = require('gulp-sourcemaps');
 
 var paths = {
-	kit:      ['**/*.kit', '!kit-includes/**', '!node_modules/', '!bower_components/'],
+	html:      ['**/*.kit', '!kit-includes/**', '!node_modules/', '!bower_components/'],
 	styles:    'css/*.scss',
 	scripts:   ['scripts/modernizr.js', 'bower_components/fastclick/lib/fastclick.js', 'scripts/main.js'],
 	teastyles: 'tea/*.scss'
 };
 
-gulp.task('kit', function(){
-	return gulp.src(paths.kit)
+gulp.task('html', function(){
+	return gulp.src(paths.html)
 		.pipe(kit())
 		.pipe(gulp.dest('./'));
 });
@@ -59,8 +60,16 @@ gulp.task('scripts', function() {
 		.pipe(gulp.dest('scripts/build/'));
 });
 
+gulp.task('sitemap', ['html'], function () {
+	return gulp.src(['**/*.html', '!error/*.html', '!bower_components/**/*.html', '!node_modules/**/*.html'])
+		.pipe(sitemap({
+			siteUrl: 'https://scotthsmith.com'
+		}))
+		.pipe(gulp.dest('./'));
+});
+
 gulp.task('watch', function() {
-	gulp.watch(paths.kit, ['kit']);
+	gulp.watch(paths.html, ['html']);
 	gulp.watch(paths.styles, ['styles']);
 	gulp.watch(paths.scripts, ['scripts']);
 	gulp.watch(paths.teastyles, ['teastyles']);
@@ -68,7 +77,7 @@ gulp.task('watch', function() {
 
 // Workflows
 // $ gulp: Builds, prefixes, and minifies CSS files; concencates and minifies JS files; watches for changes. The works.
-gulp.task('default', ['kit', 'styles', 'scripts', 'teastyles', 'watch']);
+gulp.task('default', ['html', 'styles', 'scripts', 'teastyles', 'html', 'sitemap', 'watch']);
 
 // $ gulp build: Builds, prefixes, and minifies CSS files; concencates and minifies JS files. For deployments.
-gulp.task('build', ['kit', 'styles', 'scripts', 'teastyles']);
+gulp.task('build', ['html', 'styles', 'scripts', 'teastyles', 'html', 'sitemap']);
