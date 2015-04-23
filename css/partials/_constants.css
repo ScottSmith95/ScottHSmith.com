@@ -1,4 +1,4 @@
-// Colors
+/* Colors */
 
 $blue: #009BCD;
 $darkblue: #007EA6;
@@ -9,6 +9,6 @@ $bg-color: #ECEEF0;
 $highlight-color: RGBA(147, 187, 201, 0.5);
 
 
-// Fonts
+/* Fonts */
 
 $font-fam: 'museo-sans-1', 'museo-sans-2', sans-serif;

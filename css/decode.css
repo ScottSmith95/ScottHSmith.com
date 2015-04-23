@@ -1,5 +1,4 @@
-@import 'constants';
-@import 'project';
+@import 'partials/_project.css';
 
 .screenshot-box {
 	position: relative;

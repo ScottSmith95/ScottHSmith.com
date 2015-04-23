@@ -1,4 +1,4 @@
-@import 'constants';
+@import 'partials/_constants.css';
 
 html {
 	box-sizing: border-box;
@@ -152,7 +152,7 @@ nav a {
 
 @media screen and (max-width: 35em) {
 	.AllSocialLinks {
-		justify-content: space-around; // Prevents Chrome bug from incorrectly caluculating justify-content: center
+		justify-content: space-around; /* Prevents Chrome bug from incorrectly caluculating justify-content: center */
 	}
 }
 
@@ -239,7 +239,7 @@ nav a {
 	opacity: 0.5;
 }
 
-@import 'ShareSheet';
+@import 'partials/_ShareSheet.css';
 
 
 /* Tablet */
