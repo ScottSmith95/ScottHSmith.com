@@ -1,4 +1,5 @@
 var gulp       = require('gulp'),
+	merge      = require('merge-stream'),
 	kit        = require('gulp-kit'),
 	csscomb    = require('gulp-csscomb'),
 	sass       = require('gulp-sass'),
@@ -9,11 +10,12 @@ var gulp       = require('gulp'),
 	sourcemaps = require('gulp-sourcemaps');
 
 var paths = {
-	html:      ['**/*.kit', '!kit-includes/**', '!bower_components/**/*', '!node_modules/**/*'],
-	styles:    'css/*.scss',
-	scripts:   ['scripts/modernizr.js', 'bower_components/fastclick/lib/fastclick.js', 'scripts/main.js'],
-	teastyles: 'tea/*.scss',
-	sitemap:   ['**/*.html', '!error/*.html', '!bower_components/**/*', '!node_modules/**/*']
+	html:             ['**/*.kit', '!kit-includes/**', '!bower_components/**/*', '!node_modules/**/*'],
+	styles:           'css/*.scss',
+	teaStyles:        'tea/*.scss',
+	mainScripts:      ['scripts/modernizr.js', 'bower_components/fastclick/lib/fastclick.js', 'scripts/main.js'],
+	portfolioScripts: ['bower_components/imagesloaded/imagesloaded.pkgd.min.js', 'bower_components/masonry/dist/masonry.pkgd.min.js', 'scripts/portfolio.js'],
+	sitemap:          ['**/*.html', '!error/*.html', '!bower_components/**/*', '!node_modules/**/*']
 };
 
 gulp.task('html', function(){
@@ -28,37 +30,41 @@ gulp.task('styles', function() {
 		require('css-mqpacker'),
 		require('csswring')
     ];
-	return gulp.src(paths.styles)
+	var mainStyles = gulp.src(paths.styles)
 		.pipe(sourcemaps.init())
 			.pipe(csscomb())
 			.pipe(sass())
 			.pipe(postcss(processors))
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest('css/build/'));
-});
-
-gulp.task('teastyles', function() {
-	var processors = [
-		require('autoprefixer-core')('last 2 versions', '> 1%', 'ie 9', 'ie 8', 'Firefox ESR'),
-		require('css-mqpacker'),
-		require('csswring')
-    ];
-	return gulp.src(paths.teastyles)
+		
+	var teaStyles =  gulp.src(paths.teaStyles)
 		.pipe(sourcemaps.init())
 			.pipe(csscomb())
 			.pipe(sass())
 			.pipe(postcss(processors))
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest('tea/'));
+		
+	return merge(mainStyles, teaStyles);
 });
 
 gulp.task('scripts', function() {
-	return gulp.src(paths.scripts)
+	var portfolioScript = gulp.src(paths.portfolioScripts)
+		.pipe(sourcemaps.init())
+			.pipe(concat('portfolio.js'))
+			.pipe(uglify())
+		.pipe(sourcemaps.write('./'))
+		.pipe(gulp.dest('scripts/build/'));
+
+	var mainScript = gulp.src(paths.mainScripts)
 		.pipe(sourcemaps.init())
 			.pipe(concat('main.js'))
 			.pipe(uglify())
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest('scripts/build/'));
+		
+	return merge(mainScript, portfolioScript);
 });
 
 gulp.task('sitemap', ['html'], function () {
@@ -71,14 +77,13 @@ gulp.task('sitemap', ['html'], function () {
 
 gulp.task('watch', function() {
 	gulp.watch(paths.html, ['html']);
-	gulp.watch(paths.styles, ['styles']);
-	gulp.watch(paths.scripts, ['scripts']);
-	gulp.watch(paths.teastyles, ['teastyles']);
+	gulp.watch([paths.styles, paths.teaStyles], ['styles']);
+	gulp.watch([paths.mainScripts, paths.portfolioScripts], ['scripts']);
 });
 
 // Workflows
 // $ gulp: Builds, prefixes, and minifies CSS files; concencates and minifies JS files; watches for changes. The works.
-gulp.task('default', ['html', 'styles', 'scripts', 'teastyles', 'html', 'sitemap', 'watch']);
+gulp.task('default', ['html', 'styles', 'scripts', 'sitemap', 'watch']);
 
 // $ gulp build: Builds, prefixes, and minifies CSS files; concencates and minifies JS files. For deployments.
-gulp.task('build', ['html', 'styles', 'scripts', 'teastyles', 'html', 'sitemap']);
+gulp.task('build', ['html', 'styles', 'scripts', 'sitemap']);
