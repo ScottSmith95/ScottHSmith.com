@@ -1,8 +1,9 @@
-@import 'partials/_constants.css';
+@import 'partials/constants.css';
 
 html {
 	box-sizing: border-box;
 }
+
 *, *:before, *:after {
 	box-sizing: inherit;
 }
@@ -11,7 +12,6 @@ body {
 	margin: 0;
 	background: $bg-color;
 	font: 300 100%/1.5 $font-fam;
-	
 	-webkit-font-smoothing: antialiased;
 }
 
@@ -239,7 +239,7 @@ nav a {
 	opacity: 0.5;
 }
 
-@import 'partials/_ShareSheet.css';
+@import 'partials/share-sheet.css';
 
 
 /* Tablet */

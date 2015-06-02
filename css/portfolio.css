@@ -1,4 +1,4 @@
-@import 'partials/_project.css';
+@import 'partials/project.css';
 
 a {
 	transition: text-shadow 0.35s ease-out, color 0.35s ease-out;
