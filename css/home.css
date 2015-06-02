@@ -24,19 +24,17 @@ body {
 }
 
 a {
-	transition: text-shadow 0.35s ease, color 0.35s ease;
+	transition: color 0.35s ease;
 	color: $text-color;
 	text-decoration: none;
-}
-
-.no-touch a:hover {
-	color: $blue;
-	text-shadow: 0 0 10px rgba(0,0,0,0.35);
-}
-
-.no-touch a:active {
-	color: $darkblue;
-	text-shadow: 0 -2px 7px rgba(0,0,0,0.5);
+	
+	.no-touch &:hover {
+		color: $blue;
+	}
+	
+	.no-touch &:active {
+		color: $darkblue;
+	}
 }
 
 img {
