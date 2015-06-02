@@ -106,9 +106,6 @@
 	</div>
 </div>
 
-<div class="darklayer off"></div>
-
-
 <!-- Main.js -->
 <script async type="text/javascript" src="/scripts/build/main.js"></script>
 
@@ -129,29 +126,32 @@
 		
 		// Handles opening the Twitter sheet
 		$('.Twitter').click(function() {
-        	$('#Twitter').toggleClass('selected').toggleClass('unselected');
-        });
-                
-        // Handles opening the Facebook sheet
-        $('.Facebook').click(function() {
-        	$('#Facebook').toggleClass('selected').toggleClass('unselected');
-        });
-                
-        // Handles darkening rest of page
-        ($triggers).click(function() {
-	        $('.darklayer').addClass('on').removeClass('off').removeClass('loaded');
-        });
-        
-        // Adds "touched" class when element is touched and removes it when it is not
-        $('.cancel').bind('touchstart touchend', function(e) {
-        	$(this).toggleClass('touched');
-        });
-        
-        // Triggers un-darkening rest of page and deselecting sheets
-        $('.cancel').click(function() {
-	        $(this).closest('div.Sheet').toggleClass('selected').toggleClass('unselected');
-        	$('.darklayer').removeClass('on').addClass('off');
-        });
+			$('#Twitter').toggleClass('selected').toggleClass('unselected');
+		});
+				
+		// Handles opening the Facebook sheet
+		$('.Facebook').click(function() {
+			$('#Facebook').toggleClass('selected').toggleClass('unselected');
+		});
+		
+		// Adds "touched" class when element is touched and removes it when it is not
+		$('.cancel').bind('touchstart touchend', function(e) {
+			$(this).toggleClass('touched');
+		});
+		
+		// Add dark layer to DOM
+		$('body').append($('<div>', {class: 'darklayer off'}));
+		
+		 // Handles darkening rest of page
+		($triggers).click(function() {
+			$('.darklayer').addClass('on').removeClass('off').addClass('loaded');
+		});
+		
+		// Triggers un-darkening rest of page and deselecting sheets
+		$('.cancel').click(function() {
+			$(this).closest('div.Sheet').toggleClass('selected').toggleClass('unselected');
+			$('.darklayer').removeClass('on').addClass('off');
+		});
 	});
 </script>
 
