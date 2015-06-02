@@ -15,14 +15,14 @@ a {
 	transition: color 0.35s ease;
 	color: $blue;
 	text-decoration: none;
-}
-
-a:hover {
-	color: $darkblue;
-}
-
-a:active {
-	color: $darkgrey;
+	
+	&:hover {
+		color: $darkblue;
+	}
+	
+	&:active {
+		color: $darkgrey;
+	}
 }
 
 img {
@@ -54,13 +54,14 @@ header {
 	font-size: 1.1em;
 	line-height: 1.8em;
 	text-align: center;
+	
+	.no-cssanimations & {
+		opacity: 1;
+	}
 }
 
-.no-cssanimations header {
-	opacity: 1;
-}
-
-header .nav, header .divider {
+header .nav,
+header .divider {
 	color: rgba(68,68,68,0.5);
 	font-weight: 300;
 	vertical-align: top;
