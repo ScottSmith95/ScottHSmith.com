@@ -13,6 +13,7 @@ body {
 	background: $bg-color;
 	font: 300 100%/1.5 $font-fam;
 	-webkit-font-smoothing: antialiased;
+	overflow: hidden;
 }
 
 ::selection {
@@ -150,7 +151,7 @@ nav a {
 
 @media screen and (max-width: 35em) {
 	.AllSocialLinks {
-		justify-content: space-around; /* Prevents Chrome bug from incorrectly caluculating justify-content: center */
+		justify-content: space-around; /* Prevents Chrome bug from incorrectly calculating justify-content: center */
 	}
 }
 
