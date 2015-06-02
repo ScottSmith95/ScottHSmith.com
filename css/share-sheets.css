@@ -1,4 +1,4 @@
-@import 'partials/_project.css';
+@import 'partials/project.css';
 
 .content {
 	animation: intro 1.25s ease-out 0.75s forwards;
@@ -41,7 +41,7 @@
 	opacity: 0.5;
 }
 
-@import 'partials/_ShareSheet.css';
+@import 'partials/share-sheet.css';
 
 
 /* Tablet */

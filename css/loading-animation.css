@@ -1,4 +1,4 @@
-@import 'partials/_project.css';
+@import 'partials/project.css';
 
 section {
 	animation: intro 1.25s ease-out 0.75s forwards;

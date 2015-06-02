@@ -74,8 +74,8 @@ gulp.task('sitemap', ['html'], function () {
 
 gulp.task('watch', function() {
 	gulp.watch(paths.html, ['html']);
-	gulp.watch([paths.styles, paths.teaStyles], ['styles']);
-	gulp.watch([paths.mainScripts, paths.portfolioScripts], ['scripts']);
+	gulp.watch(paths.styles, ['styles']);
+	gulp.watch(paths.mainScripts, ['scripts']);
 });
 
 // Workflows
