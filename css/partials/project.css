@@ -34,6 +34,19 @@ ul {
 	margin: 0;
 }
 
+.cf{
+	&:before,
+	&:after {
+	  content: "";
+	  display: table;
+	}
+ 
+	&:after {
+	  clear: both;
+	}
+}
+
+
 @keyframes intro {
 	0% {
 		opacity: 0;
