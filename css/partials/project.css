@@ -88,6 +88,10 @@ header .divider {
 	color: $darkblue;
 }
 
+header a {
+	color: $text-color
+}
+
 .no-touch header a:hover {
 	color: $darkblue;
 }
