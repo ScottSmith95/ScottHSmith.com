@@ -46,7 +46,6 @@ ul {
 	}
 }
 
-
 @keyframes intro {
 	0% {
 		opacity: 0;
@@ -89,7 +88,11 @@ header .divider {
 }
 
 header a {
-	color: $text-color
+	color: $text-color;
+}
+
+header p a {
+	color: $blue;
 }
 
 .no-touch header a:hover {
