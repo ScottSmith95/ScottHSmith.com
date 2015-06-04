@@ -8,7 +8,7 @@ var gulp       = require('gulp'),
 	sourcemaps = require('gulp-sourcemaps');
 
 var paths = {
-	html:             ['**/*.kit', '!kit-includes/**', '!bower_components/**/*', '!node_modules/**/*'],
+	html:             ['**/*.kit', '!kit-includes/**', '!node_modules/**/*'],
 	styles:           'css/*.css',
 	teaStyles:        'tea/*.css',
 	scripts:          ['scripts/modernizr.js', 'node_modules/fastclick/lib/fastclick.js', 'scripts/main.js'],
