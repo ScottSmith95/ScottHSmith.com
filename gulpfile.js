@@ -11,9 +11,8 @@ var paths = {
 	html:             ['**/*.kit', '!kit-includes/**', '!bower_components/**/*', '!node_modules/**/*'],
 	styles:           'css/*.css',
 	teaStyles:        'tea/*.css',
-	mainScripts:      ['scripts/modernizr.js', 'bower_components/fastclick/lib/fastclick.js', 'scripts/main.js'],
-	portfolioScripts: ['bower_components/imagesloaded/imagesloaded.pkgd.min.js', 'bower_components/masonry/dist/masonry.pkgd.min.js', 'scripts/portfolio.js'],
-	sitemap:          ['**/*.html', '!error/*.html', '!bower_components/**/*', '!node_modules/**/*']
+	scripts:          ['scripts/modernizr.js', 'node_modules/fastclick/lib/fastclick.js', 'scripts/main.js'],
+	sitemap:          ['**/*.html', '!error/*.html', '!node_modules/**/*']
 };
 
 gulp.task('html', function(){
@@ -47,21 +46,12 @@ gulp.task('styles', function() {
 });
 
 gulp.task('scripts', function() {
-	var portfolioScript = gulp.src(paths.portfolioScripts)
-		.pipe(sourcemaps.init())
-			.pipe(concat('portfolio.js'))
-			.pipe(uglify())
-		.pipe(sourcemaps.write('./'))
-		.pipe(gulp.dest('scripts/build/'));
-
-	var mainScript = gulp.src(paths.mainScripts)
+	return gulp.src(paths.scripts)
 		.pipe(sourcemaps.init())
 			.pipe(concat('main.js'))
 			.pipe(uglify())
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest('scripts/build/'));
-		
-	return merge(mainScript, portfolioScript);
 });
 
 gulp.task('sitemap', ['html'], function () {
@@ -75,7 +65,7 @@ gulp.task('sitemap', ['html'], function () {
 gulp.task('watch', function() {
 	gulp.watch(paths.html, ['html']);
 	gulp.watch(paths.styles, ['styles']);
-	gulp.watch(paths.mainScripts, ['scripts']);
+	gulp.watch(paths.scripts, ['scripts']);
 });
 
 // Workflows
