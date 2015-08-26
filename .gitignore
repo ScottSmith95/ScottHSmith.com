@@ -5,6 +5,7 @@ bower_components/
 
 css/build/
 scripts/build/
-tea/tea.css.map
+tea/build/
+**/*.map
 **/*.html
 sitemap.xml
