@@ -1,5 +1,4 @@
 var gulp       = require('gulp'),
-	merge      = require('merge-stream'),
 	kit        = require('gulp-kit'),
 	postcss    = require('gulp-postcss'),
 	concat     = require('gulp-concat'),
@@ -15,6 +14,15 @@ var paths = {
 	sitemap:          ['**/*.html', '!error/*.html', '!node_modules/**/*']
 };
 
+var processors = [
+	require('postcss-import'),
+	require('postcss-nested'),
+	require('postcss-simple-vars'),
+	require('css-mqpacker')({sort: true}),
+	require('autoprefixer-core')('last 2 versions', '> 1%', 'ie 9', 'ie 8', 'Firefox ESR'),
+	require('csswring')
+];
+
 gulp.task('html', function(){
 	return gulp.src(paths.html)
 		.pipe(kit())
@@ -22,27 +30,18 @@ gulp.task('html', function(){
 });
 
 gulp.task('styles', function() {
-	var processors = [
-		require('postcss-import'),
-		require('postcss-nested'),
-		require('postcss-simple-vars'),
-		require('css-mqpacker'),
-		require('autoprefixer-core')('last 2 versions', '> 1%', 'ie 9', 'ie 8', 'Firefox ESR'),
-		require('csswring')
-    ];
-	var mainStyles = gulp.src(paths.styles)
+	return gulp.src(paths.styles)
 		.pipe(sourcemaps.init())
 			.pipe(postcss(processors))
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest('css/build/'));
-		
-	var teaStyles =  gulp.src(paths.teaStyles)
+});
+gulp.task('teaStyles', function() {
+	return gulp.src(paths.teaStyles)
 		.pipe(sourcemaps.init())
 			.pipe(postcss(processors))
 		.pipe(sourcemaps.write('./'))
-		.pipe(gulp.dest('tea/'));
-		
-	return merge(mainStyles, teaStyles);
+		.pipe(gulp.dest('tea/build/'));
 });
 
 gulp.task('scripts', function() {
@@ -70,7 +69,7 @@ gulp.task('watch', function() {
 
 // Workflows
 // $ gulp: Builds, prefixes, and minifies CSS files; concencates and minifies JS files; watches for changes. The works.
-gulp.task('default', ['html', 'styles', 'scripts', 'sitemap', 'watch']);
+gulp.task('default', ['html', 'styles', 'teaStyles', 'scripts', 'sitemap', 'watch']);
 
 // $ gulp build: Builds, prefixes, and minifies CSS files; concencates and minifies JS files. For deployments.
-gulp.task('build', ['html', 'styles', 'scripts', 'sitemap']);
+gulp.task('build', ['html', 'styles', 'teaStyles', 'scripts', 'sitemap']);
