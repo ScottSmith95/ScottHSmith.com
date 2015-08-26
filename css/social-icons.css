@@ -47,20 +47,21 @@
 	height: 2.75em;
 	margin: 7.5% 1% 0;
 	vertical-align: middle;
+	
+	@media (hover) {
+	&:hover {
+		transform: translateY(-8px);
+	}
+	
+	&:active {
+		transform: translateY(0);
+		opacity: 0.65;
+	}
+	}
 }
-
-.no-touch .download:hover {
-	transform: translateY(-8px);
-}
-
-.no-touch .download:active {
-	transform: translateY(0);
-	opacity: 0.65;
-}
-
 
 /* Tablet */
-@media screen and (min-width: 35em) {
+@media (min-width: 35em) {
 	.content-wrapper {
 		width: 80%;
 	}
@@ -68,7 +69,7 @@
 
 
 /* Desktop */
-@media screen and (min-width: 50em) {
+@media (min-width: 50em) {
 	.download {
 		height: 4.75em;
 		margin: 3.5% 2.5% 2.5%;

@@ -1,5 +1,5 @@
-/* Modernizr (Custom Build) | MIT & BSD
- * Build: http://modernizr.com/download/#-flexbox-cssanimations-csscolumns-svg-touch-shiv-cssclasses-teststyles-testprops-testallprops-prefixes-domprefixes
+/* Modernizr 2.8.3 (Custom Build) | MIT & BSD
+ * Build: http://modernizr.com/download/#-flexbox-cssanimations-csscolumns-svg-shiv-cssclasses-teststyles-testallprops-prefixes-domprefixes
  */
 ;
 
@@ -198,19 +198,6 @@ window.Modernizr = (function( window, document, undefined ) {
         }
     }    tests['flexbox'] = function() {
       return testPropsAll('flexWrap');
-    };
-    tests['touch'] = function() {
-        var bool;
-
-        if(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
-          bool = true;
-        } else {
-          injectElementWithStyles(['@media (',prefixes.join('touch-enabled),('),mod,')','{#modernizr{top:9px;position:absolute}}'].join(''), function( node ) {
-            bool = node.offsetTop === 9;
-          });
-        }
-
-        return bool;
     };
     tests['cssanimations'] = function() {
         return testPropsAll('animationName');

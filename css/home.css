@@ -29,12 +29,14 @@ a {
 	color: $text-color;
 	text-decoration: none;
 	
-	.no-touch &:hover {
+	@media (hover) {
+	&:hover {
 		color: $blue;
 	}
 	
-	.no-touch &:active {
+	&:active {
 		color: $darkblue;
+	}
 	}
 }
 
@@ -149,7 +151,7 @@ nav a {
 	flex-wrap: wrap;
 }
 
-@media screen and (max-width: 35em) {
+@media (max-width: 35em) {
 	.AllSocialLinks {
 		justify-content: space-around; /* Prevents Chrome bug from incorrectly calculating justify-content: center */
 	}
@@ -228,10 +230,12 @@ nav a {
 	height: 2.25em;
 	vertical-align: middle;
 	cursor: pointer;
-}
-
-.no-touch .SocialIcon:active {
-	opacity: 0.5;
+	
+	@media (hover) {
+	&:active {
+		opacity: 0.5;
+	}
+	}
 }
 
 .SocialLink.touched .SocialIcon {
@@ -242,7 +246,7 @@ nav a {
 
 
 /* Tablet */
-@media screen and (min-width: 35em) {
+@media (min-width: 35em) {
 	.headerpic, .headerpic img {
 		width: 14em;
 		height: 14em;
@@ -263,20 +267,20 @@ nav a {
 
 	.SocialIcon {
 		height: 3em;
-	}
-
-	.no-touch .SocialIcon {
+		
+		@media (hover) {
 		transform: scale(0.8);
-	}
-
-	.no-touch .SocialIcon:hover {
-		transform: scale(1);
+		
+		&:hover {
+			transform: scale(1);
+		}
+		}
 	}
 }
 
 
 /* Desktop */
-@media screen and (min-width: 50em) {
+@media (min-width: 50em) {
 	.headerpic, .headerpic img {
 		margin: 0 auto 1.5%;
 	}
@@ -308,7 +312,7 @@ nav a {
 
 
 /* Large Screen */
-@media screen and (min-width: 68.5em) {
+@media (min-width: 68.5em) {
 	.info {
 		font-size: 1.35em;
 	}

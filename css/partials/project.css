@@ -79,12 +79,14 @@ header .divider {
 	vertical-align: top;
 }
 
-.no-touch header .nav:hover {
+@media (hover) {
+header .nav:hover {
 	color: $blue;
 }
 
-.no-touch header .nav:active {
+header .nav:active {
 	color: $darkblue;
+}
 }
 
 header a {
@@ -95,12 +97,14 @@ header p a {
 	color: $blue;
 }
 
-.no-touch header a:hover {
+@media (hover) {
+header a:hover {
 	color: $darkblue;
 }
 
-.no-touch header a:active {
+header a:active {
 	color: $darkgrey;
+}
 }
 
 header h1 {
@@ -141,10 +145,12 @@ header h1 ul {
 
 .PageMenu a {
 	color: rgba(68,68,68,0.5);
-}
-
-.no-touch .PageMenu a:hover {
-	color: rgba(68,68,68,0.85);
+	
+	@media (hover) {
+	&:hover {
+		color: rgba(68,68,68,0.85);
+	}
+	}
 }
 
 .license {
@@ -161,19 +167,20 @@ header h1 ul {
 .license a {
 	transition: color 0.3s ease;
 	color: $darkgrey;
+	
+	@media (hover) {
+	&:hover {
+		color: $blue;
+	}
+	
+	&:active {
+		color: $darkblue;
+	}
+	}
 }
-
-.no-touch .license a:hover {
-	color: $blue;
-}
-
-.no-touch .license a:active {
-	color: $darkblue;
-}
-
 
 /* Tablet */
-@media screen and (min-width: 35em) {
+@media (min-width: 35em) {
 	header {
 		width: 85%;
 		margin: 2% auto 0;
@@ -202,7 +209,7 @@ header h1 ul {
 
 
 /* Desktop */
-@media screen and (min-width: 50em) {
+@media (min-width: 50em) {
 	header {
 		width: 65%;
 	}
