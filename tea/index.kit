@@ -150,10 +150,10 @@ printImage();
         });
         
         // Triggers un-darkening rest of page and deselecting sheets
-        $('.cancel').click(function() {
-	        $(this).closest('div.Sheet').toggleClass('selected').toggleClass('unselected');
-        	$('.darklayer').removeClass('on').addClass('off');
-        });
+		$('.cancel, .darklayer').click(function() {
+			$('.Sheet.selected').removeClass('selected').addClass('unselected');
+			$('.darklayer').removeClass('on').addClass('off');
+		});
 	});
 </script>
 

@@ -60,6 +60,7 @@
 	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 	font-weight: 300;
 	user-select: none;
+	margin: 0 auto;
 }
 
 .Sheet.loaded {
@@ -74,11 +75,16 @@
 	transform: translateY(0%);
 }
 
+.SheetContent {
+	max-width: 375px;
+	margin: 0 auto;
+}
+
 .itemset {
 	padding: 1.5em 0 1em;
 	margin: 0.6rem 0.6rem 0.5rem;
 	text-align: left;
-	border-radius: 3px;
+	border-radius: 15px;
 	background: rgba(248,248,248,0.95);
 }
 
@@ -115,7 +121,7 @@
 
 .itemset li {
 	display: inline-block;
-	width: 67px;
+	width: 22.5%;
 	height: 100%;
 	margin: 0 auto;
 	color: #000000;
@@ -136,13 +142,13 @@
 }
 
 .cancel {
-	padding: 0.35em 0;
+	padding: 0.65em 0;
 	margin: 0.5rem 0.6rem 0.6rem;
-	border-radius: 3px;
+	border-radius: 15px;
 	color: #0076FF;
 	background: rgba(248,248,248,1);
 	font-size: 20px;
-	font-weight: 400;
+	font-weight: 500;
 	text-align: center;
 	text-decoration: none;
 	cursor: pointer;
@@ -154,7 +160,7 @@
 }
 
 /* Landscape */
-@media (orientation:landscape) {
+@media (orientation: landscape) {
 	.itemset .itemcontainer {
 		margin: 0 7px;
 	}
@@ -169,7 +175,11 @@
 }
 
 /* Tablet */
-@media (min-width: 35em) {
+@media (min-width: 45em) {
+	.SheetContent {
+		max-width: 450px;
+	}
+	
 	.itemset section {
 		padding-right: 2.5%;
 		padding-left: 2.5%;
@@ -180,7 +190,7 @@
 	}
 
 	.itemset .itemcontainer {
-		margin: 0 5%;
+		margin: 0 0.25em;
 	}
 
 	.itemset .itemcontainer:first-child {
@@ -192,11 +202,10 @@
 	}
 	
 	.itemset li {
-		width: 80px;
+		width: 20%;
 	}
-
+	
 	.appicon {
-		width: auto;
 		height: 75px;
 	}
 }

@@ -62,16 +62,4 @@
 		margin: 0 0.75%;
 		line-height: 3.5em;
 	}
-
-	.SocialIcon {
-		height: 3em;
-		margin: 0;
-	}
-}
-
-/* Large Screens */
-@media (min-width: 68.5em) {
-	.SocialIcon {
-		height: 4.25em;
-	}
 }

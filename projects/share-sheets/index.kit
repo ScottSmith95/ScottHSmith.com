@@ -22,7 +22,7 @@
 			</div>
 		</ul></h1>
 	
-		<div class="desc"><p>I recreated iOS's "Share Sheets" using CSS and jQuery. Each Sheet is composed of an ordered list and is able to animate in and out of the page. Options are given for opening a profile in several different social apps. This looks best using and is intended for use only on smartphones. Feel free to copy any of the code I've written for personal use, but I'd love it if you would let me know so I can check out your work too! I have provided a <a href="https://gist.github.com/ScottSmith95/4417738">Gist</a> with everything you need to get started.</p></div>
+		<div class="desc"><p>I recreated iOS's "Share Sheets" using CSS and jQuery. Each Sheet is composed of an ordered list and is able to animate in and out of the page. Options are given for opening a profile in several different social apps. This looks best using and is intended for use only on smartphones. Feel free to copy any of the code I've written for personal use. I have provided a <a href="https://gist.github.com/ScottSmith95/4417738">Gist</a> with everything you need to get started.</p></div>
 	</header>
 		
 	<div class="content" role="main">
@@ -48,6 +48,7 @@
 <!-- Share Sheets -->
 <!-- Twitter Share Sheet -->
 <div class="Sheet unselected" id="Twitter">
+	<div class="SheetContent">
 		<ul class="itemset">
 			<section class="clients">
 			<div class="itemcontainer">
@@ -142,14 +143,14 @@
 		// Add dark layer to DOM
 		$('body').append($('<div>', {class: 'darklayer off'}));
 		
-		 // Handles darkening rest of page
+		// Handles darkening rest of page
 		($triggers).click(function() {
 			$('.darklayer').addClass('on').removeClass('off').addClass('loaded');
 		});
 		
 		// Triggers un-darkening rest of page and deselecting sheets
-		$('.cancel').click(function() {
-			$(this).closest('div.Sheet').toggleClass('selected').toggleClass('unselected');
+		$('.cancel, .darklayer').click(function() {
+			$('.Sheet.selected').removeClass('selected').addClass('unselected');
 			$('.darklayer').removeClass('on').addClass('off');
 		});
 	});
