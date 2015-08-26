@@ -100,7 +100,7 @@ a {
 	100% {opacity: 1; transform: scale(1, 1) rotate(4deg);}
 }
 
-@import "../css/ShareSheet";
+@import "../css/partials/share-sheet.css";
 
 @media screen and (max-width: 1100px) {
 body {
@@ -123,7 +123,7 @@ header, .content-wrapper {
 }
 }
 
-@media screen and (max-width: 699px) {
+@media (max-width: 699px) {
 #intro, #start {
 	float: none;
 	clear: both;
@@ -147,7 +147,7 @@ header, .content-wrapper {
 }
 }
 
-@media screen and (max-device-width: 699px) {
+@media (max-device-width: 699px) {
 body {
 	font-size: 1em;
 }
