@@ -9,6 +9,7 @@ var gulp       = require('gulp'),
 var paths = {
 	html:             ['**/*.kit', '!kit-includes/**', '!node_modules/**/*'],
 	styles:           'css/*.css',
+	stylesWatch:      'css/**/*.css',
 	teaStyles:        'tea/*.css',
 	scripts:          ['scripts/modernizr.js', 'node_modules/fastclick/lib/fastclick.js', 'scripts/main.js'],
 	sitemap:          ['**/*.html', '!error/*.html', '!node_modules/**/*']
@@ -63,7 +64,7 @@ gulp.task('sitemap', ['html'], function () {
 
 gulp.task('watch', function() {
 	gulp.watch(paths.html, ['html']);
-	gulp.watch(paths.styles, ['styles']);
+	gulp.watch(paths.stylesWatch, ['styles']);
 	gulp.watch(paths.scripts, ['scripts']);
 });
 
