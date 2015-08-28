@@ -16,12 +16,14 @@ a {
 	color: $blue;
 	text-decoration: none;
 	
+	@media (hover) {
 	&:hover {
 		color: $darkblue;
 	}
 	
 	&:active {
 		color: $darkgrey;
+	}
 	}
 }
 
@@ -34,7 +36,7 @@ ul {
 	margin: 0;
 }
 
-.cf{
+.cf {
 	&:before,
 	&:after {
 	  content: "";
@@ -80,13 +82,13 @@ header .divider {
 }
 
 @media (hover) {
-header .nav:hover {
-	color: $blue;
-}
-
-header .nav:active {
-	color: $darkblue;
-}
+	header .nav:hover {
+		color: $blue;
+	}
+	
+	header .nav:active {
+		color: $darkblue;
+	}
 }
 
 header a {
@@ -98,13 +100,13 @@ header p a {
 }
 
 @media (hover) {
-header a:hover {
-	color: $darkblue;
-}
-
-header a:active {
-	color: $darkgrey;
-}
+	header a:hover {
+		color: $darkblue;
+	}
+	
+	header a:active {
+		color: $darkgrey;
+	}
 }
 
 header h1 {
