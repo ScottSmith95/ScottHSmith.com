@@ -5,7 +5,7 @@
 	z-index: 1;
 	width: 100%;
 	height: 10em;
-	background-color: $darkgrey;
+	background-color: var(--darkgrey);
 	
 	.bubble {
 		color: #FFF;
@@ -73,7 +73,7 @@
 .content-container {
 	position: relative;
 	z-index: 2;
-	background-color: $bg-color;
+	background-color: var(--bg-color);
 	box-shadow: 0 0.5em 2em rgba(0,0,0,0.5);
 }
 
@@ -134,11 +134,14 @@
 	margin: 0.5em 0;
 }
 
+:root {
+	--active-button: #35495D;
+}
+
+
 .options .button {
 	margin-right: 0.5em;
-	
-	$active-button: #35495D;
-	
+		
 	&:last-child {
 		margin-right: 0;
 	}
@@ -152,7 +155,7 @@
 		}
 		
 		&:active {
-			background-color: $active-button;
+			background-color: var(--active-button);
 		}
 		}
 	}
@@ -167,7 +170,7 @@
 		}
 		
 		&:active {
-			background-color: $active-button;
+			background-color: var(--active-button);
 		}
 		}
 	}
@@ -181,7 +184,7 @@
 		}
 		
 		&:active {
-			background-color: $active-button;
+			background-color: var(--active-button);
 		}
 		}
 	}
@@ -195,14 +198,14 @@
 		}
 		
 		&:active {
-			background-color: $active-button;
+			background-color: var(--active-button);
 		}
 		}
 	}
 }
 
 .email-bg {
-	background-color: $darkgrey;
+	background-color: var(--darkgrey);
 	color: #FFF;
 	position: relative;
 	width: 100vw;
@@ -220,10 +223,10 @@ section.email {
 	
 	input[type="email"] {
 		transition: border-color 0.25s ease;
-		color: $text-color;
+		color: var(--text-color);
 		font-size: 1em;
 		padding: 0.25em 0.5em;
-		border: 2px solid $blue;
+		border: 2px solid var(--blue);
 		border-radius: 0.35em;
 		outline: none;
 		margin: 0;
@@ -263,7 +266,7 @@ section.donate {
 	border-radius: 0.35em;
 	margin: 2.5% auto 1.25%;
 	color: #FFFFFF;
-	background-color: $blue;
+	background-color: var(--blue);
 	font-size: 1em;
 	font-weight: bold;
 	text-align: center;
@@ -279,7 +282,7 @@ section.donate {
 
 .donate .button {
 	font-size: 1.1em;
-	background-color: $blue;
+	background-color: var(--blue);
 	margin: 2.5% auto 1.25% 0.5em;
 	
 	@media (hover) {

@@ -21,7 +21,7 @@ section {
 	border-radius: 999em;
 	margin: 0 0.5%;
 	opacity: 0;
-	background: $blue;
+	background: var(--blue);
 }
 
 .first {

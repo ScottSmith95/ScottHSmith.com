@@ -19,16 +19,16 @@
 
 .content a {
 	transition: color 0.35s ease-out;
-	color: $text-color;
+	color: var(--text-color);
 	text-decoration: none;
 }
 
 .content a:hover {
-	color: $blue;
+	color: var(--blue);
 }
 
 .content a:active {
-	color: $darkblue;
+	color: var(--darkblue);
 }
 
 /* Desktop */

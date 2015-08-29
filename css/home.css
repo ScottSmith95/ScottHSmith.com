@@ -10,32 +10,28 @@ html {
 
 body {
 	margin: 0;
-	background: $bg-color;
-	font: 300 100%/1.5 $font-fam;
+	background: var(--bg-color);
+	font: 300 100%/1.5 var(--font-fam);
 	-webkit-font-smoothing: antialiased;
 	overflow: hidden;
 }
 
 ::selection {
-	background: $highlight-color;
-}
-
-::-moz-selection {
-	background: $highlight-color;
+	background: var(--highlight-color);
 }
 
 a {
 	transition: color 0.35s ease;
-	color: $text-color;
+	color: var(--text-color);
 	text-decoration: none;
 	
 	@media (hover) {
 	&:hover {
-		color: $blue;
+		color: var(--blue);
 	}
 	
 	&:active {
-		color: $darkblue;
+		color: var(--darkblue);
 	}
 	}
 }
@@ -114,7 +110,7 @@ ul {
 .name {
 	transition: font-size 0.5s ease;
 	margin: 1.5% auto;
-	color: $text-color;
+	color: var(--text-color);
 	font-size: 2em;
 	font-weight: 500;
 	line-height: 1;
@@ -124,7 +120,7 @@ nav {
 	transition: font-size 0.5s ease;
 	display: inline-block;
 	padding: 0 1.5% 1%;
-	border-bottom: 1px solid $blue;
+	border-bottom: 1px solid var(--blue);
 	margin: 1% auto;
 	font-size: 1.25em;
 }
@@ -139,7 +135,7 @@ nav a {
 	width: 92.5%;
 	max-width: 25em;
 	margin: 1.5% auto;
-	color: $text-color;
+	color: var(--text-color);
 	font-size: 1em;
 	line-height: 1.3em;
 }

@@ -1,11 +1,11 @@
 @import 'partials/project.css';
 
 .lightcolor {
-	color: $lightgrey;
+	color: var(--lightgrey);
 }
 
 .bluecolor {
-	color: $blue;
+	color: var(--blue);
 }
 
 .content-wrapper {

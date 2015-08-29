@@ -2,27 +2,27 @@
 
 body {
 	margin: 0;
-	color: $text-color;
-	background: $bg-color;
-	font: 300 100%/1.5 $font-fam;
+	color: var(--text-color);
+	background: var(--bg-color);
+	font: 300 100%/1.5 var(--font-fam);
 }
 
 ::selection {
-	background: $highlight-color;
+	background: var(--highlight-color);
 }
 
 a {
 	transition: color 0.35s ease;
-	color: $blue;
+	color: var(--blue);
 	text-decoration: none;
 	
 	@media (hover) {
 	&:hover {
-		color: $darkblue;
+		color: var(--darkblue);
 	}
 	
 	&:active {
-		color: $darkgrey;
+		color: var(--darkgrey);
 	}
 	}
 }
@@ -83,35 +83,35 @@ header .divider {
 
 @media (hover) {
 	header .nav:hover {
-		color: $blue;
+		color: var(--blue);
 	}
 	
 	header .nav:active {
-		color: $darkblue;
+		color: var(--darkblue);
 	}
 }
 
 header a {
-	color: $text-color;
+	color: var(--text-color);
 }
 
 header p a {
-	color: $blue;
+	color: var(--blue);
 }
 
 @media (hover) {
 	header a:hover {
-		color: $darkblue;
+		color: var(--darkblue);
 	}
 	
 	header a:active {
-		color: $darkgrey;
+		color: var(--darkgrey);
 	}
 }
 
 header h1 {
 	padding-bottom: 3.5%;
-	border-bottom: 1px solid $blue;
+	border-bottom: 1px solid var(--blue);
 	margin: 0.65em 0;
 	font-size: 1.5em;
 	line-height: 1em;
@@ -136,13 +136,13 @@ header h1 ul {
 	transition: border-bottom 0.3s ease;
 	display: none;
 	position: absolute;
-	border-bottom: 0 solid $blue;
+	border-bottom: 0 solid var(--blue);
 	background: rgba(228,230,232,0.75);
 	text-align: left;
 }
 
 .PageMenu.shown {
-	border-bottom: 2px solid $blue;
+	border-bottom: 2px solid var(--blue);
 }
 
 .PageMenu a {
@@ -159,7 +159,7 @@ header h1 ul {
 	display: block;
 	width: 80%;
 	margin: 2.5% auto;
-	color: $darkgrey;
+	color: var(--darkgrey);
 }
 
 .license p {
@@ -168,15 +168,15 @@ header h1 ul {
 
 .license a {
 	transition: color 0.3s ease;
-	color: $darkgrey;
+	color: var(--darkgrey);
 	
 	@media (hover) {
 	&:hover {
-		color: $blue;
+		color: var(--blue);
 	}
 	
 	&:active {
-		color: $darkblue;
+		color: var(--darkblue);
 	}
 	}
 }
