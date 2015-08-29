@@ -6,6 +6,7 @@
     "type": "git",
     "url": "https://github.com/ScottSmith95/ScottHSmith.com.git"
   },
+  "license": "UNLICENSED",
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
     "css-mqpacker": "^4.0.0",
