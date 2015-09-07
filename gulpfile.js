@@ -21,7 +21,7 @@ var processors = [
 	require('postcss-custom-properties'),
 	require('css-mqpacker')({sort: true}),
 	require('autoprefixer')('last 2 versions', '> 1%', 'ie 9', 'ie 8', 'Firefox ESR'),
-	require('cssnano')
+	require('cssnano')({autoprefixer: false})
 ];
 
 gulp.task('html', function(){
