@@ -20,8 +20,8 @@ var processors = [
 	require('postcss-nested'),
 	require('postcss-custom-properties'),
 	require('css-mqpacker')({sort: true}),
-	require('autoprefixer-core')('last 2 versions', '> 1%', 'ie 9', 'ie 8', 'Firefox ESR'),
-	require('csswring')
+	require('autoprefixer')('last 2 versions', '> 1%', 'ie 9', 'ie 8', 'Firefox ESR'),
+	require('cssnano')
 ];
 
 gulp.task('html', function(){
