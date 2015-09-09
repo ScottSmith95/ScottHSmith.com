@@ -42,38 +42,13 @@
 	</div>
 
 
-<!-- @import "../../kit-includes/_script-global.kit" -->
+<script async type="text/javascript" src="/scripts/build/main.js"></script>
 
 <!-- @import "../../kit-includes/_script-jquery.kit" -->
 
-<script type="text/javascript">
-	$(document).ready(function(){	
-		// For Nav menu
-		$('#current_page').click(function() {
-			$('.PageMenu').toggleClass('shown');
-			$('.PageMenu').slideToggle('200');
-		});
-		
-		var $images = $('.blue.grid, .dark.grid, .light.grid');
-		
-		var $downloads = $('.blue .download .dark .download, .light .download');
-	
-		$('.blue .download').mouseover(function() {
-			$('.selected').removeClass('selected').addClass('unselected');
-        	$('.blue.grid').removeClass('unselected').addClass('selected');
-        });
-        
-        $('.dark .download').mouseover(function() {
-        	$('.selected').removeClass('selected').addClass('unselected');
-        	$('.dark.grid').removeClass('unselected').addClass('selected');
-        });
-        
-        $('.light .download').mouseover(function() {
-        	$('.selected').removeClass('selected').addClass('unselected');
-        	$('.light.grid').removeClass('unselected').addClass('selected');
-        });
-	});
-</script>
+<script async type="text/javascript" src="/scripts/build/page-nav.js"></script>
+
+<script async type="text/javascript" src="/scripts/build/social-icons.js"></script>
 
 </body>
 
