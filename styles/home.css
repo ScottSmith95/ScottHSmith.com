@@ -28,25 +28,17 @@ a {
 	width: 100%;
 }
 
-@keyframes roll-in {
+@keyframes pop-in {
 	0% {
-		transform: translateX(100vw) rotate(-0deg);
-		opacity: 0.25;
-	}
-	25% {
-		transform: translateX(90vw) rotate(-360deg);
-	}
-	50% {
-		transform: translateX(70vw) rotate(-720deg);
+		transform: translateY(50px) rotate(-270deg);
+		opacity: 0;
 	}
 	75% {
-		transform: translateX(40vw) rotate(-1080deg);
-	}
-	95% {
-		transform: translateX(5vw) rotate(-1300deg)
+		transform: translateY(-15px) rotate(-90deg);
+		opacity: 0.25;
 	}
 	100% {
-		transform: translateX(0) rotate(-1440deg);
+		transform: translateY(0) rotate(0deg);
 		opacity: 1;
 	}
 }
@@ -112,15 +104,9 @@ nav a {
 
 .AllSocialLinks {
 	display: flex;
-	flex-wrap: wrap;
+	justify-content: space-around; /* Prevents Chrome bug from incorrectly calculating justify-content: center */
 	list-style: none;
 	margin: 2.5% auto 1.5%;
-}
-
-@media (max-width: 35em) {
-	.AllSocialLinks {
-		justify-content: space-around; /* Prevents Chrome bug from incorrectly calculating justify-content: center */
-	}
 }
 
 .no-flexbox .AllSocialLinks {
@@ -128,21 +114,24 @@ nav a {
 }
 
 .SocialLink {
-	animation: roll-in 1.5s linear forwards;
-	flex: 0 auto;
+	animation: pop-in 0.5s linear forwards;
 	opacity: 0;
+	
+	.no-cssanimations & {
+		opacity: 1;
+	}
 }
 
-.no-cssanimations {
-	opacity: 1;
-}
-
-.SocialLink:nth-of-type(1),
-.SocialLink:nth-of-type(2) {
+.SocialLink:nth-of-type(1) {
 	animation-delay: 0.1s;
 }
-.SocialLink:nth-of-type(3),
-.SocialLink:nth-of-type(4), {
+.SocialLink:nth-of-type(2) {
+	animation-delay: 0.2s;
+}
+.SocialLink:nth-of-type(3) {
+	animation-delay: 0.3s;
+}
+.SocialLink:nth-of-type(4) {
 	animation-delay: 0.4s;
 }
 .SocialLink:nth-of-type(5) {
@@ -174,10 +163,11 @@ nav a {
 .no-flexbox .SocialLink {
 	display: inline;
 	text-align: center;
-	margin: 0 0.75%;
+	margin: 0 0.75em;
 }
 
-.SocialLink.ShareSheet, .SocialLink.Desktop {
+.SocialLink.ShareSheet,
+.SocialLink.Desktop {
 	display: none;
 }
 
@@ -211,7 +201,8 @@ nav a {
 
 /* Tablet */
 @media (min-width: 35em) {
-	.headerpic, .headerpic img {
+	.headerpic,
+	.headerpic img {
 		width: 14em;
 		height: 14em;
 		margin: 0 auto 2.5%;
@@ -224,22 +215,25 @@ nav a {
 	.AllSocialLinks {
 		justify-content: center;
 	}
-
+	
 	.SocialLink {
-		margin: 0 0.75%;
+		margin: 0 0.5em;
 	}
 
 	.SocialIcon {
-		height: 3em;
-		
-		@media (hover) {
-		transform: scale(0.8);
-		
-		&:hover {
-			transform: scale(1);
-		}
-		}
+		font-size: 1.35em;
 	}
+}
+
+@media (hover) and (min-width: 35em) {
+.SocialIcon {
+	transform: scale(0.85);
+	font-size: 1.5em;
+	
+	&:hover {
+		transform: scale(1);
+	}
+}
 }
 
 
@@ -270,7 +264,7 @@ nav a {
 	}
 
 	.SocialIcon {
-		height: 3.5em;
+		font-size: 1.5em;
 	}
 }
 
@@ -287,7 +281,6 @@ nav a {
 	}
 
 	.SocialIcon {
-		width: auto;
-		height: 4.25em;
+		font-size: 1.65em;
 	}
 }
