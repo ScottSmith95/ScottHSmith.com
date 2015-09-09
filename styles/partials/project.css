@@ -99,8 +99,9 @@ header {
 }
 
 .content {
+	max-width: 55em;
 	text-align: center;
-	margin: 2.5% auto;
+	margin: 2.5%;
 
 	.no-cssanimations & {
 		opacity: 1;
@@ -156,5 +157,9 @@ header {
 		float: left;
 		width: 22.5%;
 		margin: 0 0 2.5% 2.5%;
+	}
+	
+	.content {
+		margin: 2.5% auto;
 	}
 }
