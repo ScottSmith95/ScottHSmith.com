@@ -1,4 +1,5 @@
-@import 'partials/constants.css';
+@import 'variables.css';
+/* @require 'partials/share-sheet.css' */
 
 html {
 	box-sizing: border-box;
@@ -9,11 +10,11 @@ html {
 }
 
 body {
-	margin: 0;
-	background: var(--bg-color);
+	overflow: hidden;
 	font: 300 100%/1.5 var(--font-fam);
 	-webkit-font-smoothing: antialiased;
-	overflow: hidden;
+	background: var(--bg-color);
+	margin: 0;
 }
 
 ::selection {
@@ -22,8 +23,8 @@ body {
 
 a {
 	transition: color 0.35s ease;
-	color: var(--text-color);
 	text-decoration: none;
+	color: var(--text-color);
 	
 	@media (hover) {
 	&:hover {
@@ -47,8 +48,8 @@ ul {
 
 /* Center content on page. */
 .container {
-	min-height: 100vh;
 	display: flex;
+	min-height: 100vh;
 	justify-content: center;
 	align-items: center;
 }
@@ -109,20 +110,20 @@ ul {
 
 .name {
 	transition: font-size 0.5s ease;
-	margin: 1.5% auto;
-	color: var(--text-color);
 	font-size: 2em;
 	font-weight: 500;
 	line-height: 1;
+	color: var(--text-color);
+	margin: 1.5% auto;
 }
 
 nav {
 	transition: font-size 0.5s ease;
 	display: inline-block;
+	font-size: 1.25em;
 	padding: 0 1.5% 1%;
 	border-bottom: 1px solid var(--blue);
 	margin: 1% auto;
-	font-size: 1.25em;
 }
 
 nav a {
@@ -134,17 +135,17 @@ nav a {
 	transition: font-size 0.5s ease;
 	width: 92.5%;
 	max-width: 25em;
-	margin: 1.5% auto;
-	color: var(--text-color);
 	font-size: 1em;
 	line-height: 1.3em;
+	color: var(--text-color);
+	margin: 1.5% auto;
 }
 
 .AllSocialLinks {
 	display: flex;
-	margin: 2.5% auto 1.5%;
-	list-style: none;
 	flex-wrap: wrap;
+	list-style: none;
+	margin: 2.5% auto 1.5%;
 }
 
 @media (max-width: 35em) {
@@ -203,8 +204,8 @@ nav a {
 
 .no-flexbox .SocialLink {
 	display: inline;
-	margin: 0 0.75%;
 	text-align: center;
+	margin: 0 0.75%;
 }
 
 .SocialLink.ShareSheet, .SocialLink.Desktop {
@@ -237,8 +238,6 @@ nav a {
 .SocialLink.touched .SocialIcon {
 	opacity: 0.5;
 }
-
-@import 'partials/share-sheet.css';
 
 
 /* Tablet */

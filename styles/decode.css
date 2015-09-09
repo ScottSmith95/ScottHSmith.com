@@ -1,29 +1,36 @@
-@import 'partials/project.css';
+@import 'variables.css';
+/* @require 'partials/project.css' */
+
+header {
+	position: relative; /* Create stacking context and set z-index */
+	z-index: 1;
+}
 
 .screenshot-box {
+	overflow: hidden;
 	position: relative;
-	z-index: 1;
 	width: 100%;
 	height: 10em;
 	background-color: var(--darkgrey);
+	box-shadow: inset 0 -0.5em 2em rgba(0,0,0,0.5);
 	
 	.bubble {
-		color: #FFF;
-		border-radius: 0.35em;
-		background-color: rgba(127, 127, 127, 0.9);
-		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
-		padding: 0.1em 0;
-		text-align: center;
-		font-size: 1.25em;
-		margin: 0 auto;
+		display: inline-block;
+		pointer-events: none;
 		position: absolute;
+		z-index: 3;
 		bottom: 5%;
 		left: 0;
 		right: 0;
-		z-index: 3;
+		color: #FFF;
 		max-width: 40%;
-		display: inline-block;
-		pointer-events: none;
+		font-size: 1.25em;
+		text-align: center;
+		background-color: rgba(127, 127, 127, 0.9);
+		padding: 0.1em 0;
+		border-radius: 0.35em;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+		margin: 0 auto;
 	}
 	
 	a {
@@ -70,34 +77,17 @@
 	}
 }
 
-.content-container {
-	position: relative;
-	z-index: 2;
-	background-color: var(--bg-color);
-	box-shadow: 0 0.5em 2em rgba(0,0,0,0.5);
-}
-
 .content {
-	animation: intro 1.25s ease-out 0.75s forwards;
-	width: 92.5%;
-	padding-top: 5%;
-	margin: 0 auto;
-	opacity: 0;
-	text-align: center;
-}
-
-.no-cssanimations .content {
-	opacity: 1;
+	margin-top: 0;
 }
 
 .content section {
 	display: flex;
+	align-items: flex-start;
 	max-width: 50em;
 	padding: 0 0 5%;
-	margin: 0 auto;
 	text-align: left;
-
-	align-items: flex-start;
+	margin: 0 auto;
 }
 
 .no-flexbox .content section {
@@ -105,13 +95,12 @@
 }
 
 .section-head {
+	flex: 0 1 auto;
 	width: 4em;
 	max-width: 200px;
 	height: auto;
 	max-height: 200px;
 	margin-top: 1em; /* Aligns section head with top of paragraph */
-
-	flex: 0 1 auto;
 }
 
 .no-flexbox .section-head {
@@ -119,11 +108,10 @@
 }
 
 .desc {
-	margin: 0 auto;
+	flex: 4 3 75%;
 	font-size: 1em;
 	line-height: 1.5;
-
-	flex: 4 3 75%;
+	margin: 0 auto;
 }
 
 .no-flexbox .desc {
@@ -137,7 +125,6 @@
 :root {
 	--active-button: #35495D;
 }
-
 
 .options .button {
 	margin-right: 0.5em;
@@ -346,10 +333,6 @@ section.donate {
 		img {
 			width: 40%;
 		}		
-	}
-
-	.content {
-		padding-top: 2.5%;
 	}
 
 	.section-head {

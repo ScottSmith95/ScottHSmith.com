@@ -1,22 +1,5 @@
-body {
-	background: #E3E5E7;
-	font: normal 300 2em "museo-sans-1", "museo-sans-2", sans-serif;
-	margin: 0;
-}
-
 ::selection {
     background: rgba(197,112,95,0.25);
-	}
-::-moz-selection {
-	background: rgba(197,112,95,0.25);
-}
-
-img {
-	border: none;
-}
-
-ul {
-	padding: 0;
 }
 
 h1, h2, p, a {
@@ -25,8 +8,6 @@ h1, h2, p, a {
 }
 
 h1 {
-	animation: fade-in 0.5s ease-out 0.15s forwards;
-	opacity: 0;
 	font-size: 1.5em;
 	text-align: center;
 }
@@ -62,17 +43,11 @@ a {
 }
 
 #intro, #start {
-	animation: fade-in 0.5s ease-out 0.15s forwards;
-	opacity: 0;
 	float: right;
 	clear: right;
 	text-align: left;
 	font-size: 0.7em;
 	width: 50%;
-}
-
-.no-cssanimations #intro, .no-cssanimations #start {
-	opacity: 1;
 }
 
 #slideshow {
@@ -99,8 +74,6 @@ a {
 	15% {transform: scale(0.725, 0.725) rotate(0deg);}
 	100% {opacity: 1; transform: scale(1, 1) rotate(4deg);}
 }
-
-@import "../css/partials/share-sheet.css";
 
 @media screen and (max-width: 1100px) {
 body {

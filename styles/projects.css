@@ -1,15 +1,5 @@
-@import 'partials/project.css';
-
-.content {
-	animation: intro 1.25s ease-out 0.75s forwards;
-	margin: 2% auto;
-	opacity: 0;
-	text-align: center;
-}
-
-.no-cssanimations .content {
-	opacity: 1;
-}
+@import 'variables.css';
+/* @require 'partials/project.css' */
 
 .content li {
 	font-size: 1.6em;

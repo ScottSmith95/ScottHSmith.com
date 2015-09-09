@@ -11,21 +11,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
 <!-- CSS -->
-<link rel="stylesheet" href="build/tea.css">
+<link rel="stylesheet" href="/styles/build/partials/global.css">
+<link rel="stylesheet" href="/styles/build/partials/share-sheet.css">
+<link rel="stylesheet" href="/tea/build/tea.css">
 
 <!-- @import "../kit-includes/_head_scripts.kit" -->
 
 <script type="text/javascript" language="JavaScript">
 
-NumberOfImagesToRotate = 9;
-
-FirstPart = '<img src="images/image';
-LastPart = '.jpg">';
-
-function printImage() {
-var r = Math.ceil(Math.random() * NumberOfImagesToRotate);
-document.write(FirstPart + r + LastPart);
-}
+	NumberOfImagesToRotate = 9;
+	
+	FirstPart = '<img src="images/image';
+	LastPart = '.jpg">';
+	
+	function printImage() {
+		var r = Math.ceil(Math.random() * NumberOfImagesToRotate);
+		document.write(FirstPart + r + LastPart);
+	}
+	
 </script>
 
 </head>
@@ -34,8 +37,9 @@ document.write(FirstPart + r + LastPart);
 <div id="content">
 <h1>ADN Tea</h1>
 <div id="slideshow">
-	<script type="text/javascript" language="JavaScript"><!--
-printImage();
+
+<script type="text/javascript" language="JavaScript"><!--
+	printImage();
 //-->
 </script>
 </div>
