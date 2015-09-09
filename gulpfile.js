@@ -1,7 +1,6 @@
 var gulp       = require('gulp'),
 	kit        = require('gulp-kit'),
 	postcss    = require('gulp-postcss'),
-	concat     = require('gulp-concat'),
 	uglify     = require('gulp-uglify'),
 	sitemap    = require('gulp-sitemap'),
 	sourcemaps = require('gulp-sourcemaps');
@@ -10,7 +9,7 @@ var paths = {
 	html:             ['**/*.kit', '!kit-includes/**', '!node_modules/**/*'],
 	styles:           ['styles/**/*.css', '!styles/build/**', '!styles/variables.css'],
 	teaStyles:        'tea/*.css',
-	scripts:          ['scripts/modernizr.js', 'node_modules/fastclick/lib/fastclick.js', 'scripts/main.js'],
+	scripts:          ['scripts/*.js', '!scripts/build/**'],
 	sitemap:          ['**/*.html', '!error/*.html', '!node_modules/**/*']
 };
 
@@ -48,7 +47,6 @@ gulp.task('teaStyles', function() {
 gulp.task('scripts', function() {
 	return gulp.src(paths.scripts)
 		.pipe(sourcemaps.init())
-			.pipe(concat('main.js'))
 			.pipe(uglify())
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest('scripts/build/'));
