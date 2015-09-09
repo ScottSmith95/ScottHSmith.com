@@ -69,8 +69,9 @@ header {
 }
 
 .PageMenu {
-	transition: border-bottom 0.3s ease, box-shadow 0.3s ease;
-	display: none;
+	transition: max-height 0.3s ease, border-bottom 0.3s ease, box-shadow 0.3s ease;
+	overflow: hidden;
+	max-height: 0;
 	position: absolute;
 	text-align: left;
 	background: rgba(235, 238, 240, 0.95);
@@ -83,8 +84,13 @@ header {
 	}
 
 	
-	&.shown {
+	&.active {
+		max-height: 3em;
 		border-bottom: 2px solid var(--blue);
+	}
+	
+	&.active.long {
+		max-height: 5em;
 	}
 
 	a {

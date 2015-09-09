@@ -1,6 +1,8 @@
-$(document).ready(function(){
-	$('#current_page').click(function() {
-		$('.PageMenu').toggleClass('shown');
-		$('.PageMenu').slideToggle('200');
-	});
-});
+var menuTrigger = document.querySelector('#current_page');
+var menu        = document.querySelector('.PageMenu');
+
+function toggleClass(){
+    menu.classList.toggle('active');
+}
+
+menuTrigger.addEventListener('click', toggleClass )

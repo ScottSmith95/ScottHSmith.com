@@ -1,10 +1,4 @@
 $(document).ready(function(){	
-	// For Nav menu
-	$('#current_page').click(function() {
-		$('.PageMenu').toggleClass('shown');
-		$('.PageMenu').slideToggle('200');
-	});
-	
 	var $images = $('.blue.grid, .dark.grid, .light.grid');
 	
 	var $downloads = $('.blue .download .dark .download, .light .download');
