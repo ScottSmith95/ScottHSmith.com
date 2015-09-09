@@ -3,10 +3,8 @@
 header {
 	width: 100%;
 	max-width: 40em;
-	font-size: 1.1em;
-	line-height: 1.8em;
 	text-align: center;
-	margin: 0 auto;
+	margin: 2.5% auto 0;
 	
 	.no-cssanimations & {
 		opacity: 1;
@@ -35,15 +33,13 @@ header {
 	
 	h1 {
 		font-size: 1.5em;
-		line-height: 1em;
-		padding-bottom: 3.5%;
+		padding-bottom: 2.5%;
 		border-bottom: 1px solid var(--blue);
 		margin: 0;
 		
 		ul {
 			display: inline-block;
-			line-height: 1.3em;
-			list-style: none;
+			list-style: none;			
 		}
 	}
 
@@ -73,12 +69,19 @@ header {
 }
 
 .PageMenu {
-	transition: border-bottom 0.3s ease;
+	transition: border-bottom 0.3s ease, box-shadow 0.3s ease;
 	display: none;
 	position: absolute;
 	text-align: left;
-	background: rgba(228, 230, 232, 0.75);
+	background: rgba(235, 238, 240, 0.95);
 	border-bottom: 0 solid var(--blue);
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+	
+	@supports (backdrop-filter: none) {
+	    backdrop-filter: blur(10px);
+	    background: rgba(235, 238, 240, 0.65);
+	}
+
 	
 	&.shown {
 		border-bottom: 2px solid var(--blue);
@@ -135,15 +138,13 @@ header {
 	header {
 		width: 80%;
 		font-size: 1.2em;
-		line-height: 2em;
 		text-align: justify;
 		margin: 2.5% auto;
 		
 		h1 {
+			font-size: 2em;
 			padding-bottom: 0;
 			border-bottom: none;
-			font-size: 2em;
-			line-height: 1.1em;
 		}
 		
 		.desc {
