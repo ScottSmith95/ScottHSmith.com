@@ -8,9 +8,9 @@
   },
   "license": "UNLICENSED",
   "devDependencies": {
-    "autoprefixer": "^6.0.1",
+    "autoprefixer": "^6.0.2",
     "css-mqpacker": "^4.0.0",
-    "cssnano": "^3.0.0",
+    "cssnano": "^3.0.1",
     "fastclick": "^1.0.6",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
