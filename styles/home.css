@@ -1,29 +1,7 @@
 @import 'variables.css';
 /* @require 'partials/share-sheet.css' */
 
-html {
-	box-sizing: border-box;
-}
-
-*, *:before, *:after {
-	box-sizing: inherit;
-}
-
-body {
-	overflow: hidden;
-	font: 300 100%/1.5 var(--font-fam);
-	-webkit-font-smoothing: antialiased;
-	background: var(--bg-color);
-	margin: 0;
-}
-
-::selection {
-	background: var(--highlight-color);
-}
-
 a {
-	transition: color 0.35s ease;
-	text-decoration: none;
 	color: var(--text-color);
 	
 	@media (hover) {
@@ -35,15 +13,6 @@ a {
 		color: var(--darkblue);
 	}
 	}
-}
-
-img {
-	border: none;
-}
-
-ul {
-	padding: 0;
-	margin: 0;
 }
 
 /* Center content on page. */

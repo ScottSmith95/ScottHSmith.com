@@ -1,5 +1,4 @@
 @import 'variables.css';
-/* @require 'partials/share-sheet.css' */
 
 header {
 	width: 100%;
@@ -50,6 +49,7 @@ header {
 
 	.desc {
 		text-align: left;
+		padding: 0 2.5%;
 		margin: 2.5% 0 0;
 		
 		a {
@@ -134,10 +134,10 @@ header {
 @media (min-width: 35em) {
 	header {
 		width: 80%;
-		margin: 2.5% auto;
 		font-size: 1.2em;
 		line-height: 2em;
 		text-align: justify;
+		margin: 2.5% auto;
 		
 		h1 {
 			padding-bottom: 0;
@@ -146,8 +146,8 @@ header {
 			line-height: 1.1em;
 		}
 		
-		p {
-			margin: 0;
+		.desc {
+			padding: 0;
 		}
 	}
 
