@@ -1,5 +1,5 @@
 /* Modernizr 2.8.3 (Custom Build) | MIT & BSD
- * Build: http://modernizr.com/download/#-flexbox-cssanimations-csscolumns-svg-shiv-cssclasses-teststyles-testallprops-prefixes-domprefixes
+ * Build: http://modernizr.com/download/#-flexbox-cssanimations-svg-shiv-cssclasses-teststyles-testallprops-prefixes-domprefixes
  */
 ;
 
@@ -202,14 +202,6 @@ window.Modernizr = (function( window, document, undefined ) {
     tests['cssanimations'] = function() {
         return testPropsAll('animationName');
     };
-
-
-    tests['csscolumns'] = function() {
-        return testPropsAll('columnCount');
-    };
-
-
-
     tests['svg'] = function() {
         return !!document.createElementNS && !!document.createElementNS(ns.svg, 'svg').createSVGRect;
     };
