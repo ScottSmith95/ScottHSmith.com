@@ -26,7 +26,7 @@ var processors = [
 	require('postcss-custom-properties'),
 	require('css-mqpacker')({sort: true}),
 	require('autoprefixer')('last 2 versions', '> 1%', 'ie 9', 'ie 8', 'Firefox ESR'),
-	require('cssnano')({autoprefixer: false})
+	require('cssnano')({autoprefixer: false, reduceIdents: false}) // Autoprefixer has just been run, don't do it again; reduceIdents is unsafe and creates confliction animation names.
 ];
 
 gulp.task('html', function(){
