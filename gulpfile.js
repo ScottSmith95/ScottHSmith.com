@@ -13,6 +13,7 @@ var paths = {
 	html:             ['**/*.kit', '!kit-includes/**', '!node_modules/**/*'],
 	styles:           ['styles/**/*.css', '!styles/build/**', '!styles/variables.css'],
 	teaStyles:        'tea/*.css',
+	sprites:          ['images/Social Icons/*.svg', '!images/Social Icons/home-sprite.svg'],
 	scripts:          ['scripts/*.js', '!scripts/main.js', '!scripts/home.js', '!scripts/build/**'],
 	mainScript:       ['node_modules/fastclick/lib/fastclick.js', 'scripts/vendor/modernizr.js', 'scripts/main.js'],
 	homeScript:       ['node_modules/boomsvgloader/dist/js/boomsvgloader.js', 'scripts/home.js'],
@@ -61,7 +62,7 @@ gulp.task('sprites', function() {
 		} 
 	};
     
-	return gulp.src('images/Social Icons/*.svg')
+	return gulp.src(paths.sprites)
 		.pipe(sprite(options))
 		.pipe(gulp.dest('images/Social Icons'));
 });
@@ -104,6 +105,7 @@ gulp.task('sitemap', ['html'], function () {
 gulp.task('watch', function() {
 	gulp.watch(paths.html, ['html']);
 	gulp.watch(paths.styles, ['styles']);
+	gulp.watch(paths.sprites, ['sprites']);
 	gulp.watch(paths.scripts, ['scripts']);
 });
 
