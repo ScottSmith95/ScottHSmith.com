@@ -3,7 +3,7 @@ $(document).ready(function(){
 	var device = navigator.userAgent.toLowerCase();
 	var ios = device.match(/(iphone|ipod|ipad)/);
 		if (ios) {
-			$('body').addClass('iOS');
+			$('html').addClass('iOS');
 		}
 	if (window.location.host == "scottsmith.sexy") {
 		$('body').addClass('sexy');

@@ -182,8 +182,9 @@ nav a {
 .SocialIcon {
 	transition: opacity 0.25s ease-out, height 0.5s ease, width 0.5s ease, transform 0.25s ease-out;
 	transform: scale(1);
-	width: auto;
-	height: 2.25em;
+	width: 1em;
+	height: 1em;
+	font-size: 2.25em;
 	vertical-align: middle;
 	cursor: pointer;
 	
@@ -221,14 +222,14 @@ nav a {
 	}
 
 	.SocialIcon {
-		font-size: 1.35em;
+		font-size: 3em;
 	}
 }
 
 @media (hover) and (min-width: 35em) {
 .SocialIcon {
 	transform: scale(0.85);
-	font-size: 1.5em;
+	font-size: 3.25em;
 	
 	&:hover {
 		transform: scale(1);
@@ -264,7 +265,7 @@ nav a {
 	}
 
 	.SocialIcon {
-		font-size: 1.5em;
+		font-size: 3.5em;
 	}
 }
 
@@ -281,6 +282,6 @@ nav a {
 	}
 
 	.SocialIcon {
-		font-size: 1.65em;
+		font-size: 3.65em;
 	}
 }

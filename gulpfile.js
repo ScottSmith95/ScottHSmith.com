@@ -1,6 +1,9 @@
+'use strict';
+
 var gulp       = require('gulp'),
 	kit        = require('gulp-kit'),
 	postcss    = require('gulp-postcss'),
+	sprite     = require('gulp-svg-sprite'),
 	concat     = require('gulp-concat'),
 	uglify     = require('gulp-uglify'),
 	sitemap    = require('gulp-sitemap'),
@@ -10,8 +13,9 @@ var paths = {
 	html:             ['**/*.kit', '!kit-includes/**', '!node_modules/**/*'],
 	styles:           ['styles/**/*.css', '!styles/build/**', '!styles/variables.css'],
 	teaStyles:        'tea/*.css',
-	scripts:          ['scripts/*.js', '!scripts/main.js', '!scripts/build/**'],
+	scripts:          ['scripts/*.js', '!scripts/main.js', '!scripts/home.js', '!scripts/build/**'],
 	mainScript:       ['node_modules/fastclick/lib/fastclick.js', 'scripts/vendor/modernizr.js', 'scripts/main.js'],
+	homeScript:       ['node_modules/boomsvgloader/dist/js/boomsvgloader.js', 'scripts/home.js'],
 	sitemap:          ['**/*.html', '!error/*.html', '!node_modules/**/*']
 };
 
@@ -46,7 +50,23 @@ gulp.task('teaStyles', function() {
 		.pipe(gulp.dest('tea/build/'));
 });
 
-gulp.task('scripts', function() {
+gulp.task('sprites', function() {
+	var options = {
+		mode: {
+			symbol: { // Create a «symbol» sprite
+				sprite: 'home-sprite.svg',
+				prefix: '', // Don't prefix output title
+				dest: '.'
+			}
+		} 
+	};
+    
+	return gulp.src('images/Social Icons/*.svg')
+		.pipe(sprite(options))
+		.pipe(gulp.dest('images/Social Icons'));
+});
+
+gulp.task('scripts', ['mainScript', 'homeScript'], function() {
 	return gulp.src(paths.scripts)
 		.pipe(sourcemaps.init())
 			.pipe(uglify())
@@ -63,6 +83,16 @@ gulp.task('mainScript', function() {
 		.pipe(gulp.dest('scripts/build/'));
 });
 
+gulp.task('homeScript', function() {
+	return gulp.src(paths.homeScript)
+		.pipe(sourcemaps.init())
+			.pipe(concat('home.js'))
+			.pipe(uglify())
+		.pipe(sourcemaps.write('./'))
+		.pipe(gulp.dest('scripts/build/'));
+});
+
+
 gulp.task('sitemap', ['html'], function () {
 	return gulp.src(paths.sitemap)
 		.pipe(sitemap({
@@ -75,12 +105,11 @@ gulp.task('watch', function() {
 	gulp.watch(paths.html, ['html']);
 	gulp.watch(paths.styles, ['styles']);
 	gulp.watch(paths.scripts, ['scripts']);
-	gulp.watch(paths.mainScript, ['mainScript']);
 });
 
 // Workflows
 // $ gulp: Builds, prefixes, and minifies CSS files; concencates and minifies JS files; watches for changes. The works.
-gulp.task('default', ['html', 'styles', 'teaStyles', 'scripts', 'mainScript', 'sitemap', 'watch']);
+gulp.task('default', ['html', 'styles', 'teaStyles', 'sprites', 'scripts', 'sitemap', 'watch']);
 
 // $ gulp build: Builds, prefixes, and minifies CSS files; concencates and minifies JS files. For deployments.
-gulp.task('build', ['html', 'styles', 'teaStyles', 'scripts', 'mainScript', 'sitemap']);
+gulp.task('build', ['html', 'styles', 'teaStyles', 'sprites', 'scripts', 'sitemap']);
