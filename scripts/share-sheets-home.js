@@ -9,9 +9,9 @@ $(document).ready(function(){
 		$('body').addClass('sexy');
 	}
 	
-	var $sheets = $('#Twitter, #Facebook, #Instagram, #Rdio');
+	var $sheets = $('#Twitter, #Facebook, #Instagram');
 	
-	var $triggers = $('.Twitter.ShareSheet, .Facebook.ShareSheet, .Instagram.ShareSheet, .Rdio.ShareSheet');
+	var $triggers = $('.Twitter.ShareSheet, .Facebook.ShareSheet, .Instagram.ShareSheet');
 	
 	// Shows sheets after they have loaded
 	($sheets).delay(300).addClass('loaded');
@@ -30,12 +30,7 @@ $(document).ready(function(){
 	$('.Instagram.ShareSheet').click(function() {
 		$('#Instagram').toggleClass('selected').toggleClass('unselected');
 	});
-	
-	// Handles opening the Rdio sheet
-	$('.Rdio.ShareSheet').click(function() {
-		$('#Rdio').toggleClass('selected').toggleClass('unselected');
-	});
-	
+		
 	// Adds "touched" class when element is touched and removes it when it is not
 	$('.cancel', $triggers).bind('touchstart touchend', function(e) {
 		$(this).toggleClass('touched');
