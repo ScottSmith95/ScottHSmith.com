@@ -9,18 +9,13 @@ $(document).ready(function(){
 		$('body').addClass('sexy');
 	}
 	
-	var $sheets = $('#Twitter, #Facebook, #Instagram');
+	var $sheets = $('#Facebook, #Instagram');
 	
-	var $triggers = $('.Twitter.ShareSheet, .Facebook.ShareSheet, .Instagram.ShareSheet');
+	var $triggers = $('.Facebook.ShareSheet, .Instagram.ShareSheet');
 	
 	// Shows sheets after they have loaded
 	($sheets).delay(300).addClass('loaded');
 	
-	// Handles opening the Twitter sheet
-	$('.Twitter.ShareSheet').click(function() {
-		$('#Twitter').toggleClass('selected').toggleClass('unselected');
-	});
-			
 	// Handles opening the Facebook sheet
 	$('.Facebook.ShareSheet').click(function() {
 		$('#Facebook').toggleClass('selected').toggleClass('unselected');
