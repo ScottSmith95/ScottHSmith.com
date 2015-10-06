@@ -156,7 +156,7 @@
 }
 
 .cancel.touched, .cancel:active {
-	background: rgba(248,248,248,0.95);
+	background: rgba(232, 232, 235, 0.95);
 }
 
 /* Landscape */
