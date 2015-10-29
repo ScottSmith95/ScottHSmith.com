@@ -11,7 +11,7 @@
     "autoprefixer": "^6.0.3",
     "boomsvgloader": "0.0.2",
     "css-mqpacker": "^4.0.0",
-    "cssnano": "^3.2.0",
+    "cssnano": "^3.3.1",
     "fastclick": "^1.0.6",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
@@ -19,10 +19,10 @@
     "gulp-postcss": "^6.0.1",
     "gulp-sitemap": "^2.2.0",
     "gulp-sourcemaps": "^1.6.0",
-    "gulp-svg-sprite": "^1.2.10",
-    "gulp-uglify": "^1.4.1",
+    "gulp-svg-sprite": "^1.2.12",
+    "gulp-uglify": "^1.4.2",
     "postcss-custom-properties": "^5.0.0",
-    "postcss-import": "^7.0.0",
+    "postcss-import": "^7.1.0",
     "postcss-nested": "^1.0.0"
   }
 }
