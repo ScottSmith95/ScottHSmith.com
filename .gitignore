@@ -8,4 +8,6 @@ scripts/build/
 tea/build/
 **/*.map
 **/*.html
+!party/*.html
+
 sitemap.xml
