@@ -162,7 +162,7 @@ nav a {
 	transform: scale(1);
 	width: 1em;
 	height: 1em;
-	font-size: 2.25em;
+	font-size: 36px;
 	vertical-align: middle;
 	cursor: pointer;
 	
@@ -199,14 +199,14 @@ nav a {
 	}
 
 	.SocialIcon {
-		font-size: 3em;
+		font-size: 48px;
 	}
 }
 
 @media (hover) and (min-width: 35em) {
 .SocialIcon {
 	transform: scale(0.85);
-	font-size: 3.25em;
+	font-size: 52px;
 	
 	&:hover {
 		transform: scale(1);
@@ -242,7 +242,7 @@ nav a {
 	}
 
 	.SocialIcon {
-		font-size: 3.5em;
+		font-size: 56px;
 	}
 }
 
@@ -259,6 +259,6 @@ nav a {
 	}
 
 	.SocialIcon {
-		font-size: 3.65em;
+		font-size: 58px;
 	}
 }
