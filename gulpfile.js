@@ -25,17 +25,17 @@ var processors = [
 	require('postcss-nested'),
 	require('postcss-custom-properties'),
 	require('css-mqpacker')({sort: true}),
-	require('autoprefixer')('last 2 versions', '> 1%', 'ie 9', 'ie 8', 'Firefox ESR'),
+	require('autoprefixer')('last 2 versions', '> 5%', 'Firefox ESR'),
 	require('cssnano')({autoprefixer: false, reduceIdents: false}) // Autoprefixer has just been run, don't do it again; reduceIdents is unsafe and creates conflicts on animation names.
 ];
 
-gulp.task('html', function(){
+gulp.task(function html(){
 	return gulp.src(paths.html)
 		.pipe(kit())
 		.pipe(gulp.dest('./'));
 });
 
-gulp.task('styles', function() {
+gulp.task(function styles() {
 	return gulp.src(paths.styles)
 		.pipe(sourcemaps.init())
 			.pipe(postcss(processors))
@@ -43,7 +43,7 @@ gulp.task('styles', function() {
 		.pipe(gulp.dest('styles/build/'));
 });
 
-gulp.task('teaStyles', function() {
+gulp.task(function teaStyles() {
 	return gulp.src(paths.teaStyles)
 		.pipe(sourcemaps.init())
 			.pipe(postcss(processors))
@@ -51,7 +51,7 @@ gulp.task('teaStyles', function() {
 		.pipe(gulp.dest('tea/build/'));
 });
 
-gulp.task('sprites', function() {
+gulp.task(function sprites() {
 	var options = {
 		mode: {
 			symbol: { // Create a «symbol» sprite
@@ -67,15 +67,7 @@ gulp.task('sprites', function() {
 		.pipe(gulp.dest('images/Social Icons'));
 });
 
-gulp.task('scripts', ['mainScript', 'homeScript'], function() {
-	return gulp.src(paths.scripts)
-		.pipe(sourcemaps.init())
-			.pipe(uglify())
-		.pipe(sourcemaps.write('./'))
-		.pipe(gulp.dest('scripts/build/'));
-});
-
-gulp.task('mainScript', function() {
+gulp.task(function mainScript() {
 	return gulp.src(paths.mainScript)
 		.pipe(sourcemaps.init())
 			.pipe(concat('main.js'))
@@ -84,7 +76,7 @@ gulp.task('mainScript', function() {
 		.pipe(gulp.dest('scripts/build/'));
 });
 
-gulp.task('homeScript', function() {
+gulp.task(function homeScript() {
 	return gulp.src(paths.homeScript)
 		.pipe(sourcemaps.init())
 			.pipe(concat('home.js'))
@@ -93,25 +85,38 @@ gulp.task('homeScript', function() {
 		.pipe(gulp.dest('scripts/build/'));
 });
 
+gulp.task('scripts', gulp.series('mainScript', 'homeScript', function(done) {
+	return gulp.src(paths.scripts)
+		.pipe(sourcemaps.init())
+			.pipe(uglify())
+		.pipe(sourcemaps.write('./'))
+		.pipe(gulp.dest('scripts/build/'));
+	done();
+}));
 
-gulp.task('sitemap', ['html'], function () {
+gulp.task('sitemap', gulp.series('html', function(done) {
 	return gulp.src(paths.sitemap)
 		.pipe(sitemap({
 			siteUrl: 'https://scotthsmith.com'
 		}))
 		.pipe(gulp.dest('./'));
-});
+	done();
+}));
 
-gulp.task('watch', function() {
-	gulp.watch(paths.html, ['html']);
-	gulp.watch(paths.styles, ['styles']);
-	gulp.watch(paths.sprites, ['sprites']);
-	gulp.watch(paths.scripts, ['scripts']);
+gulp.task(function watch() {
+	gulp.watch(paths.html, gulp.series('html'));
+	gulp.watch(paths.styles, gulp.series('styles'));
+	gulp.watch(paths.sprites, gulp.series('sprites'));
+	gulp.watch(paths.scripts, gulp.series('scripts'));
 });
 
 // Workflows
 // $ gulp: Builds, prefixes, and minifies CSS files; concencates and minifies JS files; watches for changes. The works.
-gulp.task('default', ['html', 'styles', 'teaStyles', 'sprites', 'scripts', 'sitemap', 'watch']);
+gulp.task('default', gulp.parallel('html', 'styles', 'teaStyles', 'sprites', 'scripts', 'sitemap', 'watch', function(done) {
+	done();
+}));
 
 // $ gulp build: Builds, prefixes, and minifies CSS files; concencates and minifies JS files. For deployments.
-gulp.task('build', ['html', 'styles', 'teaStyles', 'sprites', 'scripts', 'sitemap']);
+gulp.task('build', gulp.parallel('html', 'styles', 'teaStyles', 'sprites', 'scripts', 'sitemap', function(done) {
+	done();
+}));
