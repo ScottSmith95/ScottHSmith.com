@@ -1,7 +1,40 @@
 @import 'variables.css';
 /* @require 'partials/project.css' */
 
-.content li {
+
+.project-box {
+	display: block;
+	position: relative;
+	height: 7em;
+	width: 100%;
+	max-width: 25em;
+	background: linear-gradient(135deg, #222, #222 49.99%, #444 50%, #444);
+	box-shadow: rgba(14, 21, 47, 0.2) 0 2px 5px;
+	border-radius: 5px;
+	margin-bottom: 7.5%;
+	
+	.title {
+		position: relative;
+		top: 2.75em;
+		font-size: 1.6em;
+		color: white;
+	}
+	
+	&:nth-child(1) {
+		margin-top: 7.5%;
+		background: linear-gradient(-10deg, #3C8C91, #3C8C91 49.99%, #53C1C9 50%, #53C1C9);
+	}
+	
+	&:nth-child(2) {
+		background: linear-gradient(-10deg, #6B3A55, #6B3A55 49.99%, #8C4C6F 50%, #8C4C6F);
+	}
+	
+	&:nth-child(3) {
+		background: linear-gradient(-10deg, #222, #222 49.99%, #444 50%, #444);
+	}
+}
+
+/* .content li {
 	font-size: 1.6em;
 	line-height: 2em;
 	list-style: none;
@@ -19,11 +52,11 @@
 
 .content a:active {
 	color: var(--darkblue);
-}
+} */
 
 /* Desktop */
-@media (min-width: 35em) {
+/* @media (min-width: 35em) {
 	.content li {
 		font-size: 1.8em;
 	}
-}
+} */
