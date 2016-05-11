@@ -38,30 +38,3 @@
 		background: linear-gradient(-10deg, #222, #222 49.99%, #444 50%, #444);
 	}
 }
-
-/* .content li {
-	font-size: 1.6em;
-	line-height: 2em;
-	list-style: none;
-}
-
-.content a {
-	transition: color 0.35s ease-out;
-	color: var(--text-color);
-	text-decoration: none;
-}
-
-.content a:hover {
-	color: var(--blue);
-}
-
-.content a:active {
-	color: var(--darkblue);
-} */
-
-/* Desktop */
-/* @media (min-width: 35em) {
-	.content li {
-		font-size: 1.8em;
-	}
-} */
