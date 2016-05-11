@@ -1,7 +1,6 @@
 @import 'variables.css';
 /* @require 'partials/project.css' */
 
-
 .project-box {
 	display: block;
 	position: relative;
@@ -11,7 +10,7 @@
 	background: linear-gradient(135deg, #222, #222 49.99%, #444 50%, #444);
 	box-shadow: rgba(14, 21, 47, 0.2) 0 2px 5px;
 	border-radius: 5px;
-	margin-bottom: 7.5%;
+	margin: 0 auto 7.5%;
 	
 	.title {
 		position: relative;
