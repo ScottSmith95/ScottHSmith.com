@@ -84,7 +84,7 @@ header {
 .content section {
 	display: flex;
 	align-items: flex-start;
-	max-width: 50em;
+	max-width: 50rem;
 	padding: 0 0 5%;
 	text-align: left;
 	margin: 0 auto;
@@ -94,6 +94,15 @@ header {
 
 	}
 }
+
+.dark-break {
+	background-color: var(--darkgrey);
+	color: #FFF;
+	position: relative;
+	width: 100vw;
+	left: calc(-50vw + 50%);
+}
+
 
 .no-flexbox .content section {
 	clear: both;
@@ -194,14 +203,6 @@ header {
 		}
 		}
 	}
-}
-
-.email-bg {
-	background-color: var(--darkgrey);
-	color: #FFF;
-	position: relative;
-	width: 100vw;
-	left: calc(-50vw + 50%);
 }
 
 section.email {
