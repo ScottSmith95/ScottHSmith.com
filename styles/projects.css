@@ -2,12 +2,16 @@
 /* @require 'partials/project.css' */
 
 .project-box {
+	transition: box-shadow 0.4s ease;
 	display: block;
+	overflow: hidden;
 	position: relative;
 	height: 7em;
 	width: 100%;
 	max-width: 25em;
 	background: linear-gradient(135deg, #222, #222 49.99%, #444 50%, #444);
+	background-size: cover;
+	background-position: center;
 	box-shadow: 0 2px 5px rgba(14, 21, 47, 0.2);
 	border-radius: 5px;
 	margin: 0 auto 7.5%;
@@ -18,23 +22,39 @@
 	}
 	}
 	
+	.overlay {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+	}
+	
 	.title {
-		position: relative;
-		top: 2.75em;
+		position: absolute;
+		bottom: 0;
+		width: 100%;
 		font-size: 1.6em;
 		color: white;
 	}
 	
 	&:nth-child(1) {
-		margin-top: 7.5%;
-		background: linear-gradient(-10deg, #3C8C91, #3C8C91 49.99%, #53C1C9 50%, #53C1C9);
+		.overlay {
+			background: linear-gradient(-10deg, #3C8C91, #3C8C91 49.99%, #53C1C9 50%, #53C1C9);
+			background: linear-gradient(-10deg, rgba(60, 140, 145, 0.85),rgba(60, 140, 145, 0.75) 49.99%, rgba(83, 195, 202, 0.5) 50%, rgba(83, 195, 202, 0.5))
+		}
 	}
 	
 	&:nth-child(2) {
-		background: linear-gradient(-10deg, #6B3A55, #6B3A55 49.99%, #8C4C6F 50%, #8C4C6F);
+		.overlay  {
+			background: linear-gradient(-10deg, #6B3A55, #6B3A55 49.99%, #8C4C6F 50%, #8C4C6F);
+			background: linear-gradient(-10deg, rgba(108, 58, 85, 0.85), rgba(108, 58, 85, 0.75) 49.99%, rgba(140, 76, 111, 0.5) 50%, rgba(140, 76, 111, 0.5));
+
+		}
 	}
 	
 	&:nth-child(3) {
-		background: linear-gradient(-10deg, #222, #222 49.99%, #444 50%, #444);
+		.overlay  {
+			background: linear-gradient(-10deg, #222, #222 49.99%, #444 50%, #444);
+			background: linear-gradient(-10deg, rgba(33, 33, 33, 0.85), rgba(33, 33, 33, 0.75) 49.99%, rgba(69, 69, 69, 0.5) 50%, rgba(69, 69, 69, 0.5));
+		}
 	}
 }
