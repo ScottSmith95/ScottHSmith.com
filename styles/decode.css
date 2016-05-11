@@ -91,7 +91,6 @@ header {
 	
 	&.archived {
 		filter: grayscale(100%);
-
 	}
 }
 
