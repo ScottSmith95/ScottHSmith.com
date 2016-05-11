@@ -100,6 +100,11 @@ header {
 	position: relative;
 	width: 100vw;
 	left: calc(-50vw + 50%);
+	
+	section {
+		width: 92.5%;
+		max-width: 40rem;
+	}
 }
 
 
@@ -205,8 +210,6 @@ header {
 }
 
 section.email {
-	max-width: 40em;
-	width: 92.5%;
 	font-size: 1.25em;
 	
 	h2 {
