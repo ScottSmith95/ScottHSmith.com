@@ -88,6 +88,11 @@ header {
 	padding: 0 0 5%;
 	text-align: left;
 	margin: 0 auto;
+	
+	&.archived {
+		filter: grayscale(100%);
+
+	}
 }
 
 .no-flexbox .content section {
