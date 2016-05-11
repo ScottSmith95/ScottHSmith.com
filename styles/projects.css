@@ -8,9 +8,15 @@
 	width: 100%;
 	max-width: 25em;
 	background: linear-gradient(135deg, #222, #222 49.99%, #444 50%, #444);
-	box-shadow: rgba(14, 21, 47, 0.2) 0 2px 5px;
+	box-shadow: 0 2px 5px rgba(14, 21, 47, 0.2);
 	border-radius: 5px;
 	margin: 0 auto 7.5%;
+	
+	@media (hover) {
+	&:hover {
+		box-shadow: 0 3px 9px rgba(14,21,47,0.3);
+	}
+	}
 	
 	.title {
 		position: relative;
