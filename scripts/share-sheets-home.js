@@ -9,9 +9,9 @@ $(document).ready(function(){
 		$('body').addClass('sexy');
 	}
 	
-	var $sheets = $('#Facebook, #Instagram');
+	var $sheets = $('#Facebook');
 	
-	var $triggers = $('.Facebook.ShareSheet, .Instagram.ShareSheet');
+	var $triggers = $('.Facebook.ShareSheet');
 	
 	// Shows sheets after they have loaded
 	($sheets).delay(300).addClass('loaded');
@@ -21,11 +21,6 @@ $(document).ready(function(){
 		$('#Facebook').toggleClass('selected').toggleClass('unselected');
 	});
 	
-	// Handles opening the Instagram sheet
-	$('.Instagram.ShareSheet').click(function() {
-		$('#Instagram').toggleClass('selected').toggleClass('unselected');
-	});
-		
 	// Adds "touched" class when element is touched and removes it when it is not
 	$('.cancel', $triggers).bind('touchstart touchend', function(e) {
 		$(this).toggleClass('touched');
