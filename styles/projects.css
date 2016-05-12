@@ -58,3 +58,10 @@
 		}
 	}
 }
+
+/* Medium */
+@media (min-width: 35em) {
+	header .desc {
+		margin-bottom: 7.5%;
+	}
+}
