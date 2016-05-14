@@ -69,6 +69,8 @@
 
 /* Medium */
 @media (min-width: 35em) {
+	
+	/* Move paging icons over to either side of carousel. */
 	.flickity-prev-next-button.next {
 		right: calc(4em * -1 - 2.5%);
 	}
@@ -89,7 +91,7 @@
 /* XL */
 @media (min-width: 65em) {
 	.grid-carousel {
-		max-width: calc(30em + 1.5%);
+		max-width: 30em;
 	}
 	
 	.grid-item {

@@ -14,7 +14,7 @@ var paths = {
 	styles:            ['styles/**/*.css', '!styles/build/**', '!styles/variables.css'],
 	teaStyles:         'tea/*.css',
 	sprites:           ['images/Social Icons/*.svg', '!images/Social Icons/home-sprite.svg'],
-	scripts:           ['scripts/*.js', '!scripts/main.js', '!scripts/home.js', '!scripts/build/**'],
+	scripts:           ['scripts/*.js', '!scripts/main.js', '!scripts/home.js', '!scripts/social-icons.js', '!scripts/build/**'],
 	mainScript:        ['node_modules/fastclick/lib/fastclick.js', 'scripts/vendor/modernizr.js', 'scripts/main.js'],
 	homeScript:        ['node_modules/boomsvgloader/dist/js/boomsvgloader.js', 'scripts/home.js'],
 	socialIconsScript: ['node_modules/flickity/dist/flickity.pkgd.js', 'scripts/social-icons.js'],
