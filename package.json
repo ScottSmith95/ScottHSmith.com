@@ -13,6 +13,7 @@
     "css-mqpacker": "^5.0.1",
     "cssnano": "^3.5.2",
     "fastclick": "^1.0.6",
+    "flickity": "^1.2.1",
     "gulp": "gulpjs/gulp#4.0",
     "gulp-concat": "^2.6.0",
     "gulp-kit": "^0.3.0",

@@ -1,6 +1,8 @@
 @import 'variables.css';
 /* @require 'partials/project.css' */
 
+@import '../node_modules/flickity/dist/flickity.css';
+
 .lightcolor {
 	color: var(--lightgrey);
 }
@@ -9,21 +11,41 @@
 	color: var(--blue);
 }
 
-.grid {
-	transition: opacity 0.5s ease-out, max-width 0.4s ease-out;
-	width: auto;
+.grid-carousel {
+	position: relative;
+	max-width: 25em;
+	margin: 2.5% auto;
+	
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		z-index: 2;
+		height: 100%;
+		width: 5%;
+	}
+	
+	&::before {
+		left: -1px;
+		background-image: linear-gradient(to right, #ECEEF0, rgba(235, 238, 240, 0));
+	}
+	
+	&::after {
+		right: -1px;
+		background-image: linear-gradient(to left, #ECEEF0, rgba(235, 238, 240, 0));
+	}
+}
+
+.grid-item {
 	max-height: 25em;
-	vertical-align: middle;
-}
-
-.grid.selected {
 	max-width: 95%;
-	opacity: 1;
+	padding: 0 2.5%;
 }
 
-.grid.unselected {
-	max-width: 0;
-	opacity: 0;
+.flickity-prev-next-button {
+	width: 4em;
+	height: 4em;
 }
 
 .download {
@@ -45,10 +67,33 @@
 	}
 }
 
-/* Desktop */
+/* Medium */
+@media (min-width: 35em) {
+	.flickity-prev-next-button.next {
+		right: calc(4em * -1 - 2.5%);
+	}
+	
+	.flickity-prev-next-button.previous {
+		left: calc(4em * -1 - 2.5%);
+	}
+}
+
+/* Large */
 @media (min-width: 50em) {
 	.download {
-		height: 4.75em;
+		height: 4em;
 		margin: 3.5% 2.5% 2.5%;
+	}
+}
+
+/* XL */
+@media (min-width: 65em) {
+	.grid-carousel {
+		max-width: calc(30em + 1.5%);
+	}
+	
+	.grid-item {
+		max-height: 30em;
+		max-width: 30em;
 	}
 }
