@@ -5,9 +5,6 @@ $(document).ready(function(){
 		if (ios) {
 			$('html').addClass('iOS');
 		}
-	if (window.location.host == "scottsmith.sexy") {
-		$('body').addClass('sexy');
-	}
 	
 	var $sheets = $('#Facebook');
 	

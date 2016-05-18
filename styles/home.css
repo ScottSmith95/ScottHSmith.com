@@ -31,29 +31,12 @@ a {
 }
 
 .headerpic {
-	margin: 7.5% auto 3.5%;
-}
-
-.headerpic,
-.headerpic img {
-	transition: width 0.5s ease-out, height 0.5s ease-out, background-size 0.5s ease-out;
+	transition: width 0.5s ease-out, height 0.5s ease-out;
 	display: block;
 	width: 10em;
 	height: 10em;
 	border-radius: 50%;
-	background-image: url('/images/ScottPic_600.jpg?03-2014');
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: 100%;
-}
-
-.fourohfour .headerpic,
-.fourohfour .headerpic img {
-	background: none;
-}
-
-.sexy .headerpic {
-	background-image: url('/images/SexyScott.jpg?03-2015');
+	margin: 7.5% auto 3.5%;
 }
 
 .info {
@@ -180,8 +163,7 @@ nav a {
 
 /* Tablet */
 @media (min-width: 35em) {
-	.headerpic,
-	.headerpic img {
+	.headerpic {
 		width: 14em;
 		height: 14em;
 	}
