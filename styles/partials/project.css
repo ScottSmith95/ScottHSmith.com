@@ -69,7 +69,8 @@ header {
 }
 
 .PageMenu {
-	transition: max-height 0.3s ease, border-bottom 0.3s ease, box-shadow 0.3s ease;
+	transition: max-height 0.3s, border-bottom 0.3s, box-shadow 0.3s;
+	transition-timing-function: ease-in, ease, ease;
 	overflow: hidden;
 	max-height: 0;
 	position: absolute;
@@ -85,6 +86,7 @@ header {
 
 	
 	&.active {
+		transition-timing-function: ease-out, ease, ease;
 		max-height: 3em;
 		border-bottom: 2px solid var(--blue);
 	}
