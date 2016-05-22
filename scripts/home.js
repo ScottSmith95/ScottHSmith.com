@@ -1,4 +1,4 @@
-boomsvgloader.load('images/Social%20Icons/home-sprite.svg');
+boomsvgloader.load('/images/Social%20Icons/home-sprite.svg');
 
 function changeSource() {
     var image = document.querySelectorAll('.headerpic')[0];
