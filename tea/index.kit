@@ -11,9 +11,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
 <!-- CSS -->
-<link rel="stylesheet" href="/styles/build/partials/global.css">
-<link rel="stylesheet" href="/styles/build/partials/share-sheet.css">
-<link rel="stylesheet" href="/tea/build/tea.css">
+<link rel="stylesheet" href="https://scotthsmith.com/styles/build/partials/global.css">
+<link rel="stylesheet" href="https://scotthsmith.com/styles/build/partials/project.css">
+<link rel="stylesheet" href="/build/tea.css">
 
 <!-- @import "../kit-includes/_head_scripts.kit" -->
 
@@ -51,113 +51,7 @@
 </div>
 </div>
 
-<!-- ScottADN Share Sheet -->
-<div class="Sheet unselected" id="ScottADN">
-	<div class="SheetDivider"></div>
-	<div class="SheetContent">
-		<ul class="itemset">
-			<section class="clients">
-			<div class="itemcontainer">
-				<li><a href="felix://user/@ScottSmith"><img class="appicon" src="../images/App%20Icons/Felix.png"></a>Felix</li>
-			</div>
-			<div class="itemcontainer">
-				<li><a href="riposte://x-callback-url/showUserProfile?profileID=19801"><img class="appicon" src="../images/App%20Icons/Riposte.png"></a>Riposte</li>
-			</div>
-			<div class="itemcontainer">
-				<li><a href="netbot:///user_profile/ScottSmith"><img class="appicon" src="../images/App%20Icons/Netbot.png"></a>Netbot</li>
-			</div>
-			<section class="browsers">
-						<div class="itemcontainer">
-				<li><a href="http://alpha.app.net/ScottSmith"><img class="appicon" src="../images/App%20Icons/Safari.png"></a>Right here</li>
-			</div>
-			<div class="itemcontainer">
-				<li><a href="googlechrome://alpha.app.net/scottsmith"><img class="appicon" src="../images/App%20Icons/Chrome.png"></a>Chrome</li>
-			</div>
-			</section>
-		</ul>
-		<h2 class="cancel">Cancel</h2>
-	</div>
-</div>
-
-<!-- NickADN Share Sheet -->
-<div class="Sheet unselected" id="NickADN">
-	<div class="SheetDivider"></div>
-	<div class="SheetContent">
-		<ul class="itemset">
-			<section class="clients">
-			<div class="itemcontainer">
-				<li><a href="felix://user/@nickrosencrans"><img class="appicon" src="../images/App%20Icons/Felix.png"></a>Felix</li>
-			</div>
-			<div class="itemcontainer">
-				<li><a href="riposte://x-callback-url/showUserProfile?profileID=10618"><img class="appicon" src="../images/App%20Icons/Riposte.png"></a>Riposte</li>
-			</div>
-			<div class="itemcontainer">
-				<li><a href="netbot:///user_profile/nickrosencrans"><img class="appicon" src="../images/App%20Icons/Netbot.png"></a>Netbot</li>
-			</div>
-			<section class="browsers">
-			<section>
-			<div class="itemcontainer">
-				<li><a href="http://alpha.app.net/nickrosencrans"><img class="appicon" src="../images/App%20Icons/Safari.png"></a>Right here</li>
-			</div>
-			<div class="itemcontainer">
-				<li><a href="googlechrome://alpha.app.net/nickrosencrans"><img class="appicon" src="../images/App%20Icons/Chrome.png"></a>Chrome</li>
-			</div>
-			</section>
-		</ul>
-		<h2 class="cancel">Cancel</h2>
-	</div>
-</div>
-
-<div class="darklayer off"></div>
-
-<script async type="text/javascript" src="/scripts/build/main.js"></script>
-
 <!-- @import "../kit-includes/_script-jquery.kit" -->
-
-<script type="text/javascript">
-	$(document).ready(function(){
-		//Adds "iOS" class to body if running iOS
-		var device = navigator.userAgent.toLowerCase();
-		var ios = device.match(/(iphone|ipod|ipad)/);
-			if (ios) {
-				$('body').addClass('iOS');
-			}
-	
-		var $sheets = $('#ScottADN, #NickADN');
-		
-		var $triggers = $('#ScottADNLink, #NickADNLink');
-		
-		// Shows sheets after they have loaded
-		($sheets).delay(300).addClass('loaded');
-		$('.darklayer').delay(300).addClass('loaded');
-		
-		// Handles opening the Twitter sheet
-		$('#ScottADNLink').click(function() {
-        	$('#ScottADN').toggleClass('selected').toggleClass('unselected');
-        });
-        
-        // Handles opening the App-Net sheet
-        $('#NickADNLink').click(function() {
-        	$('#NickADN').toggleClass('selected').toggleClass('unselected');
-        });
-        
-        // Handles darkening rest of page
-        ($triggers).click(function() {
-	    	$('.darklayer').addClass('on').removeClass('off').removeClass('loaded');
-        });
-        
-        // Adds "touched" class when element is touched and removes it when it is not
-        $('.cancel').bind('touchstart touchend', function(e) {
-        	$(this).toggleClass('touched');
-        });
-        
-        // Triggers un-darkening rest of page and deselecting sheets
-		$('.cancel, .darklayer').click(function() {
-			$('.Sheet.selected').removeClass('selected').addClass('unselected');
-			$('.darklayer').removeClass('on').addClass('off');
-		});
-	});
-</script>
 
 </body>
 
