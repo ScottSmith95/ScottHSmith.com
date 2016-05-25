@@ -9,24 +9,7 @@ header {
 	.no-cssanimations & {
 		opacity: 1;
 	}
-
-	.nav,
-	.divider {
-		vertical-align: top;
-		font-weight: 300;
-		color: rgba(68,68,68,0.5);
-	}
 	
-	@media (hover) {
-	.nav:hover {
-		color: var(--blue);
-	}
-	
-	.nav:active {
-		color: var(--darkblue);
-	}
-	}
-
 	a {
 		color: var(--text-color);
 	}
@@ -35,12 +18,33 @@ header {
 		font-size: 1.5em;
 		padding-bottom: 2.5%;
 		border-bottom: 1px solid var(--blue);
-		margin: 0;
+		margin: 0.15em 0;
 		
 		ul {
 			display: inline-block;
 			list-style: none;			
 		}
+	}
+	
+	.nav > a {
+		font-weight: 300;
+		color: rgba(68, 68, 68, 0.5);
+		
+		&::after {
+			content: '|';
+			color: rgba(68, 68, 68, 0.5);
+			margin: 0 0.25em;
+		}
+	}
+	
+	@media (hover) {
+	.nav a:hover {
+		color: var(--blue);
+	}
+	
+	.nav a:active {
+		color: var(--darkblue);
+	}
 	}
 
 	.desc {
