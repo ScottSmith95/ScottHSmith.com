@@ -55,10 +55,10 @@ gulp.task(function teaStyles() {
 gulp.task(function sprites() {
 	var options = {
 		mode: {
-			symbol: { // Create a «symbol» sprite
-				sprite: 'home-sprite.svg',
-				prefix: '', // Don't prefix output title
-				dest: '.'
+			symbol: { // Create a «symbol» sprite.
+				dest: '.', // Don't create 'symbols/' directory.
+				prefix: '', // Don't prefix output title.
+				sprite: 'home-sprite' // '.svg' will be appended if not included.
 			}
 		} 
 	};
