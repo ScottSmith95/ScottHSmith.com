@@ -7,6 +7,9 @@
     "url": "https://github.com/ScottSmith95/ScottHSmith.com.git"
   },
   "license": "UNLICENSED",
+  "scripts": {
+    "build": "gulp build"
+  },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
     "boomsvgloader": "0.0.2",
