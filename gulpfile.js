@@ -14,11 +14,13 @@ var paths = {
 	styles:            ['styles/**/*.css', '!styles/build/**', '!styles/variables.css'],
 	teaStyles:         'tea/*.css',
 	sprites:           ['images/Social Icons/*.svg', '!images/Social Icons/home-sprite.svg'],
-	scripts:           ['scripts/*.js', '!scripts/main.js', '!scripts/home.js', '!scripts/social-icons.js', '!scripts/build/**'],
+	sitemap:           ['**/*.html', '!error/*.html', '!node_modules/**/*'],
+	scripts:           ['scripts/*.js', '!scripts/build/**',
+						'!scripts/main.js', '!scripts/home.js', '!scripts/page-nav.js', '!scripts/social-icons.js'],
 	mainScript:        ['node_modules/fastclick/lib/fastclick.js', 'scripts/vendor/modernizr.js', 'scripts/main.js'],
 	homeScript:        ['node_modules/boomsvgloader/dist/js/boomsvgloader.js', 'scripts/home.js'],
-	socialIconsScript: ['node_modules/flickity/dist/flickity.pkgd.js', 'scripts/social-icons.js'],
-	sitemap:           ['**/*.html', '!error/*.html', '!node_modules/**/*']
+	pagenavScript:     ['node_modules/tether/dist/js/tether.js', 'scripts/page-nav.js'],
+	socialIconsScript: ['node_modules/flickity/dist/flickity.pkgd.js', 'scripts/social-icons.js']
 };
 
 var processors = [
@@ -86,6 +88,15 @@ gulp.task(function homeScript() {
 		.pipe(gulp.dest('scripts/build/'));
 });
 
+gulp.task(function pagenavScript() {
+	return gulp.src(paths.pagenavScript)
+		.pipe(sourcemaps.init())
+			.pipe(concat('page-nav.js'))
+			.pipe(uglify())
+		.pipe(sourcemaps.write('./'))
+		.pipe(gulp.dest('scripts/build/'));
+});
+
 gulp.task(function socialIconsScript() {
 	return gulp.src(paths.socialIconsScript)
 		.pipe(sourcemaps.init())
@@ -95,7 +106,7 @@ gulp.task(function socialIconsScript() {
 		.pipe(gulp.dest('scripts/build/'));
 });
 
-gulp.task('scripts', gulp.parallel('mainScript', 'homeScript', 'socialIconsScript', function(done) {
+gulp.task('scripts', gulp.parallel('mainScript', 'homeScript', 'pagenavScript', 'socialIconsScript', function(done) {
 	return gulp.src(paths.scripts)
 		.pipe(sourcemaps.init())
 			.pipe(uglify())

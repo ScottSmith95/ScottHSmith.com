@@ -1,8 +1,15 @@
-var menuTrigger = document.querySelector('#current_page');
-var menu        = document.querySelector('.PageMenu');
+var navTrigger = document.querySelector('.nav h1');
+var nav        = document.querySelector('.page-nav');
 
-function toggleClass(){
-    menu.classList.toggle('active');
+function toggleClass() {
+    nav.classList.toggle('active');
 }
 
-menuTrigger.addEventListener('click', toggleClass )
+navTrigger.addEventListener('click', toggleClass)
+
+new Tether({
+  element: nav,
+  target: navTrigger,
+  attachment: 'top left',
+  targetAttachment: 'bottom left'
+});

@@ -4,7 +4,6 @@ header {
 	width: 100%;
 	max-width: 40em;
 	text-align: center;
-	margin: 2.5% auto 0;
 	
 	.no-cssanimations & {
 		opacity: 1;
@@ -14,26 +13,37 @@ header {
 		color: var(--text-color);
 	}
 	
-	h1 {
-		font-size: 1.5em;
-		padding-bottom: 2.5%;
+	.nav {
+		padding: 2.5% 0;
 		border-bottom: 1px solid var(--blue);
-		margin: 0.15em 0;
+		
+		h1, h2, & > a {
+			display: inline;
+			font-size: 1.5em;
+			padding-bottom: 2.5%;
+			margin: 0;
+		}
+		
+		& > a {
+			font-weight: 300;
+			color: rgba(68, 68, 68, 0.5);
+			
+			&::after {
+				content: '|';
+				color: rgba(68, 68, 68, 0.5);
+				margin: 0 0.25em;
+			}
+		}
+		
+		.js &.has-page-nav { /* Dropdown will only with with JS, so don't hint it's clickable without it working. */
+			h1, h2 {
+				cursor: pointer;
+			}
+		}
 		
 		ul {
 			display: inline-block;
 			list-style: none;			
-		}
-	}
-	
-	.nav > a {
-		font-weight: 300;
-		color: rgba(68, 68, 68, 0.5);
-		
-		&::after {
-			content: '|';
-			color: rgba(68, 68, 68, 0.5);
-			margin: 0 0.25em;
 		}
 	}
 	
@@ -68,20 +78,17 @@ header {
 	}
 }
 
-#current_page {
-	cursor: pointer;
-}
-
-.PageMenu {
+.page-nav {
 	transition: max-height 0.3s, border-bottom 0.3s, box-shadow 0.3s;
 	transition-timing-function: ease-in, ease, ease;
 	overflow: hidden;
 	max-height: 0;
-	position: absolute;
+	font-size: 1.5em;
 	text-align: left;
 	background: rgba(235, 238, 240, 0.95);
 	border-bottom: 0 solid var(--blue);
 	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+	z-index: 2;
 	
 	@supports (backdrop-filter: none) {
 	    backdrop-filter: blur(10px);
@@ -152,17 +159,29 @@ header {
 		width: 80%;
 		font-size: 1.2em;
 		text-align: justify;
-		margin: 2.5% auto;
+		margin: 5% auto 2.5%;
 		
-		h1 {
-			font-size: 2em;
-			padding-bottom: 0;
+		.nav {
+			padding: 0;
 			border-bottom: none;
+			
+			h1, h2, & > a {
+				font-size: 2em;
+				padding-bottom: 0;
+			}
+			
+			ul {
+				font-size: 2em;
+			}
 		}
 		
 		.desc {
 			padding: 0;
 		}
+	}
+
+	.page-nav {
+		font-size: 2em;
 	}
 
 	.license {
