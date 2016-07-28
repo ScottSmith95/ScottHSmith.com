@@ -18,7 +18,7 @@ $(document).ready(function(){
 	});
 	
 	// Adds "touched" class when element is touched and removes it when it is not
-	$('.cancel').bind('touchstart touchend', function(e) {
+	$('.cancel').on('touchstart touchend', function() {
 		$(this).toggleClass('touched');
 	});
 	
