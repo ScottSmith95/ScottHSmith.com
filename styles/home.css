@@ -33,22 +33,48 @@ a {
 	margin: 1.25rem 0;
 }
 
+@keyframes glow-blue {
+	from {
+		color: var(--blue);
+		text-shadow: 0px 2px 15px rgba(0, 153, 204, 0.65);
+	}
+	to {
+		color: rgba(0, 153, 204, 0.8);
+		text-shadow: 0px 2px 10px rgba(0, 153, 204, 0.35);
+	}
+}
+
+@keyframes glow-turquoise {
+	from {
+		color: var(--turquoise);
+		text-shadow: 0px 2px 15px rgba(83, 195, 202, 0.65);
+	}
+	to {
+		color: rgba(83, 195, 202, 0.8);
+		text-shadow: 0px 2px 10px rgba(83, 195, 202, 0.35);
+	}
+}
+
 .name {
 	font: 5em/0.85 "acier-bat-gris-1", "acier-bat-gris-2", sans-serif;
 	padding-left: 0;
 	margin-top: -2.5rem;
 	
 	.first {
+		animation: glow-blue 2s ease-out infinite alternate;
 		color: var(--blue);
+		text-shadow: 0px 2px 15px rgba(0, 153, 204, 0.65);
 	}
 	
 	.last {
+		animation: glow-turquoise 2s ease-out 0.5s infinite alternate both;
 		color: var(--turquoise);
+		text-shadow: 0px 2px 15px rgba(83, 195, 202, 0.65);
 	}
 }
 
 @keyframes taglines-left {
-	0% {
+	from {
 		opacity: 0;
 		transform: translateY(15%) translateX(35%);
 	}
@@ -56,13 +82,13 @@ a {
 		opacity: 1;
 		transform: translateY(0);
 	}
-	100% {
+	to {
 		transform: translateX(0);
 	}
 }
 
 @keyframes taglines-right {
-	0% {
+	from {
 		opacity: 0;
 		transform: translateY(15%) translateX(-35%);
 	}
@@ -70,7 +96,7 @@ a {
 		opacity: 1;
 		transform: translateY(0);
 	}
-	100% {
+	to {
 		transform: translateX(0);
 	}
 }
@@ -84,7 +110,7 @@ a {
 		
 		&::after {
 			content: '';
-			animation: taglines-left 1s ease-out;
+			animation: taglines-left 1s ease-out both;
 			position: absolute;
 			z-index: -1;
 			height: 0.35em;
@@ -98,7 +124,8 @@ a {
 			right: 45px;
 		}
 		&:nth-child(2)::after {
-			animation: taglines-right 1s ease-out;
+			animation-name: taglines-right;
+			anim
 			width: 3.25em;
 			bottom: 7px;
 			right: -16px;
@@ -134,6 +161,36 @@ nav a {
 	margin-right: 1.25rem;
 }
 
+@keyframes rubber-band {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+
+  65% {
+    transform: scale3d(.95, 1.05, 1);
+  }
+
+  75% {
+    transform: scale3d(1.05, .95, 1);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
 .social {
 	.icons {
 		list-style: none;
@@ -152,6 +209,11 @@ nav a {
 	.icon {
 		width: 20%;
 		max-width: 4.25em;
+		backface-visibility: visible;
+		
+		&:hover {
+			animation: rubber-band 0.5s ease;
+		}
 	}	
 }
 
