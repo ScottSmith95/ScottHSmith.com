@@ -16,7 +16,6 @@ a {
 }
 
 .container {
-	max-width: 52.5em;
 	margin: 0 auto;
 }
 
@@ -24,7 +23,7 @@ a {
 	width: 100%;
 	width: calc(100% - 1.25rem);
 	height: auto;
-	box-shadow: 0px 4px 55px 0px rgba(68,68,68,0.4);
+	box-shadow: 0px 4px 55px 0px rgba(83, 108, 104, 0.4);
 }
 
 .name,
@@ -48,6 +47,34 @@ a {
 	}
 }
 
+@keyframes taglines-left {
+	0% {
+		opacity: 0;
+		transform: translateY(15%) translateX(35%);
+	}
+	40% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes taglines-right {
+	0% {
+		opacity: 0;
+		transform: translateY(15%) translateX(-35%);
+	}
+	40% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
 .tagline {
 	font: 300 2em/1.5 var(--font-fam);
 	list-style: none;
@@ -57,6 +84,7 @@ a {
 		
 		&::after {
 			content: '';
+			animation: taglines-left 1s ease-out;
 			position: absolute;
 			z-index: -1;
 			height: 0.35em;
@@ -70,6 +98,7 @@ a {
 			right: 45px;
 		}
 		&:nth-child(2)::after {
+			animation: taglines-right 1s ease-out;
 			width: 3.25em;
 			bottom: 7px;
 			right: -16px;
@@ -144,9 +173,8 @@ nav a {
 @media (min-width: 35em) {
 	header,
 	section {
-		max-width: calc(100% - 5rem);
 		margin-right: 2.5rem;
-		margin-left: auto;
+		margin-left: 2.5rem;
 	}
 	
 	header {
@@ -176,24 +204,22 @@ nav a {
 	}
 }
 
-@media (min-width: 55em) {
-	header,
-	section {
-		max-width: 35em;
-		margin-right: 0;
-	}
-	
-	header {
-		margin-top: 1rem;
+@media (min-width: 40em) {
+	.container {
+		max-width: 52.5em;
 	}
 	
 	.header-image {
-		max-width: 15em;
-		float: left;
-		margin-top: 1.25rem;
+		display: block;
+		max-width: 35em;
+		max-height: 80vh;
+		width: auto;
+		margin: 0 auto;
 	}
 	
-	.name {
-		margin-top: 0;
+	header,
+	section {
+		max-width: 35em;
+		margin: 0 auto;
 	}
 }
