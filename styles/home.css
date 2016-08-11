@@ -266,7 +266,7 @@ nav a {
 	}
 }
 
-@media (min-width: 40em) {
+@media (min-width: 50em) {
 	.container {
 		max-width: 52.5em;
 	}
