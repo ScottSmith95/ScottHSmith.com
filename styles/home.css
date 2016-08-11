@@ -35,23 +35,19 @@ a {
 
 @keyframes glow-blue {
 	from {
-		color: var(--blue);
-		text-shadow: 0px 2px 15px rgba(0, 153, 204, 0.65);
+		text-shadow: 0 2px 15px rgba(0, 153, 204, .35), 0 0 2px rgba(0, 153, 204, 0);
 	}
 	to {
-		color: rgba(0, 153, 204, 0.8);
-		text-shadow: 0px 2px 10px rgba(0, 153, 204, 0.35);
+		text-shadow: 0 2px 15px rgba(0, 153, 204, .65), 0 0 2px rgba(0, 153, 204, 0.85);
 	}
 }
 
 @keyframes glow-turquoise {
 	from {
-		color: var(--turquoise);
-		text-shadow: 0px 2px 15px rgba(83, 195, 202, 0.65);
+		text-shadow: 0 2px 15px rgba(83, 195, 202, .35), 0 0 2px rgba(83, 195, 202, 0);
 	}
 	to {
-		color: rgba(83, 195, 202, 0.8);
-		text-shadow: 0px 2px 10px rgba(83, 195, 202, 0.35);
+		text-shadow: 0 2px 15px rgba(83, 195, 202, .65), 0 0 2px rgba(83, 195, 202, 0.85);
 	}
 }
 
@@ -61,15 +57,15 @@ a {
 	margin-top: -2.5rem;
 	
 	.first {
-		animation: glow-blue 2s ease-out infinite alternate;
+/* 		animation: glow-blue 2s ease-out infinite alternate; */
 		color: var(--blue);
-		text-shadow: 0px 2px 15px rgba(0, 153, 204, 0.65);
+		text-shadow: 0 2px 15px rgba(0, 153, 204, .65);
 	}
 	
 	.last {
-		animation: glow-turquoise 2s ease-out 0.5s infinite alternate both;
+/* 		animation: glow-turquoise 2s ease-out infinite alternate both; */
 		color: var(--turquoise);
-		text-shadow: 0px 2px 15px rgba(83, 195, 202, 0.65);
+		text-shadow: 0 2px 15px rgba(83, 195, 202, .65);
 	}
 }
 
@@ -78,7 +74,7 @@ a {
 		opacity: 0;
 		transform: translateY(15%) translateX(35%);
 	}
-	40% {
+	60% {
 		opacity: 1;
 		transform: translateY(0);
 	}
@@ -92,7 +88,7 @@ a {
 		opacity: 0;
 		transform: translateY(15%) translateX(-35%);
 	}
-	40% {
+	60% {
 		opacity: 1;
 		transform: translateY(0);
 	}
