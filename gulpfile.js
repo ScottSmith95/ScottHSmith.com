@@ -17,7 +17,7 @@ var paths = {
 	sitemap:           ['**/*.html', '!error/*.html', '!node_modules/**/*'],
 	scripts:           ['scripts/*.js', '!scripts/build/**',
 						'!scripts/main.js', '!scripts/home.js', '!scripts/page-nav.js', '!scripts/social-icons.js'],
-	mainScript:        ['node_modules/fastclick/lib/fastclick.js', 'scripts/vendor/modernizr.js', 'scripts/main.js'],
+	mainScript:        ['scripts/vendor/modernizr.js'],
 	homeScript:        ['node_modules/boomsvgloader/dist/js/boomsvgloader.js', 'scripts/home.js'],
 	pagenavScript:     ['node_modules/tether/dist/js/tether.js', 'scripts/page-nav.js'],
 	socialIconsScript: ['node_modules/flickity/dist/flickity.pkgd.js', 'scripts/social-icons.js']
