@@ -1,15 +1,6 @@
 @import 'variables.css';
 /* @require 'partials/project.css' */
 
-@keyframes overlay {
-	from {
-		background-position: 0% 40%;
-	}
-	to {
-		background-position: 0% 50%;
-	}
-}
-
 .project-box {
 	transition: box-shadow 0.4s ease;
 	display: block;
@@ -76,5 +67,14 @@
 @media (min-width: 35em) {
 	header .desc {
 		margin-bottom: 7.5%;
+	}
+}
+
+@keyframes overlay {
+	from {
+		background-position: 0% 40%;
+	}
+	to {
+		background-position: 0% 50%;
 	}
 }
