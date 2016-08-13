@@ -229,6 +229,15 @@ nav a {
 	}
 }
 
+@media (max-height: 27.5em) {
+	.header-image {
+		width: auto;
+		max-height: 60vh;
+		margin-left: 0;
+		margin-bottom: -2.5rem;
+	}
+}
+
 @keyframes header-image {
 	from {
 		transform: translateX(7.5%) translateY(-25%);
