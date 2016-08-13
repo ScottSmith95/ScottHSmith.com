@@ -22,7 +22,7 @@ a {
 .header-image {
 	animation: header-image 1s ease-out backwards;
 	width: 100%;
-	width: calc(100% - 1.25rem);
+	width: calc(100% - var(--space-l1));
 	height: auto;
 	box-shadow: 0 0 55px 0 rgba(83, 108, 104, 0.4);
 }
@@ -30,8 +30,8 @@ a {
 .name,
 .tagline {
 	text-align: right;
-	padding-right: 1.25rem;
-	margin: 1.25rem 0;
+	padding-right: var(--space-l1);
+	margin: var(--space-l1) 0;
 }
 
 .name {
@@ -93,11 +93,11 @@ a {
 }
 
 section {
-	padding: 2.5rem 1.25rem;
+	padding: var(--space-l2) var(--space-l1);
 	border-top: 3px solid #DEDEDE;
 	
 	p {
-		font-size: 1.5em;
+		font-size: 1.25em;
 		line-height: 1.5;
 		margin: 0;
 	}
@@ -105,15 +105,15 @@ section {
 
 nav {
 	display: inline-block;
-	font-size: 2em;
-	margin: 0 auto 1.25rem;
+	font-size: 1.75em;
+	margin: 0 auto var(--space-l1);
 }
 
 nav a {
 	display: inline;
 	color: var(--blue);
 	text-decoration: underline;
-	margin-right: 1.25rem;
+	margin-right: var(--space-l1);
 	
 	&:hover {
 		color: var(--darkblue);
@@ -127,7 +127,7 @@ nav a {
 		justify-content: space-between;
 		align-items: flex-start;
 		list-style: none;
-		margin-top: 1.25rem;
+		margin-top: var(--space-l1);
 	}
 	
 	.link {
@@ -152,16 +152,20 @@ nav a {
 
 @media (min-width: 22em) {
 	.header-image {
-		width: calc(100% - 2.5rem);
+		width: calc(100% - var(--space-l2));
 	}
 	
 	.name,
 	.tagline {
-		padding-right: 2.5rem;
+		padding-right: var(--space-l2);
 	}
 	
 	.name {
 		font-size: 7em;
+	}
+	
+	nav {
+		font-size: 2em;
 	}
 	
 	.icons {
@@ -172,8 +176,8 @@ nav a {
 @media (min-width: 35em) {
 	header,
 	section {
-		margin-right: 2.5rem;
-		margin-left: 2.5rem;
+		margin-right: var(--space-l2);
+		margin-left: var(--space-l2);
 	}
 	
 	header {
@@ -190,12 +194,15 @@ nav a {
 	
 	.name {
 		line-height: 0.95;
-		margin-top: -2.5rem;
 	}
 	
 	section {
 		padding-right: 0;
 		padding-left: 0;
+		
+		p {
+			font-size: 1.5em;
+		}
 	}
 	
 	.social .icon {
@@ -211,7 +218,6 @@ nav a {
 	.header-image {
 		display: block;
 		max-width: 35em;
-		max-height: 80vh;
 		width: auto;
 		margin: 0 auto;
 	}

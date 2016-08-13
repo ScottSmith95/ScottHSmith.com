@@ -11,4 +11,8 @@
 	
 	/* Fonts */
 	--font-fam: 'museo-sans-1', 'museo-sans-2', sans-serif;
+	
+	/* Spacing */
+	--space-l1: 1.25rem;
+	--space-l2: 2.25rem;
 }

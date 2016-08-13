@@ -3,7 +3,7 @@
 header {
 	max-width: 40em;
 	text-align: justify;
-	margin: 2.5% 2.5% 2.5rem;
+	margin: var(--space-l1) var(--space-l1) var(--space-l2);
 	
 	.no-cssanimations & {
 		opacity: 1;
@@ -15,7 +15,7 @@ header {
 	
 	.nav,
 	.desc {
-		margin: 2.5% 0;
+		margin: var(--space-l1) 0;
 	}
 	
 	.nav {
@@ -60,7 +60,7 @@ header {
 	}
 
 	.desc {
-		font-size: 1.5em;
+		font-size: 1.25em;
 		line-height: 1.5;
 		text-align: left;
 		
@@ -126,7 +126,7 @@ header {
 .content {
 	max-width: 55em;
 	text-align: center;
-	margin: 2.5%;
+	margin: var(--space-l1) 2.5%;
 
 	.no-cssanimations & {
 		opacity: 1;
@@ -137,7 +137,7 @@ header {
 	display: block;
 	width: 80%;
 	color: var(--darkgrey);
-	margin: 2.5% auto;
+	margin: var(--space-l2) auto;
 	
 	p {
 		font-size: 0.9em;
@@ -163,16 +163,16 @@ header {
 @media (min-width: 35em) {
 	header {
 		width: 80%;
-		margin: 2.5rem auto;
+		margin: var(--space-l2) auto;
 		
-		.nav {
-			padding: 0;
-			border-bottom: none;
-			
+		.nav {			
 			h1, h2, & > a {
 				font-size: 2.5em;
-				padding-bottom: 0;
 			}
+		}
+		
+		.desc {
+			font-size: 1.5em;
 		}
 	}
 
@@ -183,10 +183,11 @@ header {
 	.license {
 		float: left;
 		width: 22.5%;
-		margin: 0 0 2.5% 2.5%;
+		margin: 0 0 var(--space-l1) var(--space-l1);
 	}
 	
 	.content {
-		margin: 2.5% auto;
+		margin-right: auto;
+		margin-left: auto;
 	}
 }
