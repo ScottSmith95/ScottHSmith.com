@@ -19,27 +19,12 @@ a {
 	margin: 0 auto;
 }
 
-.header-image-container {
-	position: relative;
-}
-
 .header-image {
 	animation: header-image 1s ease-out backwards;
 	width: 100%;
 	width: calc(100% - var(--space-l1));
 	height: auto;
-/* 	box-shadow: 0 0 55px 0 rgba(83, 108, 104, 0.4); */
-}
-
-.header-image-container::before {
-	content: '';
-	z-index: -1;
-	position: absolute;
-	background-image: url(/images/header-image/blur.jpg);
-	height: calc(100% + 0.75rem);
-	width: 100%;
-	background-size: cover;
-	filter: blur(20px) opacity(55%) saturate(150%) brightness(125%);
+	box-shadow: 0 0 55px 0 rgba(83, 108, 104, 0.6);
 }
 
 .name,
