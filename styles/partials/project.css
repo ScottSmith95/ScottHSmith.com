@@ -135,12 +135,15 @@ header {
 
 .license {
 	display: block;
-	width: 80%;
+	max-width: 55em;
+	text-align: left;
 	color: var(--darkgrey);
-	margin: var(--space-l2) auto;
+	margin: var(--space-l2) 2.5%;
 	
 	p {
+		max-width: 15em;
 		font-size: 0.9em;
+		margin: 0;
 	}
 	
 	a {
@@ -181,9 +184,9 @@ header {
 	}
 
 	.license {
-		float: left;
-		width: 22.5%;
-		margin: 0 0 var(--space-l1) var(--space-l1);
+		width: 80%;
+		margin-right: auto;
+		margin-left: auto;
 	}
 	
 	.content {
