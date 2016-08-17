@@ -267,14 +267,10 @@ nav a {
 
 @keyframes body-background {
 	from {
-		transform: scale(3);
-		visibility: hidden;
-	}
-	1% {
-		visibility: visible;
+		filter: blur(10px);
 	}
 	to {
-		transform: scale(1);
+		filter: blur(0);
 	}
 }
 
