@@ -27,18 +27,23 @@ a {
 	box-shadow: 0 0 55px 0 rgba(83, 108, 104, 0.6);
 }
 
+header {
+	padding-bottom: var(--space-l2);
+	margin-top: -2.5rem;
+}
+
 .name,
 .tagline {
 	text-align: right;
 	padding-right: var(--space-l1);
-	margin: var(--space-l1) 0;
+	margin: 0;
 }
 
 .name {
 	z-index: 1; /* Fixes some overlapping issues during animations. (WebKit) */
 	font: 5em/0.85 'acier-bat-gris', var(--font-fam) ;
 	padding-left: 0;
-	margin-top: -2.5rem;
+	
 	
 	.first,
 	.last {
@@ -61,6 +66,7 @@ a {
 .tagline {
 	font: 300 2em/1.5 var(--font-fam);
 	list-style: none;
+	margin-top: var(--space-l1);
 
 	li {
 		position: relative;
@@ -185,16 +191,21 @@ nav a {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-		align-items: flex-start;
+		align-items: baseline;
 	}
 	
 	.name,
 	.tagline {
 		padding: 0;
+		margin: 0;
 	}
 	
 	.name {
 		line-height: 0.95;
+	}
+	
+	.tagline {
+		margin-top: none;
 	}
 	
 	section {
@@ -220,13 +231,15 @@ nav a {
 		display: block;
 		max-width: 100%;
 		width: auto;
-		margin: 0 auto;
+		margin-right: auto;
+		margin-left: auto;
 	}
 	
 	header,
 	section {
 		max-width: 100%;
-		margin: 0 auto;
+		margin-right: auto;
+		margin-left: auto;
 	}
 }
 
