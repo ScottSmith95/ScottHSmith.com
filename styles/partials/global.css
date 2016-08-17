@@ -11,7 +11,7 @@ html {
 body {
 	margin: 0;
 	color: var(--text-color);
-	background: var(--bg-color);
+	background-color: var(--bg-color);
 	font: 300 100%/1.5 var(--font-fam);
 }
 
@@ -20,7 +20,7 @@ body {
 }
 
 a {
-	transition: color 0.35s ease;
+	transition: color 0.3s ease;
 	color: var(--blue);
 	text-decoration: none;
 	
