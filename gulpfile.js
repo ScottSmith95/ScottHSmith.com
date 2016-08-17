@@ -127,7 +127,7 @@ gulp.task(function watch() {
 	gulp.watch(paths.html, gulp.series('html'));
 	gulp.watch(paths.styles, gulp.series('styles'));
 	gulp.watch(paths.sprites, gulp.series('sprites'));
-	gulp.watch(paths.scripts, gulp.series('scripts'));
+	gulp.watch('scripts/*.js', gulp.series('scripts'));
 });
 
 // Workflows
