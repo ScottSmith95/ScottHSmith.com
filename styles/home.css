@@ -270,6 +270,7 @@ nav a {
 	.name .last,
 	.tagline li::after {
 		animation-delay: 3s;
+		will-change: transform;
 	}
 }
 
