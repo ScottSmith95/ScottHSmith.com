@@ -6,7 +6,7 @@
 }
 
 .header-image {
-	animation: header-image 1s ease-out backwards;
+	animation: header-image 1s ease-out 300ms backwards;
 	width: 100%;
 	width: calc(100% - var(--space-l1));
 	height: auto;
@@ -30,20 +30,27 @@ header {
 	font: 5em/0.85 'acier-bat-gris', var(--font-fam);
 	padding-left: 0;
 	
+	.wf-loading &,
+	.wf-inactive & {
+		font-size: 4em;
+		text-transform: uppercase;
+	}
+	
 	
 	.first,
 	.last {
 		display: inline-block;
+		animation: name-first 1s ease-out 300ms backwards;
 	}
 	
 	.first {
-		animation: name-first 1s ease-out backwards;
+		animation-name: name-first;
 		color: var(--blue);
 		text-shadow: 0 2px 15px rgba(0, 153, 204, 0.5);
 	}
 	
 	.last {
-		animation: name-last 1s ease-out backwards;
+		animation-name: name-last;
 		color: var(--turquoise);
 		text-shadow: 0 2px 15px rgba(83, 195, 202, 0.5);
 	}
@@ -60,7 +67,7 @@ header {
 		
 		&::after {
 			content: '';
-			animation: taglines-left 1s cubic-bezier(.3,.03,0,1.63) backwards;
+			animation: taglines-left 1s cubic-bezier(.3,.03,0,1.63) 300ms backwards;
 			position: absolute;
 			z-index: -1;
 			height: 0.35em;
@@ -165,6 +172,12 @@ nav a {
 	
 	.name {
 		font-size: 7em;
+		
+		.wf-loading &,
+		.wf-inactive & {
+			font-size: 6em;
+			text-transform: uppercase;
+		}
 	}
 	
 	nav {
@@ -248,11 +261,33 @@ nav a {
 	}
 }
 
+/* ----------------- */
+/*     Animations    */
+/* ----------------- */
+
+.wf-loading {
+	.name .first,
+	.name .last,
+	.tagline li::after {
+		animation-delay: 3s;
+	}
+}
+
+.wf-active {
+	.name .first,
+	.name .last,
+	.tagline li::after {
+		animation-delay: 0 !important;
+	}
+}
+
 @keyframes header-image {
 	from {
+		opacity: 0;
 		transform: translateX(7.5%) translateY(-25%);
 	}
 	60% {
+		opacity: 1;
 		transform: translateX(0);
 	}
 	to {
@@ -289,7 +324,6 @@ nav a {
 		transform: translateX(0) translateY(0);
 	}
 }
-
 
 @keyframes taglines-left {
 	from {
