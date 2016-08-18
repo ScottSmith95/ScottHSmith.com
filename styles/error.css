@@ -1,0 +1,31 @@
+@import 'variables.css';
+@import 'partials/background-pattern.css';
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+
+main {
+	text-align: center;
+	font-family: monospace;
+	background-color: white;
+	padding: var(--space-l2);
+}
+
+h1 {
+	font: 7em/0.85 'acier-bat-gris', var(--font-fam);
+	margin: 0 auto var(--space-l1);
+}
+
+p {
+	max-width: 15em;
+	margin: 0 auto var(--space-l1);
+}
+
+.home-link {
+	font-size: 2em;
+	text-decoration: underline;
+}

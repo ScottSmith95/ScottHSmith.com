@@ -1,22 +1,5 @@
 @import 'variables.css';
-/* @require 'partials/share-sheet.css' */
-
-body {
-	position: relative;
-	
-	&:before {
-		content: '';
-		z-index: -1;
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		animation: body-background 1s ease-out backwards;
-		background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDAgNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0iI0U2RThFQiIgZmlsbC1ydWxlPSJldmVub2RkIj48ZWxsaXBzZSBjeD0iMTQuNSIgY3k9IjM0LjUiIHJ4PSIyLjUiIHJ5PSIyLjUiLz48ZWxsaXBzZSBjeD0iMjQuNSIgY3k9IjM0LjUiIHJ4PSIyLjUiIHJ5PSIyLjUiLz48ZWxsaXBzZSBjeD0iMzQuNSIgY3k9IjI0LjUiIHJ4PSIyLjUiIHJ5PSIyLjUiLz48ZWxsaXBzZSBjeD0iMjQuNSIgY3k9IjI0LjUiIHJ4PSIyLjUiIHJ5PSIyLjUiLz48ZWxsaXBzZSBjeD0iMTQuNSIgY3k9IjE0LjUiIHJ4PSIyLjUiIHJ5PSIyLjUiLz48ZWxsaXBzZSBjeD0iNC41IiBjeT0iMTQuNSIgcng9IjIuNSIgcnk9IjIuNSIvPjxlbGxpcHNlIGN4PSI0LjUiIGN5PSI0LjUiIHJ4PSIyLjUiIHJ5PSIyLjUiLz48ZWxsaXBzZSBjeD0iMzQuNSIgY3k9IjQuNSIgcng9IjIuNSIgcnk9IjIuNSIvPjwvZz48L3N2Zz4=); /* images/dot.svg */
-		background-size: 40px;
-	}
-}
+@import 'partials/background-pattern.css';
 
 .container {
 	margin: 0 auto;
@@ -44,7 +27,7 @@ header {
 
 .name {
 	z-index: 1; /* Fixes some overlapping issues during animations. (WebKit) */
-	font: 5em/0.85 'acier-bat-gris', var(--font-fam) ;
+	font: 5em/0.85 'acier-bat-gris', var(--font-fam);
 	padding-left: 0;
 	
 	
@@ -262,15 +245,6 @@ nav a {
 		max-height: 60vh;
 		margin-left: 0;
 		margin-bottom: -2.5rem;
-	}
-}
-
-@keyframes body-background {
-	from {
-		filter: blur(10px);
-	}
-	to {
-		filter: blur(0);
 	}
 }
 
