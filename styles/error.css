@@ -9,10 +9,13 @@
 }
 
 main {
+	animation: main-border 2s ease-out backwards;
 	text-align: center;
 	font-family: monospace;
 	background-color: white;
+	box-shadow: inset 0 -5px 30px rgba(68, 68, 68, 0.1);
 	padding: var(--space-l2);
+	border: 5px solid #E6E8EB;
 }
 
 h1 {
@@ -28,4 +31,18 @@ p {
 .home-link {
 	font-size: 2em;
 	text-decoration: underline;
+}
+
+@keyframes main-border {
+	from {
+		border: 5px solid rgba(230, 232, 235, 0);
+		box-shadow: inset 0 -5px 30px rgba(68, 68, 68, 0);
+	}
+	50% {
+		box-shadow: inset 0 -5px 30px rgba(68, 68, 68, 0);
+	}
+	top {
+		border: 5px solid #E6E8EB;
+		box-shadow: inset 0 -5px 30px rgba(68, 68, 68, 0.1);
+	}
 }
