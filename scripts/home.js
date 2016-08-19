@@ -19,8 +19,10 @@ var quotes = [
 	"Watch out.<br>I’m on the internet."
 ];
 
-(function() {
+function randomQuote() {
 	var quote = quotes[Math.floor(Math.random() * quotes.length)];
 
 	document.getElementById("social-quote").innerHTML = quote;
-})();
+}
+
+randomQuote();
