@@ -3,7 +3,7 @@
 header {
 	max-width: 40em;
 	text-align: left;
-	margin: var(--space-l1) var(--space-l1) var(--space-l2);
+	margin: var(--space-l1);
 	
 	.no-cssanimations & {
 		opacity: 1;
@@ -41,14 +41,15 @@ header {
 			position: relative;
 			
 			h1, h2 {
+				position: relative;
 				cursor: pointer;
 				
 				&::after {
 					content: '';
 					display: inline-block;
-					position: relative;
-					top: -0.2em;
-					left: 0.2em;
+					position: absolute; /* Position relative allows arrow to wrap to new line before text. */
+					top: .6em;
+					right: -0.65em;
 					height: 0;
 					width: 0;
 					border-left: 0.4rem solid transparent;
@@ -94,8 +95,8 @@ header {
 }
 
 .page-nav {
-	transition: max-height 0.3s, border-color 0.3s, box-shadow 0.3s;
-	transition-timing-function: ease-out, ease, ease, ease;
+	transition: max-height 0.3s, border-color 0.3s, box-shadow 0.3s, margin-top 0.3s;
+	transition-timing-function: ease-out, ease, ease, ease, ease;
 	display: block;
 	overflow: hidden;
 	max-height: 0;
@@ -112,6 +113,7 @@ header {
 		max-height: 3em;
 		border-width: 1px;
 		border-color: #DEDEDE;
+		margin-top: var(--space-l1);
 	}
 	
 	&.active.long {
@@ -132,7 +134,7 @@ header {
 .content {
 	max-width: 55em;
 	text-align: center;
-	margin: var(--space-l1) 2.5%;
+	margin: var(--space-l2) 2.5%;
 
 	.no-cssanimations & {
 		opacity: 1;
@@ -206,6 +208,7 @@ header {
 		&.active {
 			border-width: 3px;
 			border-color: var(--blue);
+			margin-top: 0;
 		}
 	}
 
