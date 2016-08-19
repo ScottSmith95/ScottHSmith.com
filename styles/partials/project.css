@@ -2,7 +2,7 @@
 
 header {
 	max-width: 40em;
-	text-align: justify;
+	text-align: left;
 	margin: var(--space-l1) var(--space-l1) var(--space-l2);
 	
 	.no-cssanimations & {
@@ -38,14 +38,24 @@ header {
 		}
 		
 		.js &.has-page-nav { /* Dropdown will only with with JS, so don't hint it's clickable without it working. */
+			position: relative;
+			
 			h1, h2 {
 				cursor: pointer;
+				
+				&::after {
+					content: '';
+					display: inline-block;
+					position: relative;
+					top: -0.2em;
+					left: 0.2em;
+					height: 0;
+					width: 0;
+					border-left: 0.4rem solid transparent;
+					border-right: 0.4rem solid transparent;
+					border-top: 0.4rem solid var(--text-color);
+				}
 			}
-		}
-		
-		ul {
-			display: inline-block;
-			list-style: none;			
 		}
 	}
 	
@@ -62,7 +72,6 @@ header {
 	.desc {
 		font-size: 1.25em;
 		line-height: 1.5;
-		text-align: left;
 		
 		p {
 			margin: 0;
@@ -85,27 +94,24 @@ header {
 }
 
 .page-nav {
-	transition: max-height 0.3s, border-bottom 0.3s, box-shadow 0.3s;
-	transition-timing-function: ease-in, ease, ease;
+	transition: max-height 0.3s, border-color 0.3s, box-shadow 0.3s;
+	transition-timing-function: ease-out, ease, ease, ease;
+	display: block;
 	overflow: hidden;
 	max-height: 0;
+	width: 100%;
 	font-size: 2em;
-	text-align: left;
-	background: rgba(235, 238, 240, 0.95);
-	border-bottom: 0 solid var(--blue);
-	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+	list-style: none;
+	border-top: 0 solid rgba(222, 222, 222, 0);
+	border-bottom: 0 solid rgba(222, 222, 222, 0);
 	z-index: 2;
-	
-	@supports (backdrop-filter: none) {
-	    backdrop-filter: blur(10px);
-	    background: rgba(235, 238, 240, 0.65);
-	}
 
 	
 	&.active {
-		transition-timing-function: ease-out, ease, ease;
+		transition-timing-function: ease-in, ease, ease;
 		max-height: 3em;
-		border-bottom: 2px solid var(--blue);
+		border-width: 1px;
+		border-color: #DEDEDE;
 	}
 	
 	&.active.long {
@@ -180,7 +186,27 @@ header {
 	}
 
 	.page-nav {
+		display: inline-block;
+		position: absolute;
+		top: 1.35em; /* Magic numbers that... */
+		left: 4.3em; /* work really well    */
+		width: auto;
 		font-size: 2.5em;
+		padding-left: 0.25em;
+		background: rgba(235, 238, 240, 0.95);
+		box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+		border-top: none;
+		border-bottom: 0 solid rgba(0, 153, 204, 0);
+		
+		@supports (backdrop-filter: none) {
+		    backdrop-filter: blur(10px);
+		    background: rgba(235, 238, 240, 0.65);
+		}
+		
+		&.active {
+			border-width: 3px;
+			border-color: var(--blue);
+		}
 	}
 
 	.license {

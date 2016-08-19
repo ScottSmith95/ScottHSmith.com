@@ -6,10 +6,3 @@ function toggleClass() {
 }
 
 navTrigger.addEventListener('click', toggleClass)
-
-new Tether({
-  element: nav,
-  target: navTrigger,
-  attachment: 'top left',
-  targetAttachment: 'bottom left'
-});
