@@ -9,7 +9,7 @@
 		"number-max-precision": 3,
 		"function-whitespace-after": "always",
 		"function-url-no-scheme-relative": true,
-		"function-url-quotes", "always,"
+		"function-url-quotes": "always",
 		"time-no-imperceptible": true,
 		"value-keyword-case": "lower",
 		"property-case": "lower",
