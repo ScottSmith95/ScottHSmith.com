@@ -7,8 +7,7 @@ var gulp       = require('gulp'),
 	concat     = require('gulp-concat'),
 	uglify     = require('gulp-uglify'),
 	sitemap    = require('gulp-sitemap'),
-	sourcemaps = require('gulp-sourcemaps'),
-	lint       = require('gulp-stylelint');
+	sourcemaps = require('gulp-sourcemaps');
 
 var paths = {
 	html:              ['**/*.kit', '!kit-includes/**', '!node_modules/**/*'],
@@ -153,6 +152,6 @@ gulp.task('build', gulp.parallel('html', 'styles', 'teaStyles', 'sprites', 'scri
 }));
 
 // $ gulp test: Runs stylelint against built CSS files. For CI.
-gulp.task('pretest', gulp.parallel('html', 'lintStyles', 'sprites', 'scripts', function(done) {
+gulp.task('pretest', gulp.parallel('lintStyles', function(done) {
 	done();
 }));

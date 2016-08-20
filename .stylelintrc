@@ -3,10 +3,13 @@
 		"color-hex-case": "upper",
 		"color-no-invalid-hex": true,
 		"color-named": "always-where-possible",
+		"font-family-name-quotes": "always-where-recommended",
 		"block-no-empty": null,
 		"number-leading-zero": "always",
 		"number-max-precision": 3,
+		"function-whitespace-after": "always",
 		"function-url-no-scheme-relative": true,
+		"function-url-quotes", "always,"
 		"time-no-imperceptible": true,
 		"value-keyword-case": "lower",
 		"property-case": "lower",
