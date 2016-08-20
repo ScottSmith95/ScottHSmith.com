@@ -1,10 +1,10 @@
 language: node_js
 node_js:
-	- "4"
+  - "4"
 before_script:
-	- npm install -g gulp stylelint
-	- gulp pretest
+  - npm install -g gulp stylelint
+  - gulp pretest
 script:
-	- stylelint "styles/build/*.css"
+  - stylelint "styles/build/*.css"
 notifications:
-	slack: scottsmith:dyOlsu15eZFL1YmhpwngiFrf
+  slack: scottsmith:dyOlsu15eZFL1YmhpwngiFrf
