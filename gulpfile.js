@@ -14,7 +14,7 @@ var paths = {
 	html:              ['**/*.kit', '!kit-includes/**', '!node_modules/**/*'],
 	styles:            ['styles/**/*.css', '!styles/build/**', '!styles/variables.css'],
 	teaStyles:         ['tea/*.css'],
-	builtStyles:       ['styles/build/*.css'],
+	builtStyles:       ['styles/build/home.css'],
 	sprites:           ['images/Social Icons/*.svg', '!images/Social Icons/home-sprite.svg'],
 	sitemap:           ['**/*.html', '!error/*.html', '!node_modules/**/*'],
 	scripts:           ['scripts/*.js', '!scripts/build/**',
@@ -29,8 +29,7 @@ var processors = [
 	require('postcss-nested'),
 	require('postcss-custom-properties'),
 	require('css-mqpacker')({sort: true}),
-	require('autoprefixer')('last 2 versions', '> 5%', 'Firefox ESR'),
-	require('cssnano')({autoprefixer: false, reduceIdents: false}) // Autoprefixer has just been run, don't do it again; reduceIdents is unsafe and creates conflicts on animation names.
+	require('autoprefixer')('last 2 versions', '> 5%', 'Firefox ESR')
 ];
 
 gulp.task(function html() {
@@ -40,6 +39,8 @@ gulp.task(function html() {
 });
 
 gulp.task(function styles() {
+	processors.push(require('cssnano')({autoprefixer: false, reduceIdents: false}));
+	
 	return gulp.src(paths.styles)
 		.pipe(sourcemaps.init())
 			.pipe(postcss(processors))
@@ -55,13 +56,21 @@ gulp.task(function teaStyles() {
 		.pipe(gulp.dest('tea/build/'));
 });
 
+gulp.task(function lintStyles() {
+	return gulp.src(paths.styles)
+		.pipe(postcss(processors))
+		.pipe(gulp.dest('styles/build/'));
+});
+
 gulp.task(function lint() {
 	return gulp.src(paths.builtStyles)
 		.pipe(lint({
-			reporters: [{
+			failAfterError: false,
+			reporters: {
 				formatter: 'string',
-				console: true
-			}]
+				save: 'report.txt'
+			},
+			debug: true
 	    }));
 });
 
@@ -144,6 +153,6 @@ gulp.task('build', gulp.parallel('html', 'styles', 'teaStyles', 'sprites', 'scri
 }));
 
 // $ gulp test: Runs stylelint against built CSS files. For CI.
-gulp.task('test', gulp.series('lint', function(done) {
+gulp.task('pretest', gulp.parallel('html', 'lintStyles', 'sprites', 'scripts', function(done) {
 	done();
 }));

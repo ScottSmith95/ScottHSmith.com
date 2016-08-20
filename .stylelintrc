@@ -1,0 +1,17 @@
+{
+	"rules": {
+		"color-hex-case": "upper",
+		"color-no-invalid-hex": true,
+		"color-named": "always-where-possible",
+		"block-no-empty": null,
+		"number-leading-zero": "always",
+		"number-max-precision": 3,
+		"function-url-no-scheme-relative": true,
+		"time-no-imperceptible": true,
+		"value-keyword-case": "lower",
+		"property-case": "lower",
+		"selector-type-case": "lower",
+		"no-browser-hacks": true,
+		"no-extra-semicolons": true,
+	}
+}
