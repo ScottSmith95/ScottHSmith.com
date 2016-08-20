@@ -7,12 +7,14 @@ var gulp       = require('gulp'),
 	concat     = require('gulp-concat'),
 	uglify     = require('gulp-uglify'),
 	sitemap    = require('gulp-sitemap'),
-	sourcemaps = require('gulp-sourcemaps');
+	sourcemaps = require('gulp-sourcemaps'),
+	lint       = require('gulp-stylelint');
 
 var paths = {
 	html:              ['**/*.kit', '!kit-includes/**', '!node_modules/**/*'],
 	styles:            ['styles/**/*.css', '!styles/build/**', '!styles/variables.css'],
-	teaStyles:         'tea/*.css',
+	teaStyles:         ['tea/*.css'],
+	builtStyles:       ['styles/build/*.css'],
 	sprites:           ['images/Social Icons/*.svg', '!images/Social Icons/home-sprite.svg'],
 	sitemap:           ['**/*.html', '!error/*.html', '!node_modules/**/*'],
 	scripts:           ['scripts/*.js', '!scripts/build/**',
@@ -51,6 +53,16 @@ gulp.task(function teaStyles() {
 			.pipe(postcss(processors))
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest('tea/build/'));
+});
+
+gulp.task(function lint() {
+	return gulp.src(paths.builtStyles)
+		.pipe(lint({
+			reporters: [{
+				formatter: 'string',
+				console: true
+			}]
+	    }));
 });
 
 gulp.task(function sprites() {
@@ -128,5 +140,10 @@ gulp.task('default', gulp.parallel('html', 'styles', 'teaStyles', 'sprites', 'sc
 
 // $ gulp build: Builds, prefixes, and minifies CSS files; concencates and minifies JS files. For deployments.
 gulp.task('build', gulp.parallel('html', 'styles', 'teaStyles', 'sprites', 'scripts', function(done) {
+	done();
+}));
+
+// $ gulp test: Runs stylelint against built CSS files. For CI.
+gulp.task('test', gulp.series('lint', function(done) {
 	done();
 }));
