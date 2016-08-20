@@ -27,7 +27,7 @@ header {
 
 .name {
 	z-index: 1; /* Fixes some overlapping issues during animations. (WebKit) */
-	font: 5em/0.85 'acier-bat-gris', var(--font-fam);
+	font: 5em/0.85 acier-bat-gris, var(--font-fam);
 	padding-left: 0;
 	
 	.wf-loading &,
