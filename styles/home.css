@@ -67,7 +67,7 @@ header {
 		
 		&::after {
 			content: '';
-			animation: taglines-left 1s cubic-bezier(.3,.03,0,1.63) 300ms backwards;
+			animation: taglines-left 1s cubic-bezier(0.3,0.03,0,1.63) 300ms backwards;
 			position: absolute;
 			z-index: -1;
 			height: 0.35em;
@@ -368,10 +368,10 @@ nav a {
 		transform: scale(1.15, 0.85);
 	}
 	65% {
-		transform: scale(.95, 1.05);
+		transform: scale(0.95, 1.05);
 	}
 	75% {
-		transform: scale(1.05, .95);
+		transform: scale(1.05, 0.95);
 	}
 	to {
 		transform: scale3d(1, 1);

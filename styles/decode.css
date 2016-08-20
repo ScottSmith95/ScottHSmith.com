@@ -30,7 +30,7 @@ header {
 		bottom: 5%;
 		left: 0;
 		right: 0;
-		color: #FFF;
+		color: white;
 		max-width: 40%;
 		font-size: 1.25em;
 		text-align: center;
@@ -92,7 +92,7 @@ header {
 
 .dark-break {
 	background-color: var(--darkgrey);
-	color: #FFF;
+	color: white;
 	position: relative;
 	width: 100vw;
 	left: calc(-50vw + 50%);
@@ -256,7 +256,7 @@ section.donate {
 	border: none;
 	border-radius: 0.35em;
 	margin: 2.5% auto 1.25%;
-	color: #FFFFFF;
+	color: white;
 	background-color: var(--blue);
 	font-size: 1em;
 	font-weight: bold;
@@ -268,7 +268,7 @@ section.donate {
 
 .button:hover, .button:active, .button:focus {
 	outline: none;
-	color: #FFFFFF;
+	color: white;
 }
 
 .donate .button {
