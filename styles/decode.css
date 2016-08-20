@@ -12,7 +12,15 @@ header {
 	width: 100%;
 	height: 10em;
 	background-color: var(--darkgrey);
-	box-shadow: inset 0 -0.5em 2em rgba(0,0,0,0.5);
+	
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 15px;
+		background: linear-gradient(to top, rgba(0, 0, 0, 0.1), transparent);
+	}
 	
 	.bubble {
 		display: inline-block;
@@ -29,7 +37,7 @@ header {
 		background-color: rgba(127, 127, 127, 0.9);
 		padding: 0.1em 0;
 		border-radius: 0.35em;
-		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+		box-shadow: 0 2px 15px rgba(0, 0, 0, 0.35);
 		margin: 0 auto;
 	}
 	
@@ -38,7 +46,7 @@ header {
 	}
 	
 	img {
-		animation: pop-closed 0.75s ease-out 0.75s;
+		animation: pop-closed 0.75s ease-out 0.5s backwards;
 		display: block;
 		position: relative;
 		top: 1em;
@@ -65,18 +73,6 @@ header {
 	}
 }
 
-@keyframes pop-closed {
-	0%, 20%, 50%, 80%, 100% {
-		transform: translateY(0);
-	}
-	40% {
-		transform: translateY(15%);
-	}
-	60% {
-		transform: translateY(5%);
-	}
-}
-
 .content {
 	margin-top: 0;
 }
@@ -85,7 +81,7 @@ header {
 	display: flex;
 	align-items: flex-start;
 	max-width: 50rem;
-	padding: 0 0 5%;
+	padding: var(--space-l1) 0;
 	text-align: left;
 	margin: 0 auto;
 	
@@ -307,7 +303,6 @@ section.donate {
 	}
 
 	.content section {
-		padding: 2.5% 0;
 		text-align: left;
 
 		align-items: center;
@@ -349,5 +344,17 @@ section.donate {
 
 	.desc {
 		line-height: 2;
+	}
+}
+
+@keyframes pop-closed {
+	0%, 20%, 50%, 80%, 100% {
+		transform: translateY(0);
+	}
+	40% {
+		transform: translateY(15%);
+	}
+	60% {
+		transform: translateY(5%);
 	}
 }

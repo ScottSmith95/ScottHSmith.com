@@ -16,10 +16,9 @@ var paths = {
 	sprites:           ['images/Social Icons/*.svg', '!images/Social Icons/home-sprite.svg'],
 	sitemap:           ['**/*.html', '!error/*.html', '!node_modules/**/*'],
 	scripts:           ['scripts/*.js', '!scripts/build/**',
-						'!scripts/main.js', '!scripts/home.js', '!scripts/page-nav.js', '!scripts/social-icons.js'],
-	mainScript:        ['node_modules/fastclick/lib/fastclick.js', 'scripts/vendor/modernizr.js', 'scripts/main.js'],
+						'!scripts/main.js', '!scripts/home.js', '!scripts/social-icons.js'],
+	mainScript:        ['scripts/vendor/modernizr.js'],
 	homeScript:        ['node_modules/boomsvgloader/dist/js/boomsvgloader.js', 'scripts/home.js'],
-	pagenavScript:     ['node_modules/tether/dist/js/tether.js', 'scripts/page-nav.js'],
 	socialIconsScript: ['node_modules/flickity/dist/flickity.pkgd.js', 'scripts/social-icons.js']
 };
 
@@ -88,15 +87,6 @@ gulp.task(function homeScript() {
 		.pipe(gulp.dest('scripts/build/'));
 });
 
-gulp.task(function pagenavScript() {
-	return gulp.src(paths.pagenavScript)
-		.pipe(sourcemaps.init())
-			.pipe(concat('page-nav.js'))
-			.pipe(uglify())
-		.pipe(sourcemaps.write('./'))
-		.pipe(gulp.dest('scripts/build/'));
-});
-
 gulp.task(function socialIconsScript() {
 	return gulp.src(paths.socialIconsScript)
 		.pipe(sourcemaps.init())
@@ -106,7 +96,7 @@ gulp.task(function socialIconsScript() {
 		.pipe(gulp.dest('scripts/build/'));
 });
 
-gulp.task('scripts', gulp.parallel('mainScript', 'homeScript', 'pagenavScript', 'socialIconsScript', function(done) {
+gulp.task('scripts', gulp.parallel('mainScript', 'homeScript', 'socialIconsScript', function(done) {
 	return gulp.src(paths.scripts)
 		.pipe(sourcemaps.init())
 			.pipe(uglify())
@@ -127,7 +117,7 @@ gulp.task(function watch() {
 	gulp.watch(paths.html, gulp.series('html'));
 	gulp.watch(paths.styles, gulp.series('styles'));
 	gulp.watch(paths.sprites, gulp.series('sprites'));
-	gulp.watch(paths.scripts, gulp.series('scripts'));
+	gulp.watch('scripts/*.js', gulp.series('scripts'));
 });
 
 // Workflows

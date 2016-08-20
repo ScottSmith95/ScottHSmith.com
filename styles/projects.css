@@ -9,7 +9,6 @@
 	height: 7em;
 	width: 100%;
 	max-width: 25em;
-	background: linear-gradient(135deg, #222, #222 49.99%, #444 50%, #444);
 	background-size: cover;
 	background-position: center;
 	box-shadow: 0 2px 5px rgba(14, 21, 47, 0.2);
@@ -22,40 +21,46 @@
 	}
 	}
 	
-	.overlay {
+	&::after {
+		content: '';
+		animation: overlay 0.5s ease-out backwards;
+		transition: background-position 0.3s ease, background-size 0.3s ease;
 		position: absolute;
+	    left: 0;
 		height: 100%;
 		width: 100%;
+		background-repeat: no-repeat;
+		background-position: 0 50%;
+		background-size: 100% 200%;
+	}
+	
+	&:hover::after {
+		background-position: 0 55%;
 	}
 	
 	.title {
 		position: absolute;
+		z-index: 1;
 		bottom: 0;
 		width: 100%;
-		font-size: 1.6em;
+		text-align: center;
+		font-size: 1.75em;
 		color: white;
 	}
 	
-	&:nth-child(1) {
-		.overlay {
-			background: linear-gradient(-10deg, #3C8C91, #3C8C91 49.99%, #53C1C9 50%, #53C1C9);
-			background: linear-gradient(-10deg, rgba(60, 140, 145, 0.85),rgba(60, 140, 145, 0.75) 49.99%, rgba(83, 195, 202, 0.5) 50%, rgba(83, 195, 202, 0.5))
-		}
+	&:nth-child(1)::after {
+		background-color: rgba(83, 195, 202, 0.5);
+		background-image: linear-gradient(-10deg, rgba(60, 140, 145, 0.85), rgba(60, 140, 145, 0.75) 49.99%, transparent 50%, transparent);
 	}
 	
-	&:nth-child(2) {
-		.overlay  {
-			background: linear-gradient(-10deg, #6B3A55, #6B3A55 49.99%, #8C4C6F 50%, #8C4C6F);
-			background: linear-gradient(-10deg, rgba(108, 58, 85, 0.85), rgba(108, 58, 85, 0.75) 49.99%, rgba(140, 76, 111, 0.5) 50%, rgba(140, 76, 111, 0.5));
-
-		}
+	&:nth-child(2)::after {
+		background-color: rgba(140, 76, 111, 0.5);
+		background-image: linear-gradient(-10deg, rgba(108, 58, 85, 0.85), rgba(108, 58, 85, 0.75) 49.99%, transparent 50%, transparent);
 	}
 	
-	&:nth-child(3) {
-		.overlay  {
-			background: linear-gradient(-10deg, #222, #222 49.99%, #444 50%, #444);
-			background: linear-gradient(-10deg, rgba(33, 33, 33, 0.85), rgba(33, 33, 33, 0.75) 49.99%, rgba(69, 69, 69, 0.5) 50%, rgba(69, 69, 69, 0.5));
-		}
+	&:nth-child(3)::after {
+		background-color: rgba(69, 69, 69, 0.5);
+		background-image: linear-gradient(-10deg, rgba(33, 33, 33, 0.85), rgba(33, 33, 33, 0.75) 49.99%, transparent 50%, transparent);
 	}
 }
 
@@ -63,5 +68,14 @@
 @media (min-width: 35em) {
 	header .desc {
 		margin-bottom: 7.5%;
+	}
+}
+
+@keyframes overlay {
+	from {
+		background-position: 0% 40%;
+	}
+	to {
+		background-position: 0% 50%;
 	}
 }

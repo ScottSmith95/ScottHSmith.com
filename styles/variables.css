@@ -1,6 +1,7 @@
 :root {
 	/* Colors */
 	--blue: #009BCD;
+	--turquoise: #53C2C9;
 	--darkblue: #007EA6;
 	--darkgrey: #444444;
 	--lightgrey: #82969C;
@@ -9,5 +10,9 @@
 	--highlight-color: RGBA(147, 187, 201, 0.5);
 	
 	/* Fonts */
-	--font-fam: 'museo-sans-1', 'museo-sans-2', sans-serif;
+	--font-fam: 'museo-sans', sans-serif;
+	
+	/* Spacing */
+	--space-l1: 1.25rem;
+	--space-l2: 2.5rem;
 }

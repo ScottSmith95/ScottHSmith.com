@@ -1,9 +1,9 @@
 @import '../variables.css';
 
 header {
-	width: 100%;
 	max-width: 40em;
-	text-align: center;
+	text-align: left;
+	margin: var(--space-l1);
 	
 	.no-cssanimations & {
 		opacity: 1;
@@ -13,14 +13,16 @@ header {
 		color: var(--text-color);
 	}
 	
+	.nav,
+	.desc {
+		margin: var(--space-l1) 0;
+	}
+	
 	.nav {
-		padding: 2.5% 0;
-		border-bottom: 1px solid var(--blue);
-		
 		h1, h2, & > a {
 			display: inline;
-			font-size: 1.5em;
-			padding-bottom: 2.5%;
+			font-size: 2em;
+			padding: 0;
 			margin: 0;
 		}
 		
@@ -36,14 +38,30 @@ header {
 		}
 		
 		.js &.has-page-nav { /* Dropdown will only with with JS, so don't hint it's clickable without it working. */
+			position: relative;
+			
 			h1, h2 {
+				position: relative;
 				cursor: pointer;
+				
+				&::after {
+					transition: transform 0.3s ease-out;
+					content: '';
+					display: inline-block;
+					position: relative; /* Position relative allows arrow to wrap to new line before text. */
+					top: -0.15em;
+					right: -0.25em;
+					height: 0;
+					width: 0;
+					border-left: 0.4rem solid transparent;
+					border-right: 0.4rem solid transparent;
+					border-top: 0.4rem solid var(--text-color);
+				}
+				
+				&.active::after {
+					transform: rotateX(180deg);
+				}
 			}
-		}
-		
-		ul {
-			display: inline-block;
-			list-style: none;			
 		}
 	}
 	
@@ -58,9 +76,12 @@ header {
 	}
 
 	.desc {
-		text-align: left;
-		padding: 0 2.5%;
-		margin: 2.5% 0 0;
+		font-size: 1.25em;
+		line-height: 1.5;
+		
+		p {
+			margin: 0;
+		}
 		
 		a {
 			color: var(--blue);
@@ -79,27 +100,25 @@ header {
 }
 
 .page-nav {
-	transition: max-height 0.3s, border-bottom 0.3s, box-shadow 0.3s;
-	transition-timing-function: ease-in, ease, ease;
+	transition: max-height 0.3s, border-color 0.3s, box-shadow 0.3s, margin-top 0.3s;
+	transition-timing-function: ease-out, ease, ease, ease, ease;
+	display: block;
 	overflow: hidden;
 	max-height: 0;
-	font-size: 1.5em;
-	text-align: left;
-	background: rgba(235, 238, 240, 0.95);
-	border-bottom: 0 solid var(--blue);
-	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+	width: 100%;
+	font-size: 2em;
+	list-style: none;
+	border-top: 0 solid rgba(222, 222, 222, 0);
+	border-bottom: 0 solid rgba(222, 222, 222, 0);
 	z-index: 2;
-	
-	@supports (backdrop-filter: none) {
-	    backdrop-filter: blur(10px);
-	    background: rgba(235, 238, 240, 0.65);
-	}
 
 	
 	&.active {
-		transition-timing-function: ease-out, ease, ease;
+		transition-timing-function: ease-in, ease, ease;
 		max-height: 3em;
-		border-bottom: 2px solid var(--blue);
+		border-width: 1px;
+		border-color: #DEDEDE;
+		margin-top: 1rem;
 	}
 	
 	&.active.long {
@@ -120,7 +139,7 @@ header {
 .content {
 	max-width: 55em;
 	text-align: center;
-	margin: 2.5%;
+	margin: var(--space-l2) 2.5%;
 
 	.no-cssanimations & {
 		opacity: 1;
@@ -129,12 +148,15 @@ header {
 
 .license {
 	display: block;
-	width: 80%;
+	max-width: 55em;
+	text-align: left;
 	color: var(--darkgrey);
-	margin: 2.5% auto;
+	margin: var(--space-l2) 2.5%;
 	
 	p {
+		max-width: 15em;
 		font-size: 0.9em;
+		margin: 0;
 	}
 	
 	a {
@@ -157,40 +179,52 @@ header {
 @media (min-width: 35em) {
 	header {
 		width: 80%;
-		font-size: 1.2em;
-		text-align: justify;
-		margin: 5% auto 2.5%;
+		margin: var(--space-l2) auto;
 		
-		.nav {
-			padding: 0;
-			border-bottom: none;
-			
+		.nav {			
 			h1, h2, & > a {
-				font-size: 2em;
-				padding-bottom: 0;
-			}
-			
-			ul {
-				font-size: 2em;
+				font-size: 2.5em;
 			}
 		}
 		
 		.desc {
-			padding: 0;
+			font-size: 1.5em;
 		}
 	}
 
 	.page-nav {
-		font-size: 2em;
+		display: inline-block;
+		position: absolute;
+		top: 1.35em; /* Magic numbers that... */
+		left: 4.3em; /* work really well    */
+		width: auto;
+		font-size: 2.5em;
+		padding: 0 0.25em;
+		background: rgba(235, 238, 240, 0.95);
+		box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+		border-top: none;
+		border-bottom: 0 solid rgba(0, 153, 204, 0);
+		
+		@supports (backdrop-filter: none) {
+		    backdrop-filter: blur(10px);
+		    background: rgba(235, 238, 240, 0.65);
+		}
+		
+		&.active {
+			border-width: 3px;
+			border-color: var(--blue);
+			margin-top: 0;
+		}
 	}
 
 	.license {
-		float: left;
-		width: 22.5%;
-		margin: 0 0 2.5% 2.5%;
+		width: 80%;
+		margin-right: auto;
+		margin-left: auto;
 	}
 	
 	.content {
-		margin: 2.5% auto;
+		margin-right: auto;
+		margin-left: auto;
 	}
 }

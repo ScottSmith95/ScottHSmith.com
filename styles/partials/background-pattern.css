@@ -1,0 +1,25 @@
+body {
+	position: relative;
+	
+	&:before {
+		content: '';
+		z-index: -1;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		animation: body-background 1s ease-out backwards;
+		background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'><g fill='#E6E8EB' fill-rule='evenodd'><ellipse cx='14.5' cy='34.5' rx='2.5' ry='2.5'/><ellipse cx='24.5' cy='34.5' rx='2.5' ry='2.5'/><ellipse cx='34.5' cy='24.5' rx='2.5' ry='2.5'/><ellipse cx='24.5' cy='24.5' rx='2.5' ry='2.5'/><ellipse cx='14.5' cy='14.5' rx='2.5' ry='2.5'/><ellipse cx='4.5' cy='14.5' rx='2.5' ry='2.5'/><ellipse cx='4.5' cy='4.5' rx='2.5' ry='2.5'/><ellipse cx='34.5' cy='4.5' rx='2.5' ry='2.5'/></g></svg>"); /* images/dot.svg */
+		background-size: 40px;
+	}
+}
+
+@keyframes body-background {
+	from {
+		filter: blur(10px);
+	}
+	to {
+		filter: blur(0);
+	}
+}

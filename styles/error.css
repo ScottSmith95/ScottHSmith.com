@@ -1,0 +1,48 @@
+@import 'variables.css';
+@import 'partials/background-pattern.css';
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+
+main {
+	animation: main-border 2s ease-out backwards;
+	text-align: center;
+	font-family: monospace;
+	background-color: white;
+	box-shadow: inset 0 -5px 30px rgba(68, 68, 68, 0.1);
+	padding: var(--space-l2);
+	border: 5px solid #E6E8EB;
+}
+
+h1 {
+	font: 7em/0.85 'acier-bat-gris', var(--font-fam);
+	margin: 0 auto var(--space-l1);
+}
+
+p {
+	max-width: 15em;
+	margin: 0 auto var(--space-l1);
+}
+
+.home-link {
+	font-size: 2em;
+	text-decoration: underline;
+}
+
+@keyframes main-border {
+	from {
+		border: 5px solid rgba(230, 232, 235, 0);
+		box-shadow: inset 0 -5px 30px rgba(68, 68, 68, 0);
+	}
+	50% {
+		box-shadow: inset 0 -5px 30px rgba(68, 68, 68, 0);
+	}
+	top {
+		border: 5px solid #E6E8EB;
+		box-shadow: inset 0 -5px 30px rgba(68, 68, 68, 0.1);
+	}
+}
