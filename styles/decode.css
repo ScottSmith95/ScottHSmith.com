@@ -52,7 +52,7 @@ header {
 		top: 1em;
 		width: 75%;
 		margin: 0 auto;
-		box-shadow: 0 0 5px rgba(0,0,0,0.75);
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.75);
 	}
 	
 	@media (hover) {

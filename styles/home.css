@@ -67,7 +67,7 @@ header {
 		
 		&::after {
 			content: '';
-			animation: taglines-left 1s cubic-bezier(0.3,0.03,0,1.63) 300ms backwards;
+			animation: taglines-left 1s cubic-bezier(0.3, 0.03, 0, 1.63) 300ms backwards;
 			position: absolute;
 			z-index: -1;
 			height: 0.35em;
