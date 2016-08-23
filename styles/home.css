@@ -15,49 +15,57 @@
 
 header {
 	padding-bottom: var(--space-l2);
-	margin-top: -2.5rem;
+	margin-top: -2.25rem;
 }
 
 .name,
 .tagline {
-	text-align: right;
 	padding-right: var(--space-l1);
 	margin: 0;
 }
 
 .name {
 	z-index: 1; /* Fixes some overlapping issues during animations. (WebKit) */
-	font: 5em/0.85 acier-bat-gris, var(--font-fam);
+	text-align: right;
 	padding-left: 0;
-	
-	.wf-loading &,
-	.wf-inactive & {
-		font-size: 4em;
-		text-transform: uppercase;
-	}
-	
 	
 	.first,
 	.last {
-		display: inline-block;
+		display: block;
 		animation: name-first 1s ease-out 300ms backwards;
 	}
 	
 	.first {
 		animation-name: name-first;
-		color: var(--blue);
-		text-shadow: 0 2px 15px rgba(0, 153, 204, 0.5);
+		filter: drop-shadow(0 2px 12px rgba(0, 153, 204, 0.5));
 	}
 	
 	.last {
 		animation-name: name-last;
-		color: var(--turquoise);
-		text-shadow: 0 2px 15px rgba(83, 195, 202, 0.5);
+		filter: drop-shadow(0 2px 12px rgba(83, 195, 202, 0.5));
+		margin-top: 1em;
+	}
+	
+	.text {
+		border: 0;
+		clip: rect(0 0 0 0);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+	}
+	
+	svg {
+		height: 3.5rem;
+		width: auto;
 	}
 }
 
 .tagline {
 	font: 300 2em/1.5 var(--font-fam);
+	text-align: right;
 	list-style: none;
 	margin-top: var(--space-l1);
 
@@ -170,14 +178,8 @@ nav a {
 		padding-right: var(--space-l2);
 	}
 	
-	.name {
-		font-size: 7em;
-		
-		.wf-loading &,
-		.wf-inactive & {
-			font-size: 6em;
-			text-transform: uppercase;
-		}
+	.name svg {
+		height: 4.75em;
 	}
 	
 	nav {
@@ -200,19 +202,18 @@ nav a {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-		align-items: baseline;
+		align-items: flex-end;
 	}
 	
 	.name,
 	.tagline {
 		padding: 0;
-		margin: 0;
 	}
 	
 	.name {
-		line-height: 0.95;
+		margin-left: 0.5em;
 	}
-	
+
 	.tagline {
 		margin-top: none;
 	}
@@ -264,24 +265,6 @@ nav a {
 /* ----------------- */
 /*     Animations    */
 /* ----------------- */
-
-.wf-loading {
-	.name .first,
-	.name .last,
-	.tagline li::after {
-		animation-delay: 3s;
-		will-change: transform;
-	}
-}
-
-.wf-active {
-	.name .first,
-	.name .last,
-	.tagline li::after {
-		animation-delay: 0 !important;
-	}
-}
-
 @keyframes header-image {
 	from {
 		opacity: 0;
