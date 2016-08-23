@@ -26,8 +26,11 @@ header {
 
 .name {
 	z-index: 1; /* Fixes some overlapping issues during animations. (WebKit) */
+	font-size: 1em;
+	line-height: 1;
 	text-align: right;
 	padding-left: 0;
+	margin-left: 0.5em;
 	
 	.first,
 	.last {
@@ -38,6 +41,7 @@ header {
 	.first {
 		animation-name: name-first;
 		filter: drop-shadow(0 2px 12px rgba(0, 153, 204, 0.5));
+		
 	}
 	
 	.last {
@@ -211,7 +215,7 @@ nav a {
 	}
 	
 	.name {
-		margin-left: 0.5em;
+		margin-left: 0;
 	}
 
 	.tagline {
@@ -250,6 +254,14 @@ nav a {
 		max-width: 100%;
 		margin-right: auto;
 		margin-left: auto;
+	}
+	
+	.name {
+		margin-left: 0.5em;
+	
+		.first {
+			margin-top: 1.25em;
+		}
 	}
 }
 
