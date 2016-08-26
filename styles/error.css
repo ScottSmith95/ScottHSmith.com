@@ -19,7 +19,7 @@ main {
 }
 
 h1 {
-	font: 7em/0.85 acier-bat-gris, var(--font-fam);
+	font: 7em/0.85 var(--font-fam);
 	margin: 0 auto var(--space-l1);
 }
 
