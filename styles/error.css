@@ -19,8 +19,23 @@ main {
 }
 
 h1 {
-	font: 7em/0.85 var(--font-fam);
 	margin: 0 auto var(--space-l1);
+	
+	.text {
+		border: 0;
+		clip: rect(0 0 0 0);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+	}
+	
+	svg {
+		height: 5.5rem;
+		width: auto;
+	}
 }
 
 p {
