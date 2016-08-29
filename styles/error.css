@@ -10,6 +10,7 @@
 
 main {
 	animation: main-border 2s ease-out backwards;
+	    max-width: 20rem;
 	text-align: center;
 	font-family: monospace;
 	background-color: white;
@@ -38,7 +39,6 @@ h1 {
 }
 
 p {
-	max-width: 15em;
 	margin: 0 auto var(--space-l1);
 }
 
