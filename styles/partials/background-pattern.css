@@ -1,4 +1,9 @@
+html {
+	height: 100%;
+}
+
 body {
+	min-height: 100%;
 	position: relative;
 	
 	&:before {
@@ -17,9 +22,9 @@ body {
 
 @keyframes body-background {
 	from {
-		filter: blur(10px);
+		opacity: 0;
 	}
 	to {
-		filter: blur(0);
+		opacity: 1;
 	}
 }
