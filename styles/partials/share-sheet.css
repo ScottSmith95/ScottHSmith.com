@@ -57,15 +57,16 @@
 
 .SheetContent {
 	max-width: 375px;
+	padding: 0 0.6rem;
 	margin: 0 auto;
 }
 
 .itemset {
-	padding: 1.5em 0 1em;
-	margin: 0.6rem 0.6rem 0.5rem;
 	text-align: left;
-	border-radius: 15px;
 	background: rgba(248,248,248,0.95);
+	border-radius: 15px;
+	padding: 1.5em 0 1em;
+	margin: 0.6rem auto 0.5rem;
 }
 
 .itemset section {
@@ -122,9 +123,8 @@
 }
 
 .cancel {
-	padding: 0.65em 0;
-	margin: 0.5rem 0.6rem 0.6rem;
-	border-radius: 15px;
+	display: block;
+	width: 100%;
 	color: #0076FF;
 	background: rgba(248,248,248,1);
 	font-size: 20px;
@@ -132,7 +132,11 @@
 	text-align: center;
 	text-decoration: none;
 	cursor: pointer;
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: transparent;
+	padding: 0.8em 0;
+	border: none;
+	border-radius: 15px;
+	margin: 0.5rem auto 0.6rem;
 }
 
 .cancel.touched,
