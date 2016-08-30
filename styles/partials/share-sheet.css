@@ -7,7 +7,7 @@
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(0,0,0,0.65);
 }
 
 .js .darklayer.loaded {
@@ -64,6 +64,7 @@
 .itemset {
 	text-align: left;
 	background: rgba(248,248,248,0.95);
+	backdrop-filter: blur(5px);
 	border-radius: 15px;
 	padding: 1.5em 0 1em;
 	margin: 0.6rem auto 0.5rem;
@@ -128,7 +129,7 @@
 	color: #0076FF;
 	background: rgba(248,248,248,1);
 	font-size: 20px;
-	font-weight: 500;
+	font-weight: 600;
 	text-align: center;
 	text-decoration: none;
 	cursor: pointer;
