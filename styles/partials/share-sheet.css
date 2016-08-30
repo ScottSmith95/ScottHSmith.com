@@ -65,8 +65,8 @@
 	text-align: left;
 	background: rgba(248,248,248,0.95);
 	backdrop-filter: blur(5px);
-	border-radius: 15px;
 	padding: 1.5em 0 1em;
+	border-radius: 15px;
 	margin: 0.6rem auto 0.5rem;
 }
 
