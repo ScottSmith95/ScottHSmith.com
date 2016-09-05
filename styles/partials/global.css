@@ -56,6 +56,17 @@ ul {
 	}
 }
 
+.sr-text {
+	position: absolute;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+	height: 1px;
+	width: 1px;
+	padding: 0;
+	border: 0;
+	margin: -1px;
+}
+
 @media (inverted-colors) {
 img {
 	filter: invert(100%);
