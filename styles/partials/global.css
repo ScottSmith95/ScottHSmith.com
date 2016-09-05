@@ -55,3 +55,9 @@ ul {
 	  clear: both;
 	}
 }
+
+@media (inverted-colors) {
+img {
+	filter: invert(100%);
+}
+}

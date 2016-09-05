@@ -166,8 +166,10 @@ nav a {
 		max-width: 4.25em;
 		backface-visibility: visible;
 		
+		@media (hover) {
 		&:hover {
 			animation: social-icon 0.5s ease;
+		}
 		}
 	}	
 }
