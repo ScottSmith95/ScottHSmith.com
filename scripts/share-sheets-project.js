@@ -59,6 +59,9 @@ function offSelectedSheet() {
 	offDarkLayer();
 }
 
+// Add dark layer to DOM.
+addDarklayer();
+
 // Link triggers to sheets.
 document.querySelector('.Twitter').addEventListener('click', function() {
 	toggleSheet('#Twitter');
@@ -67,14 +70,10 @@ document.querySelector('.Facebook').addEventListener('click', function() {
 	toggleSheet('#Facebook');
 });
 
-// Add dark layer to DOM.
-addDarklayer();
-
-// Adds "touched" class when element is touched and removes it when it is not.
+// Handles all cancel button behviours.
 cancelBtns = document.querySelectorAll('.cancel');
-cancelBtns = Array.prototype.slice.call(cancelBtns);
-
-Array.prototype.forEach.call(cancelBtns, function(element, i){
+for (var i = 0; i < cancelBtns.length; ++i) { // Iterate through the NodeList.
+	var element = cancelBtns[i];
 	element.addEventListener('touchstart', function(element) {
 		element.classList.add('touched');
 	});
@@ -82,19 +81,13 @@ Array.prototype.forEach.call(cancelBtns, function(element, i){
 	element.addEventListener('touchend', function(element) { 
 		element.classList.remove('touched');
 	});
-});
-
-
-// Triggers un-darkening rest of page and deselecting sheets.
-var cancelBtns = document.querySelectorAll('.cancel');
-var darkLayer = document.querySelector('.darklayer');
-
-// Convert NodeList into an array.
-closers = Array.prototype.slice.call(cancelBtns);
-closers.push(darkLayer);
-
-Array.prototype.forEach.call(closers, function(element, i){
-	element.addEventListener('click', function(element) {
+	
+	element.addEventListener('click', function() {
 		offSelectedSheet();
 	});
+}
+
+// Handles clicking the darklayer to dismiss sheets.
+document.querySelector('.darklayer').addEventListener('click', function() {
+	offSelectedSheet();
 });
