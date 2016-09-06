@@ -118,6 +118,11 @@
 	border-radius: 10px;
 }
 
+.itemset li a {
+	color: inherit;
+	text-decoration: none;
+}
+
 .appicon {
 	width: auto;
 	height: 60px;
