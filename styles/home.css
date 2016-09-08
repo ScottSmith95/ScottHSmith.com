@@ -1,6 +1,15 @@
 @import 'variables.css';
 @import 'partials/background-pattern.css';
 
+@font-face {
+    font-family: 'acier-bat';
+    src: url('/fonts/acier.woff2') format('woff2'),
+         url('/fonts/acier.woff') format('woff'),
+         url('/fonts/acier.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .container {
 	margin: 0 auto;
 }
@@ -11,7 +20,7 @@
 	width: calc(100% - var(--space-l1));
 	height: auto;
 	box-shadow: 0 0 55px 0 rgba(83, 108, 104, 0.6);
-	margin-bottom: -2.25rem;
+	margin-bottom: -3rem;
 }
 
 header {
@@ -26,11 +35,12 @@ header {
 
 .name {
 	z-index: 1; /* Fixes some overlapping issues during animations. (WebKit) */
-	font-size: 1em;
-	line-height: 1;
+	font-family: acier-bat, var(--font-fam);
+	font-size: 7em;
+	font-weight: normal;
+	line-height: 0.8;
 	text-align: right;
 	padding-left: 0;
-	margin-left: 0.5em;
 	
 	.first,
 	.last {
@@ -41,18 +51,14 @@ header {
 	.first {
 		animation-name: name-first;
 		filter: drop-shadow(0 2px 12px rgba(0, 153, 204, 0.5));
-		
+		color: var(--blue);
 	}
 	
 	.last {
 		animation-name: name-last;
 		filter: drop-shadow(0 2px 12px rgba(83, 195, 202, 0.5));
-		margin-top: 1em;
-	}
-	
-	svg {
-		height: 3.5rem;
-		width: auto;
+		color: var(--turquoise);
+/* 		margin-bottom: -0.05em; */ /* Align baseline with .tagline. */
 	}
 }
 
@@ -168,13 +174,13 @@ nav a {
 		width: calc(100% - var(--space-l2));
 	}
 	
-	.name,
 	.tagline {
 		padding-right: var(--space-l2);
 	}
 	
-	.name svg {
-		height: 4.75em;
+	.name {
+		padding-right: calc(var(--space-l1) - 0.25rem);
+		font-size: 8.5em;
 	}
 	
 	nav {
@@ -206,11 +212,12 @@ nav a {
 	}
 	
 	.name {
+		line-height: 0.7;
 		margin-left: 0;
 	}
 
 	.tagline {
-		margin-top: none;
+		margin-top: 0;
 	}
 	
 	section {
@@ -236,8 +243,7 @@ nav a {
 		display: block;
 		max-width: 100%;
 		width: auto;
-		margin-right: auto;
-		margin-left: auto;
+		margin: 0 auto -2rem;
 	}
 	
 	header,
@@ -245,14 +251,6 @@ nav a {
 		max-width: 100%;
 		margin-right: auto;
 		margin-left: auto;
-	}
-	
-	.name {
-		margin-left: 0.5em;
-	
-		.first {
-			margin-top: 1.25em;
-		}
 	}
 }
 
