@@ -1,5 +1,4 @@
 @import 'variables.css';
-@import 'partials/background-pattern.css';
 
 @font-face {
     font-family: 'acier-bat';
@@ -20,7 +19,7 @@
 	width: calc(100% - var(--space-l1));
 	height: auto;
 	box-shadow: 0 0 55px 0 rgba(83, 108, 104, 0.6);
-	margin-bottom: -3rem;
+	margin-bottom: -2.75rem;
 }
 
 header {
@@ -35,10 +34,7 @@ header {
 
 .name {
 	z-index: 1; /* Fixes some overlapping issues during animations. (WebKit) */
-	font-family: acier-bat, var(--font-fam);
-	font-size: 7em;
-	font-weight: normal;
-	line-height: 0.8;
+	font: normal 7em/0.7 acier-bat, var(--font-fam);
 	text-align: right;
 	padding-left: 0;
 	
@@ -58,7 +54,6 @@ header {
 		animation-name: name-last;
 		filter: drop-shadow(0 2px 12px rgba(83, 195, 202, 0.5));
 		color: var(--turquoise);
-/* 		margin-bottom: -0.05em; */ /* Align baseline with .tagline. */
 	}
 }
 
@@ -66,7 +61,6 @@ header {
 	font: 300 2em/1.5 var(--font-fam);
 	text-align: right;
 	list-style: none;
-	margin-top: var(--space-l1);
 
 	li {
 		position: relative;
@@ -203,7 +197,7 @@ nav a {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-		align-items: flex-end;
+		align-items: baseline;
 	}
 	
 	.name,
@@ -212,12 +206,7 @@ nav a {
 	}
 	
 	.name {
-		line-height: 0.7;
 		margin-left: 0;
-	}
-
-	.tagline {
-		margin-top: 0;
 	}
 	
 	section {
@@ -243,7 +232,7 @@ nav a {
 		display: block;
 		max-width: 100%;
 		width: auto;
-		margin: 0 auto -2rem;
+		margin: 0 auto -2.1rem;
 	}
 	
 	header,

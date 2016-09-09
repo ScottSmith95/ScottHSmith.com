@@ -1,5 +1,13 @@
 @import 'variables.css';
-@import 'partials/background-pattern.css';
+
+@font-face {
+    font-family: 'acier-bat';
+    src: url('/fonts/acier.woff2') format('woff2'),
+         url('/fonts/acier.woff') format('woff'),
+         url('/fonts/acier.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 .container {
 	display: flex;
@@ -10,7 +18,7 @@
 
 main {
 	animation: main-border 2s ease-out backwards;
-	    max-width: 20rem;
+	max-width: 20rem;
 	text-align: center;
 	font-family: monospace;
 	background-color: white;
@@ -20,22 +28,9 @@ main {
 }
 
 h1 {
+	font: normal 8em/0.6 acier-bat, var(--font-fam);
+	color: var(--blue);
 	margin: 0 auto var(--space-l1);
-	
-	.text {
-		border: 0;
-		clip: rect(0 0 0 0);
-		height: 1px;
-		margin: -1px;
-		overflow: hidden;
-		padding: 0;
-		position: absolute;
-		width: 1px;
-	}
-	
-	svg {
-		width: auto;
-	}
 }
 
 p {
