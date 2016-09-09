@@ -11,7 +11,7 @@ var gulp       = require('gulp'),
 
 var paths = {
 	html:              ['**/*.kit', '!kit-includes/**', '!node_modules/**/*'],
-	styles:            ['styles/**/*.css', '!styles/build/**', '!styles/variables.css'],
+	styles:            ['styles/**/*.css', '!styles/build/**', '!styles/variables.css', '!styles/partials/_*'],
 	teaStyles:         ['tea/*.css'],
 	builtStyles:       ['styles/build/home.css'],
 	sprites:           ['images/Social Icons/*.svg', '!images/Social Icons/home-sprite.svg'],

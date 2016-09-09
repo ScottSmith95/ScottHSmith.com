@@ -1,5 +1,5 @@
 @import '../variables.css';
-@import '../partials/background-pattern.css';
+@import '_background-pattern.css';
 
 html {
 	box-sizing: border-box;

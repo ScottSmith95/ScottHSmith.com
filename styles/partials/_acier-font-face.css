@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'acier-bat';
+    src: url('/fonts/acier.woff2') format('woff2'),
+         url('/fonts/acier.woff') format('woff'),
+         url('/fonts/acier.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
