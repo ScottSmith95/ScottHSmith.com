@@ -3,7 +3,7 @@
 		"color-hex-case": "upper",
 		"color-no-invalid-hex": true,
 		"color-named": "always-where-possible",
-		"font-family-name-quotes": "always-where-recommended",
+		"font-family-name-quotes": "always-unless-keyword",
 		"block-no-empty": null,
 		"number-leading-zero": "always",
 		"number-no-trailing-zeros": true,

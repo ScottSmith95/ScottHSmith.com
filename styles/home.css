@@ -1,7 +1,7 @@
 @import 'variables.css';
 
 @font-face {
-    font-family: 'acier-bat';
+    font-family: acier-bat;
     src: url('/fonts/acier.woff2') format('woff2'),
          url('/fonts/acier.woff') format('woff'),
          url('/fonts/acier.ttf') format('truetype');
@@ -34,7 +34,7 @@ header {
 
 .name {
 	z-index: 1; /* Fixes some overlapping issues during animations. (WebKit) */
-	font: normal 7em/0.7 acier-bat, var(--font-fam);
+	font: normal 7em/0.7 'acier-bat', var(--font-fam);
 	text-align: right;
 	padding-left: 0;
 	

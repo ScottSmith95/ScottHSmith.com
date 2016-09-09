@@ -28,7 +28,7 @@ main {
 }
 
 h1 {
-	font: normal 8em/0.6 acier-bat, var(--font-fam);
+	font: normal 8em/0.6 'acier-bat', var(--font-fam);
 	color: var(--blue);
 	margin: 0 auto var(--space-l1);
 }
