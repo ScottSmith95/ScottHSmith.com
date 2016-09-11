@@ -6,6 +6,6 @@ html {
 	right: 0;
 	bottom: 0;
 	min-height: 100%;
-	background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'><g fill='#E6E8EB' fill-rule='evenodd'><ellipse cx='14.5' cy='34.5' rx='2.5' ry='2.5'/><ellipse cx='24.5' cy='34.5' rx='2.5' ry='2.5'/><ellipse cx='34.5' cy='24.5' rx='2.5' ry='2.5'/><ellipse cx='24.5' cy='24.5' rx='2.5' ry='2.5'/><ellipse cx='14.5' cy='14.5' rx='2.5' ry='2.5'/><ellipse cx='4.5' cy='14.5' rx='2.5' ry='2.5'/><ellipse cx='4.5' cy='4.5' rx='2.5' ry='2.5'/><ellipse cx='34.5' cy='4.5' rx='2.5' ry='2.5'/></g></svg>"); /* images/dot.svg */
+	background-image: url("data:image/svg+xml;utf8,%3Csvg%20viewBox%3D'0%200%2040%2040'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%3E%3Cg%20fill%3D'%23E6E8EB'%20fill-rule%3D'evenodd'%3E%3Cellipse%20cx%3D'14.5'%20cy%3D'34.5'%20rx%3D'2.5'%20ry%3D'2.5'%2F%3E%3Cellipse%20cx%3D'24.5'%20cy%3D'34.5'%20rx%3D'2.5'%20ry%3D'2.5'%2F%3E%3Cellipse%20cx%3D'34.5'%20cy%3D'24.5'%20rx%3D'2.5'%20ry%3D'2.5'%2F%3E%3Cellipse%20cx%3D'24.5'%20cy%3D'24.5'%20rx%3D'2.5'%20ry%3D'2.5'%2F%3E%3Cellipse%20cx%3D'14.5'%20cy%3D'14.5'%20rx%3D'2.5'%20ry%3D'2.5'%2F%3E%3Cellipse%20cx%3D'4.5'%20cy%3D'14.5'%20rx%3D'2.5'%20ry%3D'2.5'%2F%3E%3Cellipse%20cx%3D'4.5'%20cy%3D'4.5'%20rx%3D'2.5'%20ry%3D'2.5'%2F%3E%3Cellipse%20cx%3D'34.5'%20cy%3D'4.5'%20rx%3D'2.5'%20ry%3D'2.5'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E"); /* images/dot.svg (URI encoded) */
 	background-size: 40px;
 }
