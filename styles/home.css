@@ -114,6 +114,7 @@ section {
 		
 		a {
 			color: var(--text-color);
+			text-decoration: underline;
 			
 			@media (hover) {
 			&:hover {
@@ -124,6 +125,10 @@ section {
 				color: var(--darkblue);
 			}
 			}
+		}
+		
+		abbr {
+			cursor: help;
 		}
 	}
 }
