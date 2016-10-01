@@ -28,7 +28,7 @@ var processors = [
 	require('postcss-nested'),
 	require('postcss-custom-properties'),
 	require('css-mqpacker')({sort: true}),
-	require('autoprefixer')('last 2 versions', '> 5%', 'Firefox ESR')
+	require('autoprefixer')('last 2 versions', '> 2.5% in US', 'Firefox ESR')
 ];
 
 gulp.task(function html() {
