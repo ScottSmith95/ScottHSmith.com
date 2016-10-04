@@ -92,6 +92,14 @@
 @media (min-width: 65em) {
 	.grid-carousel {
 		max-width: 30em;
+		
+		&:before {
+			left: calc(-2.5% - -1px);
+		}
+		
+		&:after {
+			right: calc(-2.5% - -1px);
+		}
 	}
 	
 	.grid-item {
