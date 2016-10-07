@@ -81,7 +81,7 @@ header {
 	display: flex;
 	align-items: flex-start;
 	max-width: 50rem;
-	padding: var(--space-l1) 0;
+	padding: var(--space-l2) 0;
 	text-align: left;
 	margin: 0 auto;
 	

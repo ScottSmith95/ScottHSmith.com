@@ -13,6 +13,7 @@
 	--font-fam: 'museo-sans', sans-serif;
 	
 	/* Spacing */
-	--space-l1: 1.25rem;
-	--space-l2: 2.5rem;
+	--space-l1: 0.625rem;
+	--space-l2: 1.25rem;
+	--space-l3: 2.5rem;
 }

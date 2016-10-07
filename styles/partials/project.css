@@ -3,7 +3,7 @@
 header {
 	max-width: 40em;
 	text-align: left;
-	margin: var(--space-l1);
+	margin: var(--space-l2);
 	
 	.no-cssanimations & {
 		opacity: 1;
@@ -15,7 +15,7 @@ header {
 	
 	.nav,
 	.desc {
-		margin: var(--space-l1) 0;
+		margin: var(--space-l2) 0;
 	}
 	
 	.nav {
@@ -140,7 +140,7 @@ header {
 .content {
 	max-width: 55em;
 	text-align: center;
-	margin: var(--space-l2) 2.5%;
+	margin: var(--space-l3) var(--space-l2);
 
 	.no-cssanimations & {
 		opacity: 1;
@@ -152,7 +152,7 @@ header {
 	max-width: 55em;
 	text-align: left;
 	color: var(--darkgrey);
-	margin: var(--space-l2) 2.5%;
+	margin: var(--space-l3) var(--space-l2);
 	
 	p {
 		max-width: 15em;
@@ -180,7 +180,7 @@ header {
 @media (min-width: 35em) {
 	header {
 		width: 80%;
-		margin: var(--space-l2) auto;
+		margin: var(--space-l3) auto;
 		
 		.nav {			
 			h1, h2, & > a {

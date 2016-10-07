@@ -8,19 +8,19 @@
 .header-image {
 	animation: header-image 1s ease-out 300ms backwards;
 	width: 100%;
-	width: calc(100% - var(--space-l1));
+	width: calc(100% - var(--space-l2));
 	height: auto;
 	box-shadow: 0 0 55px 0 rgba(83, 108, 104, 0.6);
 	margin-bottom: -2.75rem;
 }
 
 header {
-	padding-bottom: var(--space-l2);
+	padding-bottom: var(--space-l3);
 }
 
 .name,
 .tagline {
-	padding-right: var(--space-l1);
+	padding-right: var(--space-l2);
 	margin: 0;
 }
 
@@ -104,7 +104,7 @@ header {
 }
 
 section {
-	padding: var(--space-l2) var(--space-l1);
+	padding: var(--space-l3) var(--space-l2);
 	border-top: 3px solid #DEDEDE;
 	
 	p {
@@ -136,13 +136,13 @@ section {
 nav {
 	display: inline-block;
 	font-size: 1.75em;
-	margin: 0 auto var(--space-l1);
+	margin: 0 auto var(--space-l2);
 }
 
 nav a {
 	display: inline;
 	text-decoration: underline;
-	margin-right: var(--space-l1);
+	margin-right: var(--space-l2);
 }
 
 .social {
@@ -152,7 +152,7 @@ nav a {
 		justify-content: space-between;
 		align-items: flex-start;
 		list-style: none;
-		margin-top: var(--space-l1);
+		margin-top: var(--space-l2);
 	}
 	
 	.link {
@@ -179,15 +179,15 @@ nav a {
 
 @media (min-width: 22em) {
 	.header-image {
-		width: calc(100% - var(--space-l2));
+		width: calc(100% - var(--space-l3));
 	}
 	
 	.tagline {
-		padding-right: var(--space-l2);
+		padding-right: var(--space-l3);
 	}
 	
 	.name {
-		padding-right: calc(var(--space-l1) - 0.25rem);
+		padding-right: calc(var(--space-l2) - 0.25rem);
 		font-size: 8.5em;
 	}
 	
@@ -203,8 +203,8 @@ nav a {
 @media (min-width: 35em) {
 	header,
 	section {
-		margin-right: var(--space-l2);
-		margin-left: var(--space-l2);
+		margin-right: var(--space-l3);
+		margin-left: var(--space-l3);
 	}
 	
 	header {
