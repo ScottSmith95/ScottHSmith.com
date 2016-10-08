@@ -93,12 +93,17 @@
 	.grid-carousel {
 		max-width: 30em;
 		
+		&::before,
+		&::after {
+			width: 2.5%;
+		}
+		
 		&:before {
-			left: calc(-2.5% - -1px);
+			left: 0;
 		}
 		
 		&:after {
-			right: calc(-2.5% - -1px);
+			right: 0;
 		}
 	}
 	
