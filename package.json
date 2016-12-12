@@ -15,7 +15,7 @@
     "autoprefixer": "^6.5.3",
     "boomsvgloader": "0.0.2",
     "css-mqpacker": "^5.0.1",
-    "cssnano": "^3.8.1",
+    "cssnano": "^3.9.1",
     "flickity": "^2.0.5",
     "gulp": "gulpjs/gulp#4.0",
     "gulp-concat": "^2.6.1",
@@ -26,7 +26,7 @@
     "gulp-svg-sprite": "^1.3.6",
     "gulp-uglify": "^2.0.0",
     "postcss-custom-properties": "^5.0.1",
-    "postcss-import": "^8.2.0",
+    "postcss-import": "^9.0.0",
     "postcss-nested": "^1.0.0"
   }
 }
