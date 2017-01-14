@@ -105,7 +105,7 @@ header {
 
 section {
 	padding: var(--space-l3) var(--space-l2);
-	border-top: 3px solid #DEDEDE;
+	border-top: 3px solid #D9DBDE;
 	
 	p {
 		font-size: 1.25em;
