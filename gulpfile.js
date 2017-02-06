@@ -75,6 +75,15 @@ gulp.task(function lint() {
 
 gulp.task(function sprites() {
 	var options = {
+		shape: {
+			transform       : [
+            	{svgo       : {
+	            	plugins : [
+	            		{removeTitle: true}
+	            	]
+	            }}
+			]
+		},
 		mode: {
 			symbol: { // Create a «symbol» sprite.
 				dest: '.', // Don't create 'symbols/' directory.
