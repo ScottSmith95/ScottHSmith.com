@@ -39,7 +39,8 @@ img {
 	border: none;
 }
 
-ul {
+ul,
+ol {
 	padding: 0;
 	margin: 0;
 }
