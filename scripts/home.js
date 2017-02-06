@@ -10,9 +10,10 @@ var quotes = [
 ];
 
 function randomQuote() {
-	var quote = quotes[Math.floor(Math.random() * quotes.length)];
-
-	document.getElementById("social-quote").innerHTML = quote;
+	var quoteEl = document.getElementById("social-quote"),
+		quote = quotes[Math.floor(Math.random() * quotes.length)];
+		
+	quoteEl.innerHTML = quote;
 }
 
 randomQuote();
