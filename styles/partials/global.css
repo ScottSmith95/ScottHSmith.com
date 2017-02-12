@@ -16,7 +16,7 @@ body {
 }
 
 ::selection {
-	background: var(--highlight-color);
+	background: var(--highlight);
 }
 
 a {

@@ -7,7 +7,8 @@
 	--lightgrey: #82969C;
 	--text-color: #444444;
 	--bg-color: #ECEEF0;
-	--highlight-color: RGBA(147, 187, 201, 0.5);
+	--divider: #D9DBDE;
+	--highlight: RGBA(147, 187, 201, 0.5);
 	
 	/* Fonts */
 	--font-fam: 'museo-sans', sans-serif;
@@ -16,4 +17,5 @@
 	--space-l1: 0.625rem;
 	--space-l2: 1.25rem;
 	--space-l3: 2.5rem;
+	--space-l4: 5rem;
 }

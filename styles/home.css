@@ -103,46 +103,58 @@ header {
 	}
 }
 
+section,
+footer {
+	line-height: 1.5;
+}
+
 section {
+	font-size: 1.25em;
 	padding: var(--space-l3) var(--space-l2);
-	border-top: 3px solid #D9DBDE;
+	border-top: 3px solid var(--divider);
 	
 	p {
-		font-size: 1.25em;
-		line-height: 1.5;
 		margin: 0;
-		
-		a {
-			color: var(--text-color);
-			text-decoration: underline;
-			
-			@media (hover) {
-			&:hover {
-				color: var(--blue);
-			}
-			
-			&:active {
-				color: var(--darkblue);
-			}
-			}
-		}
-		
-		abbr {
-			cursor: help;
-		}
+	}
+	
+	abbr {
+		cursor: help;
+	}
+}
+
+footer {
+	color: var(--lightgrey);
+	font-size: 1em;
+	padding: 0 var(--space-l2) var(--space-l1);
+	margin-top: -1.5rem;
+}
+
+section p a,
+footer a {
+	color: inherit;
+	text-decoration: underline;
+	
+	@media (hover) {
+	&:hover {
+		color: var(--blue);
+	}
+	
+	&:active {
+		color: var(--darkblue);
+	}
 	}
 }
 
 nav {
 	display: inline-block;
-	font-size: 1.75em;
+	font-size: 1.75rem;
 	margin: 0 auto var(--space-l2);
-}
-
-nav a {
-	display: inline;
-	text-decoration: underline;
-	margin-right: var(--space-l2);
+	
+	a {
+		display: inline;
+		text-decoration: underline;
+		margin-right: var(--space-l1);
+	}
 }
 
 .social {
@@ -166,7 +178,7 @@ nav a {
 	
 	.icon {
 		width: 100%;
-		max-width: 4.25em;
+		max-width: 4.25rem;
 		backface-visibility: visible;
 		
 		@media (hover) {
@@ -192,17 +204,22 @@ nav a {
 	}
 	
 	nav {
-		font-size: 2em;
+		font-size: 2rem;
+		
+		a {
+			margin-right: var(--space-l2);
+		}
 	}
 	
 	.icons {
-		max-width: 25em;
+		max-width: 25rem;
 	}
 }
 
 @media (min-width: 35em) {
 	header,
-	section {
+	section,
+	footer {
 		margin-right: var(--space-l3);
 		margin-left: var(--space-l3);
 	}
@@ -223,17 +240,19 @@ nav a {
 		margin-left: 0;
 	}
 	
-	section {
+	section,
+	footer {
 		padding-right: 0;
 		padding-left: 0;
-		
-		p {
-			font-size: 1.5em;
-		}
+		font-size: 1.5em;
+	}
+	
+	footer {
+		font-size: 1.15em;
 	}
 	
 	.social .icon {
-		max-width: 3.5em;
+		max-width: 3.5rem;
 	}
 }
 
@@ -250,7 +269,8 @@ nav a {
 	}
 	
 	header,
-	section {
+	section,
+	footer {
 		max-width: 100%;
 		margin-right: auto;
 		margin-left: auto;
