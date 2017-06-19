@@ -27,6 +27,7 @@ var processors = [
 	require('postcss-import'),
 	require('postcss-nested'),
 	require('postcss-custom-properties'),
+	require('postcss-normalize'),
 	require('css-mqpacker')({sort: true}),
 	require('autoprefixer')
 ];

@@ -28,7 +28,8 @@
     "gulp-uglify": "^3.0.0",
     "postcss-custom-properties": "^6.0.1",
     "postcss-import": "^10.0.0",
-    "postcss-nested": "^2.0.2"
+    "postcss-nested": "^2.0.2",
+    "postcss-normalize": "^3.0.0"
   },
   "browserslist": [
     "last 2 versions",
