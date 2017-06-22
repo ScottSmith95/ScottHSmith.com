@@ -35,7 +35,8 @@ var paths = {
 	},
 	scripts:           {
 		src: ['scripts/*.js', '!scripts/build/**', '!scripts/main.js', '!scripts/home.js', '!scripts/social-icons.js'],
-		dest: 'scripts/build/'
+		dest: 'scripts/build/',
+		watch: 'scripts/*.js'
 	},
 	mainScript:        ['scripts/vendor/modernizr.js'],
 	homeScript:        ['node_modules/boomsvgloader/dist/js/boomsvgloader.js', 'scripts/home.js'],
@@ -164,10 +165,10 @@ function sitemap() {
 }
 
 function watch() {
-	gulp.watch(paths.html.src, gulp.series('html'));
-	gulp.watch(paths.styles.src, gulp.series('styles'));
-	gulp.watch(paths.sprites.src, gulp.series('sprites'));
-	gulp.watch('scripts/*.js', gulp.series('scripts'));
+	gulp.watch(paths.html.src, html);
+	gulp.watch(paths.styles.src, styles);
+	gulp.watch(paths.sprites.src, sprites);
+	gulp.watch(paths.scripts.watch, scripts);
 }
 
 // Workflows
