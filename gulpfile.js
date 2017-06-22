@@ -38,7 +38,7 @@ var paths = {
 		dest: 'scripts/build/',
 		watch: 'scripts/*.js'
 	},
-	mainScript:        ['scripts/vendor/modernizr.js'],
+	mainScript:        'scripts/vendor/modernizr.js',
 	homeScript:        ['node_modules/boomsvgloader/dist/js/boomsvgloader.js', 'scripts/home.js'],
 	socialIconsScript: ['node_modules/flickity/dist/flickity.pkgd.js', 'scripts/social-icons.js']
 };
@@ -193,5 +193,5 @@ exports.watch = watch;
 
 // Externalise Workflows.
 exports.build = buildTask;
-exports.prestest = pretestTask;
+exports.pretest = pretestTask;
 exports.default = defaultTask;
