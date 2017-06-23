@@ -10,30 +10,27 @@ var gulp       = require('gulp'),
 	sourcemaps = require('gulp-sourcemaps');
 
 var paths = {
-	html:              {
+	html: {
 		src: ['**/*.kit', '!kit-includes/**', '!node_modules/**/*'],
 		dest: './'
 	},
-	styles:            {
+	styles: {
 		src: ['styles/**/*.css', '!styles/build/**', '!styles/variables.css', '!styles/partials/_*'],
 		dest: 'styles/build/'
 	},
-	teaStyles:         {
+	teaStyles: {
 		src: 'tea/*.css',
 		dest: 'tea/build/'
 	},
-	builtStyles:       {
-		src: 'styles/build/home.css'
-	},
-	sprites:           {
+	sprites: {
 		src: ['images/Social Icons/*.svg', '!images/Social Icons/home-sprite.svg'],
 		dest: 'images/Social Icons'
 	},
-	sitemap:           {
+	sitemap: {
 		src: ['**/*.html', '!error/*.html', '!node_modules/**/*'],
 		dest: './'
 	},
-	scripts:           {
+	scripts: {
 		src: ['scripts/*.js', '!scripts/build/**', '!scripts/main.js', '!scripts/home.js', '!scripts/social-icons.js'],
 		dest: 'scripts/build/',
 		watch: 'scripts/*.js'
@@ -77,22 +74,10 @@ function teaStyles() {
 		.pipe(gulp.dest(paths.teaStyles.dest));
 }
 
-function lintStyles() {
+function stylesForLint() {
 	return gulp.src(paths.styles.src)
 		.pipe(postcss(processors))
 		.pipe(gulp.dest(paths.styles.dest));
-}
-
-function lint() {
-	return gulp.src(paths.builtStyles.src)
-		.pipe(lint({
-			failAfterError: false,
-			reporters: {
-				formatter: 'string',
-				save: 'report.txt'
-			},
-			debug: true
-	    }));
 }
 
 function sprites() {
@@ -144,7 +129,7 @@ function socialIconsScript() {
 			.pipe(concat('social-icons.js'))
 			.pipe(uglify())
 		.pipe(sourcemaps.write('./'))
-		.pipe(gulp.dest('scripts/build/'));
+		.pipe(gulp.dest(paths.scripts.dest));
 }
 
 var scripts = gulp.parallel(mainScript, homeScript, socialIconsScript, function normalScripts(done) {
@@ -179,13 +164,12 @@ var defaultTask = gulp.parallel(html, styles, teaStyles, sprites, scripts, watch
 var buildTask = gulp.parallel(html, styles, teaStyles, sprites, scripts);
 
 // $ gulp test: Runs stylelint against built CSS files. For CI.
-var pretestTask = gulp.parallel(lintStyles);
+var pretestTask = gulp.parallel(stylesForLint);
 
 // Exports
 // Externalise individual tasks.
 exports.html = html;
 exports.styles = styles;
-exports.lint = lint;
 exports.sprites = sprites;
 exports.scripts = scripts;
 exports.sitemap = sitemap;
