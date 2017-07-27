@@ -17,11 +17,10 @@
 		"length-zero-no-unit": true,
 		"selector-attribute-quotes": "always",
 		"shorthand-property-no-redundant-values": true,
-		"time-no-imperceptible": true,
+		"time-min-milliseconds": 100,
 		"value-keyword-case": "lower",
 		"property-case": "lower",
 		"selector-type-case": "lower",
-		"no-browser-hacks": true,
 		"no-extra-semicolons": true,
 	}
 }
