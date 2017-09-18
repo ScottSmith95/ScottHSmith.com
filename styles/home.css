@@ -3,6 +3,7 @@
 
 .container {
 	margin: 0 auto;
+	padding-bottom: constant(safe-area-inset-bottom);
 }
 
 .header-image {
@@ -21,6 +22,7 @@ header {
 .name,
 .tagline {
 	padding-right: var(--space-l2);
+	
 	margin: 0;
 }
 
