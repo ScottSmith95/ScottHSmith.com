@@ -3,7 +3,6 @@
 
 .container {
 	margin: 0 auto;
-	padding-bottom: constant(safe-area-inset-bottom);
 }
 
 .header-image {
