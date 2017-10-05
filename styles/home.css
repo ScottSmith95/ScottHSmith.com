@@ -21,7 +21,6 @@ header {
 .name,
 .tagline {
 	padding-right: var(--space-l2);
-	
 	margin: 0;
 }
 
