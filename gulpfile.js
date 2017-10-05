@@ -5,7 +5,10 @@ var gulp       = require('gulp'),
 	postcss    = require('gulp-postcss'),
 	sprite     = require('gulp-svg-sprite'),
 	concat     = require('gulp-concat'),
-	uglify     = require('gulp-uglify'),
+	// Use uglify-es minifier with gulp-uglify for ES2015 support.
+	composer   = require('gulp-uglify/composer'),
+	uglifyes   = require('uglify-es'),
+	minify     = composer(uglifyes, console),
 	sitemap    = require('gulp-sitemap'),
 	sourcemaps = require('gulp-sourcemaps');
 
@@ -109,7 +112,7 @@ function mainScript() {
 	return gulp.src(paths.mainScript)
 		.pipe(sourcemaps.init())
 			.pipe(concat('main.js'))
-			.pipe(uglify())
+			.pipe(minify())
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest(paths.scripts.dest));
 }
@@ -118,7 +121,7 @@ function homeScript() {
 	return gulp.src(paths.homeScript)
 		.pipe(sourcemaps.init())
 			.pipe(concat('home.js'))
-			.pipe(uglify())
+			.pipe(minify())
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest(paths.scripts.dest));
 }
@@ -127,7 +130,7 @@ function socialIconsScript() {
 	return gulp.src(paths.socialIconsScript)
 		.pipe(sourcemaps.init())
 			.pipe(concat('social-icons.js'))
-			.pipe(uglify())
+			.pipe(minify())
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest(paths.scripts.dest));
 }
@@ -135,7 +138,7 @@ function socialIconsScript() {
 var scripts = gulp.parallel(mainScript, homeScript, socialIconsScript, function normalScripts(done) {
 	return gulp.src(paths.scripts.src)
 		.pipe(sourcemaps.init())
-			.pipe(uglify())
+			.pipe(minify())
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest(paths.scripts.dest));
 	done();
