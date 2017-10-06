@@ -1,7 +1,7 @@
 'use strict';
 
-const gulp       = require('gulp'),
-	kit        = require('gulp-kit'),
+const gulp     = require('gulp'),
+	mustache   = require('gulp-mustache'),
 	postcss    = require('gulp-postcss'),
 	sprite     = require('gulp-svg-sprite'),
 	concat     = require('gulp-concat'),
@@ -14,7 +14,7 @@ const gulp       = require('gulp'),
 
 const paths = {
 	html: {
-		src: ['**/*.kit', '!kit-includes/**', '!node_modules/**/*'],
+		src: ['**/*.mustache', '!partials/**', '!node_modules/**/*'],
 		dest: './'
 	},
 	styles: {
@@ -55,8 +55,8 @@ const processors = [
 // Tasks
 function html() {
 	return gulp.src(paths.html.src)
-		.pipe(kit())
-		.pipe(gulp.dest(paths.html.dest));
+		.pipe(mustache({},{'extension': '.html'}))
+		.pipe(gulp.dest(paths.html.dest))
 }
 
 function styles() {
