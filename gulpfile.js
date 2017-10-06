@@ -1,6 +1,6 @@
 'use strict';
 
-var gulp       = require('gulp'),
+const gulp       = require('gulp'),
 	kit        = require('gulp-kit'),
 	postcss    = require('gulp-postcss'),
 	sprite     = require('gulp-svg-sprite'),
@@ -12,7 +12,7 @@ var gulp       = require('gulp'),
 	sitemap    = require('gulp-sitemap'),
 	sourcemaps = require('gulp-sourcemaps');
 
-var paths = {
+const paths = {
 	html: {
 		src: ['**/*.kit', '!kit-includes/**', '!node_modules/**/*'],
 		dest: './'
@@ -43,7 +43,7 @@ var paths = {
 	socialIconsScript: ['node_modules/flickity/dist/flickity.pkgd.js', 'scripts/social-icons.js']
 };
 
-var processors = [
+const processors = [
 	require('postcss-import'),
 	require('postcss-nested'),
 	require('postcss-custom-properties'),
@@ -84,7 +84,7 @@ function stylesForLint() {
 }
 
 function sprites() {
-	var options = {
+	const options = {
 		shape: {
 			transform       : [
             	{svgo       : {
@@ -144,7 +144,7 @@ var scripts = gulp.parallel(mainScript, homeScript, socialIconsScript, function 
 	done();
 })
 
-function sitemap() {
+function makeSitemap() {
 	return gulp.src(paths.sitemap.src)
 		.pipe(sitemap({
 			siteUrl: 'https://scotthsmith.com'
@@ -161,13 +161,13 @@ function watch() {
 
 // Workflows
 // $ gulp: Builds, prefixes, and minifies CSS files; concencates and minifies JS files; watches for changes. The works.
-var defaultTask = gulp.parallel(html, styles, teaStyles, sprites, scripts, watch);
+const defaultTask = gulp.parallel(html, styles, teaStyles, sprites, scripts, watch);
 
 // $ gulp build: Builds, prefixes, and minifies CSS files; concencates and minifies JS files. For deployments.
-var buildTask = gulp.parallel(html, styles, teaStyles, sprites, scripts);
+const buildTask = gulp.parallel(html, styles, teaStyles, sprites, scripts);
 
 // $ gulp test: Runs stylelint against built CSS files. For CI.
-var pretestTask = gulp.parallel(stylesForLint);
+const pretestTask = gulp.parallel(stylesForLint);
 
 // Exports
 // Externalise individual tasks.
@@ -175,7 +175,7 @@ exports.html = html;
 exports.styles = styles;
 exports.sprites = sprites;
 exports.scripts = scripts;
-exports.sitemap = sitemap;
+exports.sitemap = makeSitemap;
 exports.watch = watch;
 
 // Externalise Workflows.
