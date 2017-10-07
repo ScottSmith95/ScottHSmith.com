@@ -20,7 +20,6 @@
 		"flickity": "^2.0.9",
 		"gulp": "gulpjs/gulp#4.0",
 		"gulp-concat": "^2.6.1",
-		"gulp-kit": "^0.3.0",
 		"gulp-mustache": "^3.0.0",
 		"gulp-postcss": "^7.0.0",
 		"gulp-sitemap": "^4.2.0",
