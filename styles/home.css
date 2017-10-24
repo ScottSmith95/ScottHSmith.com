@@ -58,47 +58,18 @@ header {
 		animation: tagline 1s ease-out backwards;
 		position: relative;
 		z-index: 0;
-		
-		&::after {
-			content: '';
-			animation: tagline-accents-left 1s cubic-bezier(0.3, 0.03, 0, 1.63) backwards;
-			position: absolute;
-			z-index: -1;
-			height: 0.35em;
-			width: 3em;
-			bottom: 10px;
-			right: -6px;
-			background-color: var(--turquoise);
-		}
+		font-weight: 500;
 		
 		&:nth-child(1) {
 			animation-delay: 600ms;
-			
-			&::after {
-				animation-delay: 900ms;
-				right: 45px;
-			}
 		}
+		
 		&:nth-child(2) {
 			animation-delay: 900ms;
-			
-			&::after {
-				animation-name: tagline-accents-right;
-				animation-delay: 1200ms;
-				width: 3.25em;
-				bottom: 7px;
-				right: -16px;
-			}
 		}
+		
 		&:nth-child(3) {
 			animation-delay: 1200ms;
-			
-			&::after {
-				animation-delay: 1500ms;
-				width: 2.75em;
-				bottom: 9px;
-				right: -4px;
-			}
 		}
 	}
 }
@@ -124,7 +95,6 @@ section {
 
 footer {
 	color: var(--lightgrey);
-	font-size: 1em;
 	padding: 0 var(--space-l2) var(--space-l1);
 	margin-top: -1.5rem;
 }
@@ -158,6 +128,10 @@ nav {
 }
 
 .social {
+	p {
+		color: var(--lightgrey);
+	}
+	
 	.icons {
 		display: flex;
 		flex-direction: row;
@@ -247,8 +221,9 @@ nav {
 		font-size: 1.5em;
 	}
 	
+	.social p,
 	footer {
-		font-size: 1.15em;
+		font-size: 1.15rem;
 	}
 	
 	.social .icon {
