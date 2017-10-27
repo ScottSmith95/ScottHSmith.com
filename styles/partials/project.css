@@ -24,17 +24,41 @@ header {
 			font-size: 2em;
 			padding: 0;
 			margin: 0;
+			white-space: nowrap;
 		}
 		
 		& > a {
+			transition: color 0.3s ease, border-color 0.3s ease, border-radius 0.3s ease, margin-left 0.3s ease;
 			font-weight: 300;
+			color: var(--blue);
 			color: rgba(68, 68, 68, 0.5);
+			color: var(--lightgrey);
+			border: 0.07em solid transparent;
+			margin-left: -0.35em;
+			margin-right: 0.5rem;
+			
+			&::before {
+				transition: left 0.3s ease, margin-right 0.3s ease;
+				content: '';
+				display: inline-block;
+				transform: rotate(-135deg);
+				position: relative;
+				top: 0.6em;
+				left: 0;
+				height: 0.35em;
+				width: 0.35em;
+				vertical-align: top;
+				border-style: solid;
+				border-width: 0.08em 0.08em 0 0;
+				border-radius: 1px;
+			}
 			
 			&::after {
+				transition: opacity 0.3s ease;
 				content: '';
-				color: rgba(68, 68, 68, 0.5);
-				border-right: 2px solid rgba(68, 68, 68, 0.5);
-				margin: 0 .25em 0 0.35em;
+				border-right: 0.07em solid;
+				border-radius: 10px;
+				margin-left: 0.35em;
 			}
 		}
 		
@@ -67,12 +91,27 @@ header {
 	}
 	
 	@media (hover) {
-	.nav a:hover {
-		color: var(--blue);
-	}
-	
-	.nav a:active {
-		color: var(--darkblue);
+	.nav a {
+		&:hover {
+			color: var(--blue);
+			border-color: var(--blue);
+			border-radius: 5px;
+			margin-left: 0;
+
+			&::before {
+				left: 0.35em;
+				margin-right: 0.5em;
+			}
+
+			&::after {
+				opacity: 0;
+			}
+		}
+		
+		&:active {
+			color: var(--darkblue);
+			border-color: var(--darkblue);
+		}
 	}
 	}
 
@@ -187,6 +226,18 @@ header {
 			h1, h2, & > a {
 				font-size: 2.5em;
 			}
+			
+			& > a {
+				margin-left: -0.45em;
+				
+				&::before {
+					top: 0.525em;
+					left: -0.15em;
+					height: 0.45em;
+					width: 0.45em;
+					border-radius: 2px;
+				}
+			}
 		}
 		
 		.desc {
@@ -197,7 +248,7 @@ header {
 	.page-nav {
 		display: inline-block;
 		position: absolute;
-		top: 1.35em; /* Magic numbers that... */
+		top: 1.35em; /* Magic numbers that… */
 		left: 4.3em; /* work really well    */
 		width: auto;
 		font-size: 2.5em;
