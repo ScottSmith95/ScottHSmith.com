@@ -30,8 +30,6 @@ header {
 		& > a {
 			transition: color 0.3s ease, border-color 0.3s ease, border-radius 0.3s ease, margin-left 0.3s ease;
 			font-weight: 300;
-			color: var(--blue);
-			color: rgba(68, 68, 68, 0.5);
 			color: var(--lightgrey);
 			border: 0.07em solid transparent;
 			margin-left: -0.35em;
@@ -260,7 +258,7 @@ header {
 		display: inline-block;
 		position: absolute;
 		top: 1.35em; /* Magic numbers that… */
-		left: 4.3em; /* work really well    */
+		left: 5.9em; /* work really well    */
 		width: auto;
 		font-size: 2.5em;
 		padding: 0 0.25em;
