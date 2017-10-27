@@ -111,6 +111,17 @@ header {
 		&:active {
 			color: var(--darkblue);
 			border-color: var(--darkblue);
+			border-radius: 5px;
+			margin-left: 0;
+			
+			&::before {
+				left: 0.35em;
+				margin-right: 0.5em;
+			}
+			
+			&::after {
+				opacity: 0;
+			}
 		}
 	}
 	}
