@@ -3,6 +3,10 @@
 header {
 	max-width: 40em;
 	text-align: left;
+	padding-left: constant(safe-area-inset-left);
+	padding-left: env(safe-area-inset-left);
+	padding-right: constant(safe-area-inset-right);
+	padding-right: env(safe-area-inset-right);
 	margin: var(--space-l2);
 	
 	.no-cssanimations & {
