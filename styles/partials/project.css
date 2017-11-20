@@ -189,6 +189,10 @@ header {
 .content {
 	max-width: 55em;
 	text-align: center;
+	padding-left: constant(safe-area-inset-left);
+	padding-left: env(safe-area-inset-left);
+	padding-right: constant(safe-area-inset-right);
+	padding-right: env(safe-area-inset-right);
 	margin: var(--space-l3) var(--space-l2);
 
 	.no-cssanimations & {
@@ -279,14 +283,15 @@ header {
 		}
 	}
 
+	.content {
+		margin-right: auto;
+		margin-left: auto;
+	}
+	
 	.license {
 		width: 80%;
 		margin-right: auto;
 		margin-left: auto;
 	}
-	
-	.content {
-		margin-right: auto;
-		margin-left: auto;
-	}
+
 }
