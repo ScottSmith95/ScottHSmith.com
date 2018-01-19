@@ -3,11 +3,12 @@ boomsvgloader.load('/images/Social%20Icons/home-sprite.svg');
 /* Quotes */
 var quotes = [
     "Oh look. <br>A millennial on the Internet.",
-    "Fantastic. <br>Another guy on Twitter.",
+    "Fantastic. <br>Another white guy on Twitter.",
 	"I have an Instagram. <br>Surprised? Don't be.",
 	"Oh you're on Facebook? <br>That's fantastic.",
 	"Watch out. <br>I’m on the internet.",
-	"Eminent. Employable. <br>LinkedIn equipped."
+	"Eminent. Employable. <br>LinkedIn equipped.",
+	"Follow me—<br>or else&hellip;"
 ];
 
 function randomQuote() {
