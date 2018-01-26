@@ -1,16 +1,16 @@
 'use strict';
 
-const gulp     = require('gulp'),
-	mustache   = require('gulp-mustache'),
-	postcss    = require('gulp-postcss'),
-	sprite     = require('gulp-svg-sprite'),
-	concat     = require('gulp-concat'),
-	// Use uglify-es minifier with gulp-uglify for ES2015 support.
-	composer   = require('gulp-uglify/composer'),
-	uglifyes   = require('uglify-es'),
-	minify     = composer(uglifyes, console),
-	sitemap    = require('gulp-sitemap'),
-	sourcemaps = require('gulp-sourcemaps');
+const gulp       = require('gulp');
+const mustache   = require('gulp-mustache');
+const postcss    = require('gulp-postcss');
+const sprite     = require('gulp-svg-sprite');
+const concat     = require('gulp-concat');
+      // Use uglify-es minifier with gulp-uglify for ES2015 support.
+const composer   = require('gulp-uglify/composer');
+const uglifyes   = require('uglify-es');
+const minify     = composer(uglifyes, console);
+const sitemap    = require('gulp-sitemap');
+const sourcemaps = require('gulp-sourcemaps');
 
 const paths = {
 	html: {
