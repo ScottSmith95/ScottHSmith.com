@@ -15,11 +15,13 @@ const gulp     = require('gulp'),
 const paths = {
 	html: {
 		src: ['**/*.mustache', '!partials/**', '!node_modules/**/*'],
-		dest: './'
+		dest: './',
+		watch: '**/*.mustache'
 	},
 	styles: {
 		src: ['styles/**/*.css', '!styles/build/**', '!styles/variables.css', '!styles/partials/_*'],
-		dest: 'styles/build/'
+		dest: 'styles/build/',
+		watch: ['styles/**/*.css', '!styles/build/**']
 	},
 	teaStyles: {
 		src: 'tea/*.css',
@@ -38,7 +40,7 @@ const paths = {
 		dest: 'scripts/build/',
 		watch: 'scripts/*.js'
 	},
-	mainScript:        'scripts/vendor/modernizr.js',
+	globalScript:      ['scripts/global.js', 'scripts/vendor/modernizr.js'],
 	homeScript:        ['node_modules/boomsvgloader/dist/js/boomsvgloader.js', 'scripts/home.js'],
 	socialIconsScript: ['node_modules/flickity/dist/flickity.pkgd.js', 'scripts/social-icons.js']
 };
@@ -108,10 +110,10 @@ function sprites() {
 		.pipe(gulp.dest(paths.sprites.dest));
 }
 
-function mainScript() {
-	return gulp.src(paths.mainScript)
+function globalScript() {
+	return gulp.src(paths.globalScript)
 		.pipe(sourcemaps.init())
-			.pipe(concat('main.js'))
+			.pipe(concat('global.js'))
 			.pipe(minify())
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest(paths.scripts.dest));
@@ -135,7 +137,7 @@ function socialIconsScript() {
 		.pipe(gulp.dest(paths.scripts.dest));
 }
 
-var scripts = gulp.parallel(mainScript, homeScript, socialIconsScript, function normalScripts(done) {
+var scripts = gulp.parallel(globalScript, homeScript, socialIconsScript, function normalScripts(done) {
 	return gulp.src(paths.scripts.src)
 		.pipe(sourcemaps.init())
 			.pipe(minify())
@@ -153,8 +155,8 @@ function makeSitemap() {
 }
 
 function watch() {
-	gulp.watch(paths.html.src, html);
-	gulp.watch(paths.styles.src, styles);
+	gulp.watch(paths.html.watch, html);
+	gulp.watch(paths.styles.watch, styles);
 	gulp.watch(paths.sprites.src, sprites);
 	gulp.watch(paths.scripts.watch, scripts);
 }
