@@ -22,9 +22,10 @@ randomQuote();
 
 /* ScottSmith.sexy */
 function changeSource() {
-    var image = document.querySelector('.header-image');
-    image.src = image.src.replace('header-image/1120.jpg', 'SexyScott.jpg');
-    image.removeAttribute('srcset');
+	var image = document.querySelector('.header-image');
+	image.src = image.src.replace('header-image/jpeg/1120.jpg', 'SexyScott.jpg');
+	image.removeAttribute('srcset');
+	image.parentNode.querySelector('source').remove();
 }
 
 if (window.location.host == 'scottsmith.sexy') {
