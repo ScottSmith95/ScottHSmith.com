@@ -1,5 +1,5 @@
 /*!
- * modernizr v3.3.1
+ * modernizr v3.5.0
  * Build https://modernizr.com/download?-cssanimations-flexbox-domprefixes-prefixes-setclasses-shiv-testallprops-teststyles-dontmin
  *
  * Copyright (c)
@@ -39,7 +39,7 @@
 
   var ModernizrProto = {
     // The current version, dummy
-    _version: '3.3.1',
+    _version: '3.5.0',
 
     // Any settings that don't work as separate modules
     // can go in here as configuration.
@@ -130,6 +130,91 @@
   
 
   /**
+   * is returns a boolean if the typeof an obj is exactly type.
+   *
+   * @access private
+   * @function is
+   * @param {*} obj - A thing we want to check the type of
+   * @param {string} type - A string to compare the typeof against
+   * @returns {boolean}
+   */
+
+  function is(obj, type) {
+    return typeof obj === type;
+  }
+  ;
+
+  /**
+   * Run through all tests and detect their support in the current UA.
+   *
+   * @access private
+   */
+
+  function testRunner() {
+    var featureNames;
+    var feature;
+    var aliasIdx;
+    var result;
+    var nameIdx;
+    var featureName;
+    var featureNameSplit;
+
+    for (var featureIdx in tests) {
+      if (tests.hasOwnProperty(featureIdx)) {
+        featureNames = [];
+        feature = tests[featureIdx];
+        // run the test, throw the return value into the Modernizr,
+        // then based on that boolean, define an appropriate className
+        // and push it into an array of classes we'll join later.
+        //
+        // If there is no name, it's an 'async' test that is run,
+        // but not directly added to the object. That should
+        // be done with a post-run addTest call.
+        if (feature.name) {
+          featureNames.push(feature.name.toLowerCase());
+
+          if (feature.options && feature.options.aliases && feature.options.aliases.length) {
+            // Add all the aliases into the names list
+            for (aliasIdx = 0; aliasIdx < feature.options.aliases.length; aliasIdx++) {
+              featureNames.push(feature.options.aliases[aliasIdx].toLowerCase());
+            }
+          }
+        }
+
+        // Run the test, or use the raw value if it's not a function
+        result = is(feature.fn, 'function') ? feature.fn() : feature.fn;
+
+
+        // Set each of the names on the Modernizr object
+        for (nameIdx = 0; nameIdx < featureNames.length; nameIdx++) {
+          featureName = featureNames[nameIdx];
+          // Support dot properties as sub tests. We don't do checking to make sure
+          // that the implied parent tests have been added. You must call them in
+          // order (either in the test, or make the parent test a dependency).
+          //
+          // Cap it to TWO to make the logic simple and because who needs that kind of subtesting
+          // hashtag famous last words
+          featureNameSplit = featureName.split('.');
+
+          if (featureNameSplit.length === 1) {
+            Modernizr[featureNameSplit[0]] = result;
+          } else {
+            // cast to a Boolean, if not one already
+            if (Modernizr[featureNameSplit[0]] && !(Modernizr[featureNameSplit[0]] instanceof Boolean)) {
+              Modernizr[featureNameSplit[0]] = new Boolean(Modernizr[featureNameSplit[0]]);
+            }
+
+            Modernizr[featureNameSplit[0]][featureNameSplit[1]] = result;
+          }
+
+          classes.push((result ? '' : 'no-') + featureNameSplit.join('-'));
+        }
+      }
+    }
+  }
+  ;
+
+  /**
    * docElement is a convenience wrapper to grab the root element of the document
    *
    * @access private
@@ -177,7 +262,11 @@
     if (Modernizr._config.enableClasses) {
       // Add the new classes
       className += ' ' + classPrefix + classes.join(' ' + classPrefix);
-      isSVG ? docElement.className.baseVal = className : docElement.className = className;
+      if (isSVG) {
+        docElement.className.baseVal = className;
+      } else {
+        docElement.className = className;
+      }
     }
 
   }
@@ -196,7 +285,6 @@
      * @preserve HTML5 Shiv 3.7.3 | @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
      */
     ;(function(window, document) {
-      /*jshint evil:true */
       /** version */
       var version = '3.7.3';
 
@@ -400,10 +488,10 @@
                                                         'h.shivMethods&&(' +
                                                         // unroll the `createElement` calls
                                                         getElements().join().replace(/[\w\-:]+/g, function(nodeName) {
-          data.createElem(nodeName);
-          data.frag.createElement(nodeName);
-          return 'c("' + nodeName + '")';
-        }) +
+                                                          data.createElem(nodeName);
+                                                          data.frag.createElement(nodeName);
+                                                          return 'c("' + nodeName + '")';
+                                                        }) +
           ');return n}'
                                                        )(html5, data.frag);
       }
@@ -517,103 +605,17 @@
         module.exports = html5;
       }
 
-    }(typeof window !== "undefined" ? window : this, document));
-  }
-;
-
-  /**
-   * is returns a boolean if the typeof an obj is exactly type.
-   *
-   * @access private
-   * @function is
-   * @param {*} obj - A thing we want to check the type of
-   * @param {string} type - A string to compare the typeof against
-   * @returns {boolean}
-   */
-
-  function is(obj, type) {
-    return typeof obj === type;
+    }(typeof window !== 'undefined' ? window : this, document));
   }
   ;
 
   /**
-   * Run through all tests and detect their support in the current UA.
-   *
-   * @access private
-   */
-
-  function testRunner() {
-    var featureNames;
-    var feature;
-    var aliasIdx;
-    var result;
-    var nameIdx;
-    var featureName;
-    var featureNameSplit;
-
-    for (var featureIdx in tests) {
-      if (tests.hasOwnProperty(featureIdx)) {
-        featureNames = [];
-        feature = tests[featureIdx];
-        // run the test, throw the return value into the Modernizr,
-        // then based on that boolean, define an appropriate className
-        // and push it into an array of classes we'll join later.
-        //
-        // If there is no name, it's an 'async' test that is run,
-        // but not directly added to the object. That should
-        // be done with a post-run addTest call.
-        if (feature.name) {
-          featureNames.push(feature.name.toLowerCase());
-
-          if (feature.options && feature.options.aliases && feature.options.aliases.length) {
-            // Add all the aliases into the names list
-            for (aliasIdx = 0; aliasIdx < feature.options.aliases.length; aliasIdx++) {
-              featureNames.push(feature.options.aliases[aliasIdx].toLowerCase());
-            }
-          }
-        }
-
-        // Run the test, or use the raw value if it's not a function
-        result = is(feature.fn, 'function') ? feature.fn() : feature.fn;
-
-
-        // Set each of the names on the Modernizr object
-        for (nameIdx = 0; nameIdx < featureNames.length; nameIdx++) {
-          featureName = featureNames[nameIdx];
-          // Support dot properties as sub tests. We don't do checking to make sure
-          // that the implied parent tests have been added. You must call them in
-          // order (either in the test, or make the parent test a dependency).
-          //
-          // Cap it to TWO to make the logic simple and because who needs that kind of subtesting
-          // hashtag famous last words
-          featureNameSplit = featureName.split('.');
-
-          if (featureNameSplit.length === 1) {
-            Modernizr[featureNameSplit[0]] = result;
-          } else {
-            // cast to a Boolean, if not one already
-            /* jshint -W053 */
-            if (Modernizr[featureNameSplit[0]] && !(Modernizr[featureNameSplit[0]] instanceof Boolean)) {
-              Modernizr[featureNameSplit[0]] = new Boolean(Modernizr[featureNameSplit[0]]);
-            }
-
-            Modernizr[featureNameSplit[0]][featureNameSplit[1]] = result;
-          }
-
-          classes.push((result ? '' : 'no-') + featureNameSplit.join('-'));
-        }
-      }
-    }
-  }
-  ;
-
-  /**
-   * If the browsers follow the spec, then they would expose vendor-specific style as:
+   * If the browsers follow the spec, then they would expose vendor-specific styles as:
    *   elem.style.WebkitBorderRadius
-   * instead of something like the following, which would be technically incorrect:
+   * instead of something like the following (which is technically incorrect):
    *   elem.style.webkitBorderRadius
 
-   * Webkit ghosts their properties in lowercase but Opera & Moz do not.
+   * WebKit ghosts their properties in lowercase but Opera & Moz do not.
    * Microsoft uses a lowercase `ms` instead of the correct `Ms` in IE8+
    *   erik.eae.net/archives/2008/03/10/21.48.10/
 
@@ -765,6 +767,7 @@
       body.parentNode.removeChild(body);
       docElement.style.overflow = docOverflow;
       // Trigger layout so kinetic scrolling isn't disabled in iOS6+
+      // eslint-disable-next-line
       docElement.offsetHeight;
     } else {
       div.parentNode.removeChild(div);
@@ -897,6 +900,7 @@
    * @param {array.<string>} props - An array of properties to test for
    * @param {object} obj - An object or Element you want to use to test the parameters again
    * @param {boolean|object} elem - An Element to bind the property lookup again. Use `false` to prevent the check
+   * @returns {false|*} returns false if the prop is unsupported, otherwise the value that is supported
    */
   function testDOMProps(props, obj, elem) {
     var item;
@@ -972,6 +976,44 @@
   }
   ;
 
+
+  /**
+   * wrapper around getComputedStyle, to fix issues with Firefox returning null when
+   * called inside of a hidden iframe
+   *
+   * @access private
+   * @function computedStyle
+   * @param {HTMLElement|SVGElement} - The element we want to find the computed styles of
+   * @param {string|null} [pseudoSelector]- An optional pseudo element selector (e.g. :before), of null if none
+   * @returns {CSSStyleDeclaration}
+   */
+
+  function computedStyle(elem, pseudo, prop) {
+    var result;
+
+    if ('getComputedStyle' in window) {
+      result = getComputedStyle.call(window, elem, pseudo);
+      var console = window.console;
+
+      if (result !== null) {
+        if (prop) {
+          result = result.getPropertyValue(prop);
+        }
+      } else {
+        if (console) {
+          var method = console.error ? 'error' : 'log';
+          console[method].call(console, 'getComputedStyle returning null, its possible modernizr test results are inaccurate');
+        }
+      }
+    } else {
+      result = !pseudo && elem.currentStyle && elem.currentStyle[prop];
+    }
+
+    return result;
+  }
+
+  ;
+
   /**
    * nativeTestProps allows for us to use native feature detection functionality if available.
    * some prefixed form, or false, in the case of an unsupported rule
@@ -1006,7 +1048,7 @@
       }
       conditionText = conditionText.join(' or ');
       return injectElementWithStyles('@supports (' + conditionText + ') { #modernizr { position: absolute; } }', function(node) {
-        return getComputedStyle(node, null).position == 'absolute';
+        return computedStyle(node, null, 'position') == 'absolute';
       });
     }
     return undefined;
@@ -1120,11 +1162,12 @@
    * @param {HTMLElement|SVGElement} [elem] - An element used to test the property and value against
    * @param {string} [value] - A string of a css value
    * @param {boolean} [skipValueTest] - An boolean representing if you want to test if value sticks when set
+   * @returns {false|string} returns the string version of the property, or false if it is unsupported
    */
   function testPropsAll(prop, prefixed, elem, value, skipValueTest) {
 
     var ucProp = prop.charAt(0).toUpperCase() + prop.slice(1),
-    props = (prop + ' ' + cssomPrefixes.join(ucProp + ' ') + ucProp).split(' ');
+      props = (prop + ' ' + cssomPrefixes.join(ucProp + ' ') + ucProp).split(' ');
 
     // did they call .prefixed('boxSizing') or are we just testing a prop?
     if (is(prefixed, 'string') || is(prefixed, 'undefined')) {
