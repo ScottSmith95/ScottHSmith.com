@@ -18,7 +18,7 @@
     "css-mqpacker": "^6.0.2",
     "cssnano": "^3.10.0",
     "flickity": "^2.0.10",
-    "gulp": "gulpjs/gulp#4.0",
+    "gulp": "^4.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-mustache": "^3.0.1",
     "gulp-postcss": "^7.0.1",
