@@ -95,7 +95,7 @@ section {
 }
 
 footer {
-	color: var(--lightgrey);
+	color: var(--light-text-color);
 	padding: 0 var(--space-l2) var(--space-l1);
 	margin-top: -1.5rem;
 }
@@ -171,7 +171,7 @@ nav {
 
 .social {
 	p {
-		color: var(--lightgrey);
+		color: var(--light-text-color);
 	}
 	
 	.icons {
