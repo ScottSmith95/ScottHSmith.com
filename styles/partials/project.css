@@ -85,7 +85,7 @@ header {
 					border-top: 0.4rem solid var(--text-color);
 				}
 				
-				&.active::after {
+				&.shown::after {
 					transform: rotateX(180deg);
 				}
 			}
@@ -93,11 +93,13 @@ header {
 	}
 	
 	@media (hover) {
-	.nav a {
-		&:hover {
+	.nav > a {
+		&:hover,
+		&:focus {
 			color: var(--blue);
 			border-color: var(--blue);
 			border-radius: 5px;
+			outline: none;
 			margin-left: 0;
 
 			&::before {
@@ -171,7 +173,7 @@ header {
 	z-index: 2;
 
 	
-	&.active {
+	&.shown {
 		transition-timing-function: ease-in, ease, ease;
 		max-height: 4.6em;
 		border-width: 1px;
@@ -180,11 +182,12 @@ header {
 	}
 
 	a {
-		color: rgba(68,68,68,0.5);
+		color: var(--light-text-color);
 		
 		@media (hover) {
-		&:hover {
-			color: rgba(68,68,68,0.85);
+		&:hover,
+		&:focus {
+			color: var(--blue);
 		}
 		}
 	}
@@ -280,7 +283,7 @@ header {
 		    background: rgba(235, 238, 240, 0.65);
 		}
 		
-		&.active {
+		&.shown {
 			border-width: 3px;
 			border-color: var(--blue);
 			margin-top: 0;
