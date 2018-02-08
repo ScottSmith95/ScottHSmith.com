@@ -4,7 +4,7 @@
 @import '../node_modules/flickity/dist/flickity.css';
 
 .lightcolor {
-	color: var(--lightgrey);
+	color: #808080;
 }
 
 .bluecolor {
