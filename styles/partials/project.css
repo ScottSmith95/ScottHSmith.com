@@ -64,12 +64,16 @@ header {
 			}
 		}
 		
-		.js &.has-page-nav { /* Dropdown will only with with JS, so don't hint it's clickable without it working. */
+		.js &.has-page-nav { /* Dropdown will only with with JS, so don't hint it's clickable/focusable without it working. */
 			position: relative;
 			
 			h1, h2 {
+				transition: padding-left 0.3s ease, padding-right 0.3s ease, box-shadow 0.3s ease; /* Only for focused state. */
 				position: relative;
 				cursor: pointer;
+				/* To prepare focus transtion: */
+				box-shadow: 0 0 0 0.07em transparent;
+				border-radius: 5px;
 				
 				&::after {
 					transition: transform 0.3s ease-out;
@@ -83,6 +87,13 @@ header {
 					border-left: 0.4rem solid transparent;
 					border-right: 0.4rem solid transparent;
 					border-top: 0.4rem solid var(--text-color);
+				}
+				
+				&:focus {
+					padding-left: 0.25em;
+					padding-right: 0.5em;
+					box-shadow: 0 0 0 0.07em #53c2c9;
+					outline: none;
 				}
 				
 				&.shown::after {
