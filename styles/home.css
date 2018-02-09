@@ -83,7 +83,7 @@ footer {
 section {
 	font-size: 1.25em;
 	padding: var(--space-l3) var(--space-l2);
-	border-top: 3px solid var(--divider);
+	border-top: 3px solid var(--divider-color);
 	
 	p {
 		margin: 0;
@@ -116,56 +116,140 @@ footer a {
 	}
 }
 
-nav {
+/* Navigation button style. */
+nav a {
+	transition: color 0.3s ease, border-color 0.3s ease;
 	display: inline-block;
-	font-size: 1.75rem;
-	margin: 0 auto var(--space-l2);
+	font-weight: 500;
+	color: var(--blue);
+	background: none;
+	padding: 0 var(--space-l2);
+	border: 0.07em solid var(--blue);
+	border-radius: 5px;
+	white-space: nowrap;
 	
-	a {
-		transition: color 0.3s ease, border-color 0.3s ease;
+	&::after {
+		transition: border-color 0.3s ease, margin-left 0.3s ease, transform 0.3s ease, top 0.3s ease;
+		content: '';
 		display: inline-block;
-		font-weight: 500;
-/* 		text-decoration: underline; */
-		padding: 0 var(--space-l2);
-		border: 0.07em solid var(--blue);
-		border-radius: 5px;
-		margin-right: var(--space-l1);
-		margin-bottom: var(--space-l1);
-		white-space: nowrap;
+		transform: rotate(45deg); /* Point arrow right. */
+		transform-origin: center;
+		position: relative;
+		height: 0.45em;
+		width: 0.45em;
+		vertical-align: top;
+		border-style: solid;
+		border-width: 0.1em 0.1em 0 0;
+		border-color: transparent;
+		border-radius: 1px;
+	}
+	
+	@media (hover) {
+	&:hover {
+		color: var(--blue);
 		
 		&::after {
-			transition: border-color 0.3s ease, margin-left 0.3s ease;
-			content: '';
-			display: inline-block;
-			transform: rotate(45deg);
-			position: relative;
-			top: 0.55em;
-			left: 0;
-			height: 0.45em;
-			width: 0.45em;
-			vertical-align: top;
-			border-style: solid;
-			border-width: 0.1em 0.1em 0 0;
-			border-color: transparent;
-			border-radius: 1px;
-			margin-left: -0.35em;
+			border-color: var(--blue);
+			margin-left: 0.1em;
 		}
 	}
-}
-
-@media (hover) {
-	nav a:hover {
+	
+	&:active,
+	&:focus {
+		color: var(--darkblue);
 		border-color: var(--darkblue);
+		outline: none;
 		
 		&::after {
 			border-color: var(--darkblue);
 			margin-left: 0.1em;
 		}
 	}
+	}
+}
+
+/* Styles only pertaining to these buttons. */
+nav {
+	display: inline-block;
+	font-size: 1.75rem;
+	margin: 0 auto var(--space-l2);
 	
-	nav a:active {
-		color: var(--darkblue);
-		border-color: var(--darkblue);
+	a {
+		margin-right: var(--space-l1);
+		margin-bottom: var(--space-l1);
+	
+		&::after {
+			top: 0.55em;
+			left: 0;
+			margin-left: -0.35em;
+		}
+	}
+}
+
+button.colophon-extender {
+	font-size: 1.15rem;
+	color: var(--blue);
+	background: none;
+	cursor: pointer;
+	padding: 0;
+	border: none;
+	margin: var(--space-l1) 0 0;
+	
+	&::after {
+		transition: border-color 0.3s ease, margin-left 0.3s ease, transform 0.3s ease, top 0.3s ease;
+		content: '';
+		display: inline-block;
+		transform: rotate(135deg); /* Chevron pointing down. */
+		transform-origin: center;
+		position: relative;
+		height: 0.45em;
+		width: 0.45em;
+		top: 0.35em;
+		left: 0.25em;
+		vertical-align: top;
+		border-style: solid;
+		border-width: 0.125em 0.125em 0 0;
+		border-color: var(--blue);
+		border-radius: 1px;
+	}
+	
+	&::before {
+		content: '';
+		border-top: 3px solid var(--divider-color);
+	}
+	
+	&.shown::after {
+		transform: rotate(-45deg); /* Chevron pointing up. */
+		top: 0.55em;
+	}
+	
+	.no-js & {
+		display: none;
+	}
+}
+
+.colophon-extended {
+	transition: max-height 0.3s ease-out, margin-top 0.3s ease-out;
+	overflow: hidden;
+	font-size: 1.15rem;
+	color: var(--light-text-color);
+	max-height: 0;
+	margin-top: 0;
+	
+	&.shown {
+		transition-timing-function: ease-in;
+		max-height: 13.5em;
+		margin-top: var(--space-l1);
+		
+		@media (min-width: 50em) {
+			max-height: 8.5em;
+		}
+	}
+	
+	.no-js & {
+		overflow: auto;
+		max-height: none;
+		margin-top: var(--space-l2);
 	}
 }
 

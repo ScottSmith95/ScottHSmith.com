@@ -105,12 +105,10 @@ header {
 	
 	@media (hover) {
 	.nav > a {
-		&:hover,
-		&:focus {
+		&:hover {
 			color: var(--blue);
 			border-color: var(--blue);
 			border-radius: 5px;
-			outline: none;
 			margin-left: 0;
 
 			&::before {
@@ -123,10 +121,12 @@ header {
 			}
 		}
 		
-		&:active {
+		&:active,
+		&:focus {
 			color: var(--darkblue);
 			border-color: var(--darkblue);
 			border-radius: 5px;
+			outline: none;
 			margin-left: 0;
 			
 			&::before {
