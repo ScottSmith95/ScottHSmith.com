@@ -224,6 +224,7 @@ button.colophon-extender {
 		top: 0.55em;
 	}
 	
+	@media (hover) {
 	&:hover,
 	&:focus {
 		color: var(--darkblue);
@@ -232,6 +233,7 @@ button.colophon-extender {
 		&::after {
 			border-color: var(--darkblue);
 		}
+	}
 	}
 	
 	&:active {
