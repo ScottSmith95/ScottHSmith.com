@@ -187,6 +187,7 @@ nav {
 }
 
 button.colophon-extender {
+	transition: color 0.3s ease;
 	font-size: 1.15rem;
 	color: var(--blue);
 	background: none;
@@ -221,6 +222,24 @@ button.colophon-extender {
 	&.shown::after {
 		transform: rotate(-45deg); /* Chevron pointing up. */
 		top: 0.55em;
+	}
+	
+	&:hover,
+	&:focus {
+		color: var(--darkblue);
+		outline: none;
+		
+		&::after {
+			border-color: var(--darkblue);
+		}
+	}
+	
+	&:active {
+		color: var(--text-color);
+		
+		&::after {
+			border-color: var(--text-color);
+		}
 	}
 	
 	.no-js & {
