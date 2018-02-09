@@ -62,8 +62,10 @@ header {
 		opacity: 1;
 	}
 	
-	& a:hover img {
+	& a:hover img,
+	& a:focus img {
 		transform: translateY(-5%);
+		outline: none;
 	}
 	
 	& a:active img {
@@ -264,11 +266,14 @@ section.donate {
 	cursor: pointer;
 
 	-webkit-appearance: none;
-}
-
-.button:hover, .button:active, .button:focus {
-	outline: none;
-	color: white;
+	
+	&:hover {
+		color: white;
+	}
+	
+	&:focus {
+		
+	}
 }
 
 .donate .button {
@@ -281,10 +286,6 @@ section.donate {
 		background-color: #00CC48;
 	}
 	}
-}
-
-.donate .button:active, .donate .button:focus {
-	background-color: #00A23A;
 }
 
 /* Tablet */
