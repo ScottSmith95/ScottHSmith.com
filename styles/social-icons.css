@@ -3,8 +3,12 @@
 
 @import '../node_modules/flickity/dist/flickity.css';
 
+:root {
+	--light-grey-icons: #808080;
+}
+
 .lightcolor {
-	color: #808080;
+	color: var(--light-grey-icons);
 }
 
 .bluecolor {
@@ -28,12 +32,12 @@
 	
 	&::before {
 		left: -1px;
-		background-image: linear-gradient(to right, #ECEEF0, rgba(235, 238, 240, 0));
+		background-image: linear-gradient(to right, var(--bg-color), rgba(235, 238, 240, 0));
 	}
 	
 	&::after {
 		right: -1px;
-		background-image: linear-gradient(to left, #ECEEF0, rgba(235, 238, 240, 0));
+		background-image: linear-gradient(to left, var(--bg-color), rgba(235, 238, 240, 0));
 	}
 }
 
