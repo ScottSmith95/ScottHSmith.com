@@ -3,12 +3,8 @@
 
 @import '../node_modules/flickity/dist/flickity.css';
 
-:root {
-	--light-grey-icons: #808080;
-}
-
 .lightcolor {
-	color: var(--light-grey-icons);
+	color: grey; /* = #808080*/
 }
 
 .bluecolor {
