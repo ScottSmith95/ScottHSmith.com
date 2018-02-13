@@ -32,14 +32,6 @@ const paths = {
 		src: ['images/Social Icons/*.svg', '!images/Social Icons/home-sprite.svg'],
 		dest: 'images/Social Icons'
 	},
-	sitemap: {
-		src: ['**/*.html', '!error/*.html', '!node_modules/**/*'],
-		dest: './'
-	},
-	sri: {
-		src: ['**/*.html', '!tea/**', '!node_modules/**'],
-		dest: './'
-	},
 	scripts: {
 		src: ['scripts/*.js', '!scripts/build/**', '!scripts/main.js', '!scripts/home.js', '!scripts/social-icons.js'],
 		dest: 'scripts/build/',
@@ -47,7 +39,15 @@ const paths = {
 	},
 	globalScript:      ['scripts/global.js', 'scripts/vendor/modernizr.js'],
 	homeScript:        ['node_modules/boomsvgloader/dist/js/boomsvgloader.js', 'scripts/home.js'],
-	socialIconsScript: ['node_modules/flickity/dist/flickity.pkgd.js', 'scripts/social-icons.js']
+	socialIconsScript: ['node_modules/flickity/dist/flickity.pkgd.js', 'scripts/social-icons.js'],
+	sri: {
+		src: ['**/*.html', '!tea/**', '!node_modules/**'],
+		dest: './'
+	},
+	sitemap: {
+		src: ['**/*.html', '!error/*.html', '!node_modules/**/*'],
+		dest: './'
+	}
 };
 
 const processors = [
