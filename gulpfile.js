@@ -5,10 +5,11 @@ const mustache   = require('gulp-mustache');
 const postcss    = require('gulp-postcss');
 const sprite     = require('gulp-svg-sprite');
 const concat     = require('gulp-concat');
-      // Use uglify-es minifier with gulp-uglify for ES2015 support.
+// Use uglify-es minifier with gulp-uglify for ES2015 support.
 const composer   = require('gulp-uglify/composer');
 const uglifyes   = require('uglify-es');
 const minify     = composer(uglifyes, console);
+const srihash    = require('gulp-sri-hash');
 const sitemap    = require('gulp-sitemap');
 const sourcemaps = require('gulp-sourcemaps');
 
@@ -33,6 +34,10 @@ const paths = {
 	},
 	sitemap: {
 		src: ['**/*.html', '!error/*.html', '!node_modules/**/*'],
+		dest: './'
+	},
+	sri: {
+		src: ['**/*.html', '!tea/**', '!node_modules/**'],
 		dest: './'
 	},
 	scripts: {
@@ -146,6 +151,14 @@ var scripts = gulp.parallel(globalScript, homeScript, socialIconsScript, functio
 	done();
 })
 
+function sri() {
+	return gulp.src(paths.sri.src)
+		.pipe(srihash({
+			algo: 'sha512'
+		}))
+		.pipe(gulp.dest(paths.sri.dest));
+}
+
 function makeSitemap() {
 	return gulp.src(paths.sitemap.src)
 		.pipe(sitemap({
@@ -156,17 +169,17 @@ function makeSitemap() {
 
 function watch() {
 	gulp.watch(paths.html.watch, html);
-	gulp.watch(paths.styles.watch, styles);
+	gulp.watch(paths.styles.watch, gulp.series(styles, sri));
 	gulp.watch(paths.sprites.src, sprites);
-	gulp.watch(paths.scripts.watch, scripts);
+	gulp.watch(paths.scripts.watch, gulp.series(scripts, sri));
 }
 
 // Workflows
 // $ gulp: Builds, prefixes, and minifies CSS files; concencates and minifies JS files; watches for changes. The works.
-const defaultTask = gulp.parallel(html, styles, teaStyles, sprites, scripts, watch);
+const defaultTask = gulp.series(gulp.parallel(html, styles, teaStyles, sprites, scripts, watch), sri);
 
 // $ gulp build: Builds, prefixes, and minifies CSS files; concencates and minifies JS files. For deployments.
-const buildTask = gulp.parallel(html, styles, teaStyles, sprites, scripts);
+const buildTask = gulp.series(gulp.parallel(html, styles, teaStyles, sprites, scripts), sri);
 
 // $ gulp test: Runs stylelint against built CSS files. For CI.
 const pretestTask = gulp.parallel(stylesForLint);
