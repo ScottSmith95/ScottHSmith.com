@@ -2,12 +2,11 @@ language: node_js
 node_js:
   - "lts/*"
 install:
-  - npm ci
+  - npm ci || npm install
 cache:
   directories:
   - "$HOME/.npm"
 before_script:
-  - npm install npm@latest -g
   - npm install -g gulp-cli stylelint
   - gulp pretest
 script:
