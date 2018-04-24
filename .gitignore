@@ -8,6 +8,7 @@ scripts/build/
 tea/build/
 **/*.map
 **/*.html
+images/Social Icons/home-sprite.svg
 !party/*.html
 
 sitemap.xml
