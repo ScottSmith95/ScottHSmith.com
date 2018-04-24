@@ -1,13 +1,16 @@
-// Names of the two caches used in this version of the service worker.
-const PRECACHE = 'precache-v2018-02-08'; // Change when major local resources are altered.
-const RUNTIME = 'runtime';
+const CACHE_VERSION = 'v2018-04-23H'; // Change when major local resources are altered.
+const PRECACHE = 'precache-' + CACHE_VERSION; 
+const RUNTIME = 'runtime-' + CACHE_VERSION;
 
 // A list of local resources we always want to be cached.
 const PRECACHE_URLS = [
+	'/styles/build/partials/global.css'
+];
+
+const CACHE_EXCLUDE_URLS = [
 	'/index.html',
-	'/./', // Alias for index.html
-	'/styles/build/partials/global.css',
-	'/images/icon.png'
+	'/./', // Alias for index.html,
+	'/scripts/build/global.js'
 ];
 
 // The install handler takes care of precaching the resources we always need.
@@ -37,16 +40,29 @@ self.addEventListener( 'activate', event => {
 // If no response is found, it populates the runtime cache with the response
 // from the network before returning it to the page.
 self.addEventListener( 'fetch', event => {
+	
+	if ( CACHE_EXCLUDE_URLS.includes( event.request.url.pathname ) ) {
+		event.respondWith(
+		    fetch( event.request ).catch( () => {
+		    	return caches.match( event.request );
+		    })
+	    )
+	}
+	
 	// Skip cross-origin requests, like those for Google Analytics.
 	if ( event.request.url.startsWith( self.location.origin ) ) {
 		event.respondWith(
 		caches.match( event.request ).then( cachedResponse => {
+			
 			if ( cachedResponse ) {
 				return cachedResponse;
 			}
 			
 			return caches.open( RUNTIME ).then( cache => {
 				return fetch( event.request ).then( response => {
+					if( !response || response.status !== 200 || response.type !== 'basic' ) {
+						return response;
+					}
 					// Put a copy of the response in the runtime cache.
 					return cache.put( event.request, response.clone() ).then( () => {
 						return response;
