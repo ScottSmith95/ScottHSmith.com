@@ -26,6 +26,10 @@
 			"src": "/images/site-icons/256.jpg",
 			"type": "image/jpeg",
 			"sizes": "256x256"
+		}, {
+			"src": "/images/site-icons/512.jpg",
+			"type": "image/jpeg",
+			"sizes": "512x512"
 		}
 	],
 	"lang": "en-US",
