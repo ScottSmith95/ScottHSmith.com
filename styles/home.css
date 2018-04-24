@@ -91,6 +91,7 @@ section {
 	
 	abbr {
 		cursor: help;
+		text-decoration: underline;
 	}
 }
 
