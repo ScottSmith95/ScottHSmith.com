@@ -1,7 +1,7 @@
 var elem = document.querySelector('.grid-carousel');
 var flkty = new Flickity( elem, {
-  imagesLoaded: true,
-  lazyLoad: 1
+	imagesLoaded: true,
+	lazyLoad: 1
 });
 
 document.querySelector('.blue .download').addEventListener( 'mouseover', function() {

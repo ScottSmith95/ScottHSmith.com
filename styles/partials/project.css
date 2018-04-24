@@ -92,8 +92,14 @@ header {
 				&:focus {
 					padding-left: 0.25em;
 					padding-right: 0.5em;
-					box-shadow: 0 0 0 0.07em #53c2c9;
+					box-shadow: 0 0 0 0.07em var(--turquoise);
 					outline: none;
+				}
+				
+				&.clicked:focus {
+					padding-left: 0;
+					padding-right: 0;
+					box-shadow:none;
 				}
 				
 				&.shown::after {
@@ -103,8 +109,8 @@ header {
 		}
 	}
 	
-	@media (any-hover) {
 	.nav > a {
+		@media (any-hover) {
 		&:hover {
 			color: var(--blue);
 			border-color: var(--blue);
@@ -119,6 +125,7 @@ header {
 			&::after {
 				opacity: 0;
 			}
+		}
 		}
 		
 		&:active,
@@ -138,7 +145,6 @@ header {
 				opacity: 0;
 			}
 		}
-	}
 	}
 
 	.desc {
