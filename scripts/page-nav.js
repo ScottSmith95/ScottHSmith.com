@@ -65,5 +65,4 @@ navTrigger.addEventListener( 'keydown', event => {
 		toggleMenu( event );
 	}
 } );
-
  

@@ -1,5 +1,7 @@
-const CACHE_VERSION = 'v2018-04-24'; // Change when major local resources are altered.
-const PRECACHE = 'precache-' + CACHE_VERSION; 
+'use strict';
+
+const CACHE_VERSION = 'v2018-04-24D'; // Change when major local resources are altered.
+const PRECACHE = 'precache-' + CACHE_VERSION;
 const RUNTIME = 'runtime-' + CACHE_VERSION;
 
 // A list of local resources we always want to be cached.
@@ -41,35 +43,57 @@ self.addEventListener( 'activate', event => {
 // from the network before returning it to the page.
 self.addEventListener( 'fetch', event => {
 	
-	if ( CACHE_EXCLUDE_URLS.includes( event.request.url.pathname ) ) {
-		event.respondWith(
-		    fetch( event.request ).catch( () => {
-		    	return caches.match( event.request );
-		    })
-	    )
-	}
-	
+	console.log( self.location.hostname );
+
 	// Skip cross-origin requests, like those for Google Analytics.
-	if ( event.request.url.startsWith( self.location.origin ) ) {
+	// Only work on dev site.
+	if ( event.request.url.startsWith( self.location.origin ) && self.location.hostname === 'dev.scotthsmith.com' ) {
+
+		if ( CACHE_EXCLUDE_URLS.includes( event.request.url.pathname ) ) {
+			console.log('Excluded URI.');
+			event.respondWith(
+				fetch( event.request ).catch( () => {
+				   	return caches.match( event.request );
+				} )
+			  );
+		}
+
+		if ( /(\.html?$)|(\/$)/.test( event.request.url.pathname ) ) { // regexp test: https://regexr.com/3of58
+			console.log('Getting HTML…');
+			event.respondWith(
+				caches.open( RUNTIME ).then( cache => {
+					return fetch( event.request ).then( response => {
+						if( !response || response.status !== 200 || response.type !== 'basic' ) {
+							return response;
+						}
+						// Put a copy of the response in the runtime cache.
+						return cache.put( event.request, response.clone() ).then( () => {
+							return response;
+						} );
+					} );
+				} )
+			  );
+		}
+
 		event.respondWith(
-		caches.match( event.request ).then( cachedResponse => {
-			
-			if ( cachedResponse ) {
-				return cachedResponse;
-			}
-			
-			return caches.open( RUNTIME ).then( cache => {
-				return fetch( event.request ).then( response => {
-					if( !response || response.status !== 200 || response.type !== 'basic' ) {
-						return response;
-					}
-					// Put a copy of the response in the runtime cache.
-					return cache.put( event.request, response.clone() ).then( () => {
-						return response;
+			caches.match( event.request ).then( cachedResponse => {
+
+				if ( cachedResponse ) {
+					return cachedResponse;
+				}
+
+				return caches.open( RUNTIME ).then( cache => {
+					return fetch( event.request ).then( response => {
+						if( !response || response.status !== 200 || response.type !== 'basic' ) {
+							return response;
+						}
+						// Put a copy of the response in the runtime cache.
+						return cache.put( event.request, response.clone() ).then( () => {
+							return response;
+						} );
 					} );
 				} );
-			} );
-		} )
+			} )
 		);
 	}
 } );
