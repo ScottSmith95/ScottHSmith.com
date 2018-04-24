@@ -103,7 +103,7 @@ header {
 		}
 	}
 	
-	@media (hover) {
+	@media (any-hover) {
 	.nav > a {
 		&:hover {
 			color: var(--blue);
@@ -157,7 +157,7 @@ header {
 		a {
 			color: var(--blue);
 		
-			@media (hover) {
+			@media (any-hover) {
 			&:hover {
 				color: var(--darkblue);
 			}
@@ -195,7 +195,7 @@ header {
 	a {
 		color: var(--light-text-color);
 		
-		@media (hover) {
+		@media (any-hover) {
 		&:hover,
 		&:focus {
 			color: var(--blue);
@@ -235,7 +235,7 @@ header {
 		transition: color 0.3s ease;
 		color: var(--darkgrey);
 		
-		@media (hover) {
+		@media (any-hover) {
 		&:hover {
 			color: var(--blue);
 		}

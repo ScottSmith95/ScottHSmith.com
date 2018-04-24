@@ -34,8 +34,8 @@ header {
 	
 	.first,
 	.last {
-		display: block;
 		animation: name-first 1s ease-out 300ms backwards;
+		display: block;
 	}
 	
 	.first {
@@ -105,7 +105,7 @@ footer a {
 	color: inherit;
 	text-decoration: underline;
 	
-	@media (hover) {
+	@media (any-hover) {
 	&:hover {
 		color: var(--blue);
 	}
@@ -144,7 +144,7 @@ nav a {
 		border-radius: 1px;
 	}
 	
-	@media (hover) {
+	@media (any-hover) {
 	&:hover {
 		color: var(--blue);
 		
@@ -224,7 +224,7 @@ button.colophon-extender {
 		top: 0.55em;
 	}
 	
-	@media (hover) {
+	@media (any-hover) {
 	&:hover,
 	&:focus {
 		color: var(--darkblue);
@@ -302,7 +302,7 @@ button.colophon-extender {
 		max-width: 4.25rem;
 		backface-visibility: visible;
 		
-		@media (hover) {
+		@media (any-hover) {
 		&:hover {
 			animation: social-icon 0.5s ease;
 		}
@@ -394,6 +394,7 @@ button.colophon-extender {
 	section,
 	footer {
 		max-width: 100%;
+		crap: lol;
 		margin-right: auto;
 		margin-left: auto;
 	}
@@ -410,6 +411,15 @@ button.colophon-extender {
 /* ----------------- */
 /*     Animations    */
 /* ----------------- */
+@media (prefers-reduced-motion: reduce) {
+	.header-image,
+	.name .first,
+	.name .last,
+	.tagline li {
+		animation: none;
+	}
+}
+
 @keyframes header-image {
 	from {
 		opacity: 0;
