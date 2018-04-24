@@ -93,13 +93,13 @@ function stylesForLint() {
 function sprites() {
 	const options = {
 		shape: {
-			transform       : [
-            	{svgo       : {
+			transform       : [{
+            	svgo       : {
 	            	plugins : [
 	            		{removeTitle: true}
 	            	]
-	            }}
-			]
+	            }
+			}]
 		},
 		mode: {
 			symbol: { // Create a «symbol» sprite.
@@ -142,7 +142,7 @@ function socialIconsScript() {
 		.pipe(gulp.dest(paths.scripts.dest));
 }
 
-var scripts = gulp.parallel(globalScript, homeScript, socialIconsScript, function normalScripts(done) {
+const scripts = gulp.parallel(globalScript, homeScript, socialIconsScript, function normalScripts(done) {
 	return gulp.src(paths.scripts.src)
 		.pipe(sourcemaps.init())
 			.pipe(minify())
@@ -153,10 +153,33 @@ var scripts = gulp.parallel(globalScript, homeScript, socialIconsScript, functio
 
 function sri() {
 	return gulp.src(paths.sri.src)
+		.pipe(require('gulp-cheerio')(function ($, file) {
+			$('link[href][rel=stylesheet], script[src]').each(function () {
+				if (isLocalPath(this)) {
+					$(this).removeAttr('integrity', 'crossorigin');
+				}
+
+				function isLocalPath(node) {
+					let src = node.name == 'script' ? node.attribs.src : node.attribs.href;
+					
+					if (!src) {
+						return null;
+					}
+					
+					// Ignore paths that look like like urls as they cannot be resolved on local filesystem.
+					if (src.match(/^(https?:)?\/\//)) {
+						return null;
+					}
+					
+					return src
+				}
+			});
+		}))
 		.pipe(srihash({
 			algo: 'sha512'
 		}))
 		.pipe(gulp.dest(paths.sri.dest));
+	done();
 }
 
 function makeSitemap() {
@@ -168,7 +191,7 @@ function makeSitemap() {
 }
 
 function watch() {
-	gulp.watch(paths.html.watch, html);
+	gulp.watch(paths.html.watch, gulp.series(html, sri));
 	gulp.watch(paths.styles.watch, gulp.series(styles, sri));
 	gulp.watch(paths.sprites.src, sprites);
 	gulp.watch(paths.scripts.watch, gulp.series(scripts, sri));
@@ -176,7 +199,7 @@ function watch() {
 
 // Workflows
 // $ gulp: Builds, prefixes, and minifies CSS files; concencates and minifies JS files; watches for changes. The works.
-const defaultTask = gulp.series(gulp.parallel(html, styles, teaStyles, sprites, scripts, watch), sri);
+const defaultTask = gulp.series(gulp.parallel(html, styles, teaStyles, sprites, scripts), sri, watch);
 
 // $ gulp build: Builds, prefixes, and minifies CSS files; concencates and minifies JS files. For deployments.
 const buildTask = gulp.series(gulp.parallel(html, styles, teaStyles, sprites, scripts), sri);
@@ -190,6 +213,7 @@ exports.html = html;
 exports.styles = styles;
 exports.sprites = sprites;
 exports.scripts = scripts;
+exports.sri = sri;
 exports.sitemap = makeSitemap;
 exports.watch = watch;
 
