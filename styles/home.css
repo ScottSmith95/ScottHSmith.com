@@ -52,7 +52,7 @@ header {
 }
 
 .tagline {
-	font: 500 2em/1.5 var(--font-fam);
+	font: 600 2em/1.5 var(--font-fam);
 	text-align: right;
 	list-style: none;
 
@@ -121,7 +121,7 @@ footer a {
 nav a {
 	transition: color 0.3s ease, border-color 0.3s ease;
 	display: inline-block;
-	font-weight: 500;
+	font-weight: 600;
 	color: var(--blue);
 	background: none;
 	padding: 0 var(--space-l2);
@@ -245,13 +245,12 @@ button.colophon-extender {
 		}
 	}
 	
-	.no-js & {
+	html.no-js & {
 		display: none;
 	}
 }
 
 .colophon-extended {
-	transition: max-height 0.3s ease-out, margin-top 0.3s ease-out;
 	overflow: hidden;
 	font-size: 1.15rem;
 	color: var(--light-text-color);
@@ -260,15 +259,19 @@ button.colophon-extender {
 	
 	&.shown {
 		transition-timing-function: ease-in;
-		max-height: 13.5em;
+		max-height: 16.5em;
 		margin-top: var(--space-l1);
 		
 		@media (min-width: 50em) {
-			max-height: 8.5em;
+			max-height: 9em;
 		}
 	}
 	
-	.no-js & {
+	html.js & {
+		transition: max-height 0.3s ease-out, margin-top 0.3s ease-out; /* Prevents transition from showing on page load. */
+	}
+	
+	html.no-js & {
 		overflow: auto;
 		max-height: none;
 		margin-top: var(--space-l2);

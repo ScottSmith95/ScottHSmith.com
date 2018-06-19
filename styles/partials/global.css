@@ -1,5 +1,6 @@
 @import '../variables.css';
 @import '_background-pattern.css';
+@import '_plex-font-face.css';
 
 html {
 	box-sizing: border-box;
@@ -12,7 +13,7 @@ html {
 body {
 	margin: 0;
 	color: var(--text-color);
-	font: 300 100%/1.5 var(--font-fam);
+	font: 400 100%/1.5 var(--font-fam);
 }
 
 ::selection {
