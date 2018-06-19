@@ -13,11 +13,11 @@
     "test": "gulp test"
   },
   "devDependencies": {
-    "autoprefixer": "^8.3.0",
+    "autoprefixer": "^8.6.3",
     "boomsvgloader": "0.0.2",
     "css-mqpacker": "^6.0.2",
     "cssnano": "^3.10.0",
-    "flickity": "^2.1.1",
+    "flickity": "^2.1.2",
     "gulp": "^4.0.0",
     "gulp-cheerio": "^0.6.3",
     "gulp-concat": "^2.6.1",
@@ -31,7 +31,7 @@
     "postcss-custom-properties": "^7.0.0",
     "postcss-import": "^11.1.0",
     "postcss-nested": "^3.0.0",
-    "postcss-normalize": "^4.0.0",
+    "postcss-normalize": "^6.0.0",
     "uglify-es": "^3.3.8"
   },
   "browserslist": [
