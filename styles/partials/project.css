@@ -64,6 +64,18 @@ header {
 			}
 		}
 		
+		h1 > a, h2 > a {
+			@media (any-hover) {
+			&:hover {
+				color: var(--blue);
+			}
+			
+			&:active {
+				color: var(--blue);
+			}
+			}
+		}
+		
 		.js &.has-page-nav { /* Dropdown will only with with JS, so don't hint it's clickable/focusable without it working. */
 			position: relative;
 			
