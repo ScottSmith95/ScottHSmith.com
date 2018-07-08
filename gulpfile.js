@@ -96,7 +96,7 @@ function sprites() {
 			transform       : [{
             	svgo       : {
 	            	plugins : [
-	            		{removeTitle: true}
+	            		{ removeTitle: true }
 	            	]
 	            }
 			}]
