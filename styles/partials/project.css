@@ -23,7 +23,9 @@ header {
 	}
 	
 	.nav {
-		h1, h2, & > a {
+		h1, 
+		h2, 
+		& > a {
 			display: inline;
 			font-size: 2em;
 			padding: 0;
@@ -32,39 +34,42 @@ header {
 		}
 		
 		& > a {
-			transition: color 0.3s ease, border-color 0.3s ease, border-radius 0.3s ease, margin-left 0.3s ease;
+			transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, padding-left 0.3s ease, margin-left 0.3s ease;
 			font-weight: 300;
 			color: var(--large-light-text-color);
+			padding-left: 0.15em;
+			border-radius: 5px;
 			border: 0.07em solid transparent;
-			margin-left: -0.35em;
-			margin-right: 0.5rem;
+			margin-left: calc(-0.35em + -0.15em);
+			margin-right: 0.25em;
 			
 			&::before {
-				transition: left 0.3s ease, margin-right 0.3s ease;
 				content: '';
 				display: inline-block;
 				transform: rotate(-135deg);
 				position: relative;
 				top: 0.6em;
-				left: 0;
 				height: 0.35em;
 				width: 0.35em;
 				vertical-align: top;
 				border-style: solid;
-				border-width: 0.08em 0.08em 0 0;
+				border-width: 0.07em 0.07em 0 0;
 				border-radius: 1px;
 			}
 			
 			&::after {
 				transition: opacity 0.3s ease;
 				content: '';
-				border-right: 0.07em solid;
+				position: relative;
+				left: 0.35em;
+				border-right: 0.06em solid;
 				border-radius: 10px;
-				margin-left: 0.35em;
+				margin-right: 0.25em;
 			}
 		}
 		
-		h1 > a, h2 > a {
+		h1 > a, 
+		h2 > a {
 			@media (any-hover) {
 			&:hover {
 				color: var(--blue);
@@ -125,33 +130,32 @@ header {
 		@media (any-hover) {
 		&:hover {
 			color: var(--blue);
-			border-color: var(--blue);
-			border-radius: 5px;
+			background-color: var(--blue-translucent-l2);
 			margin-left: 0;
 
-			&::before {
-				left: 0.35em;
-				margin-right: 0.5em;
+			&::after {
+				opacity: 0;
 			}
-
+		}
+		
+		&:active {
+			color: var(--darkblue);
+			background-color: var(--blue-translucent-l3);
+			margin-left: 0;
+			
 			&::after {
 				opacity: 0;
 			}
 		}
 		}
 		
-		&:active,
 		&:focus {
 			color: var(--darkblue);
+			background-color: var(--blue-translucent-l3);
+			padding-left: 0.25em;
 			border-color: var(--darkblue);
-			border-radius: 5px;
 			outline: none;
 			margin-left: 0;
-			
-			&::before {
-				left: 0.35em;
-				margin-right: 0.5em;
-			}
 			
 			&::after {
 				opacity: 0;
@@ -272,19 +276,26 @@ header {
 		margin: var(--space-l3) auto;
 		
 		.nav {			
-			h1, h2, & > a {
+			h1,
+			h2,
+			& > a {
 				font-size: 2.5em;
 			}
 			
 			& > a {
-				margin-left: -0.45em;
+				padding-left: 0.5em;
+				margin-left: calc(-0.45em + -0.5em);
+				margin-right: 0.35em;
 				
 				&::before {
-					top: 0.525em;
+					top: 0.55em;
 					left: -0.15em;
 					height: 0.45em;
 					width: 0.45em;
-					border-radius: 2px;
+				}
+				
+				&:focus {
+					padding-left: 0.5em;
 				}
 			}
 		}

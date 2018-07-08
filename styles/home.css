@@ -119,14 +119,14 @@ footer a {
 
 /* Navigation button style. */
 nav a {
-	transition: color 0.3s ease, border-color 0.3s ease;
+	transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 	display: inline-block;
 	font-weight: 600;
 	color: var(--blue);
-	background: none;
-	padding: 0 var(--space-l2);
-	border: 0.07em solid var(--blue);
+	background-color: var(--blue-translucent-l1);
+	padding: 0 var(--space-l1);
 	border-radius: 5px;
+	border: 0.07em solid transparent;
 	white-space: nowrap;
 	
 	&::after {
@@ -148,6 +148,7 @@ nav a {
 	@media (any-hover) {
 	&:hover {
 		color: var(--blue);
+		background-color: var(--blue-translucent-l2);
 		
 		&::after {
 			border-color: var(--blue);
@@ -155,9 +156,21 @@ nav a {
 		}
 	}
 	
-	&:active,
+	&:active {
+		color: var(--darkblue);
+		background-color: var(--blue-translucent-l3);
+		
+		
+		&::after {
+			border-color: var(--darkblue);
+			margin-left: 0.1em;
+		}
+	}
+	}
+	
 	&:focus {
 		color: var(--darkblue);
+		background-color: var(--blue-translucent-l3);
 		border-color: var(--darkblue);
 		outline: none;
 		
@@ -166,13 +179,12 @@ nav a {
 			margin-left: 0.1em;
 		}
 	}
-	}
 }
 
 /* Styles only pertaining to these buttons. */
 nav {
 	display: inline-block;
-	font-size: 1.75rem;
+	font-size: 1.65rem;
 	margin: 0 auto var(--space-l2);
 	
 	a {
@@ -188,13 +200,14 @@ nav {
 }
 
 button.colophon-extender {
-	transition: color 0.3s ease;
+	transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, padding 0.3s ease;
 	font-size: 1.15rem;
 	color: var(--blue);
 	background: none;
 	cursor: pointer;
 	padding: 0;
-	border: none;
+	border-radius: 5px;
+	border: 0.07em solid transparent;
 	margin: var(--space-l1) 0 0;
 	
 	&::after {
@@ -226,10 +239,16 @@ button.colophon-extender {
 	}
 	
 	@media (any-hover) {
-	&:hover,
-	&:focus {
+	&:hover {
 		color: var(--darkblue);
-		outline: none;
+		
+		&::after {
+			border-color: var(--darkblue);
+		}
+	}
+	
+	&:active {
+		color: var(--darkblue);
 		
 		&::after {
 			border-color: var(--darkblue);
@@ -237,13 +256,18 @@ button.colophon-extender {
 	}
 	}
 	
-	&:active {
-		color: var(--text-color);
+	&:focus {
+		color: var(--darkblue);
+		background-color: var(--blue-translucent-l3);
+		padding: 0.15em 0.75em 0.25em 0.35em;
+		border-color: var(--darkblue);
+		outline: none;
 		
 		&::after {
-			border-color: var(--text-color);
+			border-color: var(--darkblue);
 		}
 	}
+	
 	
 	html.no-js & {
 		display: none;
@@ -328,16 +352,19 @@ button.colophon-extender {
 		font-size: 8.5em;
 	}
 	
+	.icons {
+		max-width: 25rem;
+	}
+}
+
+@media (min-width: 26em) {
 	nav {
 		font-size: 2rem;
 		
 		a {
+			padding: 0 var(--space-l2);
 			margin-right: var(--space-l2);
 		}
-	}
-	
-	.icons {
-		max-width: 25rem;
 	}
 }
 

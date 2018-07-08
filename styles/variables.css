@@ -10,10 +10,12 @@
 	--large-light-text-color: #63787E;
 	--bg-color: #ECEEF0;
 	--divider-color: #D9DBDE;
-	--highlight: rgba(147, 187, 201, 0.5);
+	--blue-translucent-l1: rgba(147, 187, 201, 0.2);
+	--blue-translucent-l2: rgba(147, 187, 201, 0.4);
+	--blue-translucent-l3: rgba(147, 187, 201, 0.5);
 	
-	/* Fonts */
-	--font-fam: 'IBM Plex Sans', sans-serif;
+	/* Typefaces */
+	--font-fam: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 	
 	/* Spacing */
 	--space-l1: 0.625rem;

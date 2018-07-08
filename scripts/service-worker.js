@@ -1,6 +1,6 @@
 'use strict';
 
-const CACHE_VERSION = 'v2018-06-18A'; // Change when major local resources are altered.
+const CACHE_VERSION = 'v2018-07-08F'; // Change when major local resources are altered.
 const PRECACHE = 'precache-' + CACHE_VERSION;
 const RUNTIME = 'runtime-' + CACHE_VERSION;
 
@@ -42,10 +42,8 @@ self.addEventListener( 'activate', event => {
 // If no response is found, it populates the runtime cache with the response
 // from the network before returning it to the page.
 self.addEventListener( 'fetch', event => {
-	
-	console.log( self.location.hostname );
 
-	// Skip cross-origin requests, like those for Google Analytics.
+	// Skip cross-origin requests, like those for CDNs or analytics.
 	// Only work on dev site.
 	if ( event.request.url.startsWith( self.location.origin ) && self.location.hostname === 'dev.scotthsmith.com' ) {
 
@@ -70,7 +68,10 @@ self.addEventListener( 'fetch', event => {
 						return cache.put( event.request, response.clone() ).then( () => {
 							return response;
 						} );
-					} );
+					} ).catch( () => {
+				   		return caches.match( event.request );
+					} )
+					;
 				} )
 			  );
 		}

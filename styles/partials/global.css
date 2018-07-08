@@ -17,7 +17,7 @@ body {
 }
 
 ::selection {
-	background: var(--highlight);
+	background: var(--blue-translucent-l2);
 }
 
 a {
