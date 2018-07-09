@@ -207,7 +207,7 @@ button.colophon-extender {
 	cursor: pointer;
 	padding: 0;
 	border-radius: 5px;
-	border: 0.07em solid transparent;
+	border: 0.09em solid transparent;
 	margin: var(--space-l1) 0 0;
 	
 	&::after {
