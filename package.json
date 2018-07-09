@@ -15,6 +15,7 @@
   "devDependencies": {
     "autoprefixer": "^8.6.5",
     "boomsvgloader": "0.0.2",
+    "cheerio": "github:cheeriojs/cheerio#v1.0.0",
     "css-mqpacker": "^6.0.2",
     "cssnano": "^4.0.0",
     "flickity": "^2.1.2",

@@ -9,6 +9,7 @@ const concat     = require('gulp-concat');
 const composer   = require('gulp-uglify/composer');
 const uglifyes   = require('uglify-es');
 const minify     = composer(uglifyes, console);
+const cheerio    = require('gulp-cheerio');
 const srihash    = require('gulp-sri-hash');
 const sitemap    = require('gulp-sitemap');
 const sourcemaps = require('gulp-sourcemaps');
@@ -93,16 +94,17 @@ function stylesForLint() {
 function sprites() {
 	const options = {
 		shape: {
-			transform       : [{
-            	svgo       : {
-	            	plugins : [
-	            		{ removeTitle: true }
+			transform: [{
+            	svgo: {
+	            	plugins: [
+	            		{ removeRasterImages: true }
 	            	]
 	            }
 			}]
 		},
 		mode: {
 			symbol: { // Create a «symbol» sprite.
+				inline: true,
 				dest: '.', // Don't create 'symbols/' directory.
 				prefix: '', // Don't prefix output title.
 				sprite: 'home-sprite' // '.svg' will be appended if not included.
@@ -153,30 +155,41 @@ const scripts = gulp.parallel(globalScript, homeScript, socialIconsScript, funct
 
 function sri() {
 	return gulp.src(paths.sri.src)
-		.pipe(require('gulp-cheerio')(function ($, file) {
-			$('link[href][rel=stylesheet], script[src]').each(function () {
-				if (isLocalPath(this)) {
-					$(this).removeAttr('integrity', 'crossorigin');
-				}
-
-				function isLocalPath(node) {
-					let src = node.name == 'script' ? node.attribs.src : node.attribs.href;
-					
-					if (!src) {
-						return null;
+		.pipe(cheerio({
+			run: ($, file, done) => {
+				$('link[href][rel=stylesheet], script[src]').each( function() {
+					if (isLocalPath(this)) {
+						$(this).removeAttr('integrity', 'crossorigin');
 					}
-					
-					// Ignore paths that look like like urls as they cannot be resolved on local filesystem.
-					if (src.match(/^(https?:)?\/\//)) {
-						return null;
+	
+					function isLocalPath(node) {
+						let src = node.name == 'script' ? node.attribs.src : node.attribs.href;
+						
+						if (!src) {
+							return null;
+						}
+						
+						// Ignore paths that look like like urls as they cannot be resolved on local filesystem.
+						if (src.match(/^(https?:)?\/\//)) {
+							return null;
+						}
+						
+						return src;
 					}
-					
-					return src
-				}
-			});
+				});
+				done();
+			}
 		}))
 		.pipe(srihash({
 			algo: 'sha512'
+		}))
+		// Leave until the built-in parser works with namespaced attributes (#1101) https://github.com/cheeriojs/cheerio/pull/1145.
+		// This restores the 'xlink' name space on the href attrs on <use> elements.
+		.pipe(cheerio({
+			cheerio: require('cheerio'),
+			run: ($, file, done) => {
+				done();
+			}
 		}))
 		.pipe(gulp.dest(paths.sri.dest));
 	done();
