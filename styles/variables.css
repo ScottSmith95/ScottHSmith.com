@@ -15,7 +15,7 @@
 	--blue-translucent-l3: rgba(147, 187, 201, 0.5);
 	
 	/* Typefaces */
-	--font-fam: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
+	--font-fam: 'IBM Plex Sans', -apple-system, blinkmacsystemfont, 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
 	
 	/* Spacing */
 	--space-l1: 0.625rem;
