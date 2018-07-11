@@ -1,0 +1,25 @@
+/*
+Font: 		Caslon Graphique D
+Style: 		Regular
+URL: 		https://www.youworkforthem.com/font/T1463/caslon-graphique
+Foundry: 	URW++
+Foundry: 	https://www.youworkforthem.com/designer/204/urw
+Copyright:	Copyright 2010 URW++ Design & Development
+Version: 	17
+Created:	March 20, 2015
+License: 	https://www.youworkforthem.com/font-license 
+License: 	The WebFont(s) listed in this document must follow the YouWorkForThem
+			WebFont license rules. All other parties are strictly restricted 
+			from using the WebFonts(s) listed without a purchased license. 
+			All details above must always remain unaltered and visible in your CSS.
+*/
+
+@font-face {
+	font-family: 'caslon-graphique';
+	src: url('/fonts/caslon-graphique/caslon-graphique.woff2') format('woff2'),
+	     url('/fonts/caslon-graphique/caslon-graphique.woff') format('woff'),
+	     url('/fonts/caslon-graphique/caslon-graphique.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: fallback;
+}
