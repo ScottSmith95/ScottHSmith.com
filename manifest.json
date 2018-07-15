@@ -3,31 +3,31 @@
 	"name": "Scott Smith",
 	"icons": [
 		{
-			"src": "/images/site-icons/64.jpg",
+			"src": "/assets/favicons/64.jpg",
 			"type": "image/jpeg",
 			"sizes": "64x64"
 		}, {
-			"src": "/images/site-icons/128.jpg",
+			"src": "/assets/favicons/128.jpg",
 			"type": "image/jpeg",
 			"sizes": "128x128"
 		}, {
-			"src": "/images/site-icons/144.jpg",
+			"src": "/assets/favicons/144.jpg",
 			"type": "image/jpeg",
 			"sizes": "144x144"
 		}, {
-			"src": "/images/site-icons/152.jpg",
+			"src": "/assets/favicons/152.jpg",
 			"type": "image/jpeg",
 			"sizes": "152x152"
 		}, {
-			"src": "/images/site-icons/192.jpg",
+			"src": "/assets/favicons/192.jpg",
 			"type": "image/jpeg",
 			"sizes": "192x192"
 		}, {
-			"src": "/images/site-icons/256.jpg",
+			"src": "/assets/favicons/256.jpg",
 			"type": "image/jpeg",
 			"sizes": "256x256"
 		}, {
-			"src": "/images/site-icons/512.jpg",
+			"src": "/assets/favicons/512.jpg",
 			"type": "image/jpeg",
 			"sizes": "512x512"
 		}

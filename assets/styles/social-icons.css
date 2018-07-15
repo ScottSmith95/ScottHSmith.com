@@ -1,7 +1,7 @@
 @import 'variables.css';
 /* @require 'partials/project.css' */
 
-@import '../node_modules/flickity/dist/flickity.css';
+@import '../../node_modules/flickity/dist/flickity.css';
 
 .lightcolor {
 	color: grey; /* = #808080*/

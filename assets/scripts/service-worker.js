@@ -6,13 +6,13 @@ const RUNTIME = 'runtime-' + CACHE_VERSION;
 
 // A list of local resources we always want to be cached.
 const PRECACHE_URLS = [
-	'/styles/build/partials/global.css'
+	'/assets/styles/build/partials/global.css'
 ];
 
 const CACHE_EXCLUDE_URLS = [
 	'/index.html',
 	'/./', // Alias for index.html,
-	'/scripts/build/global.js'
+	'/assets/scripts/build/global.js'
 ];
 
 // The install handler takes care of precaching the resources we always need.

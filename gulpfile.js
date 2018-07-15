@@ -21,26 +21,26 @@ const paths = {
 		watch: '**/*.mustache'
 	},
 	styles: {
-		src: ['styles/**/*.css', '!styles/build/**', '!styles/variables.css', '!styles/partials/_*'],
-		dest: 'styles/build/',
-		watch: ['styles/**/*.css', '!styles/build/**']
+		src: ['assets/styles/**/*.css', '!assets/styles/build/**', '!assets/styles/variables.css', '!assets/styles/partials/_*'],
+		dest: 'assets/styles/build/',
+		watch: ['assets/styles/**/*.css', '!assets/styles/build/**']
 	},
 	teaStyles: {
 		src: 'tea/*.css',
 		dest: 'tea/build/'
 	},
 	sprites: {
-		src: ['images/social-icons/*.svg', '!images/social-icons/home-sprite.svg'],
-		dest: 'images/social-icons'
+		src: ['assets/images/social-icons/*.svg', '!assets/images/social-icons/home-sprite.svg'],
+		dest: 'assets/images/social-icons'
 	},
 	scripts: {
-		src: ['scripts/*.js', '!scripts/build/**', '!scripts/main.js', '!scripts/home.js', '!scripts/social-icons.js'],
-		dest: 'scripts/build/',
-		watch: 'scripts/*.js'
+		src: ['assets/scripts/*.js', '!assets/scripts/build/**', '!assets/scripts/main.js', '!assets/scripts/home.js', '!assets/scripts/social-icons.js'],
+		dest: 'assets/scripts/build/',
+		watch: 'assets/scripts/*.js'
 	},
-	globalScript:      ['scripts/global.js', 'scripts/vendor/modernizr.js'],
-	homeScript:        ['node_modules/boomsvgloader/dist/js/boomsvgloader.js', 'scripts/home.js'],
-	socialIconsScript: ['node_modules/flickity/dist/flickity.pkgd.js', 'scripts/social-icons.js'],
+	globalScript:      ['assets/scripts/global.js', 'assets/scripts/vendor/modernizr.js'],
+	homeScript:        ['node_modules/boomsvgloader/dist/js/boomsvgloader.js', 'assets/scripts/home.js'],
+	socialIconsScript: ['node_modules/flickity/dist/flickity.pkgd.js', 'assets/scripts/social-icons.js'],
 	sri: {
 		src: ['**/*.html', '!tea/**', '!node_modules/**'],
 		dest: './'
