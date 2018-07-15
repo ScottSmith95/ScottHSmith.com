@@ -30,8 +30,8 @@ const paths = {
 		dest: 'tea/build/'
 	},
 	sprites: {
-		src: ['images/Social Icons/*.svg', '!images/Social Icons/home-sprite.svg'],
-		dest: 'images/Social Icons'
+		src: ['images/social-icons/*.svg', '!images/social-icons/home-sprite.svg'],
+		dest: 'images/social-icons'
 	},
 	scripts: {
 		src: ['scripts/*.js', '!scripts/build/**', '!scripts/main.js', '!scripts/home.js', '!scripts/social-icons.js'],
@@ -68,7 +68,7 @@ function html() {
 }
 
 function styles() {
-	processors.push(require('cssnano')({autoprefixer: false, reduceIdents: false}));
+	processors.push(require('cssnano')({preset: 'default'}));
 	
 	return gulp.src(paths.styles.src)
 		.pipe(sourcemaps.init())
