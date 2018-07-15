@@ -1,8 +1,8 @@
 @font-face {
 	font-family: 'acier-bat';
-	src: url('/fonts/acier/acier.woff2') format('woff2'),
-	     url('/fonts/acier/acier.woff') format('woff'),
-	     url('/fonts/acier/acier.ttf') format('truetype');
+	src: url('/assets/fonts/acier/acier.woff2') format('woff2'),
+	     url('/assets/fonts/acier/acier.woff') format('woff'),
+	     url('/assets/fonts/acier/acier.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 	font-display: block;

@@ -10,15 +10,15 @@ Created:	March 20, 2015
 License: 	https://www.youworkforthem.com/font-license 
 License: 	The WebFont(s) listed in this document must follow the YouWorkForThem
 			WebFont license rules. All other parties are strictly restricted 
-			from using the WebFonts(s) listed without a purchased license. 
+			from using the Webfont(s) listed without a purchased license. 
 			All details above must always remain unaltered and visible in your CSS.
 */
 
 @font-face {
 	font-family: 'caslon-graphique';
-	src: url('/fonts/caslon-graphique/caslon-graphique.woff2') format('woff2'),
-	     url('/fonts/caslon-graphique/caslon-graphique.woff') format('woff'),
-	     url('/fonts/caslon-graphique/caslon-graphique.ttf') format('truetype');
+	src: url('/assets/fonts/caslon-graphique/caslon-graphique.woff2') format('woff2'),
+	     url('/assets/fonts/caslon-graphique/caslon-graphique.woff') format('woff'),
+	     url('/assets/fonts/caslon-graphique/caslon-graphique.ttf') format('truetype');
 	font-weight: 700;
 	font-style: normal;
 	font-display: fallback;
