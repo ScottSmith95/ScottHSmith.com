@@ -155,6 +155,7 @@ const scripts = gulp.parallel(globalScript, homeScript, socialIconsScript, funct
 
 function sri() {
 	return gulp.src(paths.sri.src)
+		// Remove integrity attributes to reset.
 		.pipe(cheerio({
 			run: ($, file, done) => {
 				$('link[href][rel=stylesheet], script[src]').each( function() {
@@ -183,11 +184,51 @@ function sri() {
 		.pipe(srihash({
 			algo: 'sha512'
 		}))
-		// Leave until the built-in parser works with namespaced attributes (#1101) https://github.com/cheeriojs/cheerio/pull/1145.
-		// This restores the 'xlink' name space on the href attrs on <use> elements.
 		.pipe(cheerio({
-			cheerio: require('cheerio'),
 			run: ($, file, done) => {
+				$('link[href][rel=stylesheet][integrity], script[src][integrity]').each( function() {
+					if (isLocalPath(this)) {
+						const refAttr = findRef(this);
+						let initRef = $(this).attr(refAttr);
+						
+						// Remove any extant query strings.
+						if (refAttr != null && initRef.includes('?')) {
+							initRef = initRef.substr(0, initRef.indexOf('?'));
+						}
+						
+						let hash = $(this).attr('integrity');
+						let hashDigest = hash.slice(7, 15); // Obtain a digest of the first eight chars of hash.
+						
+						let queriedRef = `${initRef}?${hashDigest}`;
+						$(this).attr(refAttr, queriedRef);
+					}
+					
+					function findRef(node) {
+						if (node.name == 'link') {
+							return 'href';
+						} else if (node.name == 'script') {
+							return 'src';
+						} else {
+							return null;
+						}
+					}
+	
+					function isLocalPath(node) {
+						let src = node.name == 'script' ? node.attribs.src : node.attribs.href;
+						
+						if (!src) {
+							return null;
+						}
+						
+						// Ignore paths that look like like urls as they cannot be resolved on local filesystem.
+						if (src.match(/^(https?:)?\/\//)) {
+							return null;
+						}
+						
+						return src;
+					}
+				});
+				
 				done();
 			}
 		}))

@@ -1,6 +1,6 @@
 'use strict';
 
-const CACHE_VERSION = 'v2018-07-08F'; // Change when major local resources are altered.
+const CACHE_VERSION = 'v2018-07-15A'; // Change when major local resources are altered.
 const PRECACHE = 'precache-' + CACHE_VERSION;
 const RUNTIME = 'runtime-' + CACHE_VERSION;
 
