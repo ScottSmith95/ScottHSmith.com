@@ -54,7 +54,7 @@ const paths = {
 const processors = [
 	require('postcss-import'),
 	require('postcss-nested'),
-	require('postcss-custom-properties'),
+	require('postcss-custom-properties')({warnings: true}),
 	require('postcss-normalize')({forceImport: true}),
 	require('css-mqpacker')({sort: true}),
 	require('autoprefixer')
