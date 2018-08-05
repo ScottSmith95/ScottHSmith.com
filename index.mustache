@@ -17,6 +17,8 @@
 <body>
 		
 	<div class="container" itemscope itemtype="http://schema.org/Person">
+		
+	<link itemprop="gender" href="http://schema.org/Male">
 	
 	<picture>
 		<source
@@ -49,7 +51,7 @@
 	<header>
 		
 		<h1 class="name" itemprop="name">
-			<span class="first">Scott</span> <span class="last">Smith</span>
+			<span class="first" itemprop="givenName">Scott</span> <span class="last" itemprop="familyName">Smith</span>
 		</h1>
 		
 		<ul class="tagline">
@@ -68,7 +70,19 @@
 		</nav>
 		
 		<p class="colophon" itemprop="description">
-			I'm a designer &amp; web developer.<br>Always learning.<br><br>I am an <a href="https://hcde.washington.edu"><abbr title="Human Centered Design and Engineering">HCDE</abbr></a> graduate from the University of Washington, passionate about crafting designs and experiences for people.
+			I'm a designer &amp; web developer.<br>Always learning.<br><br>
+			
+			<span itemprop="alumniOf" itemscope itemtype="http://schema.org/OrganizationRole">
+				<span itemprop="alumniOf" itemscope itemtype="http://schema.org/CollegeOrUniversity">
+					I am a graduate from 
+					<span itemprop="department" itemscope itemtype="http://schema.org/Organization">
+						<a href="https://hcde.washington.edu" itemprop="url"><abbr title="Human Centered Design and Engineering">HCDE</abbr></a>
+						<meta itemprop="name" content="Human Centered Design and Engineering">
+					</span>
+					at the <span itemprop="name">University of Washington</span>, passionate about crafting designs and experiences for people.
+					<link itemprop="sameAs" href="https://www.washington.edu/">
+				</span>
+			</span>
 		</p>
 		<button class="colophon-extender">Show More&hellip;</button>
 		<p id="colophon-extended" class="colophon colophon-extended">
