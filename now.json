@@ -1,0 +1,17 @@
+{
+	"static": {
+		"headers": [{
+			"source": "**/*.@(css|js)",
+			"headers": [{
+				"key": "Cache-Control",
+				"value": "public"
+			}]
+		}, {
+			"source": "**/*.@(svg|mp4|mov|jpg|jpeg|gif|png|webp|ico|zip|pdf|ttf|otf|eot|woff|woff2)",
+			"headers": [{
+				"key": "Cache-Control",
+				"value": "public"
+			}]
+		}]
+	}
+}
