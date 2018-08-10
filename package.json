@@ -10,7 +10,9 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "gulp build",
-    "test": "gulp pretest && stylelint 'styles/build/*.css'"
+    "now-build": "npm i gulp-cli && gulp build",
+    "test": "gulp pretest && stylelint 'styles/build/*.css'",
+    "now-start": "npm i serve && serve"
   },
   "devDependencies": {
     "autoprefixer": "^9.1.0",
@@ -25,7 +27,7 @@
     "gulp-postcss": "^8.0.0",
     "gulp-sitemap": "^5.1.0",
     "gulp-sourcemaps": "^2.6.4",
-    "gulp-sri-hash": "github:ScottSmith95/gulp-sri-hash#use-cached-cheerio",
+    "gulp-sri-hash": "ScottSmith95/gulp-sri-hash#use-cached-cheerio",
     "gulp-svg-sprite": "^1.4.0",
     "gulp-uglify": "^3.0.1",
     "postcss-custom-properties": "^7.0.0",
