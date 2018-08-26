@@ -7,4 +7,5 @@ tea/build/
 **/*.html
 !party/*.html
 
+.DS_Store
 sitemap.xml
