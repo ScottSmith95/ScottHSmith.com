@@ -1,9 +1,8 @@
 # Build site in node image.
 FROM mhart/alpine-node:10 AS build
-RUN ls -a
 WORKDIR /site
 COPY . ./
-RUN apk add --no-cache git
+RUN apk add git
 RUN npm --global install gulp-cli
 RUN npm install
 RUN gulp build
