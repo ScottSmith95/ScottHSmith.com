@@ -12,6 +12,9 @@
 				"key": "Cache-Control",
 				"value": "public"
 			}]
-		}]
+		}],
+		"directoryListing": [
+			"/assets/**"
+		]
 	}
 }
