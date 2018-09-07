@@ -1,7 +1,7 @@
 /* 
  * SVG Icons
  */
-boomsvgloader.load( '/assets/images/social-icons/home-sprite.svg' );
+boomsvgloader.load( '/assets/images/social-icons/build/home-sprite.svg' );
 
 
 /* 

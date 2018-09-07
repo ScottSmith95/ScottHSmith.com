@@ -30,7 +30,7 @@ const paths = {
 		dest: 'tea/build/'
 	},
 	sprites: {
-		src: ['assets/images/social-icons/*.svg', '!assets/images/social-icons/home-sprite.svg'],
+		src: ['assets/images/social-icons/*.svg', '!assets/images/social-icons/build/**'],
 		dest: 'assets/images/social-icons'
 	},
 	scripts: {
@@ -107,7 +107,7 @@ function sprites() {
 				inline: true,
 				dest: '.', // Don't create 'symbols/' directory.
 				prefix: '', // Don't prefix output title.
-				sprite: 'home-sprite' // '.svg' will be appended if not included.
+				sprite: 'build/home-sprite' // '.svg' will be appended if not included.
 			}
 		} 
 	};
