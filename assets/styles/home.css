@@ -365,7 +365,7 @@ button.colophon-extender {
 	}
 	
 	.icons {
-		max-width: 25rem;
+		max-width: calc(4 * 5rem); /* Allow 5 rems per icon. */
 	}
 }
 
