@@ -9,7 +9,7 @@ html.thesis {
 	right: 0;
 	bottom: 0;
 	min-height: 100%;
-	background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23FBFBFB' fill-rule='evenodd'%3E%3Cellipse cx='14.5' cy='34.5' rx='2.5' ry='2.5'/%3E%3Cellipse cx='24.5' cy='34.5' rx='2.5' ry='2.5'/%3E%3Cellipse cx='34.5' cy='24.5' rx='2.5' ry='2.5'/%3E%3Cellipse cx='24.5' cy='24.5' rx='2.5' ry='2.5'/%3E%3Cellipse cx='14.5' cy='14.5' rx='2.5' ry='2.5'/%3E%3Cellipse cx='4.5' cy='14.5' rx='2.5' ry='2.5'/%3E%3Cellipse cx='4.5' cy='4.5' rx='2.5' ry='2.5'/%3E%3Cellipse cx='34.5' cy='4.5' rx='2.5' ry='2.5'/%3E%3C/g%3E%3C/svg%3E"); /* images/dot.svg (URI encoded) */
+	background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23007297' fill-rule='evenodd'%3E%3Cellipse cx='14.5' cy='34.5' rx='2.5' ry='2.5'/%3E%3Cellipse cx='24.5' cy='34.5' rx='2.5' ry='2.5'/%3E%3Cellipse cx='34.5' cy='24.5' rx='2.5' ry='2.5'/%3E%3Cellipse cx='24.5' cy='24.5' rx='2.5' ry='2.5'/%3E%3Cellipse cx='14.5' cy='14.5' rx='2.5' ry='2.5'/%3E%3Cellipse cx='4.5' cy='14.5' rx='2.5' ry='2.5'/%3E%3Cellipse cx='4.5' cy='4.5' rx='2.5' ry='2.5'/%3E%3Cellipse cx='34.5' cy='4.5' rx='2.5' ry='2.5'/%3E%3C/g%3E%3C/svg%3E"); /* images/dot.svg (URI encoded) */
 	background-size: 40px;
 }
 
@@ -46,8 +46,8 @@ h1 {
 	}
 	
 	.thesis & {
-		font-family: 'caslon-graphique';
-		font-size: 4.75em;
+		font-family: 'caslon-graphique', var(--font-fam);
+		font-size: 4.35em;
 		color: var(--darkblue);
 	}
 }
