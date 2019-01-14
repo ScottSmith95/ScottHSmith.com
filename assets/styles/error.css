@@ -36,6 +36,13 @@ main {
 	}
 }
 
+.logo {
+	width: 100%;
+	height: auto;
+	max-width: 5rem;
+	margin-bottom: 2rem;
+}
+
 h1 {
 	font: normal 8em/0.6 'acier-bat', var(--font-fam);
 	color: var(--blue);
@@ -47,7 +54,8 @@ h1 {
 	
 	.thesis & {
 		font-family: 'caslon-graphique', var(--font-fam);
-		font-size: 4.35em;
+		font-size: 3em;
+		line-height: 1;
 		color: var(--darkblue);
 	}
 }
