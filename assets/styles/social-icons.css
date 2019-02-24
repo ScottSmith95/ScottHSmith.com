@@ -4,7 +4,7 @@
 @import '../../node_modules/flickity/dist/flickity.css';
 
 .lightcolor {
-	color: grey; /* = #808080*/
+	color: #767676; /* Lightest AAA contrast ratio against white. */
 }
 
 .bluecolor {
