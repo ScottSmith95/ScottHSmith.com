@@ -10,6 +10,6 @@ before_script:
   - npm install -g gulp-cli stylelint
   - gulp pretest
 script:
-  - stylelint "styles/build/*.css"
+  - stylelint "assets/styles/build/*.css"
 notifications:
   slack: scottsmith:dyOlsu15eZFL1YmhpwngiFrf
