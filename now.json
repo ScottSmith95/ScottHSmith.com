@@ -1,20 +1,27 @@
 {
-	"static": {
+	"name": "ScottHSmith.com",
+	"version": 2,
+	"builds": [
+	    {
+		    "src": "package.json",
+		    "use": "@now/static-build",
+		    "config": { "distDir": "/" }
+		}
+	],
+	"headers": [{
+		"source": "**/*.@(css|js)",
 		"headers": [{
-			"source": "**/*.@(css|js)",
-			"headers": [{
-				"key": "Cache-Control",
-				"value": "public"
-			}]
-		}, {
-			"source": "**/*.@(svg|mp4|mov|jpg|jpeg|gif|png|webp|ico|zip|pdf|ttf|otf|eot|woff|woff2)",
-			"headers": [{
-				"key": "Cache-Control",
-				"value": "public"
-			}]
-		}],
-		"directoryListing": [
-			"/assets/**"
-		]
-	}
+			"key": "Cache-Control",
+			"value": "public"
+		}]
+	}, {
+		"source": "**/*.@(svg|mp4|mov|jpg|jpeg|gif|png|webp|ico|zip|pdf|ttf|otf|eot|woff|woff2)",
+		"headers": [{
+			"key": "Cache-Control",
+			"value": "public"
+		}]
+	}],
+	"directoryListing": [
+		"/assets/**"
+	]
 }

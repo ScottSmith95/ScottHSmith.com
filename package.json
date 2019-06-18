@@ -12,7 +12,7 @@
     "build": "gulp build",
     "now-build": "npm i gulp-cli && gulp build",
     "test": "gulp pretest && stylelint 'styles/build/*.css'",
-    "now-start": "npm i serve && serve"
+    "now-dev": "npm run build"
   },
   "devDependencies": {
     "autoprefixer": "^9.4.7",
