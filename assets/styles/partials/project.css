@@ -318,11 +318,6 @@ header {
 		border-top: none;
 		border-bottom: 0 solid rgba(0, 153, 204, 0);
 		
-		@supports (backdrop-filter: none) {
-		    backdrop-filter: blur(10px);
-		    background: rgba(235, 238, 240, 0.65);
-		}
-		
 		&.shown {
 			border-width: 3px;
 			border-color: var(--blue);
@@ -340,5 +335,11 @@ header {
 		margin-right: auto;
 		margin-left: auto;
 	}
+}
 
+@supports ((backdrop-filter:none)) {
+	.page-nav {
+		backdrop-filter: blur(10px);
+		background: rgba(235, 238, 240, .65)
+	}
 }
