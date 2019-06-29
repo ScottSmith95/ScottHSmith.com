@@ -5,24 +5,16 @@
 		{
 			"src": "package.json",
 			"use": "@now/static-build",
-			"config": { "distDir": "/" }
-		},
-		{
-			"src": "assets/images/**",
-			"use": "@now/static",
-			"config": { "distDir": "assets/images/" }
-		},
-		{
-			"src": "assets/fonts/**",
-			"use": "@now/static",
-			"config": { "distDir": "assets/fonts/" }
-		},
-		{
-			"src": "assets/favicons/**",
-			"use": "@now/static",
-			"config": { "distDir": "assets/favicons/" }
+			"config": {
+				"distDir": "/dist"
+			}
 		}
 	],
+	"build": {
+		"env": {
+			"GHOST_CONTENT_API_KEY": "@ghost-content-api-key"
+		}
+	},
 	"routes": [
 		{
 			"src": "/(.*)",

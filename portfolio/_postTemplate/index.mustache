@@ -1,0 +1,59 @@
+{{> ../../partials/file-header }}
+
+	<title>Scott Smith</title>
+
+	<meta name="Description" content="Scott Smith is a designer & web developer. Passionate about crafting designs and experiences for users. Always learning.">
+
+	{{> ../../partials/meta-tags }}
+
+	<link rel="prefetch" href="/assets/styles/build/partials/project.css">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/assets/styles/build/partials/global.css?2018-07-15">
+	<link rel="stylesheet" href="/assets/styles/build/partials/project.css?2018-07-15">
+	<link rel="stylesheet" href="/assets/styles/build/portfolio.css">
+
+</head>
+
+<body class="post-template">
+
+{{#post}}
+	<header>
+		<nav class="nav">
+			<a href="/"><span class="sr-only">Back to </span>Scott<span class="sr-only"> Smith homepage</span></a>
+			<h2><a href="/portfolio/">Portfolio</a></h2>
+		</nav>
+	</header>
+
+	<main class="content" role="main">
+
+		<article class="post {{#featured}}featured{{/featured}} {{slug}}">
+			<div class="post-header">
+				<img class="post-image" src="{{{feature_image}}}">
+				<h1 class="post-title">{{title}}</h1>
+			</div>
+
+			<div class="post-content">
+				{{{html}}}
+			</div>
+		</article>
+
+	</main>
+
+	<footer>
+		<div class="secondary-items">
+			<h2 class="bin-title">More Work</h2>
+			<div id="secondary-items-container" class="scroll-well">
+				{{> ../_partials/bin}}
+			</div>
+		</div>
+	</footer>
+
+{{/post}}
+
+<script async type="text/javascript" src="/assets/scripts/build/global.js"></script>
+<script async type="text/javascript" src="/assets/scripts/build/portfolio.js"></script>
+
+</body>
+
+</html>

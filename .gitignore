@@ -1,6 +1,6 @@
-node_modules/
-bower_components/
+node_modules
 
+dist
 assets/**/build/
 tea/build/
 **/*.map

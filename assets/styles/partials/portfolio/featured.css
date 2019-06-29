@@ -1,0 +1,273 @@
+section.feature {
+	text-align: left;
+	margin-bottom: var(--space-l3);
+	
+	img {
+		max-width: 100%;
+		height: auto;
+		object-fit: cover;
+	}
+	
+	h2 {
+		font-size: 2em;
+		font-family: 'caslon-graphique', var(--font-fam);
+		font-weight: 700;
+		line-height: 1.25;
+		margin: var(--space-l1) 0;
+	}
+
+	a h2 {
+		color: var(--text-color);
+	}
+	
+	.post-image {
+		animation: main-image 1s ease-out 300ms backwards;
+		
+		&:hover {
+			box-shadow: 0 3px 9px rgba(14,21,47,0.3);
+		}
+		
+		@media (prefers-reduced-motion: reduce) {
+			animation: none;
+		}
+	}
+	
+	.main-text {
+		animation: main-text 1s ease-out 300ms backwards;
+		
+		@media (prefers-reduced-motion: reduce) {
+			animation: none;
+		}
+	}
+	
+	p {
+		margin: 0;
+	}
+	
+	.item-link {
+		display: inline-block;
+		line-height: 2;
+		
+		&::after {
+			transition: transform 0.3s ease-out;
+			content: '';
+			display: inline-block;
+			position: relative;
+			left: 0;
+			top: 0.85em;
+			height: 0.45em;
+			width: 0.45em;
+			transform: rotate(45deg);
+			vertical-align: top;
+			border-style: solid;
+			border-width: 0.1em 0.1em 0 0;
+		}
+		
+		&:hover::after {
+			transition-timing-function: ease-in;
+			transform: rotate(45deg) translate(0.15em, -0.15em);
+		}
+	}
+	
+	.aside {
+		margin-top: var(--space-l2);
+	}
+	
+	.aside-image {
+		display: block;
+		border-radius: 5px;
+		box-shadow: 0 2px 5px rgba(14, 21, 47, 0.2);
+	}
+	
+	.aside-text {
+		color: var(--light-text-color);
+	}
+	
+	.aside.one {
+		animation: aside-one 1s ease-out 300ms backwards;
+		
+		@media (prefers-reduced-motion: reduce) {
+			animation: none;
+		}
+		
+		.aside-image {
+			width: 50%;
+			max-width: 15rem;
+			float: right;
+			margin-left: var(--space-l2);
+			margin-bottom: var(--space-l2);
+		}
+	}
+	
+	.aside.two {
+		animation: aside-two 1s ease-out 300ms backwards;
+		
+		width: 80%;
+		max-width: 25rem;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: var(--space-l2);
+		
+		@media (prefers-reduced-motion: reduce) {
+			animation: none;
+		}
+		
+		.aside-text {
+			margin-top: 1em;
+		}
+	}
+}
+
+@media (min-width: 35em) {
+	section.feature {
+		&:nth-last-child(n+3) {
+			margin-bottom: var(--space-l4);
+		}
+			
+		.main-info {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+		}
+		
+		.main-image {
+			width: 65%;
+		}
+		
+		.main-text {
+			animation-delay: 0s;
+			width: calc(35% - var(--space-l2));
+			
+			h2 {
+				margin-top: -0.2em;
+			}
+		}
+		
+		.aside {
+			position: relative;
+			margin-top: var(--space-l3);
+		}
+		
+		.aside-image {
+			box-shadow: 0 3px 25px rgba(14, 21, 47, 0.35);
+		}
+		
+		.aside-text {
+			margin-top: 1em;
+		}
+		
+		.aside.one {
+			float: right;
+			width: calc(50% - var(--space-l2));
+			max-width: none;
+			
+			.aside-image {
+				width: auto;
+				max-width: 100%;
+				float: none;
+				margin: 0;
+			}
+		}
+		
+		.aside.two {
+			float: left;
+			width: calc(50% - var(--space-l2));
+			max-width: none;
+		}
+	}
+}
+
+@media (min-width: 50em) {
+	section.feature {
+		.aside {
+			margin-right: var(--space-l3);
+		}
+		
+		.aside.one,
+		.aside.two {
+			width: calc(46.5% - 0.625rem);
+		}
+		
+		.aside.one {
+			margin-top: -var(--space-l3);
+		}
+		
+		.aside.two {
+			margin-top: var(--space-l3);
+		}
+	}
+}
+
+/* ----------------- */
+/*     Animations    */
+/* ----------------- */
+@keyframes main-image {
+	from {
+		opacity: 0;
+		transform: translateX(-7.5%) translateY(-25%);
+	}
+	60% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(0) translateY(0);
+	}
+}
+
+@keyframes main-text {
+	from {
+		opacity: 0;
+		transform: translateX(7.5%) translateY(-25%);
+	}
+	60% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(0) translateY(0);
+	}
+}
+
+@media (min-width: 35em) {
+@keyframes main-text {
+	from {
+		opacity: 0;
+		transform: translateX(10%);
+	}
+	60% {
+		opacity: 1;
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+}
+
+@keyframes aside-one {
+	from {
+		opacity: 0;
+		transform: translateX(7.5%) translateY(25%);
+	}
+	60% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(0) translateY(0);
+	}
+}
+
+@keyframes aside-two {
+	from {
+		opacity: 0;
+		transform: translateX(-7.5%) translateY(25%);
+	}
+	60% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(0) translateY(0);
+	}
+}

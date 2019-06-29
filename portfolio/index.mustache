@@ -1,0 +1,56 @@
+{{> ../partials/file-header }}
+
+	<title>Scott Smith</title>
+
+	<meta name="Description" content="Scott Smith is a designer & web developer. Passionate about crafting designs and experiences for users. Always learning.">
+
+	{{> ../partials/meta-tags }}
+
+	<link rel="prefetch" href="/assets/styles/build/partials/project.css">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/assets/styles/build/partials/global.css?2018-07-15">
+	<link rel="stylesheet" href="/assets/styles/build/partials/project.css?2018-07-15">
+	<link rel="stylesheet" href="/assets/styles/build/portfolio.css">
+
+</head>
+
+<body>
+
+	<header>
+		<nav class="nav">
+			<a href="/"><span class="sr-only">Back to </span>Scott<span class="sr-only"> Smith homepage</span></a>
+			<h1><a href="/portfolio/">Portfolio</a></h1>
+		</nav>
+		<div class="desc hire">
+			<p>These are projects I have built both individually and in collaboration with talented teams. Feel free to
+				contact me through any means available on my <a href="/">home page</a> and by <a
+					href="mailto:mail@ScottHSmith.com">email</a></p>
+		</div>
+	</header>
+
+	{{! The main content area on the homepage }}
+	<main class="content" role="main">
+		
+		{{#featured}}
+			{{> _featured/career-canvas}}
+			{{> _featured/clinicians-brief}}
+		{{/featured}}
+
+	</main>
+
+	<footer>
+		<div class="secondary-items">
+			<h2 class="bin-title">More Work</h2>
+			<div id="secondary-items-container" class="scroll-well">
+				{{> _partials/bin}}
+			</div>
+		</div>
+	</footer>
+
+<script async type="text/javascript" src="/assets/scripts/build/global.js"></script>
+<script async type="text/javascript" src="/assets/scripts/build/portfolio.js"></script>
+
+</body>
+
+</html>
