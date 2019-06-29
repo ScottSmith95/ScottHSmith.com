@@ -151,7 +151,6 @@ async function getPortfolioPosts() {
 				if ( post.featured ) {
 					const index = camelize(post.slug).replace( '-', '' )
 					post.url = getPathUrl( post.url )
-					console.log(post.url)
 					featuredPosts[index] = post
 				} else {
 					post.url = getPathUrl( post.url )
