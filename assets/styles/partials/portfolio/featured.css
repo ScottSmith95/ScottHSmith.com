@@ -24,7 +24,7 @@ section.feature {
 		animation: main-image 1s ease-out 300ms backwards;
 		
 		&:hover {
-			box-shadow: 0 3px 9px rgba(14,21,47,0.3);
+			box-shadow: 0 3px 9px rgba(14, 21, 47, 0.3);
 		}
 		
 		@media (prefers-reduced-motion: reduce) {

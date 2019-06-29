@@ -141,7 +141,7 @@
 	}
 	
 	.kg-gallery-row:not(:first-of-type) {
-		margin: var(--space-l1) 0 0 0;
+		margin: var(--space-l1) 0 0;
 	}
 	
 	.kg-gallery-image:not(:first-of-type) {
