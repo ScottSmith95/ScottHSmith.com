@@ -1,6 +1,7 @@
 {
 	"name": "ScottHSmith.com",
 	"version": 2,
+	"alias": "scotthsmith.com",
 	"builds": [
 		{
 			"src": "package.json",
