@@ -45,7 +45,7 @@
 	padding: var(--space-l2) var(--space-l2) var(--space-l1);
 	border-radius: 10px;
 	
-	.card.post {
+	.card {
 		display: inline-block;
 		width: 16em; /* Since images are set to 256 px and 256/16 is 16. */
 		max-width: 92.5%;
@@ -92,9 +92,7 @@
 }
 
 .card {
-	&.post {
-		text-align: left;
-	}
+	text-align: left;
 	
 	.post-title {
 		font-size: 1.65em;
