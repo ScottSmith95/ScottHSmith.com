@@ -1,6 +1,9 @@
 {
 	"name": "ScottHSmith.com",
-	"alias": "scotthsmith.com",
+	"alias": [
+		"scotthsmith.com",
+		"www.scotthsmith.com"
+	],
 	"version": 2,
 	"builds": [
 		{
