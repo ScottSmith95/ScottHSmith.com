@@ -1,28 +1,21 @@
 {
 	"name": "ScottHSmith.com",
+	"alias": "scotthsmith.com",
 	"version": 2,
 	"builds": [
 		{
 			"src": "package.json",
 			"use": "@now/static-build",
-			"config": { "distDir": "/" }
-		},
-		{
-			"src": "assets/images/**",
-			"use": "@now/static",
-			"config": { "distDir": "assets/images/" }
-		},
-		{
-			"src": "assets/fonts/**",
-			"use": "@now/static",
-			"config": { "distDir": "assets/fonts/" }
-		},
-		{
-			"src": "assets/favicons/**",
-			"use": "@now/static",
-			"config": { "distDir": "assets/favicons/" }
+			"config": {
+				"distDir": "/dist"
+			}
 		}
 	],
+	"build": {
+		"env": {
+			"GHOST_CONTENT_API_KEY": "@ghost-content-api-key"
+		}
+	},
 	"routes": [
 		{
 			"src": "/(.*)",
@@ -45,5 +38,8 @@
 				"value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://use.typekit.net https://p.typekit.net; img-src 'self' data:; font-src 'self' https://use.typekit.net; media-src 'self' http://files.scottshar.es/; object-src 'none'; frame-src 'none'; upgrade-insecure-requests; base-uri https://scotthsmith.com; manifest-src 'self' ; report-uri https://d9a890ffaa282864b2e1a6b33b56bb2a.report-uri.com/r/d/csp/reportOnly; require-sri-for script;"
 			}
 		}
-	]
+	],
+	"github": {
+		"silent": true
+	}
 }

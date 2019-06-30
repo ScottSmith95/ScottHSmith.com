@@ -1,0 +1,25 @@
+/* Featured Projects. */
+@import 'featured.css';
+
+/* More Projects section. "The Bin". */
+@import 'bin.css';
+
+.home-template {
+	h2 > a,
+	h3 > a {
+		transition: text-shadow 0.3s ease;
+		color: var(--text-color);
+		text-shadow: 0 0 9px rgba(14, 21, 47, 0);
+		
+		@media (hover) {
+		&:hover {
+			color: var(--text-color);
+			text-shadow: 0 3px 9px rgba(14, 21, 47, 0.2);
+		}
+		}
+	}
+	
+	.post-image:hover {
+		box-shadow: 0 3px 9px rgba(14, 21, 47, 0.3);
+	}
+}

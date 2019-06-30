@@ -1,0 +1,69 @@
+@import 'variables.css';
+
+/* Front page. */
+@import 'partials/portfolio/index.css';
+
+/* Individual post pages. */
+@import 'partials/portfolio/single.css';
+
+a {
+	transition: color 0.35s ease-out;
+	color: var(--blue);
+	text-decoration: none;
+	
+	@media (hover) {
+	&:hover {
+		color: var(--darkblue);
+	}
+	
+	&:active {
+		color: var(--text-color);
+	}
+	}
+}
+
+.content {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0;
+}
+
+section,
+footer {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: var(--space-l2);
+	padding-right: var(--space-l2);
+	
+	@supports (padding-left: env(safe-area-inset-left)) {
+		padding-left: calc(var(--space-l2) + env(safe-area-inset-left));
+		padding-right: calc(var(--space-l2) + env(safe-area-inset-right));
+	}
+}
+
+footer {
+	max-width: 55em;
+	margin-top: var(--space-l1);
+	margin-bottom: var(--space-l2);
+	
+	
+	@supports (margin-bottom: env(safe-area-inset-bottom)) {
+		margin-bottom: calc(var(--space-l2) + env(safe-area-inset-bottom));
+	}
+}
+
+.post-image {
+	transition: box-shadow 0.5s ease;
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	box-shadow: 0 2px 5px rgba(14, 21, 47, 0.2);
+	border-radius: 5px;
+	margin: 0;
+}
+
+.pagination {
+	margin: 0 auto;
+	padding: var(--space-l2) 0;
+	text-align: center;
+}
