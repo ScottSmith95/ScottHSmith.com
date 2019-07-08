@@ -15,7 +15,6 @@ const sitemap = require( 'gulp-sitemap' );
 const sourcemaps = require( 'gulp-sourcemaps' );
 const GhostContentAPI = require( '@tryghost/content-api' );
 const data = require( 'gulp-data' );
-const url = require( 'url' );
 
 const paths = {
 	html: {
@@ -66,7 +65,7 @@ const paths = {
 		'assets/scripts/social-icons.js'
 	],
 	sri: {
-		src: [ '**/*.html', '!portfolio/**', '!node_modules/**' ],
+		src: [ '**/*.html', '!node_modules/**' ],
 		dest: './'
 	},
 	sitemap: {
@@ -289,7 +288,8 @@ function sri() {
 		.src( paths.sri.src )
 		.pipe(
 			srihash( {
-				algo: 'sha512'
+				algo: 'sha512',
+				selector: 'link[href][rel=stylesheet], script[src]'
 			} )
 		)
 		.pipe(
@@ -348,7 +348,6 @@ function sri() {
 			} )
 		)
 		.pipe( gulp.dest( paths.sri.dest ) );
-	done();
 }
 
 function makeSitemap() {
