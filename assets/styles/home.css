@@ -210,10 +210,6 @@ nav {
 			margin-left: -0.35em;
 		}
 	}
-
-	@media (min-width: 22em) {
-		flex-flow: nowrap;
-	}
 }
 
 button.colophon-extender {
@@ -377,6 +373,7 @@ button.colophon-extender {
 @media (min-width: 26em) {
 	nav {
 		font-size: 2rem;
+		flex-flow: nowrap;
 		
 		a {
 			padding: 0 var(--space-l2);
