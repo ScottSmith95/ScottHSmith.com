@@ -105,11 +105,6 @@ header {
 	}
 }
 
-
-.no-flexbox .content section {
-	clear: both;
-}
-
 .section-head {
 	flex: 0 1 auto;
 	width: 4em;
@@ -119,19 +114,11 @@ header {
 	margin-top: 1em; /* Aligns section head with top of paragraph */
 }
 
-.no-flexbox .section-head {
-	float: left;
-}
-
 .desc {
 	flex: 4 3 75%;
 	font-size: 1em;
 	line-height: 1.5;
 	margin: 0 auto;
-}
-
-.no-flexbox .desc {
-	overflow: hidden;
 }
 
 .desc p {

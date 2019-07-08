@@ -195,7 +195,8 @@ nav a {
 
 /* Styles only pertaining to these buttons. */
 nav {
-	display: inline-block;
+	display: flex;
+	flex-flow: wrap;
 	font-size: 1.65rem;
 	margin: 0 auto var(--space-l2);
 	
@@ -208,6 +209,10 @@ nav {
 			left: 0;
 			margin-left: -0.35em;
 		}
+	}
+
+	@media (min-width: 22em) {
+		flex-flow: nowrap;
 	}
 }
 
@@ -518,34 +523,6 @@ button.colophon-extender {
 	to {
 		opacity: 1;
 		transform: translateX(0) translateY(0);
-	}
-}
-
-@keyframes tagline-accents-left {
-	from {
-		opacity: 0;
-		transform: translateY(15%) translateX(35%);
-	}
-	60% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-	to {
-		transform: translateX(0);
-	}
-}
-
-@keyframes tagline-accents-right {
-	from {
-		opacity: 0;
-		transform: translateY(15%) translateX(-35%);
-	}
-	60% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-	to {
-		transform: translateX(0);
 	}
 }
 

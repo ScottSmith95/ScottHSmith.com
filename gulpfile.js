@@ -38,10 +38,6 @@ const paths = {
 		dest: 'assets/styles/build/',
 		watch: [ 'assets/styles/**/*.css', '!assets/styles/build/**' ]
 	},
-	teaStyles: {
-		src: 'tea/*.css',
-		dest: 'tea/build/'
-	},
 	sprites: {
 		src: [
 			'assets/images/social-icons/*.svg',
@@ -60,10 +56,7 @@ const paths = {
 		dest: 'assets/scripts/build/',
 		watch: 'assets/scripts/*.js'
 	},
-	globalScript: [
-		'assets/scripts/global.js',
-		'assets/scripts/vendor/modernizr.js'
-	],
+	globalScript: 'assets/scripts/global.js',
 	homeScript: [
 		'node_modules/boomsvgloader/dist/js/boomsvgloader.js',
 		'assets/scripts/home.js'
@@ -73,7 +66,7 @@ const paths = {
 		'assets/scripts/social-icons.js'
 	],
 	sri: {
-		src: [ '**/*.html', '!tea/**', '!portfolio/**', '!node_modules/**' ],
+		src: [ '**/*.html', '!portfolio/**', '!node_modules/**' ],
 		dest: './'
 	},
 	sitemap: {
@@ -210,15 +203,6 @@ async function portfolioPosts() {
 }
 
 const portfolio = gulp.parallel(portfolioIndex, portfolioPosts);
-
-function teaStyles() {
-	return gulp
-		.src( paths.teaStyles.src )
-		.pipe( sourcemaps.init() )
-		.pipe( postcss( processors ) )
-		.pipe( sourcemaps.write( './' ) )
-		.pipe( gulp.dest( paths.teaStyles.dest ) );
-}
 
 function stylesForLint() {
 	return gulp
@@ -388,14 +372,14 @@ function watch() {
 // Workflows
 // $ gulp: Builds, prefixes, and minifies CSS files; concencates and minifies JS files; watches for changes. The works.
 const defaultTask = gulp.series(
-	gulp.parallel( html, portfolio, styles, teaStyles, sprites, scripts ),
+	gulp.parallel( html, portfolio, styles, sprites, scripts ),
 	sri,
 	watch
 );
 
 // $ gulp build: Builds, prefixes, and minifies CSS files; concencates and minifies JS files. For deployments.
 const buildTask = gulp.series(
-	gulp.parallel( html, portfolio, styles, teaStyles, sprites, scripts ),
+	gulp.parallel( html, portfolio, styles, sprites, scripts ),
 	sri
 );
 
