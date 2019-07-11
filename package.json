@@ -13,10 +13,10 @@
 	},
 	"scripts": {
 		"build": "gulp build",
-		"now-build": "npm i gulp-cli && gulp build && npm run create-dist",
+		"now-build": "npm i gulp-cli && gulp build && gulp sitemap && npm run create-dist",
 		"test": "gulp pretest && stylelint 'styles/build/*.css'",
 		"now-dev": "npm i gulp-cli && gulp build && npm run create-dist",
-		"create-dist": "if [ -d dist ]; then rm -rf ./dist; fi && mkdir -p dist && rsync -rR {index.html,manifest.webmanifest,./assets/,./portfolio/,./miscellanea/,./error/,./.well-known/} dist"
+		"create-dist": "if [ -d dist ]; then rm -rf ./dist; fi && mkdir -p dist && rsync -rR {index.html,manifest.webmanifest,sitemap.xml,./assets/,./portfolio/,./miscellanea/,./error/,./.well-known/} dist"
 	},
 	"devDependencies": {
 		"@tryghost/content-api": "^1.2.5",
@@ -46,8 +46,5 @@
 		"last 2 versions",
 		"> 2.5% in US",
 		"Firefox ESR"
-	],
-	"dependencies": {
-		"gulp-cli": "^2.2.0"
-	}
+	]
 }
