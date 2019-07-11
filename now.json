@@ -38,17 +38,17 @@
 			}
 		},
 		{
-			"src": "/projects/(.*)",
-			"status": 301,
-			"headers": {
-				"Location": "/miscellanea/$1"
-			}
-		},
-		{
 			"src": "/projects/decode",
 			"status": 301,
 			"headers": {
 				"Location": "/miscellanea/decode-archive"
+			}
+		},
+		{
+			"src": "/projects/(.*)",
+			"status": 301,
+			"headers": {
+				"Location": "/miscellanea/$1"
 			}
 		},
 		{
