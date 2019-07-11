@@ -25,22 +25,19 @@
 		{
 			"src": "/(.*)",
 			"headers": {
-				"key": "Strict-Transport-Security",
-				"value": "max-age=31536000; always"
+				"Strict-Transport-Security": "max-age=31536000; always"
 			}
 		},
 		{
 			"src": "/index.html",
 			"headers": {
-				"key": "Link",
-				"value": "</assets/fonts/acier/acier.woff2>; rel=preload; as=font; crossorigin, </assets/images/social-icons/home-sprite.svg>; rel=preload; as=fetch; type='image/svg+xml'; crossorigin"
+				"Link": "</assets/fonts/acier/acier.woff2>; rel=preload; as=font; crossorigin, </assets/images/social-icons/home-sprite.svg>; rel=preload; as=fetch; type='image/svg+xml'; crossorigin"
 			}
 		},
 		{
 			"src": "/portfolio/(.*)",
 			"headers": {
-				"key": "Content-Security-Policy-Report-Only",
-				"value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://use.typekit.net https://p.typekit.net; img-src 'self' data:; font-src 'self' https://use.typekit.net; media-src 'self' http://files.scottshar.es/; object-src 'none'; frame-src 'none'; upgrade-insecure-requests; base-uri https://scotthsmith.com; manifest-src 'self' ; report-uri https://d9a890ffaa282864b2e1a6b33b56bb2a.report-uri.com/r/d/csp/reportOnly; require-sri-for script;"
+				"Content-Security-Policy-Report-Only": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://use.typekit.net https://p.typekit.net; img-src 'self' data:; font-src 'self' https://use.typekit.net; media-src 'self' http://files.scottshar.es/; object-src 'none'; frame-src 'none'; upgrade-insecure-requests; base-uri https://scotthsmith.com; manifest-src 'self' ; report-uri https://d9a890ffaa282864b2e1a6b33b56bb2a.report-uri.com/r/d/csp/reportOnly; require-sri-for script;"
 			}
 		}
 	],
