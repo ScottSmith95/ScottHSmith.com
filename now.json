@@ -30,10 +30,10 @@
 			}
 		},
 		{
-			"src": "/index.html",
+			"src": "/",
 			"continue": true,
 			"headers": {
-				"Link": "</assets/fonts/acier/acier.woff2>; rel=preload; as=font; crossorigin, </assets/images/social-icons/home-sprite.svg>; rel=preload; as=fetch; type='image/svg+xml'; crossorigin"
+				"Link": "</assets/fonts/acier/acier.woff2>; rel=preload; as=font; crossorigin, </assets/images/social-icons/build/home-sprite.svg>; rel=preload; as=fetch; type='image/svg+xml'; crossorigin"
 			}
 		},
 		{
