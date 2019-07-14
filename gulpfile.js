@@ -289,7 +289,8 @@ function sri() {
 		.pipe(
 			srihash( {
 				algo: 'sha512',
-				selector: 'link[href][rel=stylesheet], script[src]'
+				selector: 'link[href][rel=stylesheet], script[src]',
+				cacheParser: true
 			} )
 		)
 		.pipe(
@@ -379,7 +380,7 @@ const defaultTask = gulp.series(
 // $ gulp build: Builds, prefixes, and minifies CSS files; concencates and minifies JS files. For deployments.
 const buildTask = gulp.series(
 	gulp.parallel( html, portfolio, styles, sprites, scripts ),
-	sri
+	gulp.parallel( sri, makeSitemap )
 );
 
 // $ gulp test: Runs stylelint against built CSS files. For CI.
