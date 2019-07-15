@@ -38,6 +38,10 @@
 			}
 		},
 		{
+			"src": "/favicon.ico",
+			"dest": "/assets/favicons/favicon.ico"
+		},
+		{
 			"src": "/projects/decode",
 			"status": 301,
 			"headers": {
