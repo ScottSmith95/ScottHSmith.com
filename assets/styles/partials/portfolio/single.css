@@ -145,7 +145,7 @@
 }
 
 /* Tablet */
-@media (min-width: 35em) {
+@media (--width-l2) {
 .post-template {
 	.post-header {
 		margin: 0 var(--space-l2);

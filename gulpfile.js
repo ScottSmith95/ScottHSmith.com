@@ -82,10 +82,10 @@ const portfolioApi = new GhostContentAPI( {
 
 const processors = [
 	require( 'postcss-import' ),
+	require( 'postcss-normalize' ),
 	require( 'postcss-nested' ),
 	require( 'postcss-custom-properties' ),
-	require( 'postcss-normalize' )( { forceImport: true } ),
-	require( 'css-mqpacker' )( { sort: true } ),
+	require( 'postcss-custom-media' ),
 	require( 'autoprefixer' )
 ];
 

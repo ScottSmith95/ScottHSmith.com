@@ -118,7 +118,7 @@ section.feature {
 	}
 }
 
-@media (min-width: 35em) {
+@media (--width-l2) {
 	section.feature {
 		&:nth-last-child(n+3) {
 			margin-bottom: var(--space-l4);
@@ -177,7 +177,7 @@ section.feature {
 	}
 }
 
-@media (min-width: 50em) {
+@media (--width-l3) {
 	section.feature {
 		.aside {
 			margin-right: var(--space-l3);
@@ -229,7 +229,7 @@ section.feature {
 	}
 }
 
-@media (min-width: 35em) {
+@media (--width-l2) {
 @keyframes main-text {
 	from {
 		opacity: 0;

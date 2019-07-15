@@ -276,7 +276,7 @@ section.donate {
 }
 
 /* Tablet */
-@media (min-width: 35em) {
+@media (--width-l2) {
 	.screenshot-box {
 		height: 15em;
 		
@@ -315,7 +315,7 @@ section.donate {
 }
 
 /* Desktop */
-@media (min-width: 50em) {
+@media (--width-l3) {
 	.screenshot-box {
 		.bubble {
 			max-width: 15%;

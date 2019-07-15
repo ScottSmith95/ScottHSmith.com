@@ -69,7 +69,7 @@
 		margin-bottom: var(--space-l3);
 		
 		
-		@media (min-width: 35em) {
+		@media (--width-l2) {
 			width: 47%;
 			
 			&:nth-child(odd) {

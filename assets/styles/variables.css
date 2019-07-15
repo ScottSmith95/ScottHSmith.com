@@ -1,18 +1,23 @@
+@custom-media --width-l1 (min-width: 22.5em);
+@custom-media --width-l2 (min-width: 35em);
+@custom-media --width-l3 (min-width: 50em);
+@custom-media --width-l4 (min-width: 65em);
+
 :root {
 	color-scheme: light dark;
 	/* Colors */
 	--blue: #009BCD;
 	--turquoise: #53C2C9;
-	--darkblue: #007EA6;
+	--blue-secondary: #007EA6;
 	--darkgrey: #444444;
 	--text-color: #444444;
 	--secondary-text-color: #5C6F75;
 	--secondary-large-text-color: #63787E;
 	--bg-color: #ECEEF0;
 	--divider-color: #D9DBDE;
-	--blue-translucent-l1: rgba(147, 187, 201, 0.2);
-	--blue-translucent-l2: rgba(147, 187, 201, 0.4);
-	--blue-translucent-l3: rgba(147, 187, 201, 0.5);
+	--action-background-l1: rgba(147, 187, 201, 0.2);
+	--action-background-l2: rgba(147, 187, 201, 0.4);
+	--action-background-l3: rgba(147, 187, 201, 0.5);
 	
 	/* Typefaces */
 	--font-fam: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
@@ -24,6 +29,7 @@
 	--space-l4: 5rem;
 
 }
+
 @media (prefers-color-scheme: dark) {
 :root {
 	--bg-color: #202020;
@@ -31,5 +37,8 @@
 	--secondary-text-color: #C6CCD2;
 	--secondary-large-text-color: #B5BDC4;
 	--divider-color: #4A545E;
+	--action-background-l1: rgba(74, 84, 94, 0.4);
+	--action-background-l2: rgba(74, 84, 94, 0.6);
+	--action-background-l3: rgba(74, 84, 94, 0.7);
 }
 }

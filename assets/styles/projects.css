@@ -72,7 +72,7 @@
 }
 
 /* Medium */
-@media (min-width: 35em) {
+@media (--width-l2) {
 	header .desc {
 		margin-bottom: 7.5%;
 	}

@@ -130,7 +130,7 @@ header {
 		@media (any-hover) {
 		&:hover {
 			color: var(--blue);
-			background-color: var(--blue-translucent-l2);
+			background-color: var(--action-background-l2);
 			margin-left: 0;
 
 			&::after {
@@ -139,8 +139,8 @@ header {
 		}
 		
 		&:active {
-			color: var(--darkblue);
-			background-color: var(--blue-translucent-l3);
+			color: var(--blue-secondary);
+			background-color: var(--action-background-l3);
 			margin-left: 0;
 			
 			&::after {
@@ -150,10 +150,10 @@ header {
 		}
 		
 		&:focus {
-			color: var(--darkblue);
-			background-color: var(--blue-translucent-l3);
+			color: var(--blue-secondary);
+			background-color: var(--action-background-l3);
 			padding-left: 0.25em;
-			border-color: var(--darkblue);
+			border-color: var(--blue-secondary);
 			outline: none;
 			margin-left: 0;
 			
@@ -181,7 +181,7 @@ header {
 		
 			@media (any-hover) {
 			&:hover {
-				color: var(--darkblue);
+				color: var(--blue-secondary);
 			}
 			
 			&:active {
@@ -201,8 +201,8 @@ header {
 	width: 100%;
 	font-size: 2em;
 	list-style: none;
-	border-top: 0 solid rgba(222, 222, 222, 0);
-	border-bottom: 0 solid rgba(222, 222, 222, 0);
+	border-top: 0 solid transparent;
+	border-bottom: 0 solid transparent;
 	z-index: 2;
 
 	
@@ -210,7 +210,7 @@ header {
 		transition-timing-function: ease-in, ease, ease;
 		max-height: 4.6em;
 		border-width: 1px;
-		border-color: #DEDEDE;
+		border-color: var(--divider-color);
 		margin-top: 1rem;
 	}
 
@@ -263,14 +263,14 @@ header {
 		}
 		
 		&:active {
-			color: var(--darkblue);
+			color: var(--blue-secondary);
 		}
 		}
 	}
 }
 
 /* Tablet */
-@media (min-width: 35em) {
+@media (--width-l2) {
 	header {
 		width: 80%;
 		margin: var(--space-l3) auto;
@@ -313,11 +313,15 @@ header {
 		width: auto;
 		font-size: 2.5em;
 		padding: 0 0.25em;
-		background: rgba(235, 238, 240, 0.95);
+		background-color: rgba(235, 238, 240, 0.95);
 		box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 		border-top: none;
 		border-bottom: 0 solid rgba(0, 153, 204, 0);
 		
+		@media (--width-l2) (prefers-color-scheme: dark) {
+			background-color: rgba(32, 32, 32, 0.95);
+		}
+
 		&.shown {
 			border-width: 3px;
 			border-color: var(--blue);
@@ -340,6 +344,10 @@ header {
 @supports ((backdrop-filter:none)) {
 	.page-nav {
 		backdrop-filter: blur(10px);
-		background: rgba(235, 238, 240, .65)
+		background-color: rgba(235, 238, 240, .65);
+
+		@media (prefers-color-scheme: dark) {
+			background-color: rgba(32, 32, 32, 0.85);
+		}
 	}
 }

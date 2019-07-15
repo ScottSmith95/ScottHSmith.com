@@ -18,6 +18,10 @@
 	@media (prefers-reduced-motion: reduce) {
 		animation: none;
 	}
+
+	@media (prefers-color-scheme: dark) {
+		box-shadow: 0 0 55px 0 rgba(0, 0, 0, 0.9);
+	}
 }
 
 header {
@@ -124,7 +128,7 @@ footer a {
 	}
 	
 	&:active {
-		color: var(--darkblue);
+		color: var(--blue-secondary);
 	}
 	}
 }
@@ -135,7 +139,7 @@ nav a {
 	display: inline-block;
 	font-weight: 600;
 	color: var(--blue);
-	background-color: var(--blue-translucent-l1);
+	background-color: var(--action-background-l1);
 	padding: 0 var(--space-l1);
 	border-radius: 5px;
 	border: 0.07em solid transparent;
@@ -160,7 +164,7 @@ nav a {
 	@media (any-hover) {
 	&:hover {
 		color: var(--blue);
-		background-color: var(--blue-translucent-l2);
+		background-color: var(--action-background-l2);
 		
 		&::after {
 			border-color: var(--blue);
@@ -169,25 +173,25 @@ nav a {
 	}
 	
 	&:active {
-		color: var(--darkblue);
-		background-color: var(--blue-translucent-l3);
+		color: var(--blue-secondary);
+		background-color: var(--action-background-l3);
 		
 		
 		&::after {
-			border-color: var(--darkblue);
+			border-color: var(--blue-secondary);
 			margin-left: 0.1em;
 		}
 	}
 	}
 	
 	&:focus {
-		color: var(--darkblue);
-		background-color: var(--blue-translucent-l3);
-		border-color: var(--darkblue);
+		color: var(--blue-secondary);
+		background-color: var(--action-background-l3);
+		border-color: var(--blue-secondary);
 		outline: none;
 		
 		&::after {
-			border-color: var(--darkblue);
+			border-color: var(--blue-secondary);
 			margin-left: 0.1em;
 		}
 	}
@@ -253,31 +257,31 @@ button.colophon-extender {
 	
 	@media (any-hover) {
 	&:hover {
-		color: var(--darkblue);
+		color: var(--blue-secondary);
 		
 		&::after {
-			border-color: var(--darkblue);
+			border-color: var(--blue-secondary);
 		}
 	}
 	
 	&:active {
-		color: var(--darkblue);
+		color: var(--blue-secondary);
 		
 		&::after {
-			border-color: var(--darkblue);
+			border-color: var(--blue-secondary);
 		}
 	}
 	}
 	
 	&:focus {
-		color: var(--darkblue);
-		background-color: var(--blue-translucent-l3);
+		color: var(--blue-secondary);
+		background-color: var(--action-background-l3);
 		padding: 0.15em 0.75em 0.25em 0.35em;
-		border-color: var(--darkblue);
+		border-color: var(--blue-secondary);
 		outline: none;
 		
 		&::after {
-			border-color: var(--darkblue);
+			border-color: var(--blue-secondary);
 		}
 	}
 	
@@ -299,7 +303,7 @@ button.colophon-extender {
 		max-height: 16.5em;
 		margin-top: var(--space-l1);
 		
-		@media (min-width: 50em) {
+		@media (--width-l3) {
 			max-height: 9em;
 		}
 	}
@@ -382,7 +386,7 @@ button.colophon-extender {
 	}
 }
 
-@media (min-width: 35em) {
+@media (--width-l2) {
 	header,
 	section,
 	footer {
@@ -423,7 +427,7 @@ button.colophon-extender {
 	}
 }
 
-@media (min-width: 50em) {
+@media (--width-l3) {
 	.container {
 		max-width: 35em;
 	}

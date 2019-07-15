@@ -68,7 +68,7 @@
 }
 
 /* Medium */
-@media (min-width: 35em) {
+@media (--width-l2) {
 	
 	/* Move paging icons over to either side of carousel. */
 	.flickity-prev-next-button.next {
@@ -81,7 +81,7 @@
 }
 
 /* Large */
-@media (min-width: 50em) {
+@media (--width-l3) {
 	.download {
 		height: 4em;
 		margin: 3.5% 2.5% 2.5%;
@@ -89,7 +89,7 @@
 }
 
 /* XL */
-@media (min-width: 65em) {
+@media (--width-l4) {
 	.grid-carousel {
 		max-width: 30em;
 		

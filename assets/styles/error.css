@@ -2,7 +2,7 @@
 @import 'partials/_acier-font-face.css';
 
 html.thesis {
-	background-color: var(--darkblue);
+	background-color: var(--blue-secondary);
 	z-index: -1;
 	top: 0;
 	left: 0;
@@ -56,7 +56,7 @@ h1 {
 		font-family: 'caslon-graphique', var(--font-fam);
 		font-size: 3em;
 		line-height: 1;
-		color: var(--darkblue);
+		color: var(--blue-secondary);
 	}
 }
 
