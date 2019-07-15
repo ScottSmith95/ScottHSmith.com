@@ -1,6 +1,7 @@
 node_modules/
 
 dist/
+.env.build
 assets/**/build/
 tea/build/
 **/*.map

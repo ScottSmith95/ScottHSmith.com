@@ -12,11 +12,13 @@
 		"node": "^10.13.0"
 	},
 	"scripts": {
-		"build": "gulp build",
-		"now-build": "npm i gulp-cli && gulp build && gulp sitemap && npm run create-dist",
-		"test": "gulp pretest && stylelint 'styles/build/*.css'",
-		"now-dev": "npm i gulp-cli && gulp build && npm run create-dist",
-		"create-dist": "if [ -d dist ]; then rm -rf ./dist; fi && mkdir -p dist && rsync -rR {index.html,manifest.webmanifest,sitemap.xml,./assets/,./portfolio/,./miscellanea/,./error/,./.well-known/} dist"
+		"build": "gulp build && gulp sitemap",
+		"dev": "gulp & serve",
+		"now-build": "npm run build && npm run create-dist",
+		"now-dev": "gulp build && npm run create-dist && npm run serve",
+		"create-dist": "if [ -d dist ]; then rm -rf ./dist; fi && mkdir -p dist && rsync -rR {index.html,manifest.webmanifest,sitemap.xml,./assets/,./portfolio/,./miscellanea/,./error/,./.well-known/} dist",
+		"serve": "serve",
+		"test": "gulp pretest && stylelint 'styles/build/*.css'"
 	},
 	"devDependencies": {
 		"@tryghost/content-api": "^1.2.5",
@@ -46,5 +48,9 @@
 		"last 2 versions",
 		"> 2.5% in US",
 		"Firefox ESR"
-	]
+	],
+	"dependencies": {
+		"gulp-cli": "^2.2.0",
+		"serve": "^11.1.0"
+	}
 }

@@ -363,7 +363,7 @@ function makeSitemap() {
 }
 
 function watch() {
-	gulp.watch( paths.html.watch, gulp.series( html, sri ) );
+	gulp.watch( paths.html.watch, gulp.series( gulp.parallel( html, portfolio ), sri ) );
 	gulp.watch( paths.styles.watch, gulp.series( styles, sri ) );
 	gulp.watch( paths.sprites.src, sprites );
 	gulp.watch( paths.scripts.watch, gulp.series( scripts, sri ) );
