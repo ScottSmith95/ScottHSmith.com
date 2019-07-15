@@ -1,8 +1,10 @@
 {{> ../../partials/file-header }}
 
-	<title>Scott Smith</title>
-
-	<meta name="Description" content="Scott Smith is a designer & web developer. Passionate about crafting designs and experiences for users. Always learning.">
+	{{#post}}
+		<title>{{title}} | Scott Smith</title>
+		<meta name="title" content="{{meta_title}}">
+		<meta name="Description" content="{{meta_description}}">
+	{{/post}}
 
 	{{> ../../partials/meta-tags }}
 
