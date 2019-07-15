@@ -1,7 +1,7 @@
 .secondary-items {
 	text-align: left;
 	padding-top: var(--space-l2);
-	border-top: 3px solid #D9DBDE;
+	border-top: 3px solid var(--divider-color);
 	
 	h2.bin-title {
 		font-size: 2em;

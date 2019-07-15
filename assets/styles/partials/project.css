@@ -36,7 +36,7 @@ header {
 		& > a {
 			transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, padding-left 0.3s ease, margin-left 0.3s ease;
 			font-weight: 300;
-			color: var(--large-light-text-color);
+			color: var(--secondary-large-text-color);
 			padding-left: 0.15em;
 			border-radius: 5px;
 			border: 0.07em solid transparent;
@@ -215,7 +215,7 @@ header {
 	}
 
 	a {
-		color: var(--light-text-color);
+		color: var(--secondary-text-color);
 		
 		@media (any-hover) {
 		&:hover,

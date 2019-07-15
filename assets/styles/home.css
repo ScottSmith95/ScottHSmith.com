@@ -108,7 +108,7 @@ section {
 }
 
 footer {
-	color: var(--light-text-color);
+	color: var(--secondary-text-color);
 	padding: 0 var(--space-l2) var(--space-l1);
 	margin-top: -1.5rem;
 }
@@ -290,7 +290,7 @@ button.colophon-extender {
 .colophon-extended {
 	overflow: hidden;
 	font-size: 1.15rem;
-	color: var(--light-text-color);
+	color: var(--secondary-text-color);
 	max-height: 0;
 	margin-top: 0;
 	
@@ -317,7 +317,7 @@ button.colophon-extender {
 
 .social {
 	p {
-		color: var(--light-text-color);
+		color: var(--secondary-text-color);
 	}
 	
 	.icons {

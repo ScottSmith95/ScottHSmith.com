@@ -80,7 +80,7 @@ section.feature {
 	}
 	
 	.aside-text {
-		color: var(--light-text-color);
+		color: var(--secondary-text-color);
 	}
 	
 	.aside.one {
