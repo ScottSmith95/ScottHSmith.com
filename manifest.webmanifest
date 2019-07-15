@@ -6,27 +6,33 @@
 			"src": "/assets/favicons/64.jpg",
 			"type": "image/jpeg",
 			"sizes": "64x64"
-		}, {
+		},
+		{
 			"src": "/assets/favicons/128.jpg",
 			"type": "image/jpeg",
 			"sizes": "128x128"
-		}, {
+		},
+		{
 			"src": "/assets/favicons/144.jpg",
 			"type": "image/jpeg",
 			"sizes": "144x144"
-		}, {
+		},
+		{
 			"src": "/assets/favicons/152.jpg",
 			"type": "image/jpeg",
 			"sizes": "152x152"
-		}, {
+		},
+		{
 			"src": "/assets/favicons/192.jpg",
 			"type": "image/jpeg",
 			"sizes": "192x192"
-		}, {
+		},
+		{
 			"src": "/assets/favicons/256.jpg",
 			"type": "image/jpeg",
 			"sizes": "256x256"
-		}, {
+		},
+		{
 			"src": "/assets/favicons/512.jpg",
 			"type": "image/jpeg",
 			"sizes": "512x512"
@@ -35,6 +41,6 @@
 	"lang": "en-US",
 	"start_url": "/",
 	"display": "browser",
-	"theme_color": "#009BCD",
+	"theme_color": "#ECEEF0",
 	"background_color": "#ECEEF0"
 }
