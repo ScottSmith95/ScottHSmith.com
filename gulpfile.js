@@ -77,7 +77,7 @@ const paths = {
 const portfolioApi = new GhostContentAPI( {
 	url: 'https://admin.scotthsmith.com',
 	key: process.env.GHOST_CONTENT_API_KEY || '3c9b466022897c26d47c15c2a5',
-	version: 'v2'
+	version: 'v3'
 } );
 
 const processors = [
