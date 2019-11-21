@@ -74,8 +74,10 @@ const paths = {
 	}
 };
 
+const portfolioUrl = 'https://admin.scotthsmith.com';
+
 const portfolioApi = new GhostContentAPI( {
-	url: 'https://admin.scotthsmith.com',
+	url: portfolioUrl,
 	key: process.env.GHOST_CONTENT_API_KEY || '3c9b466022897c26d47c15c2a5',
 	version: 'v3'
 } );
@@ -122,15 +124,26 @@ function getPathUrl( url ) {
 }
 
 async function getPortfolioData() {
-	let posts = await getPortfolioPosts();
-	let pages = await getPortfolioPages();
+	const posts = await getPortfolioPosts();
+	const pages = await getPortfolioPages();
 
 	const postsData = {
 		featured: posts.featured,
 		bin: posts.bin,
-		pages: pages
+		pages
 	}
+
 	return postsData;
+}
+
+function processItemData( item ) {
+	item.url = getPathUrl( item.url );
+	// Strip out the absolute part of the URL from HTML item data.
+	const relativizeHtml = new RegExp( `${portfolioUrl}`, 'g' );
+	item.feature_image = item.feature_image.replace( relativizeHtml, '' );
+	item.html = item.html.replace( relativizeHtml, '' );
+
+	return item;
 }
 
 async function getPortfolioPosts() {
@@ -141,12 +154,14 @@ async function getPortfolioPosts() {
 			let binPosts = [];
 			posts.forEach( post => {
 				if ( post.featured ) {
-					const index = camelize(post.slug).replace( '-', '' )
-					post.url = getPathUrl( post.url )
-					featuredPosts[index] = post
+					const index = camelize(post.slug).replace( '-', '' );
+					const processedPost = processItemData(post);
+
+					featuredPosts[index] = processedPost;
 				} else {
-					post.url = getPathUrl( post.url )
-					binPosts.push( post )
+					const processedPost = processItemData(post);
+					
+					binPosts.push( processedPost );
 				}
 			} );
 			const postsData = {
@@ -166,8 +181,9 @@ async function getPortfolioPages() {
 		.then( pages => {
 			let pagesSaved = [];
 			pages.forEach( page => {
-				page.url = getPathUrl( page.url )
-				pagesSaved.push( page )
+				const processedPost = processItemData(page);
+
+				pagesSaved.push( processedPost );
 			} );
 			return pagesSaved;
 		} )
@@ -192,7 +208,7 @@ async function portfolioPosts() {
 	let posts = [];
 	Object.entries(portfolioData.featured ).forEach( ( [ title, content] ) => { posts.push( content ) } );
 	posts = posts.concat( portfolioData.bin, portfolioData.pages );
-
+	
 	posts.map( ( post ) => {
 		return gulp.src( paths.portfolio.postTemplate )
 			.pipe( data( { post: post, bin: portfolioData.bin } ) )
