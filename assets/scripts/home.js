@@ -31,7 +31,7 @@ randomQuote();
  * Colophon
  */
 const colophonTrigger = document.querySelector( 'button.colophon-extender' );
-const colophonExt = document.querySelector( 'p.colophon-extended' );
+const colophonExt = document.querySelector( '.colophon-extended' );
 
 function toggleColophon() {
 	colophonTrigger.classList.toggle( 'shown' );

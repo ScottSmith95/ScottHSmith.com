@@ -300,12 +300,8 @@ button.colophon-extender {
 	
 	&.shown {
 		transition-timing-function: ease-in;
-		max-height: 16.5em;
+		max-height: 100rem;
 		margin-top: var(--space-l1);
-		
-		@media (--width-l3) {
-			max-height: 9em;
-		}
 	}
 	
 	html.js & {
@@ -316,6 +312,32 @@ button.colophon-extender {
 		overflow: auto;
 		max-height: none;
 		margin-top: var(--space-l2);
+	}
+
+	ul {
+		padding: 0;
+		margin: var(--space-l3) 0 var(--space-l1);
+	}
+
+	li {
+		display: flex;
+		align-items: center;
+		margin-bottom: var(--space-l2);
+
+		@media (--width-l3) {
+			margin-bottom: var(--space-l3);
+		}
+
+		> img {
+			width: 4rem;
+			height: 4rem;
+			object-fit: contain;
+			margin-right: var(--space-l2);
+
+			@media (--width-l3) {
+				margin-right: var(--space-l3);
+			}
+		}
 	}
 }
 
