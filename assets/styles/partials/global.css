@@ -18,6 +18,13 @@ body {
 	font: 400 100%/1.5 var(--font-fam);
 }
 
+input,
+select,
+textarea,
+button {
+	font-family: inherit;
+}
+
 ::selection {
 	background: var(--action-background-l2);
 }
