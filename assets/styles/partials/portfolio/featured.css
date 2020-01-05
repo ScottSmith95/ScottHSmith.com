@@ -1,6 +1,9 @@
 section.feature {
 	text-align: left;
-	margin-bottom: var(--space-l4);
+	
+	& + section.feature {
+		margin-top: var(--space-l4);
+	}
 	
 	img {
 		max-width: 100%;
