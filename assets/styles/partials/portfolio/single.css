@@ -176,7 +176,7 @@
 	
 	.kg-bookmark-metadata,
 	.kg-bookmark-description {
-		margin-top: .5em;
+		margin-top: 0.5em;
 	}
 	
 	.kg-bookmark-metadata {
@@ -226,7 +226,7 @@
 	
 	.kg-bookmark-publisher::before {
 		content: "•";
-		margin: 0 .5em;
+		margin: 0 0.5em;
 	}
 }
 
