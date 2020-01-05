@@ -155,7 +155,8 @@
 		color: currentColor;
 		font-family: inherit;
 		text-decoration: none;
-		border: 1px solid var(--secondary-text-color);
+		border: 3px solid var(--divider-color);
+		border-radius: 0.5rem;
 	}
 	
 	.kg-bookmark-content {
@@ -193,8 +194,8 @@
 		width: 1em;
 		height: 1em;
 		vertical-align: text-bottom;
-		margin-right: .5em;
-		margin-bottom: .05em;
+		margin-right: 0.5em;
+		margin-bottom: 0.05em;
 	}
 	
 	.kg-bookmark-thumbnail {
