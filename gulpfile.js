@@ -140,7 +140,8 @@ function processItemData( item ) {
 	item.url = getPathUrl( item.url );
 	// Strip out the absolute part of the URL from HTML item data.
 	const relativizeHtml = new RegExp( `${portfolioUrl}`, 'g' );
-	if (typeof item.feature_image !== "undefined") {
+	console.log(item.feature_image);
+	if (item.feature_image !== null) {
 		item.feature_image = item.feature_image.replace( relativizeHtml, '' );
 	}
 	item.html = item.html.replace( relativizeHtml, '' );
