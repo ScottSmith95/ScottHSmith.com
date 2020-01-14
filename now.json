@@ -62,9 +62,8 @@
 		{ "source": "/view-source", "destination": "https://github.com/ScottSmith95/ScottHSmith.com" }
 	],
 	"routes": [
-		{
-			"handle": "filesystem"
-		},
+		{ "src": "/(.*)", "dest": "/$1" },
+		{ "handle": "filesystem" },
 		{
 			"src": "/.*",
 			"status": 404,
