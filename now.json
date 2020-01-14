@@ -21,44 +21,53 @@
 			"GHOST_CONTENT_API_KEY": "@ghost-content-api-key"
 		}
 	},
+	"headers": [
+		{
+		  "source": "/(.*)",
+		  "headers" : [
+			{
+			  "key" : "Strict-Transport-Security",
+			  "value" : "max-age=31536000; always"
+			},
+			{
+			  "key" : "Referrer-Policy",
+			  "value" : "no-referrer-when-downgrade"
+			},
+			{
+			  "key" : "X-Frame-Options",
+			  "value" : "SAMEORIGIN"
+			},
+			{
+			  "key" : "X-Content-Type-Options",
+			  "value" : "nosniff"
+			},
+			{
+			  "key" : "Feature-Policy",
+			  "value" : "autoplay 'self'; microphone 'none'; geolocation 'none'"
+			},
+			{
+			  "key" : "Content-Security-Policy-Report-Only",
+			  "value" : "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://use.typekit.net https://p.typekit.net; img-src 'self' data:; font-src 'self' https://use.typekit.net; media-src 'self' http://files.scottshar.es/; object-src 'none'; frame-src 'none'; upgrade-insecure-requests; base-uri https://scotthsmith.com; manifest-src 'self' ; report-uri https://d9a890ffaa282864b2e1a6b33b56bb2a.report-uri.com/r/d/csp/reportOnly; require-sri-for script;"
+			}
+		  ]
+		},
+		{
+			"source": "/",
+			"headers" : [
+			  {
+				"key" : "Link",
+				"value" : "</assets/fonts/acier/acier.woff2>; rel=preload; as=font; crossorigin, </assets/images/social-icons/build/home-sprite.svg>; rel=preload; as=fetch; type='image/svg+xml'; crossorigin"
+			  }
+			]
+		  }
+	],
+	"redirects": [
+		{ "source": "/favicon.ico", "destination": "/assets/favicons/favicon.ico", "statusCode": 301 },
+		{ "source": "/projects/decode", "destination": "/miscellanea/decode-archive", "statusCode": 301 },
+		{ "source": "/projects/(.*)", "destination": "/miscellanea/$1", "statusCode": 301 },
+		{ "source": "/view-source", "destination": "https://github.com/ScottSmith95/ScottHSmith.com" }
+	],
 	"routes": [
-		{
-			"src": "/(.*)",
-			"continue": true,
-			"headers": {
-				"Strict-Transport-Security": "max-age=31536000; always",
-				"Referrer-Policy": "no-referrer-when-downgrade",
-				"X-Frame-Options": "SAMEORIGIN",
-				"X-Content-Type-Options": "nosniff",
-				"Feature-Policy": "autoplay 'self'; microphone 'none'; geolocation 'none'",
-				"Content-Security-Policy-Report-Only": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://use.typekit.net https://p.typekit.net; img-src 'self' data:; font-src 'self' https://use.typekit.net; media-src 'self' http://files.scottshar.es/; object-src 'none'; frame-src 'none'; upgrade-insecure-requests; base-uri https://scotthsmith.com; manifest-src 'self' ; report-uri https://d9a890ffaa282864b2e1a6b33b56bb2a.report-uri.com/r/d/csp/reportOnly; require-sri-for script;"
-			}
-		},
-		{
-			"src": "/",
-			"continue": true,
-			"headers": {
-				"Link": "</assets/fonts/acier/acier.woff2>; rel=preload; as=font; crossorigin, </assets/images/social-icons/build/home-sprite.svg>; rel=preload; as=fetch; type='image/svg+xml'; crossorigin"
-			}
-		},
-		{
-			"src": "/favicon.ico",
-			"dest": "/assets/favicons/favicon.ico"
-		},
-		{
-			"src": "/projects/decode",
-			"status": 301,
-			"headers": {
-				"Location": "/miscellanea/decode-archive"
-			}
-		},
-		{
-			"src": "/projects/(.*)",
-			"status": 301,
-			"headers": {
-				"Location": "/miscellanea/$1"
-			}
-		},
 		{
 			"handle": "filesystem"
 		},
