@@ -1,11 +1,5 @@
 {
 	"name": "ScottHSmith.com",
-	"alias": [
-		"scotthsmith.com",
-		"www.scotthsmith.com",
-		"scottsmith.sexy",
-		"www.scottsmith.sexy"
-	],
 	"version": 2,
 	"builds": [
 		{
