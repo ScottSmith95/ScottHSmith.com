@@ -12,7 +12,6 @@ const minify = composer( terser, console );
 const cheerio = require( 'gulp-cheerio' );
 const srihash = require( 'gulp-sri-hash' );
 const sitemap = require( 'gulp-sitemap' );
-const sourcemaps = require( 'gulp-sourcemaps' );
 const GhostContentAPI = require( '@tryghost/content-api' );
 const data = require( 'gulp-data' );
 
@@ -103,11 +102,9 @@ function styles() {
 	processors.push( require( 'cssnano' )( { preset: 'default' } ) );
 
 	return gulp
-		.src( paths.styles.src )
-		.pipe( sourcemaps.init() )
+		.src( paths.styles.src, { sourcemaps: true } )
 		.pipe( postcss( processors ) )
-		.pipe( sourcemaps.write( './' ) )
-		.pipe( gulp.dest( paths.styles.dest ) );
+		.pipe( gulp.dest( paths.styles.dest, { sourcemaps: '.' } ) );
 }
 
 function camelize( str ) {
@@ -140,7 +137,6 @@ function processItemData( item ) {
 	item.url = getPathUrl( item.url );
 	// Strip out the absolute part of the URL from HTML item data.
 	const relativizeHtml = new RegExp( `${portfolioUrl}`, 'g' );
-	console.log(item.feature_image);
 	if (item.feature_image !== null) {
 		item.feature_image = item.feature_image.replace( relativizeHtml, '' );
 	}
@@ -259,32 +255,26 @@ function sprites() {
 
 function globalScript() {
 	return gulp
-		.src( paths.globalScript )
-		.pipe( sourcemaps.init() )
+		.src( paths.globalScript, { sourcemaps: true } )
 		.pipe( concat( 'global.js' ) )
 		.pipe( minify() )
-		.pipe( sourcemaps.write( './' ) )
-		.pipe( gulp.dest( paths.scripts.dest ) );
+		.pipe( gulp.dest( paths.scripts.dest, { sourcemaps: '.' } ) );
 }
 
 function homeScript() {
 	return gulp
-		.src( paths.homeScript )
-		.pipe( sourcemaps.init() )
+		.src( paths.homeScript, { sourcemaps: true } )
 		.pipe( concat( 'home.js' ) )
 		.pipe( minify() )
-		.pipe( sourcemaps.write( './' ) )
-		.pipe( gulp.dest( paths.scripts.dest ) );
+		.pipe( gulp.dest( paths.scripts.dest, { sourcemaps: '.' } ) );
 }
 
 function socialIconsScript() {
 	return gulp
-		.src( paths.socialIconsScript )
-		.pipe( sourcemaps.init() )
+		.src( paths.socialIconsScript, { sourcemaps: true } )
 		.pipe( concat( 'social-icons.js' ) )
 		.pipe( minify() )
-		.pipe( sourcemaps.write( './' ) )
-		.pipe( gulp.dest( paths.scripts.dest ) );
+		.pipe( gulp.dest( paths.scripts.dest, { sourcemaps: '.' } ) );
 }
 
 const scripts = gulp.parallel(
@@ -293,11 +283,9 @@ const scripts = gulp.parallel(
 	socialIconsScript,
 	function normalScripts( done ) {
 		return gulp
-			.src( paths.scripts.src )
-			.pipe( sourcemaps.init() )
+			.src( paths.scripts.src, { sourcemaps: true } )
 			.pipe( minify() )
-			.pipe( sourcemaps.write( './' ) )
-			.pipe( gulp.dest( paths.scripts.dest ) );
+			.pipe( gulp.dest( paths.scripts.dest, { sourcemaps: '.' } ) );
 		done();
 	}
 );
