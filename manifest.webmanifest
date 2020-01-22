@@ -3,8 +3,23 @@
 	"name": "Scott Smith",
 	"icons": [
 		{
-			"src": "/assets/favicons/64.jpg",
-			"type": "image/jpeg",
+			"src": "/assets/favicons/16.png",
+			"type": "image/png",
+			"sizes": "16x16"
+		},
+		{
+			"src": "/assets/favicons/32.png",
+			"type": "image/png",
+			"sizes": "32x32"
+		},
+		{
+			"src": "/assets/favicons/48.png",
+			"type": "image/png",
+			"sizes": "48x48"
+		},
+		{
+			"src": "/assets/favicons/64.png",
+			"type": "image/png",
 			"sizes": "64x64"
 		},
 		{

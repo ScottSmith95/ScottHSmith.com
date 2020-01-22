@@ -37,7 +37,7 @@
 		},
 		{
 			"src": "/favicon.ico",
-			"dest": "/assets/favicons/favicon.ico"
+			"dest": "/assets/favicons/icon.ico"
 		},
 		{
 			"src": "/projects/decode",
