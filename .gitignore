@@ -1,7 +1,8 @@
 node_modules/
 
-dist/
 .env.build
+.nova/
+dist/
 assets/**/build/
 tea/build/
 **/*.map
