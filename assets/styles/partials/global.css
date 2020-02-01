@@ -8,7 +8,7 @@ html {
 	box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*, *::before, *::after {
 	box-sizing: inherit;
 }
 
@@ -33,12 +33,12 @@ a {
 	transition: color 0.3s ease;
 	color: var(--blue);
 	text-decoration: none;
-	
+
 	@media (any-hover) {
 	&:hover {
 		color: var(--blue-secondary);
 	}
-	
+
 	&:active {
 		color: var(--darkgrey);
 	}
@@ -61,22 +61,22 @@ ol {
 	  content: "";
 	  display: table;
 	}
- 
+
 	&:after {
 	  clear: both;
 	}
 }
 
-.sr-only {
-	position: absolute;
+.sr-only:not(:focus):not(:active) {
 	clip: rect(0 0 0 0);
-	overflow: hidden;
+	clip-path: inset(100%);
 	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
 	width: 1px;
-	padding: 0;
-	border: 0;
-	margin: -1px;
 }
+
 
 @media (inverted-colors) {
 img {
