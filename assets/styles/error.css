@@ -13,9 +13,7 @@ html.thesis {
 	background-size: 40px;
 
 	@media (prefers-color-scheme: dark) {
-	:root {
 		--text-color: var(--darkgrey);
-	}
 	}
 }
 
