@@ -2,14 +2,14 @@
 	"name": "scott-smith",
 	"version": "1.0.0",
 	"description": "My personal site.",
-	"author": "Scott Smith <mail@ScottHSmith.com> (http://ScottHSmith.com)",
+	"author": "Scott Smith <mail@ScottHSmith.com> (https://ScottHSmith.com)",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/ScottSmith95/ScottHSmith.com.git"
 	},
 	"license": "UNLICENSED",
 	"engines": {
-		"node": "^10.13.0"
+		"node": "^12.13.0"
 	},
 	"scripts": {
 		"build": "gulp build && gulp sitemap",
