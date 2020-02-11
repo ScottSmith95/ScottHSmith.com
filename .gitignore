@@ -1,7 +1,10 @@
-node_modules/
-
+.DS_Store
 .env.build
-.nova/
+.nova
+
+.now
+
+node_modules/
 dist/
 assets/**/build/
 tea/build/
@@ -9,7 +12,4 @@ tea/build/
 **/*.html
 !party/*.html
 
-.DS_Store
 sitemap.xml
-
-.now
