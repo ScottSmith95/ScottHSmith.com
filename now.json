@@ -1,5 +1,4 @@
 {
-	"name": "ScottHSmith.com",
 	"version": 2,
 	"builds": [
 		{
@@ -25,7 +24,7 @@
 				"X-Frame-Options": "SAMEORIGIN",
 				"X-Content-Type-Options": "nosniff",
 				"Feature-Policy": "autoplay 'self'; microphone 'none'; geolocation 'none'",
-				"Content-Security-Policy-Report-Only": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://use.typekit.net https://p.typekit.net; img-src 'self' data:; font-src 'self' https://use.typekit.net; media-src 'self' http://files.scottshar.es/; object-src 'none'; frame-src 'none'; upgrade-insecure-requests; base-uri https://scotthsmith.com; manifest-src 'self' ; report-uri https://d9a890ffaa282864b2e1a6b33b56bb2a.report-uri.com/r/d/csp/reportOnly; require-sri-for script;"
+				"Content-Security-Policy-Report-Only": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://use.typekit.net https://p.typekit.net; img-src 'self' data:; font-src 'self' https://use.typekit.net; media-src 'self' http://files.scottshar.es/; object-src 'none'; frame-src 'none'; upgrade-insecure-requests; base-uri https://scotthsmith.com; manifest-src 'self'; report-uri https://d9a890ffaa282864b2e1a6b33b56bb2a.report-uri.com/r/d/csp/reportOnly; require-sri-for script;"
 			}
 		},
 		{
