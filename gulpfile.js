@@ -87,6 +87,7 @@ const processors = [
 	require( 'postcss-nested' ),
 	require( 'postcss-custom-properties' ),
 	require( 'postcss-custom-media' ),
+	require( 'postcss-sort-media-queries' ),
 	require( 'autoprefixer' )
 ];
 
@@ -159,7 +160,7 @@ async function getPortfolioPosts() {
 					featuredPosts[index] = processedPost;
 				} else {
 					const processedPost = processItemData(post);
-					
+
 					binPosts.push( processedPost );
 				}
 			} );
@@ -199,7 +200,7 @@ async function portfolioIndex() {
 		.pipe( data( portfolioData ) )
 		.pipe( mustache({}, { extension: '.html' }) )
 		.pipe( gulp.dest( paths.portfolio.dest ) );
-		
+
 }
 
 async function portfolioPosts() {
@@ -207,7 +208,7 @@ async function portfolioPosts() {
 	let posts = [];
 	Object.entries(portfolioData.featured ).forEach( ( [ title, content] ) => { posts.push( content ) } );
 	posts = posts.concat( portfolioData.bin, portfolioData.pages );
-	
+
 	posts.map( ( post ) => {
 		return gulp.src( paths.portfolio.postTemplate )
 			.pipe( data( { post: post, bin: portfolioData.bin } ) )
