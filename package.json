@@ -16,7 +16,7 @@
 		"dev": "gulp & npx serve",
 		"now-build": "npm run build && npm run create-dist",
 		"now-dev": "gulp build && npm run create-dist && npm run serve",
-		"create-dist": "if [ -d dist ]; then rm -rf ./dist; fi && mkdir -p dist && rsync -rR {index.html,manifest.webmanifest,sitemap.xml,./assets/,./portfolio/,./miscellanea/,./error/,./.well-known/} dist",
+		"create-dist": "if [ -d dist ]; then rm -rf ./dist; fi && mkdir -p dist && cp -R {index.html,manifest.webmanifest,sitemap.xml,./assets/,./portfolio/,./miscellanea/,./error/,./.well-known/} dist",
 		"serve": "npx serve",
 		"test": "gulp pretest && stylelint 'styles/build/*.css'"
 	},
