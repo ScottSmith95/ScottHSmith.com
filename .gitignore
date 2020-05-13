@@ -2,7 +2,7 @@
 .env.build
 .nova
 
-.now
+.vercel
 
 node_modules/
 dist/
