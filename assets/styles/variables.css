@@ -15,9 +15,12 @@
 	--secondary-large-text-color: #63787E;
 	--bg-color: #ECEEF0;
 	--divider-color: #D9DBDE;
-	--action-background-l1: rgba(147, 187, 201, 0.2);
-	--action-background-l2: rgba(147, 187, 201, 0.4);
-	--action-background-l3: rgba(147, 187, 201, 0.5);
+	--link-underline-default: rgb(0 155 205 / 40%);
+	--link-underline-hover: var(--blue);
+	--link-underline-active: var(--blue-secondary);
+	--action-background-l1: rgb(147 187 201 / 20%);
+	--action-background-l2: rgb(147 187 201 / 40%);
+	--action-background-l3: rgb(147 187 201 / 50%);
 
 	/* Typefaces */
 	--font-fam: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
@@ -37,8 +40,8 @@
 	--secondary-text-color: #C6CCD2;
 	--secondary-large-text-color: #B5BDC4;
 	--divider-color: #4A545E;
-	--action-background-l1: rgba(74, 84, 94, 0.4);
-	--action-background-l2: rgba(74, 84, 94, 0.6);
-	--action-background-l3: rgba(74, 84, 94, 0.7);
+	--action-background-l1: rgb(74 84 94 / 40%);
+	--action-background-l2: rgb(74 84 94 / 60%);
+	--action-background-l3: rgb(74 84 94 / 70%);
 }
 }

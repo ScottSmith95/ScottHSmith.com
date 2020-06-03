@@ -88,6 +88,7 @@ const processors = [
 	require( 'postcss-custom-properties' ),
 	require( 'postcss-custom-media' ),
 	require( 'postcss-sort-media-queries' ),
+	require( 'postcss-color-rgb' ),
 	require( 'autoprefixer' )
 ];
 
