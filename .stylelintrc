@@ -5,7 +5,6 @@
 		"color-named": "always-where-possible",
 		"font-family-name-quotes": "always-unless-keyword",
 		"block-no-empty": null,
-		"number-leading-zero": "always",
 		"number-no-trailing-zeros": true,
 		"number-max-precision": 3,
 		"function-comma-space-after": "always",
