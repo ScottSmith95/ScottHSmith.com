@@ -14,7 +14,7 @@
 	height: auto;
 	box-shadow: 0 0 55px 0 rgba(83, 108, 104, 0.6);
 	margin-bottom: -2.75rem;
-	
+
 	@media (prefers-reduced-motion: reduce) {
 		animation: none;
 	}
@@ -39,23 +39,23 @@ header {
 	font: normal 7em/0.7 'acier-bat', var(--font-fam);
 	text-align: right;
 	padding-left: 0;
-	
+
 	.first,
 	.last {
 		animation: name-first 1s ease-out 300ms backwards;
 		display: block;
-		
+
 		@media (prefers-reduced-motion: reduce) {
 			animation: none;
 		}
 	}
-	
+
 	.first {
 		animation-name: name-first;
 		filter: drop-shadow(0 2px 12px rgba(0, 153, 204, 0.5));
 		color: var(--blue);
 	}
-	
+
 	.last {
 		animation-name: name-last;
 		filter: drop-shadow(0 2px 12px rgba(83, 195, 202, 0.5));
@@ -72,19 +72,19 @@ header {
 		animation: tagline 1s ease-out backwards;
 		position: relative;
 		z-index: 0;
-		
+
 		&:nth-child(1) {
 			animation-delay: 600ms;
 		}
-		
+
 		&:nth-child(2) {
 			animation-delay: 900ms;
 		}
-		
+
 		&:nth-child(3) {
 			animation-delay: 1200ms;
 		}
-		
+
 		@media (prefers-reduced-motion: reduce) {
 			animation: none;
 		}
@@ -100,11 +100,11 @@ section {
 	font-size: 1.25em;
 	padding: var(--space-l3) var(--space-l2);
 	border-top: 3px solid var(--divider-color);
-	
+
 	p {
 		margin: 0;
 	}
-	
+
 	abbr {
 		cursor: help;
 		text-decoration: underline;
@@ -121,12 +121,12 @@ section p a,
 footer a {
 	color: inherit;
 	text-decoration: underline;
-	
+
 	@media (any-hover) {
 	&:hover {
 		color: var(--blue);
 	}
-	
+
 	&:active {
 		color: var(--blue-secondary);
 	}
@@ -144,7 +144,7 @@ nav a {
 	border-radius: 5px;
 	border: 0.07em solid transparent;
 	white-space: nowrap;
-	
+
 	&::after {
 		transition: border-color 0.3s ease, margin-left 0.3s ease, transform 0.3s ease, top 0.3s ease;
 		content: '';
@@ -160,36 +160,36 @@ nav a {
 		border-color: transparent;
 		border-radius: 1px;
 	}
-	
+
 	@media (any-hover) {
 	&:hover {
 		color: var(--blue);
 		background-color: var(--action-background-l2);
-		
+
 		&::after {
 			border-color: var(--blue);
 			margin-left: 0.1em;
 		}
 	}
-	
+
 	&:active {
 		color: var(--blue-secondary);
 		background-color: var(--action-background-l3);
-		
-		
+
+
 		&::after {
 			border-color: var(--blue-secondary);
 			margin-left: 0.1em;
 		}
 	}
 	}
-	
+
 	&:focus {
 		color: var(--blue-secondary);
 		background-color: var(--action-background-l3);
 		border-color: var(--blue-secondary);
 		outline: none;
-		
+
 		&::after {
 			border-color: var(--blue-secondary);
 			margin-left: 0.1em;
@@ -203,11 +203,11 @@ nav {
 	flex-flow: wrap;
 	font-size: 1.65rem;
 	margin: 0 auto var(--space-l2);
-	
+
 	a {
 		margin-right: var(--space-l1);
 		margin-bottom: var(--space-l1);
-	
+
 		&::after {
 			top: 0.55em;
 			left: 0;
@@ -226,7 +226,7 @@ button.colophon-extender {
 	border-radius: 5px;
 	border: 0.09em solid transparent;
 	margin: var(--space-l1) 0 0;
-	
+
 	&::after {
 		transition: border-color 0.3s ease, margin-left 0.3s ease, transform 0.3s ease, top 0.3s ease;
 		content: '';
@@ -244,48 +244,48 @@ button.colophon-extender {
 		border-color: var(--blue);
 		border-radius: 1px;
 	}
-	
+
 	&::before {
 		content: '';
 		border-top: 3px solid var(--divider-color);
 	}
-	
+
 	&.shown::after {
 		transform: rotate(-45deg); /* Chevron pointing up. */
 		top: 0.55em;
 	}
-	
+
 	@media (any-hover) {
 	&:hover {
 		color: var(--blue-secondary);
-		
+
 		&::after {
 			border-color: var(--blue-secondary);
 		}
 	}
-	
+
 	&:active {
 		color: var(--blue-secondary);
-		
+
 		&::after {
 			border-color: var(--blue-secondary);
 		}
 	}
 	}
-	
+
 	&:focus {
 		color: var(--blue-secondary);
 		background-color: var(--action-background-l3);
 		padding: 0.15em 0.75em 0.25em 0.35em;
 		border-color: var(--blue-secondary);
 		outline: none;
-		
+
 		&::after {
 			border-color: var(--blue-secondary);
 		}
 	}
-	
-	
+
+
 	html.no-js & {
 		display: none;
 	}
@@ -297,17 +297,17 @@ button.colophon-extender {
 	color: var(--secondary-text-color);
 	max-height: 0;
 	margin-top: 0;
-	
+
 	&.shown {
 		transition-timing-function: ease-in;
 		max-height: 100rem;
 		margin-top: var(--space-l1);
 	}
-	
+
 	html.js & {
 		transition: max-height 0.3s ease-out, margin-top 0.3s ease-out; /* Prevents transition from showing on page load. */
 	}
-	
+
 	html.no-js & {
 		overflow: auto;
 		max-height: none;
@@ -328,7 +328,7 @@ button.colophon-extender {
 			margin-bottom: var(--space-l3);
 		}
 
-		> img {
+		img {
 			width: 4rem;
 			height: 4rem;
 			object-fit: contain;
@@ -345,7 +345,7 @@ button.colophon-extender {
 	p {
 		color: var(--secondary-text-color);
 	}
-	
+
 	.icons {
 		display: flex;
 		flex-direction: row;
@@ -354,43 +354,43 @@ button.colophon-extender {
 		list-style: none;
 		margin-top: var(--space-l2);
 	}
-	
+
 	.link {
 		display: inline;
 		margin-right: 5%;
-		
+
 		&:last-child {
 			margin-right: 0;
 		}
 	}
-	
+
 	.icon {
 		width: 100%;
 		max-width: 4.25rem;
 		backface-visibility: visible;
-		
+
 		@media (any-hover) {
 		&:hover {
 			animation: social-icon 0.5s ease;
 		}
 		}
-	}	
+	}
 }
 
 @media (min-width: 22em) {
 	.header-image {
 		width: calc(100% - var(--space-l3));
 	}
-	
+
 	.tagline {
 		padding-right: var(--space-l3);
 	}
-	
+
 	.name {
 		padding-right: calc(var(--space-l2) - 0.25rem);
 		font-size: 8.5em;
 	}
-	
+
 	.icons {
 		max-width: calc(4 * 5rem); /* Allow 5 rems per icon. */
 	}
@@ -400,7 +400,7 @@ button.colophon-extender {
 	nav {
 		font-size: 2rem;
 		flex-flow: nowrap;
-		
+
 		a {
 			padding: 0 var(--space-l2);
 			margin-right: var(--space-l2);
@@ -415,35 +415,35 @@ button.colophon-extender {
 		margin-right: var(--space-l3);
 		margin-left: var(--space-l3);
 	}
-	
+
 	header {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: baseline;
 	}
-	
+
 	.name,
 	.tagline {
 		padding: 0;
 	}
-	
+
 	.name {
 		margin-left: 0;
 	}
-	
+
 	section,
 	footer {
 		padding-right: 0;
 		padding-left: 0;
 		font-size: 1.5em;
 	}
-	
+
 	.social p,
 	footer {
 		font-size: 1.15rem;
 	}
-	
+
 	.social .icon {
 		max-width: 3.5rem;
 	}
@@ -453,14 +453,14 @@ button.colophon-extender {
 	.container {
 		max-width: 35em;
 	}
-	
+
 	.header-image {
 		display: block;
 		max-width: 100%;
 		width: auto;
 		margin: 0 auto -2.1rem;
 	}
-	
+
 	header,
 	section,
 	footer {
