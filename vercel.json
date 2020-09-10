@@ -19,7 +19,7 @@
       }
     },
     {
-      "src": "(.*?)\.avif$",
+      "src": "(.*?).avif$",
       "continue": true,
       "headers": {
         "Content-Type": "image/avif",
