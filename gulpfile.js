@@ -5,10 +5,7 @@ const mustache = require( 'gulp-mustache' );
 const postcss = require( 'gulp-postcss' );
 const sprite = require( 'gulp-svg-sprite' );
 const concat = require( 'gulp-concat' );
-// Use terser minifier with gulp-uglify for ES2015 support.
-const composer = require( 'gulp-uglify/composer' );
-const terser = require( 'terser' );
-const minify = composer( terser, console );
+const minify = require( 'gulp-terser' );
 const cheerio = require( 'gulp-cheerio' );
 const srihash = require( 'gulp-sri-hash' );
 const sitemap = require( 'gulp-sitemap' );
