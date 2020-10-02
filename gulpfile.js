@@ -311,7 +311,7 @@ function sri() {
 							let initRef = $( this ).attr( refAttr );
 
 							// Remove any extant query strings.
-							if ( refAttr != null && initRef.includes( '?' ) ) {
+							if ( refAttr !== null && initRef.includes( '?' ) ) {
 								initRef = initRef.substr( 0, initRef.indexOf( '?' ) );
 							}
 
