@@ -329,9 +329,8 @@ function sri() {
 								return 'href';
 							} else if ( node.name == 'script' ) {
 								return 'src';
-							} else {
-								return null;
 							}
+							return null;
 						}
 
 						function isLocalPath( node ) {
@@ -377,14 +376,14 @@ function watch() {
 }
 
 // Workflows
-// $ gulp: Builds, prefixes, and minifies CSS files; concencates and minifies JS files; watches for changes. The works.
+// $ gulp: Builds, prefixes, and minifies CSS files; concatenates and minifies JS files; watches for changes. The works.
 const defaultTask = gulp.series(
 	gulp.parallel( html, portfolio, styles, sprites, scripts ),
 	sri,
 	watch
 );
 
-// $ gulp build: Builds, prefixes, and minifies CSS files; concencates and minifies JS files. For deployments.
+// $ gulp build: Builds, prefixes, and minifies CSS files; concatenates and minifies JS files. For deployments.
 const buildTask = gulp.series(
 	gulp.parallel( html, portfolio, styles, sprites, scripts ),
 	gulp.parallel( sri, makeSitemap )
