@@ -1,5 +1,6 @@
 'use strict';
 
+require('dotenv').config();
 const gulp = require( 'gulp' );
 const mustache = require( 'gulp-mustache' );
 const postcss = require( 'gulp-postcss' );
@@ -74,7 +75,7 @@ const portfolioUrl = 'https://admin.scotthsmith.com';
 
 const portfolioApi = new GhostContentAPI( {
 	url: portfolioUrl,
-	key: process.env.GHOST_CONTENT_API_KEY || '3c9b466022897c26d47c15c2a5',
+	key: process.env.GHOST_CONTENT_API_KEY,
 	version: 'v3'
 } );
 
