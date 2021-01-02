@@ -85,7 +85,7 @@ const processors = [
 	require( 'postcss-nested' ),
 	require( 'postcss-custom-properties' ),
 	require( 'postcss-custom-media' ),
-	require( 'postcss-sort-media-queries' ),
+	// require( 'postcss-sort-media-queries' ),
 	require( 'postcss-color-rgb' ),
 	require( 'postcss-100vh-fix' ),
 	require( 'autoprefixer' )
