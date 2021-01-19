@@ -21,8 +21,8 @@
 		"test": "gulp pretest && stylelint 'styles/build/*.css'"
 	},
 	"devDependencies": {
-		"@tryghost/content-api": "^1.4.11",
-		"autoprefixer": "^10.1.0",
+		"@tryghost/content-api": "^1.4.13",
+		"autoprefixer": "^10.2.1",
 		"boomsvgloader": "0.0.2",
 		"cssnano": "^4.1.10",
 		"dotenv": "^8.2.0",
@@ -36,16 +36,16 @@
 		"gulp-sitemap": "^8.0.0",
 		"gulp-sri-hash": "^2.2.1",
 		"gulp-svg-sprite": "^1.5.0",
-		"gulp-terser": "^2.0.0",
-		"postcss": "^8.2.2",
+		"gulp-terser": "^2.0.1",
+		"postcss": "^8.2.4",
 		"postcss-100vh-fix": "^1.0.2",
 		"postcss-color-rgb": "^2.0.0",
-		"postcss-custom-media": "^7.0.8",
-		"postcss-custom-properties": "^10.0.0",
+		"postcss-custom-media": "^8.0.0",
+		"postcss-custom-properties": "^11.0.0",
 		"postcss-import": "^14.0.0",
 		"postcss-nested": "^5.0.3",
 		"postcss-normalize": "^9.0.0",
-		"postcss-sort-media-queries": "^3.0.0"
+		"postcss-sort-media-queries": "^3.2.3"
 	},
 	"browserslist": [
 		"last 2 versions",

@@ -100,7 +100,11 @@ function html() {
 }
 
 function styles() {
-	processors.push( require( 'cssnano' )( { preset: 'default' } ) );
+	processors.push( require( 'cssnano' )( {
+		preset: ['default', {
+			mergeRules: false,
+		}]
+	} ) );
 
 	return gulp
 		.src( paths.styles.src, { sourcemaps: true } )
