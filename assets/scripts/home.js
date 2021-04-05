@@ -1,10 +1,10 @@
-/* 
+/*
  * SVG Icons
  */
 boomsvgloader.load( '/assets/images/social-icons/build/home-sprite.svg' );
 
 
-/* 
+/*
  * Quotes
  */
 var quotes = [
@@ -13,21 +13,21 @@ var quotes = [
 	"I have an Instagram. <br>Surprised? Don't be.",
 	"Oh you're on Facebook? <br>That's fantastic.",
 	"Watch out. <br>I’m on the internet.",
-	"Eminent. Employable. <br>LinkedIn equipped.",
+	"Who has two thumbs and a LinkedIn? <br>This guy.",
 	"Follow me—<br>or else&hellip;"
 ];
 
 function randomQuote() {
 	var quoteEl = document.getElementById( 'social-quote' ),
 		quote = quotes[ Math.floor( Math.random() * quotes.length ) ];
-		
+
 	quoteEl.innerHTML = quote;
 }
 
 randomQuote();
 
 
-/* 
+/*
  * Colophon
  */
 const colophonTrigger = document.querySelector( 'button.colophon-extender' );
@@ -36,7 +36,7 @@ const colophonExt = document.querySelector( '.colophon-extended' );
 function toggleColophon() {
 	colophonTrigger.classList.toggle( 'shown' );
 	colophonExt.classList.toggle( 'shown' );
-	
+
 	if ( colophonTrigger.getAttribute( 'aria-expanded' ) == 'true' ) {
 		colophonTrigger.setAttribute( 'aria-expanded', 'false' );
 		colophonTrigger.innerHTML = 'Show More&hellip;';
@@ -52,7 +52,7 @@ colophonTrigger.setAttribute( 'aria-controls', 'colophon-extended' );
 colophonTrigger.addEventListener( 'click', toggleColophon );
 
 
-/* 
+/*
  * ScottSmith.sexy
  */
 function changeSource() {
