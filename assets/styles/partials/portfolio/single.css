@@ -153,6 +153,7 @@
 	}
 
 	a.kg-bookmark-container {
+		transition: border-color 0.3s ease;
 		display: flex;
 		flex-flow: row;
 		flex-direction: row-reverse;
@@ -161,6 +162,10 @@
 		text-decoration: none;
 		border: 3px solid var(--divider-color);
 		border-radius: 0.5rem;
+
+		&:hover {
+			border-color: var(--blue);
+		}
 	}
 
 	.kg-bookmark-content {
