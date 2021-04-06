@@ -204,7 +204,8 @@
 		width: 1em;
 		height: 1em;
 		vertical-align: text-bottom;
-		margin-bottom: 0.05em;
+		margin-bottom: 0;
+		margin-top: 0;
 	}
 
 	.kg-bookmark-thumbnail {
