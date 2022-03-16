@@ -14,8 +14,8 @@
 	"scripts": {
 		"build": "gulp build && gulp sitemap",
 		"dev": "gulp & npx serve",
-		"now-build": "npm run build && npm run create-dist",
-		"now-dev": "gulp build && npm run create-dist && npm run serve",
+		"vercel-build": "npm run build && npm run create-dist",
+		"vercel-dev": "gulp build && npm run create-dist && npm run serve",
 		"create-dist": "if [ -d dist ]; then rm -rf ./dist; fi && mkdir -p dist && cp -R {index.html,manifest.webmanifest,sitemap.xml,./assets/,./portfolio/,./miscellanea/,./error/,./.well-known/} dist",
 		"serve": "npx serve",
 		"test": "gulp pretest && stylelint 'styles/build/*.css'"
@@ -27,7 +27,7 @@
 		"cssnano": "^5.1.4",
 		"dotenv": "^16.0.0",
 		"flickity": "^3.0.0",
-		"gulp": "^3.9.1",
+		"gulp": "^4.0.2",
 		"gulp-cheerio": "^1.0.0",
 		"gulp-concat": "^2.6.1",
 		"gulp-data": "^1.3.1",
