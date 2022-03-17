@@ -13,19 +13,6 @@ import sitemap from 'gulp-sitemap';
 import GhostContentAPI from '@tryghost/content-api';
 import data from 'gulp-data';
 
-// require('dotenv').config();
-// const gulp = require( 'gulp' );
-// const mustache = require( 'gulp-mustache' );
-// const postcss = require( 'gulp-postcss' );
-// const sprite = require( 'gulp-svg-sprite' );
-// const concat = require( 'gulp-concat' );
-// const minify = require( 'gulp-terser' );
-// const cheerio = require( 'gulp-cheerio' );
-// const srihash = require( 'gulp-sri-hash' );
-// const sitemap = require( 'gulp-sitemap' );
-// const GhostContentAPI = require( '@tryghost/content-api' );
-// const data = require( 'gulp-data' );
-
 const paths = {
 	html: {
 		src: [ '**/*.mustache', '!partials/**', '!portfolio/**', '!node_modules/**/*' ],
