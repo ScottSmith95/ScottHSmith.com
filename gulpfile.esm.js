@@ -1,6 +1,6 @@
 'use strict';
 
-import 'dotenv/config'
+import 'dotenv/config';
 import gulp from 'gulp';
 import mustache from 'gulp-mustache';
 import postcss from 'gulp-postcss';
