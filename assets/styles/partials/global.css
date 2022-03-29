@@ -4,6 +4,10 @@
 @import '_caslon-graphique-font-face.css';
 @import-normalize;
 
+:root {
+	accent-color: var(--blue);
+}
+
 html {
 	box-sizing: border-box;
 }
