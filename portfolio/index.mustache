@@ -1,11 +1,11 @@
-{{> ../file-header }}
+{{> file-header }}
 
 	<title>Scott Smith</title>
 
 	<meta name="title" content="Scott Smith: Design Portfolio">
 	<meta name="Description" content="Scott Smith is a designer & web developer. Passionate about crafting designs and experiences for users. Always learning.">
 
-	{{> ../meta-tags }}
+	{{> meta-tags }}
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="/assets/styles/partials/global.css">
@@ -31,10 +31,10 @@
 	{{! The main content area on the homepage }}
 	<main class="content" role="main">
 
-		{{#featured}}
-			{{> _featured/placed}}
-			{{> _featured/clinicians-brief}}
-		{{/featured}}
+		{{#collections.featured}}
+			{{> portfolio/featured/placed}}
+			{{> portfolio/featured/clinicians-brief}}
+		{{/collections.featured}}
 
 	</main>
 
@@ -42,13 +42,14 @@
 		<div class="secondary-items">
 			<h2 class="bin-title">More Work</h2>
 			<div id="secondary-items-container" class="scroll-well">
-				{{> _partials/bin}}
+				{{> portfolio/bin}}
 			</div>
 		</div>
 	</footer>
 
-<script async type="text/javascript" src="/assets/scripts/build/global.js"></script>
-<script async type="text/javascript" src="/assets/scripts/build/portfolio.js"></script>
+
+{{> global-script }}
+<script async type="text/javascript" src="/assets/scripts/portfolio.js"></script>
 
 </body>
 
