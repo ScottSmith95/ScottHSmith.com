@@ -5,11 +5,11 @@ install:
   - npm ci || npm install
 cache:
   directories:
-  - "$HOME/.npm"
+    - "$HOME/.npm"
 before_script:
   - npm install -g gulp-cli stylelint
   - gulp pretest
 script:
-  - stylelint "assets/styles/build/*.css"
+  - stylelint "assets/styles/*.css"
 notifications:
   slack: scottsmith:dyOlsu15eZFL1YmhpwngiFrf

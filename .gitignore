@@ -6,11 +6,11 @@
 .vercel
 
 node_modules/
+_site/
 dist/
 assets/**/build/
 tea/build/
 **/*.map
 **/*.html
-!party/*.html
 
 sitemap.xml
