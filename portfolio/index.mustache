@@ -1,16 +1,16 @@
-{{> ../partials/file-header }}
+{{> ../file-header }}
 
 	<title>Scott Smith</title>
 
 	<meta name="title" content="Scott Smith: Design Portfolio">
 	<meta name="Description" content="Scott Smith is a designer & web developer. Passionate about crafting designs and experiences for users. Always learning.">
 
-	{{> ../partials/meta-tags }}
+	{{> ../meta-tags }}
 
 	<!-- CSS -->
-	<link rel="stylesheet" href="/assets/styles/build/partials/global.css">
-	<link rel="stylesheet" href="/assets/styles/build/partials/project.css">
-	<link rel="stylesheet" href="/assets/styles/build/portfolio.css">
+	<link rel="stylesheet" href="/assets/styles/partials/global.css">
+	<link rel="stylesheet" href="/assets/styles/partials/project.css">
+	<link rel="stylesheet" href="/assets/styles/portfolio.css">
 
 </head>
 
@@ -30,7 +30,7 @@
 
 	{{! The main content area on the homepage }}
 	<main class="content" role="main">
-		
+
 		{{#featured}}
 			{{> _featured/placed}}
 			{{> _featured/clinicians-brief}}
