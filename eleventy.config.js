@@ -4,6 +4,55 @@ const postcss = require("postcss");
 const { minify } = require("terser");
 const svgSprite = require("svg-sprite");
 const ghostContentAPI = require("@tryghost/content-api");
+require("dotenv").config();
+
+const paths = {
+	portfolio: {
+		indexTemplate: "portfolio/index.mustache",
+		postTemplate: "portfolio/_postTemplate/index.mustache",
+		dest: "portfolio/",
+	},
+	sprites: {
+		src: "assets/images/social-icons/",
+		dest: "_site/assets/images/social-icons/build/",
+	},
+	sri: {
+		src: ["**/*.html", "!node_modules/**"],
+		dest: "./",
+	},
+	sitemap: {
+		src: ["**/*.html", "!error/*.html", "!node_modules/**/*"],
+		dest: "./",
+	},
+};
+
+const portfolioUrl = "https://admin.scotthsmith.com";
+
+const portfolioApi = new ghostContentAPI({
+	url: portfolioUrl,
+	key: process.env.GHOST_CONTENT_API_KEY,
+	version: "v5.0",
+});
+
+const processors = [
+	require("postcss-import"),
+	require("postcss-normalize"),
+	require("postcss-nested"),
+	require("postcss-custom-properties"),
+	require("postcss-custom-media"),
+	require("postcss-sort-media-queries"),
+	require("postcss-color-rgb"),
+	require("postcss-100vh-fix"),
+	require("autoprefixer"),
+	require("cssnano")({
+		preset: [
+			"default",
+			{
+				mergeRules: false,
+			},
+		],
+	}),
+];
 
 module.exports = function (eleventyConfig) {
 	// Passthrough files
@@ -11,79 +60,14 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("./assets/fonts");
 	eleventyConfig.addPassthroughCopy("./assets/icons");
 	eleventyConfig.addPassthroughCopy("./assets/images");
+	eleventyConfig.addPassthroughCopy("./miscellanea/**/images/*");
+	eleventyConfig.addPassthroughCopy("./miscellanea/social-icons/**/");
+	eleventyConfig.addPassthroughCopy("./portfolio/_assets");
+	eleventyConfig.addPassthroughCopy("./manifest.webmanifest");
 	eleventyConfig.addPassthroughCopy("./sitemap.xml");
 
 	// Passthrough during serve
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
-
-	const paths = {
-		portfolio: {
-			indexTemplate: "portfolio/index.mustache",
-			postTemplate: "portfolio/_postTemplate/index.mustache",
-			dest: "portfolio/",
-		},
-		styles: {
-			src: [
-				"assets/styles/**/*.css",
-				"!assets/styles/build/**",
-				"!assets/styles/variables.css",
-				"!assets/styles/partials/_*",
-			],
-			dest: "assets/styles/build/",
-			watch: ["assets/styles/**/*.css", "!assets/styles/build/**"],
-		},
-		sprites: {
-			src: "assets/images/social-icons/*.svg",
-			dest: "_site/assets/images/social-icons/build/",
-		},
-		scripts: {
-			src: [
-				"assets/scripts/*.js",
-				"!assets/scripts/build/**",
-				"!assets/scripts/main.js",
-				"!assets/scripts/home.js",
-				"!assets/scripts/social-icons.js",
-			],
-			dest: "assets/scripts/build/",
-			watch: "assets/scripts/*.js",
-		},
-		sri: {
-			src: ["**/*.html", "!node_modules/**"],
-			dest: "./",
-		},
-		sitemap: {
-			src: ["**/*.html", "!error/*.html", "!node_modules/**/*"],
-			dest: "./",
-		},
-	};
-
-	const portfolioUrl = "https://admin.scotthsmith.com";
-
-	const portfolioApi = new GhostContentAPI({
-		url: portfolioUrl,
-		key: process.env.GHOST_CONTENT_API_KEY,
-		version: "v5.0",
-	});
-
-	const processors = [
-		require("postcss-import"),
-		require("postcss-normalize"),
-		require("postcss-nested"),
-		require("postcss-custom-properties"),
-		require("postcss-custom-media"),
-		require("postcss-sort-media-queries"),
-		require("postcss-color-rgb"),
-		require("postcss-100vh-fix"),
-		require("autoprefixer"),
-		require("cssnano")({
-			preset: [
-				"default",
-				{
-					mergeRules: false,
-				},
-			],
-		}),
-	];
 
 	function camelize(str) {
 		// from: https://stackoverflow.com/a/2970667
@@ -98,19 +82,6 @@ module.exports = function (eleventyConfig) {
 		return `/portfolio${postUrl.pathname}${postUrl.search}`;
 	}
 
-	async function getPortfolioData() {
-		const posts = await getPortfolioPosts();
-		const pages = await getPortfolioPages();
-
-		const postsData = {
-			featured: posts.featured,
-			bin: posts.bin,
-			pages,
-		};
-
-		return postsData;
-	}
-
 	function processItemData(item) {
 		item.url = getPathUrl(item.url);
 		// Strip out the absolute part of the URL from HTML item data.
@@ -123,29 +94,25 @@ module.exports = function (eleventyConfig) {
 		return item;
 	}
 
+	async function getPortfolioData() {
+		const posts = await getPortfolioPosts();
+		const pages = await getPortfolioPages();
+
+		return [posts, pages].flat();
+	}
+
 	async function getPortfolioPosts() {
 		return portfolioApi.posts
 			.browse({ include: "tags" })
 			.then((posts) => {
-				let featuredPosts = {};
-				let binPosts = [];
+				let postsSaved = [];
 				posts.forEach((post) => {
-					if (post.featured) {
-						const index = camelize(post.slug).replace("-", "");
-						const processedPost = processItemData(post);
+					const processedPost = processItemData(post);
+					processedPost.type = "post";
 
-						featuredPosts[index] = processedPost;
-					} else {
-						const processedPost = processItemData(post);
-
-						binPosts.push(processedPost);
-					}
+					postsSaved.push(processedPost);
 				});
-				const postsData = {
-					featured: featuredPosts,
-					bin: binPosts,
-				};
-				return postsData;
+				return postsSaved;
 			})
 			.catch((err) => {
 				console.error(err);
@@ -159,6 +126,7 @@ module.exports = function (eleventyConfig) {
 				let pagesSaved = [];
 				pages.forEach((page) => {
 					const processedPost = processItemData(page);
+					processedPost.type = "page";
 
 					pagesSaved.push(processedPost);
 				});
@@ -169,41 +137,35 @@ module.exports = function (eleventyConfig) {
 			});
 	}
 
-	// 	async function portfolioIndex() {
-	// 		const portfolioData = await getPortfolioData();
-	//
-	// 		return gulp
-	// 			.src(paths.portfolio.indexTemplate)
-	// 			.pipe(data(portfolioData))
-	// 			.pipe(mustache({}, { extension: ".html" }))
-	// 			.pipe(gulp.dest(paths.portfolio.dest));
-	// 	}
+	eleventyConfig.addCollection("posts", async (collection) => {
+		const portfolioData = await getPortfolioData();
+		collection = portfolioData;
+		return collection;
+	});
 
-	// 	async function portfolioPosts() {
-	// 		const portfolioData = await getPortfolioData();
-	// 		let posts = [];
-	// 		Object.entries(portfolioData.featured).forEach(([title, content]) => {
-	// 			posts.push(content);
-	// 		});
-	// 		posts = posts.concat(portfolioData.bin, portfolioData.pages);
-	//
-	// 		posts.map((post) => {
-	// 			return gulp
-	// 				.src(paths.portfolio.postTemplate)
-	// 				.pipe(data({ post: post, bin: portfolioData.bin }))
-	// 				.pipe(mustache({}, { extension: ".html" }))
-	// 				.pipe(gulp.dest(`${paths.portfolio.dest}${post.slug}`));
-	// 		});
-	// 	}
+	eleventyConfig.addCollection("featured", async (collection) => {
+		const portfolioData = await getPortfolioData();
+		const filteredPortfolioData = portfolioData.filter(
+			(post) => post.featured === true
+		);
+		// Make an object of featured posts so we can easily grab them by name in the featured partial templates.
+		let featuredPosts = {};
+		filteredPortfolioData.forEach((post) => {
+			const index = camelize(post.slug).replace("-", "");
+			featuredPosts[index] = post;
+		});
+		collection = featuredPosts;
+		return collection;
+	});
 
-	// const portfolio = gulp.parallel(portfolioIndex, portfolioPosts);
-
-	// function stylesForLint() {
-	// 	return gulp
-	// 		.src(paths.styles.src)
-	// 		.pipe(postcss(processors))
-	// 		.pipe(gulp.dest(paths.styles.dest));
-	// }
+	eleventyConfig.addCollection("bin", async (collection) => {
+		const portfolioData = await getPortfolioData();
+		const filteredPortfolioData = portfolioData.filter(
+			(post) => post.type !== "page" && post.featured !== true
+		);
+		collection = filteredPortfolioData;
+		return collection;
+	});
 
 	eleventyConfig.addExtension("css", {
 		outputFileExtension: "css",
@@ -212,7 +174,7 @@ module.exports = function (eleventyConfig) {
 		compile: async function (inputContent, inputPath) {
 			// Skip names beginning with an underscore.
 			let parsed = path.parse(inputPath);
-			if (parsed.name.startsWith("_")) {
+			if (parsed.name.startsWith("_") || parsed.name.includes("variables")) {
 				return;
 			}
 
@@ -291,12 +253,12 @@ module.exports = function (eleventyConfig) {
 			},
 		};
 		const spriter = new svgSprite(options);
-		const svgDir = "assets/images/social-icons";
-		const svgDirFileNames = await readdir(svgDir);
+		const svgDirFileNames = await readdir(paths.sprites.src);
 
 		for (const fileName of svgDirFileNames) {
-			const filePath = path.join(svgDir, fileName);
+			const filePath = path.join(paths.sprites.src, fileName);
 
+			// The below can error if there is a directory found. TODO: Add check for is directory/is readable.
 			let fileContents = await readFile(filePath, {
 				encoding: "utf8",
 			});
@@ -318,6 +280,6 @@ module.exports = function (eleventyConfig) {
 	});
 
 	return {
-		templateFormats: ["html", "mustache", "css", "js"],
+		templateFormats: ["mustache", "hbs", "css", "js"],
 	};
 };
