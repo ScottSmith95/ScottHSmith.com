@@ -49,12 +49,12 @@ const processors = [
 
 	async function saveSourcemap( filepath, map ) {
 		const outPath = path.parse( filepath );
-		const outDir = await open( outPath.dir );
-		const outDirStats = await outDir.stat()
-		outDir.close();
 
-		if (outDirStats.isDirectory()) {
-			// Create output directory if it doesn't exist.
+		try {
+			const outDir = await open( outPath.dir );
+			outDir.close();
+		} catch( error ) {
+			console.log( `${filepath} could not be opened. Attempting to create directory.` );
 			await mkdir( outPath.dir, {
 				recursive: true,
 			} );
@@ -236,7 +236,7 @@ module.exports = function ( eleventyConfig ) {
 					"social-icons.js": inputContent,
 				};
 			}
-			console.log(process.env)
+
 			const options = {
 				sourceMap: {
 					filename: parsed.base,
