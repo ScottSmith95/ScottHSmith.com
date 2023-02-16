@@ -16,11 +16,17 @@ if ( document.body.clientWidth > 720 ) {
 	layout.classList.remove( 'scroll-well' );
 }
 
-const galleryImages = document.querySelectorAll( '.kg-gallery-image img' );
-galleryImages.forEach( function ( image ) {
+function galleryImageSize( event ) {
+	console.log( event, event.target );
+	const image = event.target;
 	const container = image.closest( '.kg-gallery-image' );
 	const width = image.attributes.width.value;
 	const height = image.attributes.height.value;
 	const ratio = width / height;
-	container.style.flex = ratio + ' 1 0%';
+	container.style[ 'flex' ] = ratio + ' 1 0%';
+}
+
+const galleryImages = document.querySelectorAll( '.kg-gallery-image img' );
+galleryImages.forEach( function ( element ) {
+	element.addEventListener('load', galleryImageSize)
 } )
