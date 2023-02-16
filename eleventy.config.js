@@ -1,5 +1,5 @@
 const path = require("path");
-const { readFile, readdir, writeFile, mkdir } = require("node:fs/promises");
+const { open, stat, readFile, readdir, writeFile, mkdir } = require("node:fs/promises");
 const postcss = require("postcss");
 const { minify } = require("terser");
 const svgSprite = require("svg-sprite");
@@ -7,22 +7,15 @@ const ghostContentAPI = require("@tryghost/content-api");
 require("dotenv").config();
 
 const paths = {
-	portfolio: {
-		indexTemplate: "portfolio/index.mustache",
-		postTemplate: "portfolio/_postTemplate/index.mustache",
-		dest: "portfolio/",
+	scripts: {
+		dest: "_site/assets/scripts/",
 	},
 	sprites: {
 		src: "assets/images/social-icons/",
 		dest: "_site/assets/images/social-icons/build/",
 	},
-	sri: {
-		src: ["**/*.html", "!node_modules/**"],
-		dest: "./",
-	},
 	sitemap: {
-		src: ["**/*.html", "!error/*.html", "!node_modules/**/*"],
-		dest: "./",
+		src: ["_site", "!_site/error/*.html"],
 	},
 };
 
@@ -35,16 +28,16 @@ const portfolioApi = new ghostContentAPI({
 });
 
 const processors = [
-	require("postcss-import"),
-	require("postcss-normalize"),
-	require("postcss-nested"),
-	require("postcss-custom-properties"),
-	require("postcss-custom-media"),
-	require("postcss-sort-media-queries"),
-	require("postcss-color-rgb"),
-	require("postcss-100vh-fix"),
-	require("autoprefixer"),
-	require("cssnano")({
+	require( 'postcss-import' ),
+	require( 'postcss-normalize' ),
+	require( 'postcss-nested' ),
+	require( 'postcss-custom-properties' ),
+	require( 'postcss-custom-media' ),
+	require( 'postcss-sort-media-queries' ),
+	require( 'postcss-color-rgb' ),
+	require( 'postcss-100vh-fix' ),
+	require( 'autoprefixer' ),
+	require( 'cssnano' )({
 		preset: [
 			"default",
 			{
@@ -54,7 +47,95 @@ const processors = [
 	}),
 ];
 
-module.exports = function (eleventyConfig) {
+	async function saveSourcemap( filepath, map ) {
+		const outPath = path.parse( filepath );
+		const outDir = await open( outPath.dir );
+		const outDirStats = await outDir.stat()
+		outDir.close();
+
+		if (outDirStats.isDirectory()) {
+			// Create output directory if it doesn't exist.
+			await mkdir( outPath.dir, {
+				recursive: true,
+			} );
+		}
+
+		return await writeFile(
+			`${filepath}.map`,
+			map
+		);
+	}
+
+function camelize( str ) {
+	// from: https://stackoverflow.com/a/2970667
+	return str.replace( /(?:^\w|[A-Z]|\b\w|\s+ )/g, function ( match, index ) {
+		if ( +match === 0 ) return ""; // or if (/\s+/.test(match)) for white spaces
+		return index == 0 ? match.toLowerCase() : match.toUpperCase();
+	});
+}
+
+function getPathUrl( url ) {
+	const postUrl = new URL( url );
+	return `/portfolio${postUrl.pathname}${postUrl.search}`;
+}
+
+function processItemData( item ) {
+	item.url = getPathUrl( item.url );
+	// Strip out the absolute part of the URL from HTML item data.
+	const relativizeHtml = new RegExp( `${portfolioUrl}`, "g" );
+	if ( item.feature_image !== null ) {
+		item.feature_image = item.feature_image.replace( relativizeHtml, '' );
+	}
+	item.html = item.html.replace( relativizeHtml, '' );
+
+	return item;
+}
+
+async function getPortfolioData() {
+	const posts = await getPortfolioPosts();
+	const pages = await getPortfolioPages();
+
+	return [posts, pages].flat();
+}
+
+async function getPortfolioPosts() {
+	return portfolioApi.posts
+		.browse( { include: "tags" } )
+		.then( ( posts ) => {
+			let postsSaved = [];
+			posts.forEach( (post) => {
+				const processedPost = processItemData( post );
+				processedPost.type = "post";
+
+				postsSaved.push( processedPost );
+			} );
+			return postsSaved;
+		} )
+		.catch( (err) => {
+			console.error( err );
+		} );
+}
+
+async function getPortfolioPages() {
+	return portfolioApi.pages
+		.browse()
+		.then( ( pages ) => {
+			let pagesSaved = [];
+			pages.forEach( ( page ) => {
+				const processedPost = processItemData( page );
+				processedPost.type = "page";
+
+				pagesSaved.push( processedPost );
+			} );
+			return pagesSaved;
+		} )
+		.catch( ( err ) => {
+			console.error( err );
+		} );
+}
+
+
+module.exports = function ( eleventyConfig ) {
 	// Passthrough files
 	eleventyConfig.addPassthroughCopy("./assets/favicons");
 	eleventyConfig.addPassthroughCopy("./assets/fonts");
@@ -68,74 +149,6 @@ module.exports = function (eleventyConfig) {
 
 	// Passthrough during serve
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
-
-	function camelize(str) {
-		// from: https://stackoverflow.com/a/2970667
-		return str.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function (match, index) {
-			if (+match === 0) return ""; // or if (/\s+/.test(match)) for white spaces
-			return index == 0 ? match.toLowerCase() : match.toUpperCase();
-		});
-	}
-
-	function getPathUrl(url) {
-		const postUrl = new URL(url);
-		return `/portfolio${postUrl.pathname}${postUrl.search}`;
-	}
-
-	function processItemData(item) {
-		item.url = getPathUrl(item.url);
-		// Strip out the absolute part of the URL from HTML item data.
-		const relativizeHtml = new RegExp(`${portfolioUrl}`, "g");
-		if (item.feature_image !== null) {
-			item.feature_image = item.feature_image.replace(relativizeHtml, "");
-		}
-		item.html = item.html.replace(relativizeHtml, "");
-
-		return item;
-	}
-
-	async function getPortfolioData() {
-		const posts = await getPortfolioPosts();
-		const pages = await getPortfolioPages();
-
-		return [posts, pages].flat();
-	}
-
-	async function getPortfolioPosts() {
-		return portfolioApi.posts
-			.browse({ include: "tags" })
-			.then((posts) => {
-				let postsSaved = [];
-				posts.forEach((post) => {
-					const processedPost = processItemData(post);
-					processedPost.type = "post";
-
-					postsSaved.push(processedPost);
-				});
-				return postsSaved;
-			})
-			.catch((err) => {
-				console.error(err);
-			});
-	}
-
-	async function getPortfolioPages() {
-		return portfolioApi.pages
-			.browse()
-			.then((pages) => {
-				let pagesSaved = [];
-				pages.forEach((page) => {
-					const processedPost = processItemData(page);
-					processedPost.type = "page";
-
-					pagesSaved.push(processedPost);
-				});
-				return pagesSaved;
-			})
-			.catch((err) => {
-				console.error(err);
-			});
-	}
 
 	eleventyConfig.addCollection("posts", async (collection) => {
 		const portfolioData = await getPortfolioData();
@@ -193,11 +206,10 @@ module.exports = function (eleventyConfig) {
 		outputFileExtension: "js",
 
 		// `compile` is called once per .css file in the input directory
-		compile: async function (inputContent, inputPath) {
+		compile: async function (inputContent, inputPath, page) {
 			let parsed = path.parse(inputPath);
 
 			if (
-				parsed.name.includes("gulp") ||
 				parsed.name.includes("eleventy") ||
 				parsed.name.includes("service-worker")
 			) {
@@ -224,14 +236,18 @@ module.exports = function (eleventyConfig) {
 					"social-icons.js": inputContent,
 				};
 			}
-
+			console.log(process.env)
 			const options = {
 				sourceMap: {
-					filename: "out.js",
-					url: `${inputPath}.map`,
+					filename: parsed.base,
+					url: `${parsed.base}.map`,
 				},
 			};
-			let result = await minify(inputContent, options);
+			let result = await minify( inputContent, options );
+
+			if ( typeof result.map !== 'undefined' ) {
+				await saveSourcemap( path.join( paths.scripts.dest, parsed.base ), result.map );
+			}
 
 			// This is the render function, `data` is the full data cascade
 			return async (data) => {
