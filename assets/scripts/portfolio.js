@@ -17,7 +17,6 @@ if ( document.body.clientWidth > 720 ) {
 }
 
 function galleryImageSize( event ) {
-	console.log( event, event.target );
 	const image = event.target;
 	const container = image.closest( '.kg-gallery-image' );
 	const width = image.attributes.width.value;
