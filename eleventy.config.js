@@ -145,6 +145,7 @@ module.exports = function ( eleventyConfig ) {
 	eleventyConfig.addPassthroughCopy("./miscellanea/social-icons/**/");
 	eleventyConfig.addPassthroughCopy("./portfolio/_assets");
 	eleventyConfig.addPassthroughCopy("./manifest.webmanifest");
+	eleventyConfig.addPassthroughCopy("./.well-known");
 	eleventyConfig.addPassthroughCopy("./sitemap.xml");
 
 	// Passthrough during serve
