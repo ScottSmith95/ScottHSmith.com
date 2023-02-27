@@ -1,3 +1,5 @@
+/** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
+
 const path = require("path");
 const { open, stat, readFile, readdir, writeFile, mkdir } = require("node:fs/promises");
 const postcss = require("postcss");
@@ -151,9 +153,15 @@ module.exports = function ( eleventyConfig ) {
 	// Passthrough during serve
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
 
+	const additionalLogging = process.env.CI == true || process.env.ENV === 'production' || process.env.VERCEL_ENV === 'production';
+
 	eleventyConfig.addCollection("posts", async (collection) => {
 		const portfolioData = await getPortfolioData();
 		collection = portfolioData;
+
+		if (additionalLogging) {
+			console.log(`${collection.length} pages added to \`posts\` collection.`)
+		}
 		return collection;
 	});
 
@@ -169,6 +177,10 @@ module.exports = function ( eleventyConfig ) {
 			featuredPosts[index] = post;
 		});
 		collection = featuredPosts;
+
+		if (additionalLogging) {
+			console.log(`${Object.keys(collection).length} pages added to \`featured\` collection.`)
+		}
 		return collection;
 	});
 
@@ -178,6 +190,10 @@ module.exports = function ( eleventyConfig ) {
 			(post) => post.type !== "page" && post.featured !== true
 		);
 		collection = filteredPortfolioData;
+
+		if (additionalLogging) {
+			console.log(`${collection.length} pages added to \`bin\` collection.`)
+		}
 		return collection;
 	});
 
