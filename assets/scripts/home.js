@@ -1,7 +1,18 @@
 /*
  * SVG Icons
  */
-boomsvgloader.load( '/assets/images/social-icons/build/home-sprite.svg' );
+function loadSvgSprite( url ) {
+	fetch( url )
+		.then( ( response ) => response.text() )
+		.then( ( spriteText ) => {
+			const div = document.createElement( 'div' );
+			div.style.cssText = 'border: 0; clip: rect(0 0 0 0); height: 0; overflow: hidden; padding: 0; position: absolute; width: 0;';
+			div.innerHTML = spriteText;
+			document.body.insertBefore(div, document.body.childNodes[0]);
+		} );
+}
+
+loadSvgSprite( '/assets/images/social-icons/build/home-sprite.svg' );
 
 
 /*

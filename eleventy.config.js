@@ -219,30 +219,20 @@ module.exports = function ( eleventyConfig ) {
 		},
 	});
 
-	eleventyConfig.addExtension("js", {
-		outputFileExtension: "js",
+	eleventyConfig.addExtension( 'js', {
+		outputFileExtension: 'js',
 
 		// `compile` is called once per .css file in the input directory
-		compile: async function (inputContent, inputPath, page) {
-			let parsed = path.parse(inputPath);
+		compile: async function ( inputContent, inputPath, page ) {
+			let parsed = path.parse( 'inputPath' );
 
 			if (
-				parsed.name.includes("eleventy") ||
-				parsed.name.includes("service-worker")
+				parsed.name.includes( 'eleventy' ) ||
+				parsed.name.includes( 'service-worker' )
 			) {
 				// Skip dev files
 				return;
-			} else if (parsed.name.includes("home")) {
-				// Custom include for home file
-				let boomsvgloader = await readFile(
-					"node_modules/boomsvgloader/dist/js/boomsvgloader.js",
-					{ encoding: "utf8" }
-				);
-				inputContent = {
-					"boomsvgloader.js": boomsvgloader,
-					"home.js": inputContent,
-				};
-			} else if (parsed.name.includes("social-icons")) {
+			} else if ( parsed.name.includes( "social-icons" ) ) {
 				// Custom include for social-icons file
 				let flickity = await readFile(
 					"node_modules/flickity/dist/flickity.pkgd.js",
@@ -267,11 +257,11 @@ module.exports = function ( eleventyConfig ) {
 			}
 
 			// This is the render function, `data` is the full data cascade
-			return async (data) => {
+			return async ( data ) => {
 				return result.code;
 			};
 		},
-	});
+	} );
 
 	eleventyConfig.on("eleventy.before", async () => {
 		const options = {
@@ -285,27 +275,27 @@ module.exports = function ( eleventyConfig ) {
 				},
 			},
 		};
-		const spriter = new svgSprite(options);
-		const svgDirFileNames = await readdir(paths.sprites.src);
+		const spriter = new svgSprite( options );
+		const svgDirFileNames = await readdir( paths.sprites.src );
 
-		for (const fileName of svgDirFileNames) {
-			const filePath = path.join(paths.sprites.src, fileName);
+		for ( const fileName of svgDirFileNames ) {
+			const filePath = path.join( paths.sprites.src, fileName );
 
 			// The below can error if there is a directory found. TODO: Add check for is directory/is readable.
-			let fileContents = await readFile(filePath, {
+			let fileContents = await readFile( filePath, {
 				encoding: "utf8",
-			});
-			spriter.add(path.resolve(filePath), fileName, fileContents);
+			} );
+			spriter.add( path.resolve( filePath ), fileName, fileContents );
 		}
 
 		const { result } = await spriter.compileAsync();
-		for (const mode of Object.values(result)) {
-			for (const resource of Object.values(mode)) {
-				await mkdir(paths.sprites.dest, {
+		for ( const mode of Object.values( result ) ) {
+			for ( const resource of Object.values( mode ) ) {
+				await mkdir( paths.sprites.dest, {
 					recursive: true,
-				});
+				} );
 				await writeFile(
-					path.join(paths.sprites.dest, path.parse(resource.path).base),
+					path.join( paths.sprites.dest, path.parse( resource.path ).base ),
 					resource.contents
 				);
 			}
@@ -313,6 +303,6 @@ module.exports = function ( eleventyConfig ) {
 	});
 
 	return {
-		templateFormats: ["mustache", "hbs", "css", "js"],
+		templateFormats: [ 'mustache', 'css', 'js' ],
 	};
 };
