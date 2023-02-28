@@ -22,8 +22,6 @@ const paths = {
 	},
 };
 
-const portfolioUrl = process.env.GHOST_CONTENT_API_URL;
-
 const portfolioApi = new ghostContentAPI({
 	url: process.env.GHOST_CONTENT_API_URL,
 	key: process.env.GHOST_CONTENT_API_KEY,
@@ -85,7 +83,7 @@ function getPathUrl( url ) {
 function processItemData( item ) {
 	item.url = getPathUrl( item.url );
 	// Strip out the absolute part of the URL from HTML item data.
-	// 	const relativizeHtml = new RegExp( `${portfolioUrl}`, "g" );
+	// 	const relativizeHtml = new RegExp( `${process.env.GHOST_CONTENT_API_URL}`, "g" );
 	// 	if ( item.feature_image !== null ) {
 	// 		item.feature_image = item.feature_image.replace( relativizeHtml, '' );
 	// 	}
