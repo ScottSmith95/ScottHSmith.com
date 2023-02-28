@@ -1,0 +1,17 @@
+<div class="secondary-items">
+	<h2 class="bin-title">More Work</h2>
+	<div id="secondary-items-container" class="scroll-well">
+		{% for post in collections.bin %}
+			<article class="card">
+
+				<a href="{{ post.url }}">
+					<img class="post-image" src="{{ post.feature_image | safe }}" loading="lazy" width="256" height="160">
+				</a>
+				<h3 class="post-title">
+					<a href="{{ post.url | safe  }}">{{ post.title }}</a>
+				</h3>
+
+			</article>
+		{% endfor %}
+	</div>
+</div>

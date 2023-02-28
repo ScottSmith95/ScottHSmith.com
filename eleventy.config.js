@@ -6,6 +6,7 @@ const postcss = require("postcss");
 const { minify } = require("terser");
 const svgSprite = require("svg-sprite");
 const ghostContentAPI = require("@tryghost/content-api");
+const localImages = require('eleventy-plugin-local-images');
 require("dotenv").config();
 
 const paths = {
@@ -21,10 +22,10 @@ const paths = {
 	},
 };
 
-const portfolioUrl = "https://admin.scotthsmith.com";
+const portfolioUrl = process.env.GHOST_CONTENT_API_URL;
 
 const portfolioApi = new ghostContentAPI({
-	url: portfolioUrl,
+	url: process.env.GHOST_CONTENT_API_URL,
 	key: process.env.GHOST_CONTENT_API_KEY,
 	version: "v5.0",
 });
@@ -49,24 +50,24 @@ const processors = [
 	}),
 ];
 
-	async function saveSourcemap( filepath, map ) {
-		const outPath = path.parse( filepath );
+async function saveSourcemap( filepath, map ) {
+	const outPath = path.parse( filepath );
 
-		try {
-			const outDir = await open( outPath.dir );
-			outDir.close();
-		} catch( error ) {
-			console.log( `${filepath} could not be opened. Attempting to create directory.` );
-			await mkdir( outPath.dir, {
-				recursive: true,
-			} );
-		}
-
-		return await writeFile(
-			`${filepath}.map`,
-			map
-		);
+	try {
+		const outDir = await open( outPath.dir );
+		outDir.close();
+	} catch( error ) {
+		console.log( `${filepath} could not be opened. Attempting to create directory.` );
+		await mkdir( outPath.dir, {
+			recursive: true,
+		} );
 	}
+
+	return await writeFile(
+		`${filepath}.map`,
+		map
+	);
+}
 
 function camelize( str ) {
 	// from: https://stackoverflow.com/a/2970667
@@ -84,11 +85,15 @@ function getPathUrl( url ) {
 function processItemData( item ) {
 	item.url = getPathUrl( item.url );
 	// Strip out the absolute part of the URL from HTML item data.
-	const relativizeHtml = new RegExp( `${portfolioUrl}`, "g" );
-	if ( item.feature_image !== null ) {
-		item.feature_image = item.feature_image.replace( relativizeHtml, '' );
-	}
-	item.html = item.html.replace( relativizeHtml, '' );
+	// 	const relativizeHtml = new RegExp( `${portfolioUrl}`, "g" );
+	// 	if ( item.feature_image !== null ) {
+	// 		item.feature_image = item.feature_image.replace( relativizeHtml, '' );
+	// 	}
+	// 	item.html = item.html.replace( relativizeHtml, '' );
+
+	// Remove srcset attributes from images until https://github.com/robb0wen/eleventy-plugin-local-images/issues/15
+	// is fixed and plugin supports multiple selectors.
+	item.html = item.html.replace( new RegExp( 'srcset=(["\'])?((?:.(?!\1|>))*.?)\1?', 'g' ), '' );
 
 	return item;
 }
@@ -154,6 +159,13 @@ module.exports = function ( eleventyConfig ) {
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
 
 	const additionalLogging = process.env.CI == true || process.env.ENV === 'production' || process.env.VERCEL_ENV === 'production';
+
+	eleventyConfig.addPlugin( localImages, {
+		distPath: '_site',
+		assetPath: '/assets/images/portfolio-assets',
+		attribute: 'src',
+		verbose: additionalLogging
+	} );
 
 	eleventyConfig.addCollection("posts", async (collection) => {
 		const portfolioData = await getPortfolioData();
@@ -303,6 +315,6 @@ module.exports = function ( eleventyConfig ) {
 	});
 
 	return {
-		templateFormats: [ 'mustache', 'css', 'js' ],
+		templateFormats: [ 'mustache', 'njk', 'css', 'js' ],
 	};
 };
