@@ -5,7 +5,8 @@ const { open, stat, readFile, readdir, writeFile, mkdir } = require("node:fs/pro
 const postcss = require("postcss");
 const postcssrc = require("postcss-load-config");
 const { minify } = require("terser");
-const svgSprite = require("svg-sprite");
+const svgstore = require("svgstore");
+const { optimize } = require('svgo');
 const ghostContentAPI = require("@tryghost/content-api");
 const localImages = require('eleventy-plugin-local-images');
 require("dotenv").config();
@@ -264,42 +265,43 @@ module.exports = function ( eleventyConfig ) {
 	} );
 
 	eleventyConfig.on("eleventy.before", async () => {
-		const options = {
-			mode: {
-				symbol: {
-					// Create a «symbol» sprite.
-					inline: true,
-					dest: ".", // Don't create 'symbols/' directory.
-					prefix: "", // Don't prefix output title.
-					sprite: "home-sprite", // '.svg' will be appended if not included.
-				},
-			},
-		};
-		const spriter = new svgSprite( options );
+		const sprites = svgstore();
 		const svgDirFileNames = await readdir( paths.sprites.src );
+		const spriteFilePath = path.join( paths.sprites.dest, 'home-sprite.svg' );
 
 		for ( const fileName of svgDirFileNames ) {
 			const filePath = path.join( paths.sprites.src, fileName );
+			const parsedFilePath = path.parse( filePath );
 
-			// The below can error if there is a directory found. TODO: Add check for is directory/is readable.
-			let fileContents = await readFile( filePath, {
-				encoding: "utf8",
-			} );
-			spriter.add( path.resolve( filePath ), fileName, fileContents );
-		}
-
-		const { result } = await spriter.compileAsync();
-		for ( const mode of Object.values( result ) ) {
-			for ( const resource of Object.values( mode ) ) {
-				await mkdir( paths.sprites.dest, {
-					recursive: true,
+			// skip invisible or hidden files
+			if ( parsedFilePath.name[0] !== '.' ) {
+				// The below can error if there is a directory found. TODO: Add check for is directory/is readable.
+				let fileContents = await readFile( filePath, {
+					encoding: "utf8",
 				} );
-				await writeFile(
-					path.join( paths.sprites.dest, path.parse( resource.path ).base ),
-					resource.contents
-				);
+				sprites.add( parsedFilePath.name, fileContents );
 			}
 		}
+		const combinedSprite = sprites.toString( { inline: true } );
+
+		const { data: optimizedSprite } = optimize( combinedSprite, {
+			path: spriteFilePath,
+			multipass: true,
+			plugins: [ {
+				name: 'preset-default',
+				params: {
+					overrides: {
+						cleanupIds: false,
+						removeUselessDefs: false,
+					},
+				},
+			} ],
+		} );
+
+		await mkdir( paths.sprites.dest, {
+			recursive: true,
+		} );
+		await writeFile( spriteFilePath, optimizedSprite );
 	});
 
 	return {
