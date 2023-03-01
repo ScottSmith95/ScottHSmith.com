@@ -12,7 +12,7 @@ header {
 	width: 100%;
 	height: 10em;
 	background-color: var(--darkgrey);
-	
+
 	&::after {
 		content: '';
 		position: absolute;
@@ -21,7 +21,7 @@ header {
 		height: 15px;
 		background: linear-gradient(to top, rgba(0, 0, 0, 0.1), transparent);
 	}
-	
+
 	.bubble {
 		display: inline-block;
 		pointer-events: none;
@@ -40,11 +40,11 @@ header {
 		box-shadow: 0 2px 15px rgba(0, 0, 0, 0.35);
 		margin: 0 auto;
 	}
-	
+
 	a {
 		display: block;
 	}
-	
+
 	img {
 		animation: pop-closed 0.75s ease-out 0.5s backwards;
 		display: block;
@@ -54,20 +54,20 @@ header {
 		margin: 0 auto;
 		box-shadow: 0 0 5px rgba(0, 0, 0, 0.75);
 	}
-	
+
 	@media (hover) {
 	& a img {
 		transition: opacity 0.25s ease-out, transform 0.25s ease;
 		transform: translateY(0%);
 		opacity: 1;
 	}
-	
+
 	& a:hover img,
 	& a:focus img {
 		transform: translateY(-5%);
 		outline: none;
 	}
-	
+
 	& a:active img {
 		transform: translateY(0%);
 		opacity: 0.75;
@@ -86,7 +86,7 @@ header {
 	padding: var(--space-l2) 0;
 	text-align: left;
 	margin: 0 auto;
-	
+
 	&.archived {
 		filter: grayscale(100%);
 	}
@@ -98,7 +98,7 @@ header {
 	position: relative;
 	width: 100vw;
 	left: calc(-50vw + 50%);
-	
+
 	section {
 		width: 92.5%;
 		max-width: 40rem;
@@ -131,62 +131,62 @@ header {
 
 .options .button {
 	margin-right: 0.5em;
-		
+
 	&:last-child {
 		margin-right: 0;
 	}
-	
+
 	&.demo {
 		background-color: #E62A8B;
-		
+
 		@media (hover) {
 		&:hover {
 			background-color: #CC257B;
 		}
-		
+
 		&:active {
 			background-color: var(--active-button);
 		}
 		}
 	}
-	
+
 	&.download,
 	&.buy {
 		background-color: #29E677;
-		
+
 		@media (hover) {
 		&:hover {
 			background-color: #24CC6A;
 		}
-		
+
 		&:active {
 			background-color: var(--active-button);
 		}
 		}
 	}
-	
+
 	&.release-notes {
 		background-color: #29C2E5;
-		
+
 		@media (hover) {
 		&:hover {
 			background-color: #25ADCC;
 		}
-		
+
 		&:active {
 			background-color: var(--active-button);
 		}
 		}
 	}
-	
+
 	&.docs {
 		background-color: #E6512A;
-		
+
 		@media (hover) {
 		&:hover {
 			background-color: #CC4825;
 		}
-		
+
 		&:active {
 			background-color: var(--active-button);
 		}
@@ -196,11 +196,11 @@ header {
 
 section.email {
 	font-size: 1.25em;
-	
+
 	h2 {
 		margin: 1.5% 0 2.5%;
 	}
-	
+
 	input[type="email"] {
 		transition: border-color 0.25s ease;
 		color: var(--text-color);
@@ -210,21 +210,21 @@ section.email {
 		border-radius: 0.35em;
 		outline: none;
 		margin: 0;
-		
+
 		&:hover,
 		&:focus  {
 			border-color: #00CC48;
 		}
 	}
-	
+
 	input[type="submit"] {
 		font-size: 1em;
 		padding: 0.3em 0.5em;
-	
+
 		&:hover {
 			background-color: #00CC48;
 		}
-		
+
 		&:active,
 		&:focus {
 			background-color: #00A23A;
@@ -253,13 +253,13 @@ section.donate {
 	cursor: pointer;
 
 	-webkit-appearance: none;
-	
+
 	&:hover {
 		color: white;
 	}
-	
+
 	&:focus {
-		
+
 	}
 }
 
@@ -267,7 +267,7 @@ section.donate {
 	font-size: 1.1em;
 	background-color: var(--blue);
 	margin: 2.5% auto 1.25% 0.5em;
-	
+
 	@media (hover) {
 	&:hover {
 		background-color: #00CC48;
@@ -279,7 +279,7 @@ section.donate {
 @media (--width-l2) {
 	.screenshot-box {
 		height: 15em;
-		
+
 		.bubble {
 			max-width: 25%;
 		}
@@ -320,10 +320,10 @@ section.donate {
 		.bubble {
 			max-width: 15%;
 		}
-		
+
 		img {
 			width: 40%;
-		}		
+		}
 	}
 
 	.section-head {

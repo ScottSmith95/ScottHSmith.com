@@ -3,6 +3,7 @@
 const path = require("path");
 const { open, stat, readFile, readdir, writeFile, mkdir } = require("node:fs/promises");
 const postcss = require("postcss");
+const postcssrc = require("postcss-load-config");
 const { minify } = require("terser");
 const svgSprite = require("svg-sprite");
 const ghostContentAPI = require("@tryghost/content-api");
@@ -12,6 +13,9 @@ require("dotenv").config();
 const paths = {
 	scripts: {
 		dest: "_site/assets/scripts/",
+	},
+	styles: {
+		dest: "_site/assets/styles/",
 	},
 	sprites: {
 		src: "assets/images/social-icons/",
@@ -28,26 +32,6 @@ const portfolioApi = new ghostContentAPI({
 	version: "v5.0",
 });
 
-const processors = [
-	require( 'postcss-import' ),
-	require( 'postcss-normalize' ),
-	require( 'postcss-nested' ),
-	require( 'postcss-custom-properties' ),
-	require( 'postcss-custom-media' ),
-	require( 'postcss-sort-media-queries' ),
-	require( 'postcss-color-rgb' ),
-	require( 'postcss-100vh-fix' ),
-	require( 'autoprefixer' ),
-	require( 'cssnano' )({
-		preset: [
-			"default",
-			{
-				mergeRules: false,
-			},
-		],
-	}),
-];
-
 async function saveSourcemap( filepath, map ) {
 	const outPath = path.parse( filepath );
 
@@ -59,6 +43,10 @@ async function saveSourcemap( filepath, map ) {
 		await mkdir( outPath.dir, {
 			recursive: true,
 		} );
+	}
+
+	if (typeof map !== 'string' || typeof map !== 'Buffer') {
+		map = map.toString();
 	}
 
 	return await writeFile(
@@ -207,23 +195,30 @@ module.exports = function ( eleventyConfig ) {
 		return collection;
 	});
 
-	eleventyConfig.addExtension("css", {
-		outputFileExtension: "css",
+	eleventyConfig.addExtension( 'css', {
+		outputFileExtension: 'css',
 
 		// `compile` is called once per .css file in the input directory
-		compile: async function (inputContent, inputPath) {
+		compile: async function ( inputContent, inputPath ) {
 			// Skip names beginning with an underscore.
 			let parsed = path.parse(inputPath);
-			if (parsed.name.startsWith("_") || parsed.name.includes("variables")) {
+			if ( parsed.name.startsWith( '_' ) || parsed.name.includes( 'variables' ) ) {
 				return;
 			}
 
-			let result = await postcss(processors).process(inputContent, {
+			const { plugins, options } = await postcssrc( {
 				from: inputPath,
-			});
+				to: path.join( eleventyConfig.dir.output, inputPath )
+			} );
+			let result = await postcss( plugins ).process( inputContent, options );
+
+			// Save sourcemap to file
+			if ( typeof result.map !== 'undefined' ) {
+				await saveSourcemap( path.join( paths.styles.dest, parsed.base ), result.map );
+			}
 
 			// This is the render function, `data` is the full data cascade
-			return async (data) => {
+			return async ( data ) => {
 				return result.css;
 			};
 		},
@@ -262,6 +257,7 @@ module.exports = function ( eleventyConfig ) {
 			};
 			let result = await minify( inputContent, options );
 
+			// Save sourcemap to file
 			if ( typeof result.map !== 'undefined' ) {
 				await saveSourcemap( path.join( paths.scripts.dest, parsed.base ), result.map );
 			}
