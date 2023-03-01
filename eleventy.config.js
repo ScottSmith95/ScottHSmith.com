@@ -11,12 +11,6 @@ const localImages = require('eleventy-plugin-local-images');
 require("dotenv").config();
 
 const paths = {
-	scripts: {
-		dest: "_site/assets/scripts/",
-	},
-	styles: {
-		dest: "_site/assets/styles/",
-	},
 	sprites: {
 		src: "assets/images/social-icons/",
 		dest: "_site/assets/images/social-icons/build/",
@@ -214,7 +208,7 @@ module.exports = function ( eleventyConfig ) {
 
 			// Save sourcemap to file
 			if ( typeof result.map !== 'undefined' ) {
-				await saveSourcemap( path.join( paths.styles.dest, parsed.base ), result.map );
+				await saveSourcemap( path.join( eleventyConfig.dir.output, inputPath ), result.map );
 			}
 
 			// This is the render function, `data` is the full data cascade
@@ -259,7 +253,7 @@ module.exports = function ( eleventyConfig ) {
 
 			// Save sourcemap to file
 			if ( typeof result.map !== 'undefined' ) {
-				await saveSourcemap( path.join( paths.scripts.dest, parsed.base ), result.map );
+				await saveSourcemap( path.join( eleventyConfig.dir.output, inputPath ), result.map );
 			}
 
 			// This is the render function, `data` is the full data cascade
