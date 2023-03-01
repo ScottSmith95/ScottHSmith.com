@@ -223,7 +223,7 @@ module.exports = function ( eleventyConfig ) {
 
 		// `compile` is called once per .css file in the input directory
 		compile: async function ( inputContent, inputPath, page ) {
-			let parsed = path.parse( 'inputPath' );
+			let parsed = path.parse( inputPath );
 
 			if (
 				parsed.name.includes( 'eleventy' ) ||
