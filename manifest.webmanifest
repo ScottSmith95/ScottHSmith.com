@@ -1,7 +1,19 @@
 {
+	"$schema": "https://json.schemastore.org/web-manifest-combined.json",
 	"short_name": "Scott Smith",
 	"name": "Scott Smith",
 	"icons": [
+		{
+			"src": "/assets/favicons/icon.svg",
+			"type": "image/svg+xml",
+			"sizes": "any"
+		},
+		{
+			"src": "/assets/favicons/mask-icon.svg",
+			"type": "image/svg+xml",
+			"sizes": "any",
+			"purpose": "monochrome"
+		},
 		{
 			"src": "/assets/favicons/16.png",
 			"type": "image/png",
