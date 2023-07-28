@@ -1,6 +1,6 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_5_5)">
-<path d="M32 62.1887C48.6727 62.1887 62.1887 48.6727 62.1887 32C62.1887 15.3273 48.6727 1.81132 32 1.81132C15.3273 1.81132 1.81132 15.3273 1.81132 32C1.81132 48.6727 15.3273 62.1887 32 62.1887Z" style="stroke: currentColor"  stroke-width="3" stroke-miterlimit="10"/>
+<path d="M32 62.1887C48.6727 62.1887 62.1887 48.6727 62.1887 32C62.1887 15.3273 48.6727 1.81132 32 1.81132C15.3273 1.81132 1.81132 15.3273 1.81132 32C1.81132 48.6727 15.3273 62.1887 32 62.1887Z" style="fill: none;stroke: currentColor"  stroke-width="3" stroke-miterlimit="10"/>
 <mask id="mask0_5_5" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="5" y="5" width="54" height="54">
 <path d="M32 58.566C46.672 58.566 58.566 46.672 58.566 32C58.566 17.328 46.672 5.43396 32 5.43396C17.328 5.43396 5.43396 17.328 5.43396 32C5.43396 46.672 17.328 58.566 32 58.566Z" fill="white"/>
 </mask>
