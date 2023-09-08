@@ -1,43 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 53 53">
-  <defs>
-    <clipPath id="a">
-      <circle cx="26.5" cy="26.5" r="22" style="fill: none"/>
-    </clipPath>
-  </defs>
-  <title>LinkedIn</title>
-  <g>
-    <circle cx="26.5" cy="26.5" r="25" style="fill: none;stroke: currentColor;stroke-miterlimit: 10;stroke-width: 3px"/>
-    <g style="clip-path: url(#a)">
-      <g>
-        <line x1="42.0335" y1="45.5334" x2="10.1823" y2="45.5335" style="fill: none;stroke: currentColor;stroke-linecap: square;stroke-miterlimit: 10;stroke-width: 0.25px"/>
-        <line x1="39.9122" y1="47.6548" x2="13.5968" y2="47.6548" style="fill: none;stroke: currentColor;stroke-linecap: square;stroke-miterlimit: 10;stroke-width: 0.25px"/>
-        <line x1="36.3898" y1="49.7761" x2="17.3826" y2="49.7761" style="fill: none;stroke: currentColor;stroke-linecap: square;stroke-miterlimit: 10;stroke-width: 0.25px"/>
-        <line x1="44.1548" y1="43.4121" x2="8.0924" y2="43.4121" style="fill: none;stroke: currentColor;stroke-linecap: square;stroke-miterlimit: 10;stroke-width: 0.25px"/>
-        <line x1="46.2762" y1="41.2908" x2="6.6214" y2="41.2908" style="fill: none;stroke: currentColor;stroke-linecap: square;stroke-miterlimit: 10;stroke-width: 0.25px"/>
-        <line x1="48.3975" y1="39.1695" x2="5.264" y2="39.1695" style="fill: none;stroke: currentColor;stroke-linecap: square;stroke-miterlimit: 10;stroke-width: 0.25px"/>
-        <line x1="49.1102" y1="37.0482" x2="4.3615" y2="37.0482" style="fill: none;stroke: currentColor;stroke-linecap: square;stroke-miterlimit: 10;stroke-width: 0.25px"/>
-        <line x1="49.8171" y1="34.9269" x2="3.1376" y2="34.9268" style="fill: none;stroke: currentColor;stroke-linecap: square;stroke-miterlimit: 10;stroke-width: 0.25px"/>
-        <line x1="50.5227" y1="32.8055" x2="2.4303" y2="32.8055" style="fill: none;stroke: currentColor;stroke-linecap: square;stroke-miterlimit: 10;stroke-width: 0.25px"/>
-        <line x1="51.2299" y1="30.6842" x2="1.7234" y2="30.6842" style="fill: none;stroke: currentColor;stroke-linecap: square;stroke-miterlimit: 10;stroke-width: 0.25px"/>
-        <line x1="51.2259" y1="28.5629" x2="1.7284" y2="28.5629" style="fill: none;stroke: currentColor;stroke-linecap: square;stroke-miterlimit: 10;stroke-width: 0.25px"/>
-        <line x1="51.2301" y1="26.4416" x2="1.7234" y2="26.4416" style="fill: none;stroke: currentColor;stroke-linecap: square;stroke-miterlimit: 10;stroke-width: 0.25px"/>
-        <line x1="51.2259" y1="24.3202" x2="1.7284" y2="24.3202" style="fill: none;stroke: currentColor;stroke-linecap: square;stroke-miterlimit: 10;stroke-width: 0.25px"/>
-        <line x1="51.2305" y1="22.1989" x2="1.7234" y2="22.1989" style="fill: none;stroke: currentColor;stroke-linecap: square;stroke-miterlimit: 10;stroke-width: 0.25px"/>
-        <line x1="50.5236" y1="20.0776" x2="2.4303" y2="20.0776" style="fill: none;stroke: currentColor;stroke-linecap: square;stroke-miterlimit: 10;stroke-width: 0.25px"/>
-        <line x1="49.8573" y1="17.9563" x2="3.1373" y2="17.9563" style="fill: none;stroke: currentColor;stroke-linecap: square;stroke-miterlimit: 10;stroke-width: 0.25px"/>
-        <line x1="49.153" y1="15.835" x2="3.8442" y2="15.835" style="fill: none;stroke: currentColor;stroke-linecap: square;stroke-miterlimit: 10;stroke-width: 0.25px"/>
-        <line x1="48.4032" y1="13.7136" x2="4.7881" y2="13.7136" style="fill: none;stroke: currentColor;stroke-linecap: square;stroke-miterlimit: 10;stroke-width: 0.25px"/>
-        <line x1="47.0082" y1="11.5923" x2="6.9095" y2="11.5923" style="fill: none;stroke: currentColor;stroke-linecap: square;stroke-miterlimit: 10;stroke-width: 0.25px"/>
-        <line x1="44.8899" y1="9.471" x2="9.0308" y2="9.471" style="fill: none;stroke: currentColor;stroke-linecap: square;stroke-miterlimit: 10;stroke-width: 0.25px"/>
-        <line x1="42.7406" y1="7.3497" x2="11.1521" y2="7.3497" style="fill: none;stroke: currentColor;stroke-linecap: square;stroke-miterlimit: 10;stroke-width: 0.25px"/>
-        <line x1="39.9216" y1="5.2284" x2="13.2734" y2="5.2284" style="fill: none;stroke: currentColor;stroke-linecap: square;stroke-miterlimit: 10;stroke-width: 0.25px"/>
-        <line x1="34.7267" y1="3.1071" x2="16.5639" y2="3.107" style="fill: none;stroke: currentColor;stroke-linecap: square;stroke-miterlimit: 10;stroke-width: 0.25px"/>
-      </g>
-    </g>
-    <g>
-      <path d="M22.4352,21.9706h5.3423v2.555H28.01a5.7111,5.7111,0,0,1,5.3424-3.02c5.6778,0,6.736,3.801,6.736,8.8265v9.9879H34.5135V31.4939c-.08-2.23-.1218-4.968-3.02-4.8778-2.95-.09-3.3989,2.229-3.4841,4.6456v9.0588H22.4352v-18.35" style="fill: currentColor;fill-rule: evenodd"/>
-      <rect x="13.1441" y="21.9706" width="5.8069" height="18.3499" style="fill: currentColor"/>
-      <circle cx="16.1637" cy="15.9314" r="3.2519" style="fill: currentColor"/>
-    </g>
-  </g>
+<svg width="65" height="64" viewBox="0 0 65 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1_67)">
+<path d="M32.5 62.1887C49.1727 62.1887 62.6887 48.6728 62.6887 32C62.6887 15.3273 49.1727 1.81133 32.5 1.81133C15.8273 1.81133 2.31132 15.3273 2.31132 32C2.31132 48.6728 15.8273 62.1887 32.5 62.1887Z" style="fill: none;stroke: currentColor"  stroke-width="3" stroke-miterlimit="10"/>
+<mask id="mask0_1_67" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="5" y="5" width="55" height="54">
+<path d="M32.5 58.566C47.172 58.566 59.066 46.672 59.066 32C59.066 17.328 47.172 5.43396 32.5 5.43396C17.828 5.43396 5.93396 17.328 5.93396 32C5.93396 46.672 17.828 58.566 32.5 58.566Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_1_67)">
+<path d="M51.2574 54.9837L12.7956 54.9838" style="stroke: currentColor"  stroke-width="0.25" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M48.6959 57.5454H16.9188" style="stroke: currentColor"  stroke-width="0.25" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M53.819 52.4222H10.272" style="stroke: currentColor"  stroke-width="0.25" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M56.3807 49.8606H8.49566" style="stroke: currentColor"  stroke-width="0.25" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M58.9423 47.299H6.85653" style="stroke: currentColor"  stroke-width="0.25" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M59.8029 44.7374H5.76672" style="stroke: currentColor"  stroke-width="0.25" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M60.6565 42.1758L4.2888 42.1758" style="stroke: currentColor"  stroke-width="0.25" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M61.5085 39.6142H3.4347" style="stroke: currentColor"  stroke-width="0.25" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M62.3625 37.0526H2.58109" style="stroke: currentColor"  stroke-width="0.25" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M62.3577 34.491H2.58713" style="stroke: currentColor"  stroke-width="0.25" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M62.3628 31.9295H2.58109" style="stroke: currentColor"  stroke-width="0.25" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M62.3577 29.3678H2.58713" style="stroke: currentColor"  stroke-width="0.25" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M62.3632 26.8062H2.58109" style="stroke: currentColor"  stroke-width="0.25" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M61.5096 24.2446H3.4347" style="stroke: currentColor"  stroke-width="0.25" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M60.705 21.6831H4.28844" style="stroke: currentColor"  stroke-width="0.25" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M59.8546 19.1215H5.14206" style="stroke: currentColor"  stroke-width="0.25" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M58.9491 16.5598H6.28186" style="stroke: currentColor"  stroke-width="0.25" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M57.2646 13.9982H8.84355" style="stroke: currentColor"  stroke-width="0.25" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M54.7067 11.4367H11.4051" style="stroke: currentColor"  stroke-width="0.25" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M52.1113 8.87511H13.9667" style="stroke: currentColor"  stroke-width="0.25" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M48.7072 6.31354H16.5283" style="stroke: currentColor"  stroke-width="0.25" stroke-miterlimit="10" stroke-linecap="square"/>
+</g>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M27.5916 26.5305H34.0426V29.6158H34.3234C34.9401 28.457 35.8748 27.4983 37.0175 26.8523C38.1603 26.2063 39.4637 25.8999 40.7746 25.969C47.6308 25.969 48.9086 30.5589 48.9086 36.6274V48.6883H42.1767V38.0304C42.0801 35.3375 42.0296 32.0313 38.5299 32.1402C34.9676 32.0315 34.4256 34.8318 34.3227 37.75V48.6889H27.5916V26.5305Z" style="fill: currentColor"/>
+<path d="M23.3842 26.5305H16.3721V48.6889H23.3842V26.5305Z" style="fill: currentColor"/>
+<path d="M20.0184 23.1647C22.1872 23.1647 23.9453 21.4066 23.9453 19.2379C23.9453 17.0692 22.1872 15.3111 20.0184 15.3111C17.8497 15.3111 16.0916 17.0692 16.0916 19.2379C16.0916 21.4066 17.8497 23.1647 20.0184 23.1647Z" style="fill: currentColor"/>
+</g>
+<defs>
+<clipPath id="clip0_1_67">
+<rect width="64" height="64" fill="white" transform="translate(0.5)"/>
+</clipPath>
+</defs>
 </svg>
