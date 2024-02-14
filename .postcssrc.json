@@ -3,7 +3,7 @@
 	"plugins": {
 		"postcss-import": {},
 		"postcss-normalize": {},
-		"postcss-nested": {},
+		"postcss-nesting": {},
 		"postcss-custom-properties": {},
 		"postcss-custom-media": {},
 		"postcss-sort-media-queries": {},
