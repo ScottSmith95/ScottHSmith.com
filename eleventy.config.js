@@ -293,6 +293,7 @@ module.exports = function ( eleventyConfig ) {
 					overrides: {
 						cleanupIds: false,
 						removeUselessDefs: false,
+						removeHiddenElems: false
 					},
 				},
 			} ],
