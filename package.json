@@ -8,6 +8,7 @@
 		"url": "https://github.com/ScottSmith95/ScottHSmith.com.git"
 	},
 	"license": "UNLICENSED",
+	"type": "module",
 	"engines": {
 		"node": "^20.x"
 	},
@@ -18,7 +19,7 @@
 		"serve": "npx serve _site"
 	},
 	"devDependencies": {
-		"@11ty/eleventy": "^2.0.1",
+		"@11ty/eleventy": "3.0.0-alpha.17",
 		"@tryghost/content-api": "^1.11.21",
 		"autoprefixer": "^10.4.19",
 		"cssnano": "^7.0.4",

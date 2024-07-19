@@ -1,23 +1,23 @@
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 
-const path = require("path");
-const { open, stat, readFile, readdir, writeFile, mkdir } = require("node:fs/promises");
-const postcss = require("postcss");
-const postcssrc = require("postcss-load-config");
-const { minify } = require("terser");
-const svgstore = require("svgstore");
-const { optimize } = require('svgo');
-const ghostContentAPI = require("@tryghost/content-api");
-const localImages = require('eleventy-plugin-local-images');
-require("dotenv").config();
+import "dotenv/config";
+import path from "path";
+import { open, stat, readFile, readdir, writeFile, mkdir } from "node:fs/promises";
+import postcss from "postcss";
+import postcssrc from "postcss-load-config";
+import { minify } from "terser";
+import svgstore from "svgstore";
+import { optimize } from "svgo";
+import ghostContentAPI from "@tryghost/content-api";
+import localImages from "eleventy-plugin-local-images";
 
 const paths = {
 	sprites: {
-		src: "assets/images/social-icons/",
-		dest: "_site/assets/images/social-icons/build/",
+		src: 'assets/images/social-icons/',
+		dest: '_site/assets/images/social-icons/build/',
 	},
 	sitemap: {
-		src: ["_site", "!_site/error/*.html"],
+		src: [ '_site', '!_site/error/*.html' ],
 	},
 };
 
@@ -74,7 +74,8 @@ function processItemData( item ) {
 
 	// Remove srcset attributes from images until https://github.com/robb0wen/eleventy-plugin-local-images/issues/15
 	// is fixed and plugin supports multiple selectors.
-	item.html = item.html.replace( new RegExp( 'srcset=(["\'])?((?:.(?!\1|>))*.?)\1?', 'g' ), '' );
+	// RegEx source: https://stackoverflow.com/a/450117
+	item.html = item.html.replace( new RegExp( 'srcset\s*=\s*"(.+?)"', 'g' ), '' );
 
 	return item;
 }
@@ -88,12 +89,12 @@ async function getPortfolioData() {
 
 async function getPortfolioPosts() {
 	return portfolioApi.posts
-		.browse( { include: "tags" } )
+		.browse( { include: 'tags' } )
 		.then( ( posts ) => {
 			let postsSaved = [];
 			posts.forEach( (post) => {
 				const processedPost = processItemData( post );
-				processedPost.type = "post";
+				processedPost.type = 'post';
 
 				postsSaved.push( processedPost );
 			} );
@@ -111,7 +112,7 @@ async function getPortfolioPages() {
 			let pagesSaved = [];
 			pages.forEach( ( page ) => {
 				const processedPost = processItemData( page );
-				processedPost.type = "page";
+				processedPost.type = 'page';
 
 				pagesSaved.push( processedPost );
 			} );
@@ -123,21 +124,21 @@ async function getPortfolioPages() {
 }
 
 
-module.exports = function ( eleventyConfig ) {
+export default function ( eleventyConfig ) {
 	// Passthrough files
-	eleventyConfig.addPassthroughCopy("./assets/favicons");
-	eleventyConfig.addPassthroughCopy("./assets/fonts");
-	eleventyConfig.addPassthroughCopy("./assets/icons");
-	eleventyConfig.addPassthroughCopy("./assets/images");
-	eleventyConfig.addPassthroughCopy("./miscellanea/**/images/*");
-	eleventyConfig.addPassthroughCopy("./miscellanea/social-icons/**/");
-	eleventyConfig.addPassthroughCopy("./portfolio/_assets");
-	eleventyConfig.addPassthroughCopy("./manifest.webmanifest");
-	eleventyConfig.addPassthroughCopy("./.well-known");
-	eleventyConfig.addPassthroughCopy("./sitemap.xml");
+	eleventyConfig.addPassthroughCopy( './assets/favicons' );
+	eleventyConfig.addPassthroughCopy( './assets/fonts' );
+	eleventyConfig.addPassthroughCopy( './assets/icons' );
+	eleventyConfig.addPassthroughCopy( './assets/images' );
+	eleventyConfig.addPassthroughCopy( './miscellanea/**/images/*' );
+	eleventyConfig.addPassthroughCopy( './miscellanea/social-icons/**/' );
+	eleventyConfig.addPassthroughCopy( './portfolio/_assets' );
+	eleventyConfig.addPassthroughCopy( './manifest.webmanifest' );
+	eleventyConfig.addPassthroughCopy( './.well-known' );
+	eleventyConfig.addPassthroughCopy( './sitemap.xml' );
 
 	// Passthrough during serve
-	eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
+	eleventyConfig.setServerPassthroughCopyBehavior( 'passthrough' );
 
 	const additionalLogging = process.env.CI == true || process.env.ENV === 'production' || process.env.VERCEL_ENV === 'production';
 
@@ -148,17 +149,17 @@ module.exports = function ( eleventyConfig ) {
 		verbose: additionalLogging
 	} );
 
-	eleventyConfig.addCollection("posts", async (collection) => {
+	eleventyConfig.addCollection( 'posts', async (collection) => {
 		const portfolioData = await getPortfolioData();
 		collection = portfolioData;
 
 		if (additionalLogging) {
-			console.log(`${collection.length} pages added to \`posts\` collection.`)
+			console.log( `${collection.length} pages added to \`posts\` collection.` );
 		}
 		return collection;
 	});
 
-	eleventyConfig.addCollection("featured", async (collection) => {
+	eleventyConfig.addCollection( 'featured', async (collection) => {
 		const portfolioData = await getPortfolioData();
 		const filteredPortfolioData = portfolioData.filter(
 			(post) => post.featured === true
@@ -172,12 +173,12 @@ module.exports = function ( eleventyConfig ) {
 		collection = featuredPosts;
 
 		if (additionalLogging) {
-			console.log(`${Object.keys(collection).length} pages added to \`featured\` collection.`)
+			console.log( `${Object.keys(collection).length} pages added to \`featured\` collection.` );
 		}
 		return collection;
 	});
 
-	eleventyConfig.addCollection("bin", async (collection) => {
+	eleventyConfig.addCollection( 'bin', async (collection) => {
 		const portfolioData = await getPortfolioData();
 		const filteredPortfolioData = portfolioData.filter(
 			(post) => post.type !== "page" && post.featured !== true
@@ -185,7 +186,7 @@ module.exports = function ( eleventyConfig ) {
 		collection = filteredPortfolioData;
 
 		if (additionalLogging) {
-			console.log(`${collection.length} pages added to \`bin\` collection.`)
+			console.log( `${collection.length} pages added to \`bin\` collection.` );
 		}
 		return collection;
 	});
@@ -232,15 +233,15 @@ module.exports = function ( eleventyConfig ) {
 			) {
 				// Skip dev files
 				return;
-			} else if ( parsed.name.includes( "social-icons" ) ) {
+			} else if ( parsed.name.includes( 'social-icons' ) ) {
 				// Custom include for social-icons file
 				let flickity = await readFile(
-					"node_modules/flickity/dist/flickity.pkgd.js",
-					{ encoding: "utf8" }
+					'node_modules/flickity/dist/flickity.pkgd.js',
+					{ encoding: 'utf8' }
 				);
 				inputContent = {
-					"flickity.js": flickity,
-					"social-icons.js": inputContent,
+					'flickity.js': flickity,
+					'social-icons.js': inputContent,
 				};
 			}
 
@@ -264,7 +265,7 @@ module.exports = function ( eleventyConfig ) {
 		},
 	} );
 
-	eleventyConfig.on("eleventy.before", async () => {
+	eleventyConfig.on( 'eleventy.before', async () => {
 		const sprites = svgstore();
 		const svgDirFileNames = await readdir( paths.sprites.src );
 		const spriteFilePath = path.join( paths.sprites.dest, 'home-sprite.svg' );
@@ -277,7 +278,7 @@ module.exports = function ( eleventyConfig ) {
 			if ( parsedFilePath.name[0] !== '.' ) {
 				// The below can error if there is a directory found. TODO: Add check for is directory/is readable.
 				let fileContents = await readFile( filePath, {
-					encoding: "utf8",
+					encoding: 'utf8',
 				} );
 				sprites.add( parsedFilePath.name, fileContents );
 			}
@@ -303,7 +304,7 @@ module.exports = function ( eleventyConfig ) {
 			recursive: true,
 		} );
 		await writeFile( spriteFilePath, optimizedSprite );
-	});
+	} );
 
 	return {
 		templateFormats: [ 'mustache', 'njk', 'css', 'js' ],
