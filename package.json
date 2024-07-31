@@ -20,6 +20,7 @@
 	},
 	"devDependencies": {
 		"@11ty/eleventy": "^3.0.0-beta.1",
+		"@11ty/eleventy-plugin-mustache": "^1.0.0-alpha.1",
 		"@tryghost/content-api": "^1.11.21",
 		"autoprefixer": "^10.4.19",
 		"cssnano": "^7.0.4",

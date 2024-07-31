@@ -9,6 +9,7 @@ import { minify } from "terser";
 import svgstore from "svgstore";
 import { optimize } from "svgo";
 import ghostContentAPI from "@tryghost/content-api";
+import mustachePlugin from "@11ty/eleventy-plugin-mustache";
 import localImages from "eleventy-plugin-local-images";
 
 const paths = {
@@ -142,6 +143,7 @@ export default function ( eleventyConfig ) {
 
 	const additionalLogging = process.env.CI == true || process.env.ENV === 'production' || process.env.VERCEL_ENV === 'production';
 
+	eleventyConfig.addPlugin(mustachePlugin);
 	eleventyConfig.addPlugin( localImages, {
 		distPath: '_site',
 		assetPath: '/assets/images/portfolio-assets',
@@ -218,6 +220,10 @@ export default function ( eleventyConfig ) {
 				return result.css;
 			};
 		},
+
+		compileOptions: {
+			permalink: "raw"
+		},
 	});
 
 	eleventyConfig.addExtension( 'js', {
@@ -262,6 +268,10 @@ export default function ( eleventyConfig ) {
 			return async ( data ) => {
 				return result.code;
 			};
+		},
+
+		compileOptions: {
+			permalink: "raw"
 		},
 	} );
 
