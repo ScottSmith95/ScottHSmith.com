@@ -8,23 +8,23 @@ header {
 	padding-right: constant(safe-area-inset-right);
 	padding-right: env(safe-area-inset-right);
 	margin: var(--space-l2);
-	
+
 	.no-cssanimations & {
 		opacity: 1;
 	}
-	
+
 	a {
 		color: var(--text-color);
 	}
-	
+
 	.nav,
 	.desc {
 		margin: var(--space-l2) 0;
 	}
-	
+
 	.nav {
-		h1, 
-		h2, 
+		h1,
+		h2,
 		& > a {
 			display: inline;
 			font-size: 2em;
@@ -32,7 +32,7 @@ header {
 			margin: 0;
 			white-space: nowrap;
 		}
-		
+
 		& > a {
 			transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, padding-left 0.3s ease, margin-left 0.3s ease;
 			font-weight: 300;
@@ -40,9 +40,9 @@ header {
 			padding-left: 0.15em;
 			border-radius: 5px;
 			border: 0.07em solid transparent;
-			margin-left: calc(-0.35em + -0.15em);
-			margin-right: 0.25em;
-			
+			margin-inline-start: calc(-0.35em + -0.15em);
+			margin-inline-end: 0.25em;
+
 			&::before {
 				content: '';
 				display: inline-block;
@@ -54,36 +54,35 @@ header {
 				vertical-align: top;
 				border-style: solid;
 				border-width: 0.07em 0.07em 0 0;
-				border-radius: 1px;
 			}
-			
+
 			&::after {
 				transition: opacity 0.3s ease;
 				content: '';
 				position: relative;
-				left: 0.35em;
+				left: 0;
+				margin-inline-start: 0.4em;
 				border-right: 0.06em solid;
 				border-radius: 10px;
-				margin-right: 0.25em;
 			}
 		}
-		
-		h1 > a, 
+
+		h1 > a,
 		h2 > a {
 			@media (any-hover) {
 			&:hover {
 				color: var(--blue);
 			}
-			
+
 			&:active {
 				color: var(--blue);
 			}
 			}
 		}
-		
+
 		.js &.has-page-nav { /* Dropdown will only with with JS, so don't hint it's clickable/focusable without it working. */
 			position: relative;
-			
+
 			h1, h2 {
 				transition: padding-left 0.3s ease, padding-right 0.3s ease, box-shadow 0.3s ease; /* Only for focused state. */
 				position: relative;
@@ -91,7 +90,7 @@ header {
 				/* To prepare focus transtion: */
 				box-shadow: 0 0 0 0.07em transparent;
 				border-radius: 5px;
-				
+
 				&::after {
 					transition: transform 0.3s ease-out;
 					content: '';
@@ -105,27 +104,27 @@ header {
 					border-right: 0.4rem solid transparent;
 					border-top: 0.4rem solid var(--text-color);
 				}
-				
+
 				&:focus {
 					padding-left: 0.25em;
 					padding-right: 0.5em;
 					box-shadow: 0 0 0 0.07em var(--turquoise);
 					outline: none;
 				}
-				
+
 				&.clicked:focus {
 					padding-left: 0;
 					padding-right: 0;
 					box-shadow:none;
 				}
-				
+
 				&.shown::after {
 					transform: rotateX(180deg);
 				}
 			}
 		}
 	}
-	
+
 	.nav > a {
 		@media (any-hover) {
 		&:hover {
@@ -137,18 +136,18 @@ header {
 				opacity: 0;
 			}
 		}
-		
+
 		&:active {
 			color: var(--blue-secondary);
 			background-color: var(--action-background-l3);
 			margin-left: 0;
-			
+
 			&::after {
 				opacity: 0;
 			}
 		}
 		}
-		
+
 		&:focus {
 			color: var(--blue-secondary);
 			background-color: var(--action-background-l3);
@@ -156,7 +155,7 @@ header {
 			border-color: var(--blue-secondary);
 			outline: none;
 			margin-left: 0;
-			
+
 			&::after {
 				opacity: 0;
 			}
@@ -166,24 +165,24 @@ header {
 	.desc {
 		font-size: 1.25em;
 		line-height: 1.5;
-		
+
 		p {
 			margin: 0;
 		}
-		
+
 		img {
 			height: auto;
 			max-width: 100%;
 		}
-		
+
 		a {
 			color: var(--blue);
-		
+
 			@media (any-hover) {
 			&:hover {
 				color: var(--blue-secondary);
 			}
-			
+
 			&:active {
 				color: var(--darkgrey);
 			}
@@ -205,7 +204,7 @@ header {
 	border-bottom: 0 solid transparent;
 	z-index: 2;
 
-	
+
 	&.shown {
 		transition-timing-function: ease-in, ease, ease;
 		max-height: 4.6em;
@@ -216,7 +215,7 @@ header {
 
 	a {
 		color: var(--secondary-text-color);
-		
+
 		@media (any-hover) {
 		&:hover,
 		&:focus {
@@ -246,22 +245,22 @@ header {
 	text-align: left;
 	color: var(--darkgrey);
 	margin: var(--space-l3) var(--space-l2);
-	
+
 	p {
 		max-width: 15em;
 		font-size: 0.9em;
 		margin: 0;
 	}
-	
+
 	a {
 		transition: color 0.3s ease;
 		color: var(--darkgrey);
-		
+
 		@media (any-hover) {
 		&:hover {
 			color: var(--blue);
 		}
-		
+
 		&:active {
 			color: var(--blue-secondary);
 		}
@@ -274,32 +273,32 @@ header {
 	header {
 		width: 80%;
 		margin: var(--space-l3) auto;
-		
-		.nav {			
+
+		.nav {
 			h1,
 			h2,
 			& > a {
 				font-size: 2.5em;
 			}
-			
+
 			& > a {
 				padding-left: 0.5em;
 				margin-left: calc(-0.45em + -0.5em);
 				margin-right: 0.35em;
-				
+
 				&::before {
 					top: 0.55em;
 					left: -0.15em;
 					height: 0.45em;
 					width: 0.45em;
 				}
-				
+
 				&:focus {
 					padding-left: 0.5em;
 				}
 			}
 		}
-		
+
 		.desc {
 			font-size: 1.5em;
 		}
@@ -317,7 +316,7 @@ header {
 		box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 		border-top: none;
 		border-bottom: 0 solid rgba(0, 153, 204, 0);
-		
+
 		@media (--width-l2) (prefers-color-scheme: dark) {
 			background-color: rgba(32, 32, 32, 0.95);
 		}
@@ -333,7 +332,7 @@ header {
 		margin-right: auto;
 		margin-left: auto;
 	}
-	
+
 	.license {
 		width: 80%;
 		margin-right: auto;
