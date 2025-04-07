@@ -10,7 +10,7 @@
 	"license": "UNLICENSED",
 	"type": "module",
 	"engines": {
-		"node": "^20.x"
+		"node": "^22.x"
 	},
 	"scripts": {
 		"dev": "npx @11ty/eleventy --watch --serve",
@@ -20,7 +20,7 @@
 	},
 	"devDependencies": {
 		"@11ty/eleventy": "^3.0.0",
-		"@11ty/eleventy-plugin-mustache": "^1.0.0-alpha.1",
+		"@11ty/eleventy-plugin-mustache": "^1.0.0",
 		"@tryghost/content-api": "^1.11.21",
 		"autoprefixer": "^10.4.20",
 		"cssnano": "^7.0.6",
@@ -28,7 +28,7 @@
 		"eleventy-plugin-local-images": "^0.4.1",
 		"flickity": "^3.0.0",
 		"postcss": "^8.4.47",
-		"postcss-100vh-fix": "^1.0.2",
+		"postcss-100vh-fix": "^2.0.0",
 		"postcss-cli": "^11.0.0",
 		"postcss-custom-media": "^11.0.1",
 		"postcss-custom-properties": "^14.0.1",
