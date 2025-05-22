@@ -81,6 +81,10 @@ ol {
 	width: 1px;
 }
 
+@view-transition {
+	navigation: auto;
+}
+
 
 @media (inverted-colors) {
 img {
