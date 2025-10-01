@@ -395,18 +395,6 @@ button.colophon-extender {
 	}
 }
 
-@media (min-width: 26em) {
-	nav {
-		font-size: 2rem;
-		flex-flow: nowrap;
-
-		a {
-			padding: 0 var(--space-l2);
-			margin-right: var(--space-l2);
-		}
-	}
-}
-
 @media (--width-l2) {
 	header,
 	section,
@@ -429,6 +417,15 @@ button.colophon-extender {
 
 	.name {
 		margin-left: 0;
+	}
+
+	nav {
+		font-size: 2rem;
+
+		a {
+			padding: 0 var(--space-l2);
+			margin-right: var(--space-l2);
+		}
 	}
 
 	section,
