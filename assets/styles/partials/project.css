@@ -80,52 +80,69 @@ header {
 			}
 		}
 
-		.js &.has-page-nav { /* Dropdown will only with with JS, so don't hint it's clickable/focusable without it working. */
+		[popovertarget='page-nav'] {
+			anchor-name: --page-nav;
+
+		}
+
+		&.has-page-nav [popover] {
+			position: absolute;
+			position-anchor: --page-nav;
+			position-area: bottom span-right;
+			width: auto;
+			padding: 0;
+			margin: 0;
+		}
+
+		h1:has(+ [popovertarget='page-nav']) {
+			anchor-name: --page-title;
 			position: relative;
+			cursor: pointer;
+			padding-inline-end: 0.5ch; /* Add space pseudo element icon on title for dropdown affordance. */
 
-			h1, h2 {
-				transition: padding-left 0.3s ease, padding-right 0.3s ease, box-shadow 0.3s ease; /* Only for focused state. */
-				position: relative;
-				cursor: pointer;
-				/* To prepare focus transtion: */
-				box-shadow: 0 0 0 0.07em transparent;
-				border-radius: 5px;
+			&::after {
+				transition: transform 0.3s ease-out;
+				content: '';
+				display: inline-block;
+				position: relative; /* Position relative allows arrow to wrap to new line before text. */
+				top: -0.15em;
+				right: -0.25em;
+				height: 0;
+				width: 0;
+				border-left: 0.4rem solid transparent;
+				border-right: 0.4rem solid transparent;
+				border-top: 0.4rem solid var(--text-color);
+			}
+		}
 
-				&::after {
-					transition: transform 0.3s ease-out;
-					content: '';
-					display: inline-block;
-					position: relative; /* Position relative allows arrow to wrap to new line before text. */
-					top: -0.15em;
-					right: -0.25em;
-					height: 0;
-					width: 0;
-					border-left: 0.4rem solid transparent;
-					border-right: 0.4rem solid transparent;
-					border-top: 0.4rem solid var(--text-color);
-				}
+		h1:has(+ [popovertarget='page-nav']) + button {
+			transition: background-color 0.3s ease, border-color 0.3s ease;
+			position: absolute;
+			width: auto;
+			position-anchor: --page-title;
+			position-area: span-all;
+			width: calc(anchor-size(width) + 1rem);
+			height: calc(anchor-size(height) + 0.25rem);
+			background-color: transparent;
+			color: transparent;
+			border: none;
+			box-shadow: none;
+			margin: 0;
+			border-radius: 5px;
+			border: 2px solid transparent;
 
-				&:focus {
-					padding-left: 0.25em;
-					padding-right: 0.5em;
-					box-shadow: 0 0 0 0.07em var(--turquoise);
-					outline: none;
-				}
+			&:hover {
+				border-color: var(--blue-secondary);
+			}
 
-				&.clicked:focus {
-					padding-left: 0;
-					padding-right: 0;
-					box-shadow:none;
-				}
-
-				&.shown::after {
-					transform: rotateX(180deg);
-				}
+			&:focus {
+				border-color: var(--blue-secondary);
 			}
 		}
 	}
 
-	.nav > a {
+	.nav > a,
+	.nav > button {
 		@media (any-hover) {
 		&:hover {
 			color: var(--blue);
@@ -191,26 +208,93 @@ header {
 	}
 }
 
+@supports not (position-anchor: ---) {
+.js .nav.has-page-nav { /* Dropdown will only with with JS, so don't hint it's clickable/focusable without it working. */
+	position: relative;
+
+	h1, h2 {
+		transition: padding-left 0.3s ease, padding-right 0.3s ease, box-shadow 0.3s ease; /* Only for focused state. */
+		position: relative;
+		cursor: pointer;
+		/* To prepare focus transtion: */
+		box-shadow: 0 0 0 0.07em transparent;
+		border-radius: 5px;
+
+		&::after {
+			transition: transform 0.3s ease-out;
+			content: '';
+			display: inline-block;
+			position: relative; /* Position relative allows arrow to wrap to new line before text. */
+			top: -0.15em;
+			right: -0.25em;
+			height: 0;
+			width: 0;
+			border-left: 0.4rem solid transparent;
+			border-right: 0.4rem solid transparent;
+			border-top: 0.4rem solid var(--text-color);
+		}
+
+		&:focus {
+			padding-left: 0.25em;
+			padding-right: 0.5em;
+			box-shadow: 0 0 0 0.07em var(--turquoise);
+			outline: none;
+		}
+
+		&.clicked:focus {
+			padding-left: 0;
+			padding-right: 0;
+			box-shadow:none;
+		}
+
+		&.shown::after {
+			transform: rotateX(180deg);
+		}
+	}
+}
+}
+
+@supports not (position-anchor: ---) {
+	button[popovertarget="page-nav"] {
+		display: none;
+	}
+}
+
 .page-nav {
-	transition: max-height 0.3s, border-color 0.3s, box-shadow 0.3s, margin-top 0.3s;
-	transition-timing-function: ease-out, ease, ease, ease, ease;
-	display: block;
 	overflow: hidden;
-	max-height: 0;
 	width: 100%;
 	font-size: 2em;
 	list-style: none;
+	border-radius: 5px;
 	border-top: 0 solid transparent;
 	border-bottom: 0 solid transparent;
+	border: none;
 	z-index: 2;
 
+	@supports not (position-anchor: ---) {
+		transition: max-height 0.3s, border-color 0.3s, box-shadow 0.3s, margin-top 0.3s;
+		transition-timing-function: ease-out, ease, ease, ease, ease;
+		display: block;
+		top: 100%;
+		max-height: 0;
+		width: calc(100% + 1.2rem) !important;
+		padding: 0;
+		margin-inline-start: -0.6rem !important;
 
-	&.shown {
-		transition-timing-function: ease-in, ease, ease;
-		max-height: 4.6em;
-		border-width: 1px;
-		border-color: var(--divider-color);
-		margin-top: 1rem;
+		&.shown {
+			transition-timing-function: ease-in, ease, ease;
+			max-height: 5.5em;
+			border-width: 1px;
+			border-color: var(--divider-color);
+			margin-top: 1rem;
+		}
+	}
+
+
+	ul {
+		list-style: none;
+		padding: 0.5rem 0.75rem;
+		margin: 0;
 	}
 
 	a {
@@ -305,27 +389,40 @@ header {
 	}
 
 	.page-nav {
-		display: inline-block;
-		position: absolute;
-		top: 1.35em; /* Magic numbers that… */
-		left: 5.9em; /* work really well    */
-		width: auto;
 		font-size: 2.5em;
-		padding: 0 0.25em;
 		background-color: rgba(235, 238, 240, 0.95);
 		box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 		border-top: none;
 		border-bottom: 0 solid rgba(0, 153, 204, 0);
 
+		@supports not (position-anchor: ---) {
+			position: absolute;
+			width: auto;
+			display: inline-block;
+			width: auto !important;
+
+			ul {
+				display: inline-block;
+			}
+		}
+
 		@media (--width-l2) (prefers-color-scheme: dark) {
 			background-color: rgba(32, 32, 32, 0.95);
 		}
+	}
+
+	@supports not (position-anchor: ---) {
+	.page-nav {
+
+		top: 1.35em; /* Magic numbers that… */
+		left: 6.25em; /* work really well    */
 
 		&.shown {
 			border-width: 3px;
 			border-color: var(--blue);
 			margin-top: 0;
 		}
+	}
 	}
 
 	.content {

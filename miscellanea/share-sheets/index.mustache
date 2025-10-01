@@ -19,12 +19,15 @@
 <header>
 	<div class="nav has-page-nav">
 		<a href="/miscellanea/"><span class="sr-only">Back to </span>Miscellanea</a>
-		<h1 tabindex="-1">Share Sheets</h1>
-		<ul class="page-nav">
-			<li><a href="../scott-is/" tabindex="-1">Scott Is…</a></li>
-			<li><a href="../decode-archive/" tabindex="-1">Decode</a></li>
-			<li><a href="../social-icons/" tabindex="-1">Social Icons</a></li>
-		</ul>
+		<h1>Share Sheets</h1>
+		<button popovertarget="page-nav" aria-label="Show pages"></button>
+		<div popover id="page-nav" class="page-nav">
+			<ul>
+				<li><a href="../scott-is/" tabindex="-1">Scott Is…</a></li>
+				<li><a href="../decode-archive/" tabindex="-1">Decode</a></li>
+				<li><a href="../social-icons/" tabindex="-1">Social Icons</a></li>
+			</ul>
+		</div>
 	</div>
 
 	<div class="desc"><p>In order to provide a native looking experience for opening social links on iOS devices, I recreated iOS's Share Sheets in CSS and JavaScript. Feel free to copy any of the code I've written for personal use. I have provided a <a href="https://gist.github.com/ScottSmith95/4417738">Gist</a> with everything you need to get started.</p></div>
