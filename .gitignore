@@ -5,6 +5,8 @@
 
 .vercel
 
+.codex
+
 node_modules/
 _site/
 dist/
