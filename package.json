@@ -37,7 +37,7 @@
 		"postcss-nesting": "^14.0.0",
 		"postcss-normalize": "^13.0.1",
 		"postcss-sort-media-queries": "^5.2.0",
-		"svgo": "^4.0.0",
+		"svgo": "^4.0.1",
 		"svgstore": "^3.0.1",
 		"terser": "^5.46.0"
 	},
